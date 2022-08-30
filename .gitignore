@@ -1,0 +1,153 @@
+*.swp
+.idea/
+.idea
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+# C extensions
+*.so
+# Distribution / packaging
+.Python
+env/
+venv
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+# lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+*.cache
+nosetests.xml
+coverage.xml
+# Translations
+*.mo
+*.pot
+# Django stuff:
+*.log
+# Sphinx documentation
+docs/_build/
+# PyBuilder
+target/
+### Configure for TorCMS/torlite
+xx*
+
+*.db
+*.rdb
+
+webgis_cases/wegis
+oswebgis
+dist_*
+.sass-cache
+
+section.html
+cfg.py
+*.ovr
+*.aux.xml
+
+templates/99_gislite_GISLite/2*
+templates/99_gislite_GISLite/3*
+templates/99_gislite_GISLite/4*
+templates/99_gislite_GISLite/5*
+
+_dist_webgis
+
+# 生成的Mapfile
+# xmf*.map
+_build
+.idea
+
+_webgis_html
+_build*
+
+cache_data
+
+xch*.pdf
+x0*.pdf
+
+# 示例数据与图
+demo/figs/shp*
+demo/figs/fig*
+webgis-rev-*
+
+
+
+
+#############################################################
+# webgis_cn
+#############################################################
+
+### Configure for TorCMS/torlite
+xx*.jinja2
+
+*.db
+*.rdb
+
+webgis_cases/wegis
+oswebgis
+owg
+dist_*
+.sass-cache
+
+section.html
+cfg.py
+*.ovr
+*.aux.xml
+
+templates/99_gislite_GISLite/2*
+templates/99_gislite_GISLite/3*
+templates/99_gislite_GISLite/4*
+templates/99_gislite_GISLite/5*
+
+_dist_webgis
+
+# 生成的Mapfile
+xx*.htmp
+_build
+*.lock
+cache_data
+gdata/raster/*
+
+
+#############################################################
+# webgis_pub
+#############################################################
+
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+cfg.py
+xx_*.jinja2
+
+wwwpub/oswebgis
+
+wwwpub/templates/99_gislite_GISLite/*.jinja2
+
+.sass-cache
+
+.vscode
+
+f2elib
