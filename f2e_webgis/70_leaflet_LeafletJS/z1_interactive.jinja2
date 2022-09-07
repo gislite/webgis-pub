@@ -1,0 +1,231 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+
+    <title>Use video</title>
+
+
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+
+        <h2 id="video-on-webpages">Web video</h2>
+
+        <p>Video is a daunting task when building web pages, until the <code class="highlighter-rouge">&lt;video&gt;</code> element was introduced in HTML.</p>
+
+        <p>Now we can use the following HTML code:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span
+                    class="hljs-title">video</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"500"</span> <span
+                    class="hljs-attribute">controls</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span
+            class="hljs-value">"https://www.mapbox.com/bites/00188/patricia_nasa.webm"</span> <span
+            class="hljs-attribute">type</span>=<span class="hljs-value">"video/webm"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span
+            class="hljs-value">"https://www.mapbox.com/bites/00188/patricia_nasa.mp4"</span> <span
+            class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+            </div>
+        </div>
+
+        <p>To show this video:</p>
+
+        <video controls width="500">
+            <source src="./leaflet_on_mobile/patricia_nasa.webm" type="video/webm">
+            <source src="./leaflet_on_mobile/patricia_nasa.mp4" type="video/mp4">
+        </video>
+
+        <p>If the video can be displayed on a web page, it can be displayed in the Map of Leaflet.</p>
+
+        <h3 id="bounds-of-an-image-overlay">Image coverage</h3>
+
+        <p>cFirst, create a Leaflet map and add a <code class="highlighter-rouge">L.TileLayer</code> background:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>).setView([<span
+                    class="hljs-number">37.8</span>, -<span class="hljs-number">96</span>], <span
+                    class="hljs-number">4</span>);
+
+L.tileLayer(<span class="hljs-string">'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='</span> + mapboxAccessToken, {
+    id: <span class="hljs-string">'mapbox.satellite'</span>,
+    attribution: ...
+}).addTo(map);
+</code></pre>
+            </div>
+        </div>
+
+        <p>Then we define the geographic boundaries of the video coverage. This is an instance of <code class="highlighter-rouge">L.Rectangle</code>:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> bounds = L.latLngBounds([[ <span
+                    class="hljs-number">32</span>, -<span class="hljs-number">130</span>], [ <span class="hljs-number">13</span>, -<span
+                    class="hljs-number">100</span>]]);
+</code></pre>
+            </div>
+        </div>
+
+        <p> If you want to see an area covered by <code class="highlighter-rouge">LatLngBounds</code>, use <code class="highlighter-rouge">L.Rectangle</code>:
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs css"><span class="hljs-tag">L</span><span
+                    class="hljs-class">.rectangle</span>(<span class="hljs-tag">bounds</span>)<span class="hljs-class">.addTo</span>(<span
+                    class="hljs-tag">map</span>);
+
+<span class="hljs-tag">map</span><span class="hljs-class">.fitBounds</span>(<span class="hljs-tag">bounds</span>);
+</code></pre>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_on_mobile/example-bounds.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_on_mobile/example-bounds.html">View this example</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3 id="adding-the-video-overlay">Add video</h3>
+
+        <p>Adding a video layer is very similar to adding an image. For images, <code class="highlighter-rouge">L.ImageOverlay</code></a> is used like this:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> overlay = L.imageOverlay( imageUrl, bounds, options );
+</code></pre>
+            </div>
+        </div>
+
+        <p>For a video overlay, it should be used like this:</p>
+
+        <ul>
+            <li>Replace <code class="highlighter-rouge">L.imageOverlay</code> with <code class="highlighter-rouge">L.videoOverlay</code>.
+            </li>
+            <li>Specify a video URL <em> or </em> video URL array instead of the image URL.</li>
+        </ul>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">    <span class="hljs-keyword">var</span> videoUrls = [
+        <span class="hljs-string">'https://www.mapbox.com/bites/00188/patricia_nasa.webm'</span>,
+        <span class="hljs-string">'https://www.mapbox.com/bites/00188/patricia_nasa.mp4'</span>
+    ];
+
+    <span class="hljs-keyword">var</span> bounds = L.latLngBounds([[ <span class="hljs-number">32</span>, -<span
+                        class="hljs-number">130</span>], [ <span class="hljs-number">13</span>, -<span
+                        class="hljs-number">100</span>]]);
+
+    <span class="hljs-keyword">var</span> videoOverlay = L.videoOverlay( videoUrls, bounds, {
+        opacity: <span class="hljs-number">0.8</span>
+    }).addTo(map);
+</code></pre>
+            </div>
+        </div>
+
+        <p>Just like this, you will see the video on your map:</p>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_on_mobile/example-nocontrols.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_on_mobile/example-nocontrols.html">View this example</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Video is just like any other Leaflet layer, you can add and remove them, allowing users to perform layered editing and more.</p>
+
+        <h3 id="a-bit-of-control-over-the-video">Video control method</h3>
+
+        <p>
+            If you read the API documentation, you'll notice that the <code class="highlighter-rouge">L.VideoOverlay</code> class doesn't have <code class="highlighter-rouge">play()</code> or <code class ="highlighter-rouge">pause()</code> method....</p>
+
+        <p>For this reason, the <code class="highlighter-rouge">getElement()</code> method of video coverage is useful. It returns the covered <code class="highlighter-rouge">HTMLVideoElement</code> (which inherits <code class="highlighter-rouge">HTMLMediaElement</code>) and has something like <code class="highlighter- Rouge">play()</code> and <code class="highlighter-rouge">pause()</code> methods, for example.</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs css">    <span
+                    class="hljs-tag">videoOverlay</span><span class="hljs-class">.getElement</span>()<span
+                    class="hljs-class">.pause</span>();
+</code></pre>
+            </div>
+        </div>
+
+        <p>This allows us to build custom interfaces. For example, we can create a <code class="highlighter-rouge">L.Control</code> to play or pause the video:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">    videoOverlay.on(<span
+                    class="hljs-string">'load'</span>, <span class="hljs-function"><span
+                    class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> MyPauseControl = L.Control.extend({
+            onAdd: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">var</span> button = L.DomUtil.create(<span
+                        class="hljs-string">'button'</span>);
+                button.innerHTML = <span class="hljs-string">'⏸'</span>;
+                L.DomEvent.on(button, <span class="hljs-string">'click'</span>, <span class="hljs-function"><span
+                        class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                    videoOverlay.getElement().pause();
+                });
+                <span class="hljs-keyword">return</span> button;
+            }
+        });
+        <span class="hljs-keyword">var</span> MyPlayControl = L.Control.extend({
+            onAdd: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">var</span> button = L.DomUtil.create(<span
+                        class="hljs-string">'button'</span>);
+                button.innerHTML = <span class="hljs-string">'⏵'</span>;
+                L.DomEvent.on(button, <span class="hljs-string">'click'</span>, <span class="hljs-function"><span
+                        class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                    videoOverlay.getElement().play();
+                });
+                <span class="hljs-keyword">return</span> button;
+            }
+        });
+
+        <span class="hljs-keyword">var</span> pauseControl = (<span class="hljs-keyword">new</span> MyPauseControl()).addTo(map);
+        <span class="hljs-keyword">var</span> playControl = (<span class="hljs-keyword">new</span> MyPlayControl()).addTo(map);
+    });
+</code></pre>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_on_mobile/example.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_on_mobile/example.html">View this example</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+
+
+{% endblock %}

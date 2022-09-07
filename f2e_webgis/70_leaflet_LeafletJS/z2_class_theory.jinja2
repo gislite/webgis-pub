@@ -1,0 +1,285 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>Extending Leaflet: Principles of Classes</title>
+{% endblock %}
+
+{% block cntbody %}
+
+        <h2 id="extending-leaflet">Leaflet extension</h2>
+
+        <p>There are hundreds of plugins on the Leaflet that extend the functionality of Leaflet.</p>
+
+        <p>One of the reasons for the many plugins is that Leaflet is easy to extend, and this tutorial will cover the most common extension methods.</p>
+
+        <p>Please note that this tutorial assumes that you are well mastered:</p>
+
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/Learn/JavaScript">JavaScript</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">DOM processing</a>
+            </li>
+            <li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a> (understand concepts such as classes, instances, inheritance, methods, and properties)</li>
+        </ul>
+
+        <h2 id="leaflet-architecture">Leaflet architecture</h2>
+
+        <p>Let's take a look at the simplified UML class diagram for Leaflet 1.0.0. Leaflet 1.0.0. has more than 60 JavaScript classes, so this image is a bit big. Fortunately, we can create a scalable image with <code class="highlighter-rouge">L.ImageOverlay</code>:
+        </p>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_class_theory/class-diagram.html"
+                            width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a
+                            href="./leaflet_class_theory/class-diagram.html">View this example</a>
+                    </small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>From a technical perspective, Leaflet can be extended in different ways:</p>
+
+        <ul>
+            <li>The most common: Create a new <code class="highlighter-rouge">L.Layer</code> subclass with <code class="highlighter-rouge">L.Class.extend()</code>. <code class="highlighter-rouge">L.Handler</code> subclass or <code class="highlighter-rouge">L.Control</code> subclass...
+                <ul>
+                    <li>When the map moves or zooms, the layer moves accordingly</li>
+                     <li>The handler is invisible and it interprets browser events</li>
+                     <li>Controls are fixed interface elements. </li>
+                </ul>
+            </li>
+            <li>Use <code class="highlighter-rouge">L.Class.include()</code> to include new features in existing classes</li>
+            <ul>
+                <li>Add new methods and options</li>
+                 <li>Change some methods</li>
+                 <li>Use the <code class="highlighter-rouge">addInitHook</code> method to run additional constructor code. </li>
+            </ul>
+            </li>
+            <li> Use <code class="highlighter-rouge">L.Class.include()</code> to change parts of an existing class</li>
+        </ul>
+
+        <p>The classes and methods described in this tutorial are only available for Leaflet 1.0.0, so be careful when developing plugins with previous versions.</p>
+
+        <h2 id="lclass"><code class="highlighter-rouge">L.Class</code></h2>
+
+        <p>JavaScript is a somewhat strange language. It is not a true object-oriented language, but a language for prototyping. This has made it difficult for JavaScript to inherit class-like programming in the traditional sense of object-oriented programming.</p>
+
+        <p>Leaflet's <code class="highlighter-rouge">L.Class</code> makes class inheritance simple.</p>
+
+        <p>Although modern JavaScript can use classes in ES6, Leaflet is not based on ES6 design.</p>
+
+        <h3 id="lclassextend"><code class="highlighter-rouge">L.Class.extend()</code></h3>
+
+        <p> We can create any subclass in the Leaflet using the <code class="highlighter-rouge">.extend()</code> method. This method takes one argument: a simple object of a key-value pair, each key is the name of the property or method, and each value is the initial value of the property or the method function:
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> MyDemoClass = L.Class.extend({
+
+    <span class="hljs-comment">// A property with initial value = 42</span>
+    myDemoProperty: <span class="hljs-number">42</span>,   
+
+    <span class="hljs-comment">// A method </span>
+    myDemoMethod: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span
+                        class="hljs-keyword">this</span>.myDemoProperty; }
+    
+});
+
+<span class="hljs-keyword">var</span> myDemoInstance = <span class="hljs-keyword">new</span> MyDemoClass();
+
+<span class="hljs-comment">// This will output "42" to the development console</span>
+<span class="hljs-built_in">console</span>.log( myDemoInstance.myDemoMethod() );   
+</code></pre>
+            </div>
+        </div>
+
+        <p>When naming classes, methods, and properties, follow these rules:</p>
+
+        <ul>
+          <li>Use the <code class="highlighter-rouge">lowerCamelCase</code> nomenclature when naming functions, methods, properties, and factories. </li>
+             <li>Class naming should use <a href="https://en.wikipedia.org/wiki/CamelCase"><code
+                     Class="highlighter-rouge">UpperCamelCase</code></a> nomenclature.
+             </li>
+             <li>Private properties and methods start with an underscore (<code class="highlighter-rouge">_</code>). This does not mean that they are private, but developers are advised not to use them directly. </li>
+        </ul>
+
+        <h3 id="lclassinclude"><code class="highlighter-rouge">L.Class.include()</code></h3>
+
+        <p>If the class is already defined, you can redefine the existing property or method, or you can add a new property or method using the <code class="highlighter-rouge">.include()</code> method:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">MyDemoClass.include({
+
+    <span class="hljs-comment">// Adding a new property to the class</span>
+    _myPrivateProperty: <span class="hljs-number">78</span>,
+    
+    <span class="hljs-comment">// Redefining a method</span>
+    myDemoMethod: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span
+                        class="hljs-keyword">this</span>._myPrivateProperty; }
+
+});
+
+<span class="hljs-keyword">var</span> mySecondDemoInstance = <span class="hljs-keyword">new</span> MyDemoClass();
+
+<span class="hljs-comment">// This will output "78"</span>
+<span class="hljs-built_in">console</span>.log( mySecondDemoInstance.myDemoMethod() );
+
+<span class="hljs-comment">// However, properties and methods from before still exist</span>
+<span class="hljs-comment">// This will output "42"</span>
+<span class="hljs-built_in">console</span>.log( mySecondDemoInstance.myDemoProperty );
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="lclassinitialize"><code class="highlighter-rouge">L.Class.initialize()</code></h3>
+
+        <p>In OOP, classes have a constructor method. In Leaflet's <code class="highlighter-rouge">L.Class</code>, the constructor method is always named <code class="highlighter-rouge">initialize</code>.</p>
+
+        <p>If your class has some specific <code class="highlighter-rouge">options</code>, use the <code class="highlighter-rouge">L.setOptions()</code> method in the constructor. Initialization options are a good idea. This utility function will merge the provided options with the default options of the class.</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> MyBoxClass = L.Class.extend({
+
+    options: {
+        width: <span class="hljs-number">1</span>,
+        height: <span class="hljs-number">1</span>
+    },
+
+    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name, options</span>) </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+        L.setOptions(<span class="hljs-keyword">this</span>, options);
+    }
+    
+});
+
+<span class="hljs-keyword">var</span> instance = <span class="hljs-keyword">new</span> MyBoxClass(<span
+                        class="hljs-string">'Red'</span>, {width: <span class="hljs-number">10</span>});
+
+<span class="hljs-built_in">console</span>.log(instance.name); <span class="hljs-comment">// Outputs "Red"</span>
+<span class="hljs-built_in">console</span>.log(instance.options.width); <span
+                        class="hljs-comment">// Outputs "10"</span>
+<span class="hljs-built_in">console</span>.log(instance.options.height); <span class="hljs-comment">// Outputs "1", the default</span>
+</code></pre>
+            </div>
+        </div>
+
+        <p>The Leaflet handles the properties of <code class="highlighter-rouge">options</code> in a special way: the subclass will inherit the option properties of the parent class.</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> MyCubeClass = MyBoxClass.extend({
+    options: {
+        depth: <span class="hljs-number">1</span>
+    }
+});
+
+<span class="hljs-keyword">var</span> instance = <span class="hljs-keyword">new</span> MyCubeClass(<span
+                        class="hljs-string">'Blue'</span>);
+
+<span class="hljs-built_in">console</span>.log(instance.options.width); <span class="hljs-comment">// Outputs "1", parent class default</span>
+<span class="hljs-built_in">console</span>.log(instance.options.height); <span class="hljs-comment">// Outputs "1", parent class default</span>
+<span class="hljs-built_in">console</span>.log(instance.options.depth); <span class="hljs-comment">// Outputs "1"</span>
+</code></pre>
+            </div>
+        </div>
+
+        <p>It is very common for a subclass to execute its own constructor after executing the superclass constructor. This is done in Leafleet by using the <code class="highlighter-rouge">L.Class.addInitHook()</code> method. This method can "hook" the initialization function immediately after the class's <code class="highlighter-rouge">initialize()</code> method is executed, for example:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">MyBoxClass.addInitHook(<span
+                    class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>._area = <span class="hljs-keyword">this</span>.options.width * <span
+                        class="hljs-keyword">this</span>.options.length;
+});
+</code></pre>
+            </div>
+        </div>
+
+        <p>This function is executed after the <code class="highlighter-rouge">initialize()</code> method is executed (calling the <code class="highlighter-rouge">setOptions()</code> method). This means that <code class="highlighter-rouge">this.options</code> has taken effect before the "hook" function runs.</p>
+
+        <p><code class="highlighter-rouge">addInitHook</code>there is also a syntax for setting the method name and the parameter called in the method to its parameters.</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">MyCubeClass.include({
+    _calculateVolume: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg1, arg2</span>) </span>{
+        <span class="hljs-keyword">this</span>._volume = <span class="hljs-keyword">this</span>.options.width * <span
+                        class="hljs-keyword">this</span>.options.length * <span class="hljs-keyword">this</span>.options.depth;
+    }
+});
+
+MyCubeClass.addInitHook(<span class="hljs-string">'_calculateVolume'</span>, argValue1, argValue2);
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="methods-of-the-parent-class">Parent class method</h3>
+
+        <p>The method of the parent class is called by accessing the prototype of the parent class, which is implemented using the <code class="highlighter-rouge">Function.call(...)</code> method. For example, you can see it in the <code class="highlighter-rouge">L.FeatureGroup</code> tag:
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.FeatureGroup = L.LayerGroup.extend({
+
+    addLayer: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                        class="hljs-params">layer</span>) </span>{
+        …
+        L.LayerGroup.prototype.addLayer.call(<span class="hljs-keyword">this</span>, layer);
+    },
+    
+    removeLayer: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                        class="hljs-params">layer</span>) </span>{
+        …
+        L.LayerGroup.prototype.removeLayer.call(<span class="hljs-keyword">this</span>, layer);
+    },
+
+    …
+});
+</code></pre>
+            </div>
+        </div>
+
+        <p>The same method can be used to call the constructor of the parent class, but instead use the <code class="highlighter-rouge">ParentClass.prototype.initialize.call(this, ...)</code> method.
+        </p>
+
+        <h3 id="factories">Factories method</h3>
+
+        <p>Most Leaflet classes have a corresponding <a href="https://en.wikipedia.org/wiki/Factory_%28object-oriented_programming%29">factory
+             Function</a> method. The Factories method has the same name as the corresponding class, except that the Factories method uses <code class="highlighter-rouge">lowerCamelCase</code>:
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-function"><span
+                    class="hljs-keyword">function</span> <span class="hljs-title">myBoxClass</span>(<span
+                    class="hljs-params">name, options</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyBoxClass(name, options);
+}
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="naming-conventions">Naming rules </h3>
+
+        <p>Follow the naming convention when naming the Leaflet plugin:</p>
+
+        <ul>
+            <li>Never expose global variables in your plugin。</li>
+            <li>If you have a new class, put it directly in the <code class="highlighter-rouge">L</code> namespace (<code class="highlighter-rouge">L.MyPlugin</code>).
+            </li>
+            <li>If you want to inherit an existing class, set the child properties of the existing class.</li>
+        </ul>
+
+
+{% endblock %}

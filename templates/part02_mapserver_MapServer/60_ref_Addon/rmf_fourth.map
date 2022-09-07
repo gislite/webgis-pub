@@ -1,0 +1,189 @@
+#####################################
+#
+# MapServer Fourth application
+#
+MAP
+#####################################
+# Map object
+#
+NAME "Fourth"                         # used as base image name
+UNITS dd                              # units are decimal degrees
+EXTENT -180.0 -85.0 180.0 85.0        # map extent
+SIZE 640 320                          # map image size in pixels
+IMAGECOLOR 200 225 255                # background color
+IMAGETYPE PNG                         # image type jpeg/gif/png
+# SHAPEPATH "/home/mapdata/"            # path to data directory
+# FONTSET "/var/www/htdocs/fontset.txt" # pointers to fonts
+SHAPEPATH "/gdata/data_book2"
+# SHAPEPATH ""
+# FONTSET "/var/www/htdocs/fontset.txt"
+FONTSET "../fonts/fonts.list"
+
+##################################### 
+# Web object
+#
+WEB
+    # A header/footer defined in a web object is displayed 
+    # before/after any individual query response is made. 
+    # It is displayed only once. 
+    #
+    HEADER "/owg/mb_fourth_web_header.html"
+    FOOTER "/owg/mb_fourth_web_footer.html"
+
+    EMPTY  "/mb_fourth_empty.html"             # URL
+    TEMPLATE "/owg/mb_fourth.html"
+    IMAGEPATH "/owg/ms_tmp/"
+    IMAGEURL "/ms_tmp/"                        # URL
+END
+
+##################################### 
+# Reference map
+#
+REFERENCE
+    IMAGE "/owg/mb_fourth_worldref.gif"
+    SIZE 320 160
+    EXTENT -180.0 -85.0 180.0  85.0
+    STATUS ON
+    COLOR -1 -1 -1
+    OUTLINECOLOR 255 0 0
+END
+
+##################################### 
+# Querymap object
+#
+QUERYMAP                     
+    STATUS on                # draw query map
+    STYLE hilite             # highlight selected feature
+    COLOR 255 255 0          # in yellow
+    SIZE 320 160
+END
+
+####################################
+# Country layer
+#
+LAYER
+    NAME "Countries"
+    STATUS on
+    TYPE polygon
+    DATA "countries"
+
+    # A header or footer defined at the layer level is displayed
+    # if that layer is a query layer. It is displayed only once.
+    #
+    HEADER "/owg/mb_fourth_countries_header.html"
+    FOOTER "/owg/mb_fourth_countries_footer.html"
+
+    TOLERANCE 1             # must be within 1 tolerance unit
+    TOLERANCEUNITS miles    # units for tolerance values is miles
+
+    CLASS    
+        # A template defined at the class level is used to 
+        # display the results for each reponse to a query. If a 
+        # query results in N hits, then the template will be used
+        # N times. To be queriable a layer must specify a CLASS 
+        # level template.
+        #
+        # TEMPLATE "/var/www/htdocs/fourth_countries_query.html"
+        TEMPLATE "/owg/mb_fourth_countries_query.html"
+        STYLE
+            COLOR 199 199 199
+        END
+    END # end class    
+END # end layer        
+
+####################################
+# Cities layer
+#
+LAYER
+    NAME "Cities"                     
+    STATUS on
+    TYPE point
+    DATA "cities"
+    LABELITEM "CITY"        # labels use value in column "CITY"
+    LABELCACHE on
+
+    # A header or footer defined at the layer level is displayed
+    # if that layer is a query layer. It is displayed only once.
+    #
+    HEADER "/owg/mb_fourth_cities_header.html"
+    FOOTER "/owg/mb_fourth_cities_footer.html"
+
+    TOLERANCE 1             # must be within 1 tolerance unit
+    TOLERANCEUNITS miles    # units for tolerance values is miles
+
+    CLASS
+        # A template defined at the class level is used to display
+        # the results for each reponse to a query. If a result set
+        # contains N, then the template will be used N times.
+        #
+        TEMPLATE "/owg/mb_fourth_cities_query.html"
+        STYLE
+            COLOR 0 0 0     # symbol color is black
+        END
+        LABEL            
+            TYPE truetype   # use truetype font
+            # FONT "arialbd"  # use arial bold
+            SIZE 8          # use 8 point size
+            COLOR 255 0 0   # color text red
+            # BACKGROUNDCOLOR 255 255 255 # render text on white bg
+            MINDISTANCE 50  # labels > 50 pixels apart
+            POSITION lc     # center labels below feature
+            ANTIALIAS true  # antialias the text
+        END # end label        
+    END # end class
+
+    # To use information stored in a DBF file external to a shape
+    # file requires a JOIN. You must identify the external file 
+    # with the keyword TABLE. The NAME is the reference to use in 
+    # the template file. To link the shape to the external DBF, 
+    # FROM and TO specify the fields that must match.
+
+    JOIN
+        TABLE "/owg/mb_fourth_join.dbf"
+        NAME "test-join"
+        FROM "CITY"
+        TO "CITY"
+    END  
+END # end layer
+
+####################################
+# Line layer for Country boundaries
+#
+LAYER
+    NAME "Boundaries" 
+    STATUS default
+    TYPE line
+    DATA "countries"
+    CLASS
+        STYLE
+            COLOR 0 0 0 
+        END
+    END # end class
+END # end layer
+
+####################################
+# Annotation layer for Countries
+LAYER
+    STATUS DEFAULT          # this layer is always rendered
+    TYPE POLYGON
+    DATA "countries"
+    LABELITEM "STATE"       # labels use value in column "STATE"
+    LABELCACHE on
+    CLASS                   # class renders line & label
+        STYLE
+            COLOR 0 0 0     # line color is black
+        END
+        LABEL                
+            TYPE truetype   # use truetype font
+            # FONT "arialbi"  # use arial bold
+            SIZE 8          # use 8 point szie
+            COLOR 0 0 0     # color text black
+            # BACKGROUNDCOLOR 255 255 255 # render text on white bg
+            MINDISTANCE 50  # labels > 50 pixels apart
+            POSITION cc     # labels in center of feature
+            ANTIALIAS true  # antialias the text
+        END # end label    
+    END # end class    
+END # end layer
+
+END # end of map file

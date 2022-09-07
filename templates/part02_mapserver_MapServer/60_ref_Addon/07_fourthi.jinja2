@@ -1,0 +1,37 @@
+{% extends "contentj.jinja2" %}
+
+{#
+来自：
+<Beginning MapServer>  https://www.amazon.com/Beginning-MapServer-Source-Development-Experts/dp/1590594908
+#}
+
+<title>Case 3: MapServer Search</title>
+{% block cntbody %}
+    <h1>MapServer Search</h1>
+
+
+    <h2 id="jvs">说明</h2>
+
+    <p>这个页面对 MapServer 检索功能进行说明。 但尚未修改成功。</p>
+
+    <h2 id="jzs">示例</h2>
+    <form method=GET action="/cgi-bin/mapserv" class="form-horizontal">
+        <input type="submit" value="检索" class="btn btn-sm btn-primary">
+        <input type="hidden" name="program" value="mapserv">
+        <input type="hidden" name="map" value="/owg/mb_fourth.map">
+        <input type="hidden" name=zoomsize size=2 value=2>
+        <input type="hidden" name=map_Cities_tolerance size=4 value=100>
+        <input type="hidden" name=map_Countries_tolerance size=4 value=100>
+        <input type="hidden" name="layers" value="Cities Countries">
+        <input type="hidden" name="slayer" value="Countries">
+
+        <input type="hidden" name="mapshape" value="">
+        <input type="hidden" name="imgshape" value="">
+        <input type="hidden" name="imgbox" value="">
+        <input type="hidden" name="qstring" value="">
+        <input type="hidden" name="qlayer" value="">
+        <input type="hidden" name="qitem" value="">
+        <input type="hidden" name="shapeindex" value="">
+        <input type="hidden" name="savequery" value="">
+    </form>
+{% endblock %}

@@ -1,0 +1,196 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+
+
+    <title>Extended Leaflet: New Handlers and Controls</title>
+
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+
+    <p>This tutorial assumes that you have read Leaflet's principle of class inheritance.</p>
+
+    <p>In Leaflet, "layer" refers to anything that can be moved with the map. In contrast, a "control" is an HTML element that remains static relative to the map container, and a "handler" is an invisible piece of code that changes the behavior of the map.</p>
+
+    <h2 id="handlers">Handler</h2>
+
+    <p>Map Handlers are a new concept in Leaflet 1.0 that handles DOM events in the browser and changes the state of the map.</p>
+
+    <p>The handlers are relatively simple: they only need a <code class="highlighter-rouge">addHooks()</code> method (when the handler is running in the map) and a <code class="highlighter-rouge">removeHooks( )</code> method (runs when the handler is disabled). The framework of the handler is as follows:...</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.CustomHandler = L.Handler.extend({
+    addHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.on(<span class="hljs-built_in">document</span>, <span
+                    class="hljs-string">'eventname'</span>, <span
+                    class="hljs-keyword">this</span>._doSomething, <span class="hljs-keyword">this</span>);
+    },
+
+    removeHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.off(<span class="hljs-built_in">document</span>, <span
+                    class="hljs-string">'eventname'</span>, <span
+                    class="hljs-keyword">this</span>._doSomething, <span class="hljs-keyword">this</span>);
+    },
+
+    _doSomething: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">event</span>) </span>{ … }
+});
+</code></pre>
+        </div>
+    </div>
+
+    <p>This can be illustrated by a simple handler that pans the map via the <code class="highlighter-rouge">deviceorientation</code> event when the mobile device is tilted:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.TiltHandler = L.Handler.extend({
+    addHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.on(<span class="hljs-built_in">window</span>, <span
+                    class="hljs-string">'deviceorientation'</span>, <span
+                    class="hljs-keyword">this</span>._tilt, <span class="hljs-keyword">this</span>);
+    },
+
+    removeHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.off(<span class="hljs-built_in">window</span>, <span class="hljs-string">'deviceorientation'</span>, <span
+                    class="hljs-keyword">this</span>._tilt, <span class="hljs-keyword">this</span>);
+    },
+
+    _tilt: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>) </span>{
+        <span class="hljs-comment">// Treat Gamma angle as horizontal pan (1 degree = 1 pixel) and Beta angle as vertical pan</span>
+        <span class="hljs-keyword">this</span>._map.panBy( L.point( ev.gamma, ev.beta ) );
+    }
+});
+</code></pre>
+        </div>
+    </div>
+
+    <p>The handler can be attached to the map using <code class="highlighter-rouge">map.addHandler('tilt', L.TiltHandler)</code> - this will make <code class="highlighter-rouge">L.TiltHandler The instance of </code> is stored as <code class="highlighter-rouge">map.tilt</code>. However, the handler is usually attached using the <code class="highlighter-rouge">addInitHook</code> syntax. To all maps:...</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.Map.addInitHook(<span
+                class="hljs-string">'addHandler'</span>, <span class="hljs-string">'tilt'</span>, L.TiltHandler);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Our handlers can now be enabled by running <code class="highlighter-rouge">map.tilt.enable()</code> via <code class="highlighter-rouge">map.tilt.disable() </code> to disable.
+    </p>
+
+    <p>Also, if the property name of the map is the same as the handler name, then the handler will be enabled by default when the option is true:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'mapDiv'</span>, { tilt: <span
+                class="hljs-literal">true</span> });
+</code></pre>
+        </div>
+    </div>
+
+    <p>To see this example, you'll need a mobile browser that supports device location events. Even so, this event is particularly non-standard, so use it with caution.</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_new_handlers_and_controls/tilt.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_new_handlers_and_controls/tilt.html">查看本实例</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>Depending on the type of event, the map handler can attach the event listener to the
+        <code class="highlighter-rouge">document</code>, <code class="highlighter-rouge">window</code> or it is attached In the
+        <code class="highlighter-rouge">L.Map</code> container....</p>
+
+    <h2 id="controls">Control</h2>
+
+    <p>You already know the control - the zoom control in the upper left corner, the zoom ratio in the lower left corner, and the layer switch in the upper right corner. In their center,
+        <code class="highlighter-rouge">L.Control</code> is the HTML element in a static location in the map container.</p>
+
+    <p>To make a control, just inherit from <code class="highlighter-rouge">L.Control</code>. Control and implement on<code class="highlighter-rouge">onAdd()</code> and <code class="highlighter-rouge">onRemove()</code>. These methods work similarly to <code class="highlighter-rouge">L.Layer</code>. Just <code class="highlighter-rouge">onAdd()</code> must return a <code class="highlighter-rouge">HTMLElement</code> representing the control. Adding an element to the map is done automatically, so removing it is also true.
+    </p>
+
+    <p>The simplest example of a custom control is a watermark, which is just an image：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.Control.Watermark = L.Control.extend({
+    onAdd: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">map</span>) </span>{
+        <span class="hljs-keyword">var</span> img = L.DomUtil.create(<span class="hljs-string">'img'</span>);
+
+        img.src = <span class="hljs-string">'../../docs/images/logo.png'</span>;
+        img.style.width = <span class="hljs-string">'200px'</span>;
+
+        <span class="hljs-keyword">return</span> img;
+    },
+
+    onRemove: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">map</span>) </span>{
+        <span class="hljs-comment">// Nothing to do here</span>
+    }
+});
+
+L.control.watermark = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">opts</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> L.Control.Watermark(opts);
+}
+
+L.control.watermark({ position: <span class="hljs-string">'bottomleft'</span> }).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_new_handlers_and_controls/watermark.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_new_handlers_and_controls/watermark.html">View this example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>If your custom control has interactive elements, such as a clickable button,
+         Remember to use <code class="highlighter-rouge">L.DomEvent.on()</code> in <code class="highlighter-rouge">onAdd()</code>,
+         Use <code class="highlighter-rouge">L.DomEvent.off()</code> in <code class="highlighter-rouge">onRemove()</code>.
+    </p>
+
+    <p>If your custom control consists of multiple HTML elements (such as <code class="highlighter-rouge">L.Control.Zoom</code> with two buttons), you must create the entire element hierarchy and return the most The top container.
+    </p>
+
+    <h2 id="publishing-your-plugin">Publishing plugin</h2>
+
+    <p>If you already know everything, you are ready to make the SOM Leaflet plugin!
+         But be sure to read the <code class="highlighter-rouge">PLUGIN-GUIDE.md</code> file.
+         Because it contains some tips and good practices for naming and publishing plugins.
+    </p>
+
+
+
+
+
+{% endblock %}

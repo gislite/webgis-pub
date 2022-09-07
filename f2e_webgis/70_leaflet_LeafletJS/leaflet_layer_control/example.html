@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Layers Control Tutorial - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" ></script>
+
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+	var cities = L.layerGroup();
+
+	L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
+	L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
+	L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
+	L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'openstreet.map',   attribution: mbAttr});
+
+	var map = L.map('map', {
+		center: [39.73, -104.99],
+		zoom: 10,
+		layers: [grayscale, cities]
+	});
+
+	var baseLayers = {
+		"Grayscale": grayscale,
+		"Streets": streets
+	};
+
+	var overlays = {
+		"Cities": cities
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+</script>
+
+
+
+</body>
+</html>

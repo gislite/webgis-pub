@@ -1,0 +1,61 @@
+# 由Pericles S. Nacionales创建MapServer 教程
+# 20050408
+
+# MapServer地图文件使用英镑符号（#）表示一行MapServer的开始
+# 注释--需要注释的每一行必须以“#”开始。
+# 地图文件以地图的关键词开始来表示地图对象的开始。
+# 整个的地图文件是地图对象。在地图和地图文件之间附上的是关键词/有价值的对和其它的对象。
+MAP
+  IMAGETYPE      PNG
+  EXTENT         -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  IMAGECOLOR     255 255 255
+
+  WEB
+    METADATA
+      "wms_title"           "WMS Demo Server"
+      "wms_onlineresource"  "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+      "ows_onlineresource"  "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+      "wms_srs"             "EPSG:4269 EPSG:4326"
+      "wms_enable_request" "* !GetFeatureInfo"
+    END
+  END
+
+
+ LAYER
+       NAME "topo"
+       DATA "land_shallow_topo_8192.tif"
+       STATUS OFF
+       TYPE RASTER
+       PROCESSING "BANDS=1,2,3"
+       PROJECTION
+           "init=epsg:4326"
+       END
+   END
+
+  # 开始图层定义
+  LAYER # States polygon layer begins here
+    NAME         states
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         POLYGON
+
+    # 类对象与图层对象一起定义。你可以定义和
+    # 你需要的一样多的类（对图层有限制，但是
+    # 在一个正常的地图上定义多于10个是没有意义的。
+    # 但是有时候你不得不这样做。）
+    CLASS
+      NAME "The Upper Great Lakes States"
+
+      # 在一个类中有样式，正如在一个图层中有类别，
+      # 就像在一个地图中有图层。你可以在一个类
+      # 中定义不同的样式就像你可以在一个图层中
+      # 定义不同的类和在一个地图中定义不同的图层。
+      STYLE
+        COLOR        232 232 232
+        OUTLINECOLOR 32 32 32
+      END
+    END # States polygon layer ends here
+  END # End of LAYER DEFINITIONS
+END # 所有的地图文件必须结束

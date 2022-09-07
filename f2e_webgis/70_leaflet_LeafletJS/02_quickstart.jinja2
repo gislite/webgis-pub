@@ -1,0 +1,286 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+
+    <title>First use LeafletJS</title>
+
+
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+    <h2 id="leaflet-quick-start-guide">Introduction to Leaflet</h2>
+
+    <p class="tutorials-back">
+       Leaflet is an open source JavaScript library for interactive rendering of mobile-side maps. Its design philosophy is efficient, lightweight and practical.
+         It's only about 38KB in size, but with the map manipulation capabilities most developers need to work on common desktop and mobile platforms. Scalable plug-in system, clear and readable code, and elegant
+         Documentation and easy to use API. </p>
+
+    <h3 id="l1o">Introduction</h3>
+
+<p>Leaflet is a modern, open source JavaScript library developed for building interactive, mobile maps.
+The code is only 33 KB, but it has most of the features for developing online maps. The Leaflet design adheres to the philosophy of simplicity, performance and usability.
+Works efficiently on all major desktop and mobile platforms, leveraging the power of HTML5 and CSS3 on modern browsers while also supporting old browser access.
+Support for plugin extensions, a friendly, easy to use API documentation and a simple, readable source code. Leaflet's powerful open source library plugin covers all aspects of map applications including map services.
+     There are more than 140 plugins for data provisioning, data formatting, geocoding, route and route search, map controls and interactions. These controls enrich the functionality of the leaflet, and it is also very convenient to implement custom controls with good scalability.</p>
+<p>Leaflet is the main open source JavaScript library for mobile interactive maps. The size of the JS library is around 38k, but it has all the map features that most developers need.
+Leaflet maintains the design philosophy of simplicity, performance and usability. It works efficiently on all major desktop and mobile platforms.
+The plugin can be extended, it has a nice, easy to use and well documented API, and a simple, easy to read source code.</p>
+
+    <h3 id="zl8">Leaflet Getting Started Guide</h3>
+
+    <p>This step-by-step guide gives you a quick overview of leaflet basics, including building leaflet maps, using markers, multi-line and pop-ups, and handling events.</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="vk1">Preparation page</h3>
+
+    <p>Before writing the map code, you need to do the following on the page:</p>
+
+    <ul>
+        <li>
+            <p>Add the following code between the &lt;head&gt; tag and the &lt;/head&gt; tag on the page:</p>
+
+            <div class="highlighter-rouge">
+                <div class="highlight"><pre class="highlight"><code class="hljs xml">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet@1.3.4/dist/leaflet.css&quot;
+integrity=&quot;sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==&quot;
+crossorigin=&quot;&quot;/&gt;
+&lt;!-- make sureleaflet.js put Leaflet&#x27;s CSS after that --&gt;
+&lt;script src=&quot;https://unpkg.com/leaflet@1.3.4/dist/leaflet.js&quot;
+integrity=&quot;sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==&quot;
+crossorigin=&quot;&quot;&gt;&lt;/script&gt;
+    </code></pre>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p>Create a <code class="highlighter-rouge">div</code> with <code class="highlighter-rouge">id</code> where you want to create the map.
+            </p>
+            <div class="highlighter-rouge">
+                <div class="highlight"><pre class="highlight"><code class="hljs xml">
+                    <span class="hljs-tag">&lt;<span
+                        class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"mapid"</span>&gt;</span><span
+                        class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    </code></pre>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p>Make sure the map has a clear height, as defined in CSS:</p>
+
+            <pre><code class="css hljs"><span class="hljs-id">#mapid</span> <span class="hljs-rules">{ <span
+                    class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span
+                    class="hljs-number">180px</span></span></span>; }</span></code></pre>
+        </li>
+    </ul>
+
+    <p> Now that the map has been initialized, you can be prepared to do something with it.</p>
+
+    <h3 id="v2f">Create a map</h3>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example-basic.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example-basic.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>1.Initialize the map and set its view to the geographic coordinates and zoom level we selected:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> mymap = L.map(<span class="hljs-string">'mapid'</span>).setView([<span
+                class="hljs-number">51.505</span>, -<span class="hljs-number">0.09</span>], <span
+                class="hljs-number">13</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p>By default (because we didn't set any parameters when creating the map instance), all mouse events and touch interactions on the map are turned on, and it has zoom and property controls.</p>
+
+    <p>2.Show map。</p>
+
+    <pre><code class="javascript hljs">L.tileLayer(<span class="hljs-string">'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}'</span>, {
+    attribution: <span class="hljs-string">'Map data &amp;copy; </span><span class="text-cut" data-cut="[…]"><span
+                class="hljs-string">&lt;a href="https://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="https://creativecommons.org/licenses/by-sa/2.0/"&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href="https://www.mapbox.com/"&gt;Mapbox&lt;/a&gt;</span></span><span
+                class="hljs-string">'</span>,
+    maxZoom: <span class="hljs-number">18</span>,
+    id: <span class="hljs-string">'openstreet.map'</span>,
+    accessToken: <span class="hljs-string">'your.mapbox.access.token'</span>
+}).addTo(mymap);</code></pre>
+
+    <p>Make sure all the code is in the <code class="highlighter-rouge">div</code> and <code class="highlighter-rouge">leaflet.js</code> for displaying the map.
+         Called after inclusion.</p>
+
+    <h3 id="nv2">Dot markers, circular markers, and polygon markers</h3>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example-overlays.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example-overlays.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>In addition to tiles, you can easily add other things to the map, including markers, polylines, polygons, circles, and pop-ups. Let's add a tag:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> marker = L.marker([<span class="hljs-number">51.5</span>, -<span
+                class="hljs-number">0.09</span>]).addTo(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Add a circular marker：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> circle = L.circle([<span class="hljs-number">51.508</span>, -<span
+                class="hljs-number">0.11</span>], {
+    color: <span class="hljs-string">'red'</span>,
+    fillColor: <span class="hljs-string">'#f03'</span>,
+    fillOpacity: <span class="hljs-number">0.5</span>,
+    radius: <span class="hljs-number">500</span>
+}).addTo(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Adding polygon markers is equally easy:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> polygon = L.polygon([
+    [<span class="hljs-number">51.509</span>, -<span class="hljs-number">0.08</span>],
+    [<span class="hljs-number">51.503</span>, -<span class="hljs-number">0.06</span>],
+    [<span class="hljs-number">51.51</span>, -<span class="hljs-number">0.047</span>]
+]).addTo(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <h3 id="vj2">Use pop-ups</h3>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example-popups.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example-popups.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>Pop-ups are often used to attach certain information to specific objects on the map. Leaflet has a very simple way to do this:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">marker.bindPopup(<span
+                class="hljs-string">"&lt;b&gt;Hello world!&lt;/b&gt;&lt;br&gt;I am a popup."</span>).openPopup();
+circle.bindPopup(<span class="hljs-string">"I am a circle."</span>);
+polygon.bindPopup(<span class="hljs-string">"I am a polygon."</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Try clicking on our object. The bindPopup method attaches a popup window with the specified HTML content to the markup, so when you click on the object, a popup appears and the openPopup method (for markup only) immediately opens the attached popup.</p>
+
+    <p>You can also set the popup as a layer (when you need more stuff instead of attaching a popup to an object)：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> popup = L.popup()
+    .setLatLng([<span class="hljs-number">51.5</span>, -<span class="hljs-number">0.09</span>])
+    .setContent(<span class="hljs-string">"I am a standalone popup."</span>)
+    .openOn(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Here we use <code class="highlighter-rouge">openOn</code> instead of <code class="highlighter-rouge">addTo</code>
+         Because it opens a new pop-up window, it handles the automatic closing of previously opened pop-ups, which enhances usability.</p>
+
+    <h3 id="dv2">Handling events</h3>
+
+    <p>Every time something happens in the Leaflet, such as when a user clicks on a marker or a map zoom changes, the corresponding object sends an event that you can handle through a function that allows you to react to user interaction:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span
+                class="hljs-keyword">function</span> <span class="hljs-title">onMapClick</span>(<span
+                class="hljs-params">e</span>) </span>{
+    alert(<span class="hljs-string">"You clicked the map at "</span> + e.latlng);
+}
+
+mymap.on(<span class="hljs-string">'click'</span>, onMapClick);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Each object has its own set of events, and the first parameter of the listener function is the event object, which contains useful information about the event that occurred. For example, a MAP click event object (e in the example above) has a latlng attribute, and the latlng attribute is where the click occurs.</p>
+
+    <p>Let's improve our example by using popup instead of alert：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> popup = L.popup();
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onMapClick</span>(<span
+        class="hljs-params">e</span>) </span>{
+    popup
+        .setLatLng(e.latlng)
+        .setContent(<span class="hljs-string">"You clicked the map at "</span> + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on(<span class="hljs-string">'click'</span>, onMapClick);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Try clicking on the map and you will see the coordinates in the popup. See the full example <a target="_blank" href="./leaflet_quickstart/quickstart.html">View full instance →</a></p>
+
+
+
+
+
+
+
+
+{% endblock %}

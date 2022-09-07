@@ -1,0 +1,397 @@
+{% extends "contentj.jinja2" %}
+
+{% block headbody %}
+    <title>Interactive multicolor separation map</title>
+{% endblock %}
+
+{% block cntbody %}
+    <h2 id="interactive-choropleth-map">Interactive map</h2>
+
+    <p>This is a case study that, with the help of GeoJSON and some custom controls, creates a color interactive US state population density map.</p>
+
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_choropleth/example.html" width="816" height="516"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_choropleth/example.html">See this example stand-alone.</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="data-source">data source</h3>
+
+    <p>We visualize data on US population density. Since the amount of data is not very large, the easiest way to store and display data is GeoJSON.</p>
+
+    <p>Each feature of our GeoJSON data will be like this：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs json">{
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span
+                    class="hljs-string">"Feature"</span></span>,
+    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Alabama"</span></span>,
+        "<span class="hljs-attribute">density</span>": <span class="hljs-value"><span class="hljs-number">94.65</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">geometry</span>": <span class="hljs-value">...
+    ...
+</span>}
+</code></pre>
+        </div>
+    </div>
+
+
+    <h3 id="basic-states-map">Basic state diagram</h3>
+
+    <p>Let's display our status data on the map in a custom Mapbox style.。</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> mapboxAccessToken = {your access token here};
+<span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>).setView([<span
+                    class="hljs-number">37.8</span>, -<span class="hljs-number">96</span>], <span
+                    class="hljs-number">4</span>);
+
+L.tileLayer(<span class="hljs-string">'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='</span> + mapboxAccessToken, {
+    id: <span class="hljs-string">'mapbox.light'</span>,
+    attribution: ...
+}).addTo(map);
+
+L.geoJson(statesData).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_choropleth/example-basic.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_choropleth/example-basic.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="adding-some-color">Add color</h3>
+
+    <p>
+        Now we need to color the states based on population density. Choosing good colors for your map may require a bit of skill, but there is a great tool to help us -- ColorBrewer.
+         We create a function that returns the population based density based on the values obtained from ColorBrewer:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">getColor</span>(<span class="hljs-params">d</span>) </span>{
+    <span class="hljs-keyword">return</span> d &gt; <span class="hljs-number">1000</span> ? <span
+                    class="hljs-string">'#800026'</span> :
+           d &gt; <span class="hljs-number">500</span>  ? <span class="hljs-string">'#BD0026'</span> :
+           d &gt; <span class="hljs-number">200</span>  ? <span class="hljs-string">'#E31A1C'</span> :
+           d &gt; <span class="hljs-number">100</span>  ? <span class="hljs-string">'#FC4E2A'</span> :
+           d &gt; <span class="hljs-number">50</span>   ? <span class="hljs-string">'#FD8D3C'</span> :
+           d &gt; <span class="hljs-number">20</span>   ? <span class="hljs-string">'#FEB24C'</span> :
+           d &gt; <span class="hljs-number">10</span>   ? <span class="hljs-string">'#FED976'</span> :
+                      <span class="hljs-string">'#FFEDA0'</span>;
+}
+</code></pre>
+        </div>
+    </div>
+
+    <p>Next, we define the style function of the GeoJSON layer so that its <code class="highlighter-rouge">fill color</code> depends on <code class="highlighter-rouge">feature.properties.density</code> . At the same time, we also adjusted the appearance and added beautiful strokes.
+    </p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">style</span>(<span class="hljs-params">feature</span>) </span>{
+    <span class="hljs-keyword">return</span> {
+        fillColor: getColor(feature.properties.density),
+        weight: <span class="hljs-number">2</span>,
+        opacity: <span class="hljs-number">1</span>,
+        color: <span class="hljs-string">'white'</span>,
+        dashArray: <span class="hljs-string">'3'</span>,
+        fillOpacity: <span class="hljs-number">0.7</span>
+    };
+}
+
+L.geoJson(statesData, {style: style}).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p>It looks much better now!</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_choropleth/example-color.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_choropleth/example-color.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="adding-interaction">Adding Interaction</h3>
+
+    <p>Now let's make the color block highlight when we pass the mouse over the color patches on the map that represent the states of the United States. First, we'll define an event listener for the layer's mouse events:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">highlightFeature</span>(<span
+                class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">var</span> layer = e.target;
+
+    layer.setStyle({
+        weight: <span class="hljs-number">5</span>,
+        color: <span class="hljs-string">'#666'</span>,
+        dashArray: <span class="hljs-string">''</span>,
+        fillOpacity: <span class="hljs-number">0.7</span>
+    });
+
+    <span class="hljs-keyword">if</span> (!L.Browser.ie &amp;&amp; !L.Browser.opera &amp;&amp; !L.Browser.edge) {
+        layer.bringToFront();
+    }
+}
+</code></pre>
+        </div>
+    </div>
+
+    <p>Here we pass <code class="highlighter-rouge">e.target</code>
+         Get the mouseover layer and set a wide gray border on this layer as our highlight, while placing the layer on the top layer,
+         This way the border will not conflict with the nearby state (instead of IE, Opera or Edge).
+    </p>
+
+    <p>Next, we'll define what happens to <code class="highlighter-rouge">mouseout</code>:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resetHighlight</span>(<span
+                class="hljs-params">e</span>) </span>{
+    geojson.resetStyle(e.target);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <p> The convenient geojson.resetStyle method will reset the layer's style to the default state (defined by our <code class="highlighter-rouge">style</code> function). To do this, make sure our GeoJSON layer can be defined by the previous listener <code
+             Class="highlighter-rouge">geojson</code> variable access, then assign this GeoJSON layer to <code
+             Class="highlighter-rouge">geojson</code> variable:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> geojson;
+<span class="hljs-comment">// ... our listeners</span>
+geojson = L.geoJson(...);
+</code></pre>
+        </div>
+    </div>
+
+    <p> Let's define a click listener to zoom in on the state:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">zoomToFeature</span>(<span
+                class="hljs-params">e</span>) </span>{
+    map.fitBounds(e.target.getBounds());
+}
+</code></pre>
+        </div>
+    </div>
+
+    <p> Now we will use the <code class="highlighter-rouge">onEachFeature</code> option to add listeners to the layers in which the states are located:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onEachFeature</span>(<span
+                class="hljs-params">feature, layer</span>) </span>{
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+geojson = L.geoJson(statesData, {
+    style: style,
+    onEachFeature: onEachFeature
+}).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p>This makes the state on the map stand out when the mouse passes, and gives us the ability to add other interactive features to the listener.</p>
+
+    <h3 id="custom-info-control">Custom information control</h3>
+
+    <p>Usually we use pop-ups to display information, but we now use a different method - displaying information in a custom control when hovering over it.</p>
+
+    <p> Here is our control code:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> info = L.control();
+
+info.onAdd = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">map</span>) </span>{
+    <span class="hljs-keyword">this</span>._div = L.DomUtil.create(<span
+                    class="hljs-string">'div'</span>, <span
+                    class="hljs-string">'info'</span>); <span class="hljs-comment">// create a div with a class "info"</span>
+    <span class="hljs-keyword">this</span>.update();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._div;
+};
+
+<span class="hljs-comment">// method that we will use to update the control based on feature properties passed</span>
+info.update = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">props</span>) </span>{
+    <span class="hljs-keyword">this</span>._div.innerHTML = <span class="hljs-string">'&lt;h4&gt;US Population Density&lt;/h4&gt;'</span> +  (props ?
+        <span class="hljs-string">'&lt;b&gt;'</span> + props.name + <span
+                    class="hljs-string">'&lt;/b&gt;&lt;br /&gt;'</span> + props.density + <span
+                    class="hljs-string">' people / mi&lt;sup&gt;2&lt;/sup&gt;'</span>
+        : <span class="hljs-string">'Hover over a state'</span>);
+};
+
+info.addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p>When the user mouse passes through a certain state, we need to update the controls, so we modify the listener as follows：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">highlightFeature</span>(<span
+                class="hljs-params">e</span>) </span>{
+    ...
+    info.update(layer.feature.properties);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span
+        class="hljs-title">resetHighlight</span>(<span class="hljs-params">e</span>) </span>{
+    ...
+    info.update();
+}
+</code></pre>
+        </div>
+    </div>
+
+    <p> The control needs some CSS style to make it look good：</p>
+
+    <div class="css highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs css"><span
+                class="hljs-class">.info</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span
+            class="hljs-number">6px</span> <span class="hljs-number">8px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font</span>:<span class="hljs-value"> <span
+            class="hljs-number">14px</span>/<span
+            class="hljs-number">16px</span> Arial, Helvetica, sans-serif</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span
+            class="hljs-value"> white</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span
+            class="hljs-function">rgba</span>(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span
+            class="hljs-number">255</span>,<span class="hljs-number">0.8</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> <span
+            class="hljs-number">0</span> <span class="hljs-number">0</span> <span
+            class="hljs-number">15px</span> <span
+            class="hljs-function">rgba</span>(<span class="hljs-number">0</span>,<span
+            class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span
+            class="hljs-number">0.2</span>)</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span
+            class="hljs-number">5px</span></span></span>;
+}</span>
+<span class="hljs-class">.info</span> <span class="hljs-tag">h4</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span
+            class="hljs-number">0</span> <span class="hljs-number">0</span> <span
+            class="hljs-number">5px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span
+            class="hljs-hexcolor">#777</span></span></span>;
+}</span>
+</code></pre>
+        </div>
+    </div>
+
+    <h3 id="custom-legend-control">Custom legend control</h3>
+
+    <p> It's easier to create a control with a legend because it's static and won't change when the state is hovered. JavaScript code:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> legend = L.control({position: <span class="hljs-string">'bottomright'</span>});
+
+legend.onAdd = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">map</span>) </span>{
+
+    <span class="hljs-keyword">var</span> div = L.DomUtil.create(<span class="hljs-string">'div'</span>, <span
+                    class="hljs-string">'info legend'</span>),
+        grades = [<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span
+                    class="hljs-number">20</span>, <span class="hljs-number">50</span>, <span
+                    class="hljs-number">100</span>, <span
+                    class="hljs-number">200</span>, <span class="hljs-number">500</span>, <span
+                    class="hljs-number">1000</span>],
+        labels = [];
+
+    <span class="hljs-comment">// loop through our density intervals and generate a label with a colored square for each interval</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span
+                    class="hljs-number">0</span>; i &lt; grades.length; i++) {
+        div.innerHTML +=
+            <span class="hljs-string">'&lt;i style="background:'</span> + getColor(grades[i] + <span
+                    class="hljs-number">1</span>) + <span class="hljs-string">'"&gt;&lt;/i&gt; '</span> +
+            grades[i] + (grades[i + <span class="hljs-number">1</span>] ? <span class="hljs-string">'&amp;ndash;'</span> + grades[i + <span
+                    class="hljs-number">1</span>] + <span class="hljs-string">'&lt;br&gt;'</span> : <span
+                    class="hljs-string">'+'</span>);
+    }
+
+    <span class="hljs-keyword">return</span> div;
+};
+
+legend.addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p> The CSS style of the control (we also reuse the previously defined <code class="highlighter-rouge">info</code> class)：</p>
+
+    <div class="css highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs css"><span
+                class="hljs-class">.legend</span> <span
+                class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span
+            class="hljs-number">18px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span
+            class="hljs-hexcolor">#555</span></span></span>;
+}</span>
+<span class="hljs-class">.legend</span> <span class="hljs-tag">i</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span
+            class="hljs-number">18px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span
+            class="hljs-number">18px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span
+            class="hljs-value"> left</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span
+            class="hljs-number">8px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span
+            class="hljs-number">0.7</span></span></span>;
+}</span>
+</code></pre>
+        </div>
+    </div>
+
+    <p> Enjoy <a href="./leaflet_choropleth/choropleth.html">results</a> at the top of this page, or on a separate page.</p>
+
+
+
+{% endblock %}

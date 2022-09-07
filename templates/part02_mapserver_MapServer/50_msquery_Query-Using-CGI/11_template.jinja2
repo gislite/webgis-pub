@@ -1,0 +1,95 @@
+{% extends "contentj.jinja2" %}
+
+<title>Use MapServer's query template</title>
+
+{% block cntbody %}
+
+
+    <h1>Query template</h1>
+
+    <h2 id="z1n">Mapfile</h2>
+
+    <p>We will search the country and region, first create a Mapfile as follows：
+    </p>
+
+->-> mfp1.map
+
+    <p>
+        As you can see, we only added two parameters to MapFile：</p>
+
+    <ol>
+        <li>Added <code>TOLERANCE</code> to the <code>states_poly</code> layer；</li>
+
+        <li>Added <code>TEMPLATE</code> to the <code>CLASS</code> object of the layer <code>states_poly</code>.</li>
+
+    </ol>
+
+
+    <h2 id="lv9">Template file</h2>
+    <p>
+    The template file is used in the Mapfile above, and the file name is <code>states_query.html</code>, which is accessed using a relative path. The contents of this template file are as follows：</p>
+    <pre><code>
+&lt;tr&gt;
+  &lt;td&gt;[lrn]&lt;/td&gt;
+  &lt;td&gt;[NAME]&lt;/td&gt;
+  &lt;td&gt;[STATE]&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+
+
+    <p>
+        <!--Note that it looks just like a fragment of an HTML table.  The "[NAME]"
+        and "[STATE]" MapServer tags are actually attributes from urban_ugl.dbf
+        which is the non-spatial database associated with out shapefile.  When
+        defining shapefile attributes in MapServer, we always capitalize the
+        names (this is true on shapefile but isn't true in all cases).  We've
+        also used this before when we defined CLASSITEM and LABELITEM in section
+        1.  The other tag, "[lrn]", is another internal MapServer variable that
+        displays the result count within a layer.-->
+
+       Note that it looks like a fragment in an HTML table. The tags for MapServer <code>[NAME]</code> and <code>[STATE]</code> are actually properties of <code>states_poly.dbf</code>.
+         This is a non-spatial database associated with the output shapefile. When MapServer defines the Shapefile property,
+         We always use <code>NAME</code> (for Shapefile, this is true, but in all cases it is not correct).
+         We also used this when we defined CLASSITEM and LABELITEM in Chapter 1.
+         For other tags, <code>[LRN]</code> is another variable in MapServer that will display the result count in the layer.
+    </p>
+    <p><!--If you used the "Query Multiple Layers", the MapServer CGI program will
+        apply this query template to each record.-->
+
+       If you use "Query Multiple Layers to query multiple layers", the MapServer CGI program will apply this query template to each record.
+
+    </p>
+
+
+
+    <h2 id="v91">Open the example</h2>
+
+    <p>Use the form to submit the various parameters required by the MapServer CGI program:</p>
+
+    <form method="get" action="/cgi-bin/mapserv" class="form-horizontal">
+    <fieldset>
+        <legend>Simple MapServer query template</legend>
+
+        <input type="hidden" name="root" value="/owg">
+        <input type="hidden" name="program" value="/cgi-bin/mapserv">
+        <input type="hidden" name="map" value="/owg/mfp1.map">
+        <input type="hidden" name="layer" value="states_line">
+        <input type="hidden" name="zoom" value="0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="col-sm-2">
+                    <select name="map_web" class="form-control">
+                        <option value="template example-p1.html">
+                            New example
+                        </option>
+                    </select> &nbsp;
+                </div>
+                <div class="col-sm-2">
+                    <input type="submit" name="submit" value="Open" class="btn btn-sm btn-primary">
+                </div>
+            </div>
+        </div>
+        </fieldset>
+    </form>
+    <p>The <code>map</code> and <code>layer</code> variables are internal variables of MapServer and are required in the mapping application.</p>
+{% endblock %}

@@ -1,0 +1,406 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+        <title>Extend Leaflet: New Layer</title>
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+
+        <p>This tutorial assumes that you have already read<a
+                href="./leaflet_new_layers/extending-1-classes.html">Leaflet's principle of class inheritance</a>。
+        </p>
+
+        <p>In Leaflet, "layer" refers to anything that moves together as the map moves. It's easier to explain how to make a simple extension before you know how to create them from scratch.</p>
+
+        <h2 id="extension-methods">Extension method</h2>
+
+        <p>Some Leaflet classes have so-called "extension methods": the entry point for writing programs for subclasses. </p>
+
+        <p>One of the "extension methods" is <code class="highlighter-rouge">L.TileLayer.getTileUrl()</code>. This method is called inside <code class="highlighter-rouge">L.TileLayer</code> whenever a new tile needs to know which image to load. We can create a self by making a subclass of <code class="highlighter-rouge">L.TileLayer</code> and rewriting its <code class="highlighter-rouge">getTileUrl()</code> function Define the behavior.</p>
+
+        <p>Let's use a custom <code class="highlighter-rouge">L.TileLayer</code> method to display a photo of the kitten PlaceKitten:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.TileLayer.Kitten = L.TileLayer.extend({
+    getTileUrl: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params">coords</span>) </span>{
+        <span class="hljs-keyword">var</span> i = <span class="hljs-built_in">Math</span>.ceil( <span
+                        class="hljs-built_in">Math</span>.random() * <span class="hljs-number">4</span> );
+        <span class="hljs-keyword">return</span> <span
+                        class="hljs-string">"https://placekitten.com/256/256?image="</span> + i;
+    },
+    getAttribution: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"&lt;a href='https://placekitten.com/attribution.html'&gt;PlaceKitten&lt;/a&gt;"</span>
+    }
+});
+
+L.tileLayer.kitten = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> L.TileLayer.Kitten();
+}
+
+L.tileLayer.kitten().addTo(map);
+</code></pre>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_new_layers/kittenlayer.html"
+                            width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a
+                            href="./leaflet_new_layers/kittenlayer.html">查看本实例</a>
+                    </small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>In general, <code class="highlighter-rouge">getTileLayer()</code> receives the coordinates of the tile (eg <code class="highlighter-rouge">coords.x</code>, <code class= "highlighter-rouge">coords.y</code> and <code class="highlighter-rouge">coords.z</code>) and generate a tile link from it. In our case, we ignored this and used a random number to get different kitten images each time.</p>
+
+        <h3 id="splitting-away-the-plugin-code">分离插件代码</h3>
+
+        <p>In the previous example, <code class="highlighter-rouge">L.TileLayer.Kitten</code> is defined where it is used. For plugins, it's best to split the plugin code into separate files and include it when you use it.
+        </p>
+
+        <p>For KittenLayer, you should create a file like <code class="highlighter-rouge">L.KittenLayer.js</code>. The js code is as follows:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.TileLayer.Kitten = L.TileLayer.extend({
+    getTileUrl: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params">coords</span>) </span>{
+        <span class="hljs-keyword">var</span> i = <span class="hljs-built_in">Math</span>.ceil( <span
+                        class="hljs-built_in">Math</span>.random() * <span class="hljs-number">4</span> );
+        <span class="hljs-keyword">return</span> <span
+                        class="hljs-string">"https://placekitten.com/256/256?image="</span> + i;
+    },
+    getAttribution: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"&lt;a href='https://placekitten.com/attribution.html'&gt;PlaceKitten&lt;/a&gt;"</span>
+    }
+});
+</code></pre>
+            </div>
+        </div>
+
+        <p>Then, when the map is displayed, include that file:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs xml"><span class="nt"><span
+                    class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span></span>
+…
+<span class="nt"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> </span></span><span class="na"><span
+                        class="hljs-tag"><span class="hljs-attribute">src</span>=</span></span><span class="s"><span
+                        class="hljs-tag"><span class="hljs-value">'leaflet.js'</span></span></span><span
+                        class="nt"><span class="hljs-tag">&gt;</span></span><span class="xml">
+</span><span class="o"><span class="xml"><span class="hljs-tag">&lt;</span></span></span><span class="nx"><span
+                        class="xml"><span class="hljs-tag"><span
+                        class="hljs-title">script</span></span></span></span><span class="xml"><span
+                        class="hljs-tag"> </span></span><span class="nx"><span class="xml"><span class="hljs-tag"><span
+                        class="hljs-attribute">src</span></span></span></span><span class="o"><span class="xml"><span
+                        class="hljs-tag">=</span></span></span><span class="s1"><span class="xml"><span
+                        class="hljs-tag"><span class="hljs-value">'L.KittenLayer.js'</span></span></span></span><span
+                        class="o"><span class="xml"><span class="hljs-tag">&gt;</span></span></span><span
+                        class="xml"><span class="xml">
+</span></span><span class="o"><span class="xml"><span class="xml"><span
+                        class="hljs-tag">&lt;</span></span></span></span><span class="nx"><span class="xml"><span
+                        class="xml"><span class="hljs-tag"><span
+                        class="hljs-title">script</span></span></span></span></span><span class="o"><span
+                        class="xml"><span class="xml"><span class="hljs-tag">&gt;</span></span></span></span><span
+                        class="xml"><span class="xml"><span class="javascript">
+    </span></span></span><span class="kd"><span class="xml"><span class="xml"><span class="javascript"><span
+                        class="hljs-keyword">var</span></span></span></span></span><span class="xml"><span
+                        class="xml"><span class="javascript"> </span></span></span><span class="nx"><span
+                        class="xml"><span class="xml"><span class="javascript">map</span></span></span></span><span
+                        class="xml"><span class="xml"><span class="javascript"> </span></span></span><span
+                        class="o"><span class="xml"><span class="xml"><span
+                        class="javascript">=</span></span></span></span><span class="xml"><span class="xml"><span
+                        class="javascript"> </span></span></span><span class="nx"><span class="xml"><span
+                        class="xml"><span class="javascript">L</span></span></span></span><span class="p"><span
+                        class="xml"><span class="xml"><span class="javascript">.</span></span></span></span><span
+                        class="nx"><span class="xml"><span class="xml"><span class="javascript">map</span></span></span></span><span
+                        class="p"><span class="xml"><span class="xml"><span
+                        class="javascript">(</span></span></span></span><span class="s1"><span class="xml"><span
+                        class="xml"><span class="javascript"><span class="hljs-string">'map-div-id'</span></span></span></span></span><span
+                        class="p"><span class="xml"><span class="xml"><span
+                        class="javascript">);</span></span></span></span><span class="xml"><span class="xml"><span
+                        class="javascript">
+    </span></span></span><span class="nx"><span class="xml"><span class="xml"><span
+                        class="javascript">L</span></span></span></span><span class="p"><span class="xml"><span
+                        class="xml"><span class="javascript">.</span></span></span></span><span class="nx"><span
+                        class="xml"><span class="xml"><span
+                        class="javascript">tileLayer</span></span></span></span><span class="p"><span class="xml"><span
+                        class="xml"><span class="javascript">.</span></span></span></span><span class="nx"><span
+                        class="xml"><span class="xml"><span class="javascript">kitten</span></span></span></span><span
+                        class="p"><span class="xml"><span class="xml"><span class="javascript">().</span></span></span></span><span
+                        class="nx"><span class="xml"><span class="xml"><span
+                        class="javascript">addTo</span></span></span></span><span class="p"><span class="xml"><span
+                        class="xml"><span class="javascript">(</span></span></span></span><span class="nx"><span
+                        class="xml"><span class="xml"><span class="javascript">map</span></span></span></span><span
+                        class="p"><span class="xml"><span class="xml"><span
+                        class="javascript">);</span></span></span></span><span class="xml"><span class="xml"><span
+                        class="javascript">
+</span></span></span><span class="nt"><span class="hljs-tag">&lt;/<span
+                        class="hljs-title">script</span>&gt;</span></span>
+…
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="lgridlayer-and-dom-elements"><code class="highlighter-rouge">L.GridLayer</code> and DOM elements</h3>
+
+        <p>Another extension method is <code class="highlighter-rouge">L.GridLayer.createTile()</code>.              <code class="highlighter-rouge">L.TileLayer</code> assumes there is an image grid (eg <code class="highlighter-rouge">&lt;img&gt;</code> element), and <code class ="highlighter-rouge">L.GridLayer</code> does not assume this - it allows the creation of a grid of any type of HTML element....
+        </p>
+
+        <p><code class="highlighter-rouge">L.GridLayer</code> not only allows the creation of <code class="highlighter-rouge">&lt;img&gt;</code>
+             Grid, but also allows the creation of <code class="highlighter-rouge">&lt;div&gt;</code> grids, <code class="highlighter-rouge">&lt;canvas&gt;</code> grids or
+             <code class="highlighter-rouge">&lt;picture&gt;</code> grid (or any grid).<code class="highlighter-rouge">createTile()</code>
+             Simply return a <code class="highlighter-rouge">HTMLElement</code> instance of the given tile coordinates. It's important to know how to manipulate elements in the DOM: Leaflet is going to handle <code class="highlighter-rouge">HTMLElement</code> instances, so elements created with JS libraries like JQuery are processed by Leaflet. It will be a problem.</p>
+
+        <p>The custom <code class="highlighter-rouge">GridLayer</code> is the coordinates of the tile displayed in <code class="highlighter-rouge">&lt;div&gt;</code>, which is internally debugged for Leaflet and It is especially useful to understand how tile coordinates work.
+        </p>
+
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.GridLayer.DebugCoords = L.GridLayer.extend({
+    createTile: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                        class="hljs-params">coords</span>) </span>{
+        <span class="hljs-keyword">var</span> tile = <span class="hljs-built_in">document</span>.createElement(<span
+                        class="hljs-string">'div'</span>);
+        tile.innerHTML = [coords.x, coords.y, coords.z].join(<span class="hljs-string">', '</span>);
+        tile.style.outline = <span class="hljs-string">'1px solid red'</span>;
+        <span class="hljs-keyword">return</span> tile;
+    }
+});
+
+L.gridLayer.debugCoords = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params">opts</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> L.GridLayer.DebugCoords(opts);
+};
+
+map.addLayer( L.gridLayer.debugCoords() );
+</code></pre>
+            </div>
+        </div>
+
+        <p>If the element must be asynchronously initialized, use the second function parameter <code class="highlighter-rouge">done</code>,
+             Then call it when the tile is ready (such as when a picture is fully loaded) or when an error occurs. Here, we just artificially delay the loading of tiles.</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">createTile: <span
+                    class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">coords, done</span>) </span>{
+    <span class="hljs-keyword">var</span> tile = <span class="hljs-built_in">document</span>.createElement(<span
+                        class="hljs-string">'div'</span>);
+    tile.innerHTML = [coords.x, coords.y, coords.z].join(<span class="hljs-string">', '</span>);
+    tile.style.outline = <span class="hljs-string">'1px solid red'</span>;
+
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        done(<span class="hljs-literal">null</span>, tile);	<span class="hljs-comment">// Syntax is 'done(error, tile)'</span>
+    }, <span class="hljs-number">500</span> + <span class="hljs-built_in">Math</span>.random() * <span
+                        class="hljs-number">1500</span>);
+
+    <span class="hljs-keyword">return</span> tile;
+}
+</code></pre>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_new_layers/gridcoords.html"
+                            width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a
+                            href="./leaflet_new_layers/gridcoords.html">View this example</a>
+                    </small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Using the custom <code class="highlighter-rouge">GridLayer</code> extension method, the plugin can make any HTML element a grid. Some plugins have used <code class="highlighter-rouge">&lt;canvas&gt;</code> and implemented advanced rendering using this method.</p>
+
+        <p> A very basic <code class="highlighter-rouge">&lt;canvas&gt;</code> <code class="highlighter-rouge">GridLayer</code> is like this:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.GridLayer.CanvasCircles = L.GridLayer.extend({
+    createTile: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                        class="hljs-params">coords</span>) </span>{
+        <span class="hljs-keyword">var</span> tile = <span class="hljs-built_in">document</span>.createElement(<span
+                        class="hljs-string">'canvas'</span>);
+
+        <span class="hljs-keyword">var</span> tileSize = <span class="hljs-keyword">this</span>.getTileSize();
+        tile.setAttribute(<span class="hljs-string">'width'</span>, tileSize.x);
+        tile.setAttribute(<span class="hljs-string">'height'</span>, tileSize.y);
+
+        <span class="hljs-keyword">var</span> ctx = tile.getContext(<span class="hljs-string">'2d'</span>);
+
+        <span class="hljs-comment">// Draw whatever is needed in the canvas context</span>
+        <span class="hljs-comment">// For example, circles which get bigger as we zoom in</span>
+        ctx.beginPath();
+        ctx.arc(tileSize.x/<span class="hljs-number">2</span>, tileSize.x/<span class="hljs-number">2</span>, <span
+                        class="hljs-number">4</span> + coords.z*<span class="hljs-number">4</span>, <span
+                        class="hljs-number">0</span>, <span class="hljs-number">2</span>*<span class="hljs-built_in">Math</span>.PI, <span
+                        class="hljs-literal">false</span>);
+        ctx.fill();
+
+        <span class="hljs-keyword">return</span> tile;
+    }
+});
+</code></pre>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_new_layers/canvascircles.html"
+                            width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a
+                            href="./leaflet_new_layers/canvascircles.html">View this example</a>
+                    </small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2 id="the-pixel-origin">Origin of the pixel</h2>
+
+        <p>Creating a custom <code class="highlighter-rouge">L.Layer</code> is possible, but you need a deeper understanding of how Leaflet locates HTML elements, as outlined below:</p>
+
+        <ul>
+            The <li><code class="highlighter-rouge">L.Map</code> container has a "map pane", which is <code class="highlighter-rouge">&lt;div&gt;</code></ Li>
+            <li><code class="highlighter-rouge">L.Layer</code> is the HTML element in the map pane</li>
+            <li>Map converts all <code class="highlighter-rouge">LatLng</code> to coordinates in the CRS on the map, then converts them to absolute "pixel coordinates" (CRS origin and pixel coordinates) The origin is the same)
+            </li>
+            <li>When <code class="highlighter-rouge">L.Map</code> is ready (has a center <code class="highlighter-rouge">LatLng</code> and a zoom level), top left The absolute pixel coordinates of the angle become the "pixel origin"
+            </li>
+            <li>Each <code class="highlighter-rouge">L.Layer</code> is based on the absolute pixel coordinates of the <code class="highlighter-rouge">LatLng</code> of the pixel origin and layer Offset from its map pane
+            </li>
+            <li>The pixel origin will occur on <code class="highlighter-rouge">zoomend</code> for each <code class="highlighter-rouge">zoomend</code> or <code class="highlighter- Rouge">viewreset</code>
+                Reset after the event, and each <code class="highlighter-rouge">L.Layer</code> needs to recalculate its position if needed
+            </li>
+            <li>When the map is flipped, the pixel origin is not reset and only the entire pane is repositioned</li>
+        </ul>
+
+        <p>This may be a bit unacceptable, so let's take a closer look at the following diagram:</p>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_new_layers/pixelorigin.html"
+                            width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a
+                            href="./leaflet_new_layers/pixelorigin.html">View this example</a>
+                    </small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>The CRS origin (green) always stays in the same position, and the pixel origin (red) always starts from the upper left corner.
+             When panning the map, the pixel origin moves with it (relative to the map's container, the map pane is repositioned); when the map is zoomed, the pixel origin stays at the same position on the screen (the map pane is not repositioned, but the layer will Was redrawn).
+             The absolute pixel coordinates of the pixel origin are updated when zoomed, and are not updated when panning. Note that the absolute pixel coordinates are doubled each time the map is zoomed.</p>
+
+        <p>In order to locate any element (for example, blue <code class="highlighter-rouge">L.Marker</code>),
+             Its <code class="highlighter-rouge">LatLng</code> is converted to absolute pixel coordinates within the map's <code class="highlighter-rouge">L.CRS</code>.
+             The pixel origin coordinates are then subtracted from the absolute pixel coordinates to calculate the offset (light blue) relative to the pixel origin. Because the pixel origin is the top left corner of all map panes,
+             So this offset can be applied to the HTML element of the tag symbol. The <code class="highlighter-rouge">iconAnchor</code> tag (dark blue line) is implemented with a negative CSS negative margin.</p>
+
+        <p><code class="highlighter-rouge">L.Map.project()</code> and <code class="highlighter-rouge">L.Map.unproject()</code>
+             Both use absolute pixel coordinate operations. Similarly, <code class="highlighter-rouge">L.Map.latLngToLayerPoint()</code> and <code class="highlighter-rouge">L.Map.layerPointToLatLng()</code> both use relative to pixels The offset of the origin works.</p>
+
+        <p>Different layers apply these calculations in different ways. <code class="highlighter-rouge">L.Marker</code> is just an icon to reposition them.              <code class="highlighter-rouge">L.GridLayer</code> calculates the boundary of the map (in absolute pixel coordinates) and then calculates the list of tile coordinates to request; vector layer (polyline mark, polygon mark, circle) Mark, etc.) Convert each <code class="highlighter-rouge">LatLng</code> to pixels and use SVG or <code class="highlighter-rouge">&lt;canvas&gt;</code> draws it as a geometric figure....
+        </p>
+
+        <h3 id="onadd-and-onremove"><code class="highlighter-rouge">onAdd</code> and <code class="highlighter-rouge">onRemove</code>
+        </h3>
+
+        <p>
+            In its core concept, all <code class="highlighter-rouge">L.Layer</code> are HTML elements in the map pane, and their location and content are defined by the layer code. However, HTML elements cannot be created when the layer is instantiated; instead, this is done when the layer is added to the map - before that, the layer does not recognize the map (not even the <code class="highlighter-rouge ">document</code>)....</p>
+
+        <p>In other words, the map call layer's <code class="highlighter-rouge">onAdd()</code> method creates its HTML element (often called the "container" element) and adds it to the pane. . Instead, when the layer is removed from the map, its <code class="highlighter-rouge">onRemove()</code> method is called. A layer framework is as follows:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.CustomLayer = L.Layer.extend({
+    onAdd: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">map</span>) </span>{
+        <span class="hljs-keyword">var</span> pane = map.getPane(<span class="hljs-keyword">this</span>.options.pane);
+        <span class="hljs-keyword">this</span>._container = L.DomUtil.create(…);
+
+        pane.appendChild(<span class="hljs-keyword">this</span>._container);
+
+        <span class="hljs-comment">// Calculate initial position of container with `L.Map.latLngToLayerPoint()`, `getPixelOrigin()` and/or `getPixelBounds()`</span>
+
+        L.DomUtil.setPosition(<span class="hljs-keyword">this</span>._container, point);
+
+        <span class="hljs-comment">// Add and position children elements if needed</span>
+
+        map.on(<span class="hljs-string">'zoomend viewreset'</span>, <span
+                        class="hljs-keyword">this</span>._update, <span class="hljs-keyword">this</span>);
+    },
+
+    onRemove: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params">map</span>) </span>{
+        L.DomUtil.remove(<span class="hljs-keyword">this</span>._container);
+        map.off(<span class="hljs-string">'zoomend viewreset'</span>, <span
+                        class="hljs-keyword">this</span>._update, <span class="hljs-keyword">this</span>);
+    },
+
+    _update: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// Recalculate position of container</span>
+
+        L.DomUtil.setPosition(<span class="hljs-keyword">this</span>._container, point);        
+
+        <span class="hljs-comment">// Add/remove/reposition children elements if needed</span>
+    }
+});
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="using-the-parents-onadd">Using the parent object's <code class="highlighter-rouge">onAdd</code></h3>
+
+        <p>Some use cases do not require re-creating the entire <code class="highlighter-rouge">onAdd</code> code. Instead, you can reuse the parent code and add some details as needed before and after initialization.</p>
+
+        <p>For example, we can have a <code class="highlighter-rouge">L.Polyline</code> that is always red, such as:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight">
+<pre class="highlight"><code class="hljs javascript">L.Polyline.Red = L.Polyline.extend({
+    onAdd: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">map</span>) </span>{
+        <span class="hljs-keyword">this</span>.options.color = <span class="hljs-string">'red'</span>;
+        L.Polyline.prototype.onAdd.call(<span class="hljs-keyword">this</span>, map);
+    }
+});
+</code></pre>
+            </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Leaflet class diagram - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" ></script>
+
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+	<style>#map { width: 100vw; height: 100%; }</style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script type="text/javascript">
+
+	var bounds = [[0,0], [1570,1910]];
+
+	var map = L.map('map', {
+		crs: L.CRS.Simple,
+		maxZoom: 0,
+		minZoom: -4,
+		maxBounds: bounds
+	});
+
+	var image = L.imageOverlay('class-diagram.png', bounds).addTo(map);
+
+	map.fitBounds(bounds);
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+
+    <title>Use GeoJSON </title>
+
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+    <h2>Use GeoJSON and Leaflet</h2>
+
+    <p>GeoJSON is very simple, lightweight, and straightforward. It is becoming a very popular data format for many GIS technologies and services. Leaflet is very good at dealing with GeoJSON.
+         In this case, you'll learn how to create and interact with a map vector in a GeoJSON object.</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_with_geojson/example.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_with_geojson/example.html">View this example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="fjv">About GeoJSON</h3>
+
+    <p>According to the GeJJSON specification (RFC
+         7946): GeoJSON is a format for encoding various geographic data structures.
+         GeoJSON objects can represent geometry, features, or feature sets. GeoJSON supports the following geometry types: point, line, polygon, multipoint, multiline, polygon, and geometry.
+         Features in GeoJSON contain a geometric object and other properties.
+         A feature set represents a series of features.</p>
+
+
+    <p>Leaflet supports all of the above GeoJSON types, but features and feature sets perform best because they allow you to describe features with a set of attributes.
+         We can even use these properties to design our Leaflet vector. Here's an example of a simple GeoJSON feature:</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> geojsonFeature = {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
+    <span class="hljs-string">"properties"</span>: {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Coors Field"</span>,
+        <span class="hljs-string">"amenity"</span>: <span class="hljs-string">"Baseball Stadium"</span>,
+        <span class="hljs-string">"popupContent"</span>: <span
+                class="hljs-string">"This is where the Rockies play!"</span>
+    },
+    <span class="hljs-string">"geometry"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
+        <span class="hljs-string">"coordinates"</span>: [-<span class="hljs-number">104.99404</span>, <span
+                class="hljs-number">39.75621</span>]
+    }
+};
+</code></pre>
+
+    <h3 id="riu">GeoJSON layer</h3>
+
+    <p>GeoJSON objects are added to the map via the GeoJSON layer. To create it and add it to the map, we can use the following code:</p>
+
+    <pre><code class="hljs css"><span class="hljs-tag">L</span><span class="hljs-class">.geoJSON</span>(<span
+            class="hljs-tag">geojsonFeature</span>)<span class="hljs-class">.addTo</span>(<span
+            class="hljs-tag">map</span>);</code></pre>
+
+    <p> GeoJSON objects can also be passed as arrays of valid GeoJSON objects.。</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> myLines = [{
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"LineString"</span>,
+    <span class="hljs-string">"coordinates"</span>: [[-<span class="hljs-number">100</span>, <span
+                class="hljs-number">40</span>], [-<span
+                class="hljs-number">105</span>, <span class="hljs-number">45</span>], [-<span
+                class="hljs-number">110</span>, <span class="hljs-number">55</span>]]
+}, {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"LineString"</span>,
+    <span class="hljs-string">"coordinates"</span>: [[-<span class="hljs-number">105</span>, <span
+                class="hljs-number">40</span>], [-<span
+                class="hljs-number">110</span>, <span class="hljs-number">45</span>], [-<span
+                class="hljs-number">115</span>, <span class="hljs-number">55</span>]]
+}];
+</code></pre>
+
+    <p>Alternatively, we can create an empty GeoJSON layer and assign it to a variable so that we can add more features later.</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> myLayer = L.geoJSON().addTo(map);
+myLayer.addData(geojsonFeature);
+</code></pre>
+
+    <h3 id="tyv"><code>style</code>Option</h3>
+
+    <p><code>style</code>Options can be used to style in two different ways. First, we can set the style of all paths (polylines and polygons) in the same way through a simple object:</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> myLines = [{
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"LineString"</span>,
+    <span class="hljs-string">"coordinates"</span>: [[-<span class="hljs-number">100</span>, <span
+                class="hljs-number">40</span>], [-<span
+                class="hljs-number">105</span>, <span class="hljs-number">45</span>], [-<span
+                class="hljs-number">110</span>, <span class="hljs-number">55</span>]]
+}, {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"LineString"</span>,
+    <span class="hljs-string">"coordinates"</span>: [[-<span class="hljs-number">105</span>, <span
+                class="hljs-number">40</span>], [-<span
+                class="hljs-number">110</span>, <span class="hljs-number">45</span>], [-<span
+                class="hljs-number">115</span>, <span class="hljs-number">55</span>]]
+}];
+
+<span class="hljs-keyword">var</span> myStyle = {
+    <span class="hljs-string">"color"</span>: <span class="hljs-string">"#ff7800"</span>,
+    <span class="hljs-string">"weight"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">"opacity"</span>: <span class="hljs-number">0.65</span>
+};
+
+L.geoJSON(myLines, {
+    style: myStyle
+}).addTo(map);</code></pre>
+
+    <p>Or, we can use functions to set the style of their various properties. In the following example, we check the "party" attribute and set our polygon style accordingly:</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> states = [{
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
+    <span class="hljs-string">"properties"</span>: {<span class="hljs-string">"party"</span>: <span
+                class="hljs-string">"Republican"</span>},
+    <span class="hljs-string">"geometry"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"Polygon"</span>,
+        <span class="hljs-string">"coordinates"</span>: [[
+            [-<span class="hljs-number">104.05</span>, <span class="hljs-number">48.99</span>],
+            [-<span class="hljs-number">97.22</span>,  <span class="hljs-number">48.98</span>],
+            [-<span class="hljs-number">96.58</span>,  <span class="hljs-number">45.94</span>],
+            [-<span class="hljs-number">104.03</span>, <span class="hljs-number">45.94</span>],
+            [-<span class="hljs-number">104.05</span>, <span class="hljs-number">48.99</span>]
+        ]]
+    }
+}, {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
+    <span class="hljs-string">"properties"</span>: {<span class="hljs-string">"party"</span>: <span
+                class="hljs-string">"Democrat"</span>},
+    <span class="hljs-string">"geometry"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"Polygon"</span>,
+        <span class="hljs-string">"coordinates"</span>: [[
+            [-<span class="hljs-number">109.05</span>, <span class="hljs-number">41.00</span>],
+            [-<span class="hljs-number">102.06</span>, <span class="hljs-number">40.99</span>],
+            [-<span class="hljs-number">102.03</span>, <span class="hljs-number">36.99</span>],
+            [-<span class="hljs-number">109.04</span>, <span class="hljs-number">36.99</span>],
+            [-<span class="hljs-number">109.05</span>, <span class="hljs-number">41.00</span>]
+        ]]
+    }
+}];
+
+L.geoJSON(states, {
+    style: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                class="hljs-params">feature</span>) </span>{
+        <span class="hljs-keyword">switch</span> (feature.properties.party) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'Republican'</span>: <span
+                class="hljs-keyword">return</span> {color: <span class="hljs-string">"#ff0000"</span>};
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'Democrat'</span>:   <span
+                class="hljs-keyword">return</span> {color: <span class="hljs-string">"#0000ff"</span>};
+        }
+    }
+}).addTo(map);</code></pre>
+
+    <h4>Point layer（<code>pointToLayer</code>）</h4>
+
+    <p>Points are treated differently than polylines and polygons. By default, simple tags are drawn for GeoJSON points. When creating a GeoJSON coating, we can change this by passing a function in the GeoJSON option object with <code>pointToLayer</code>. This function passes a LatLng and returns an instance of ILayer, which in this case might be Marker or CircleMarker.
+
+    </p>
+
+    <p>We can also create a circular tag using the <code>pointToLayer</code> option:</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> geojsonMarkerOptions = {
+    radius: <span class="hljs-number">8</span>,
+    fillColor: <span class="hljs-string">"#ff7800"</span>,
+    color: <span class="hljs-string">"#000"</span>,
+    weight: <span class="hljs-number">1</span>,
+    opacity: <span class="hljs-number">1</span>,
+    fillOpacity: <span class="hljs-number">0.8</span>
+};
+
+L.geoJSON(someGeojsonFeature, {
+    pointToLayer: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                class="hljs-params">feature, latlng</span>) </span>{
+        <span class="hljs-keyword">return</span> L.circleMarker(latlng, geojsonMarkerOptions);
+    }
+}).addTo(map);</code></pre>
+
+    <p>We can also set the <code>style</code> of the property in this example -
+         If you create a circle-like vector layer inside the pointToLayer function, the Leaflet is smart enough to apply the style to the GeoJSON point (<code>pointToLayer</code>).
+    </p>
+
+    <h4>onEachFeature</h4>
+
+    <p>The <code>onEachFeature</code> option is a feature that is called before each feature is added to the GeoJSON layer. This option is usually used to attach pop-ups when clicking on a feature.</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+            class="hljs-title">onEachFeature</span>(<span class="hljs-params">feature, layer</span>) </span>{
+    <span class="hljs-comment">// does this feature have a property named popupContent?</span>
+    <span class="hljs-keyword">if</span> (feature.properties &amp;&amp; feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}
+
+<span class="hljs-keyword">var</span> geojsonFeature = {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
+    <span class="hljs-string">"properties"</span>: {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Coors Field"</span>,
+        <span class="hljs-string">"amenity"</span>: <span class="hljs-string">"Baseball Stadium"</span>,
+        <span class="hljs-string">"popupContent"</span>: <span
+                class="hljs-string">"This is where the Rockies play!"</span>
+    },
+    <span class="hljs-string">"geometry"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
+        <span class="hljs-string">"coordinates"</span>: [-<span class="hljs-number">104.99404</span>, <span
+                class="hljs-number">39.75621</span>]
+    }
+};
+
+L.geoJSON(geojsonFeature, {
+    onEachFeature: onEachFeature
+}).addTo(map);</code></pre>
+
+    <h4>filter（<code>filter</code>）</h4>
+
+    <p>
+        This filter option can be used to control the visibility of GeoJSON functionality. To do this, we set the filter option through a function. This function is called by each element in the GeoJSON layer and passes the feature and layer. You can then use the value in this property to control the visibility false by returning true or. </p>
+
+     <p>In the example below, "Busch Field" will not be displayed on the map.</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> someFeatures = [{
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
+    <span class="hljs-string">"properties"</span>: {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Coors Field"</span>,
+        <span class="hljs-string">"show_on_map"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-string">"geometry"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
+        <span class="hljs-string">"coordinates"</span>: [-<span class="hljs-number">104.99404</span>, <span
+                class="hljs-number">39.75621</span>]
+    }
+}, {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"Feature"</span>,
+    <span class="hljs-string">"properties"</span>: {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Busch Field"</span>,
+        <span class="hljs-string">"show_on_map"</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-string">"geometry"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
+        <span class="hljs-string">"coordinates"</span>: [-<span class="hljs-number">104.98404</span>, <span
+                class="hljs-number">39.74621</span>]
+    }
+}];
+
+L.geoJSON(someFeatures, {
+    filter: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">feature, layer</span>) </span>{
+        <span class="hljs-keyword">return</span> feature.properties.show_on_map;
+    }
+}).addTo(map);</code></pre>
+
+    <p> View<a
+            href="./leaflet_with_geojson/GeoJSON.html">Complete instance</a>。
+    </p>
+
+
+
+
+
+{% endblock %}

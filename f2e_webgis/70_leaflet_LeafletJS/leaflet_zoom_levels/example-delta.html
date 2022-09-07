@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Zoom Levels Tutorial - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+
+	var map = L.map('map', {
+		minZoom: 0,
+		maxZoom: 18,
+		zoomSnap: 0,
+		zoomDelta: 0.25
+	});
+
+	var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
+
+	var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+		attribution: cartodbAttribution
+	}).addTo(map);
+
+	var ZoomViewer = L.Control.extend({
+		onAdd: function(){
+
+			var container= L.DomUtil.create('div');
+			var gauge = L.DomUtil.create('div');
+			container.style.width = '200px';
+			container.style.background = 'rgba(255,255,255,0.5)';
+			container.style.textAlign = 'left';
+			map.on('zoomstart zoom zoomend', function(ev){
+				gauge.innerHTML = 'Zoom level: ' + map.getZoom();
+			})
+			container.appendChild(gauge);
+
+			return container;
+		}
+	});
+
+	(new ZoomViewer).addTo(map);
+
+	map.setView([0, 0], 0);
+</script>
+
+
+
+</body>
+</html>

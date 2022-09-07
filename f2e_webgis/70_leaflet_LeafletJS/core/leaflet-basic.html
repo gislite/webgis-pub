@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+    <style>
+        #mapid {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="mapid"></div>
+<script>
+
+    //创建地图并设置地理坐标和缩放级别
+    var mymap = L.map('mapid').setView([39.9788, 116.30226], 14);
+
+    //添加Mapbox streets
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'openstreet.map'
+    }).addTo(mymap);
+
+    //添加点状标记
+    L.marker([39.9788, 116.30226]).addTo(mymap).bindPopup("北京大厦<br>").openPopup();
+
+    //添加圆形标记
+    L.circle([39.9908, 116.26625], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(mymap).bindPopup("颐和园欢迎你");
+
+    //添加多边形标记
+    L.polygon([
+        [39.92096, 116.38591],
+        [39.91079, 116.38676],
+        [39.91118, 116.3962],
+        [39.92014, 116.39482]
+    ]).addTo(mymap).bindPopup("故宫");
+
+    //定义弹窗
+    var popup = L.popup();
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("当前所在的坐标为" + e.latlng.toString())
+            .openOn(mymap);
+    }
+
+    mymap.on('click', onMapClick);
+</script>
+</body>
+</html>

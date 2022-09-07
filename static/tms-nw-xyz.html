@@ -1,0 +1,33 @@
+<html lang="zh-cmn-Hans">
+<head>
+  <title>WMS示例 - Leaflet</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico"/>
+  <link rel="stylesheet" href="http://webgis.pub/f2elib/leaflet_1.8.0/leaflet.css"/>
+  <script src="http://webgis.pub/f2elib/leaflet_1.8.0/leaflet.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #map {
+      width: 100%;
+      height: 800px;
+    }
+  </style>
+</head>
+<body>
+<div id='map'></div>
+<script type="text/javascript">
+    var map = L.map('map', {
+        center: [0, 0],
+        zoom: 1
+    });
+    L.tileLayer(
+        'http://webgis.cn:6001/tiles/maplet_WorldCountry/webmercator/{z}/{x}/{y}.png',
+        {}
+    ).addTo(map);
+</script>
+</body>
+</html>

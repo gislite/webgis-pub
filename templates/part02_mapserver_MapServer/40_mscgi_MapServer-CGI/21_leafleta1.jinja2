@@ -1,0 +1,47 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <link rel="stylesheet" href="/f2elib/leaflet-1.8.0/leaflet.css"  crossorigin=""/>
+    <script src="/f2elib/leaflet-1.8.0/leaflet.js"  crossorigin=""></script>
+
+    <title>View Map in LeafletJS</title>
+
+    <style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 500px;
+		}
+	</style>
+
+
+
+{% endblock %}
+
+{% block cntbody %}
+    <h1 id="markers-with-custom-icons">View Map in LeafletJS</h1>
+
+        <p>n the previous program using CGI, get or post is used to submit information.
+            Each browse is a new URL.
+            The page will also be regenerated as a whole.</p>
+    <p>The modern front-end class library makes extensive use of Ajax to optimize the user experience.</p>
+
+    <h2 id="vjm">Example</h2>
+
+    <div id='map'></div>
+
+<script type="text/javascript">
+	var map = L.map('map', {
+		center: [0,0],
+		zoom: 2
+	});
+	var wmsLayer = L.tileLayer.wms('http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map', {
+		layers: 'states'
+	}).addTo(map);
+</script>
+
+{% endblock %}

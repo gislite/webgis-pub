@@ -1,0 +1,148 @@
+# 标注： 中国范围
+# 针对超出多边形范围的，使用引线
+
+MAP
+    IMAGETYPE PNG
+    EXTENT         -12 25 43 50
+    SIZE 550 250
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    FONTSET "../fonts/fonts.list"
+
+    # Layer objects are defined beneath the map object. You need at least one
+    # layer defined in your map file before you can display a map... You can
+    # define as many layers as you'd like although a limit is typically hard-coded
+    # in map.h in the MapServer source. The default limit is set at 100. You'd
+    # have to have a very specialized application to need more than 100 layers in
+    # your application.
+    # 层对象在地图下方的对象定义。你至少需要一个
+    # 层中定义的地图文件，然后才可以显示在地图...您可以
+    # 定义为多层次，只要你愿意，虽然一个限制通常是硬编码
+    # 在MapServer的map.h。默认的限额设定为100。你最好
+    # 必须有一个非常特殊的应用需要超过100层
+    # 您的应用中。
+
+    # Start of LAYER DEFINITIONS ---------------------------------------------
+    # 层定义开始---------------------------------------------
+    LAYER # States polygon layer begins here
+    # 国家多边形层从这里开始
+    NAME states_poly
+    DATA wcountry.shp
+    STATUS OFF
+    TYPE POLYGON
+
+    # CLASSITEM defines the non-spatial attribute that you will be using to
+    # separate a layer into classes. This attribute will be in the DBF file
+    # of your shapefile (it will be different for each data format). In this
+    # example the shapefile states_ugl has an associated database
+    # (states_ugl.dbf) that contains an attribute called "CLASS". You will be
+    # using two values in the CLASS attribute to separate the classes (also
+    # called themes) used in this layer--land and water. CLASSITEM is used in
+    # association with the EXPRESSION parameter in the CLASS object. See below.
+
+
+    # Just like CLASSITEM, LABELITEM defines the database attribute that you
+    # will be using to draw labels. In this case, the values of the attribute
+    # "STATE" will be used to label the states polygons.
+
+
+    # CLASSITEM定义你将使用
+    # 的层分离的类的非空间属性。此属性将在你的shape文件中的
+    # DBF文件中（每个数据格式会有所不同）。在这种
+    # 例如shape文件states_ugl的有一个相关的数据库
+    # （ states_ugl.dbf ） ，其中包含一个被称为“类”的属性。您将
+    # 使用两个值中的CLASS属性在这一层分离类（也
+    # 称为主题） - 土地和水。 CLASSITEM中使用
+    # 与表达参数类对象。见下文。
+
+
+    # 就像CLASSITEM的， LABELITEM定义您的数据库属性
+    # 将被用来绘制标签。在这种情况下，该属性的值
+    # "STATE"将被用于标记国家多边形。
+    LABELITEM 'NAME'
+
+    # 类对象在层对象内定义。您可以定义
+    # 你需要的类（尽管在层中限制，但这是
+    # 没有意义的在一个“正常”层定义十多个。
+    # 有这样的情况，然而，你可能不得不这样做。）
+    CLASS
+    NAME 'States'
+
+
+    # There are styles in a class, just like there are classes in a layer,
+    # just like there are layers in a map. You can define multiple styles in
+    # a class just as you can define multiple classes in a layer and multiple
+    # layers in a map.
+    # 一个类有不同的风格，就像有一层中有不同的类，
+    # 就像在一个地图中有多个层。您可以在一个类中定义多个样式
+    # ，就像你在一层，可以定义多个类,在一个地图可以定义多个
+    # 层。
+    STYLE
+    COLOR 232 232 232
+    END
+
+    # There can be labels in a class, just like there are classes in a layer,
+    # just like there are layers in a map. You can define multiple labels in
+    # a class just as you can define multiple classes in a layer and multiple
+    # layers in a map.
+    # MapServer has a very flexible labeling system. With that flexibility
+    # comes complexity, specially when using truetype fonts. Please read
+    # through the LABEL section of the MapServer map file documentation at
+    # http://www.mapserver.org/mapfile for more information.
+    # 可以在一个类中有多个标签，就像有一层中有多个类，
+    # 就像在一个地图中有多个层。您可以在一类中定义多个标签
+    # ，就像你在一层，可以定义多个类，在一个地图中定义多个
+    # 层。
+    # MapServer的有一个非常灵活的标签制度。灵活性
+    # 自变得复杂，特别是当使用TrueType字体时。请
+    # 通过MapServer地图文件文档的LABEL段
+    # 在http://www.mapserver.org/mapfile阅读更多信息。
+    LABEL
+    COLOR 132 31 31
+    SHADOWCOLOR 218 218 218
+    SHADOWSIZE 2 2
+    TYPE TRUETYPE
+    FONT arial-bold
+    SIZE 8
+    ANTIALIAS TRUE
+    # POSITION CL
+    POSITION CC
+    PARTIALS FALSE
+    MINDISTANCE 300
+    BUFFER 4
+    END # end of label
+
+    LEADER
+      GRIDSTEP 40
+      MAXDISTANCE 1000
+      STYLE
+        COLOR 200 100 100
+        WIDTH 2
+      END
+    END
+    # 标签结束
+    END
+
+
+    END # States polygon layer ends here
+    # 国家多边形层到此为止
+
+
+  LAYER # States line layer begins here
+  #线层从这里开始
+    NAME         states_line
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         LINE
+
+    CLASS
+      NAME       "State Boundary"
+      STYLE
+        COLOR    132 132 32
+      END
+    END
+  END # States line layer ends here
+
+
+
+    END # All map files must come to an end just as all other things must come to...

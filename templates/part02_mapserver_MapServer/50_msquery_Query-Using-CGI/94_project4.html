@@ -1,0 +1,131 @@
+{% extends "contentj.jinja2" %}
+
+<title>Query Revisited</title>
+
+{% block cntbody %}
+
+
+    <h2> MapServer Modes, Revisited </h2>
+
+    <p><b>查看示例</b></p>
+
+
+    <form name="mapserv" method="GET" action="/cgi-bin/mapserv" class="form-horizontal">
+
+        <!-- 隐藏的 MAPSERVER CGI 变量 -->
+        <input type="hidden" name="map" value="/owg/example4.map">
+        <input type="hidden" name="imgext" value="165660.954849 -371954.000000 1506409.045151 632767.000000">
+        <input type="hidden" name="imgxy" value="200.0 150.0">
+        <input type="hidden" name="root" value="/owg">
+        <input type="hidden" name="graphicsroot" value="/mstuto/graphics">
+        <input type="hidden" name="program" value="/cgi-bin/mapserv">
+        <input type="hidden" name="map_web" value="template example4-4_modes.html">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">选择图层:</label>
+            <div class="col-sm-3">
+
+                <!-- SPECIFY VECTOR LAYERS -->
+                <input type="checkbox" name="layer" value="states" checked="checked">
+                State Boundaries
+            </div>
+            <div class="col-sm-3">
+                <input type="checkbox" name="layer" value="hydro">
+                Water Features&nbsp;
+            </div>
+            <div class="col-sm-3">
+                <input type="checkbox" name="layer" value="roads">Roads<br>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- SPECIFY RASTER LAYERS -->
+            <label class="col-sm-2 control-label">选择背景:</label>
+            <div class="col-sm-10">
+                <select name="layer" class="form-control">
+                    <option value=" " [ _select]>无背景</option>
+                    <option value="modis_jpl" [modis_jpl_select]>Daily MODIS Image</option>
+                    <option value="modis">MODIS Surface Reflectance</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-5">
+
+                <!-- SPECIFY MAP MODE -->
+                <label class="col-sm-4 control-label">Map Mode:</label>
+                <div align="center" class="col-sm-8">
+                    <select name="mode" class="form-control">
+                        <option value="browse" [browse_select]>Browse</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-2" align="center">
+                <!-- FORM SUBMIT BUTTON -->
+
+                <input type="submit" name="submit" value="Refresh" class="btn btn-sm btn-primary">
+
+            </div>
+            <div class="col-sm-5">
+                <!-- ZOOM/PAN CONTROLS -->
+                <label class="col-sm-4 control-label">Map Control: </label>
+                <div align="center" class="col-sm-8">
+                    <select name="zoom" class="form-control">
+                        <option value="4">Zoom In 4x</option>
+                        <option value="3">Zoom In 3x</option>
+                        <option value="2">Zoom In 2x</option>
+                        <option value="0" selected="selected">Recenter</option>
+                        <option value="-2">Zoom Out 2x</option>
+                        <option value="-3">Zoom Out 3x</option>
+                        <option value="-4">Zoom Out 4x</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <div class="col-sm-8" align="center">
+                <!-- Alternative to the main map image  -->
+                <input type="image" name="img" class="img-thumbnail"
+                       src="/cgi-bin/mapserv?map=/owg/example4.map&mapext=165660.954849+-371954.000000+1506409.045151+632767.000000&layers=states&mode=map"
+                       width="400" height="300">
+
+            </div>
+            <div class="col-sm-4">
+                <!-- REFERENCE AND LEGEND COLUMN -->
+
+                    <div class="col-sm-12"><br><b>参考图：</b><br><br>
+                        <!-- alternative to the "ref" image -->
+                        <input type="image" name="ref" class="img-thumbnail"
+                               src="/cgi-bin/mapserv?map=/owg/example4.map&mapext=165660.954849+-371954.000000+1506409.045151+632767.000000&mode=reference"
+                               width="155" height="105">
+                    </div>
+                    <div class="col-sm-12"><br><b>比例尺：</b><br><br>
+                        <!-- Alternative to the "scalebar" image -->
+                        <img class="img-thumbnail"
+                             src="/cgi-bin/mapserv?map=/owg/example4.map&mapext=165660.954849+-371954.000000+1506409.045151+632767.000000&mode=scalebar">
+                    </div>
+                    <div class="col-sm-12"><br><b>Legend:</b><br><br>
+                        <!-- Alternative to the "legend" image -->
+                        <!-- <img src="/ms_tmp/EX2.5_leg154043864832299.png"> -->
+                        <img class="img-thumbnail"
+                             src="/cgi-bin/mapserv?map=/owg/example4.map&layers=states&mapext=165660.954849+-371954.000000+1506409.045151+632767.000000&mode=legend">
+                    </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <br>
+
+    Here's the mapfile:
+
+    <br>
+
+    <iframe width="100%" src="./mfd3.map"></iframe>
+
+
+
+{% endblock %}

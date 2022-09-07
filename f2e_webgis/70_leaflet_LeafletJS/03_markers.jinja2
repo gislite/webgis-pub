@@ -1,0 +1,162 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>Custom icon</title>
+{% endblock %}
+
+{% block cntbody %}
+    <h2 id="markers-with-custom-icons">Custom callout icon</h2>
+
+    <p> In this tutorial, you'll learn how to easily tag a map with a custom icon. </p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_custom_icons/example.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_custom_icons/example.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="preparing-the-images">Preparing images</h3>
+
+    <p>In order to make a custom icon, we usually need two images - the actual icon image and its shadow image. For this tutorial, we used the Leaflet logo and created 4 images - 3 different color leaf images and a common shadow image for them：</p>
+
+    <p>
+        <img style="border: 1px solid #ccc" src="./leaflet_custom_icons/leaf-green.png">
+        <img style="border: 1px solid #ccc" src="./leaflet_custom_icons/leaf-red.png">
+        <img style="border: 1px solid #ccc" src="./leaflet_custom_icons/leaf-orange.png">
+        <img style="border: 1px solid #ccc" src="./leaflet_custom_icons/leaf-shadow.png">
+    </p>
+
+    <p> Please note that the white areas in the image are actually transparent。 </p>
+
+    <h3 id="creating-an-icon">Create icon</h3>
+
+    <p>The tag map <code class="highlighter-rouge"> in the Leaflet is defined by the L.Icon</code> object and is used as a parameter option when creating the tag. Let's create a green leaf icon:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight">
+            <pre class="highlight">
+                <code class="hljs javascript">
+                    <span
+                class="hljs-keyword">var</span> greenIcon = L.icon({
+    iconUrl: <span class="hljs-string">'leaf-green.png'</span>,
+    shadowUrl: <span class="hljs-string">'leaf-shadow.png'</span>,
+
+    iconSize:     [<span class="hljs-number">38</span>, <span class="hljs-number">95</span>], <span
+                    class="hljs-comment">// size of the icon</span>
+    shadowSize:   [<span class="hljs-number">50</span>, <span class="hljs-number">64</span>], <span
+                    class="hljs-comment">// size of the shadow</span>
+    iconAnchor:   [<span class="hljs-number">22</span>, <span class="hljs-number">94</span>], <span
+                    class="hljs-comment">// point of the icon which will correspond to marker's location</span>
+    shadowAnchor: [<span class="hljs-number">4</span>, <span class="hljs-number">62</span>],  <span
+                    class="hljs-comment">// the same for the shadow</span>
+    popupAnchor:  [-<span class="hljs-number">3</span>, -<span class="hljs-number">76</span>] <span
+                    class="hljs-comment">// point from which the popup should open relative to the iconAnchor</span>
+});
+</code></pre>
+        </div>
+    </div>
+
+    <p>It’s easy to put an icon on the map now.：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs css"><span
+                class="hljs-tag">L</span><span
+                class="hljs-class">.marker</span>(<span class="hljs-attr_selector">[51.5, -0.09]</span>, <span
+                class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">icon</span>:<span
+                class="hljs-value"> greenIcon}).<span class="hljs-function">addTo</span>(map)</span></span>;
+</span></code></pre>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_custom_icons/example-one-icon.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_custom_icons/example-one-icon.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="defining-an-icon-class">Define icon class</h3>
+
+    <p>What if we need to create some icons that have a lot in common? Let's define our own icon class, which includes sharing options. It's really easy to inherit Leaflet from the L icon (<code class="highlighter-rouge">L.Icon</code>):
+    </p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: <span class="hljs-string">'leaf-shadow.png'</span>,
+        iconSize:     [<span class="hljs-number">38</span>, <span class="hljs-number">95</span>],
+        shadowSize:   [<span class="hljs-number">50</span>, <span class="hljs-number">64</span>],
+        iconAnchor:   [<span class="hljs-number">22</span>, <span class="hljs-number">94</span>],
+        shadowAnchor: [<span class="hljs-number">4</span>, <span class="hljs-number">62</span>],
+        popupAnchor:  [-<span class="hljs-number">3</span>, -<span class="hljs-number">76</span>]
+    }
+});
+</code></pre>
+        </div>
+    </div>
+
+    <p>Now we can create these three leaf icons in this class and use them：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> greenIcon = <span class="hljs-keyword">new</span> LeafIcon({iconUrl: <span
+                class="hljs-string">'leaf-green.png'</span>}),
+    redIcon = <span class="hljs-keyword">new</span> LeafIcon({iconUrl: <span class="hljs-string">'leaf-red.png'</span>}),
+    orangeIcon = <span class="hljs-keyword">new</span> LeafIcon({iconUrl: <span
+                    class="hljs-string">'leaf-orange.png'</span>});
+</code></pre>
+        </div>
+    </div>
+
+    <p>As you may have noticed, we created a leaf icon instance using the keyword <code class="highlighter-rouge">new</code>. So why aren't all Leaflet classes created with it? The answer is simple: the real Leaflet classes are named with uppercase letters (such as L.Icon), and they also need to use <code
+             Class="highlighter-rouge">new</code> is created, but it is also named with a lowercase letter name (L.icon), which is created for convenience, such as:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.icon = <span
+                class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                class="hljs-params">options</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> L.Icon(options);
+};
+</code></pre>
+        </div>
+    </div>
+
+    <p>You can also do the same thing in class. Ok, let's put the markers for these icons on the map:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight">
+            <pre class="highlight">
+                <code class="hljs javascript">
+                    L.marker([<span
+                class="hljs-number">51.5</span>, -<span class="hljs-number">0.09</span>], {icon: greenIcon}).addTo(map).bindPopup(<span
+                class="hljs-string">"I am a green leaf."</span>);
+L.marker([<span class="hljs-number">51.495</span>, -<span class="hljs-number">0.083</span>], {icon: redIcon}).addTo(map).bindPopup(<span
+                    class="hljs-string">"I am a red leaf."</span>);
+L.marker([<span class="hljs-number">51.49</span>, -<span class="hljs-number">0.1</span>], {icon: orangeIcon}).addTo(map).bindPopup(<span
+                    class="hljs-string">"I am an orange leaf."</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p> Now look at the <a href="./leaflet_custom_icons/makericons.html">complete example</a>.</p>
+
+{% endblock %}

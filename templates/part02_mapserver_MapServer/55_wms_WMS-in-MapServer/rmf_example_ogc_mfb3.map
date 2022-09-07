@@ -1,0 +1,106 @@
+
+MAP
+  NAME           EX2_
+  IMAGETYPE      png24
+  # EXTENT         166221 -371954 1505849 632767 # LAEA
+  EXTENT         -97.5 41.619778 -82.122902 49.38562 # Geographic
+  SIZE           400 300
+  SHAPEPATH      "/gdata/data"
+  SYMBOLSET      "../symbols/symbols35.sym"
+  FONTSET        "../fonts/fonts.list"
+
+OUTPUTFORMAT
+  NAME "png"
+  DRIVER AGG/PNG
+  MIMETYPE "image/png"
+  IMAGEMODE RGB
+  EXTENSION "png"
+  FORMATOPTION "GAMMA=0.75"
+END
+
+
+  WEB
+    TEMPLATE  'tmpl_ogc.html'
+ IMAGEPATH '/owg/ms_tmp/'
+     IMAGEURL  '/ms_tmp/'
+
+     METADATA
+         "wms_title"           "WMS Demo Server"
+         "wms_version" "1.3.0"
+         "wms_onlineresource"  "http://192.168.56.1/cgi-bin/mapserv?map=/owg/example_ogc.map&"
+         "wms_srs"             "EPSG:4326 EPSG:3857"
+         "wms_enable_request" "*"
+         "ows_enable_request" "*"
+         "wms_feature_info_mime_type" "text/html"
+         "wms_format" "image/png"
+       END
+  END # Every object in MapServer must have an END.;)地图服务器中的每个对象都必须有一个结束。;)
+
+  
+
+  PROJECTION
+    "init=epsg:4326"
+  END # This is the ending of the output projection这是输出投影的结局。
+
+
+
+  LAYER # States polygon layer begins here
+    NAME         states
+    DATA         states_ugl
+    STATUS       ON
+    TYPE         POLYGON
+    TEMPLATE "tmpl_ogc.html"
+
+
+
+     METADATA
+     "wms_title"           "WMS Demo Server"
+         "wms_version" "1.3.0"
+    "wms_srs"             "EPSG:4326 EPSG:3857"
+         "wms_enable_request" "*"
+         "ows_enable_request" "*"
+         "wms_feature_info_mime_type" "text/html"
+        "wms_format" "image/png"
+    END
+
+
+    # Here's an example of the input projection definition.
+    # EPSG:4326 is code for geographic (latlong) projection 
+    # using the WGS84 datum下面是一个例子输入投影定义。EPSG：4326是地理位置（经纬度）投影用WGS84数据的代码。
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASSITEM    "CLASS"
+    
+    # The class object is defined within the layer object.  You can define as
+    # many classes as you need (well, there are limits, but it's senseless to 
+    # define more than ten on a "normal" layer.  There are situations, 
+    # however, where you might have to do it.)类对象的定义层内的对象。你需要（很好，有限制，但它是毫无意义的定义十余一个“正常”层，有一些情况，您可以定义很多类，但是，你可能不得不这样做。）
+    CLASS
+      EXPRESSION 'land'
+      
+      # There are styles in a class, just like there are classes in a layer, 
+      # just like there are layers in a map. 有一类的风格，就像有一层中的类，就像是在一个地图中的层。
+      STYLE
+        SYMBOL     0
+        COLOR      100 200 200
+      END # And they all must come to an end.
+    END # End of this class.
+
+    CLASS
+      EXPRESSION 'water'
+
+      # There are styles in a class, just like there are classes in a layer,
+      # just like there are layers in a map. 有一类的风格，就像有一层中的类，就像是在一个地图中的层。
+      STYLE
+        SYMBOL     0
+        COLOR      0 200 0
+      END # And they all must come to an end.
+    END # End of this class.
+
+  END # States polygon layer ends here
+
+
+
+END # end of map file地图文件结束

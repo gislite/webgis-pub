@@ -1,0 +1,275 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+	<title>Zoom level</title>
+
+    <style>
+.tiles img {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+}
+.tiles.small img {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 1px;
+    width: 64px;
+    height: 64px;
+}
+.tiles {
+    line-height: 0;
+}
+.tiles.legend {
+    line-height: 1;
+}
+</style>
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+
+
+<h2 id="zoom-levels">Zoom level</h2>
+
+<p> Leaflet uses latitude, longitude, and "zoom level."</p>
+
+<p>A lower zoom level means that the map shows the entire continent, while a higher zoom level means that the map can display the details of the city.</p>
+
+<p>In order to understand how the zoom level works, we first need to make a basic introduction to <i> geodesy</i>.</p>
+
+<h3 id="the-shape-of-the-earth">Shape of the earth</h3>
+
+<p> Let's take a look at a simple map locked at level 0：</p>
+
+<div class="highlighter-rouge"><div class="highlight">
+    <pre class="highlight"><code class="hljs javascript">
+        <span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+        minZoom: <span class="hljs-number">0</span>,
+        maxZoom: <span class="hljs-number">0</span>
+    });
+
+    <span class="hljs-keyword">var</span> positron = L.tileLayer(<span class="hljs-string">'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'</span>, {
+        attribution: cartodbAttribution
+    }).addTo(map);
+
+    map.setView([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>], <span class="hljs-number">0</span>);
+</code></pre></div></div>
+
+<table>
+<tbody><tr><td style="text-align: center; border: none">
+<iframe src="./leaflet_zoom_levels/example-zero.html" width="616" height="416"></iframe>
+</td></tr>
+<tr><td style="text-align: center; border: none">
+<small><a href="./leaflet_zoom_levels/example-zero.html">View this example</a></small>
+</td></tr></tbody></table>
+
+<p> Please note that the "whole earth" is just a 256-pixel wide, 256-pixel image:</p>
+
+<div class="tiles" style="text-align: center">
+<img src="./leaflet_zoom_levels/0.png" class="bordered-img" alt="">
+</div>
+
+<p>Be clear: the earth is not a square. More precisely, the shape of the earth is like a strange potato, which can be approximated as something similar to a sphere.</p>
+
+<div class="tiles legend" style="text-align: center">
+<a title="By NASA/JPL/University of Texas Center for Space Research. (http://photojournal.jpl.nasa.gov/catalog/PIA12146) [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AGRACE_globe_animation.gif">
+    <img alt="GRACE globe animation" src="./leaflet_zoom_levels/GRACE_globe_animation.gif" width="256">
+<br>
+The potato earth image drawn by NASA/JPL/University of Texas Space Research with the help of the Grace satellite.</a>.
+</div>
+
+<p>So we assume that the earth is round. To make it flat, we put an imaginary cylinder around it, unfold it, and then cut it to make it look square:</p>
+
+<div class="tiles legend" style="text-align: center">
+<a title="By derived from US Government USGS [Public domain], via Wikimedia Commons" href="https://en.wikipedia.org/wiki/Map_projection#Cylindrical">
+    <img alt="Usgs map mercator" src="./leaflet_zoom_levels/512px-Usgs_map_mercator.png" width="512">
+<br>
+This is called "cylindrical map projection."
+</a>
+</div>
+
+<p>There are hundreds of ways to display the Earth's surface in a plane, each with its advantages and disadvantages, which is just one of them.</p></p>
+
+
+<p> Now let's <strong><em>assume</em></strong> the world is a square:</p>
+
+<div class="tiles" style="text-align: center">
+<img src="./leaflet_zoom_levels/0.png" class="bordered-img" alt="">
+</div>
+
+<p>When the zoom level is 0, it represents the world, and its width and height are both 256 pixels. When we move to the next zoom level, its width and height are doubled and can be represented by four 256-pixel by 256-pixel images:</p>
+
+<div class="tiles" style="text-align: center">
+<div>
+<img src="./leaflet_zoom_levels/0_002.png" class="bordered-img" alt=""><img src="Zoom_levels/0_006.png" class="bordered-img" alt="">
+</div>
+<div>
+<img src="Zoom_levels/1_006.png" class="bordered-img" alt=""><img src="Zoom_levels/1.png" class="bordered-img" alt="">
+</div>
+</div>
+
+<p>At each zoom level, each tile is divided into four, the size (the length of the edge given by the <code class="highlighter-rouge">tileSize</code> option) doubles, and the area is increased by a factor of three.（</p>
+
+<table><tbody><tr><td>
+<div class="tiles small" style="text-align: center">
+<img src="Zoom_levels/0.png" class="bordered-img" alt="">
+</div>
+</td><td>
+<div class="tiles small" style="text-align: center">
+<div>
+<img src="Zoom_levels/0_002.png" class="bordered-img" alt=""><img src="Zoom_levels/0_006.png" class="bordered-img" alt="">
+</div>
+<div>
+<img src="Zoom_levels/1_006.png" class="bordered-img" alt=""><img src="Zoom_levels/1.png" class="bordered-img" alt="">
+</div>
+</div>
+</td><td>
+<div class="tiles small" style="text-align: center">
+<div>
+<img src="Zoom_levels/0_007.png" class="bordered-img" alt=""><img src="Zoom_levels/0_003.png" class="bordered-img" alt="">
+    <img src="Zoom_levels/0_004.png" class="bordered-img" alt=""><img src="Zoom_levels/0_005.png" class="bordered-img" alt="">
+</div>
+<div>
+<img src="Zoom_levels/1_002.png" class="bordered-img" alt=""><img src="Zoom_levels/1_003.png" class="bordered-img" alt="">
+    <img src="Zoom_levels/1_004.png" class="bordered-img" alt=""><img src="Zoom_levels/1_005.png" class="bordered-img" alt="">
+</div>
+<div>
+<img src="Zoom_levels/2_002.png" class="bordered-img" alt=""><img src="Zoom_levels/2_003.png" class="bordered-img" alt="">
+    <img src="Zoom_levels/2.png" class="bordered-img" alt=""><img src="Zoom_levels/2_004.png" class="bordered-img" alt="">
+</div>
+<div>
+<img src="Zoom_levels/3.png" class="bordered-img" alt=""><img src="Zoom_levels/3_003.png" class="bordered-img" alt="">
+    <img src="Zoom_levels/3_002.png" class="bordered-img" alt=""><img src="Zoom_levels/3_004.png" class="bordered-img" alt="">
+</div>
+</div>
+</td></tr>
+<tr><td>Zoom 0</td><td>Zoom 1</td><td>Zoom 2</td></tr></tbody></table>
+
+<h3 id="a-note-about-scale">Notes on proportions</h3>
+
+<p>One of the disadvantages of using a cylindrical projection is that the scale is not constant and the measurement distance or size is not reliable, especially at low zoom levels.</p>
+
+<p>Translate the equator to 60° north latitude by adding a <code class="highlighter-rouge">L.Control.Scale</code> to the map.
+We can see how the scale factor is doubled. The following example uses a JavaScript timeout to automate:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs javascript">    L.control.scale().addTo(map);
+
+    setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        map.setView([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>]);
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            map.setView([<span class="hljs-number">60</span>, <span class="hljs-number">0</span>]);
+        }, <span class="hljs-number">2000</span>);
+    }, <span class="hljs-number">4000</span>);
+</code></pre></div></div>
+
+<table>
+<tbody><tr><td style="text-align: center; border: none">
+<iframe src="./leaflet_zoom_levels/example-scale.html" width="616" height="416"></iframe>
+</td></tr>
+<tr><td style="text-align: center; border: none">
+<small><a href="./leaflet_zoom_levels/example-scale.html">View this example</a></small>
+</td></tr></tbody></table>
+
+<p><code class="highlighter-rouge">L.Control.Scale</code> shows the scale applied to the center point of the map. At relatively high zoom levels, the scale changes are not obvious.</p>
+
+<h3 id="controlling-the-zoom">Control zoom</h3>
+
+<p>A leaflet map has several ways to control the zoom level it displays, but the most notable is setZoom(). For example, map.setZoom(0) sets the zoom level of <code class="highlighter-rouge">map</code> to <code class="highlighter-rouge">0</code>.
+</p>
+
+<p>This example again uses timeouts to automatically alternate between zoom levels 0 and 1：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs javascript">    setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        map.setZoom(<span class="hljs-number">0</span>);
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            map.setZoom(<span class="hljs-number">1</span>);
+        }, <span class="hljs-number">2000</span>);
+    }, <span class="hljs-number">4000</span>);
+</code></pre></div></div>
+
+<table>
+<tbody><tr><td style="text-align: center; border: none">
+<iframe src="./leaflet_zoom_levels/example-setzoom.html" width="616" height="416"></iframe>
+</td></tr>
+<tr><td style="text-align: center; border: none">
+<small><a href="./leaflet_zoom_levels/example-setzoom.html">View this example</a></small>
+</td></tr></tbody></table>
+
+
+<p>Other ways to set the zoom:</p>
+
+<ul>
+  <li><a href="https://leafletjs.com/reference.html#map-setview"><code class="highlighter-rouge">setView(center, zoom)</code></a>, It also sets the center of the map</li>
+  <li><a href="https://leafletjs.com/reference.html#map-flyto"><code class="highlighter-rouge">flyTo(center, zoom)</code></a>, Similar to <code class="highlighter-rouge">setView</code>, but it has smooth animations</li>
+  <li><a href="https://leafletjs.com/reference.html#map-zoomin"><code class="highlighter-rouge">zoomIn()</code> / <code class="highlighter-rouge">zoomIn(delta)</code></a>, zoom in to the <code class="highlighter-rouge">delta</code> zoom level, default zoom level is <code class= "highlighter-rouge">1</code></li>
+  <li><a href="https://leafletjs.com/reference.html#map-zoomout"><code class="highlighter-rouge">zoomOut()</code> /<code class="highlighter-rouge">zoomOut(delta)</code></a>, narrowing down the <code class="highlighter-rouge">delta</code> zoom level, the default zoom level is <code class= "highlighter-rouge">1</code></li>
+  <li><a href="https://leafletjs.com/reference.html#map-setzoomaround"><code class="highlighter-rouge">setZoomAround(fixedPoint, zoom)</code></a>, Set the <code class="highlighter-rouge">delta</code> level while maintaining a fixed point (scroll mouse wheel zoom)</li>
+  <li><a href="https://leafletjs.com/reference.html#map-fitbounds"><code class="highlighter-rouge">fitBounds(bounds)</code></a>,Automatically calculate scaling to match rectangular areas on the map</li>
+</ul>
+
+<h3 id="fractional-zoom">Fractional scaling</h3>
+
+<p>Fractional scaling is a new concept proposed in Leaflet 1.0.0. Prior to this, the map's zoom level can only be an integer (0, 1, 2, etc.), but scores like 1.5 or 1.25 can now be used.</p>
+
+<p>Fractional scaling is disabled by default. To enable it, use the MAP's <code class="highlighter-rouge">zoomSnap</code> option. The default value for the <code class="highlighter-rouge">zoomSnap</code> option is 1 (which means the zoom level of the map can be 0, 1, 2, etc.).</p>
+
+<p>If you set the value of <code class="highlighter-rouge">zoomSnap</code> to <code class="highlighter-rouge">0.5</code>, the effective zoom level for the map will be <code class=" Highlighter-rouge">1</code>, <code class="highlighter-rouge">1.5</code>, <code class="highlighter-rouge">2</code>, etc.</p>
+
+<p>If the setting is <code class="highlighter-rouge">0.1</code>, the effective zoom level for the map will be <code class="highlighter-rouge">0</code>, <code class="highlighter -rouge">0.1</code>,
+<code class="highlighter-rouge">0.2</code>, <code class="highlighter-rouge">0.3</code>, <code class="highlighter-rouge">0.4</code>, etc.</p>
+
+<p> The following example uses the <code class="highlighter-rouge">zoomSnap</code> value as <code class="highlighter-rouge">0.25</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs javascript">    <span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+        zoomSnap: <span class="hljs-number">0.25</span>
+    });
+</code></pre></div></div>
+
+<table>
+<tbody><tr><td style="text-align: center; border: none">
+<iframe src="./leaflet_zoom_levels/example-fractional.html" width="616" height="416"></iframe>
+</td></tr>
+<tr><td style="text-align: center; border: none">
+<small><a href="./leaflet_zoom_levels/example-fractional.html">View this example</a></small>
+</td></tr></tbody></table>
+
+<p>As you can see, Leaflet only loads tiles with a zoom level of <code class="highlighter-rouge">0</code> or <code class="highlighter-rouge">1</code> and Need to scale them.</p>
+
+<p>The Leaflet will zoom to the most recent one. For example, if you have <code class="highlighter-rouge">zoomSnap: 0.25</code>, you try to do <code class="highlighter-rouge">map.setZoom(0.8)</code> and the zoom will return To 0.75.</p>
+
+<p>There is another important map option related to <code class="highlighter-rouge">zoomSnap</code>: <code class="highlighter-rouge">zoomDelta</code> option. It controls the zoom level of the image when using the zoom button (from the default <code class="highlighter-rouge">L.Control.Zoom</code>) or the +/- keys on the keyboard.</p>
+
+<p>For scrolling mouse wheel zoom, the <code class="highlighter-rouge">wheelPxPerZoomLevel</code> option controls the zoom speed of the mouse wheel.</p>
+
+<p> Here's an example where <code class="highlighter-rouge">zoomSnap</code> is set to zero:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs javascript">    <span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+        zoomDelta: <span class="hljs-number">0.25</span>,
+        zoomSnap: <span class="hljs-number">0</span>
+    });
+</code></pre></div></div>
+
+<p> Try the following to see how the zoom level changes: </p>
+
+<ul>
+<li>If you have a touch screen, please pinch the zoom</li>
+   <li>Zoom with the mouse wheel</li>
+   <li> Make a box zoom (hold the <code class="highlighter-rouge">shift</code> key on the keyboard while dragging the mouse)</li>
+   <li>Use the zoom button</li>
+</ul>
+
+<table>
+<tbody><tr><td style="text-align: center; border: none">
+<iframe src="./leaflet_zoom_levels/example-delta.html" width="616" height="416"></iframe>
+</td></tr>
+<tr><td style="text-align: center; border: none">
+<small><a href="./leaflet_zoom_levels/example-delta.html">View this example</a></small>
+</td></tr></tbody></table>
+
+<p>This tutorial is over. Now show your zoom level on the map! </p>
+
+
+{% endblock %}

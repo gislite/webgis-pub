@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <!-- Use correct character set. -->
+   <meta charset="utf-8">
+   <!-- Tell IE to use the latest, best version. -->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+   <title>Hello World!</title>
+   <script src="Build/Cesium/Cesium.js"></script>
+   <style>
+        @import url(Build/Cesium/Widgets/widgets.css);
+       html, body, #cesiumContainer {
+           width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+       }
+   </style>
+ </head>
+
+ <style type="text/css">
+     #top1{
+      text-align:center;
+      width:100%;
+      height:8%;
+      float:left;
+      margin-top:50px;
+     }
+
+     #bottom1{
+      text-align:center;
+      width:30%;
+      height:1000px;
+      float:left;
+     }
+     #bottom2{
+
+      width:70%;
+         height:1000px;
+      float:left;
+     }
+</style>
+
+
+ <body>
+<div id="top1">
+  欧洲联盟Global Land Cover 2000
+</div>
+<div>
+    <div id="bottom1">
+
+
+全球植被监测单位开展了若干与土地覆盖测绘和监测有关的活动。特别是，全球价值管理部门正与世界各地的合作伙伴网络合作，协调和实施全球土地覆盖2000项目（GLC 2000）。
+
+
+总体目标是为2000年提供一个全球统一的土地覆盖数据库。2000年被视为与各种活动，特别是与联合国生态系统有关的国际公约有关的环境评估的参考年。
+
+
+为了实现这一目标，GLC 2000利用了Vega 2000数据集：一个由SPOT 4卫星上的植被仪器获取的14个月的预处理每日全球数据集，通过植被方案成员（包括JRC）的赞助提供。
+
+
+2002年6月3日，千年生态系统评估主任Reid博士通知我们，GLC 2000将被用于完整的MA评估报告以及各种总结和综合报告，并充分承认GLC 2000合作伙伴将被列入“MA相关科学组织和科学院”名单。GLC 2000数据集将包含在核心MA数据集中。
+
+数据来源网站： http://forobs.jrc.ec.europa.eu/products/glc2000/glc2000.php
+
+    </div>
+    <div id="bottom2"></div>
+</div>
+   <script>
+     function startup(Cesium) {
+        widget = new Cesium.Viewer('bottom2');
+        url='http://wcs.osgeo.cn:8088/service?';   //wms地址
+            layers = widget.scene.globe.imageryLayers;
+            layers.removeAll();
+           var blackMarble = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({  //加载一个新的图层
+                url : url,
+                layers: 'maplet_r011',// Here just give layer name
+                version:'1.1.0'
+           }));
+           // Start off looking at Australia.
+        widget.camera.setView({
+            destination: Cesium.Rectangle.fromDegrees(-100,0,310,80)  //给地图显示页定位
+        });
+        //Sandcastle_End
+        Sandcastle.finishedLoading();  //加载地图
+     }
+     if (typeof Cesium !== "undefined") {  //调用starup()
+        startup(Cesium);
+     } else if (typeof require === "function") {
+        require(["Cesium"], startup);
+     }
+   </script>
+ </body>
+ </html>

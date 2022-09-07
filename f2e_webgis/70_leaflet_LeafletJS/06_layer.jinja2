@@ -1,0 +1,122 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>Layer group and layer control</title>
+{% endblock %}
+
+{% block cntbody %}
+
+
+    <h2 id="layer-groups-and-layers-control">Layer group and layered control</h2>
+
+    <p>This tutorial shows you how to combine multiple layers into a set of layers and how to use layer controls to allow users to easily switch between different layers on the map.</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_layer_control/example.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_layer_control/example.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="layer-groups">Layer group</h3>
+
+    <p>Suppose you have a bunch of layers, and you want to combine them in your code to handle them:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> littleton = L.marker([<span class="hljs-number">39.61</span>, -<span
+                class="hljs-number">105.02</span>]).bindPopup(<span
+                class="hljs-string">'This is Littleton, CO.'</span>),
+    denver    = L.marker([<span class="hljs-number">39.74</span>, -<span
+                    class="hljs-number">104.99</span>]).bindPopup(<span
+                    class="hljs-string">'This is Denver, CO.'</span>),
+    aurora    = L.marker([<span class="hljs-number">39.73</span>, -<span
+                    class="hljs-number">104.8</span>]).bindPopup(<span
+                    class="hljs-string">'This is Aurora, CO.'</span>),
+    golden    = L.marker([<span class="hljs-number">39.77</span>, -<span
+                    class="hljs-number">105.23</span>]).bindPopup(<span
+                    class="hljs-string">'This is Golden, CO.'</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Instead of adding them directly to the map, you can use the LayerGroup class to do the following:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> cities = L.layerGroup([littleton, denver, aurora, golden]);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Easy enough! Now you have a <code class="highlighter-rouge">cities</code> layer that merges your city logos into one layer so you can add or remove them from the map right away.</p>
+
+    <h3 id="layers-control">Layer control</h3>
+
+    <p>Leaflet is a nice little control that allows users to control the layers they see on the map. In addition to showing you how to use it, we'll show you another convenient usage of layer groups.</p>
+
+    <p>
+        There are two types of layers: (1) mutually exclusive base layers (only one can be seen at a time on the map), for example, tile layers, and (2) overlay layers, which are all placed on the base layer. Other content. In this example, we want to have two base layers (grayscale and color base maps) to switch, and an overlay layer (the city markers we created earlier) to switch and close.</p>
+
+    <p>Now let's create the base layer and add the default layer to the map:</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> grayscale = L.tileLayer(mapboxUrl, {id: <span
+            class="hljs-string">'</span><a href="https://mapbox.com/"><span
+            class="hljs-string">MapID</span></a><span class="hljs-string">'</span>, attribution: mapboxAttribution}),
+    streets   = L.tileLayer(mapboxUrl, {id: <span class="hljs-string">'</span><a
+                href="https://mapbox.com/"><span
+                class="hljs-string">MapID</span></a><span class="hljs-string">'</span>, attribution: mapboxAttribution});
+
+<span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+    center: [<span class="hljs-number">39.73</span>, -<span class="hljs-number">104.99</span>],
+    zoom: <span class="hljs-number">10</span>,
+    layers: [grayscale, cities]
+});</code></pre>
+
+    <p>Next, we create two objects. One contains our base layer and one contains our overlay layer. These are just simple objects with key/value pairs. The key sets the text of the layer in the control (for example, "Streets"), and the corresponding value is a reference to the layer (for example, <code class="highlighter-rouge">streets</code>).</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> baseMaps = {
+    <span class="hljs-string">"Grayscale"</span>: grayscale,
+    <span class="hljs-string">"Streets"</span>: streets
+};
+
+<span class="hljs-keyword">var</span> overlayMaps = {
+    <span class="hljs-string">"Cities"</span>: cities
+};</code></pre>
+
+    <p>
+        Now, just create a layer control and add it to the map. The first parameter passed when the layer control is created is the base layer object, and the second parameter is the overlay object. Both of these parameters are optional: when the second argument is omitted, you can only pass the base layer object, or pass null as the first argument if you only want to pass the overlay object. In either case, the omitted layer type will not appear for the user to select.</p>
+
+    <pre><code class="hljs css"><span class="hljs-tag">L</span><span class="hljs-class">.control</span><span
+            class="hljs-class">.layers</span>(<span class="hljs-tag">baseMaps</span>, <span class="hljs-tag">overlayMaps</span>)<span
+            class="hljs-class">.addTo</span>(<span class="hljs-tag">map</span>);</code></pre>
+
+    <p>Notice that we added the <code class="highlighter-rouge">grayscale</code> layer and the <code class="highlighter-rouge">cities</code> layer to the map, but did not add <code class=" Highlighter-rouge">streets</code>. Layer control is smart enough to detect which layers we have added and set the corresponding radio buttons and checkboxes.
+    </p>
+
+    <p>Also note that when using multiple base layers, you only need to add one of them to the map when instantiating, but all of these base layer objects should exist when you create a layer control.</p>
+
+    <p>Finally, when you define an object for a layer, you can define a style for the object's keys. For example, this code will make the grayscale map's labels gray:</p>
+
+    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> baseMaps = {
+    <span class="hljs-string">"&lt;span style='color: gray'&gt;Grayscale&lt;/span&gt;"</span>: grayscale,
+    <span class="hljs-string">"Streets"</span>: streets
+};
+</code></pre>
+
+    <p>Now let's take a separate page
+
+         <a href="./leaflet_layer_control/example.html">View results→</a></p>
+
+
+
+{% endblock %}

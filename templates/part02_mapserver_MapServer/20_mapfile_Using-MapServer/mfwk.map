@@ -1,0 +1,39 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    SYMBOL
+        NAME "natcap"
+        TYPE TRUETYPE
+        FILLED TRUE
+        ANTIALIAS TRUE
+        CHARACTER "&#114;"
+    END
+    LAYER
+        NAME "world-country"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        CLASS
+            NAME "The Upper Great Lakes States"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 32 32 32
+            END
+        END
+    END
+    LAYER
+        NAME "world-city"
+        DATA "world/cities.shp"
+        STATUS OFF
+        TYPE POINT
+        CLASS
+            NAME "cities"
+            SYMBOL "natcap"
+            SIZE 6
+            COLOR 0 0 0
+        END
+    END
+END

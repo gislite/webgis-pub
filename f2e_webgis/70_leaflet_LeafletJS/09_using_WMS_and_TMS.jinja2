@@ -1,0 +1,329 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>Use WMS with TMS services</title>
+{% endblock %}
+
+{% block cntbody %}
+
+    <h2>Use WMS with TMS services</h2>
+
+
+
+    <p>WMS is an abbreviation for <em>web map service</em>, a popular way for professional GIS software to publish maps (rarely used by non-GIS personnel).</p>
+
+    <p>TMS stands for <em>tiled map service</em> (<em>tile map service</em>).</p>
+
+    <h3 id="wms-in-leaflet">Leaflet's WMS</h3>
+
+    <p>When someone publishes a WMS service, the most likely link is to the <code class="highlighter-rouge">GetCapabilities</code> document.
+         In this tutorial, we will use the demo map service from GeoServer at https://demo.boundlessgeo.com/geoserver/web/.
+         We will use GeoServer's demo map service at https://demo.boundlessgeo.com/geoserver/web/.
+         As you can see on this page, "WMS" links to the following URL:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">https:<span
+                class="hljs-comment">//demo.boundlessgeo.com/geoserver/ows?service=wms&amp;version=1.3.0&amp;request=GetCapabilities</span>
+</code></pre>
+        </div>
+    </div>
+
+    <p>Leaflet cannot parse WMS's <code class="highlighter-rouge">GetCapabilities</code> document. So, you must create a <code class="highlighter-rouge">L.TileLayer.WMS</code> layer that is used to provide a basic WMS link and specify any WMS options you need.</p>
+
+    <p>The basic WMS link is just a <code class="highlighter-rouge">GetCapabilities</code> link with no parameters, for example:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">https:<span
+                class="hljs-comment">//demo.boundlessgeo.com/geoserver/ows?</span>
+</code></pre>
+        </div>
+    </div>
+
+    <p>The way to use this in Leaflet's map is simple:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> map = L.map(mapDiv, mapOptions);
+
+<span class="hljs-keyword">var</span> wmsLayer = L.tileLayer.wms(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, wmsOptions).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p>An instance of <code class="highlighter-rouge">L.TileLayer.WMS</code> requires at least one option: <code class="highlighter-rouge">layers</code>. Note that the "layer" concept in Leaflet is not the same as the "layer" concept in WMS!</p>
+
+    <p>The WMS server will define <em>a set of layers</em> in the <code class="highlighter-rouge">GetCapabilities</code> XML document, but the document is mostly lengthy and difficult to understand, so it is usually used like QGIS. Software to view information about available layers in the WMS server:
+    </p>
+
+    <p>
+        <img src="Using_WMS_and_TMS_services/qgis-wms-layers.png"
+             alt="Discovering WMS layers with QGIS"></p>
+
+    <p>The WMS server will define <em>a set of layers</em> in the <code class="highlighter-rouge">GetCapabilities</code> XML document, but the document is mostly lengthy and difficult to understand, so it is usually used like QGIS. Software to view information about available layers in the WMS server:...</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">
+var wmsLayer = L.tileLayer.wms(&#x27;http://webgis.osgeo.cn/cgi-bin/mapserv?map=/owg/xmfb3.map&amp;&#x27;, {
+        layers: &#x27;states&#x27;,
+        format: &#x27;image/png&#x27;,
+        transparent: true,
+    }).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <div>Note that the Mapfile used above needs to define the output projection as <code>EPSG:3857</code>.</div>
+
+    <div>It is also important to note that if the Mapfile is not properly configured, it is possible that the MapServer map (the full map by default) will be used as a slice to form an overlay.</div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_using_wms_tms/wms-example1.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_using_wms_tms/wms-example1.html">View this example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>Or we can try the WMS layer of <code class="highlighter-rouge">nasa:bluemarble</code>:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> wmsLayer = L.tileLayer.wms(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, {
+    layers: <span class="hljs-string">'nasa:bluemarble'</span>
+}).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_using_wms_tms/wms-example2.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_using_wms_tms/wms-example2.html">View this example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>The <code class="highlighter-rouge">layers</code> option is a comma-separated list of layers. If the WMS service defines multiple layers, the map can introduce multiple layers to create images at the same time.</p>
+
+    <p>For example, on the WMS server we are using, there is a <code class="highlighter-rouge">ne:ne_10m_admin_0_countries</code> layer showing the national land and country name, and a <code class="highlighter-rouge The ">ne:ne_10m_admin_0_boundary_lines_land</code> layer shows the country border.
+         If we request two layers at the same time, the WMS server will combine the two layers into one image and separate them with a comma:
+    </p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> countriesAndBoundaries = L.tileLayer.wms(<span
+                class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, {
+    layers: <span class="hljs-string">'ne:ne_10m_admin_0_countries,ne:ne_10m_admin_0_boundary_lines_land'</span>
+}).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Note that this will request an image from the WMS server that is different from the <code class="highlighter-rouge">L.TileLayer.WMS</code> created for the country and country boundaries, which will both Add to the map. In the first case, an image request is made and then the WMS server decides how to combine the images. In the second case, two image requests are made, and then the Leaflet code running in the web browser determines how the images are combined.
+    </p>
+
+    <p>
+
+        If we combine these with layer controls, we can create a simple map to see the differences:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> basemaps = {
+    Countries: L.tileLayer.wms(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, {
+        layers: <span class="hljs-string">'ne:ne_10m_admin_0_countries'</span>
+    }),
+
+    Boundaries: L.tileLayer.wms(<span
+                    class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, {
+        layers: <span class="hljs-string">'ne:ne_10m_admin_0_boundary_lines_land'</span>
+    }),
+
+    <span class="hljs-string">'Countries, then boundaries'</span>: L.tileLayer.wms(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, {
+        layers: <span
+                    class="hljs-string">'ne:ne_10m_admin_0_countries,ne:ne_10m_admin_0_boundary_lines_land'</span>
+    }),
+
+    <span class="hljs-string">'Boundaries, then countries'</span>: L.tileLayer.wms(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, {
+        layers: <span
+                    class="hljs-string">'ne:ne_10m_admin_0_boundary_lines_land,ne:ne_10m_admin_0_countries'</span>
+    })
+};
+
+L.control.layers(basemaps).addTo(map);
+
+basemaps.Countries.addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Change to the "Countries, then boundaries" option so you can see the land boundary and the WMS server is smart enough to display the building tags on the map. When multiple layers are requested, how to combine the layers depends on the WMS server.</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_using_wms_tms/wms-example3.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_using_wms_tms/wms-example3.html">View this example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="notes-to-gis-users-of-wms-services">Information for GIS users of WMS services</h3>
+
+    <p>From a GIS perspective, Leaflet's WMS processing is very basic. It does not support <code class="highlighter-rouge">GetCapabilities</code>, does not support legend, and does not support <code class="highlighter-rouge">GetFeatureInfo</code>.</p>
+
+    <p>We can find <code class="highlighter-rouge">L.TileLayer.WMS in the <a href="https://leafletjs.com/reference.html#tilelayer-wms">Leaflet's API documentation</a> documentation. </code> extra options. Any option can be passed to the WMS server via a link to <code class="highlighter-rouge">getImage</code>.</p>
+
+    <p>Also note that Leaflet supports very few coordinate systems: <code class="highlighter-rouge">CRS:3857</code>, <code class="highlighter-rouge">CRS:3395</code>
+        And <code class="highlighter-rouge">CRS:4326</code> (see the <code class="highlighter-rouge">L.CRS</code> documentation).
+         If your WMS service is unable to provide images in these coordinate systems, you may need to create additional coordinate systems in Leaflet using <a href="https://github.com/kartena/Proj4Leaflet">Proj4Leaflet</a> .
+         In addition, to use the correct CRS when initializing your map, add it to any WMS layer:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+    crs: L.CRS.EPSG4326
+});
+
+<span class="hljs-keyword">var</span> wmsLayer = L.tileLayer.wms(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/ows?'</span>, {
+    layers: <span class="hljs-string">'nasa:bluemarble'</span>
+}).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_using_wms_tms/wms-example-crs.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_using_wms_tms/wms-example-crs.html">查看本实例</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="tms-in-leaflet">Leaflet's TMS</h3>
+
+    <p>Although Leaflet does not explicitly support the TMS service, the naming rules for tiles are very similar to the naming rules for <code class="highlighter-rouge">L.TileLayer</code>, so the TMS service will not be described here.
+    </p>
+
+    <p>Using the same OpenGeo WMS/TMS server demo, we can see a TMS endpoint:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">https:<span
+                class="hljs-comment">//demo.boundlessgeo.com/geoserver/gwc/service/tms/1.0.0</span>
+</code></pre>
+        </div>
+    </div>
+
+    <p>Check <a href="http://mapserver.org/mapcache/services.html">MapCache help about TMS</a> and <a
+             Href="https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">TMS specification</a>
+         You can see the links to the map tiles in TMS as follows:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">http:<span
+                class="hljs-comment">//base_url/tms/1.0.0/ {tileset} / {z} / {x} / {y} .png</span>
+</code></pre>
+        </div>
+    </div>
+
+    <p>Using OpenGeo's TMS service as <code class="highlighter-rouge">L.TileLayer</code>, we can check the function documentation to see which <code class="highlighter-rouge">tileset</code> Available, and build our basic links:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">https:<span
+                class="hljs-comment">//demo.boundlessgeo.com/geoserver/gwc/service/tms/1.0.0/ne:ne@EPSG:900913@png/{z}/{x}/{y}.png</span>
+
+https:<span class="hljs-comment">//demo.boundlessgeo.com/geoserver/gwc/service/tms/1.0.0/nasa:bluemarble@EPSG:900913@jpg/{z}/{x}/{y}.jpg</span>
+</code></pre>
+        </div>
+    </div>
+
+    <p>Use the <code class="highlighter-rouge">tms:true</code> option when instantiating a layer as follows:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> tms_ne = L.tileLayer(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/gwc/service/tms/1.0.0/ne:ne@EPSG:900913@png/{z}/{x}/{y}.png'</span>, {
+    tms: <span class="hljs-literal">true</span>
+}).addTo(map);
+
+<span class="hljs-keyword">var</span> tms_bluemarble = L.tileLayer(<span class="hljs-string">'https://demo.boundlessgeo.com/geoserver/gwc/service/tms/1.0.0/nasa:bluemarble@EPSG:900913@jpg/{z}/{x}/{y}.jpg'</span>, {
+    tms: <span class="hljs-literal">true</span>
+});
+</code></pre>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_using_wms_tms/wms-example4.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_using_wms_tms/wms-example4.html">View this example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>A new feature of <strong>Leaflet 1.0</strong> is the ability to use <code class="highlighter-rouge">{-y}</code> instead of <code class="highlighter-rouge"> Tms: true</code> option, for example:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> layer = L.tileLayer(<span class="hljs-string">'http://base_url/tms/1.0.0/tileset/{z}/{x}/{-y}.png'</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p><code class="highlighter-rouge">tms: true</code> option (Leaflet 0.7) or <code class="highlighter-rouge">{-y}</code>
+         (Leaflet 1.0) is necessary because the origin of the coordinates of <code class="highlighter-rouge">L.TileLayer</code> is usually in the upper left corner, so the Y coordinate is lowered. In TMS, the coordinate origin is in the lower left corner, so the Y coordinate <em> rises</em>.
+    </p>
+
+    <p>In addition to the differences in <code class="highlighter-rouge">y</code> coordinates and the discovery of tiles,
+         The TMS service also provides accurate services in the form of <code class="highlighter-rouge">L.TileLayer</code>.</p>
+
+
+
+{% endblock %}

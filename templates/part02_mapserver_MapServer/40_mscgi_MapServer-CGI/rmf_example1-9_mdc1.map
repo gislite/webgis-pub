@@ -1,0 +1,52 @@
+MAP
+
+    NAME         mapv19
+
+  IMAGETYPE      PNG24
+      EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+  SYMBOLSET      "../symbols/symbols35.sym"
+  FONTSET        "../fonts/fonts.list"
+
+
+  IMAGECOLOR     255 255 255
+  FONTSET        "../fonts/fonts.list"
+  SYMBOLSET      "../symbols/symbols35.sym"
+
+    WEB
+    TEMPLATE  'example1-9.html'
+    IMAGEPATH '/owg/ms_tmp/'
+    IMAGEURL  '/ms_tmp/'
+  END
+
+  LAYER # MODIS raster layer begins here
+    NAME         topo
+    DATA         "land_shallow_topo_8192.tif"
+    STATUS       OFF
+    TYPE         RASTER
+    PROCESSING   "BANDS=1,2,3"
+    OFFSITE      71 74 65
+  END # MODIS raster layer ends here
+
+  LAYER # States line layer begins here
+    NAME         states_line
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         LINE
+
+    # CLASSITEM    "CLASS"
+    CLASS
+      NAME       'State Boundary'
+      # EXPRESSION 'land'
+      STYLE
+        SYMBOL     'line5'
+        COLOR      255 255 0
+        SIZE       1
+      END
+    END
+  END # States line layer ends here
+
+
+
+END

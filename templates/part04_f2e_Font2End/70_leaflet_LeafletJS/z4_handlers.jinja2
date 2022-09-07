@@ -1,0 +1,208 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+
+
+    <title>扩展Leaflet： New Handlers and Controls</title>
+
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+
+    <p>本教程假定您已经阅读了Leaflet的类继承原理。</p>
+
+    <p>在Leaflet中，“层”是指任何可以与地图一起移动的东西。与此相反，“控件”是相对于地图容器保持静态的HTML元素，而“处理程序”是更改地图行为的一段不可见代码。</p>
+
+    <h2 id="handlers">处理程序</h2>
+
+    <p>地图处理程序是Leaflet 1.0中的一个新概念，它们的功能是在浏览器中处理DOM事件，并更改地图的状态。</p>
+
+    <p>处理程序相对简单:它们只需要一个<code class="highlighter-rouge">addHooks()</code>方法(处理程序在地图中运行时)和一个<code
+            class="highlighter-rouge">removeHooks()</code>方法(在处理程序禁用时运行)。处理程序的框架如下:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.CustomHandler = L.Handler.extend({
+    addHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.on(<span class="hljs-built_in">document</span>, <span
+                    class="hljs-string">'eventname'</span>, <span
+                    class="hljs-keyword">this</span>._doSomething, <span class="hljs-keyword">this</span>);
+    },
+
+    removeHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.off(<span class="hljs-built_in">document</span>, <span
+                    class="hljs-string">'eventname'</span>, <span
+                    class="hljs-keyword">this</span>._doSomething, <span class="hljs-keyword">this</span>);
+    },
+
+    _doSomething: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">event</span>) </span>{ … }
+});
+</code></pre>
+        </div>
+    </div>
+
+    <p>这可以用一个简单的处理程序来说明，当移动设备倾斜时，通过<code class="highlighter-rouge">deviceorientation</code> 事件平移地图:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.TiltHandler = L.Handler.extend({
+    addHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.on(<span class="hljs-built_in">window</span>, <span
+                    class="hljs-string">'deviceorientation'</span>, <span
+                    class="hljs-keyword">this</span>._tilt, <span class="hljs-keyword">this</span>);
+    },
+
+    removeHooks: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        L.DomEvent.off(<span class="hljs-built_in">window</span>, <span class="hljs-string">'deviceorientation'</span>, <span
+                    class="hljs-keyword">this</span>._tilt, <span class="hljs-keyword">this</span>);
+    },
+
+    _tilt: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>) </span>{
+        <span class="hljs-comment">// Treat Gamma angle as horizontal pan (1 degree = 1 pixel) and Beta angle as vertical pan</span>
+        <span class="hljs-keyword">this</span>._map.panBy( L.point( ev.gamma, ev.beta ) );
+    }
+});
+</code></pre>
+        </div>
+    </div>
+
+    <p>处理程序可以使用<code class="highlighter-rouge">map.addHandler('tilt', L.TiltHandler)</code>附加到地图-这会使<code
+            class="highlighter-rouge">L.TiltHandler</code>的实例存储为<code
+            class="highlighter-rouge">map.tilt</code>.但是，通常使用<code
+            class="highlighter-rouge">addInitHook</code>语法将处理程序附加到所有地图：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.Map.addInitHook(<span
+                class="hljs-string">'addHandler'</span>, <span class="hljs-string">'tilt'</span>, L.TiltHandler);
+</code></pre>
+        </div>
+    </div>
+
+    <p>我们的处理程序现在可以通过运行<code class="highlighter-rouge">map.tilt.enable()</code>来启用，通过<code
+            class="highlighter-rouge">map.tilt.disable()</code>来禁用。
+    </p>
+
+    <p>此外，如果地图的属性名称与处理程序名称相同，那么当选项为真时，将会默认启用该处理程序:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'mapDiv'</span>, { tilt: <span
+                class="hljs-literal">true</span> });
+</code></pre>
+        </div>
+    </div>
+
+    <p>要查看这个示例，您将需要一个支持设备定位事件的移动浏览器，即使如此，这个事件也是特别不规范的，因此要慎用。</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_new_handlers_and_controls/tilt.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_new_handlers_and_controls/tilt.html">Show the example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>根据事件的类型，地图处理程序可以将事件监听器附加到<code class="highlighter-rouge">文档</code>、<code
+            class="highlighter-rouge">窗口</code>或它所附加的<code
+            class="highlighter-rouge">L.Map</code>的容器里。</p>
+
+    <h2 id="controls">控件</h2>
+
+    <p>你已经知道了控件——左上角的缩放控件，左下角的缩放比例，右上角的图层切换器。在他们的中心，<code class="highlighter-rouge">L.Control</code>
+        是位于地图容器中的静态位置的HTML元素。</p>
+
+    <p>要制作控件，只需从<code class="highlighter-rouge">L.Control</code>继承即可。控制和实现on<code
+            class="highlighter-rouge">onAdd()</code>和<code
+            class="highlighter-rouge">onRemove()</code>。这些方法的工作方式与<code
+            class="highlighter-rouge">L.Layer</code>相似。只是<code
+            class="highlighter-rouge">onAdd()</code>必须返回表示控件的<code
+            class="highlighter-rouge">HTMLElement</code>。将元素添加到地图中是自动完成的，因此移除它也是如此。
+    </p>
+
+    <p>自定义控件最简单的例子就是水印，它只是一个图像：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">L.Control.Watermark = L.Control.extend({
+    onAdd: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">map</span>) </span>{
+        <span class="hljs-keyword">var</span> img = L.DomUtil.create(<span class="hljs-string">'img'</span>);
+
+        img.src = <span class="hljs-string">'../../docs/images/logo.png'</span>;
+        img.style.width = <span class="hljs-string">'200px'</span>;
+
+        <span class="hljs-keyword">return</span> img;
+    },
+
+    onRemove: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">map</span>) </span>{
+        <span class="hljs-comment">// Nothing to do here</span>
+    }
+});
+
+L.control.watermark = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">opts</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> L.Control.Watermark(opts);
+}
+
+L.control.watermark({ position: <span class="hljs-string">'bottomleft'</span> }).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_new_handlers_and_controls/watermark.html"
+                        width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a
+                        href="./leaflet_new_handlers_and_controls/watermark.html">Show the example</a>
+                </small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>如果您的自定义控件具有交互式元素，如可单击按钮，
+        请记住在<code class="highlighter-rouge">onAdd()</code>中使用<code
+                class="highlighter-rouge">L.DomEvent.on()</code>，
+        在<code class="highlighter-rouge">onRemove()</code>中使用<code
+                class="highlighter-rouge">L.DomEvent.off()</code>。
+    </p>
+
+    <p>如果您的自定义控件由多个HTML元素(如<code class="highlighter-rouge">L.Control.Zoom</code>有两个按钮)组成，您必须创建整个元素层次结构，并返回最顶层的容器。
+    </p>
+
+    <h2 id="publishing-your-plugin">发布插件</h2>
+
+    <p>如果你已经了解了所有的事情，你已经准备好做SOM Leaflet插件了！
+        但是请务必阅读<code class="highlighter-rouge">PLUGIN-GUIDE.md</code>文件，
+        因为它包含了一些关于命名和发布插件的技巧和良好实践。
+    </p>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+# 进行标注
+
+MAP
+    IMAGETYPE PNG
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    FONTSET "../fonts/fonts.list"
+
+    LAYER  # 国家多边形层从这里开始
+
+        NAME states_poly
+        DATA wcountry.shp
+        STATUS OFF
+        TYPE POLYGON
+
+        LABELITEM 'NAME'
+
+
+        CLASS
+        NAME 'States'
+
+        STYLE
+        COLOR 232 232 232
+        END
+
+        # 可以在一个类中有多个标签，就像有一层中有多个类，
+        # 就像在一个地图中有多个层。您可以在一类中定义多个标签
+        # ，就像你在一层，可以定义多个类，在一个地图中定义多个
+        # 层。
+        # MapServer的有一个非常灵活的标签制度。灵活性
+        # 自变得复杂，特别是当使用TrueType字体时。请
+        # 通过MapServer地图文件文档的LABEL段
+        # 在http://www.mapserver.org/mapfile阅读更多信息。
+        LABEL
+        COLOR 132 31 31
+        SHADOWCOLOR 218 218 218
+        SHADOWSIZE 2 2
+        TYPE TRUETYPE
+        FONT arial-bold
+        SIZE 8
+        ANTIALIAS TRUE
+        # POSITION CL
+        POSITION CC
+        PARTIALS FALSE
+        MINDISTANCE 300
+        BUFFER 4
+        END # 标签结束
+
+    END
+
+
+    END # States polygon layer ends here
+    # 国家多边形层到此为止
+
+
+    LAYER #线层从这里开始
+        NAME         states_line
+        DATA         wcountry.shp
+        STATUS       OFF
+        TYPE         LINE
+        CLASS
+            NAME       "State Boundary"
+            STYLE
+                COLOR    132 132 32
+            END
+        END
+    END # States line layer ends here
+END # All map files must come to an end just as all other things must come to...

@@ -1,0 +1,513 @@
+
+@charset "utf-8"
+
+$clr_link: #006699
+$clr_link2:#3399cc
+$clr_text: #666666
+$clr_border: #0c5460
+$clr_note: #cccccc
+$font_name: Verdana, Sans-Serif, Arial
+
+/* CSS Document
+
+html
+  background: #FFF
+
+body
+  font-size: 14px
+  background-color: #fff
+  color: #323232
+  font-family: $font_name
+
+html, body, address, blockquote, div, dl, form, ol, p, pre, table, ul, dd, dl, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object, a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span, strong, sub, sup, tt, var, legend, fieldset
+  margin: 0px
+  padding: 0px
+  font-size: 100%
+  -webkit-font-smoothing: subpixel-antialiased
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+  width: 100%
+
+fieldset
+  border: 0
+
+img
+  border: 0
+  max-width: 100%
+  height: auto
+  width: auto
+
+object
+  max-width: 100%
+  height: auto
+  width: auto
+
+a
+  outline: none
+  blr: expression(this.onFocus=this.blur())
+  text-decoration: none
+
+  /* color: #323232;
+
+  &:hover
+    /* color: #323232;
+    text-decoration: none
+
+input[type='button']
+  outline: none
+  border: 0 none
+  background-color: transparent
+  cursor: pointer
+
+address, caption, cite, code, dfn, em, strong, th, var
+  font-style: normal
+  font-weight: 400
+
+/*定义清除浮动样式 方法一
+
+.clearfix
+  &:after
+    content: '\20'
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+  zoom: 1
+
+/*定义清除浮动样式 方法二
+
+.clear
+  clear: both
+
+.img-thumbnail
+  border: 0
+
+.nav_bg
+  //background: $clr_link
+  font-weight: bold
+
+.navbar-toggle
+  position: relative
+  float: right
+  padding: 9px 10px
+  margin-top: 8px
+  margin-right: 15px
+  margin-bottom: 8px
+  //background-color: #004fa4
+  border: 1px solid #004fa4
+  border-radius: 4px
+
+  &:focus
+    outline: 0
+
+  .icon-bar
+    display: block
+    width: 22px
+    height: 2px
+
+    /* border-radius: 1px solid #004fa4;
+
+.navbar-inverse
+  .navbar-toggle
+    border-color: #004fa4
+
+    //&:focus, &:hover
+    //  background-color: #004fa4
+
+  .navbar-collapse
+    border-color: #004fa4
+
+  //background-color: #012f82
+  border-color: #012f82
+
+  .navbar-brand
+    color: #fff
+    font-size: 14px
+
+  .navbar-nav >
+    li > a
+      color: #fff
+      padding-left: 24px
+      padding-right: 24px
+
+      &:focus, &:hover
+        color: #fff
+        //background-color: #004fa4
+
+    .open > a
+      color: #fff
+      //background-color: #004fa4
+
+      &:focus, &:hover
+        color: #fff
+        //background-color: #004fa4
+
+.dropdown-menu
+  position: absolute
+  display: none
+  float: left
+  min-width: 170px
+  list-style: none
+  line-height: 30px
+  font-size: 12px
+  left: -15px
+  text-align: left
+  z-index: 9999
+  //background: #004fa4
+
+  >
+    li > a
+      color: #fff
+      font-size: 12px
+      line-height: 30px
+      border-top: none
+      text-align: left
+      font-weight: normal
+      height: auto
+      font-family: $font_name
+      z-index: 9999
+
+      &:focus, &:hover
+        font-weight: bold
+        //background: #012f82
+        color: #fff
+
+    .active > a
+      font-wetght: bolder
+
+      &:focus, &:hover
+        font-wetght: bolder
+
+    .disabled > a
+      color: #fff
+
+      &:focus, &:hover
+        color: #fff
+
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu
+  top: auto
+  bottom: 100%
+  margin-bottom: 2px
+
+.articleList .listTitle
+  width: 100%
+  height: 33px
+  display: block
+
+.more
+  float: right
+  padding-left: 13px
+  background: #ffffff
+  height: 33px
+  line-height: 33px
+
+  a
+    color: #000000
+    /* font-size: 1px */
+
+.listTitle h2
+  font-size: 14px
+  padding: 0 15px 0 42px
+  color: #013f82
+  width: auto
+  float: left
+  font-weight: bold
+  line-height: 33px
+  margin: 0px
+
+
+.articleList ul li
+  border: 0
+  padding: 0 0 0 29px
+  height: 30px
+  line-height: 30px
+  font-size: 14px
+  display: block
+  float: left
+  width: 100%
+
+  a
+    float: left
+
+    &:hover
+      color: #004fa4
+
+  span
+    float: right
+    font-size: 12px
+    color: #4a4a4a
+
+/*底部开始
+
+.footer
+  height: 120px
+  background-color: #013f82
+  color: #fff
+
+.copyRight
+  width: 100%
+  margin: 0 auto
+  text-align: center
+  line-height: 30px
+  font-family: $font_name
+
+.footer_logo
+  float: left
+  position: absolute
+
+.banquan
+  padding: 30px 0 0 0
+  font-size: 13px
+
+/*------------------------------------------------------------------
+
+.content h1
+  font-size: 20px
+  color: #1d75b3
+  text-align: center
+
+.content h2
+  font-size: 18px
+  border-bottom: 1px solid #1b6d85
+  color: #1d75b3
+  text-align: left
+  text-indent: 0
+  line-height: 40px
+
+.content h3
+  font-size: 16px
+  color: #1d75b3
+  text-align: left
+  text-indent: 0
+  line-height: 40px
+
+.content ul
+  margin-left: 3em
+
+  li
+    list-style-type: circle
+
+
+.content ol
+  margin-left: 3em
+
+  li
+    list-style-type: circle
+
+
+
+.xmjj .panel-heading
+  /* height: 45px
+  line-height: 25px
+  background: #013f82
+  text-align: center
+
+  a
+    font-size: 15px
+    color: #ffffff
+
+.mbclass
+  .panel-title, .panel-body
+    /* height: 41px
+    color: #013f82
+    text-align: center
+
+  .panel-heading
+    border: none
+    /* height: 41px
+    /* line-height: 41px
+    border-bottom: 1px solid #d7d7d7
+    background: #f1f1f1
+    text-align: center
+    margin: 0 0 1px 0
+
+    &:hover, a.active
+      /* height: 41px
+      background: #ffffff
+      border-left: 5px solid #ff9c00
+      border-right: 5px solid #ff9c00
+
+  border-color: #ddd
+
+  > .panel-heading
+    color: #333
+    background-color: #f5f5f5
+    border-color: #ddd
+
+    + .panel-collapse > .panel-body
+      border-color: #ddd
+
+    .badge
+      color: #f5f5f5
+      background-color: #333
+
+    .active
+      background: #ffffff
+      border-left: 5px solid #ff9c00
+      border-right: 5px solid #ff9c00
+
+#leftnavli
+  background: #ffffff
+  border-left: 5px solid #ff9c00
+  border-right: 5px solid #ff9c00
+
+.breadcrumb
+  > li + li:before
+    padding: 0 5px
+    color: #000
+    content: ">>"
+
+  height: 35px
+  line-height: 35px
+  background: #f1f1f1
+  margin: 14px 0 14px 0
+  padding: 0 0 0 22px
+  font-size: 14px
+  color: #444444
+
+  li a
+    font-size: 14px
+    color: #444444
+
+    &:hover
+      color: #013f82
+
+.content
+  font-size: 14px
+  color: #202020
+  line-height: 30px
+  text-indent: 0em
+  margin: 0 0 20px 0
+
+  p
+    text-indent: 2em
+
+h4.active
+  color: #f00
+
+
+
+#demo
+  overflow: hidden
+  width: 100%
+
+  li
+    list-style: none
+
+  img
+    border: 3px solid #ddd
+    margin: 5px 2px
+    width: 200px
+    height: 150px
+
+#indemo
+  float: left
+  width: 800%
+
+#demo1, #demo2
+  float: left
+
+/* Custom Styles
+
+ul.nav-tabs
+  width: 180px
+  margin-top: 20px
+  border-radius: 4px
+  border: 1px solid #ddd
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067)
+  bottom: 150px
+
+  li
+    margin: 0
+    border-top: 1px solid #ddd
+
+    &:first-child
+      border-top: none
+
+    a
+      margin: 0
+      padding: 8px 14px
+      border-radius: 0
+
+    &.active a
+      color: #fff
+      background: #0088cc
+      border: 1px solid #0088cc
+
+      &:hover
+        color: #fff
+        background: #0088cc
+        border: 1px solid #0088cc
+
+    &:first-child a
+      border-radius: 4px 4px 0 0
+
+    &:last-child a
+      border-radius: 0 0 4px 4px
+
+pre
+  margin: 10px 30px
+  padding: 5px 10px
+  overflow: scroll
+  -webkit-overflow-scrolling: touch
+  -moz-overflow-scrolling: touch
+  -o-overflow-scrolling: touch
+  white-space: pre
+  text-indent: 0
+  font-size: 13px
+  line-height: 16px
+  border: 1px solid $clr_border
+  font-family: Courier
+  // border: medium
+
+
+
+iframe
+  font-family: Courier
+  border: medium
+  font-size: 12px
+  line-height: 13px
+  border: 1px solid $clr_border
+
+
+table.diff
+  margin: 10px 30px
+  font-family: Courier
+  border: medium
+  font-size: 12px
+  line-height: 13px
+  border: 1px solid $clr_border
+
+.diff_header
+  background-color: #e0e0e0
+td.diff_header
+  text-align: right
+.diff_next
+  background-color: #c0c0c0
+.diff_add
+  background-color: #aaffaa
+.diff_chg
+  background-color: #ffff77
+.diff_sub
+  background-color: #ffaaaa
+  text-decoration: line-through
+
+//table { border:0px; border-collapse:collapse; width: 100%; font-size:0.75em; font-family: Lucida Console, monospace }
+//        td.line { color:#8080a0 }
+//        th { background: black; color: white }
+//        tr.diffunmodified td { background: #D0D0E0 }
+//        tr.diffhunk td { background: #A0A0A0 }
+//        tr.diffadded td { background: #CCFFCC }
+//        tr.diffdeleted td { background: #FFCCCC }
+//        tr.diffchanged td { background: #FFFFA0 }
+//        span.diffchanged2 { background: #E0C880 }
+//        span.diffponct { color: #B08080 }
+//        tr.diffmisc td {}
+//        tr.diffseparator td {}
+
+.img_border
+  border: 1px solid #ddd
+  padding: 10px

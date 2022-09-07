@@ -1,0 +1,151 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>Use the map pane</title>
+{% endblock %}
+
+{% block cntbody %}
+
+
+
+    <h2 id="what-are-panes">What is the pane?</h2>
+
+    <p>In Leaflet, map panes can automatically group layers, but developers are not aware that this allows browsers to process multiple layers more efficiently, rather than processing one layer at a time.</p>
+
+    <p>Map panes uses the <a href="https://developer.mozilla.org/docs/Web/CSS/z-index">z-index CSS property</a> property to control some layers to display on other layers Above. The default order is as follows:</p>
+
+    <ul>
+        <li><code class="highlighter-rouge">TileLayer</code>s and <code
+                class="highlighter-rouge">GridLayer</code>s
+        </li>
+        <li><code class="highlighter-rouge">Path</code>s, like lines, polylines, circles, or <code
+                class="highlighter-rouge">GeoJSON</code> layers.
+        </li>
+        <li><code class="highlighter-rouge">Marker</code> shadows</li>
+        <li><code class="highlighter-rouge">Marker</code> icons</li>
+        <li><code class="highlighter-rouge">Popup</code>s</li>
+    </ul>
+
+    <p>That's why in the Leaflet map, popups are displayed on top of other layers, markers are always displayed on the slice layer, and so on.</p>
+
+    <p><strong>Leaflet 1.0.0</strong> has added a new feature (0.7.X not available) to customize the map panes to adjust the default order.</p>
+
+    <h2 id="the-default-is-not-always-right"> The default value is not always appropriate </h2>
+
+    <p>In some special cases, the default layer sorting is not always appropriate. We use the following <a href="https://cartodb.com/basemaps/">basemap</a> and an example of a label layer to explain:</p>
+
+    <style>
+        .tiles img {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+
+    <div class="col-sm-12">
+        <div class="col-sm-4">
+            <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img"><br>
+            Basemap without annotation
+        </div>
+
+        <div class="col-sm-4">
+            <img src="./leaflet_with_map_panes/5.png" class="bordered-img"><br>
+            Transparent label layer
+        </div>
+
+        <div class="col-sm-4">
+            <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img">
+            <img src="./leaflet_with_map_panes/5.png" style="position:absolute; left:0; top:0;"><br>
+            Label the layer above the basemap
+        </div>
+    </div>
+
+    <p>If we add the above basemap and annotation layer to the Leaflet map, any polygons or markers will appear above the two layers, but it might be better to have the annotation layer appear on top. How should we achieve this?</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_with_map_panes/example.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_with_map_panes/example.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 id="custom-pane">Custom pane</h2>
+
+    <p>For basemaps and overlay layers like GeoJSON, we can use their default settings, but for annotation layers we need to customize a pane so that it appears on top of the GeoJSON layer.</p>
+
+    <p>Custom map panes are created on top of the original map, so we should first create a map instance of <code class="highlighter-rouge">L.Map</code> and the panes it needs:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>);
+map.createPane(<span class="hljs-string">'labels'</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p>The next step is to set the value of the pane's z-index. To view the default values for the pane, set the new pane's z-index value to 650 to have the label layer appear below the popups layer above the markers layer. Use the <code class="highlighter-rouge">getPane()</code> method to get the Html element of the pane and then modify its z-index value....</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">map.getPane(<span
+                class="hljs-string">'labels'</span>).style.zIndex = <span class="hljs-number">650</span>;
+</code></pre>
+        </div>
+    </div>
+
+    <p>One of the problems with having the image layer on top of other layers is that the slice captures events such as clicks or touches. If the user clicks on an area of the map, the browser will think that the user is clicking on the image layer instead of the GeoJSON layer or the markup layer. We can use CSS's pointer-events property to solve this problem:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">map.getPane(<span
+                class="hljs-string">'labels'</span>).style.pointerEvents = <span
+                class="hljs-string">'none'</span>;
+</code></pre>
+        </div>
+    </div>
+
+    <p>The new pane has been created, we can add the layer, pay attention to the <code class="highlighter-rouge">pane</code> option on the label layer:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> positron = L.tileLayer(<span class="hljs-string">'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png'</span>, {
+        attribution: <span class="hljs-string">'©OpenStreetMap, ©CartoDB'</span>
+}).addTo(map);
+
+<span class="hljs-keyword">var</span> positronLabels = L.tileLayer(<span class="hljs-string">'http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png'</span>, {
+        attribution: <span class="hljs-string">'©OpenStreetMap, ©CartoDB'</span>,
+        pane: <span class="hljs-string">'labels'</span>
+}).addTo(map);
+
+<span class="hljs-keyword">var</span> geojson = L.geoJson(GeoJsonData, geoJsonOptions).addTo(map);
+</code></pre>
+        </div>
+    </div>
+
+    <p>Finally, add some interactive features to the GeoJSON layer:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">geojson.eachLayer(<span
+                class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                class="hljs-params">layer</span>) </span>{
+    layer.bindPopup(layer.feature.properties.name);
+});
+
+map.fitBounds(geojson.getBounds());
+</code></pre>
+        </div>
+    </div>
+
+    <p>This way the <a href="./leaflet_with_map_panes/example.html">example</a> map is complete!</p>
+
+
+
+
+
+{% endblock %}

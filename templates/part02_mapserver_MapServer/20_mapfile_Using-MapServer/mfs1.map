@@ -1,0 +1,13 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -12 25 43 50
+    SIZE 550 250
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    LAYER
+        NAME "topo"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+    END
+END

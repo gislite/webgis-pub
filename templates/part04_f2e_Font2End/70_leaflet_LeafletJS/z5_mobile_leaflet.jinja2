@@ -1,0 +1,132 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>Leaflet on Mobile</title>
+{% endblock %}
+
+{% block cntbody %}
+
+
+        <h2 id="leaflet-on-mobile">Leaflet移动端全屏地图</h2>
+
+        <p>在本例中，您将学习如何创建针对iPhone，iPad或Android手机等移动设备调整的全屏地图，以及如何轻松检测并使用当前用户位置。</p>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_on_mobile/example.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_on_mobile/example.html">查看本示例</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3 id="preparing-the-page">准备页面</h3>
+
+        <p>
+            首先我们来看一下页面的HTML和CSS代码。为了使我们的地图div元素延伸到所有可用空间（全屏），我们可以使用下面的CSS代码（注意：在这个例子中，我们使用百分比来表示高度。虽然由于谷歌浏览器在手机上的错误，vh可以说更好：</p>
+
+        <div class="css highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs css"><span
+                    class="hljs-tag">body</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span
+            class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span
+            class="hljs-number">0</span></span></span>;
+}</span>
+<span class="hljs-tag">html</span>, <span class="hljs-tag">body</span>, <span class="hljs-id">#map</span> <span
+                        class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span
+            class="hljs-number">100%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span
+            class="hljs-number">100vw</span></span></span>;
+}</span>
+</code></pre>
+            </div>
+        </div>
+
+        <p>此外，我们需要告诉移动浏览器禁用不必要的页面缩放，并通过在HTML页面的<code class="highlighter-rouge">head</code>部分或HTML页面中放置以下代码来将其设置为实际大小：
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span
+                    class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span
+                    class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"</span> /&gt;</span>
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="initializing-the-map">初始化地图</h3>
+
+        <p>现在我们将使用JavaScript代码初始化地图，就像我们在Leaflet简介中所做的一样，展示整个世界：</p>
+
+        <pre><code class="javascript hljs"><span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>).fitWorld();
+
+L.tileLayer(<span class="hljs-string">'https://api.tiles.mapbox.com/v4/</span><a href="https://mapbox.com/"><span
+                    class="hljs-string">MapID</span></a><span class="hljs-string">/997/256/{z}/{x}/{y}.png?access_token={accessToken}'</span>, {
+    attribution: <span class="hljs-string">'Map data &amp;copy; </span><span class="text-cut" data-cut="[…]"><span
+                    class="hljs-string">&lt;a href="https://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="https://creativecommons.org/licenses/by-sa/2.0/"&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href="https://www.mapbox.com/"&gt;Mapbox&lt;/a&gt;</span></span><span
+                    class="hljs-string">'</span>,
+    maxZoom: <span class="hljs-number">18</span>
+}).addTo(map);</code></pre>
+
+        <h3 id="geolocation">地理位置</h3>
+
+        <p>Leaflet有一个非常简便的方法，用于将地图视图缩放到检测到的位置 - locate使用该setView选项的方法，替换setView代码中的默认方法：</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs css"><span class="hljs-tag">map</span><span
+                    class="hljs-class">.locate</span>(<span class="hljs-rules">{<span class="hljs-rule"><span
+                    class="hljs-attribute">setView</span>:<span class="hljs-value"> true, maxZoom: <span
+                    class="hljs-number">16</span>})</span></span>;
+</span></code></pre>
+            </div>
+        </div>
+
+        <p>
+            在自动设置地图视图时，我们在此指定16作为最大缩放。只要用户同意共享位置并且浏览器检测到该位置，地图就会将视图设置为该位置。现在我们有一个工作的全屏移动地图！但是如果我们在地理定位完成后需要做些什么呢？下面介绍一下locationfound和locationerror事件。举个例子，在检测到的位置添加一个标记，通过locationfound在locateAndSetView调用之前向事件添加一个事件监听器来显示弹出窗口中的准确性：</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLocationFound</span>(<span
+                    class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">var</span> radius = e.accuracy / <span class="hljs-number">2</span>;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup(<span class="hljs-string">"You are within "</span> + radius + <span class="hljs-string">" meters from this point"</span>).openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+map.on(<span class="hljs-string">'locationfound'</span>, onLocationFound);
+</code></pre>
+            </div>
+        </div>
+
+        <p>优秀！但是，如果地理位置失败，则显示错误消息也会很好：</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLocationError</span>(<span
+                    class="hljs-params">e</span>) </span>{
+    alert(e.message);
+}
+
+map.on(<span class="hljs-string">'locationerror'</span>, onLocationError);
+</code></pre>
+            </div>
+        </div>
+
+        <p>如果您将<code class="highlighter-rouge">setView</code> 选项设置为true并且地理位置失败，则会将视图设置为全局。</p>
+
+        <p>现在这个例子是完整的-尝试它在你的手机上：查看完整的例子: <a href="mobileexample.html">查看完整实例 →</a></p>
+
+
+
+{% endblock %}

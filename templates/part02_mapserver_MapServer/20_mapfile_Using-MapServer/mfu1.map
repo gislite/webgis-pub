@@ -1,0 +1,27 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    SYMBOL
+        NAME "hatch-test"
+        TYPE HATCH
+    END
+    LAYER
+        NAME "world-country"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        CLASS
+            NAME "The Upper Great Lakes States"
+            STYLE
+                SYMBOL "hatch-test"
+                COLOR 255 0 0
+                ANGLE 45
+                SIZE 10
+                WIDTH 3
+            END
+        END
+    END
+END

@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <!-- Use correct character set. -->
+   <meta charset="utf-8">
+   <!-- Tell IE to use the latest, best version. -->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+   <title>UMD-Land-Cover-Classification-1998!</title>
+   <script src="Build/Cesium/Cesium.js"></script>
+   <style>
+        @import url(Build/Cesium/Widgets/widgets.css);
+       html, body, #cesiumContainer {
+           width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+       }
+   </style>
+ </head>
+
+ <style type="text/css">
+     #top1{
+      text-align:center;
+      width:100%;
+      height:8%;
+      float:left;
+      margin-top:50px;
+     }
+
+     #bottom1{
+      text-align:center;
+      width:30%;
+      height:1000px;
+      float:left;
+     }
+     #bottom2{
+
+      width:70%;
+         height:1000px;
+      float:left;
+     }
+</style>
+
+
+ <body>
+<div id="top1">
+    美国马里兰大学地理系土地覆盖数据 UMD Land Cover Classification 1998
+</div>
+<div>
+    <div id="bottom1">
+
+
+美国马里兰大学地理系于1998年制作此土地覆盖分类，数据来自于AVHRR卫星获得的1981到1994年之间影像，共分为14个不同土地覆盖类型，该数据有三个空间类型：1度，8千米和1千米像素分辨率。
+
+引用格式：
+
+    完整示例引文：Hansen，M.，R.Defries，J.R.G.Townshend，R.Sohlberg（1998），UMD全球土地覆盖分类，1公里，1.0，马里兰大学地理系，马里兰大学公园，1981-1994。
+
+    相关同行评审出版物：Hansen，M.、R.Defries、J.R.G.Townshend和R.Sohlberg（2000年），《利用决策树分类器以1km分辨率对全球土地覆盖进行分类》，《国际遥感杂志》。21：1331-1365。
+
+下载地址：http://glcfapp.glcf.umd.edu:8080/esdi/index.jsp
+
+    </div>
+    <div id="bottom2"></div>
+</div>
+   <script>
+     function startup(Cesium) {
+        widget = new Cesium.Viewer('bottom2');
+        url='http://wcs.osgeo.cn:8088/service?';   //wms地址
+            layers = widget.scene.globe.imageryLayers;
+            layers.removeAll();
+           var blackMarble = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({  //加载一个新的图层
+                url : url,
+                layers: 'maplet_rc81',// Here just give layer name
+                version:'1.1.0'
+           }));
+           // Start off looking at Australia.
+        widget.camera.setView({
+            destination: Cesium.Rectangle.fromDegrees(-100,0,310,80)  //给地图显示页定位
+        });
+        //Sandcastle_End
+        Sandcastle.finishedLoading();  //加载地图
+     }
+     if (typeof Cesium !== "undefined") {  //调用starup()
+        startup(Cesium);
+     } else if (typeof require === "function") {
+        require(["Cesium"], startup);
+     }
+   </script>
+ </body>
+ </html>

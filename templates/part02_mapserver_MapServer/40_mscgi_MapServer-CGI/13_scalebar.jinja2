@@ -1,0 +1,70 @@
+{% extends "contentj.jinja2" %}
+
+<title>Map scale</title>
+
+{% block cntbody %}
+
+
+    <h1>MapServer interaction: map scale</h1>
+
+
+    <h2 id="jkf">How to add a map scale</h2>
+    <p>Here is the corresponding file： </p>
+
+
+
+    ->-> mfv9.map
+
+    <p>You can see the <a target="_blank" href="/example2-3_template.html">HTML Template source code here.</a></p>
+    <hr>
+
+    ->-> xx_diff_mfv9_mfu3.htmp
+
+    <hr/>
+
+    <h2 id="e7v">Add map scale: example</h2>
+
+
+    <div>
+        <a href="/cgi-bin/mapserv?map=/owg/mfv9.map&layer=states_line&zoom=0&mode=browse&root=/mstuto&program=/cgi-bin/mapserv&map_web=template+example-v9.html"
+           target="_blank">
+            Open MapServer Map Scale Example New</a>
+    </div>
+
+    <hr/>
+
+    <p>The following shows a form submission, and various parameters are passed through <code>input</code>. The effect is the same as above：</p>
+
+    <form method="get" action="/cgi-bin/mapserv" role="form">
+        <!-- The following two variables are user defined variables.
+             MapServer will pass its value to the HTML template if the
+             proper tags are found, in square brackets "[]"  -->
+        <input type="hidden" name="root" value="/owg">
+        <input type="hidden" name="program" value="/cgi-bin/mapserv">
+        <!-- The map and layer variables are internal MapServer variables.
+             They are required by the mapping application. -->
+        <input type="hidden" name="map" value="/owg/mfv9.map">
+        <input type="hidden" name="layer" value="states_line">
+        <input type="hidden" name="zoom" value="0">
+
+        <div class="col-sm-12">
+
+            <div class="col-sm-3">
+
+
+                <!-- The map_web_template variable will replace the TEMPLATE
+                     parameter in the WEB object of the MAP file... -->
+                <select name="map_web" class="form-control">
+
+                    <option value="template example-v9.html"> 3: scale</option>
+
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <input type="submit" name="submit" value="Start the tutorial!" class="btn btn-primary">
+            </div>
+        </div>
+
+    </form>
+    <br>
+{% endblock %}

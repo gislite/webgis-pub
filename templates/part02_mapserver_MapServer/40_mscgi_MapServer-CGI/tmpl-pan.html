@@ -1,0 +1,30 @@
+<!-- MapServer Template -->
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="基于开源WebGIS组件MapServer，MapProxy，LeafletJS，OpenLayers制作的在线WebGIS教程网站。">
+    <meta name="keywords" content="WebGIS,开源WebGIS,WebGIS教程,MapServer,GeoServer">
+    <meta name="author" content="BuKun">
+    <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <title>WebGIS教程</title>
+    <link rel="stylesheet" href="/tass/css/style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1 align="center" id="vk8"> MapServer 交互地图及Browse模式 </h1>
+    <form name="mapserv" method="GET" action="/cgi-bin/mapserv" class="form-horizontal">
+        <input type="hidden" name="map" value="[map]">
+        <input type="hidden" name="imgext" value="[mapext]">
+        <input type="hidden" name="imgxy" value="[center]">
+        <input type="hidden" name="zoom" value="0">
+        <input type="hidden" name="layer" value="topo">
+        <input type="hidden" name="layer" value="states_line">
+        <input type="hidden" name="mode" value="browse">
+        <input type="image" name="img" src="../[img]"
+               width="600" height="300" border="1">
+    </form>
+</div>
+</body>
+</html>

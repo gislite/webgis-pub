@@ -1,0 +1,132 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>Leaflet on Mobile</title>
+{% endblock %}
+
+{% block cntbody %}
+
+
+        <h2 id="leaflet-on-mobile">Leaflet mobile full screen map</h2>
+
+        <p>In this case, you'll learn how to create a full-screen map of mobile device adjustments for iPhone, iPad or Android phones, and how to easily detect and use the current user location.</p>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_on_mobile/example.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_on_mobile/example.html">View this example</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3 id="preparing-the-page">Preparation page</h3>
+
+        <p>
+            First let's take a look at the HTML and CSS code for the page. In order to extend our map div element to all available space (full screen), we can use the following CSS code (note: in this example, we use a percentage to represent the height. Although due to Google Chrome's error on the phone, vh Can be said to be better:</p>
+
+        <div class="css highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs css"><span
+                    class="hljs-tag">body</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span
+            class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span
+            class="hljs-number">0</span></span></span>;
+}</span>
+<span class="hljs-tag">html</span>, <span class="hljs-tag">body</span>, <span class="hljs-id">#map</span> <span
+                        class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span
+            class="hljs-number">100%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span
+            class="hljs-number">100vw</span></span></span>;
+}</span>
+</code></pre>
+            </div>
+        </div>
+
+        <p>In addition, we need to tell the mobile browser to disable unnecessary page scaling and set it to actual by placing the following code in the <code class="highlighter-rouge">head</code> section of the HTML page or in the HTML page. size:
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span
+                    class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span
+                    class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"</span> /&gt;</span>
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="initializing-the-map">Initialize the map</h3>
+
+        <p>Now we will initialize the map using JavaScript code, as we did in the introduction to Leaflet, showing the whole world:</p>
+
+        <pre><code class="javascript hljs"><span class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>).fitWorld();
+
+L.tileLayer(<span class="hljs-string">'https://api.tiles.mapbox.com/v4/</span><a href="https://mapbox.com/"><span
+                    class="hljs-string">MapID</span></a><span class="hljs-string">/997/256/{z}/{x}/{y}.png?access_token={accessToken}'</span>, {
+    attribution: <span class="hljs-string">'Map data &amp;copy; </span><span class="text-cut" data-cut="[…]"><span
+                    class="hljs-string">&lt;a href="https://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="https://creativecommons.org/licenses/by-sa/2.0/"&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href="https://www.mapbox.com/"&gt;Mapbox&lt;/a&gt;</span></span><span
+                    class="hljs-string">'</span>,
+    maxZoom: <span class="hljs-number">18</span>
+}).addTo(map);</code></pre>
+
+        <h3 id="geolocation">Geographic location</h3>
+
+        <p>Leaflet has a very simple way to scale the map view to the detected position - locate the default method in the setView code using the setView option:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs css"><span class="hljs-tag">map</span><span
+                    class="hljs-class">.locate</span>(<span class="hljs-rules">{<span class="hljs-rule"><span
+                    class="hljs-attribute">setView</span>:<span class="hljs-value"> true, maxZoom: <span
+                    class="hljs-number">16</span>})</span></span>;
+</span></code></pre>
+            </div>
+        </div>
+
+        <p>
+            When setting the map view automatically, we specify 16 as the maximum zoom here. As soon as the user agrees to share the location and the browser detects the location, the map sets the view to that location. Now we have a full screen mobile map of work! But what if we need to do after geolocation is complete? The locationfound and locationerror events are described below. For example, add a tag to the detected location and add an event listener to the event via locationfound before the locateAndSetView call to display the accuracy in the popup:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLocationFound</span>(<span
+                    class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">var</span> radius = e.accuracy / <span class="hljs-number">2</span>;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup(<span class="hljs-string">"You are within "</span> + radius + <span class="hljs-string">" meters from this point"</span>).openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+map.on(<span class="hljs-string">'locationfound'</span>, onLocationFound);
+</code></pre>
+            </div>
+        </div>
+
+        <p>excellent! However, if the location fails, an error message will also display:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onLocationError</span>(<span
+                    class="hljs-params">e</span>) </span>{
+    alert(e.message);
+}
+
+map.on(<span class="hljs-string">'locationerror'</span>, onLocationError);
+</code></pre>
+            </div>
+        </div>
+
+        <p>If you set the <code class="highlighter-rouge">setView</code> option to true and the geographic location fails, the view is set to global.</p>
+
+        <p>Now this example is complete - try it on your phone: check out the full example: <a href="mobileexample.html">View full instance→</a></p>
+
+
+
+{% endblock %}

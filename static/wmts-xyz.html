@@ -1,0 +1,44 @@
+<html lang="zh-cmn-Hans">
+<head>
+    <title>WMS示例 - Leaflet</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico"/>
+    <link rel="stylesheet" href="http://webgis.pub/f2elib/leaflet_1.8.0/leaflet.css"/>
+    <script src="http://webgis.pub/f2elib/leaflet_1.8.0/leaflet.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        #map {
+            width: 100%;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+<div id='map'></div>
+<script type="text/javascript">
+    var map = L.map('map', {
+        center: [0, 0],
+        zoom: 1
+    });
+
+    // var tms_bluemarble = L.tileLayer('https://demo.boundlessgeo.com/geoserver/gwc/service/tms/1.0.0/nasa:bluemarble@EPSG:900913@jpg/{z}/{x}/{y}.jpg', {
+    //     tms: true
+    // }).addTo(map);
+
+
+    L.tileLayer(
+            // 'http://webgis.cn:6001/wmts/1.0.0?service=wmts&request=GetTile&version=1.0.0&layer=maplet_WorldCountry&style=default&tilematrixset=3006&tilematrix={z}&tilerow={y}&tilecol={x}&format=image%2Fpng',
+            'http://webgis.cn:6001/wmts/maplet_WorldCountry/webmercator/{z}/{x}/{y}.png',
+            {}
+    ).addTo(map);
+
+
+
+
+</script>
+</body>
+</html>

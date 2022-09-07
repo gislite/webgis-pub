@@ -1,0 +1,223 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+    <title>非地理地图</title>
+{% endblock %}
+
+{% block cntbody %}
+
+
+
+
+        <h2 id="not-of-this-earth">不是这个地球</h2>
+
+        <p>有些时候，地图并不代表地球表面的东西，所以此时它没有地理纬度和地理经度的概念。这通常是指大型扫描图像，比如游戏地图。</p>
+
+        <p>对于本教程，我们从Star Control II中选择了一个星图：</p>
+
+        <center>
+            <img src="./leaflet_non_geographical/uqm_map_400px.png" style="border: 1px solid #ccc; border-radius: 5px"><br>
+        </center>
+
+        <p>在这张星图的角落里，可以看到一个内置的方形坐标系。这将允许我们建立一个坐标系统。</p>
+
+        <center>
+            <img src="./leaflet_non_geographical/uqm_map_detail.png" style="border: 1px solid #ccc; border-radius: 5px"><br>
+        </center>
+
+        <h2 id="crssimple">简单的CRS</h2>
+
+        <p><strong>CRS</strong>代表坐标参考系，一个地理学家用来解释坐标在坐标向量中的含义的术语。例如，<code class="highlighter-rouge">[15, 60]</code>代表了印度洋的一个点。
+        </p>
+
+        <p>一张Leaflet地图有一个CRS（并且<em>只有</em><em>1个</em> CRS），这可以在创建地图时被改变。对于我们的游戏地图，我们将使用<code class="highlighter-rouge">CRS.Simple</code>创建方形网格:
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+    crs: L.CRS.Simple
+});
+</code></pre>
+            </div>
+        </div>
+
+        <p>然后我们将星图图像和其近似边界添加到<code class="highlighter-rouge">L.ImageOverlay</code> 中:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> bounds = [[<span class="hljs-number">0</span>,<span
+                    class="hljs-number">0</span>], [<span class="hljs-number">1000</span>,<span
+                    class="hljs-number">1000</span>]];
+<span class="hljs-keyword">var</span> image = L.imageOverlay(<span class="hljs-string">'uqm_map_full.png'</span>, bounds).addTo(map);
+</code></pre>
+            </div>
+        </div>
+
+        <p>接着显示整张地图:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs css"><span class="hljs-tag">map</span><span
+                    class="hljs-class">.fitBounds</span>(<span class="hljs-tag">bounds</span>);
+</code></pre>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_non_geographical/crs-simple-example1.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_non_geographical/crs-simple-example1.html">Show the example</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>这个例子不太有效，因为在执行<code class="highlighter-rouge">fitBounds()</code>之后看不到整个地图。</p>
+
+        <h2 id="common-gotchas-in-crssimple-maps">CRS.Simple地图的常见问题</h2>
+
+        <p>在默认的Leaflet CRS和 <code class="highlighter-rouge">CRS.Earth</code>中，360度的经度被映射到256个水平像素(缩放级别为0时)，大约170个纬度被映射到256个垂直像素(缩放级别为0时)。
+        </p>
+
+        <p>在<code class="highlighter-rouge">CRS.Simple</code>坐标系中，一个水平地图单位投影到一个水平像素，垂直方向也一样。这意味着整个地图大小约为1000*1000像素，不能放置在我们的HTML容器中。幸运的是，我们可以将<code
+                class="highlighter-rouge">minZoom</code>设置为小于0的值：</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> map = L.map(<span class="hljs-string">'map'</span>, {
+    crs: L.CRS.Simple,
+    minZoom: -<span class="hljs-number">5</span>
+});
+</code></pre>
+            </div>
+        </div>
+
+        <h3 id="pixels-vs-map-units">像素和地图单位</h3>
+
+        <p>使用<code class="highlighter-rouge">CRS.Simple</code>的一个常见错误是认为地图单位就是图像像素。在本例中，地图覆盖了1000*1000地图单位，但是图片大小为2315*2315像素。在不同的实例中，可能需要1像素=1地图单位，或者64像素=1地图单位，或者其它等量关系。在坐标系中要运用地图单位来添加自己的图层(<code
+                class="highlighter-rouge">L.ImageOverlay</code>s, <code class="highlighter-rouge">L.Marker</code>s 等等) 。
+        </p>
+
+        <p>事实上，我们使用的图像覆盖范围超过了1000个地图单位-还有着比较大的边距。测量一下0-1000坐标之间有多少像素，就可以计算出图像的正确坐标:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> bounds = [[-<span class="hljs-number">26.5</span>,-<span
+                    class="hljs-number">25</span>], [<span class="hljs-number">1021.5</span>,<span class="hljs-number">1023</span>]];
+<span class="hljs-keyword">var</span> image = L.imageOverlay(<span class="hljs-string">'uqm_map_full.png'</span>, bounds).addTo(map);
+</code></pre>
+            </div>
+        </div>
+
+        <p>在这里，让我们添加一些标记:</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> sol = L.latLng([ <span class="hljs-number">145</span>, <span
+                    class="hljs-number">175.2</span> ]);
+L.marker(sol).addTo(map);
+map.setView( [<span class="hljs-number">70</span>, <span class="hljs-number">120</span>], <span
+                        class="hljs-number">1</span>);
+</code></pre>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_non_geographical/crs-simple-example2.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_non_geographical/crs-simple-example2.html">Show the example</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3 id="this-is-not-the-latlng-youre-looking-for"><code class="highlighter-rouge">LatLng</code>并非你想要的类</h3>
+
+        <p>你会发现Sol的坐标为<code class="highlighter-rouge">[145,175]</code>而不是<code
+                class="highlighter-rouge">[175,145]</code>,地图中心点也是这样。CRS.Simple坐标系中，坐标样式为[y, x]而非 [x, y]，同样的Leaflet
+            使用[lat, lng]（[纬度,经度]）而非 [lng, lat]([经度,纬度]).</p>
+
+        <p>
+            <small>（在技术术语中，Leaflet更倾向于使用<code class="highlighter-rouge">[northing, easting]</code>而非<code
+                    class="highlighter-rouge">[easting, northing]</code>-第一个坐标参数代表南北，第二个坐标参数代表东西）
+            </small>
+        </p>
+
+        <p>使用<code class="highlighter-rouge">[lng, lat]</code> 或者 <code class="highlighter-rouge">[lat, lng]</code> 或者
+            <code class="highlighter-rouge">[y, x]</code> 或者 <code class="highlighter-rouge">[x, y]</code>
+            的争论并不新鲜，并且一直没有达成共识。由于缺乏共识，所以Leaflet使用<code class="highlighter-rouge">L.LatLng</code> 而不是备受争议的<code
+                    class="highlighter-rouge">L.Coordinate</code>。</p>
+
+        <p>使用<code class="highlighter-rouge">L.LatLng</code>的<code class="highlighter-rouge">[y, x]</code>坐标意义不大，我们可以很轻松地为其创建适配器：
+        </p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> yx = L.latLng;
+
+<span class="hljs-keyword">var</span> xy = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params">x, y</span>) </span>{
+    <span class="hljs-keyword">if</span> (L.Util.isArray(x)) {    <span
+                        class="hljs-comment">// When doing xy([x, y]);</span>
+        <span class="hljs-keyword">return</span> yx(x[<span class="hljs-number">1</span>], x[<span
+                        class="hljs-number">0</span>]);
+    }
+    <span class="hljs-keyword">return</span> yx(y, x);  <span class="hljs-comment">// When doing xy(x, y);</span>
+};
+</code></pre>
+            </div>
+        </div>
+
+        <p>我们可以通过<code class="highlighter-rouge">[x, y]</code>坐标添加星星和航线：</p>
+
+        <div class="highlighter-rouge">
+            <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                    class="hljs-keyword">var</span> sol      = xy(<span class="hljs-number">175.2</span>, <span
+                    class="hljs-number">145.0</span>);
+<span class="hljs-keyword">var</span> mizar    = xy( <span class="hljs-number">41.6</span>, <span class="hljs-number">130.1</span>);
+<span class="hljs-keyword">var</span> kruegerZ = xy( <span class="hljs-number">13.4</span>,  <span class="hljs-number">56.5</span>);
+<span class="hljs-keyword">var</span> deneb    = xy(<span class="hljs-number">218.7</span>,   <span class="hljs-number">8.3</span>);
+
+L.marker(     sol).addTo(map).bindPopup(      <span class="hljs-string">'Sol'</span>);
+L.marker(   mizar).addTo(map).bindPopup(    <span class="hljs-string">'Mizar'</span>);
+L.marker(kruegerZ).addTo(map).bindPopup(<span class="hljs-string">'Krueger-Z'</span>);
+L.marker(   deneb).addTo(map).bindPopup(    <span class="hljs-string">'Deneb'</span>);
+
+<span class="hljs-keyword">var</span> travel = L.polyline([sol, deneb]).addTo(map);
+</code></pre>
+            </div>
+        </div>
+
+        <p>地图看起来和之前一样，但是代码的可读性更强了:</p>
+
+        <table>
+            <tbody>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <iframe src="./leaflet_non_geographical/crs-simple-example3.html" width="616" height="416"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; border: none">
+                    <small><a href="./leaflet_non_geographical/crs-simple-example3.html">Show the example</a></small>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+
+{% endblock %}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://openlayers.org/en/latest/doc/tutorials/bundle.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>OpenLayers - Basic project setup using NPM and Parcel</title>
+    <script type="text/javascript" async src="./OpenLayers - Basic project setup using NPM and Parcel_files/analytics.js"></script><script async src="./OpenLayers - Basic project setup using NPM and Parcel_files/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-2577926-1');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./OpenLayers - Basic project setup using NPM and Parcel_files/css" rel="stylesheet" type="text/css">
+    <script src="./OpenLayers - Basic project setup using NPM and Parcel_files/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="./OpenLayers - Basic project setup using NPM and Parcel_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./OpenLayers - Basic project setup using NPM and Parcel_files/font-awesome.min.css">
+    <link href="./OpenLayers - Basic project setup using NPM and Parcel_files/site.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="http://openlayers.org/assets/theme/img/favicon.ico">
+    
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top" role="navigation">
+      <div class="container">
+
+        <!-- button that shows up below 768px width -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a href="http://openlayers.org/" class="navbar-brand"><img src="./OpenLayers - Basic project setup using NPM and Parcel_files/logo70.png">&nbsp;OpenLayers</a>
+
+        <!-- menu items that get hidden below 768px width -->
+        <nav class="collapse navbar-collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="http://openlayers.org/en/latest/doc/" class="active">Docs</a></li>
+            <li><a href="http://openlayers.org/en/latest/examples/">Examples</a></li>
+            <li><a href="http://openlayers.org/en/latest/apidoc/">API</a></li>
+            <li><a href="https://github.com/openlayers/openlayers">Code</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+
+<div class="container">
+<h1 id="introduction">简介</h1>
+<p>现代JavaScript在编写和使用模块时执行得最好。推荐使用OpenLayers的方法是安装<code>ol</code>包。本教程向您介绍如何设置一个简单的dev环境，该环境需要节点才能正常工作。</p>
+<p>在本教程中，我们将使用Parcel来打包我们的应用程序。还有其他一些选择，其中一些是链接自<a href="https://npmjs.com/package/ol">README</a>的。</p>
+<h2 id="initial-steps">初始步骤</h2>
+<p>为您的项目创建一个新的空目录，并通过运行<code>mkdir new-project &amp;&amp; cd new-project</code>进入该目录。使用<code>npm init</code> 初始化项目并回答问题。</p>
+<p>把OpenLayers添加到你的应用程序中</p>
+<pre><code>npm install ol</code></pre>
+<p>此时，您可以请求NPM添加所需的开发依赖关系。</p>
+<pre><code>npm install --save-dev parcel-bundler</code></pre>
+<h2 id="application-code-and-index-html">应用程序代码和index.html</h2>
+<p>将应用程序代码放在<code>index.js</code>中:</p>
+<pre><code class="language-js">import <span class="string">'ol/ol.css'</span>;
+import {Map, View} from <span class="string">'ol'</span>;
+import TileLayer from <span class="string">'ol/layer/Tile'</span>;
+import OSM from <span class="string">'ol/source/OSM'</span>;
+
+<span class="keyword">const</span> map = <span class="keyword">new</span> Map({
+  target: <span class="string">'map'</span>,
+  layers: [
+    <span class="keyword">new</span> TileLayer({
+      source: <span class="keyword">new</span> OSM()
+    })
+  ],
+  view: <span class="keyword">new</span> View({
+    center: [<span class="number">0</span>, <span class="number">0</span>],
+    zoom: <span class="number">0</span>
+  })
+});</code></pre>
+<p>您还需要一个使用包裹的<code>index.html</code>文件。下面是一个简单的例子:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Using Parcel with OpenLayers&lt;/title&gt;
+    &lt;style&gt;
+      #map {
+        width: 400px;
+        height: 250px;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="map"&gt;&lt;/div&gt;
+    &lt;script src="./index.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2 id="creating-a-bundle">创建包裹</h2>
+<p>通过简单的脚本，您可以使用<code>npm run build</code>命令来手动创建包，使用<code>npm start</code>命令来查看更改结果。将以下内容添加到<code>package.json</code>的脚本中:</p>
+<pre><code class="language-json">"scripts": {
+  "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
+  "start": "parcel index.html",
+  "build": "parcel build --public-url . index.html"
+}</code></pre>
+<p>就是这样。现在来运行你的应用程序，请输入</p>
+<pre><code>npm start</code></pre>
+<p>在控制台测试您的应用程序，请在浏览器中打开 <a href="http://localhost:1234/">http://localhost:1234/</a> 。每当您更改某些内容时，页面将自动重新加载以显示更改的结果。</p>
+<p>请注意，您已经创建了一个JavaScript文件，该文件包含了所有的应用程序代码和应用程序的依赖项，并且它只从OpenLayers中引入所需的组件。</p>
+<p>要创建应用程序包，只需键入</p>
+<pre><code>npm run build</code></pre>
+<p>并将<code>dist/</code> 复制到您的生产服务器上。</p>
+
+</div>
+
+    <footer>
+      Code licensed under the <a href="http://www.tldrlegal.com/license/bsd-2-clause-license-(freebsd)">2-Clause BSD</a>.  All documentation <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Thanks to our <a href="http://openlayers.org/sponsors.html">sponsors</a>.
+    </footer>
+    <script src="./OpenLayers - Basic project setup using NPM and Parcel_files/jquery-1.11.2.min.js"></script>
+    <script src="./OpenLayers - Basic project setup using NPM and Parcel_files/bootstrap.min.js"></script>
+    
+  
+
+</body></html>

@@ -1,0 +1,60 @@
+{% extends "contentj.jinja2" %}
+  <title>Map modification feature</title>
+
+    {% block headbody %}
+    <link rel="stylesheet" href="https://openlayers.org/en/v5.2.0/css/ol.css" type="text/css">
+
+    <!--导入最新版本ol的js文件。-->
+	<script src="https://openlayers.org/en/v5.2.0/build/ol.js"></script>
+   <style>
+        #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+    {% endblock %}
+
+{%  block cntbody %}
+
+
+    <div id="olmap" class="olmap"></div>
+    <br>
+    <div>This example shows how to use extent extens to draw a modifiable range.</div>
+    <script>
+	//定义图层
+      var raster = new ol.layer.Tile({	//加载瓦片图层
+        source: new ol.source.OSM()	//加载OpenStreetMap层源
+      });
+
+      var vector = new ol.layer.Vector({	//客户端呈现的矢量数据。
+        source: new ol.source.Vector({		//矢量数据源  
+		
+          url: 'https://openlayers.org/en/v4.6.5/examples/data/geojson/countries.geojson',	
+          format: new ol.format.GeoJSON(),	//当URL设置时，XHR特征加载器使用的特征格式。
+          wrapX: false				//水平包裹世界,对于横跨180°和180°经线的矢量编辑工作正常，这应该设置为假。
+        })
+      });
+	//定义交互矢量特征
+      var select = new ol.interaction.Select({
+        wrapX: false			//在选择覆盖上水平包裹世界。
+      });
+	//定义用于修改特征几何的交互
+      var modify = new ol.interaction.Modify({
+        features: select.getFeatures()	//交互作用的特点。如果未提供特征集合，则必须提供具有源选项的向量源。
+      });
+	//加载地图
+      var olmap = new ol.Map({
+        interactions: ol.interaction.defaults().extend([select, modify]),	//交互功能
+        layers: [raster, vector],	//加载图层	
+        target: 'olmap',			//地图容器div的id
+        view: new ol.View({		//地图为2D视图
+          center: [0, 0],		//地图的初始中心点
+          zoom: 2			//地图初始的级别
+        })
+      });
+    </script>
+
+{% endblock %}
+<!---此示例演示如何将修改和选择交互一起使用。缩放到感兴趣区域并选择用于编辑的特征。然后拖动点来修改特征。-->
