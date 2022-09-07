@@ -1,0 +1,16 @@
+server {
+        listen  80;
+        server_name webgis.pub;
+
+        access_log /var/log/nginx/webgis_access.log;
+        error_log   /var/log/nginx/webgis_error.log;
+
+
+        location / {
+                proxy_pass    http://127.0.0.1:8080;
+                proxy_redirect   off;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+}
