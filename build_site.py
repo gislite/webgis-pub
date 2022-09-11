@@ -200,9 +200,11 @@ def format_cntnav(cnt_arr):
 
 
 def gen_part_html_pages():
+    '''
+    Manage files for  `part`.
+    '''
     the_dirs = [x for x in os.listdir(src_ws) if x.startswith('part')]
 
-    # list_main = []
     the_dirs.sort()
     for the_dir in the_dirs:
         gen_html_pages(os.path.join(src_ws, the_dir))
@@ -253,15 +255,12 @@ def gen_chapter_index(the_dir, md_index='', idx_dir=0, list_main='', src_ws=src_
 
 def gen_html_pages(src_ws):
     '''
-    convert from markdown to html.
+    convert from markdown to html in
     '''
 
     chapter_slug = os.path.split(src_ws)[-1].split('_')[1]
-
     list_main = fetch_structure(src_ws)
-
     the_dirs = os.listdir(src_ws)
-
     the_dirs.sort()
 
     # find directories.
@@ -495,14 +494,10 @@ def gen_html_index():
     Generate ``index.html`` for the website.
     '''
     list_main = fetch_part()
-
-    pprint(list_main)
-
+    # pprint(list_main)
     nav_formated = format_nav(list_main)
-
     index_in = 'index.jinja2'
     index_out = os.path.join(dst_ws, 'index.html')
-
     helper.render_html(index_in, index_out, nav=nav_formated, active_index='active')
 
 
@@ -515,10 +510,6 @@ def fetch_part():
     list_main = []
     the_dirs.sort()
     for the_dir in the_dirs:
-        # if the_dir.startswith():
-        #     pass
-        # else:
-        #     continue
         uu = fetch_structure(os.path.join(src_ws, the_dir))
 
         bbcc = the_dir.split('_')
@@ -621,8 +612,6 @@ def copy_static_files():
                 else:
                     continue
                 copy_the_dir(inpath)
-        # else:
-        #     copy_the_dir(uu_ws)
 
     for ww in os.listdir(tpl_ws):
 
@@ -662,10 +651,7 @@ def copy_the_dir(inpath):
 
 def run_it():
     gen_html_index()
-
     gen_part_html_pages()
-    # gen_html_pages()
-
     copy_static_files()
 
 
