@@ -491,6 +491,9 @@ def get_html_title(the_file):
 
 
 def gen_html_index():
+    '''
+    Generate ``index.html`` for the website.
+    '''
     list_main = fetch_part()
 
     pprint(list_main)
@@ -504,6 +507,9 @@ def gen_html_index():
 
 
 def fetch_part():
+    '''
+    Fetch the list form `part` in template directory.
+    '''
     the_dirs = [x for x in os.listdir(src_ws) if x.startswith('part')]
 
     list_main = []
