@@ -76,5 +76,7 @@ def main():
 
 if __name__ == '__main__':
     to_gislite()
+    print('=' * 80)
     main()
+    print('=' * 80)
     back_gislite()
