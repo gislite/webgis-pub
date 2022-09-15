@@ -5,12 +5,29 @@ from fabric import Connection
 
 from cfg import mach
 
-site_ws = '/home/gislite/coding/book-webgis/webgis_pub'
+site_ws = '/home/gislite/github/webgis-pub'
+
+
+def to_gislite():
+    rcon = Connection("{}@{}".format(mach['u'], mach['h']), port=mach['k'], connect_kwargs={"password": mach['p']})
+    rcon.run('sudo chown -R gislite.gislite {}/owg'.format(site_ws))
+
+
+def back_gislite():
+    rcon = Connection("{}@{}".format(mach['u'], mach['h']), port=mach['k'], connect_kwargs={"password": mach['p']})
+    rcon.run('sudo chown -R www-data.www-data {}/owg'.format(site_ws))
+
 
 def main():
+    from cfg import mach_gislite
 
-    print("{}@{}".format(mach['u'], mach['h']))
-    rcon = Connection("{}@{}".format(mach['u'], mach['h']), port=mach['k'], connect_kwargs={"password": mach['p']})
+    print("{}@{}".format(mach_gislite['u'], mach_gislite['h']))
+    rcon = Connection("{}@{}".format(
+        mach_gislite['u'],
+        mach_gislite['h']),
+        port=mach_gislite['k'],
+        connect_kwargs={"password": mach_gislite['p']}
+    )
 
     # c.run('pip3 install markdown')
     # c.run('pip3 install mappyfile')
@@ -23,7 +40,6 @@ def main():
     with rcon.cd(site_ws):
         rcon.run('hostname')
 
-    rcon.run('sudo chown -R bk {}/owg'.format(site_ws))
     # c.run('sudo chown -R bk {}/geodata'.format(site_ws))
     # c.run('sudo chown -R bk {}/data'.format(site_ws))
 
@@ -43,7 +59,6 @@ def main():
     # with c.cd('/home/bk/coding/site_webgis/static/f2elib'):
     #     c.run('git pull')
 
-
     with rcon.cd(site_ws):
         rcon.run('python3 build_mapfile2.py')
         # c.run('python3 build_gislite.py')
@@ -54,10 +69,12 @@ def main():
     sudo chown -R www-data.www-data geodata
     sudo chown -R www-data.www-data data
     '''
-    rcon.run('sudo chown -R www-data.www-data {}/owg'.format(site_ws))
+    # rcon.run('sudo chown -R www-data.www-data {}/owg'.format(site_ws))
     # c.run('sudo chown -R www-data.www-data {}/geodata'.format(site_ws))
     # c.run('sudo chown -R www-data.www-data {}/data'.format(site_ws))
 
 
 if __name__ == '__main__':
+    to_gislite()
     main()
+    back_gislite()
