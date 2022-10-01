@@ -10,3 +10,8 @@ Welcome to WebGISPub's documentation!
    :maxdepth: 2
    :numbered: 2
 
+   part01_basic_Introduction/part.rst
+   part02_mapserver_MapServer/part.rst
+   part03_geoserver_GeoServer/part.rst
+   part04_f2e_Font2End/part.rst
+   part09_others_Others/part.rst
