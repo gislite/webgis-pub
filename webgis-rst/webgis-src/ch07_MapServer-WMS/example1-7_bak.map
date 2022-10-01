@@ -1,0 +1,227 @@
+# The annotated map file (sort of)
+# Created by Pericles S. Nacionales for the MapServer tutorial
+# 20050408
+#
+# MapServer map file uses the pound sign (#) to denote the start of a line
+# comment--each line that needs to be commented has to be prepended with a "#".
+#
+# Map files begin with MAP keyword to signify the start of the map object.
+# Well, the entire map file is THE map object. Enclosed between MAP and END
+# at the very bottom of this map file, are keyword/value pairs and other
+# objects.带注释的地图文件（排序）创建者，
+# MapServer的教程20050408 MapServer的地图文件伯里克利S.
+# NACIONALES的的使用井号（＃）来表示一个行注释的开始 - 每一行需要被注释掉前面与一个“＃”。
+# 地图文件开始与MAP关键字来表示地图对象开始。那么，整个地图文件是地图对象。最底部本地图文件，地图和END之间封闭的关键字/值对和其他对象。
+MAP
+IMAGETYPE PNG24
+EXTENT 201621.496941 -294488.285333 1425518.020722 498254.511514 # LAEA
+#EXTENT -97.5 41.619778 -82.122902 49.38562 # Geographic
+SIZE 400 300
+SHAPEPATH "/gdata/data"
+SYMBOLSET "../symbols/symbols35.sym"
+FONTSET "../fonts/fonts.list"
+# The projection object is typically used within the map and the layer
+# objects. You only define it once within the map object and this definition
+# becomes your output projection--MapServer will render your maps in this
+# projection. You also use the projection object within the layer object to
+# define your input projection. Your layers can be in different
+# projections--MapServer will reproject them into your output projection.
+# If no projection is defined within the layer object, MapServer assumes
+# your input projection is the same as your output projection. This is not
+# a required object unless you're creating a map file that supports one of
+# the OGC interoperability web services specifications (WMS/WFS/WCS).
+# 通常使用的投影对象内的地图和层对象。
+# 你只定义一次在地图对象，这个定义成为你的输出投影 - 这一预测的MapServer将呈现您的地图。
+# 您也可以使用投影对象层内的对象来定义你的输入投影。
+# 你的层可以在不同的预测 - ，MapServer的将它们重新投影到输出投影。
+# 层内的对象，如果没有定义投影的MapServer假设您的输入投影输出投影一样。
+# 这是不是一个必需的对象，除非你创建一个 MapFile ，支持OGC互操作的Web服务规范（WMS/ WFS/ WCS）。
+#
+# This is the output PROJECTION definition ------
+PROJECTION
+# Projection parameters can be defined in two ways...
+# This is the traditional Proj.4 definition of Lambert Azimuthal Equal-Area
+# projection for the Continental U.S.这是输出投影定义------有两种方式可以定义投影投影参数...这是美国大陆兰勃特方位等面积投影的传统PROJ.4定义
+# "proj=laea"
+# "ellps=clrk66"
+# "lat_0=45"
+# "lon_0=-100"
+#
+# Alternatively, you can specify an EPSG code.
+# This is the EPSG code for Lambert Azimuthal Equal-Area
+# projection for the U.S.Web对象的定义在地图下方的对象。这个对象中定义的所有网络相关的参数（我交换“参数”和“关键字/值对”相当频繁，我们对此深感抱歉）。
+"init=epsg:2163"
+END
+# The web object is defined at the level below the map object. All
+# web-related parameters (I interchange "parameters" and "keyword/value
+# pairs" quite frequently, sorry about that) are defined in this object.Web对象的定义在地图下方的对象。这个对象中定义的所有网络相关的参数（我交换“参数”和“关键字/值对”相当频繁，我们对此深感抱歉）。
+WEB
+IMAGEPATH "/ms4w/tmp/"
+IMAGEURL "/tmp/"
+END
+# Layer objects are defined beneath the map object. You need at least one
+# layer defined in your map file before you can display a map... You can
+# define as many layers as you'd like although a limit is typically hard-coded
+# in map.h in the MapServer source. The default limit is set at 100. You'd
+# have to have a very specialized application to need more than 100 layers in
+# your application.层对象定义地图下方的对象。您可以在地图文件定义需要至少一层，然后才可以显示在地图...您可以定义为多层次，只要你愿意，虽然限制通常是硬编码在map.h MapServer的源。默认的限额设定为100。你得有一个非常特殊的应用程序需要在你的应用程序超过100层。
+#
+# Start of LAYER DEFINITIONS层定义开始 ---------------------------------------------
+LAYER # States polygon layer begins here
+NAME states
+DATA states_ugl
+STATUS OFF
+TYPE POLYGON
+# Here's an example of the input projection definition.
+# EPSG:4326 is code for geographic (latlong) projection
+# using the WGS84 datum.下面是一个例子输入投影定义。EPSG：4326是地理位置（经纬度）投影用WGS84数据的代码。
+#
+# PROJECTION objects within the LAYER object define the input
+# projection--this is the native projection of your data.投影对象层对象定义输入投影 - 这是您的数据的本地投影。
+PROJECTION
+"init=epsg:4326"
+END
+# CLASSITEM defines the non-spatial attribute that you will be using to
+# separate a layer into classes. This attribute will be in the DBF file
+# of your shapefile (it will be different for each data format). In this
+# example the shapefile states_ugl has an associated database
+# (states_ugl.dbf) that contains an attribute called "CLASS". You will be
+# using two values in the CLASS attribute to separate the classes (also
+# called themes) used in this layer--land and water. CLASSITEM is used in
+# association with the EXPRESSION parameter in the CLASS object. See below.CLASSITEM非空间属性，你将使用分离层类定义。此属性将是你的shape文件中的DBF文件（每种数据格式会有所不同）。在这个例子中的shapefile states_ugl都有一个关联的的数据库（states_ugl.dbf），它包含一个被称为“类”的属性。您将使用两个值中的CLASS属性，在这一层的类（也称为主题） - 土地和水分开。CLASSITEM与类对象中的表达参数。见下文。
+CLASSITEM "CLASS"
+# The class object is defined within the layer object. You can define as
+# many classes as you need (well, there are limits as with layers, but it's
+# senseless to define more than ten on a "normal" layer. There are
+# situations, however, where you might have to do it.)类对象的定义层内的对象。你可以定义你需要的尽可能多的参加
+CLASS
+NAME 'States'
+EXPRESSION 'land'
+# There are styles in a class, just like there are classes in a layer,
+# just like there are layers in a map. You can define multiple styles in
+# a class just as you can define multiple classes in a layer and multiple
+# layers in a map.有一类的风格，就像有一层中的类，就像是在一个地图中的层。您可以定义多个样式的一类，就像你可以定义多个类，在一层和多层的地图。
+STYLE
+COLOR 232 232 232
+END
+END
+END # States polygon layer ends here
+# In addition to vector data (shapefiles are vector data), MapServer supports
+# a host of raster formats. In GIS world, one of the most common raster
+# formats is GeoTIFF, a TIFF image with geospatial headers. MapServer also
+# supports JPEG, PNG, GIF, and other common formats. Other raster formats
+# supported by MapServer include ESRI Arc/Info grid, HDF and HDF-EOS, NetCDF,
+# Generic raster binaries, OGC Web Map Service (WMS) layers, etc. Pretty much
+# any raster format you can think of is probably supported, thanks to the
+# impressive Geospatial Data Abstraction Library (GDAL, pronounced "GOODALL"
+# or GOODLE?). More information on GDAL is available at http://www.gdal.org.
+# 除了矢量数据（shapefile是矢量数据），地图服务器支持的栅格格式的主机。
+# 在GIS中的世界，一个最常见的栅格格式为GeoTIFF，TIFF影像与地理头。
+# 地图服务器还支持JPEG，PNG，GIF等常见格式。其他栅格格式MapServer的支持，
+# 包括ESRI ARC / INFO电网，HDF和HDF-EOS，NetCDF文件，通用栅格二进制，
+# OGC Web地图服务（WMS）层等栅格格式几乎任何你能想到的可能是支持，
+# 感谢令人印象深刻的地理空间数据抽象库（GDAL，发音为“大家好好”或Goodle的？）。的更多信息GDAL在http://www.gdal.org
+#
+# MapServer 4.x can read and display bitmapped (like GIFs), RGB/A (true
+# color), and multispectral (images with more than 3 bands, like raw LandSat
+# images) rasters.MapServer的4.x版可以读取并显示位图（如GIF格式），RGB/ A（真彩色），和多光谱栅格（超过3个波段的图像，喜欢生吃的LandSat图像）。
+LAYER # MODIS raster layer begins here
+NAME modis
+DATA "raster/mod09a12003161_ugl_ll_8bit.tif"
+STATUS OFF
+TYPE RASTER
+PROCESSING "BANDS=1,2,3"
+OFFSITE 71 74 65
+PROJECTION
+"init=epsg:4326"
+END
+END # MODIS raster layer ends here
+# MapServer can consume (in ESRI parlance) layers from other map servers as
+# long as those servers are Web Mapping Service (WMS) providers. WMS is a
+# web service specification from Open Geospatial Consortium (OGC) and is
+# intended to be an interoperability standard for web mapping applications.
+# This allows us to display layers we don't usually have (or can't store in
+# our computers due to space limitations). The downside is that we have to
+# depend on some other server to display our layer, and that server can be
+# down when you really need it. The cool thing is that JPL has a WMS server
+# that serves out MODIS and LandSat maps for the whole world--try storing
+# those datasets on your computer!MapServer的消费层（ESRI的说法）等地图服务器，只要这些服务器是Web地图服务（WMS）供应商。WMS是一个由开放地理空间联盟（OGC）的Web服务规范的目的是为Web制图应用程序的互操作性标准。这使我们能够显示层，我们通常不（或不能存储在我们的电脑中，由于空间的限制）。不足之处是，我们必须依赖其他服务器上，以显示我们的层，并且该服务器可当你真的需要它。很酷的事情是，JPL有一个WMS服务器提供MODIS和Landsat对整个世界的地图 - 尝试将这些数据集存储在您的电脑上！
+LAYER # MODIS WMS map from JPL
+NAME modis_jpl
+TYPE RASTER
+OFFSITE 0 0 0
+STATUS OFF
+CONNECTIONTYPE WMS
+CONNECTION "http://wms.jpl.nasa.gov/wms.cgi?"
+METADATA
+"wms_srs" "EPSG:4326"
+"wms_name" "modis"
+"wms_server_version" "1.1.1"
+"wms_format" "image/jpeg"
+END
+PROJECTION
+"init=epsg:4326"
+END
+END # Modis WMS image ends here
+LAYER # States line layer begins here
+NAME states
+DATA states_ugl
+STATUS OFF
+TYPE LINE
+PROJECTION
+"init=epsg:4326"
+END
+CLASSITEM "CLASS"
+CLASS
+NAME 'State Boundary'
+EXPRESSION 'land'
+STYLE
+SYMBOL 'line5'
+COLOR 32 32 32
+SIZE 1
+END
+END
+END # States line layer ends here
+LAYER # States label layer begins here
+NAME states_label
+DATA states_ugl
+STATUS OFF
+TYPE polygon
+PROJECTION
+"init=epsg:4326"
+END
+CLASSITEM "CLASS"
+# Just like CLASSITEM, LABELITEM defines the database attribute that you
+# will be using to draw labels. In this case, the values of the attribute
+# "STATE" will be used to label the states polygons.就像CLASSITEM一样，LABELITEM定义数据库的属性，你将被用来绘制标签。在这种情况下，“STATE”属性的值将被用于标记的状态的多边形。
+LABELITEM "STATE"
+CLASS
+EXPRESSION 'land'
+STYLE
+COLOR -1 -1 -1
+END
+# There can be labels in a class, just like there are classes in a layer,
+# just like there are layers in a map. You can define multiple labels in
+# a class just as you can define multiple classes in a layer and multiple
+# layers in a map.
+# MapServer has a very flexible labeling system. With that flexibility
+# comes complexity, specially when using truetype fonts. Please read
+# through the LABEL section of the MapServer map file documentation at
+# http://www.mapserver.org/mapfile for more information.在一个类可以是标签，就像有班在一层，就像是在一个地图的层。您可以定义多个类的标签，就像你可以定义多个类，在一层和多层的地图。MapServer的有一个非常灵活的标签制度。与灵活性来的复杂性，特别是当使用TrueType字体。请通读LABEL段的MapServer地图文件文档http://www.mapserver.org/mapfile更多信息。
+LABEL
+COLOR 132 31 31
+SHADOWCOLOR 218 218 218
+SHADOWSIZE 1 1
+TYPE TRUETYPE
+FONT arial-bold
+SIZE 12
+ANTIALIAS TRUE
+POSITION CL
+PARTIALS FALSE
+MINDISTANCE 200
+BUFFER 4
+END # end of label
+END # end of class
+END # States label layer ends here
+# End of LAYER DEFINITIONS 层定义结束-------------------------------
+END # end of map file地图文件结束

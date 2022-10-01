@@ -1,0 +1,76 @@
+{% extends "contentj.jinja2" %}
+<title>Mouse position</title>
+
+{% block headbody %}
+
+    <link rel="stylesheet" href="/f2elib/ol-6.14.1/ol.css" type="text/css">
+    <!--导入最新版本ol的js文件。-->
+    <script src="/f2elib/ol-6.14.1/ol.js"></script>
+    <style>
+        #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block cntbody %}
+        <div id="olmap" class="olmap"></div>
+    <div id="mouse-position"></div>
+    <form>
+      <label>Projection</label>
+      <select id="projection">
+        <option value="EPSG:4326">EPSG:4326</option>
+        <option value="EPSG:3857">EPSG:3857</option>
+      </select>
+      <label>Accuracy</label>
+      <input id="precision" type="number" min="0" max="12" value="4"/>
+    </form>
+    <br>
+    <div>An example of mouse position control outside the map. Display the coordinates of the mouse in real time.</div>
+    <script>
+      var mousePositionControl = new ol.control.MousePosition({ //用于显示鼠标光标的2D坐标的控件。 默认情况下，它们位于视图投影中，
+          // 但可以位于任何支持的投影中。 默认情况下，控件显示在地图的右上角，但可以使用css选择器.ol-mouse-position更改此控件。
+        coordinateFormat: ol.coordinate.createStringXY(4),  //坐标格式。返回ol.CoordinateFormatType函数，该函数可用于将{ol.Coordinate}格式化为字符串。
+        projection: 'EPSG:4326',        //投影
+        //注释以下两行，以便将鼠标位置放置在地图中。
+        className: 'custom-mouse-position',     //CSS类名。 默认是ol-mouse-position。
+        target: document.getElementById('mouse-position'),  //如果希望在地图的视口之外渲染控件，请指定目标。这里制定的目标为('mouse-position')
+        undefinedHTML: '&nbsp;'     //未定义坐标的标记。 默认为（空字符串）。
+      });
+          //初始换Map对象，显示地图。
+      var olmap = new ol.Map({
+        controls: ol.control.defaults({   // 设置地图控件，collapsible控件不显示。
+          attributionOptions: {
+            collapsible: false
+          }
+        }).extend([mousePositionControl]), //地图控件加入mousePositionControl
+        layers: [
+          new ol.layer.Tile({  // 加载瓦片图层数据
+            source: new ol.source.OSM() // 图层对应的数据源，此处加载OpenStreetMap在线瓦片服务数据
+          })
+        ],
+        target: 'olmap',  	// 地图容器div层的id值
+        view: new ol.View({   //表示显示简单的2D视图地图。
+          center: [0, 0],  //地图初始中心点
+          zoom: 2   //地图初始显示级别为2
+        })
+      });
+        //获取projection的值
+      var projectionSelect = document.getElementById('projection');
+      projectionSelect.addEventListener('change', function(event) {
+        mousePositionControl.setProjection(event.target.value);
+      });
+        //显示precision的值
+      var precisionInput = document.getElementById('precision');
+      precisionInput.addEventListener('change', function(event) {
+        var format = ol.coordinate.createStringXY(event.target.valueAsNumber);
+        mousePositionControl.setCoordinateFormat(format);
+      });
+    </script>
+
+{% endblock %}
+
+

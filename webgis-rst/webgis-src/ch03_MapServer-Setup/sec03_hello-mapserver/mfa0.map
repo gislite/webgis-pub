@@ -1,0 +1,25 @@
+MAP
+    NAME "Hello World"
+    SIZE 400 200
+    IMAGECOLOR 249 245 186
+    IMAGETYPE "png"
+    EXTENT -1.0 -1.0 1.0 1.0
+    LAYER
+        STATUS DEFAULT
+        TYPE POINT
+        FEATURE
+            POINTS
+                0.0 0.0
+            END
+            TEXT "Hello, MapServer world!"
+        END
+        CLASS
+            STYLE
+                COLOR 255 0 0
+            END
+            LABEL
+                TYPE BITMAP
+            END
+        END
+    END
+END

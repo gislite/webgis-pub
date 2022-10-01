@@ -1,0 +1,135 @@
+<html lang="zh-cmn-Hans">
+<head>
+<title>Example 2.4 Template Source</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/tutorial/ms35.css" />
+</head>
+<body>
+<table width="600" align="center">
+<tr>
+<td> <h3 align="center">Example 2.4 HTML Template</h3>
+<hr>
+<xmp>
+<!-- MapServer Template -->
+<html lang="zh-cmn-Hans">
+<head>
+<title>MapServer 5.x Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" rel="stylesheet" href="/tutorial/ms35.css" />
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table align="center" border="0"><tr>
+    <td> <h3 align="center">Example 2.4: Adding a Reference Map</h3>
+
+<!-- START OF MAPSERVER FORM -->
+<form name="mapserv" method="GET" action="/cgi-bin/mapserv">
+
+<!-- HIDDEN MAPSERVER CGI VARIABLES -->
+    <input type="hidden" name="map" value="[map]">
+    <input type="hidden" name="imgext" value="[mapext]">
+    <input type="hidden" name="imgxy" value="199.5 149.5">
+<table width="600" border="0" align="center">
+  <tr>
+    <td>
+	<table width="400" border="1" align="center">
+	  <tr>
+	    <td colspan="4">Select Layers:
+<!-- SPECIFY VECTOR LAYERS -->
+	      <input type="checkbox" name="layer" value="states"
+	      [states_check] checked>State Boundaries&nbsp;
+              <input type="checkbox" name="layer" value="hydro"
+              [hydro_check]>Water Features&nbsp;
+	      <input type="checkbox" name="layer" value="roads"
+	      [roads_check]>Roads<br>
+
+<!-- SPECIFY RASTER LAYERS -->
+	      Select Background:
+	      <select name="layer">
+		<option value=" " [ _select]>No Background</option>
+		<option value="modis_jpl" [modis_jpl_select]>
+		Daily MODIS Image</option>
+		<option value="modis" [modis_select]>
+		MODIS Surface Reflectance</option>
+	      </select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+
+<!-- SPECIFY MAP MODE -->
+	      <div align="center">Map Mode:<br>
+		<select name="mode">
+		  <option value="browse" [browse_select]>Browse</option>
+		</select>
+	      </div>
+	    </td>
+	    <td>
+<!-- FORM SUBMIT BUTTON -->
+	      <div align="center">
+		<input type="submit" name="submit" value="Refresh">
+	      </div>
+	    </td>
+	    <td>
+<!-- ZOOM/PAN CONTROLS -->
+	      <div align="center">Map Control: <br>
+		<select name="zoom">
+		  <option value="4" [zoom_4_select]>Zoom In 4x</option>
+		  <option value="3" [zoom_3_select]>Zoom In 3x</option>
+		  <option value="2" [zoom_2_select]>Zoom In 2x</option>
+		  <option value="1" [zoom_1_select]>Recenter</option>
+		  <option value="-2" [zoom_-2_select]>Zoom Out 2x</option>
+		  <option value="-3" [zoom_-3_select]>Zoom Out 3x</option>
+		  <option value="-4" [zoom_-4_select]>Zoom Out 4x</option>
+		</select>
+	      </div>
+	    </td>
+<!-- REFERENCE COLUMN -->
+	    <td rowspan="2" valign="top">
+	      <p>Reference:<br>
+              <input type="image" name="ref" src="../[ref]" border="0"></p>
+	    </td>
+	  </tr>
+	  <tr>
+<!-- DISPLAY THE MAPSERVER-CREATED MAP IMAGE -->
+	    <td colspan="3" align="center" valign="top">
+	      <input type="image" name="img" src="../[img]" width="400"
+	       height="300" border="0">
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+</xmp>
+<hr>
+<p><!--The interesting part in this bit of code are the tags, i.e. [zoom_1_select].
+ When MapServ sees a tag like this, it will evaluate whether the value
+ ("1") is selected or not. And if it is selected, MapServ will mark this
+ option as "selected". Again, go to example 2.1 and "view" the code. The
+ "Recenter" option should be "selected" (so that when we submit the form
+ again, the value of "zoom" will be "1").-->
+	在代码的这一点中有趣的部分是标签，即 ``[zoom_1_select]`` 。
+	当MapServ看到类似这样的标记，它会评估值（“1”）是否被选中。如果它被选中，MapServ勾选此选项为“已选择”。
+	同样，例如2.1和“view”的代码。“Recenter”选项应该是“已选择”
+	（这样，当我们再次提交表单，“zoom”的值将是“1”）。
+</p>
+
+	<p><!--Our last tag is the "[img]" tag.  As you'll notice it is part of the form's input object.  The
+"[img]" will be replaced with the fullpath and name of the MapServ generated image.-->
+		我们的最后一个标签是“[img]”标签。正如你发现的，它是表单的输入对象的一部分。
+		``[IMG]`` 将被完整路径和MapServ生成的图像名称所替换。</p>
+<p><!--Once MapServer has replaced all the tags, it will send a proper HTML form back to the browser.
+And the user will again be able to make changes.-->一旦MapServer的取代了所有的标签，它会发送适当的HTML形式返回给浏览器。用户将能够再次做出改变。</p>
+<p></p>
+<hr>
+<p align="center" class="Small">
+<a href="/cgi-bin/mapserv.exe?map=/ms4w/apps/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv.exe&map_web=template+example2-4.html">Back to Example 2.4</a></p>
+</td>
+</tr>
+</table>
+</body>
+</html>

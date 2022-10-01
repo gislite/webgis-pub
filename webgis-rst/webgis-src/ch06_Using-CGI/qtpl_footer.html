@@ -1,0 +1,22 @@
+<!-- MapServer Template -->
+<h4 align="left"><b>查询地图示例</b></h4>
+<p>
+<table cellpadding="3" cellspacing="0" border="0">
+    <tr>
+        <td><img border="2" src="[img]"></td>
+        <td>
+            <img border="2" src="[program]?map=[map]&queryfile=[queryfile]&layers=[layers_esc]&mode=map&size=200+150">
+        </td>
+    </tr>
+    <tr>
+        <th align="center">Standard QueryMap</th>
+        <th align="center">Cached Query (Full Extent)</th>
+    </tr>
+</table>
+
+<p>注意第二幅图，这是由再次查询产生的。再次查询必须先将查询的条件保存起来。在进行查询的文件中，加入：</p>
+<pre>
+            input type="hidden" name="savequery" value="true"
+        </pre>
+</body>
+</html>

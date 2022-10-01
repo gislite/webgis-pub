@@ -1,0 +1,43 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    SYMBOL
+        NAME "circle"
+        TYPE ELLIPSE
+        FILLED TRUE
+        POINTS
+            10 10
+        END
+    END
+    LAYER
+        NAME "country"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASSITEM "NAME"
+        CLASS
+            NAME "Others"
+            STYLE
+                COLOR 198 198 255
+            END
+        END
+    END
+    LAYER
+        NAME "weq"
+        DATA "world/cities.shp"
+        STATUS OFF
+        TYPE POINT
+        CLASS
+            NAME "land"
+            EXPRESSION ( '[STATUS]' ne 'Provincial capital' )
+            STYLE
+                COLOR 255 204 102
+                SYMBOL "circle"
+                SIZE 4
+            END
+        END
+    END
+END

@@ -1,0 +1,92 @@
+
+MAP
+  NAME           named-style_
+  IMAGETYPE      png24
+  EXTENT -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  SYMBOLSET      "../symbols/symbols35.sym"
+  FONTSET        "../fonts/fonts.list"
+
+OUTPUTFORMAT
+  NAME "png"
+  DRIVER AGG/PNG
+  MIMETYPE "image/png"
+  IMAGEMODE RGB
+  EXTENSION "png"
+  FORMATOPTION "GAMMA=0.75"
+END
+
+  WEB
+ IMAGEPATH '/owg/ms_tmp/'
+     IMAGEURL  '/ms_tmp/'
+
+     METADATA
+         "wms_title"           "WMS Demo Server"
+         "wms_version" "1.3.0"
+         "wms_onlineresource"  "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb5.map&"
+         "wms_srs"             "EPSG:4326"
+         "wms_enable_request" "*"
+         "ows_enable_request" "*"
+         "wms_feature_info_mime_type" "text/html"
+         "wms_format" "image/png"
+       END
+  END
+
+
+  PROJECTION
+    "init=epsg:4326"
+  END
+
+
+     LAYER
+        NAME "wcountry"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+
+
+        METADATA
+            "wms_title" "world contry"
+            "wms_version" "1.3.0"
+            "wms_srs" "EPSG:4326 EPSG:3857"
+            "wms_enable_request" "*"
+            "ows_enable_request" "*"
+            "wms_format" "image/png"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+
+        CLASSGROUP "grploy"
+
+        CLASS
+            NAME "Poly Style 1"
+            GROUP "psty1"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 32 32 32
+            END
+        END
+
+        CLASS
+                    NAME "Poly Style 2"
+                    GROUP "psty2"
+                    STYLE
+                        COLOR 204 204 153
+                        OUTLINECOLOR 0 255 255
+                    END
+                END
+
+        CLASS
+            NAME "Line Style"
+            GROUP "lsty"
+            STYLE
+                OUTLINECOLOR 255 0 0
+            END
+        END
+
+
+    END
+
+END

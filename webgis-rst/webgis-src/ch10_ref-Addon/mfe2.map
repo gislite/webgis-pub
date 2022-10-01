@@ -1,0 +1,89 @@
+MAP
+    NAME "second"
+    UNITS DD
+    SIZE 640 480
+    IMAGECOLOR 255 255 255
+    IMAGETYPE "png"
+    SHAPEPATH "/gdata/data_book"
+    EXTENT -180.0 0.0 -60.0 90.0
+    FONTSET "../fonts/fonts.list"
+    WEB
+        TEMPLATE "/owg/mb_second.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    LAYER
+        NAME "urbanareas"
+        DATA "urbanap020"
+        STATUS ON
+        TYPE POLYGON
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASS
+            NAME "Urban Areas"
+            STYLE
+                COLOR 212 192 100
+            END
+            LABEL
+                COLOR 0 0 0
+                SIZE SMALL
+            END
+        END
+    END
+    LAYER
+        NAME "lakes"
+        DATA "hydrogp020"
+        STATUS ON
+        TYPE POLYGON
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "FEATURE"
+        MAXFEATURES 100
+        CLASS
+            NAME "Lakes"
+            EXPRESSION "Lake"
+            STYLE
+                SIZE 1
+                COLOR 0 0 255
+            END
+            LABEL
+                MINFEATURESIZE AUTO
+                COLOR 0 0 0
+                SIZE SMALL
+            END
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "statesp020"
+        STATUS ON
+        TYPE POLYGON
+        LABELCACHE ON
+        CLASS
+            STYLE
+                OUTLINECOLOR 0 0 0
+            END
+        END
+    END
+    LAYER
+        NAME "roads"
+        DATA "roadtrl020"
+        STATUS ON
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "FEATURE"
+        CLASS
+            NAME "Principal Highway"
+            EXPRESSION /Principal Highway*/
+            STYLE
+                SIZE 1
+                COLOR 0 0 0
+            END
+            LABEL
+                COLOR 0 0 0
+                SIZE SMALL
+            END
+        END
+    END
+END

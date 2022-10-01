@@ -1,0 +1,132 @@
+<html lang="zh-cmn-Hans">
+<head>
+<title>Example 2.5 Template Source</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/tutorial/ms35.css" />
+</head>
+<body>
+<table width="600" align="center">
+<tr>
+<td> <h3 align="center">Example 2.5 HTML Template</h3>
+<hr>
+<pre><code>
+&lt;!-- MapServer Template --&gt;
+&lt;html lang=&quot;zh-cmn-Hans&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;MapServer 5.x Tutorial&lt;/title&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/tutorial/ms35.css&quot; /&gt;
+&lt;/head&gt;
+
+&lt;body bgcolor=&quot;#FFFFFF&quot; text=&quot;#000000&quot;&gt;
+&lt;table align=&quot;center&quot; border=&quot;0&quot;&gt;&lt;tr&gt;
+    &lt;td&gt; &lt;h3 align=&quot;center&quot;&gt;Example 2.5: Adding a Legend&lt;/h3&gt;
+
+&lt;!-- START OF MAPSERVER FORM --&gt;
+&lt;form name=&quot;mapserv&quot; method=&quot;GET&quot; action=&quot;/cgi-bin/mapserv.exe&quot;&gt;
+
+&lt;!-- HIDDEN MAPSERVER CGI VARIABLES --&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;map&quot; value=&quot;[map]&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;imgext&quot; value=&quot;[mapext]&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;imgxy&quot; value=&quot;199.5 149.5&quot;&gt;
+&lt;table width=&quot;600&quot; border=&quot;0&quot; align=&quot;center&quot;&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+	&lt;table width=&quot;400&quot; border=&quot;1&quot; align=&quot;center&quot;&gt;
+	  &lt;tr&gt;
+	    &lt;td colspan=&quot;4&quot;&gt;Select Layers:
+&lt;!-- SPECIFY VECTOR LAYERS --&gt;
+	      &lt;input type=&quot;checkbox&quot; name=&quot;layer&quot; value=&quot;states&quot;
+	      [states_check] checked&gt;
+              State Boundaries&amp;nbsp;
+              &lt;input type=&quot;checkbox&quot; name=&quot;layer&quot; value=&quot;hydro&quot;
+              [hydro_check]&gt;
+	      Water Features&amp;nbsp;
+	      &lt;input type=&quot;checkbox&quot; name=&quot;layer&quot; value=&quot;roads&quot;
+	      [roads_check]&gt;
+	      Roads&lt;br&gt;
+
+&lt;!-- SPECIFY RASTER LAYERS --&gt;
+	      Select Background:
+	      &lt;select name=&quot;layer&quot;&gt;
+		&lt;option value=&quot; &quot; [ _select]&gt;No Background&lt;/option&gt;
+		&lt;option value=&quot;modis_jpl&quot; [modis_jpl_select]&gt;
+		Daily MODIS Image&lt;/option&gt;
+		&lt;option value=&quot;modis&quot; [modis_select]&gt;
+		MODIS Surface Reflectance&lt;/option&gt;
+	      &lt;/select&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt;
+	    &lt;td&gt;
+
+&lt;!-- SPECIFY MAP MODE --&gt;
+	      &lt;div align=&quot;center&quot;&gt;Map Mode:&lt;br&gt;
+		&lt;select name=&quot;mode&quot;&gt;
+		  &lt;option value=&quot;browse&quot; [browse_select]&gt;Browse&lt;/option&gt;
+		&lt;/select&gt;
+	      &lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td&gt;
+&lt;!-- FORM SUBMIT BUTTON --&gt;
+	      &lt;div align=&quot;center&quot;&gt;
+		&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Refresh&quot;&gt;
+	      &lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td&gt;
+&lt;!-- ZOOM/PAN CONTROLS --&gt;
+	      &lt;div align=&quot;center&quot;&gt;Map Control: &lt;br&gt;
+		&lt;select name=&quot;zoom&quot;&gt;
+		  &lt;option value=&quot;4&quot; [zoom_4_select]&gt;Zoom In 4x&lt;/option&gt;
+		  &lt;option value=&quot;3&quot; [zoom_3_select]&gt;Zoom In 3x&lt;/option&gt;
+		  &lt;option value=&quot;2&quot; [zoom_2_select]&gt;Zoom In 2x&lt;/option&gt;
+		  &lt;option value=&quot;1&quot; [zoom_1_select]&gt;Recenter&lt;/option&gt;
+		  &lt;option value=&quot;-2&quot; [zoom_-2_select]&gt;Zoom Out 2x&lt;/option&gt;
+		  &lt;option value=&quot;-3&quot; [zoom_-3_select]&gt;Zoom Out 3x&lt;/option&gt;
+		  &lt;option value=&quot;-4&quot; [zoom_-4_select]&gt;Zoom Out 4x&lt;/option&gt;
+		&lt;/select&gt;
+	      &lt;/div&gt;
+	    &lt;/td&gt;
+&lt;!-- REFERENCE AND LEGEND COLUMN --&gt;
+	    &lt;td rowspan=&quot;2&quot; valign=&quot;top&quot;&gt;
+	      &lt;p&gt;Reference:&lt;br&gt;
+		&lt;img name=&quot;ref&quot; src=&quot;../[ref]&quot;&gt;&lt;/p&gt;
+	      &lt;p&gt;Legend:&lt;br&gt;
+		&lt;img name=&quot;legend&quot; src=&quot;../[legend]&quot;&gt;&lt;/p&gt;
+	  &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt;
+&lt;!-- DISPLAY THE MAPSERVER-CREATED MAP IMAGE --&gt;
+	    &lt;td colspan=&quot;3&quot; align=&quot;center&quot; valign=&quot;top&quot;&gt;
+	      &lt;input type=&quot;image&quot; name=&quot;img&quot; src=&quot;../[img]&quot; width=&quot;400&quot;
+	       height=&quot;300&quot; border=&quot;0&quot;&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	&lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr>
+<p><!--The interesting part in this bit of code are the tags, i.e. [zoom_1_select].
+ When MapServ sees a tag like this, it will evaluate whether the value
+ ("1") is selected or not. And if it is selected, MapServ will mark this
+ option as "selected". Again, go to example 2.1 and "view" the code. The
+ "Recenter" option should be "selected" (so that when we submit the form
+ again, the value of "zoom" will be "1").-->在代码的这一点中有趣的部分是标签，即[zoom_1_select]。当MapServ看到类似这样的标记，它会评估值（“1”）是否被选中。如果它被选中，MapServ勾选此选项为“已选择”。同样，例如2.1和“view”的代码。“Recenter”选项应该是“已选择”（这样，当我们再次提交表单，“zoom”的值将是“1”）。</p>
+<p><!--Our last tag is the "[img]" tag.  As you'll notice it is part of the form's input object.  The
+"[img]" will be replaced with the fullpath and name of the MapServ generated image.-->我们的最后一个标签是“[img]”标签。正如你发现的，它是表单的输入对象的一部分。“[IMG]”将被完整路径和MapServ生成的图像名称所替换。</p>
+<p><!--Once MapServer has replaced all the tags, it will send a proper HTML form back to the browser.
+And the user will again be able to make changes.-->一旦MapServer的取代了所有的标签，它会发送适当的HTML形式返回给浏览器。用户将能够再次做出改变。</p>
+<p></p>
+<hr>
+<p align="center" class="Small">
+<a href="/cgi-bin/mapserv.exe?map=/ms4w/apps/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv.exe&map_web=template+example2-5.html">Back to Example 2.5</a></p>
+</td>
+</tr>
+</table>
+</body>
+</html>

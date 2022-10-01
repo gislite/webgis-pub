@@ -1,0 +1,118 @@
+{% extends "contentj.jinja2" %}
+
+<title>Layer's query template block</title>
+
+{% block cntbody %}
+
+
+    <h1>Use the head and bottom template in the layer</h1>
+
+    <h2 id="lv8">how to use</h2>
+
+    <p><!--To see this example in action, open mfd1.map and uncomment the
+        HEADER and FOOTER lines in the cities_poly layer.  Save the mapfile when
+        you finish.-->
+
+        Take a look at this example in the implementation, open the map in Example 3 and cancel the header and footer in the city area layer. Save MapFile when done。</p>
+
+
+    <p>The <code>HEADER</code> and <code>FOOTER</code> object keywords within the layer are used to define the template keywords used in the header and footer templates.
+You can uncomment the following two lines to see the template files themselves and see how they work.</p>
+
+    <pre><code>
+HEADER '../templates/cities_header.html'
+FOOTER '../templates/cities_footer.html'
+</code></pre>
+
+    <!--Check the "Cities" layer in the application and click on the "Refresh"
+    button.  Now select "Query Single Layer" or "Query Multiple Layers" on
+    the "Map Mode" select box, and click on one of the cities.-->
+    <p>
+       Check the layer of "City" and click the "Refresh" button. The map will be refreshed and the city layer should now be displayed. Change the map mode to "Query Single Layer" or "Query Multiple Layers" and click on one of the cities.
+    </p>
+    <p>
+        <!--The result should now have a heading and should be presented in
+        tabular form.-->The result should now have a heading and should be presented in
+        tabular form
+    </p>
+    <p><!--Here's what the cities_header.html looks like:-->Here's what the cities_header.html looks like</p>
+    <pre>
+    &lt;b&gt;Layer: cities&lt;/b&gt;
+  &lt;p&gt;
+  &lt;table cellpadding=5 cellspacing=2 border=0&gt;
+    &lt;tr bgcolor=#CCCCCC&gt;
+      &lt;td bgcolor=#ffffff>&nbsp;&lt;/td&gt;
+      &lt;th>NAME&lt;/th&gt;
+      &lt;th>STATE&lt;/th&gt;
+    &lt;/tr&gt;
+</pre>
+
+    <!--Here again is the content of cities_query.html file:-->Here again is the content of cities_query.html file
+    <pre>
+    &lt;tr&gt;
+      &lt;td&gt;[lrn]&lt;/td&gt;
+      &lt;td&gt;[NAME]&lt;/td&gt;
+      &lt;td&gt;[STATE]&lt;/td&gt;
+    &lt;/tr&gt;
+</pre>
+
+    <!--And finally, here's what the cities_footer.html looks like:-->And finally, here's what the cities_footer.html looks like
+    <pre>
+  &lt;/table&gt;
+  &lt;p&gt;
+</pre>
+
+    <!-- When MapServer processes the query for a particular layer, it first
+     looks for a header template for that layer.  It will then process the
+     records that it gets back from the database, applying the query template
+     for each record.  When the template has been applied to all records, it
+     will again look for the footer template for the layer.  View the source
+     of the query result page to see how this works.-->
+    <p>
+       When MapServer processes the query for a particular layer, it first
+     looks for a header template for that layer.  It will then process the
+     records that it gets back from the database, applying the query template
+     for each record.  When the template has been applied to all records, it
+     will again look for the footer template for the layer.  View the source
+     of the query result page to see how this works
+    </p>
+    <p align="center">
+        <a target="_blank" href="/mfd1.map">View the MapFile</a> |
+        <a target="_blank" href="/example3-2_template.html">View the HTML Template</a>
+    </p>
+
+
+
+    <h2 id="v91">Open the example</h2>
+
+->->  xx_diff_mfp2_mfp1.htmp
+
+
+    <form method="get" action="/cgi-bin/mapserv" class="form-horizontal">
+
+        <input type="hidden" name="root" value="/owg">
+        <input type="hidden" name="program" value="/cgi-bin/mapserv">
+
+        <!-- The map and layer variables are internal MapServer variables.
+             They are required by the mapping application. -->
+        <input type="hidden" name="map" value="/owg/mfp2.map">
+        <input type="hidden" name="layer" value="states_line">
+        <input type="hidden" name="zoom" value="0">
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="col-sm-5">
+                    <select name="map_web" class="form-control">
+                        <option value="template example-p1.html">
+                            New example
+                        </option>
+                    </select> &nbsp;
+                </div>
+                <div class="col-sm-2">
+                    <input type="submit" name="submit" value="turn on" class="btn btn-sm btn-primary">
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

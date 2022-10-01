@@ -1,0 +1,105 @@
+{% extends "content.jinja2" %}
+
+
+<title>Second Map</title>
+{% block mainbody %}
+
+    <div class="container">
+
+        <div class="panel">
+
+            <div class="panel-head">
+                <h1>案例1：使用模板</h1>
+            </div>
+
+            <div class="panel-body">
+
+
+                <form name="the_form" method=GET action="[program]" class="form-horizontal">
+                    <div class="col-sm-12">
+                        <div class="col-sm-6">
+
+                            <input name="img" type="image" src="[img]" style="border: 2px solid #ddd"
+                                   class="img-thumbnail">
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="submit" value="刷新" class="btn btn-sm btn-primary">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12" align="center">查看</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    放大
+                                    <input type=radio name=zoomdir value=1
+                                           [zoomdir_1_check]>
+                                </div>
+                                <div class="col-sm-4">
+                                    缩小
+                                    <input type=radio name=zoomdir value=-1
+                                           [zoomdir_-1_check]>
+                                </div>
+                                <div class="col-sm-4">
+                                    倍数
+                                    <input type=text name=zoomsize size=2
+                                           value=[zoomsize]></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    平移
+                                    <input type=radio name=zoomdir value=0 [zoomdir_0_check]>
+                                </div>
+                            </div>
+
+                            <hr size="1">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+
+                                    <input type="checkbox" name="layer" value="urbanareas"
+                                           [urbanareas_check]> Urban Areas
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+
+                                    <input type="checkbox"
+                                           name="layer" value="lakes"
+                                           [lakes_check]> Lakes
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+
+                                    <input type="checkbox"
+                                           name="layer" value="states"
+                                           [states_check]> State Boundaries
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+
+                                    <input type="checkbox"
+                                           name="layer" value="roads"
+                                           [roads_check]> Roads
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <input type="hidden" name="imgxy" value="320 240">
+                    <input type="hidden" name="imgext" value="[mapext]">
+                    <input type="hidden" name="map" value="[map]">
+                    <input type="hidden" name="program" value="[program]">
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}

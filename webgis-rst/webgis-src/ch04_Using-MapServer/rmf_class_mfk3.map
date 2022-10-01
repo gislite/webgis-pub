@@ -1,0 +1,81 @@
+MAP
+    IMAGETYPE PNG
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+
+    SYMBOL
+        NAME "circle"
+        TYPE ELLIPSE
+        FILLED TRUE
+        POINTS
+            10 10
+        END
+    END
+
+    LAYER
+        NAME "country"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE line
+        CLASSITEM "NAME"
+        CLASS
+            NAME "Others"
+            STYLE
+                COLOR 198 198 255
+            END
+        END
+    END
+    
+    LAYER
+    # 全球地震数据
+    NAME weq
+    DATA world/cities.shp
+    STATUS OFF
+    TYPE POINT
+
+    # CLASSITEM    "MMAX"
+    CLASSITEM    "STATUS"
+
+    CLASS
+      NAME       'Provincial capital'
+      EXPRESSION 'Provincial capital'
+
+      SYMBOL "circle"
+      SIZE 4
+        COLOR    255 204 102
+        
+
+    END
+
+    CLASS
+      NAME       'National capital'
+      EXPRESSION 'National capital'
+
+      SYMBOL "circle"
+              SIZE 4
+        COLOR    51 102 255
+        
+
+    END
+
+    CLASS
+      NAME       'National and provincial capital'
+      EXPRESSION 'National and provincial capital'
+
+      SYMBOL "circle"
+              SIZE 4
+        COLOR    255 0 0
+    END
+
+
+    CLASS
+        NAME 'others'
+        SYMBOL "circle"
+        SIZE 4
+        COLOR 232 232 232
+    END
+    END
+END
+

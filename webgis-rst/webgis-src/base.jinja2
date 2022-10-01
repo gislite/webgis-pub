@@ -1,0 +1,48 @@
+<!-- MapServer Template -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open source WebGIS tutorial using MapServer, MapProxy, LeafletJS">
+    <meta name="keywords" content="Open source, MapServer, LeafletJS">
+    <meta name="author" content="Bu Kun">
+    <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <title> Open Source WebGIS Online Tutorial, MapServer Tutorial {{ dir_title }} {{ title }} </title>
+
+    <link rel="stylesheet" href="/f2elib/bootstrap-5.2.0/css/bootstrap.min.css"/>
+    <script src="/f2elib/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/tass/css/style.css"/>
+    <script data-ad-client="ca-pub-1466963416408457" async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {% block headbody %}{% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link {{ active_index | default('') }}" href="/">Home</a>
+        </li>
+        {{ nav }}
+    </ul>
+
+    <div class="col-md-3 text-end">
+
+        <a class="btn btn-primary" href="https://github.com/gislite/webgis-pub">GitHub reposity</a>
+
+    </div>
+
+</nav>
+{% block mainbody %}
+{% endblock %}
+<div class="footer">
+    <div class="copyRight">
+        <div class="banquan">
+            WebGIS Pub. Since 2019<br/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

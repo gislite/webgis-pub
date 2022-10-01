@@ -1,0 +1,92 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    FONTSET "../fonts/fonts.list"
+    PROJECTION
+        "init=epsg:4326"
+    END
+    TEMPLATEPATTERN "tmpl-*"
+    WEB
+        TEMPLATE "to be replaced by map_web_template variable in section2.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+        METADATA
+            "wms_title" "WMS Demo Server"
+            "wms_onlineresource" "http://192.168.4.211/cgi-bin/mapserv?map=/mstu/htdocs/example2.map&"
+            "wms_srs" "EPSG:3857 EPSG:4326"
+        END
+    END
+    LAYER
+        NAME "land"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+    END
+    LAYER
+        NAME "topo"
+        TYPE RASTER
+        CONNECTIONTYPE WMS
+        CONNECTION "http://wcs.osgeo.cn:8088/service?"
+        METADATA
+            "wms_srs" "EPSG:4326"
+            "wms_name" "maplet_i887"
+            "wms_server_version" "1.1.1"
+            "wms_format" "image/jpeg"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "states_poly"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        LABELITEM "NAME"
+        CLASS
+            NAME "States"
+            STYLE
+                COLOR 232 232 232
+            END
+        END
+    END
+    LAYER
+        NAME "states_line"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                COLOR 132 132 32
+            END
+        END
+    END
+    LAYER
+        NAME "wriver"
+        DATA "wriver.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "World River"
+            STYLE
+                COLOR 0 0 255
+            END
+        END
+    END
+    LAYER
+        NAME "wroads"
+        DATA "wroads.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "World Road"
+            STYLE
+                COLOR 100 200 100
+            END
+        END
+    END
+END

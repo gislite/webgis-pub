@@ -1,0 +1,155 @@
+
+MAP
+  NAME           EX2_
+  IMAGETYPE      png24
+  EXTENT -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  SYMBOLSET      "../symbols/symbols35.sym"
+  FONTSET        "../fonts/fonts.list"
+
+    OUTPUTFORMAT
+      NAME "png"
+      DRIVER AGG/PNG
+      MIMETYPE "image/png"
+      IMAGEMODE RGB
+      EXTENSION "png"
+      FORMATOPTION "GAMMA=0.75"
+    END
+
+
+  WEB
+
+     IMAGEPATH '/owg/ms_tmp/'
+     IMAGEURL  '/ms_tmp/'
+
+     METADATA
+         "wms_title"           "WMS Demo Server"
+         "wms_version" "1.3.0"
+         "wms_onlineresource"  "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfba.map&"
+         "wms_srs"             "EPSG:4326"
+         "wms_enable_request" "*"
+         "ows_enable_request" "*"
+         "wms_feature_info_mime_type" "text/html"
+         "wms_format" "image/png"
+       END
+  END
+
+  
+
+  PROJECTION
+    "init=epsg:4326"
+  END
+
+
+#############################################
+     LAYER
+        NAME "wcountry"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+
+        TEMPLATE "tmpl_ogc.html"
+        METADATA
+            "wms_title" "test2"
+            "wms_version" "1.3.0"
+            "wms_srs" "EPSG:4326 EPSG:3857"
+            "wms_enable_request" "*"
+            "ows_enable_request" "*"
+            "wms_feature_info_mime_type" "text/html"
+            "wms_format" "image/png"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+
+        CLASS
+            NAME "States"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 32 32 32
+            END
+        END
+    END
+    #############################################
+    LAYER
+        NAME "wcountry_line"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+
+        TEMPLATE "tmpl_ogc.html"
+        METADATA
+            "wms_title" "test3"
+            "wms_version" "1.3.0"
+            "wms_srs" "EPSG:4326 EPSG:3857"
+            "wms_enable_request" "*"
+            "ows_enable_request" "*"
+            "wms_feature_info_mime_type" "text/html"
+            "wms_format" "image/png"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                COLOR 132 132 32
+            END
+        END
+    END
+    ######################################################################
+
+    LAYER
+        # 河流
+        NAME         wriver
+        DATA         wriver.shp
+        STATUS       OFF
+        TYPE         LINE
+
+        METADATA
+            "wms_title" "test2"
+            "wms_version" "1.3.0"
+            "wms_srs" "EPSG:4326 EPSG:3857"
+            "wms_enable_request" "*"
+            "ows_enable_request" "*"
+            "wms_feature_info_mime_type" "text/html"
+            "wms_format" "image/png"
+        END
+
+        CLASS
+          NAME       "World River"
+          STYLE
+            COLOR    0 0 255
+          END
+        END
+      END # States line layer ends here
+
+####################################################################
+      LAYER
+        # 道路
+        NAME         wroads
+        DATA         wroads.shp
+        STATUS       OFF
+        TYPE         LINE
+
+        METADATA
+            "wms_title" "test2"
+            "wms_version" "1.3.0"
+            "wms_srs" "EPSG:4326 EPSG:3857"
+            "wms_enable_request" "*"
+            "ows_enable_request" "*"
+            "wms_feature_info_mime_type" "text/html"
+            "wms_format" "image/png"
+        END
+
+        CLASS
+          NAME       "World Road"
+          STYLE
+            COLOR    100 200 100
+          END
+        END
+      END # States line layer ends here
+
+END

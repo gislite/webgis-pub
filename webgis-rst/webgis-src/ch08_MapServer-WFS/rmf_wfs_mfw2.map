@@ -1,0 +1,111 @@
+# 基本的配置
+
+MAP
+  IMAGETYPE      PNG
+  EXTENT         -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  IMAGECOLOR     255 255 255
+
+
+
+
+OUTPUTFORMAT
+  NAME "geojson"
+  DRIVER "OGR/GEOJSON"
+  MIMETYPE "application/json; subtype=geojson"
+  FORMATOPTION "STORAGE=stream"
+  FORMATOPTION "FORM=SIMPLE"
+END
+
+  WEB
+    METADATA
+      "wms_title"           "WMS Demo Server"
+      "wms_onlineresource"  "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+      "ows_onlineresource"  "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+      "wms_srs"             "EPSG:4269 EPSG:4326"
+      "wms_enable_request" "* !GetFeatureInfo"
+
+      "wfs_getfeature_formatlist" "geojson"
+
+                 "wfs_title" "world country"
+                "wfs_onlineresource" "//webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map"
+                "wfs_srs" "EPSG:4326"
+                "wfs_abstract" "This text describes your wfs service"
+                "wfs_enable_request" "*"
+
+                'ows_keywordlist' 'world'
+    END
+  END
+
+
+LAYER
+    # 河流
+    NAME         wriver
+    DATA         wriver.shp
+    STATUS       OFF
+    TYPE         LINE
+
+ METADATA
+                "wms_title" "world country"
+                "wms_srs" "EPSG:4326"
+
+                "wfs_title" "worldcountry"
+                "wfs_srs" "EPSG:4326"
+                ## "gml_featureid" "gid"
+                "wfs_enable_request" "*"
+                 "gml_include_items" "all" ## Optional (serves all attributes for layer)
+                 "gml_featureid"     "OBJECTID" ## REQUIRED
+                 "wfs_getfeature_formatlist" "geojson"
+
+            END  # LAYER METADATA
+
+    CLASS
+      NAME       "World River"
+      STYLE
+        COLOR    0 0 255
+      END
+    END
+  END # States line layer ends here
+
+
+  # 开始图层定义
+  LAYER # States polygon layer begins here
+    NAME         world-country
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         POLYGON
+
+    METADATA
+                "wms_title" "world country"
+                "wms_srs" "EPSG:4326"
+
+                "wfs_title" "worldcountry"
+                "wfs_srs" "EPSG:4326"
+                ## "gml_featureid" "gid"
+                "wfs_enable_request" "*"
+                 "gml_include_items" "all" ## Optional (serves all attributes for layer)
+                 "gml_featureid"     "OBJECTID" ## REQUIRED
+                 "wfs_getfeature_formatlist" "geojson"
+
+            END  # LAYER METADATA
+
+
+    # 类对象与图层对象一起定义。你可以定义和
+    # 你需要的一样多的类（对图层有限制，但是
+    # 在一个正常的地图上定义多于10个是没有意义的。
+    # 但是有时候你不得不这样做。）
+    CLASS
+      NAME "The Upper Great Lakes States"
+
+      # 在一个类中有样式，正如在一个图层中有类别，
+      # 就像在一个地图中有图层。你可以在一个类
+      # 中定义不同的样式就像你可以在一个图层中
+      # 定义不同的类和在一个地图中定义不同的图层。
+      STYLE
+        COLOR        232 232 232
+        OUTLINECOLOR 32 32 32
+      END
+    END # States polygon layer ends here
+  END # End of LAYER DEFINITIONS
+END # 所有的地图文件必须结束

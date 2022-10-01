@@ -1,0 +1,100 @@
+{% extends "content.jinja2" %}
+
+{#
+原始英文教程：
+http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv&map_web=template+example2-1.html
+
+#}
+
+<title>MapServer交互：缩放与浏览控制</title>
+
+{% block mainbody %}
+
+    <div class="container">
+
+        <h1>MapServer示例 : 缩放与浏览控制</h1>
+
+        <!-- START OF MAPSERVER FORM -->
+        <form name="mapserv" method="GET" action="[program]" class="form-horizontal" role="form">
+
+            <fieldset>
+                <legend>地图的缩放与浏览控制</legend>
+
+                <br>
+                <!-- HIDDEN MAPSERVER CGI VARIABLES -->
+                <input type="hidden" name="root" value="[root]"/>
+                <input type="hidden" name="program" value="[program]"/>
+                <input type="hidden" name="map_web" value="[map_web]"/>
+                <input type="hidden" name="map" value="[map]"/>
+                <input type="hidden" name="imgext" value="[mapext]"/>
+                <input type="hidden" name="imgxy" value="[center]"/>
+                <input type="hidden" name="layers" value="[layers]"/>
+                <input type="hidden" name="zoom" value="[zoom]"/>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="mode">地图模式：</label>
+
+                    <div class="col-sm-8">
+                        <select name="mode" class="form-control">
+                            <option value="browse">Browse</option>
+                            <option value="map">Map</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="zoom">地图控制：</label>
+
+                    <div class="col-sm-8">
+                        <select name="zoom" class="form-control">
+                            <option value="4" [zoom_4_select]>放大4倍</option>
+                            <option value="3" [zoom_3_select]>放大3倍</option>
+                            <option value="2" [zoom_2_select]>放大2倍</option>
+                            <option value="0" [zoom_0_select]>置中</option>
+                            <option value="-2" [zoom_-2_select]>缩小2倍</option>
+                            <option value="-3" [zoom_-3_select]>缩小3倍</option>
+                            <option value="-4" [zoom_-4_select]>缩小4倍</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input type="submit" name="submit" value="刷新" class="btn btn-primary">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+
+                    <div class="col-sm-8">
+
+                        <input type="image" name="img" src="../[img]"
+                               width="600" height="300" border="1">
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+        <hr>
+
+        <p>
+            在上面的表单中，用到了一些参数：
+        </p>
+
+        <pre><code>
+&lt;input type=&quot;hidden&quot; name=&quot;root&quot; value=&quot;[root]&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;program&quot; value=&quot;[program]&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;map_web&quot; value=&quot;[map_web]&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;map&quot; value=&quot;[map]&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;imgext&quot; value=&quot;[mapext]&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;imgxy&quot; value=&quot;[center]&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;layers&quot; value=&quot;[layers]&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;zoom&quot; value=&quot;[zoom]&quot;/&gt;
+</code></pre>
+
+    </div>
+{% endblock %}

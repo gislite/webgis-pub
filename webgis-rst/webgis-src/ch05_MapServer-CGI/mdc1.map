@@ -1,0 +1,37 @@
+MAP
+    NAME "mapv19"
+    IMAGETYPE "PNG24"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    SYMBOLSET "../symbols/symbols35.sym"
+    FONTSET "../fonts/fonts.list"
+    IMAGECOLOR 255 255 255
+    WEB
+        TEMPLATE "example1-9.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    LAYER
+        NAME "topo"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+        PROCESSING "BANDS=1,2,3"
+        OFFSITE 71 74 65
+    END
+    LAYER
+        NAME "states_line"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                SYMBOL "line5"
+                COLOR 255 255 0
+                SIZE 1
+            END
+        END
+    END
+END

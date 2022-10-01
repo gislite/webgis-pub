@@ -1,0 +1,188 @@
+<!-- MapServer Template -->
+
+<html lang="zh-cmn-Hans"><!-- fourth.html -->
+<head><title>MapServer Fourth Application</title>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function setMode()
+// set map mode to the previous mode
+{   document.the_map.mode.selectedIndex=0;
+    for (i=0;i<document.the_map.mode.length;i++){
+        if (document.the_map.mode[i].value == 
+                document.the_map.previousmode.value){
+           document.the_map.mode.selectedIndex=i;
+        }
+    }
+};
+// -->
+</script>
+
+</head>
+<body bgcolor="#E6E6E6" onload="setMode()">
+
+<form name="the_map" method=GET action="[program]">  
+
+  <font size="4">Query Definition</font> 
+  <table width="100%" border="1">
+
+     <tr><td width="60%" rowspan="6" align="center">
+            <input name="img" type="image" src="[img]" 
+                   width=640 height=320 border=2>
+            <input type="submit" value="Refresh"></td>
+
+         <td width="40%" align="center" colspan="3">
+            <img SRC="[ref]" width=320 height=160 border=1>
+               </td></tr>
+
+     <tr><td align="left" colspan="2"><font size="-1">
+            Map scale:&nbsp &nbsp &nbsp 1:[scale]</font>
+               </td></tr>
+
+     <tr><td align="left" colspan="2"><font size="-1">
+            Click x,y:&nbsp &nbsp &nbsp &nbsp [mapx], [mapy]
+               </font></td></tr>
+
+     <tr><td align="left" colspan="2"><font size="-1">
+            Map Extent:&nbsp [mapext]</font></td></tr>
+
+     <tr><td align="center"><B>Navigation</B></td>
+         <td align="center"><B>Layers</B></td></tr>
+
+     <tr><td align="left">
+            <input type=radio name=zoomdir 
+                   value=0 [zoomdir_0_check]> Pan <BR>
+            <input type=radio name=zoomdir 
+                   value=1 [zoomdir_1_check]> Zoom In <BR>
+            <input type=radio name=zoomdir 
+                   value=-1 [zoomdir_-1_check]> Zoom Out <BR>
+            <input type=text name=zoomsize 
+                   size=3 value=[zoomsize]> Size </td>
+
+         <td align="left">
+            <input type="checkbox" name="layer" 
+                   value="Cities" [Cities_check]> 
+                   Cities <BR>
+            <input type="checkbox" name="layer" 
+                   value="Countries" [Countries_check]> 
+                   Countries</td></tr>
+
+     <tr><td colspan="3" align="center"><B>Query</B></td></tr>
+     <tr><td colspan="3" align="center">
+          <table><tr><td rowspan=1 valign="top">
+                         Map Mode:</td>
+
+                     <td rowspan=1 valign="top" align="left">
+                         <select name="mode">
+                               <option value="browse">
+                            Browse</option>
+                               <option value="query">
+                            Query</option>
+                               <option value="nquery">
+                            Nquery</option>
+                               <option value="itemquery">
+                            Itemquery</option>
+                               <option value="itemnquery">
+                            Itemnquery</option>
+                               <option value="featurequery">
+                            Featurequery</option>
+                               <option value="featurenquery">
+                            Featurenquery</option>
+                               <option value="itemfeaturequery">
+                            Itemfeaturequery</option>
+                               <option value="itemfeaturenquery">
+                            Itemfeaturenquery</option>
+                               <option value="indexquery">
+                            Indexquery</option>
+                         </select></td>
+
+                     <td align="right">
+                         Query layer:</td>
+                     <td align="left">
+                         <input type=text name="qlayer" size=10 
+                                value="[qlayer]"></td>
+
+                     <td align="right">
+                         imgbox coords:</td>
+                     <td align="left">
+                         <input type=text name=imgbox size=25
+                                value=[imgbox]></td></tr>
+
+                 <tr>
+                     <td></td>
+                     <td></td>
+
+                     <td align="right">
+                         Query item:</td>
+                     <td align="left">
+                         <input type=text name="qitem" size=10 
+                                value="[qitem]"></td>
+
+                     <td align="right">
+                         imgshape coords:</td>
+                     <td align="left">
+                         <input type=text name="imgshape" size=25
+                                value="[imgshape]"></td></tr>
+
+                 <tr>
+                     <td></td>
+                     <td></td>
+
+                     <td align="right">
+                         Query string:</td>
+                     <td align="left">
+                         <input type=text name=qstring size=25
+                                value=[qstring]></td>
+
+                     <td align="right">
+                         mapshape coords:</td>
+                     <td align="left">
+                         <input type=text name="mapshape" size=25
+                                value="[mapshape]"></td></tr>
+
+                 <tr>
+                     <td></td>
+                     <td></td>
+                     <td align="right">
+                         Cities Tolerance:</td>
+                     <td align="left">
+                         <input type=text 
+                                name=map_Cities_tolerance size=4 
+                                value=[map_Cities_tolerance]> 
+                                miles</td>
+
+                     <td align="right">
+                         Shape index:</td>
+                     <td align="left">
+                         <input type=text name=shapeindex size=10 
+                                value=[shapeindex]></td></tr>
+
+                 <tr>
+                     <td></td>
+                     <td></td>
+                     <td align="right">
+                         Countries Tolerance:</td>
+                     <td align="left">
+                         <input type=text 
+                                name=map_Countries_tolerance size=4
+                                value=[map_Countries_tolerance]> 
+                                miles</td>
+
+                     <td align="center" colspan=2 bgcolor="#F5A5A5">
+                         Feature query select layer: 
+                         <em>Countries</em></td></tr>
+
+          </table>
+         </td></tr>
+    </table>
+
+    <input type="hidden" name="imgxy" value="320 160">
+    <input type="hidden" name="imgext" value="[mapext]"> 
+    <input type="hidden" name="map" value="[map]">
+    <input type="hidden" name="program" value="[program]">
+    <input type="hidden" name="slayer" value="Countries">
+    <input type="hidden" name="previousmode" value="[previousmode]">
+    <input type="hidden" name="savequery" value="true">
+</form>
+</body>
+</html>

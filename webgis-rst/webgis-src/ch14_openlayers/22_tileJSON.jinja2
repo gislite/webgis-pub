@@ -1,0 +1,46 @@
+{% extends "contentj.jinja2" %}
+<title>TileJSON</title>
+
+{% block headbody %}
+
+    <link rel="stylesheet" href="/f2elib/ol-6.14.1/ol.css" type="text/css">
+    <!--导入最新版本ol的js文件。-->
+    <script src="/f2elib/ol-6.14.1/ol.js"></script>
+    <style>
+        #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block cntbody %}
+
+        <div id="olmap" class="olmap"></div>
+
+    <br>
+   <div>Example for TileJSON layer.</div>
+   <script>
+      var olmap = new ol.Map({   //初始换Map对象，显示地图。
+          //在地图容器中加载地图
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.TileJSON({        // TileJSON格式的图块数据的图层源。
+              url: 'https://api.tiles.mapbox.com/v3/mapbox.geography-class.json?secure', // 图层源地址
+              crossOrigin: 'anonymous'  // 已加载图像的crossOrigin属性。 请注意，如果使用WebGL渲染器或者要使用Canvas渲染器访问像素数据，则必须提供crossOrigin值。
+            })
+          })
+        ],
+        target: 'olmap',	// 地图容器div层的id值
+        view: new ol.View({  //表示显示简单的2D视图地图。
+          center: [0, 0],  //地图初始中心点
+          zoom: 2  //地图初始显示级别为2
+        })
+      });
+    </script>
+
+{% endblock %}
+
+

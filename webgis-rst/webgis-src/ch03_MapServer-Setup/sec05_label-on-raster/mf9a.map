@@ -1,0 +1,31 @@
+MAP
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    LAYER
+        NAME "topo"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+    END
+    LAYER
+        NAME "label"
+        STATUS DEFAULT
+        TYPE POINT
+        FEATURE
+            POINTS
+                116.3333333333 39.9333333333333
+            END
+            TEXT "Bei Jing"
+        END
+        CLASS
+            STYLE
+                COLOR 255 255 0
+            END
+            LABEL
+                TYPE BITMAP
+                COLOR 255 255 0
+            END
+        END
+    END
+END

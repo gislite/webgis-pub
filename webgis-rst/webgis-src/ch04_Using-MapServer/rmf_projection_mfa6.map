@@ -1,0 +1,29 @@
+# 用于说明 投影
+MAP
+    IMAGETYPE      PNG24
+    # EXTENT       201621.496941 -294488.285333 1425518.020722 498254.511514 # LAEA
+    EXTENT         -20042150 -7515806 20104978 7515807
+    #EXTENT         -97.5 41.619778 -82.122902 49.38562 # Geographic
+    SIZE           350 260
+    SHAPEPATH      "/gdata"
+    SYMBOLSET      "../symbols/symbols35.sym"
+    FONTSET        "../fonts/fonts.list"
+
+    PROJECTION
+        "init=epsg:3857"
+    END # End of the output Projection definition
+
+    LAYER
+        NAME         topo
+        DATA         "land_shallow_topo_8192.tif"
+        STATUS       OFF
+        TYPE         RASTER
+        # PROCESSING   "BANDS=1,2,3"
+        # OFFSITE      71 74 65
+
+        PROJECTION
+          "init=epsg:4326"
+        END
+    END
+
+END # All map files must come to an end just as all other things must come to...

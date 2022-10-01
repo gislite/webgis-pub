@@ -1,0 +1,111 @@
+MAP
+    NAME "Fourth"
+    UNITS DD
+    EXTENT -180.0 -85.0 180.0 85.0
+    SIZE 640 320
+    IMAGECOLOR 200 225 255
+    IMAGETYPE "PNG"
+    SHAPEPATH "/gdata/data_book2"
+    FONTSET "../fonts/fonts.list"
+    WEB
+        HEADER "/owg/mb_fourth_web_header.html"
+        FOOTER "/owg/mb_fourth_web_footer.html"
+        EMPTY "/mb_fourth_empty.html"
+        TEMPLATE "/owg/mb_fourth.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    REFERENCE
+        IMAGE "/owg/mb_fourth_worldref.gif"
+        SIZE 320 160
+        EXTENT -180.0 -85.0 180.0 85.0
+        STATUS ON
+        COLOR -1 -1 -1
+        OUTLINECOLOR 255 0 0
+    END
+    QUERYMAP
+        STATUS ON
+        STYLE HILITE
+        COLOR 255 255 0
+        SIZE 320 160
+    END
+    LAYER
+        NAME "Countries"
+        STATUS ON
+        TYPE POLYGON
+        DATA "countries"
+        HEADER "/owg/mb_fourth_countries_header.html"
+        FOOTER "/owg/mb_fourth_countries_footer.html"
+        TOLERANCE 1
+        TOLERANCEUNITS MILES
+        CLASS
+            TEMPLATE "/owg/mb_fourth_countries_query.html"
+            STYLE
+                COLOR 199 199 199
+            END
+        END
+    END
+    LAYER
+        NAME "Cities"
+        STATUS ON
+        TYPE POINT
+        DATA "cities"
+        LABELITEM "CITY"
+        LABELCACHE ON
+        HEADER "/owg/mb_fourth_cities_header.html"
+        FOOTER "/owg/mb_fourth_cities_footer.html"
+        TOLERANCE 1
+        TOLERANCEUNITS MILES
+        CLASS
+            TEMPLATE "/owg/mb_fourth_cities_query.html"
+            STYLE
+                COLOR 0 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                SIZE 8
+                COLOR 255 0 0
+                MINDISTANCE 50
+                POSITION LC
+                ANTIALIAS TRUE
+            END
+        END
+        JOIN
+            TABLE "/owg/mb_fourth_join.dbf"
+            NAME "test-join"
+            FROM "CITY"
+            TO "CITY"
+        END
+    END
+    LAYER
+        NAME "Boundaries"
+        STATUS DEFAULT
+        TYPE LINE
+        DATA "countries"
+        CLASS
+            STYLE
+                COLOR 0 0 0
+            END
+        END
+    END
+    LAYER
+        STATUS DEFAULT
+        TYPE POLYGON
+        DATA "countries"
+        LABELITEM "STATE"
+        LABELCACHE ON
+        CLASS
+            STYLE
+                COLOR 0 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                SIZE 8
+                COLOR 0 0 0
+                MINDISTANCE 50
+                POSITION CC
+                ANTIALIAS TRUE
+            END
+        END
+    END
+END

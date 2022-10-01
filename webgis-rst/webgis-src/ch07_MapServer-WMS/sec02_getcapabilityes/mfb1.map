@@ -1,0 +1,39 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    WEB
+        METADATA
+            "wms_title" "WMS Demo Server"
+            "wms_onlineresource" "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+            "ows_onlineresource" "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+            "wms_srs" "EPSG:4269 EPSG:4326"
+            "wms_enable_request" "* !GetFeatureInfo"
+        END
+    END
+    LAYER
+        NAME "topo"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+        PROCESSING "BANDS=1,2,3"
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        CLASS
+            NAME "The Upper Great Lakes States"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 32 32 32
+            END
+        END
+    END
+END

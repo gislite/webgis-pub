@@ -1,0 +1,84 @@
+# 基本的配置
+# 测试有，有问题
+
+MAP
+  IMAGETYPE      PNG
+  EXTENT         -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  IMAGECOLOR     255 255 255
+
+  WEB
+    METADATA
+               "wfs_title" "world country"
+                "wfs_onlineresource" "http://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map"
+                "wfs_srs" "EPSG:4326"
+                "wfs_abstract" "This text describes your wfs service"
+                "wfs_enable_request" "*"
+                'ows_keywordlist' 'world'
+    END
+  END
+
+SYMBOL
+    NAME "circle"
+    TYPE ellipse
+    FILLED true
+    POINTS
+        10 10
+    END
+END
+
+####################################################
+
+LAYER
+    NAME         world-city
+    DATA         world/cities.shp
+    STATUS       OFF
+    TYPE         POINT
+
+    # ToDo: 很是奇怪， 添加下面的信息后， 在 mft6 中，看不到任何的信息。
+    METADATA
+        "wfs_title" "worldcity"
+        "wfs_srs" "EPSG:4326"
+        "wfs_enable_request" "*"
+        "gml_include_items" "all" #  这个关键词得注意， 不配置的话，默认是没有属性的。
+        "gml_featureid"     "CITY_NAME" # REQUIRED
+    END
+
+
+    CLASS
+      NAME "cities"
+              SYMBOL "circle"
+        SIZE 6
+        COLOR 0 0 0
+    END
+  END
+
+#################################################################
+LAYER
+    NAME         world-country
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         POLYGON
+
+    METADATA
+        "wfs_title" "worldcountry"
+        "wfs_srs" "EPSG:4326"
+        "wfs_enable_request" "*"
+        "gml_include_items" "all" # Optional (serves all attributes for layer)
+        "gml_featureid"     "OBJECTID" # REQUIRED
+    END
+    CLASS
+        NAME "The Upper Great Lakes States"
+
+
+        STYLE
+            COLOR        232 232 232
+            OUTLINECOLOR 32 32 32
+        END
+    END
+END
+
+
+
+END

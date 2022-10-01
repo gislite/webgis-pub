@@ -1,0 +1,37 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    WEB
+        METADATA
+            "wfs_title" "world country"
+            "wfs_onlineresource" "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map"
+            "wfs_srs" "EPSG:4326"
+            "wfs_abstract" "This text describes your wfs service"
+            "wfs_enable_request" "*"
+            "ows_keywordlist" "world"
+        END
+    END
+    LAYER
+        NAME "world-country"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        METADATA
+            "wfs_title" "worldcountry"
+            "wfs_srs" "EPSG:4326"
+            "wfs_enable_request" "*"
+            "gml_include_items" "all"
+            "gml_featureid" "OBJECTID"
+        END
+        CLASS
+            NAME "The Upper Great Lakes States"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 32 32 32
+            END
+        END
+    END
+END

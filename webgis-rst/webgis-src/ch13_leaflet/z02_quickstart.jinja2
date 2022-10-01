@@ -1,0 +1,282 @@
+{% extends "contentj.jinja2" %}
+
+
+{% block headbody %}
+
+    <title>初次使用LeafletJS</title>
+
+
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+    <h1 id="leaflet-quick-start-guide">Leaflet简介</h1>
+
+    <p class="tutorials-back">
+        Leaflet是一个用于移动端渲染交互式地图开源JavaScript库。它的设计理念是高效、轻量且实用。
+        其体积只有约38KB，但具有大多数开发人员所需要的地图操作功能，能在常见的桌面和移动平台上工作。有着可扩展的插件体系，清晰可读的代码、及优雅
+        的文档和易于操作的API。 </p>
+
+    <h2 id="l1o">简介</h2>
+
+    <p>Leaflet 是一个为建设交互性好适用于移动设备地图，而开发的现代的、开源的 JavaScript 库。
+        代码仅有 33 KB，但它具有开发在线地图的大部分功能。Leaflet设计坚持简便、高性能和可用性好的哲学思想，
+        在所有主要桌面和移动平台能高效运作，在现代浏览器上会利用HTML5和CSS3的优势，同时也支持旧的浏览器访问。
+        支持插件扩展，有一个友好、易于使用的API文档和一个简单的、可读的源代码。Leaflet强大的开源库插件涉及到地图应用的各个方面包括地图服务，
+        数据提供，数据格式，地理编码，路线和路线搜索，地图控件和交互等类型的插件共有140多个。
+        这些控件丰富leaflet的功能，同时也可以十分方便的实现自定义的控件具有良好的可扩展性。</p>
+
+
+    <h2 id="zl8">Leaflet入门指南</h2>
+
+    <p>这个循序渐进的指南让你快速了解leaflet基础知识，包括建立leaflet地图，使用标记、多线和弹出窗口，以及处理事件。</p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example.html">Show the example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 id="vk1">准备页面</h2>
+
+    <p>在编写地图代码之前，您需要在页面上执行以下操作：</p>
+
+    <ul>
+        <li>
+            <p>在页面的<code>&lt;head&gt;标签与&lt;/head&gt;</code>标签之间加入如下代码:</p>
+
+            <div class="highlighter-rouge">
+                <div class="highlight"><pre class="highlight"><code class="hljs xml">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//www.osgeo.cn/_f2elib/leaflet-1.8.0/leaflet.css&quot; /&gt;
+&lt;!-- 确保leaflet.js放在Leaflet&#x27;s CSS之后 --&gt;
+&lt;script src=&quot;//www.osgeo.cn/_f2elib/leaflet-1.8.0/leaflet.js&quot;&gt;&lt;/script&gt;
+    </code></pre>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p>在想要创建地图的地方创建一个带有 <code class="highlighter-rouge">id</code>的<code class="highlighter-rouge">div</code> 。
+            </p>
+            <div class="highlighter-rouge">
+                <div class="highlight"><pre class="highlight"><code class="hljs xml">
+                    <span class="hljs-tag">&lt;<span
+                            class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span
+                            class="hljs-value">"mapid"</span>&gt;</span><span
+                        class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    </code></pre>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p>确保地图有一个明确的高度, 例如在CSS中定义:</p>
+
+            <pre><code class="css hljs"><span class="hljs-id">#mapid</span> <span class="hljs-rules">{ <span
+                    class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span
+                    class="hljs-number">180px</span></span></span>; }</span></code></pre>
+        </li>
+    </ul>
+
+    <p> 现在地图的初始化已经完成了，可以准备用它做一些事情了。</p>
+
+    <h2 id="v2f">创建地图</h2>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example-basic.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example-basic.html">Show the example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>1.初始化地图，并将其视图设置为我们所选择的地理坐标和缩放级别：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> mymap = L.map(<span class="hljs-string">'mapid'</span>).setView([<span
+                class="hljs-number">51.505</span>, -<span class="hljs-number">0.09</span>], <span
+                class="hljs-number">13</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p>默认情况下（因为我们在创建地图实例时没有设置任何参数），地图上的所有鼠标事件和触摸交互功能都是开启的，并且它具有缩放和属性控件。</p>
+
+    <p>2.显示地图。</p>
+
+    <pre><code class="javascript hljs">L.tileLayer(<span class="hljs-string">'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}'</span>, {
+    attribution: <span class="hljs-string">'Map data &amp;copy; </span><span class="text-cut" data-cut="[…]"><span
+                class="hljs-string">&lt;a href="https://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="https://creativecommons.org/licenses/by-sa/2.0/"&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href="https://www.mapbox.com/"&gt;Mapbox&lt;/a&gt;</span></span><span
+                class="hljs-string">'</span>,
+    maxZoom: <span class="hljs-number">18</span>,
+    id: <span class="hljs-string">'openstreet.map'</span>,
+    accessToken: <span class="hljs-string">'your.mapbox.access.token'</span>
+}).addTo(mymap);</code></pre>
+
+    <p>确保所有代码都在用于显示地图的<code class="highlighter-rouge">div</code>和<code class="highlighter-rouge">leaflet.js</code>
+        包含之后调用。</p>
+
+    <h2 id="nv2">点状标记 , 圆形标记以及多边形标记</h2>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example-overlays.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example-overlays.html">Show the example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>除了瓦片之外，你还可以轻松地在地图中添加其他东西，包括标记、折线、多边形、圆圈和弹出窗口。让我们添加一个标记：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> marker = L.marker([<span class="hljs-number">51.5</span>, -<span
+                class="hljs-number">0.09</span>]).addTo(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <p>添加圆形标记：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> circle = L.circle([<span class="hljs-number">51.508</span>, -<span
+                class="hljs-number">0.11</span>], {
+    color: <span class="hljs-string">'red'</span>,
+    fillColor: <span class="hljs-string">'#f03'</span>,
+    fillOpacity: <span class="hljs-number">0.5</span>,
+    radius: <span class="hljs-number">500</span>
+}).addTo(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <p>添加多边形标记同样简单:</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> polygon = L.polygon([
+    [<span class="hljs-number">51.509</span>, -<span class="hljs-number">0.08</span>],
+    [<span class="hljs-number">51.503</span>, -<span class="hljs-number">0.06</span>],
+    [<span class="hljs-number">51.51</span>, -<span class="hljs-number">0.047</span>]
+]).addTo(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <h2 id="vj2">使用弹出窗口</h2>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_quickstart/example-popups.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_quickstart/example-popups.html">Show the example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>弹出窗口通常用于将某些信息附加到地图上的特定对象上。Leaflet为此有一个非常简单的方法：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript">marker.bindPopup(<span
+                class="hljs-string">"&lt;b&gt;Hello world!&lt;/b&gt;&lt;br&gt;I am a popup."</span>).openPopup();
+circle.bindPopup(<span class="hljs-string">"I am a circle."</span>);
+polygon.bindPopup(<span class="hljs-string">"I am a polygon."</span>);
+</code></pre>
+        </div>
+    </div>
+
+    <p>尝试点击我们的对象。bindPopup方法将具有指定HTML内容的弹出窗口附加到标记上，因此当您单击对象时弹出窗口出现，openPopup方法（仅用于标记）立即打开所附的弹出窗口。</p>
+
+    <p>您还可以把弹出窗口设置为层（当您需要更多的东西，而不是附加弹出窗口到一个对象）：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> popup = L.popup()
+    .setLatLng([<span class="hljs-number">51.5</span>, -<span class="hljs-number">0.09</span>])
+    .setContent(<span class="hljs-string">"I am a standalone popup."</span>)
+    .openOn(mymap);
+</code></pre>
+        </div>
+    </div>
+
+    <p>这里我们使用 <code class="highlighter-rouge">openOn</code> 而不是 <code class="highlighter-rouge">addTo</code>
+        因为它在打开一个新的弹出窗口时，处理以前打开的弹出窗口的自动关闭，这样可以增强可用性。</p>
+
+    <h2 id="dv2">处理事件</h2>
+
+    <p>每次在Leaflet中发生某些事情，例如用户单击标记或地图缩放更改时，相应的对象都会发送一个事件，您可以通过函数来处理该事件，它允许您对用户交互作出反应：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span
+                class="hljs-keyword">function</span> <span class="hljs-title">onMapClick</span>(<span
+                class="hljs-params">e</span>) </span>{
+    alert(<span class="hljs-string">"You clicked the map at "</span> + e.latlng);
+}
+
+mymap.on(<span class="hljs-string">'click'</span>, onMapClick);
+</code></pre>
+        </div>
+    </div>
+
+    <p>每个对象都有自己的事件集,侦听器函数的第一个参数是事件对象,它包含关于发生的事件的有用信息。例如，MAP单击事件对象（在上面的示例中为e）具有latlng属性，latlng属性是单击发生的位置。</p>
+
+    <p>让我们通过使用弹出而不是alert来改进我们的示例：</p>
+
+    <div class="highlighter-rouge">
+        <div class="highlight"><pre class="highlight"><code class="hljs javascript"><span
+                class="hljs-keyword">var</span> popup = L.popup();
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onMapClick</span>(<span
+        class="hljs-params">e</span>) </span>{
+    popup
+        .setLatLng(e.latlng)
+        .setContent(<span class="hljs-string">"You clicked the map at "</span> + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on(<span class="hljs-string">'click'</span>, onMapClick);
+</code></pre>
+        </div>
+    </div>
+
+    <p>试着点击地图，你就会看到弹出窗口中的坐标。查看完整的例子 <a target="_blank" href="./leaflet_quickstart/quickstart.html">查看完整实例 →</a></p>
+
+
+
+
+
+
+
+
+{% endblock %}

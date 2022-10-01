@@ -1,0 +1,59 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 400 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 100 100 100
+    WEB
+        IMAGEPATH "/tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    PROJECTION
+        "init=epsg:4326"
+    END
+    SYMBOL
+        NAME "circle"
+        TYPE ELLIPSE
+        FILLED TRUE
+        POINTS
+            10 10
+        END
+    END
+    LAYER
+        NAME "wcity_wfs"
+        TYPE POINT
+        OFFSITE 0 0 0
+        STATUS ON
+        CONNECTIONTYPE WFS
+        CONNECTION "http://127.0.0.1/cgi-bin/mapserv?map=/owg/mft2a.map&"
+        METADATA
+            "wfs_version" "1.0.0"
+            "wfs_srs" "EPSG:4326"
+            "wfs_typename" "world-city"
+            "wfs_request_method" "GET"
+            "wfs_service" "WFS"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASS
+            NAME "cities"
+            SYMBOL "circle"
+            SIZE 6
+            COLOR 0 0 0
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        CLASS
+            NAME "The Upper Great Lakes States"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 32 32 32
+            END
+        END
+    END
+END
