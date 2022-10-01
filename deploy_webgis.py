@@ -60,7 +60,7 @@ def main():
     #     c.run('git pull')
 
     with rcon.cd(site_ws):
-        rcon.run('python3 build_mapfile2.py')
+        rcon.run('python3 build_mapfile.py')
         # c.run('python3 build_gislite.py')
         rcon.run('/xpy/bin/python3 build_site.py')
 

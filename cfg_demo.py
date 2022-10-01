@@ -4,3 +4,7 @@ machines = {
 }
 
 mach = machines['aliyun3']
+
+
+# For development.
+SITE_URL = '//127.0.0.1:8888'
