@@ -11,7 +11,8 @@ OGC and OpenGIS
 The OGC is made up of members from a variety of sectors including business sectors,
 government agencies, users, and data providers for the largest interoperability in the geographic information processing market.
 The purpose of OGC is to integrate geospatial data resources into mainstream computing technologies through an information infrastructure, and to promote the widespread application of interoperable commercial geographic information processing software. 
-The OpenGIS specification provides geographic information and processing standards, and each system developed according to the specification can freely exchange geographic information and processing functions.
+The OpenGIS specification provides geographic information and processing standards,
+and each system developed according to the specification can freely exchange geographic information and processing functions.
 
 OGC members mainly include GIS-related computer hardware and software manufacturers (including ESRI, Intergraph, Maplnfo and other well-known GIS software developers), data producers, as well as some colleges and universities, government departments, etc., their technical committees are responsible for the formulation of specific standards.
 
