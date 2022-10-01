@@ -1,0 +1,443 @@
+MAP
+    NAME "third"
+    UNITS DD
+    EXTENT -180.0 0.0 -60.0 90.0
+    SIZE 640 480
+    IMAGECOLOR 189 202 222
+    IMAGETYPE "PNG"
+    SHAPEPATH "/gdata/data_book"
+    FONTSET "../fonts/fonts.list"
+    SYMBOL
+        NAME "BigLine"
+        TYPE ELLIPSE
+        POINTS
+            1 1
+        END
+    END
+    SYMBOL
+        NAME "DashedLine"
+        TYPE ELLIPSE
+        POINTS
+            1 1
+        END
+    END
+    SYMBOL
+        NAME "Circle"
+        FILLED TRUE
+        TYPE ELLIPSE
+        POINTS
+            1 1
+        END
+    END
+    WEB
+        TEMPLATE "/owg/mb_third.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    REFERENCE
+        IMAGE "/owg/mb_third_usaref.gif"
+        SIZE 300 225
+        EXTENT -180.0 0.0 -60.0 90.0
+        STATUS ON
+        COLOR -1 -1 -1
+        OUTLINECOLOR 255 0 0
+    END
+    SCALEBAR
+        LABEL
+            COLOR 0 0 0
+            ANTIALIAS TRUE
+            SIZE SMALL
+        END
+        POSITION LR
+        INTERVALS 5
+        STATUS EMBED
+        SIZE 144 5
+        STYLE 0
+        UNITS MILES
+        BACKGROUNDCOLOR 255 0 0
+        IMAGECOLOR 255 255 255
+        COLOR 128 128 128
+        OUTLINECOLOR 0 0 255
+        TRANSPARENT off
+    END
+    LEGEND
+        STATUS ON
+        IMAGECOLOR 230 230 230
+        LABEL
+            TYPE TRUETYPE
+            FONT "arial"
+            COLOR 0 0 0
+            SIZE 10
+            ANTIALIAS TRUE
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "statesp020"
+        STATUS ON
+        TYPE POLYGON
+        LABELCACHE ON
+        LABELITEM "STATE"
+        CLASS
+            STYLE
+                COLOR 255 246 189
+            END
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "statesp020"
+        STATUS ON
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "STATE"
+        CLASS
+            NAME "State Line"
+            STYLE
+                SYMBOL "BigLine"
+                SIZE 2
+                COLOR 0 0 0
+            END
+        END
+    END
+    LAYER
+        NAME "urbanareas"
+        DATA "urbanap020"
+        STATUS ON
+        TYPE POLYGON
+        LABELCACHE ON
+        LABELITEM "NAME"
+        MAXSCALE 1999999
+        CLASS
+            STYLE
+                COLOR 212 192 100
+                OUTLINECOLOR 0 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                SIZE 10
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+                POSITION AUTO
+            END
+        END
+    END
+    LAYER
+        NAME "lakes"
+        DATA "hydrogp020"
+        STATUS ON
+        TYPE POLYGON
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "FEATURE"
+        CLASS
+            EXPRESSION ( '[FEATURE]' eq 'Lake' )
+            STYLE
+                SIZE 1
+                COLOR 189 202 222
+                OUTLINECOLOR 0 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                FONT "arial"
+                SIZE 8
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+                MINDISTANCE 100
+                POSITION LR
+                MINFEATURESIZE AUTO
+                WRAP " "
+            END
+        END
+    END
+    LAYER
+        NAME "interstate1"
+        GROUP "roads"
+        DATA "roadtrl020"
+        STATUS ON
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "FEATURE"
+        MINSCALE 7500001
+        CLASS
+            NAME "Interstate Hwy"
+            EXPRESSION /Limited Access*/
+            STYLE
+                SYMBOL "BigLine"
+                SIZE 1
+                COLOR 0 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                FONT "arial"
+                SIZE 8
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+                MINDISTANCE 200
+                POSITION AUTO
+                ANGLE AUTO
+                MINFEATURESIZE 50
+            END
+        END
+    END
+    LAYER
+        NAME "interstate2"
+        GROUP "roads"
+        DATA "roadtrl020"
+        STATUS ON
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "Feature"
+        MAXSCALE 7500000
+        CLASS
+            NAME "Interstate Hwy"
+            EXPRESSION /Limited Access*/
+            STYLE
+                SYMBOL "BigLine"
+                SIZE 3
+                COLOR 0 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                FONT "arial"
+                SIZE 8
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+                MINDISTANCE 200
+                POSITION AUTO
+                ANGLE AUTO
+                MINFEATURESIZE 50
+                WRAP " "
+            END
+        END
+    END
+    LAYER
+        NAME "principal"
+        GROUP "roads"
+        DATA "roadtrl020"
+        STATUS ON
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "Feature"
+        MAXSCALE 4000000
+        CLASS
+            NAME "Principal Hwy"
+            EXPRESSION /Principal Highway*/
+            STYLE
+                SYMBOL "BigLine"
+                SIZE 3
+                COLOR 197 129 65
+            END
+            LABEL
+                TYPE TRUETYPE
+                FONT "arial"
+                MINFEATURESIZE 50
+                MINDISTANCE 100
+                ANGLE AUTO
+                COLOR 0 0 0
+                SIZE 8
+            END
+        END
+    END
+    LAYER
+        NAME "thru"
+        GROUP "roads"
+        DATA "roadtrl020"
+        STATUS ON
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "Feature"
+        MAXSCALE 1000000
+        CLASS
+            NAME "Through Hwy"
+            EXPRESSION /Other Through*/
+            STYLE
+                SYMBOL "BigLine"
+                SIZE 3
+                COLOR 197 129 65
+            END
+            LABEL
+                TYPE TRUETYPE
+                FONT "arial"
+                MINFEATURESIZE 100
+                MINDISTANCE 100
+                ANGLE AUTO
+                COLOR 0 0 0
+                SIZE 8
+            END
+        END
+    END
+    LAYER
+        NAME "other"
+        GROUP "roads"
+        DATA "roadtrl020"
+        STATUS ON
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "FEATURE"
+        MAXSCALE 500000
+        CLASS
+            NAME "Other Hwy"
+            EXPRESSION /Other Highway*/
+            STYLE
+                SYMBOL "BigLine"
+                SIZE 2
+                COLOR 197 129 65
+            END
+            LABEL
+                TYPE TRUETYPE
+                FONT "arial"
+                ANGLE AUTO
+                MINFEATURESIZE 100
+                MINDISTANCE 100
+                COLOR 0 0 0
+                SIZE 6
+            END
+        END
+    END
+    LAYER
+        NAME "rivers"
+        DATA "hydrogl020"
+        STATUS DEFAULT
+        TYPE LINE
+        LABELCACHE ON
+        LABELITEM "NAME"
+        CLASSITEM "FEATURE"
+        MAXSCALE 1000000
+        CLASS
+            EXPRESSION ( '[FEATURE]' eq 'Stream' )
+            STYLE
+                SYMBOL "BigLine"
+                SIZE 1
+                COLOR 156 182 205
+            END
+            LABEL
+                TYPE TRUETYPE
+                FONT "arial"
+                COLOR 0 0 0
+                ANGLE AUTO
+                SIZE 7
+                ANTIALIAS TRUE
+            END
+        END
+    END
+    LAYER
+        NAME "majorcities"
+        DATA "citiesx020"
+        STATUS DEFAULT
+        TYPE POINT
+        LABELITEM "NAME"
+        LABELCACHE ON
+        LABELMAXSCALE 15000000
+        CLASSITEM "FEATURE"
+        MINSCALE 2000000
+        CLASS
+            NAME "State Capitals"
+            EXPRESSION /State*/
+            STYLE
+                SYMBOL "Circle"
+                SIZE 6
+                COLOR 0 255 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                SIZE 9
+                POSITION AUTO
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+            END
+        END
+        CLASS
+            EXPRESSION ( [Pop_2000] > 1000000 )
+            NAME "Major Cities"
+            STYLE
+                SYMBOL "Circle"
+                SIZE 10
+                COLOR 255 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                SIZE 10
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+                POSITION AUTO
+            END
+        END
+    END
+    LAYER
+        NAME "largecities"
+        DATA "citiesx020"
+        STATUS DEFAULT
+        TYPE POINT
+        LABELCACHE ON
+        LABELITEM "NAME"
+        MINSCALE 2000000
+        CLASS
+            EXPRESSION ( ( [Pop_2000] > 100000 ) AND ( [Pop_2000] <= 1000000 ) )
+            NAME "Cities"
+            STYLE
+                SYMBOL "Circle"
+                SIZE 4
+                COLOR 255 0 0
+                BACKGROUNDCOLOR 255 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                SIZE 8
+                POSITION AUTO
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+            END
+        END
+    END
+    LAYER
+        NAME "cities"
+        DATA "citiesx020"
+        STATUS DEFAULT
+        TYPE POINT
+        LABELCACHE ON
+        LABELITEM "NAME"
+        LABELMAXSCALE 500000
+        MAXSCALE 2000000
+        CLASS
+            NAME "Small Cities"
+            EXPRESSION ( [Pop_2000] < 100000 )
+            STYLE
+                SYMBOL "Circle"
+                SIZE 3
+                COLOR 255 0 0
+            END
+            LABEL
+                TYPE TRUETYPE
+                SIZE 7
+                POSITION AUTO
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+            END
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "statesp020"
+        STATUS ON
+        TYPE POLYGON
+        LABELCACHE ON
+        LABELITEM "STATE"
+        LABELMINSCALE 2000000
+        CLASS
+            LABEL
+                TYPE TRUETYPE
+                SIZE 14
+                OUTLINECOLOR 255 255 255
+                COLOR 0 0 0
+                MINDISTANCE 200
+                MINFEATURESIZE 10
+            END
+        END
+    END
+END

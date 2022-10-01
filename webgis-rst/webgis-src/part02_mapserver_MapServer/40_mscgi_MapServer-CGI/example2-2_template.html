@@ -1,0 +1,114 @@
+<html lang="zh-cmn-Hans">
+<head>
+<title>MapServer 5.x Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="/tutorial/ms35.css" />
+</head>
+<body>
+<table width="600" align="center">
+<tr>
+<td> <h3 align="center">Example 2.2 HTML Template</h3>
+<hr>
+<xmp>
+<!-- MapServer Template -->
+<html lang="zh-cmn-Hans">
+<head>
+<title>MapServer 5.x Tutorial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" rel="stylesheet" href="/tutorial/ms35.css" />
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="600" align="center">
+<tr>
+    <td> <h3 align="center">Example 2.2: Layer Control</h3>
+
+<!-- START OF MAPSERVER FORM -->
+<form name="mapserv" method="GET" action="/cgi-bin/mapserv.exe">
+
+<!-- HIDDEN MAPSERVER CGI VARIABLES -->
+    <input type="hidden" name="map" value="[map]">
+    <input type="hidden" name="imgext" value="[mapext]">
+    <input type="hidden" name="imgxy" value="199.5 149.5">
+<table width="600" border="0" align="center">
+  <tr>
+    <td>
+	<table width="400" border="1" align="center">
+	  <tr>
+	    <td colspan="3">Select Layers:
+<!-- SPECIFY VECTOR LAYERS -->
+	      <input type="checkbox" name="layer" value="states"
+	      [states_check]> State Boundaries&nbsp;
+	      <input type="checkbox" name="layer" value="hydro"
+	      [hydro_check]>Water Features &nbsp;<br>
+	      <input type="checkbox" name="layer" value="roads"
+	      [roads_check]>Roads<br>
+
+<!-- SPECIFY RASTER LAYERS -->
+	      Select Background:
+	      <select name="layer">
+		<option value=" " [ _select]>No Background</option>
+		<option value="modis_jpl" [modis_jpl_select]>
+		Daily MODIS Image</option>
+		<option value="modis" [modis_select]>
+		MODIS Surface Reflectance</option>
+	      </select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>
+<!-- SPECIFY MAP MODE -->
+	      <div align="center">Map Mode:<br>
+		<select name="mode">
+		  <option value="browse">Browse</option>
+		  <option value="map">Map</option>
+		</select>
+	      </div>
+	    </td>
+	    <td>
+<!-- FORM SUBMIT BUTTON -->
+	      <div align="center">
+		<input type="submit" name="submit" value="Refresh">
+	      </div>
+	    </td>
+	    <td>
+<!-- ZOOM/PAN CONTROLS -->
+	      <div align="center">Map Control: <br>
+		<select name="zoom">
+		  <option value="4" [zoom_4_select]>Zoom In 4x</option>
+		  <option value="3" [zoom_3_select]>Zoom In 3x</option>
+		  <option value="2" [zoom_2_select]>Zoom In 2x</option>
+		  <option value="1" [zoom_1_select]>Recenter</option>
+		  <option value="-2" [zoom_-2_select]>Zoom Out 2x</option>
+		  <option value="-3" [zoom_-3_select]>Zoom Out 3x</option>
+		  <option value="-4" [zoom_-4_select]>Zoom Out 4x</option>
+		</select>
+	      </div>
+	    </td>
+	  </tr>
+	  <tr>
+<!-- DISPLAY THE MAPSERVER-CREATED MAP IMAGE -->
+	    <td colspan="3" align="center" valign="top">
+	      <input type="image" name="img" src="../[img]" width="400"
+	       height="300" border="0">
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+</form>
+  </td>
+</tr>
+</table>
+</body>
+</html>
+</xmp>
+<hr>
+<p align="center" class="Small">
+<a href="/cgi-bin/mapserv.exe?map=/ms4w/apps/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv.exe&map_web=template+example2-2.html">Back to Example 2.2</a></p>
+</td>
+</tr>
+</table>
+</body>
+</html>

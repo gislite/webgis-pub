@@ -1,0 +1,157 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    FONTSET "../fonts/fonts.list"
+    TEMPLATEPATTERN "tmpl*"
+    SYMBOL
+        NAME "star"
+        TYPE VECTOR
+        FILLED TRUE
+        POINTS
+            0 0.375
+            0.35 0.375
+            0.5 0
+            0.65 0.375
+            1 0.375
+            0.75 0.625
+            0.875 1
+            0.5 0.75
+            0.125 1
+            0.25 0.625
+        END
+    END
+    REFERENCE
+        IMAGE "../images/worldref.png"
+        SIZE 300 150
+        EXTENT -180 -90 180 90
+        STATUS ON
+        MINBOXSIZE 30
+        MAXBOXSIZE 150
+        COLOR 255 255 0
+        OUTLINECOLOR 255 50 50
+        MARKERSIZE 30
+        MARKER "star"
+    END
+    SCALEBAR
+        IMAGECOLOR 255 255 255
+        LABEL
+            COLOR 0 0 0
+            SIZE TINY
+        END
+        STYLE 1
+        SIZE 160 2
+        COLOR 0 0 0
+        UNITS KILOMETERS
+        INTERVALS 2
+        TRANSPARENT FALSE
+        STATUS ON
+    END
+    LEGEND
+        KEYSIZE 12 12
+        LABEL
+            TYPE BITMAP
+            SIZE MEDIUM
+            COLOR 0 0 89
+        END
+        STATUS ON
+    END
+    WEB
+        HEADER "pq-header.html"
+        FOOTER "pq-footer.html"
+        EMPTY "http://webgis.pub/pq-empty.html"
+        TEMPLATE "to be replaced by map_web_template variable in section3.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+        METADATA
+            "wms_title" "WMS Demo Server"
+            "wms_onlineresource" "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfpq.map&"
+            "wms_srs" "EPSG:3857 EPSG:4326"
+        END
+    END
+    QUERYMAP
+        SIZE 200 150
+        STATUS ON
+        STYLE HILITE
+        COLOR 255 0 0
+    END
+    LAYER
+        NAME "land"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+    END
+    LAYER
+        NAME "topo"
+        TYPE RASTER
+        CONNECTIONTYPE WMS
+        CONNECTION "http://wcs.osgeo.cn:8088/service?"
+        METADATA
+            "wms_srs" "EPSG:4326"
+            "wms_name" "maplet_i887"
+            "wms_server_version" "1.1.1"
+            "wms_format" "image/jpeg"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "states_poly"
+        GROUP "states"
+        DATA "wcountry.shp"
+        STATUS ON
+        TYPE POLYGON
+        LABELITEM "NAME"
+        TOLERANCE 3
+        CLASS
+            NAME "the States"
+            TEMPLATE "c_query.html"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 132 132 32
+            END
+        END
+    END
+    LAYER
+        NAME "states_line"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                COLOR 132 132 32
+            END
+        END
+    END
+    LAYER
+        HEADER "r_header.html"
+        FOOTER "r_footer.html"
+        NAME "wriver"
+        DATA "wriver.shp"
+        TEMPLATE "r_query.html"
+        STATUS ON
+        TYPE LINE
+        CLASS
+            NAME "World River"
+            STYLE
+                COLOR 0 0 255
+            END
+        END
+    END
+    LAYER
+        NAME "wroads"
+        DATA "wroads.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "World Road"
+            STYLE
+                COLOR 100 200 100
+            END
+        END
+    END
+END

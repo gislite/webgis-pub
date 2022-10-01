@@ -1,0 +1,52 @@
+# 两个图层
+
+MAP
+  IMAGETYPE      PNG
+  EXTENT         -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  IMAGECOLOR     255 255 255
+
+
+
+  LAYER # 层定义开始---------------------------------------------
+  # 多边形层从这里开始
+    NAME         world-country
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         POLYGON
+
+
+    CLASS
+      NAME       "States"
+
+      # There are styles in a class, just like there are classes in a layer,
+      # just like there are layers in a map.  You can define multiple styles in
+      # a class just as you can define multiple classes in a layer and multiple
+      # layers in a map.
+# 类的风格，就像有一层中的类，
+# 就像在一个地图中有多个层。您可以定义多个样式
+# 在一个类中，就像你在一层，可以定义多个类多个
+# 层的地图。
+      STYLE
+        COLOR    232 232 232
+      END
+    END
+  END # States polygon layer ends here
+  #多边形层到此为止
+
+  LAYER # States line layer begins here
+  #线层从这里开始
+    NAME         country-line
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         LINE
+
+    CLASS
+      NAME       "State Boundary"
+      STYLE
+        COLOR    132 132 32
+      END
+    END
+  END # States line layer ends here
+END

@@ -1,0 +1,30 @@
+MAP
+NAME "First"
+# This is our first mapfile
+SIZE 400 300
+IMAGECOLOR 255 255 255
+IMAGETYPE JPEG
+SHAPEPATH "/gdata/data_book"
+EXTENT -125.00 20.00 -65.00 50
+WEB
+    TEMPLATE '/owg/mapserver_post.html'
+    IMAGEPATH '/owg/ms_tmp/'
+    IMAGEURL '/ms_tmp/'
+END
+LAYER
+    NAME "US States"					 
+    STATUS default
+    TYPE line
+    DATA "statesp020"
+    LABELITEM "STATE"
+    CLASS
+       STYLE
+            COLOR 0 0 0
+       END
+       LABEL
+            COLOR 0 0 0
+            SIZE small
+       END
+    END
+END
+END

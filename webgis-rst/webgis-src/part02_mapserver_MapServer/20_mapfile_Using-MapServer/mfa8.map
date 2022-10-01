@@ -1,0 +1,83 @@
+MAP
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 0 0 255
+    FONTSET "../fonts/fonts.list"
+    SYMBOLSET "../symbols/symbols35.sym"
+    IMAGETYPE "PNG24"
+    OUTPUTFORMAT
+        NAME "png8"
+        DRIVER "AGG/PNG8"
+        MIMETYPE "image/png; mode=8bit"
+        IMAGEMODE RGB
+        EXTENSION "png"
+        FORMATOPTION "QUANTIZE_FORCE=on"
+        FORMATOPTION "QUANTIZE_COLORS=256"
+        FORMATOPTION "GAMMA=0.75"
+    END
+    OUTPUTFORMAT
+        NAME "png"
+        DRIVER "AGG/PNG"
+        IMAGEMODE RGB
+    END
+    OUTPUTFORMAT
+        NAME "png24"
+        DRIVER "AGG/PNG"
+        IMAGEMODE RGBA
+        TRANSPARENT TRUE
+    END
+    OUTPUTFORMAT
+        NAME "jpeg"
+        DRIVER "AGG/JPEG"
+        IMAGEMODE RGB
+    END
+    OUTPUTFORMAT
+        NAME "svg"
+        DRIVER "CAIRO/SVG"
+        MIMETYPE "image/svg+xml"
+        IMAGEMODE RGB
+        EXTENSION "svg"
+    END
+    OUTPUTFORMAT
+        NAME "pdf"
+        DRIVER "CAIRO/PDF"
+        MIMETYPE "application/x-pdf"
+        IMAGEMODE RGB
+        EXTENSION "pdf"
+    END
+    OUTPUTFORMAT
+        NAME "cairopng"
+        DRIVER "CAIRO/PNG"
+        MIMETYPE "image/png"
+        IMAGEMODE RGB
+        EXTENSION "png"
+    END
+    OUTPUTFORMAT
+        NAME "GTiff"
+        DRIVER "GDAL/GTiff"
+        MIMETYPE "image/tiff"
+        IMAGEMODE RGB
+        EXTENSION "tif"
+    END
+    LAYER
+        NAME "topo"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+    END
+    LAYER
+        NAME "wcountry-line"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                SYMBOL "line5"
+                COLOR 255 255 0
+                SIZE 1
+            END
+        END
+    END
+END

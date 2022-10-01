@@ -1,0 +1,283 @@
+; Author: Bu Kun
+; Title: Geographic Web Services Standard
+
+# Interoperability and Geospatial Web Services Standards
+
+Interoperability is often involved in large projects or national information platforms. Interoperability is to allow software and data from different manufacturers to work together, and the main way to achieve interoperability is to formulate standards. In essence, the standard of Web service specifies the specific format of request and response, for example, which parameters are included in the request, what type of each parameter is, and what result is included in the returned information of the response. 
+
+Web map service standards defined by OGC, including WMS, WMTS, WFS, WCS, WPS, CSW and Web service-related standards, as well as KML and GeoRSS.
+
+The three most commonly used geographic reference information models have the following meanings:
+
+- Web Map Server (WMS) 
+- Web Feature Server (WFS) 
+- Web Coverage Server (WCS)
+　
+### Web Services Based Interoperability
+
+Interoperability is to allow software and data from different manufacturers to work together. In layman's terms, I can call your data and functions, and you can call my data and functions. 
+
+The realization technology of GIS interoperability has gone through many stages, and the technology of implementing GIS interoperability has mainly gone through the stages of file format conversion, direct reading plug-ins and Web service standards.
+
+    |-------------|     |---------------|     |-------------|
+    | File format
+ conversion | --> | Direct read plug-in | --> |  Standard Web Services |
+    |-------------|     |---------------|     |-------------|
+
+Early interoperability often involves data conversion, for example, converting the data of one software product into the data format of another software product, or defining a standard file format. Different software products need to be able to input and output. this format. Later, the interoperability adopted the technology of plug-in interface, that is, a plug-in was installed in a software, and the plug-in could be used to directly read and write data in other software formats in a software, avoiding the transfer and transfer of data. enter. 
+
+In recent years, the interoperability technology has gradually shifted to the level of Web service standards. This method avoids the export and import of data formats and the trouble of installing plug-in tools locally. 
+
+Different manufacturers can independently develop their own products according to the industry's Web service standards. As long as the Web service interface of their products conforms to certain industry standards, the data and functions of their software can be called each other through Web services to achieve interoperability (Figure 3.12) .
+
+![Interoperability depends on standards](imgvze35.jpeg)
+
+The main standardization organizations on geospatial Web services are as follows.
+
+Taking OGC's WMS standard as an example, a WMS online map service published by MapServer or GeoServer can be used not only by Esri products, but also by clients that support WMS standards such as Google Earth, NASA WorldWind, OpenLayers, and Gaia. 
+
+Each client knows what parameters should be sent in the request, and can expect the server to respond in what format.
+
+## Standards for Web Services
+
+
+This section mainly introduces OGC's WMS, WMTS, WFS, WCS, CSW, WPS and OpenLS standards. 
+
+Readers can visit the official website of OGC (http://www.opengeospatial.org) to check the detailed documents of these specifications, and check which WebGIS software has been certified by OGC and which standards are supported.
+
+### (1) Web Map Service (WMS—Web Map Service)
+
+WMS is a Web service specification developed by OGC for making maps on the Internet. The maps produced by WMS are generally presented in image formats, such as PNG, GIF or JPEG. 
+
+Any web service that claims to conform to the WMS specification must support the following two necessary requests:
+
+GetCapabitities: can return the description information of the Web service to the client. The format of the returned result is XML, which describes the service's name, introduction, keywords, coverage, which data layers are included, what coordinate system each layer is, what attributes it has, and whether it can be queried. This metadata also includes the map image file format that the service can generate, the URL of each operation that can be supported, etc.
+
+GetMap: Can make a map according to the client's GetMap request parameters. The parameters required in the GetMap request include which layers to display, the length and width of the map, and the spatial coordinate system. Some WMS also support styled layer definition (styled layer descriptor, SLD), allowing users to dynamically specify the display symbols of each data layer in the URL request. The returned results are generally images in raster formats such as PNG, GIF, and JPEG.
+
+The WMS specification also makes several optional requests, such as 
+
+- GetFeaturelnfb: Query the information of a certain position on the map. Its typical application is that the user clicks a point on the map, and the server returns the coordinate information and attribute information of the geographic elements located at the point. 
+
+- GetLegendGraphic: According to the layer specified by the client, it can make and return the legend of the layer, and the return format is generally PNG, GIF, JPEG and other pictures.
+
+The WMS specification is widely used and adopted by many organizations. For example, the United States Geological Survey (USGS) provides a series of WMS services, including the National Big Map WMS service, the National Atlas Transportation WMS service, the National Hydrographic Dataset WMS service, and the US real-time fire (mainly refers to wildfires) WMS service . 
+
+NASA Earth Observation System (NEO, http://neo.sci.gsfc.nasa.gov/Search.html) WMS ( http://neowms.sci.gsfc.nasa.gov/wms /wms ) and other methods to dynamically provide multi-time-series images of global climate and environmental changes, including sea surface temperature, land surface temperature, vegetation index, precipitation, carbon monoxide concentration, surface cover types, and the solar radiation received by the surface amount, etc.
+
+### (2) Web Map Tile Service (WMTS—Web Map Tile Service)
+
+WMTS is a Web service specification for publishing tile maps formulated by OGC. WMTS is different from WMS, and the two complement each other. 
+
+WMS is mainly a dynamic map service, that is, the map is generated immediately by the server every time it receives a client request, which is especially suitable for map services whose data is constantly being updated. 
+
+The map of WMTS is a tile pre-made by the server. This method can improve the performance and scalability of Web services, and is especially suitable for data whose data is relatively static and no longer updated or updated frequently.
+
+The WMTS specification defines two required operations and one optional operation. 
+
+- GetCapabilities: Get the metadata of the service. 
+- GetTile: Get tiles. 
+- GetFeatureInfo: Optional, get the information of the selected feature.
+
+### (3) Web Feature Service (WFS—Web Feature Service)
+
+WFS is a Web service specification formulated by OGC to operate vector geographic elements and data on the Internet, including retrieval, insertion, update and deletion (OGC, 2005). WFS defines the following main operations.
+
+- GetCapabilities: Get the data of the service. 
+- DescribeFeatureType: Get the structure of feature types supported by WFS. 
+- GetFeature: Get geographic features and their attributes that match a query condition. 
+- LockFeature: Requests the server to lock one or more geographic features during a transaction. 
+- Transaction: Requests the server to create, update or delete geographic features.
+
+The above operations are required and optional. According to the supported operations, WFS can be mainly divided into the following two categories.
+
+- Basic WFS (Basic WFS): Only supports GetCapabilities, DescribeFeatureType and GetFeature operations, and can only query and read features, so it is also called read-only WFS. 
+- Transactional WTFS (TransactionWFS or WFS-T): In addition to the operations supported by basic WFS, transaction operations are also supported. 
+It not only supports the reading of geographic features, but also supports online editing and processing of geographic features, also known as read-write WFS.
+
+In the WFS request and response, the information transmission of geographic elements is mainly in GML format. 
+In 2006, OGC passed the GML Simple Features Profile (GML Simple Features Profile) to speed up WFS requests and responses and simplify the implementation of WFS. 
+
+WFS can be used not only for mapping and query, but also for cutting, projection conversion and online download of geographic data. For example, the National Weather Service Meteorological Research Laboratory provides a National Digital Weather Forecast Database (NDFD) WFS service. This service allows the public, government agencies, and businesses to obtain data on temperature, dew point, wind, precipitation probability, and precipitation.
+
+### (4) Web Coverage Service (WCS_Web Coverage Service)
+
+WCS is a Web service specification for publishing raster geographic data formulated by OGC. The raster data it returns is raw data, such as the ground elevation value in digital elevation and the spectral value in satellite imagery, etc. 
+WCS is different from WMS, because what WMS returns is visualized and lost. A picture of the original value. The difference between WCS and WFS is that WFS is for vector data, while WCS is for raster data. 
+The WCS specification specifies the following operations (OGC, 2006b):
+
+- GetCapabilities: Returns the metadata of the service. 
+- DescribeCoverage: Returns the detailed description information of the raster data layer in the service, Such as time information, coverage, coordinate system, and supported output formats. 
+- GetCoverage: The server returns data in GeoTIFF, HDF-EOS or NIT formats according to the data layer, space-time range, coordinate system, output format, interpolation method, and data cutting and transformation specified by the client.
+
+The National Snow and Ice Data Center (NSIDC) provides WCS services for the polar cryosphere. Users can obtain data on icing areas, including monthly ocean ice and concentration areas, snow coverage, and snow depth contours. Support research on polar ice cap melting and climate change (Maurer, 2007).
+
+### (5) Web services processing（WPS—Web Processing Service)
+
+WPS is a Web service specification provided by OGC for geographic analysis on the Internet (OGC, 2007c). It specifies the input and output (ie, requests and responses) formats for geographic analysis services, and also specifies how clients request the execution of geographic analysis. The geographic data required by WPS can be transmitted through the Internet, or it can be the existing data on the server. The main operations defined by WPS are GetCapabilities, DescribeProcess and Execute.
+
+### (6) Other Web Service Standards
+
+- Catalog Service for Web (CSW—Catalog Service for Web): Catalog Service is an important technology for sharing geospatial information. CSW supports searching and publishing geospatial metadata. It allows users to query metadata to discover the geographic data and services they need, and allows providers to publish and update metadata. There are two types of CSW: read-only CSW and transactional CSW. Read-only CSW supports operations such as GetCapabilities, DescribeRecord, GetRecords, GetRecordByld, and GetDomain. Only supports query and reading of metadata.
+
+  Transactional CSW supports metadata reading and writing, allowing users to publish, edit, and delete metadata through ``transaction`` and ``harvest`` operations (OGC, 2007b). Products such as ArcGIS Geoportal Server provide CSW interfaces.
+
+- Open Location Service (OpenLS—Open Location Service): This is a series of Web service specifications provided by OGC for location-based services (LBS; see Chapter 5), including yellow pages search, tracking the location of mobile phone users, and navigation services et al (OGC, 2004). 
+
+- Sensor Network Integration Framework (SWE—Sensor Web Enablement): The SWE framework includes a series of Web service standards: Sensor Observation Service (SOS), Sensor Planning Service (SPS), and Sensor Alarm Service (SAS). These standards enable users to discover and obtain sensor data from sensor networks.
+
+## Related Standards for Web Services
+
+This section mainly introduces the KML specification and the GeoRSS specification. KML is a hybrid format of geographic data and map description, and GeoRSS can be considered as a geographic data format. Although they are not Web service specifications themselves, in practical applications, they are often used as the format for some Web services to return results.
+
+### (1) KML (Keyhole Markup Language; Keyhole Markup Language)
+
+KML is an XML-based document format for describing geographic features and their visualizations by Google and OGC. Originally created by Keyhole Corporation, KML is the file format used by its EarthViewer 3D. Keyhole was acquired by Google in 2004, and its EarthViewer 3D was renamed Google Earth. Google applied to the OGC to make KML a standard. After demonstration, modification and approval by OGC members, KML officially became an official standard of OGC in 2008.
+
+A KML file can describe some geographic elements, such as points, lines, polygons, images, and 3D models, etc., and can define their display symbols, camera positions (ie, the observer's location and height, the direction of the line of sight, looking down or looking down) angle). KMZ files are compressed KML files, which on the one hand can reduce the size of the file, and on the other hand can contain other types of files such as images needed for symbols and links in KML. 
+
+Below is an example of a simple KML. It first defines a style with a specific icon, then defines a place-name annotation, and uses this icon to display.
+
+KML is often used for public information release. For example, the U.S. Geological Survey uses KML to publish near real-time earthquake information, and the National Oceanic and Atmospheric Administration uses KML to publish weather forecasts, including severe weather warnings, radar images, and sensor observations.
+
+### (2) GeoRSS
+
+RSS is the abbreviation of Really Simple Syndication. Also known as Rich Site Summary or RDF Site Summary (Resource Description Framework Site Summary). It is a major format for publishing information on the Internet, especially useful information such as news and fire briefings. The RSS family includes RSS and ATOM formats, the former appeared in 1999 and the latter in 2003. They are all simple XML formats with only a few tags to describe the name, abstract, full text link and release time of each piece of information，very easy to understand with widely used. Subscribers can “aggregate”multiple RSSs they are interested in into RSS reader software, providing themselves with a convenient “one-stop” service, without having to go to each website to check whether they are updated over and over again.
+
+RSS is used by many news media, social networking sites, and official government websites as a method of publishing new news. For example, CNN (American Cable News Network), New York Times, Reuters, “Science” magazine, Twitter (Twitter, a micro-blogging website in the United States), YouTube (a famous video website) all use this technology to release information in a timely manner.
+
+The World Health Organization (WHO) publishes the latest epidemics and infectious diseases in RSS format (http://twitter.com/statuses/user-timeline/14499829.rss); 
+
+The US government publishes thousands of RSS on its e-government portal ( http://USA.gov ); using RSS, the Federal Emergency Management Agency publishes news and pictures related to emergencies; the US Census Bureau publishes information such as Current demographic-related news; the Centers for Disease Control and Prevention publishes the latest disease morbidity and mortality reports.
+
+![The US government publishes thousands of RSS on its e-government portal (http://USA.gov)](imgvze39.jpeg)
+
+With the popularity of RSS, people want to be able to see not only what happened, but also where the event happened. GeoRSS is a standard for adding location information to RSS and other XML (OGC, 2006c). GeoRSS is available in three formats: W3C Geo, OGC GeoRSS-Simple and GeoRSS-GMLO
+
+- W3C Geo: Only point features can be described, using WGS 84 latitude and longitude coordinates. Although this standard is still in use, it is an outdated standard and is not recommended for use. 
+- OGC GeoRSS-Simple: Capable of describing basic geometric shapes (including points, lines, rectangles, and polygons) and their attributes (including feature types, feature names, relationship labels, elevation, and radius). True to its name, GeoRSS-Simple has a simple and straightforward design, and its coordinate reference system is us
+ually WGS 84 latitude and longitude. 
+- OGC GeoRSS-GML: Supports more geographic features than GeoRSS-Simple. If the coordinate reference system is not specified, the coordinates default to WGS84 latitude and longitude, but this specification allows the definition and use of other coordinate systems. 
+
+By extending RSS, GeoRSS has become a compact format for requesting, sharing and integrating geographic information on the Web. GeoRSS is also commonly used in Mashup applications. Below are some examples of GeoRSS applications.
+
+- Twitter provides near real-time“who said what, where”GeoRSS information, allowing users to display these microblog content on a map. - Flickr Online Album provides a REST interface that returns photo information for a given area in GeoRSS format. For example, the URL http://api.flickr.com/services/feeds/geo/United + States/Califolia/Hollywoocl returns photo information for the Hollymar region of the United States. 
+- The Global Disaster Alert and Coordination System (http://www.gdacs.org) provides a near real-time GeoRSS feed of timely reports of ongoing natural disasters such as earthquakes, tropical hurricanes and floods around the world. 
+- USGS broadcasts earthquake information in GeoRSS format. The seismic data for California is updated every few minutes, and the rest of the world is updated every half hour. 
+- The GloballncidentMap.com website provides a range of real-time GeoRSS content including child abduction alerts, hazmat status, terrorism and other threats.
+
+GloballncidentMap.com provides a collection of events related to public safety and terrorist threats in GeoRSS format, and this example utilizes ArcGISViewer for Flex to display these events and their locations. (Note: It is inconvenient to obtain permission with many intelligence sources. The figure is an imitation picture; thanks: TmnsitSecurityReport.com and the US National Park Service)
+   
+![GloballncidentMap. Com provides a series of events related to public security and terrorist threats in the format of GeoRSS](imgvze40.jpeg)
+
+### Challenges faced by standardization bodies
+
+GIS product and application developers hope that the standard is simple and easy to use, but the standardization organization often needs to consider a variety of situations, so the developed standard is more inclusive, but it also often leads to the standard being too complicated and difficult to be adopted. 
+
+OGC's Sam Bacharach (2006) used the following metaphor to explain the need to simplify the GML (Geographic Markup Language) standard: "Have you noticed how children use 64-color crayons? Some children can draw by simply checking out a few colors, such as red, blue, green, yellow, and black. 
+
+Simple and easy to use, these few colors, though not many, already provide a solution that is enough to paint a picture of a puppy playing in a backyard pool. "
+
+The metaphor explains not only the importance of simplifying GML, but also a challenge for standardization bodies to balance simplicity and ease of use with completeness and comprehensiveness.
+
+In addition, the industry hopes that standardization bodies can formulate standards as soon as possible for the industry to adopt. Standardization bodies, on the other hand, have their own prudent workflow. From setting directions, inviting proposals, project teams or members submitting drafts, to members reviewing, revising, and voting, it takes a certain amount of time to formulate a standard. 
+
+This often leads to a lag in the emergence of standards. When the standard is released, different manufacturers have developed their own solutions, which are not compatible with the standard. The manufacturers need to make additional investment to modify the product or write some transfer programs to support the standard.
+
+The importance of standards is unquestionable, especially in government project bidding projects, bidding products are often required to support international standards to achieve openness and scalability of the system. The OGC website lists certified product manufacturers, software names, names and versions of supported OGC standards (see ``http://www.opengeospatial.org/resource/products/compliant``)。
+
+## Optimization of Web Services
+
+
+This section describes how to improve the quality of service (QoS) of Web services. The quality of service mainly includes the following important indicators. 
+- Performance: Describes the response efficiency of the system, usually measured in response time; 
+- Scalability: Describes whether the system can maintain high performance when the number of users increases, usually measured by the number of users that can be supported at the same time; 
+- Availability: Describes the accessibility and operability of a system, usually measured as a percentage of the system's uptime. If the availability of a system is ``99.99%``, then the system can only have a maximum of 9 seconds of downtime per day (including unplanned downtime caused by failures and artificial downtime required for system maintenance); 
+- Security: Describe the security and defense capabilities of the system.
+
+### Preprocessing (cache)
+
+
+Preprocessing, also known as caching, means that the system generates maps in advance or performs other tasks, and stores the results for later use, instead of generating maps or performing tasks in real time when the system is running and receiving user requests. 
+
+As shown in the figure, if there is a cache, the Web server can quickly retrieve the results from the cache, without the need to read data from the database, and complete the mapping and other processing in real time. 
+
+Cache reduces the burden of GIS server and database server, and is an effective way to improve the quality of WebGIS services.
+
+Web servers can quickly find results from the cache and respond to user requests quickly, thereby reducing the pressure on GIS servers and databases and improving the quality of services. Cache technology is mainly used to generate maps
+
+![Web access map tiles](imgvze41.png)
+
+
+Map caches, also known as map tiles or tiles, are predetermined to generate a series of map tiles (or tiles) according to a series of scales for quick display.
+
+![Map slice](imgvze42.png)
+
+
+The main reasons for making map caches are: 
+- Improve the performance, scalability and availability of the system: caching reduces the burden on the server, and users can get fast responses, which can save users' time. 
+- Improve cartographic quality: High-quality maps can be pre-generated with advanced symbols and complex layers. 
+- Industry practice: In current web map applications, caching is widely used for basic basemaps, which has become an industry practice. It also changes the user's expectations of WebGIS, they expect that all WebGIS can provide a better user experience of caching.
+
+Before creating a cache, some planning needs to be done, for example, which coordinate system to use and which tiling scheme to adopt. 
+
+The tile scheme includes scale level, scale of each level, tile size (eg 256px x 256px), tile start coordinates, tile area and image format (eg JPEG, PNG 8, PNG 24 or PNG 32) . If your map will be used with ArcGIS Online, Google Maps or Microsoft Bing Maps, then your map should be in the same coordinate system as them, i.e. WGS 84 Web Mercator, and your tile scheme should match them match. 
+
+The creation of the cache may take a long time to complete, depending on the complexity of the map and the tile scheme, especially the scale series and the size of the scale. The layers with the largest scale generally occupy most of the time for creating the cache. 
+
+Caching is best for maps that change infrequently, such as street maps, imagery maps, topographic maps, and other underlying basemaps. 
+
+If your data changes frequently, you can regularly update the cache to ensure the tile's current status, or you can use the dynamic map method without tiles.
+
+
+### Optimization of Algorithms and Systems
+
+
+WebGIS should carefully consider the optimization of software algorithms and software and hardware systems to achieve the best performance. Each GIS task has many different implementation methods, and finding and adopting the optimal algorithm can greatly improve the performance of the system. For example, in cases where map caching is not feasible or optimal, it is necessary to draw the map dynamically, and generating the map dynamically is generally slow. 
+
+GIS database debugging is also an important part of WebGIS. Some basic techniques include unifying geographic data into desired projections (eg Web Mercator); creating indexes, including spatial and attribute indexes; 
+
+Maintain efficient tablespaces; clean up fragmentation of tablespaces and server drives; preload indexes and even data into memory; Update database statistics in a timely manner (so that the database can choose the best execution path when executing queries). 
+
+The configuration plan of the system needs to consider how many users there are, how many people may be using the system at the same time, what they are doing with the system, how big the data volume of the system is, how the data volume will grow in the future, the response speed and availability required by the project How much is enough software and hardware to configure based on these factors.
+
+### Failover and Load Balancing
+
+
+Failover and load balancing are two deployment styles that improve system reliability and availability through redundant configurations. Failover refers to the ability of the system to automatically or manually redirect web user requests to another server when one server fails or needs maintenance. 
+
+Load balancing is to distribute user requests to two or more servers, so that multiple servers share the work of the system. Large WebGIS systems should consider failover and load balancing. The site uses a Web gateway to accept incoming requests and distribute these requests to multiple GIS servers to achieve load balancing. 
+
+If one GIS server computer becomes unavailable, the Web Gateway can distribute requests to the remaining GIS servers, thus creating a “high availability” architecture.
+
+### Reduce pressure on internet bandwidth
+
+
+The Web service receives the client's request and returns the result to the client. The data transmission between the two, especially the transmission of geographic data, often requires considerable Internet bandwidth; otherwise, the quality of the Web service will be affected. 
+
+The following methods can reduce the pressure on Internet bandwidth, which can improve the quality of web services.
+
+- Utilize browser-side caching: Browser-side caching is different from server-side caching. The server-side cache mainly generates map tiles or other results in advance, while the browser-side cache mainly refers to the content that has been downloaded to the browser, do not download it again. The cached content on the browser side is often identified by a URL, so REST-style web services allow the system to make full use of the browser-side cache to improve system performance. 
+- Use HTTP compression: enable the compression option of the web server, compress the request and result of the web service, and then transmit it, which can reduce the amount of data transmission by 50% and improve the transmission efficiency of the system. 
+- Choose the appropriate data format: For example, in many cases, JSON and AMF are more lightweight than XML and easier to transport than XML.
+
+### Security Protection of Web Services
+
+
+Many geographic Web services are public and free, but the Web services released by some enterprises and government agencies may contain content that involves the company's secrets, customer privacy or charges, and these Web services need to be protected. 
+
+Here are some basic techniques for securing web services.
+
+- Use of private network and virtual private network: In this solution, the Web service and its users are in the same unit's internal network, isolated from the external network through firewalls and other methods, and external network users cannot access. A Virtual Private Network (VPN) creates a secure tunnel on the Internet. Through VPN, even if the client is not in the office, it can still log in to the intranet and use the web services on the intranet.
+- Authentication: Secure web services with user roles and permissions. User identities can be managed using Lightweight Directory Access Protocol (LDAP), Windows Active Directory, etc. 
+- Security token (token): A token is an encrypted string containing encrypted authorization information. Tokens are obtained through application or when the user logs in. 
+- Secure Hypertext Transfer Protocol (HTTPS): HTTPS encrypts the data transmitted between the Web service and the client, avoid information interception and tampering.
+- Reverse proxy: use a proxy server to accept connection requests on the Internet, then forward the request to the server on the internal network, and return the result obtained from the server to the client. In this way, the proxy server can hide the GIS Server in the intranet, providing a barrier and a protective layer between the GIS Server and possible malicious attacks.
+
+![Geospatial Web service protection](./imgvze43.png)
+
+Web service technology is an important progress in distributed computing and GIS, and it is the core of modern WebGIS.
+
+Geospatial Web service is the driving force of the transformation of GIS application from closed system to open and loosely coupled architecture. It is an important form of establishing components of geographic aggregation application and providing services by cloud GIS. It is the foundation of the next generation spatial data infrastructure and provides a collaborative way based on geographic information.
+
+Governments and enterprises can provide their data and functions as web services and build a web service ecosystem. On this basis, they can breed a large number of applications with new value,which form of mutual cooperation can maximize the social benefits of investment in geospatial field.

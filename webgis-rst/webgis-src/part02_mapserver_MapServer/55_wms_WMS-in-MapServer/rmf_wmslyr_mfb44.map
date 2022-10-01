@@ -1,0 +1,37 @@
+
+MAP
+  IMAGETYPE      PNG
+  EXTENT         -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  IMAGECOLOR     255 255 255
+
+  PROJECTION
+    "init=epsg:4326"
+  END
+
+#############################################################
+
+LAYER
+    NAME basemap
+    TYPE RASTER
+    OFFSITE 0 0 0
+    STATUS off
+    CONNECTIONTYPE WMS
+    CONNECTION "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfba.map&"
+    METADATA
+        "wms_srs" "EPSG:4326"
+        "wms_name" "wcountry,wriver,wroads"
+        "wms_server_version" "1.1.1"  # MapServer 只支持到 1.1.1
+        "wms_format" "image/png"
+    END
+    PROJECTION
+        "init=epsg:4326"
+    END
+END # Modis WMS image ends here
+
+
+##########################################################################################
+
+
+END # 所有的地图文件必须结束

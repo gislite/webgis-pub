@@ -1,0 +1,26 @@
+# 中国地理位置四至点
+# 最东端 东经135度2分30秒 黑龙江和乌苏里江交汇处
+# 最西端 东经73度40分 帕米尔高原乌兹别里山口（乌恰县）
+# 最南端 北纬3度52分 南沙群岛曾母暗沙
+# 最北端 北纬53度33分 漠河以北黑龙江主航道（漠河县)
+
+# 中国： 73 3 136 54
+# 地中海示例  -12 25 43 50
+
+MAP
+  IMAGETYPE      PNG
+  EXTENT         -12 25 43 50
+  SIZE           550 250
+  SHAPEPATH      "/gdata"
+  IMAGECOLOR     255 255 255
+
+
+  LAYER # 开始图层定义
+    NAME "topo"
+    DATA         "land_shallow_topo_8192.tif"
+    STATUS       OFF
+    TYPE       raster
+
+
+  END # End of LAYER DEFINITIONS
+END # 所有的地图文件必须结束

@@ -1,0 +1,75 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    OUTPUTFORMAT
+        NAME "geojson"
+        DRIVER "OGR/GEOJSON"
+        MIMETYPE "application/json; subtype=geojson"
+        FORMATOPTION "STORAGE=stream"
+        FORMATOPTION "FORM=SIMPLE"
+    END
+    WEB
+        METADATA
+            "wms_title" "WMS Demo Server"
+            "wms_onlineresource" "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+            "ows_onlineresource" "//webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&"
+            "wms_srs" "EPSG:4269 EPSG:4326"
+            "wms_enable_request" "* !GetFeatureInfo"
+            "wfs_getfeature_formatlist" "geojson"
+            "wfs_title" "world country"
+            "wfs_onlineresource" "//webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map"
+            "wfs_srs" "EPSG:4326"
+            "wfs_abstract" "This text describes your wfs service"
+            "wfs_enable_request" "*"
+            "ows_keywordlist" "world"
+        END
+    END
+    LAYER
+        NAME "wriver"
+        DATA "wriver.shp"
+        STATUS OFF
+        TYPE LINE
+        METADATA
+            "wms_title" "world country"
+            "wms_srs" "EPSG:4326"
+            "wfs_title" "worldcountry"
+            "wfs_srs" "EPSG:4326"
+            "wfs_enable_request" "*"
+            "gml_include_items" "all"
+            "gml_featureid" "OBJECTID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+        CLASS
+            NAME "World River"
+            STYLE
+                COLOR 0 0 255
+            END
+        END
+    END
+    LAYER
+        NAME "world-country"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        METADATA
+            "wms_title" "world country"
+            "wms_srs" "EPSG:4326"
+            "wfs_title" "worldcountry"
+            "wfs_srs" "EPSG:4326"
+            "wfs_enable_request" "*"
+            "gml_include_items" "all"
+            "gml_featureid" "OBJECTID"
+            "wfs_getfeature_formatlist" "geojson"
+        END
+        CLASS
+            NAME "The Upper Great Lakes States"
+            STYLE
+                COLOR 232 232 232
+                OUTLINECOLOR 32 32 32
+            END
+        END
+    END
+END

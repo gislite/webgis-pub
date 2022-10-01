@@ -1,0 +1,423 @@
+MAP
+    NAME "EX2.5_"
+    IMAGETYPE "png24"
+    EXTENT 166221 -371954 1505849 632767
+    SIZE 400 300
+    SHAPEPATH "/gdata/data"
+    SYMBOLSET "../symbols/symbols35.sym"
+    FONTSET "../fonts/fonts.list"
+    TEMPLATEPATTERN "example*"
+    WEB
+        HEADER "../templates/example3_header.html"
+        FOOTER "../templates/example3_footer.html"
+        TEMPLATE "to be replaced by map_web_template variable in section3.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    PROJECTION
+        "init=epsg:2163"
+    END
+    LEGEND
+        KEYSIZE 12 12
+        LABEL
+            TYPE BITMAP
+            SIZE MEDIUM
+            COLOR 0 0 89
+        END
+        STATUS ON
+    END
+    REFERENCE
+        IMAGE "../images/ugl_ref1.png"
+        SIZE 155 105
+        EXTENT 201621.496941 -294488.285333 1425518.020722 498254.511514
+        STATUS ON
+        MINBOXSIZE 10
+        MAXBOXSIZE 150
+        COLOR -1 -1 -1
+        OUTLINECOLOR 128 0 0
+        MARKERSIZE 8
+        MARKER "star"
+    END
+    SCALEBAR
+        IMAGECOLOR 255 255 255
+        LABEL
+            COLOR 0 0 0
+            SIZE TINY
+        END
+        STYLE 1
+        SIZE 100 2
+        COLOR 0 0 0
+        UNITS MILES
+        INTERVALS 2
+        TRANSPARENT FALSE
+        STATUS ON
+    END
+    QUERYMAP
+        SIZE 200 150
+        STATUS ON
+        STYLE HILITE
+        COLOR 255 0 0
+    END
+    LAYER
+        NAME "states"
+        DATA "states_ugl"
+        STATUS OFF
+        TYPE POLYGON
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASSITEM "CLASS"
+        CLASS
+            EXPRESSION "land"
+            STYLE
+                SYMBOL 0
+                COLOR 232 232 232
+            END
+        END
+    END
+    LAYER
+        NAME "relief"
+        DATA "raster/shdrlfi020g_ugl.tif"
+        STATUS OFF
+        TYPE RASTER
+        OFFSITE 169 209 254
+        DUMP TRUE
+        METADATA
+            "wms_title" "UGL Shaded Relief"
+            "wms_abstract" "Shaded Relief of Michigan, Minnesota, and Wisconsin.  Clipped from National Atlas data (http://www.nationalatlas.gov)."
+            "wms_srs" "EPSG:2163 EPSG:4326 EPSG:26915"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASS
+            NAME "Shaded Relief"
+            KEYIMAGE "graphics/relief_keyimage.png"
+        END
+    END
+    LAYER
+        NAME "topo"
+        DATA "raster/mod09a12003161_ugl_ll_idxa.tif"
+        STATUS OFF
+        TYPE RASTER
+        OFFSITE 70 74 66
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASS
+            NAME "MODIS Image"
+            KEYIMAGE "graphics/modis_keyimage.png"
+        END
+    END
+    LAYER
+        NAME "landsat"
+        TYPE RASTER
+        OFFSITE 0 0 0
+        STATUS OFF
+        CONNECTIONTYPE WMS
+        CONNECTION "http://mapus.jpl.nasa.gov/wms.cgi?"
+        METADATA
+            "wms_srs" "EPSG:4326"
+            "wms_name" "global_mosaic"
+            "wms_server_version" "1.1.1"
+            "wms_format" "image/jpeg"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASS
+            NAME "Landsat Image"
+            KEYIMAGE "graphics/landsat_keyimage.png"
+        END
+    END
+    LAYER
+        NAME "cities_poly"
+        GROUP "cities"
+        TYPE POLYGON
+        STATUS ON
+        DATA "urban_ugl"
+        HEADER "../templates/cities_header.html"
+        FOOTER "../templates/cities_footer.html"
+        TOLERANCE 3
+        CLASS
+            NAME "Urban Areas"
+            TEMPLATE "../templates/cities_query.html"
+            STYLE
+                COLOR 255 240 115
+            END
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "fedlands"
+        TYPE POLYGON
+        STATUS ON
+        DATA "fedlan_ugl"
+        HEADER "../templates/fedland_header.html"
+        FOOTER "../templates/fedland_footer.html"
+        CLASS
+            NAME "Federal Land"
+            EXPRESSION ( '[FEATURE1]' ne 'Null' )
+            TEMPLATE "../templates/fedland_query.html"
+            STYLE
+                COLOR 164 96 89
+                OUTLINECOLOR 144 72 64
+            END
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "hydro"
+        TYPE POLYGON
+        STATUS OFF
+        DATA "hydrop_ugl"
+        TRANSPARENCY 67
+        PROJECTION
+            "init=epsg:4326"
+        END
+        HEADER "../templates/hydro_header.html"
+        FOOTER "../templates/hydro_footer.html"
+        CLASSITEM "FEATURE"
+        CLASS
+            NAME "Lakes"
+            EXPRESSION /(^B|^C|^L|^R)./
+            TEMPLATE "../templates/hydro_query.html"
+            STYLE
+                COLOR 72 64 254
+            END
+        END
+        CLASS
+            NAME "Rivers"
+            EXPRESSION "Stream"
+            TEMPLATE "../templates/hydro_query.html"
+            STYLE
+                COLOR 136 128 255
+            END
+        END
+        CLASS
+            NAME "Wetlands"
+            EXPRESSION "Swamp or Marsh"
+            TEMPLATE "../templates/hydro_query.html"
+            STYLE
+                COLOR 195 252 255
+            END
+        END
+    END
+    LAYER
+        NAME "counties"
+        DATA "co2000_ugl"
+        STATUS OFF
+        TYPE LINE
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASSITEM "county"
+        CLASS
+            NAME "County Boundary"
+            EXPRESSION /./
+            STYLE
+                SYMBOL "line5"
+                COLOR 92 92 92
+                SIZE 1
+            END
+        END
+    END
+    LAYER
+        NAME "cty_roads"
+        GROUP "roads"
+        TYPE LINE
+        STATUS OFF
+        DATA "roads_ugl"
+        MAXSCALE 750000
+        PROJECTION
+            "init=epsg:4326"
+        END
+        HEADER "../templates/roads_header.html"
+        FOOTER "../templates/roads_footer.html"
+        TOLERANCE 3
+        CLASSITEM "CLASS1"
+        CLASS
+            NAME "Minor Arterial Roads"
+            EXPRESSION "3"
+            TEMPLATE "../templates/roads_query.html"
+            STYLE
+                COLOR 165 165 165
+            END
+        END
+        CLASS
+            EXPRESSION "4"
+            TEMPLATE "../templates/roads_query.html"
+            STYLE
+                COLOR 210 210 210
+            END
+        END
+    END
+    LAYER
+        NAME "state_hwy"
+        GROUP "roads"
+        MAXSCALE 1500000
+        STATUS OFF
+        DATA "roads_ugl"
+        TYPE LINE
+        FILTERITEM "CLASS1"
+        FILTER "2"
+        HEADER "../templates/roads_header.html"
+        FOOTER "../templates/roads_footer.html"
+        TOLERANCE 3
+        CLASS
+            NAME "Principal Arterial Roads"
+            TEMPLATE "../templates/roads_query.html"
+            STYLE
+                COLOR 255 0 0
+                SIZE 1
+                SYMBOL "circle"
+            END
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "interstate"
+        GROUP "roads"
+        STATUS OFF
+        DATA "roads_ugl"
+        TYPE LINE
+        FILTERITEM "CLASS1"
+        FILTER "1"
+        HEADER "../templates/roads_header.html"
+        FOOTER "../templates/roads_footer.html"
+        TOLERANCE 3
+        CLASS
+            NAME "Interstate Hwy."
+            TEMPLATE "../templates/roads_query.html"
+            STYLE
+                COLOR 128 0 0
+            END
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "states_ugl"
+        STATUS OFF
+        TYPE LINE
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASSITEM "CLASS"
+        CLASS
+            NAME "State Boundary"
+            EXPRESSION "land"
+            STYLE
+                SYMBOL "line5"
+                COLOR 32 32 32
+                SIZE 1
+            END
+        END
+    END
+    LAYER
+        NAME "roads_anno"
+        GROUP "roads"
+        MAXSCALE 750000
+        STATUS OFF
+        DATA "roads_ugl"
+        TYPE LINE
+        LABELITEM "SIGN"
+        CLASSITEM "CLASS1"
+        CLASS
+            EXPRESSION "3"
+            STYLE
+                COLOR 0 0 0
+                SYMBOL "../symbols/sthwy.png"
+            END
+            LABEL
+                MINFEATURESIZE 50
+                MINDISTANCE 150
+                POSITION CC
+                SIZE TINY
+                COLOR 0 0 0
+            END
+        END
+        CLASS
+            EXPRESSION "2"
+            STYLE
+                COLOR 0 0 0
+                SYMBOL "../symbols/ushwy.png"
+            END
+            LABEL
+                MINFEATURESIZE 50
+                MINDISTANCE 150
+                POSITION CC
+                SIZE TINY
+                COLOR 0 0 0
+            END
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "roads_anno1"
+        GROUP "roads"
+        STATUS OFF
+        DATA "roads_ugl"
+        TYPE LINE
+        LABELITEM "SIGN"
+        CLASSITEM "CLASS1"
+        CLASS
+            EXPRESSION "1"
+            STYLE
+                COLOR 0 0 0
+                SYMBOL "../symbols/interstate.png"
+            END
+            LABEL
+                MINFEATURESIZE 20
+                MINDISTANCE 150
+                POSITION CC
+                SIZE TINY
+                COLOR 255 255 255
+            END
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "states_ugl"
+        STATUS OFF
+        TYPE POLYGON
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASSITEM "CLASS"
+        LABELITEM "STATE"
+        CLASS
+            EXPRESSION "land"
+            STYLE
+                COLOR -1 -1 -1
+            END
+            LABEL
+                COLOR 132 31 31
+                OUTLINECOLOR 128 128 128
+                SHADOWCOLOR 218 218 218
+                SHADOWSIZE 1 1
+                TYPE TRUETYPE
+                FONT "arial-bold"
+                SIZE 12
+                ANTIALIAS TRUE
+                POSITION CL
+                PARTIALS FALSE
+                MINDISTANCE 200
+                BUFFER 4
+            END
+        END
+    END
+END

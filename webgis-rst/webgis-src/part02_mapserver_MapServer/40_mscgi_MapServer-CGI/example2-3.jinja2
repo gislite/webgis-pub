@@ -1,0 +1,133 @@
+{% extends "content.jinja2" %}
+
+{#
+原始教程在：
+http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv&map_web=template+example2-3.html
+
+#}
+
+<title>MapServer交互：添加地图比例尺</title>
+
+{% block mainbody %}
+
+    <div class="container">
+
+        <h2>添加地图比例尺</h2>
+
+
+        <!-- START OF MAPSERVER FORM -->
+        <form name="mapserv" method="GET" action="[program]" class="form-horizontal">
+            <fieldset>
+                <legend>添加地图比例尺</legend>
+
+                <br>
+                <!-- HIDDEN MAPSERVER CGI VARIABLES -->
+                <input type="hidden" name="root" value="[root]">
+                <input type="hidden" name="program" value="[program]">
+                <input type="hidden" name="map_web" value="[map_web]">
+                <input type="hidden" name="map" value="[map]">
+                <input type="hidden" name="imgext" value="[mapext]">
+                <input type="hidden" name="imgxy" value="[center]">
+
+
+                <div class="form-group">
+                    <!-- SPECIFY VECTOR LAYERS -->
+
+
+                    <label class="col-sm-2 control-label">选择图层:</label>
+
+                    <div class="col-sm-3">
+                        <!-- SPECIFY VECTOR LAYERS -->
+                        <input type="checkbox" name="layer" value="states" [states_check]>
+                        国家与地区界线
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="checkbox" name="layer" value="hydro" [hydro_check]>
+                        河流
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="checkbox" name="layer" value="roads" [roads_check]>
+                        道路
+
+                    </div>
+                </div>
+
+                <!-- SPECIFY RASTER LAYERS -->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">选择背景:</label>
+
+                    <div class="col-sm-8">
+
+                        <select name="layer" class="form-control">
+                            <option value=" " [ _select]>No Background</option>
+                            <option value="modis_jpl" [modis_jpl_select]>
+                                Daily MODIS Image (JPL)
+                            </option>
+                            <option value="modis" [modis_select]>
+                                MODIS Surface Reflectance
+                            </option>
+                            <option value="relief" [relief_select]>
+                                Shaded Relief
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+
+                    <label class="col-sm-2 control-label"> 地图模式:</label>
+
+                    <div class="col-sm-8">
+                        <select name="mode" class="form-control">
+                            <option value="browse" [browse_select]>Browse</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+
+
+                    <label class="col-sm-2 control-label">地图控制:</label>
+
+                    <div class="col-sm-8">
+
+                        <select name="zoom" class="form-control">
+                            <option value="4" [zoom_4_select]>放大4倍</option>
+                            <option value="3" [zoom_3_select]>放大3倍</option>
+                            <option value="2" [zoom_2_select]>放大2倍</option>
+                            <option value="1" [zoom_1_select]>置中</option>
+                            <option value="-2" [zoom_-2_select]>缩小2倍</option>
+                            <option value="-3" [zoom_-3_select]>缩小3倍</option>
+                            <option value="-4" [zoom_-4_select]>缩小4倍</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+
+
+                    <label class="col-sm-2 control-label"> </label>
+
+                    <div class="col-sm-8">
+                        <input type="submit" name="submit" value="刷新" class="btn  btn-primary">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"> </label>
+
+                    <div class="col-sm-8">
+
+                        <!-- DISPLAY THE MAPSERVER-CREATED MAP IMAGE -->
+
+                        <input type="image" name="img" src="../[img]" width="400" height="300" border="1" >
+                        <br><br>
+                        <img src="../[scalebar]">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+    </div>
+{% endblock %}

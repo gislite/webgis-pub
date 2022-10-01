@@ -1,0 +1,247 @@
+; Author: Bu Kun
+; Title: Java-based Rubber-band 
+
+
+## 4.3: Java-based Rubber-band 
+
+### 查看示例
+<link type="text/css" rel="stylesheet" href="./mstuto/ms35.css" />
+
+<script language="JavaScript">
+  var pansize = 0.67;
+
+  function pan(direction) {
+    var x, y;
+
+  if(direction == 'n') {
+    x = (400-1)/2.0;
+    y = 0 - (300 * pansize)/2.0;
+  } else if(direction == 'nw') {
+    x = 0 - (400 * pansize)/2.0;
+    y = 0 - (300 * pansize)/2.0;
+  } else if(direction == 'ne') {
+    x = (400-1) + (400 * pansize)/2.0;
+    y = 0 - (300 * pansize)/2.0;
+  } else if(direction == 's') {
+    x = (400-1)/2.0;
+    y = (300-1) + (300 * pansize)/2.0;
+  } else if(direction == 'sw') {
+    x = 0 - (400 * pansize)/2.0;
+    y = (300-1) + (300 * pansize)/2.0;
+  } else if(direction == 'se') {
+    x = (400-1) + (400 * pansize)/2.0;
+    y = (300-1) + (300 * pansize)/2.0;
+  } else if(direction == 'e') {
+    x = (400-1) + (400 * pansize)/2.0;
+    y = (300-1)/2.0;
+  } else if(direction == 'w') {
+    x = 0 - (400 * pansize)/2.0;
+    y = (300-1)/2.0;
+  }
+
+  document.mapserv.mode[0].checked = true; // force browse
+  document.mapserv.zoom[3].selected = true; // force pan
+  document.mapserv.imgxy.value = x + " " + y;
+  document.mapserv.submit();
+}
+
+  function setbox_handler(name, minx, miny, maxx, maxy) {
+    document.mapserv.imgbox.value = minx + " " + miny + " " + maxx + " " + maxy;
+    document.mapserv.imgxy.value = minx + " " + miny;
+    // Additional code can go here prior to the form submit, below.
+    // For example, form validation code.
+    document.mapserv.submit();
+  }
+
+  function seterror_handler(message) {
+    alert(message);
+  }
+
+</script>
+
+<form name="mapserv" method=GET action="http://159.226.123.24/cgi-bin/mapserv">
+<input type="hidden" name="root" value="http://159.226.123.24/mstuto">
+<input type="hidden" name="graphicsroot" value="http://159.226.123.24/mstuto/graphics">
+<input type="hidden" name="program" value="http://159.226.123.24/cgi-bin/mapserv">
+<input type="hidden" name="map_web" value="template example4-3.html">
+
+<table width="600" border="0" align="center">
+  <tr>
+    <td>
+	<table width="600" border="1">
+	  <tr>
+	    <td colspan="4">Select Layers:<br>
+<!-- SPECIFY VECTOR LAYERS -->
+	      <input type="checkbox" name="layer" value="states" checked="checked">
+	        State Boundaries&nbsp;
+	      <input type="checkbox" name="layer" value="counties" >
+	        County Boundaries&nbsp;
+	      <input type="checkbox" name="layer" value="cities" >
+	        Cities&nbsp;
+	      <input type="checkbox" name="layer" value="fedlands" >
+	        Federal/Indian Lands&nbsp;
+	      <input type="checkbox" name="layer" value="hydro" >
+	        Water Features&nbsp;
+	      <input type="checkbox" name="layer" value="roads" >
+	        Roads<br>
+
+<!-- SPECIFY RASTER LAYERS -->
+Select Background:<br>
+<select name="layer">
+<option value=" " [ _select]>
+        No Background
+      </option>
+<option value="landsat" >
+        Landsat 7 ETM+
+      </option>
+<option value="modis" >
+        MODIS Surface Reflectance
+      </option>
+<option value="relief" >
+        Shaded Relief
+      </option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+
+<!-- SPECIFY MAP MODE -->
+<div align="center">Map Mode:<br>
+<select name="mode">
+<option value="browse" [browse_select]>
+          Browse
+        </option>
+<option value="query" [query_select]>
+          Query Single Layer
+        </option>
+<option value="nquery" [nquery_select]>
+          Query Multiple Layers
+        </option>
+</select>
+</div>
+</td>
+<td>
+<!-- FORM SUBMIT BUTTON -->
+<div align="center">
+<input type="submit" value="Refresh">
+</div>
+</td>
+<td>
+<!-- ZOOM/PAN CONTROLS -->
+<div align="center">Map Control: <br>
+      <select name="zoom">
+        <option value="4" >Zoom In 4x</option>
+        <option value="3" >Zoom In 3x</option>
+        <option value="2" >Zoom In 2x</option>
+        <option value="0" selected="selected">Recenter</option>
+        <option value="-2" >Zoom Out 2x</option>
+        <option value="-3" >Zoom Out 3x</option>
+        <option value="-4" >Zoom Out 4x</option>
+      </select>
+    </div>
+</td>
+<!-- REFERENCE AND LEGEND COLUMN -->
+<td rowspan="2" valign="top">
+<p>Reference:<br>
+<img name="ref" src="http://159.226.123.24/ms_tmp/EX2.5_ref154043846632272.png">
+    </p>
+<p>Legend:<br>
+<img src="http://159.226.123.24/ms_tmp/EX2.5_leg154043846632272.png">
+    </p>
+</td>
+</tr>
+<tr>
+<!-- DISPLAY THE MAPSERVER-CREATED MAP IMAGE -->
+<td colspan="3" align="center" valign="top">
+    <table border="0" cellspacing="0" cellpadding="0" align="center"
+           bgcolor="#666666">
+      <tr>
+        <td align="right" width="18">
+          <a href="javascript:pan('nw')">
+            <img src="http://159.226.123.24/mstuto/graphics/nw.gif" width="18" height="18"
+                 border="0" alt="pan northwest">
+          </a>
+        </td>
+        <td align="center">
+          <a href="javascript:pan('n')">
+            <img src="http://159.226.123.24/mstuto/graphics/n.gif" width="23" height="18"
+                 border="0" alt="pan north">
+          </a>
+        </td>
+        <td align="left" width="18">
+          <a href="javascript:pan('ne')">
+            <img src="http://159.226.123.24/mstuto/graphics/ne.gif" width="18" height="18"
+                 border="0" alt="pan northeast">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" width="18">
+          <a href="javascript:pan('w')">
+            <img src="http://159.226.123.24/mstuto/graphics/w.gif" width="18" height="23"
+                 border="0" alt="pan west">
+          </a>
+        </td>
+        <td align="center">
+          <applet
+            codebase="/tutorial/java/jBox"
+            archive="jBoxPNG.jar,png.jar"
+            code="jBoxPNG.class"
+            width="400"
+            height="300"
+            name="jBox"
+            MAYSCRIPT>
+            <param name="image" value="http://159.226.123.24/ms_tmp/EX2.5_154043846632272.png">
+          </applet>
+          <!--<input type="image" name="img" src="/ms_tmp/EX2.5_154043846632272.png"
+                     width="400" height="300"
+                     border="0" alt="this is the map"> -->
+        </td>
+        <td align="left" width="18">
+          <a href="javascript:pan('e')">
+          <img src="http://159.226.123.24/mstuto/graphics/e.gif" width="18" height="23"
+               border="0" alt="pan east">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" width="18">
+          <a href="javascript:pan('sw')">
+            <img src="http://159.226.123.24/mstuto/graphics/sw.gif" width="18" height="18"
+                 border="0" alt="pan southwest">
+          </a>
+        </td>
+        <td align="center">
+          <a href="javascript:pan('s')">
+            <img src="http://159.226.123.24/mstuto/graphics/s.gif" width="23" height="18"
+                 border="0" alt="pan south">
+          </a>
+        </td>
+        <td align="left" width="18">
+          <a href="javascript:pan('se')">
+            <img src="http://159.226.123.24/mstuto/graphics/se.gif" width="18" height="18"
+                 border="0" alt="pan southeast">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" bgcolor="#ffffff">
+          <img src="http://159.226.123.24/ms_tmp/EX2.5_sb154043846632272.png" align="left">
+          <img src="http://159.226.123.24/cgi-bin/mapserv?map=/mstu/htdocs/example4.map&mapext=165660.954849+-371954.000000+1506409.045151+632767.000000&map_scalebar=units+kilometers&mode=scalebar" align="right">
+        </td>
+      </tr>
+    </table>
+</td>
+</tr>
+</table>
+</td>
+  </tr>
+</table>
+<!-- HIDDEN MAPSERVER CGI VARIABLES -->
+<input type="hidden" name="imgxy" value="200.0 150.0">
+<input type="hidden" name="imgext" value="165660.954849 -371954.000000 1506409.045151 632767.000000">
+<input type="hidden" name="map" value="http://159.226.123.24/mstu/htdocs/example4.map">
+<input type="hidden" name="imgbox" value="-1 -1 -1 -1">
+<input type="hidden" name="savequery" value="true">
+</form>

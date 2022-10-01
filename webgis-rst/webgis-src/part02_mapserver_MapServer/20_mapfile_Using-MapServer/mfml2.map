@@ -1,0 +1,57 @@
+MAP
+    IMAGETYPE "PNG"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    FONTSET "../fonts/fonts.list"
+    LAYER
+        NAME "states_poly"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        LABELITEM "NAME"
+        CLASS
+            NAME "States"
+            STYLE
+                COLOR 232 232 232
+            END
+        END
+    END
+    LAYER
+        NAME "states_line"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                COLOR 132 132 32
+            END
+        END
+    END
+    LAYER
+        NAME "wroads"
+        DATA "wroads.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "World Road"
+            STYLE
+                COLOR 100 200 100
+            END
+        END
+    END
+    LAYER
+        NAME "wriver"
+        DATA "wriver.shp"
+        STATUS OFF
+        TYPE LINE
+        CLASS
+            NAME "World River"
+            STYLE
+                COLOR 0 0 255
+            END
+        END
+    END
+END

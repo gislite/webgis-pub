@@ -1,0 +1,89 @@
+MAP
+IMAGETYPE      PNG
+EXTENT         -180 -90 180 90
+SIZE           600 300
+SHAPEPATH      "/gdata"
+IMAGECOLOR     100 100 100
+
+WEB
+    IMAGEPATH "/owg/ms_tmp/"
+    IMAGEURL "/ms_tmp/"
+    METADATA
+    "wfs_title" "world country"
+    "wfs_onlineresource" "http://webgis.pub/cgi-bin/mapserv?map=/owg/mft6.map"
+    "wfs_srs" "EPSG:4326"
+    "wfs_abstract" "This text describes your wfs service"
+    "wfs_enable_request" "*"
+    "wms_enable_request" "*"
+    'ows_keywordlist' 'world'
+    "gml_include_items" "all" #  这个关键词得注意， 不配置的话，默认是没有属性的。
+    END
+END
+
+  PROJECTION
+    "init=epsg:4326"
+  END
+
+###########################
+
+SYMBOL
+    NAME "circle"
+    TYPE ellipse
+    FILLED true
+    POINTS
+        10 10
+    END
+END
+
+#############################################################
+
+LAYER
+    NAME wcity_wfs
+    TYPE point
+    OFFSITE 0 0 0
+    STATUS on
+    CONNECTIONTYPE WFS
+    CONNECTION "http://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&"
+
+    METADATA
+        "wfs_version" "1.0.0"
+        "wfs_srs" "EPSG:4326"
+        "wfs_typename" "world-city"
+        "wfs_request_method" "GET"
+        # "wfs_service" "WFS"
+        "wfs_connectiontimeout" "60"
+        # "wfs_maxfeatures" "100"
+      END
+    PROJECTION
+        "init=epsg:4326"
+    END
+    CLASS
+      NAME "cities"
+              SYMBOL "circle"
+        SIZE 6
+        COLOR 255 255 0
+    END # States polygon layer ends here
+
+END
+
+
+##########################################################################################
+
+  LAYER
+    NAME         wcountry
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         POLYGON
+
+
+    CLASS
+      NAME "The Upper Great Lakes States"
+
+
+      STYLE
+        COLOR        232 232 232
+        OUTLINECOLOR 32 32 32
+      END
+    END
+  END
+END

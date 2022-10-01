@@ -1,0 +1,113 @@
+<!-- MapServer Template -->
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="基于开源WebGIS组件MapServer，MapProxy，LeafletJS，OpenLayers制作的在线WebGIS教程网站。">
+    <meta name="keywords" content="WebGIS,开源WebGIS,WebGIS教程,MapServer,GeoServer">
+    <meta name="author" content="BuKun">
+    <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <title>WebGIS教程</title>
+    <link rel="stylesheet" href="/tass/css/style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1 align="center">MapServer 查询功能示例</h1>
+    <form name="mapserv" method="GET" action="[program]" class="form-horizontal">
+        <fieldset>
+            <legend>MapServer 查询选项</legend>
+            <input type="hidden" name="root" value="[root]">
+            <input type="hidden" name="program" value="[program]">
+            <input type="hidden" name="map_web" value="[map_web]">
+            <input type="hidden" name="map" value="[map]">
+            <input type="hidden" name="imgext" value="[mapext]">
+            <input type="hidden" name="imgxy" value="[center]">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">选择图层:</label>
+                <div class="col-sm-8">
+                    <div class="col-sm-3">
+                        <input type="checkbox" name="layer" value="states" [states_check]>
+                        国家与地区界线
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="checkbox" name="layer" value="wriver" [wriver_check]>
+                        河流
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="checkbox" name="layer" value="wroads" [wroads_check]>
+                        道路
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">选择背景:</label>
+                <div class="col-sm-8">
+                    <select name="layer" class="form-control">
+                        <option value=" " [ _select]>No Background</option>
+                        <option value="topo" [topo_select]>
+                            全球地形（来自OSGeo WMS ）
+                        </option>
+                        <option value="land" [land_select]>
+                            全球地球表层
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">地图模式:</label>
+                <div class="col-sm-8">
+                    <select name="mode" class="form-control">
+                        <option value="browse" [browse_select]>
+                            Browse
+                        </option>
+                        <option value="query" [query_select]>
+                            Query Single Layer
+                        </option>
+                        <option value="nquery" [nquery_select]>
+                            Query Multiple Layers
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">地图控制:</label>
+                <div class="col-sm-8">
+                    <select name="zoom" class="form-control">
+                        <option value="4" [zoom_4_select]>放大4倍</option>
+                        <option value="3" [zoom_3_select]>放大3倍</option>
+                        <option value="2" [zoom_2_select]>放大2倍</option>
+                        <option value="1" [zoom_1_select]>置中</option>
+                        <option value="-2" [zoom_-2_select]>缩小2倍</option>
+                        <option value="-3" [zoom_-3_select]>缩小3倍</option>
+                        <option value="-4" [zoom_-4_select]>缩小4倍</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-8">
+                    <input type="submit" name="submit" value="刷新" class="btn btn-sm btn-primary">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-8">
+                    <input type="image" name="img" src="../[img]"
+                           width="600" height="300" border="1"/>
+                    <br/>
+                    <img src="../[scalebar]" class="img-thumbnail" />
+                    <img name="legend" src="../[legend]" class="img-thumbnail" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">参照地图：</label>
+                <div class="col-sm-8">
+                    <input type="image" name="ref" src="../[ref]" border="0" class="img-thumbnail">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

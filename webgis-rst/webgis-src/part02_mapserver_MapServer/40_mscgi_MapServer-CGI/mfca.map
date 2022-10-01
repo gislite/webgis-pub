@@ -1,0 +1,74 @@
+MAP
+    NAME "ms-scale"
+    TEMPLATEPATTERN "."
+    IMAGETYPE "PNG24"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    SYMBOLSET "../symbols/symbols35.sym"
+    FONTSET "../fonts/fonts.list"
+    IMAGECOLOR 255 255 255
+    WEB
+        TEMPLATE "tmpl-zoom.html"
+        IMAGEPATH "/owg/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    LAYER
+        NAME "topo"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS ON
+        TYPE RASTER
+    END
+    LAYER
+        NAME "states_line"
+        DATA "wcountry.shp"
+        STATUS ON
+        TYPE LINE
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                SYMBOL "line5"
+                COLOR 255 255 0
+                SIZE 1
+            END
+        END
+    END
+    LAYER
+        NAME "wcities"
+        DATA "world/cities.shp"
+        STATUS OFF
+        TYPE POINT
+        CLASSITEM "STATUS"
+        CLASS
+            NAME "National and provincial capital"
+            EXPRESSION "National and provincial capital"
+            MAXSCALEDENOM 1800
+            SYMBOL "circle"
+            SIZE 4
+            COLOR 255 0 0
+        END
+        CLASS
+            NAME "National capital"
+            EXPRESSION "National capital"
+            MAXSCALEDENOM 1000
+            SYMBOL "circle"
+            SIZE 4
+            COLOR 255 204 102
+        END
+        CLASS
+            NAME "Provincial capital"
+            EXPRESSION "Provincial capital"
+            MAXSCALEDENOM 600
+            SYMBOL "circle"
+            SIZE 4
+            COLOR 51 102 255
+        END
+        CLASS
+            NAME "States"
+            MAXSCALEDENOM 400
+            SYMBOL "circle"
+            SIZE 4
+            COLOR 100 100 100
+        END
+    END
+END

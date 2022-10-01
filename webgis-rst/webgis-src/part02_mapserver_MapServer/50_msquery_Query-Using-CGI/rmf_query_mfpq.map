@@ -1,0 +1,208 @@
+MAP
+    IMAGETYPE PNG
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    IMAGECOLOR 255 255 255
+    FONTSET "../fonts/fonts.list"
+    TEMPLATEPATTERN 'tmpl*'
+
+ SYMBOL
+        NAME "star"
+        TYPE VECTOR
+        FILLED TRUE
+        POINTS
+            0 0.375
+            0.35 0.375
+            0.5 0
+            0.65 0.375
+            1 0.375
+            0.75 0.625
+            0.875 1
+            0.5 0.75
+            0.125 1
+            0.25 0.625
+        END
+    END
+
+ REFERENCE
+    IMAGE '../images/worldref.png'
+    SIZE 300 150  # 实际的大小
+    EXTENT -180 -90 180 90
+    STATUS ON
+    MINBOXSIZE 30
+    MAXBOXSIZE 150  # 与实际大小作参考
+    COLOR 255 255 0
+    OUTLINECOLOR 255 50 50
+    MARKERSIZE 30
+    MARKER 'star'
+  END
+
+  SCALEBAR
+    IMAGECOLOR 255 255 255
+    LABEL
+      COLOR 0 0 0
+      SIZE TINY
+    END
+    STYLE 1
+
+    SIZE 160 2
+            COLOR 0 0 0
+            UNITS kilometers
+    INTERVALS 2
+    TRANSPARENT FALSE
+    STATUS ON
+  END
+
+
+LEGEND
+     KEYSIZE 12 12
+     LABEL
+         TYPE BITMAP
+         SIZE MEDIUM
+         COLOR 0 0 89
+     END
+     STATUS ON
+ END
+
+
+  # Web对象的定义在地图对象的下方。
+  # 在这个对象中定义了所有网络相关的参数（我交换“参数”和“关键字/值组”相当频繁，我们对此深感抱歉）
+  WEB
+    HEADER    'pq-header.html'
+    FOOTER    'pq-footer.html'
+    empty 'http://webgis.pub/pq-empty.html'
+    TEMPLATE  'to be replaced by map_web_template variable in section3.html'
+    IMAGEPATH '/owg/ms_tmp/'
+    IMAGEURL  '/ms_tmp/'
+
+    METADATA
+         "wms_title"           "WMS Demo Server"
+         "wms_onlineresource"  "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfpq.map&"
+         "wms_srs"             "EPSG:3857 EPSG:4326"
+        END
+
+  END
+
+
+  QUERYMAP
+     SIZE 200 150
+     STATUS ON
+     STYLE HILITE  # SELECTED | NORMAL
+     COLOR 255 0 0
+  END
+
+##############################################################################
+   LAYER
+       NAME         land
+       DATA         "land_shallow_topo_8192.tif"
+       STATUS       OFF
+       TYPE         RASTER
+     END
+
+     LAYER
+           NAME "topo"
+           TYPE RASTER
+           CONNECTIONTYPE WMS
+           CONNECTION "http://wcs.osgeo.cn:8088/service?"
+           METADATA
+               "wms_srs" "EPSG:4326"
+               "wms_name" "maplet_i887"
+               "wms_server_version" "1.1.1"
+               "wms_format" "image/jpeg"
+           END
+           PROJECTION
+               "init=epsg:4326"
+           END
+       END
+
+##############################################################################
+
+    LAYER # States polygon layer begins here
+        # 国家多边形层从这里开始
+        NAME states_poly
+        GROUP states
+        DATA wcountry.shp
+        STATUS ON
+        TYPE POLYGON
+
+
+        LABELITEM 'NAME'
+
+
+
+
+
+    # 关键字TOLERANCE提供了一个以点为基础查询的灵敏度测量。
+    # 在这个例子中，点击鼠标，将有一个半径为3像素的圆.TOLERANCE有一个关联的关键字，TOLERANCEUNITS。
+    # 当TOLERANCEUNITS没有定义，假定MapServer单位是像素。
+    TOLERANCE 3
+
+
+        CLASS
+        NAME 'the States'
+
+
+        # 在CLASS中TEMPLATE关键字是用来定义HTML查询模板，以用作显示数据库记录，
+        # 当在MapServer中调用来查询或多次查询模式时
+        TEMPLATE 'c_query.html'
+
+        STYLE
+
+        COLOR 232 232 232
+        outlinecolor 132 132 32
+        END
+        END
+
+    END
+
+  LAYER
+    NAME         states_line
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         LINE
+
+    CLASS
+      NAME       "State Boundary"
+      STYLE
+        COLOR    132 132 32
+      END
+    END
+  END # States line layer ends here
+
+  LAYER
+
+
+        HEADER 'r_header.html'
+        FOOTER 'r_footer.html'
+
+    NAME         wriver
+    DATA         wriver.shp
+    TEMPLATE   'r_query.html'
+    STATUS       on
+    TYPE         LINE
+
+    CLASS
+      NAME       "World River"
+      STYLE
+        COLOR    0 0 255
+      END
+    END
+  END # States line layer ends here
+
+  LAYER
+    # 道路
+    NAME         wroads
+    DATA         wroads.shp
+    STATUS       OFF
+    TYPE         LINE
+
+    CLASS
+      NAME       "World Road"
+      STYLE
+        COLOR    100 200 100
+      END
+    END
+  END
+
+END

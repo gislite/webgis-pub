@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <!-- Use correct character set. -->
+   <meta charset="utf-8">
+   <!-- Tell IE to use the latest, best version. -->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+   <title>lu_esa2009!</title>
+<script src="{{ static_url('f2elib/cesium_1.51/Cesium.js') }}"></script>
+   <style>
+        @import url({{ static_url('f2elib/cesium_1.51/Widgets/widgets.css')}});
+ 
+
+       html, body, #cesiumContainer {
+           width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+       }
+   </style>
+ </head>
+
+ <style type="text/css">
+     #top1{
+      text-align:center;
+      width:100%;
+      height:8%;
+      float:left;
+      margin-top:50px;
+     }
+
+     #bottom1{
+      text-align:center;
+      width:30%;
+      height:1000px;
+      float:left;
+     }
+     #bottom2{
+
+      width:70%;
+         height:1000px;
+      float:left;
+     }
+</style>
+
+
+ <body>
+<div id="top1">
+    欧空局全球陆地覆盖数据（ESA GlobCover）2009
+</div>
+<div>
+    <div id="bottom1">
+
+简介
+
+GlobCover为全球陆地覆盖数据，分辨率300米，数据格式为TIF。GlobCover全球陆地覆盖数据的原始数据来自Envisat卫星，由MERIS（Medium Resolution Imaging Spectrometer）传感器拍摄完成。目前共有两期，GlobCover（Global Land Cover Map）2009和GlobCover （Global Land Cover Product）2005-2006。
+Globcover 2009:
+
+GlobCover为全球陆地覆盖数据，分辨率300米，数据格式为TIF，拍摄时间为2009年。GlobCover全球陆地覆盖数据的原始数据来自Envisat卫星，由MERIS（Medium Resolution Imaging Spectrometer）传感器拍摄完成。数据生成过程中，主要选取了MERIS传感器在2009年1月1日至12月31日期间所接收的较高质量的影像数据，来进行图像合成。
+
+GlobCover全球陆地覆盖数据采用“美国食品和农业组织的地表覆盖分类系统（UN Food and Agriculture Organisation’s Land Cover Classfication）”作为图例生成标准。
+
+数据解压后包括以下内容：
+
+    GLOBCOVER_L4_200901_200912_V2.3.tif
+    GLOBCOVER_L4_200901_200912_V2.3_CLA_QL.tif
+    GLOBCOVER_L4_200901_200912_V2.3.color.tif
+    GlobCover_Legend.dsr
+    GlobCover_Legend.lyr
+    Globcover2009_Legend.xls
+    GlobCover2009_Preview.jpg
+    GlobCover2009_ReadMe.pdf
+
+产品使用文档：
+
+    GlobCover2009产品使用方法：GlobCover2009_ReadMe.pdf
+    GlobCover2009产品描述文档：GLOBCOVER2009_Validation_Report_2.2.pdf
+
+产品使用说明：
+
+下载地址：
+
+    欧空局： http://due.esrin.esa.int/globcover/
+    全球变化参量数据库：http://globalchange.nsdc.cn/myweb/page/gls/glsList.vpage?p=1&productId=263
+
+
+    </div>
+    <div id="bottom2"></div>
+</div>
+   <script>
+     function startup(Cesium) {
+        widget = new Cesium.Viewer('bottom2');
+        url='http://wcs.osgeo.cn:8088/service?';   //wms地址
+            layers = widget.scene.globe.imageryLayers;
+            layers.removeAll();
+           var blackMarble = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({  //加载一个新的图层
+                url : url,
+                layers: 'maplet_r8a8',// Here just give layer name
+                version:'1.1.0'
+           }));
+           // Start off looking at Australia.
+        widget.camera.setView({
+            destination: Cesium.Rectangle.fromDegrees(-100,0,310,80)  //给地图显示页定位
+        });
+        //Sandcastle_End
+        Sandcastle.finishedLoading();  //加载地图
+     }
+     if (typeof Cesium !== "undefined") {  //调用starup()
+        startup(Cesium);
+     } else if (typeof require === "function") {
+        require(["Cesium"], startup);
+     }
+   </script>
+ </body>
+ </html>

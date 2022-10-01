@@ -1,0 +1,60 @@
+# 点状符号，使用全球城市。
+
+MAP
+  IMAGETYPE      PNG
+  EXTENT         -180 -90 180 90
+  SIZE           600 300
+  SHAPEPATH      "/gdata"
+  IMAGECOLOR     255 255 255
+
+SYMBOL
+  NAME "natcap"
+  TYPE TRUETYPE
+  # FONT "geo"
+  FILLED true
+  ANTIALIAS true  # only necessary for GD rendering
+  CHARACTER "&#114;"
+END
+
+  # 开始图层定义
+  LAYER # States polygon layer begins here
+    NAME         world-country
+    DATA         wcountry.shp
+    STATUS       OFF
+    TYPE         POLYGON
+
+    # 类对象与图层对象一起定义。你可以定义和
+    # 你需要的一样多的类（对图层有限制，但是
+    # 在一个正常的地图上定义多于10个是没有意义的。
+    # 但是有时候你不得不这样做。）
+    CLASS
+      NAME "The Upper Great Lakes States"
+
+      STYLE
+        COLOR        232 232 232
+        OUTLINECOLOR 32 32 32
+      END
+    END # States polygon layer ends here
+  END # End of LAYER DEFINITIONS
+
+
+  LAYER # States polygon layer begins here
+    NAME         world-city
+    DATA         world/cities.shp
+    STATUS       OFF
+    TYPE         POINT
+
+    # 类对象与图层对象一起定义。你可以定义和
+    # 你需要的一样多的类（对图层有限制，但是
+    # 在一个正常的地图上定义多于10个是没有意义的。
+    # 但是有时候你不得不这样做。）
+    CLASS
+      NAME "cities"
+      symbol "natcap"
+        SIZE 6
+        COLOR 0 0 0
+    END # States polygon layer ends here
+  END # End of LAYER DEFINITIONS
+
+
+END # 所有的地图文件必须结束

@@ -1,0 +1,595 @@
+# The annotated map file (sort of)
+# Created by Pericles S. Nacionales for the MapServer tutorial
+#注释地图文件（排序）由Pericles S. Nacionales为MapServer教程制作
+# 20050623
+#
+# Map files begin with map keyword to signify the start of the map object.
+# Well, the entire map file is THE map object.  Enclose between MAP and END
+# at the very bottom of this map file, are keyword/value pairs and other
+# objects.
+#以地图关键字开头的地图文件，意味着地图对象的开始。那么，整个地图文件是地图对象。在本地图文件最底部的MAP和END之间封闭的是关键字/值组和其他对象。
+
+MAP
+  NAME           EX2.5_
+  IMAGETYPE      png24
+  EXTENT         166221 -371954 1505849 632767 # LAEA
+  #EXTENT         -97.5 41.619778 -82.122902 49.38562 # Geographic
+  SIZE           400 300
+  SHAPEPATH      "/gdata/data"
+  SYMBOLSET      "../symbols/symbols35.sym"
+  FONTSET        "../fonts/fonts.list"
+
+  # When changing any of the mapfile parameters via the web interface, you
+  # need to define a TEMPLATEPATTERN.  This is required for security reasons.
+  # Since the example filenames in section 2 begin with "example2" (as in
+  # example2-1.html or example2-2.html), you can use it as the pattern.
+  # The template pattern is a regular expression used by MapServer to match the
+  # value of map_web_template variable against.
+  # 当任何通过Web界面来改变对应文件的参数，你需要定义一个TEMPLATEPATTERN。这是出于安全的需要。由于在章节2中的例子以“example2”开头（就像example2-1.html和example2-2.html中的那样），你可以使用它作为模式。模板模式是由MapServer使用的正则表达式来对map_web_template变量值进行匹配。
+  TEMPLATEPATTERN 'example*'
+
+
+  # The web object is defined at the level below the map object.  All
+  # web-related parameters (I interchange "parameters" and "keyword/value
+  # pairs" quite frequently, sorry about that) are defined in this object.
+  # Web对象的定义在地图对象的下方。在这个对象中定义了所有网络相关的参数（我交换“参数”和“关键字/值组”相当频繁，我们对此深感抱歉）
+  WEB
+    HEADER    '../templates/example3_header.html'
+    FOOTER    '../templates/example3_footer.html'
+    TEMPLATE  'to be replaced by map_web_template variable in section3.html'
+ IMAGEPATH '/owg/ms_tmp/'
+     IMAGEURL  '/ms_tmp/'
+  END # Every object in MapServer must have an END.;)
+
+
+  # The projection object is typically used within the map and the layer
+  # objects. You only define it once within the map object and this definition
+  # becomes your output projection--MapServer will render your maps in this
+  # projection.  You also use the projection object within the layer object to
+  # define your input projection.  Your layers can be in different
+  # projections--MapServer will reproject them into your output projection.
+  # If no projection is defined within the layer object, MapServer assumes
+  # your input projection is the same as your output projection.  This is not
+  # a required object unless you're creating a map file that supports one of
+  # the OGC interoperability web services specifications (WMS/WFS/WCS).
+  #在地图和层对象内通常使用投影对象。你在地图对象内只定义一次，这个定义成为你的输出投影 - MapServer将在这个投影中呈现您的地图。您也可以在图层对象中使用投影对象来定义你的输入投影。你的图层可以是不同的投影 - ，MapServer将把它们重新投影到输出投影。如果图层对象中没有定义投影，MapServer假设您的输入投影和输出投影一样。这不是一个必需的对象，除非你创建一个对应文件来支持OGC互操作的Web服务规范之一（WMS/ WFS/ WCS）。
+  PROJECTION
+    # Projection parameters can be defined in two ways...
+    # This is the traditional Proj.4 definition of Lambert Azimuthal Equal-Area
+    # projection for the Continental U.S.
+    #投影参数可以在两个方面来定义。。。这是美国大陆传统的Lambert Azimuthal等面积投影PROJ.4定义。
+    #  "proj=laea"
+    #  "ellps=clrk66"
+    #  "lat_0=45"
+    #  "lon_0=-100"
+    #
+    # Alternatively, you can specify an EPSG code.
+    # This is the EPSG code for Lambert Azimuthal Equal-Area
+    # projection for the U.S.
+    # 另外，你可以指定一个EPSG代码。这是美国Lambert Azimuthal等面积投影的EPSG代码。
+    "init=epsg:2163"
+  END # This is the ending of the output projection
+   #输出投影结束
+
+  #
+  # Start of legend
+  #
+  LEGEND
+    KEYSIZE 12 12
+    LABEL
+      TYPE BITMAP
+      SIZE MEDIUM
+      COLOR 0 0 89
+    END
+    STATUS ON
+  END
+
+  # The reference object is used to define a reference map for your mapping
+  # application.  This typically involves defining a small image that covers
+  # the entire area of the map and defining a box that represents the current
+  # view on in relation to the entire area.
+  #参考对象是用来为你的地图应用程序定义一个参考地图。这通常涉及到定义一个小的图像，涵盖了整个地图区域，并限定一个图框来表示有关的整个区域的当前视图。
+  REFERENCE
+    IMAGE '../images/ugl_ref1.png' # The reference image
+    SIZE 155 105 # The size of the reference image in pixels
+    EXTENT 201621.496941 -294488.285333 1425518.020722 498254.511514 # The extent of the reference image in map units
+    STATUS ON
+    MINBOXSIZE 10 # How small can the reference box be before it gets drawn as a point, in pixels
+    MAXBOXSIZE 150 # The maximum size of the reference box, in pixels
+    COLOR -1 -1 -1 # The reference box fill color, negative numbers mean transparent
+    OUTLINECOLOR 128 0 0 # The reference box outline color
+    MARKERSIZE 8 # The size of the point marker
+    MARKER 'star' # The marker symbol
+  END
+
+  # A scalebar object is defined one level below the map object.  This object
+  # controls how a scalebar is drawn by MapServer.  Scalebars can be embedded
+  # in the map itself or can be created as a separate image.  It has an
+  # associated MapServer CGI variable called "scalebar" (or [scalebar] when
+  # used in the HTML template).
+  #在地图对象的下一层定义比例尺对象。这个对象控制了MapServer如何绘制比例尺的。比例尺可以嵌入到地图本身，或作为单独的图像创建。它有一个相关的MapServer CGI变量称为“scalebar”（当在HTML模板中使用时，或称为[scalebar]）。
+  SCALEBAR
+    IMAGECOLOR 255 255 255
+    LABEL
+      COLOR 0 0 0
+      SIZE TINY
+    END
+    STYLE 1
+    SIZE 100 2
+    COLOR 0 0 0
+    UNITS MILES
+    INTERVALS 2
+    TRANSPARENT FALSE
+    STATUS ON
+  END # Scalebar object ends
+
+
+  #
+  # A querymap object is used to highlight, or make prominent, the features on a
+  # map selected via a query or nquery request.   This means you can display
+  # your query results and a map showing the features selected for the query.
+  #通过一次查询或多次查询请求，querymap对象被用来突出或突显所选地图的特色。这意味着您可以显示您的查询结果和地图查询显示选择功能
+  QUERYMAP
+    SIZE 200 150
+    STATUS ON
+    STYLE HILITE  # SELECTED | NORMAL
+    COLOR 255 0 0
+  END
+
+  # Layer objects, too, are defined beneath the map object.  Be mindful of the
+  # order of your layer objects.  MapServer "stacks them" in reverse
+  # order--that is, the last layer you define (at the bottom of the map file)
+  # will be drawn on top and the first layer you define (right after this
+  # comment), will be drawn at the bottom.  Here's my rule: rasters and
+  # polygons are defined first, followed by the line layers. The point and
+  # annotation layers are defined last.  You can play around with the ordering
+  # of your layers until you're satisfied.
+  #图层对象也被定义在地图对象的下方。留意你图层对象的顺序。MapServer的“栈”以相反的顺序 - 也就是说，你定义的最后一个图层（在地图文件的底部）将被绘制在顶部，而你定义的第一个图层（此注解后面就是），将绘制在底部。这里是我的规则：首先定义栅格和多边形，其次是线图层。最后定义点和注释图层。你可以随便弄你的图层顺序，直到你满意为止。
+
+  # Start of LAYER DEFINITIONS ---------------------------------------------
+  LAYER # States polygon layer begins here
+    NAME         states
+    DATA         states_ugl
+    STATUS       OFF
+    TYPE         POLYGON
+    # REQUIRES     "![modis] OR ![modis_jpl]"
+
+    # Here's an example of the input projection definition.
+    # EPSG:4326 is code for geographic (latlong) projection
+    # using the WGS84 datum
+    #这里是输入投影定义的例子。EPSG:4326是使用WGS84基准面的地图（经纬度）投影的代码
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASSITEM    "CLASS"
+
+    # The class object is defined within the layer object.  You can define as
+    # many classes as you need (well, there are limits, but it's senseless to
+    # define more than ten on a "normal" layer.  There are situations,
+    # however, where you might have to do it.)
+    #类对象在图层对象内定义。你需要的话你可以定义很多个类（当然，有限制，但对一个“普通”图层的定义超过10个是毫无意义的。然而有些情况，你可能不得不这样做时，可以定义很多类。）
+    CLASS
+      EXPRESSION 'land'
+
+      # There are styles in a class, just like there are classes in a layer,
+      # just like there are layers in a map.
+      #一个类中有一些样式，就像一个图层中有很多类，一个地图中有很多图层。
+      STYLE
+        SYMBOL     0
+        COLOR      232 232 232
+      END # And they all must come to an end.它们都必须结束
+    END # End of this class.这个类结束
+  END # States polygon layer ends here多边形图层状态结束
+
+  LAYER # MODIS raster layer begins here   MODIS栅格图层开始
+    NAME         relief
+    DATA         'raster/shdrlfi020g_ugl.tif'
+    STATUS       OFF
+    TYPE         RASTER
+    OFFSITE      169 209 254
+    DUMP TRUE
+
+    METADATA
+      WMS_TITLE "UGL Shaded Relief"
+      WMS_ABSTRACT "Shaded Relief of Michigan, Minnesota, and Wisconsin.  Clipped from National Atlas data (http://www.nationalatlas.gov)."
+      WMS_SRS "EPSG:2163 EPSG:4326 EPSG:26915"
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASS
+      NAME 'Shaded Relief'
+      KEYIMAGE 'graphics/relief_keyimage.png'
+    END
+  END # MODIS raster layer ends here  MODIS栅格图层结束
+
+  LAYER # MODIS raster layer begins here  MODIS栅格图层开始
+    NAME         topo
+    DATA         "raster/mod09a12003161_ugl_ll_idxa.tif"
+    STATUS       OFF
+    TYPE         RASTER
+    OFFSITE      70 74 66 #167 151 152
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASS
+      NAME 'MODIS Image'
+      KEYIMAGE 'graphics/modis_keyimage.png'
+    END
+  END # MODIS raster layer ends here   MODIS栅格图层结束
+
+  LAYER # LandSat WMS map from JPL (or from USGS)  来自JPL（或USGS）的LandSat WMS地图开始
+    NAME         landsat
+    TYPE         RASTER
+    OFFSITE      0 0 0
+    STATUS       OFF
+    CONNECTIONTYPE     WMS
+    CONNECTION "http://mapus.jpl.nasa.gov/wms.cgi?"
+
+    METADATA
+      "wms_srs" "EPSG:4326"
+      "wms_name" "global_mosaic"
+      "wms_server_version" "1.1.1"
+      "wms_format" "image/jpeg"
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASS
+      NAME 'Landsat Image'
+      KEYIMAGE 'graphics/landsat_keyimage.png'
+    END
+  END # LandSat WMS image ends here   LandSat WMS影像结束
+
+  LAYER # Urban areas polygon layer begins here   城市区域多边形图层开始
+    NAME cities_poly
+    GROUP cities
+    TYPE Polygon
+    STATUS on
+    DATA urban_ugl
+
+    # The HEADER and FOOTER keywords within a layer object is used to define the
+    # header and footer templates for the TEMPLATE keyword used in the CLASS
+    # object.  Uncomment the two lines below and look at the template files
+    # themselves to see how they work.
+    #图层对象内页眉和页脚的关键字是用来为CLASS对象中使用的TEMPLATE关键词来定义页眉和页脚模板。取消对下面两行，并看看模板文件它们是如何工作的。
+    HEADER '../templates/cities_header.html'
+    FOOTER '../templates/cities_footer.html'
+
+    # The keyword TOLERANCE provides a measure of sensitivity for point-based
+    # queries.  In this example, a mouse-click will have a radius of 3 pixels.
+    # TOLERANCE has an associated keyword, TOLERANCEUNITS.  When TOLERANCEUNITS
+    # isn't defined, MapServer assumes the units to be pixels.
+    #关键字TOLERANCE提供了一个以点为基础查询的灵敏度测量。在这个例子中，点击鼠标，将有一个半径为3像素的圆.TOLERANCE有一个关联的关键字，TOLERANCEUNITS。当TOLERANCEUNITS没有定义，假定MapServer单位是像素。
+    TOLERANCE 3
+    CLASS
+        NAME 'Urban Areas'
+
+        # The TEMPLATE keyword within a CLASS object is used to define the
+        # HTML query template to use in displaying database records when the
+        # query or nquery mode in MapServer is invoked.
+        #在CLASS中TEMPLATE关键字是用来定义HTML查询模板，以用作显示数据库记录，当在MapServer中调用来查询或多次查询模式时
+        TEMPLATE '../templates/cities_query.html'
+
+      STYLE
+        COLOR 255 240 115
+      END
+     END  # CLASS
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+  END  # Urban areas polygon layer ends here
+
+  LAYER # Federal land polygon layer begins here
+    NAME fedlands
+    TYPE Polygon
+    STATUS on
+    DATA fedlan_ugl
+
+    HEADER '../templates/fedland_header.html'
+    FOOTER '../templates/fedland_footer.html'
+    CLASS
+      NAME 'Federal Land'
+      EXPRESSION ('[FEATURE1]' ne 'Null')
+      TEMPLATE '../templates/fedland_query.html'
+      STYLE
+        COLOR 164 96 89
+        OUTLINECOLOR 144 72 64
+      END
+    END  # CLASS
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+  END  # Federal land polygon layer begins here
+
+  LAYER # Hydrography layer begins here
+    NAME hydro
+    TYPE POLYGON
+    STATUS OFF
+    DATA hydrop_ugl
+    TRANSPARENCY 67
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    HEADER    '../templates/hydro_header.html'
+    FOOTER    '../templates/hydro_footer.html'
+    CLASSITEM 'FEATURE'
+    CLASS
+      NAME 'Lakes'
+      EXPRESSION /(^B|^C|^L|^R)./
+      TEMPLATE '../templates/hydro_query.html'
+      STYLE
+        COLOR 72 64 254
+      END
+    END  # CLASS
+    CLASS
+      NAME 'Rivers'
+      EXPRESSION 'Stream'
+      TEMPLATE '../templates/hydro_query.html'
+      STYLE
+        COLOR 136 128 255
+      END
+    END  # CLASS
+    CLASS
+      NAME 'Wetlands'
+      EXPRESSION 'Swamp or Marsh'
+      TEMPLATE '../templates/hydro_query.html'
+      STYLE
+        COLOR 195 252 255
+        #OUTLINECOLOR 195 252 255
+        #SYMBOL 'circle'
+        #SIZE 0
+      END
+    END  # CLASS
+  END  # LAYER
+
+  LAYER # Counties line layer begins here
+    NAME         counties
+    DATA         co2000_ugl
+    STATUS       OFF
+    TYPE         LINE
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASSITEM    'county'
+    CLASS
+      NAME       'County Boundary'
+      EXPRESSION /./
+      STYLE
+        SYMBOL     'line5'
+        COLOR      92 92 92
+        SIZE       1
+      END
+    END
+  END # Counties line layer ends here
+
+  LAYER # ROADS LAYER
+    NAME cty_roads
+    GROUP roads
+    TYPE LINE
+    STATUS OFF
+    DATA roads_ugl
+    MAXSCALE 750000
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    HEADER '../templates/roads_header.html'
+    FOOTER '../templates/roads_footer.html'
+    TOLERANCE 3
+    CLASSITEM 'CLASS1'
+    CLASS
+      NAME 'Minor Arterial Roads'
+      EXPRESSION '3'
+      TEMPLATE '../templates/roads_query.html'
+      STYLE
+        COLOR 165 165 165
+      END
+    END  # CLASS
+    CLASS
+      EXPRESSION '4'
+      TEMPLATE '../templates/roads_query.html'
+      STYLE
+        COLOR 210 210 210
+      END
+    END  # CLASS
+  END  # ROADS LAYER
+
+  LAYER # state highways begin here
+    NAME state_hwy
+    GROUP roads
+    MAXSCALE 1500000
+    STATUS OFF
+    DATA roads_ugl
+    TYPE LINE
+    FILTERITEM 'CLASS1'
+    FILTER '2'
+
+    HEADER '../templates/roads_header.html'
+    FOOTER '../templates/roads_footer.html'
+    TOLERANCE 3
+    CLASS
+      NAME 'Principal Arterial Roads'
+      TEMPLATE '../templates/roads_query.html'
+      STYLE
+        COLOR 255 0 0
+        SIZE 1
+        SYMBOL 'circle'
+      END
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+  END # highways
+
+  LAYER # interstate highways begin here
+    NAME interstate
+    GROUP roads
+#    MAXSCALE 22500000
+    STATUS OFF
+    DATA roads_ugl
+    TYPE LINE
+    FILTERITEM 'CLASS1'
+    FILTER '1'
+
+    HEADER '../templates/roads_header.html'
+    FOOTER '../templates/roads_footer.html'
+    TOLERANCE 3
+    CLASS
+      NAME "Interstate Hwy."
+      TEMPLATE '../templates/roads_query.html'
+      STYLE
+        COLOR 128 0 0
+      END
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+  END # highways
+
+  LAYER # States line layer begins here
+    NAME         states
+    DATA         states_ugl
+    STATUS       OFF
+    TYPE         LINE
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASSITEM    "CLASS"
+    CLASS
+      NAME       'State Boundary'
+      EXPRESSION 'land'
+      STYLE
+        SYMBOL     'line5'
+        COLOR      32 32 32
+        SIZE       1
+      END
+    END
+  END # States line layer ends here
+
+  LAYER
+    NAME roads_anno
+    GROUP roads
+    MAXSCALE 750000
+    STATUS OFF
+    DATA roads_ugl
+    TYPE line
+    LABELITEM "SIGN"
+    CLASSITEM "CLASS1"
+    CLASS
+      EXPRESSION "3"
+      STYLE
+        COLOR 0 0 0 # dummy color
+        SYMBOL '../symbols/sthwy.png'
+      END
+      LABEL
+        MINFEATURESIZE 50
+        MINDISTANCE 150
+        POSITION CC
+        SIZE TINY
+        COLOR 0 0 0
+      END
+    END
+    CLASS
+      EXPRESSION "2"
+      STYLE
+        COLOR 0 0 0 # dummy color
+        SYMBOL '../symbols/ushwy.png'
+      END
+      LABEL
+        MINFEATURESIZE 50
+        MINDISTANCE 150
+        POSITION CC
+        SIZE TINY
+        COLOR 0 0 0
+      END
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+  END # highway annotation
+
+  LAYER
+    NAME roads_anno1
+    GROUP roads
+    STATUS OFF
+    DATA roads_ugl
+    TYPE line
+    LABELITEM "SIGN"
+    CLASSITEM "CLASS1"
+    CLASS
+      EXPRESSION "1"
+      STYLE
+        COLOR 0 0 0 # dummy color
+        SYMBOL '../symbols/interstate.png'
+      END
+      LABEL
+        MINFEATURESIZE 20
+        MINDISTANCE 150
+        POSITION CC
+        SIZE TINY
+        COLOR 255 255 255
+      END
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+  END
+
+  LAYER # States label layer begins here
+    NAME         states
+    DATA         states_ugl
+    STATUS       OFF
+    TYPE         polygon
+
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASSITEM    "CLASS"
+    LABELITEM    "STATE"
+    CLASS
+      EXPRESSION 'land'
+      STYLE
+        COLOR      -1 -1 -1
+      END
+      LABEL
+        COLOR 132 31 31
+        OUTLINECOLOR 128 128 128
+        SHADOWCOLOR 218 218 218
+        SHADOWSIZE 1 1
+        TYPE TRUETYPE
+        FONT arial-bold
+        SIZE 12
+        ANTIALIAS TRUE
+        POSITION CL
+        PARTIALS FALSE
+        MINDISTANCE 200
+        BUFFER 4
+      END # end of label
+    END # end of class
+  END # States label layer ends here
+  # End of LAYER DEFINITIONS -------------------------------
+
+END # end of map file

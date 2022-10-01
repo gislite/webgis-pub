@@ -1,0 +1,72 @@
+MAP
+    IMAGETYPE "PNG24"
+    EXTENT -180 -90 180 90
+    SIZE 600 300
+    SHAPEPATH "/gdata"
+    SYMBOLSET "../symbols/symbols35.sym"
+    FONTSET "../fonts/fonts.list"
+    SCALEBAR
+        LABEL
+            COLOR 0 0 0
+            ANTIALIAS TRUE
+            SIZE SMALL
+        END
+        POSITION LR
+        INTERVALS 3
+        STATUS EMBED
+        SIZE 150 5
+        STYLE 0
+        UNITS KILOMETERS
+        BACKGROUNDCOLOR 255 0 0
+        IMAGECOLOR 255 255 255
+        COLOR 128 128 128
+        OUTLINECOLOR 0 0 255
+        TRANSPARENT off
+    END
+    PROJECTION
+        "init=epsg:4326"
+    END
+    LAYER
+        NAME "states"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE POLYGON
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASS
+            NAME "States"
+            EXPRESSION "land"
+            STYLE
+                COLOR 232 232 232
+            END
+        END
+    END
+    LAYER
+        NAME "topo"
+        DATA "land_shallow_topo_8192.tif"
+        STATUS OFF
+        TYPE RASTER
+        PROCESSING "BANDS=1,2,3"
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "wcountry.shp"
+        STATUS OFF
+        TYPE LINE
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASS
+            NAME "State Boundary"
+            STYLE
+                SYMBOL "line5"
+                COLOR 255 255 0
+                SIZE 1
+            END
+        END
+    END
+END
