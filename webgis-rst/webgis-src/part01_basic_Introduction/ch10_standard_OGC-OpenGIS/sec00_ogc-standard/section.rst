@@ -1,8 +1,7 @@
-; Author: Bu Kun
-; Title:  WebGIS related standards of OGC
 
 
-# WebGIS related standards of OGC
+WebGIS related standards of OGC
+======================================================
 
 
 OGC stands for Open Geospatial Consortium-OGC, which Committed to the standardization of software, data and services in the geographic information industry.
