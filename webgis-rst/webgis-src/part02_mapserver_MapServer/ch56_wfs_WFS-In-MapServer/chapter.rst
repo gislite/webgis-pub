@@ -16,3 +16,9 @@ requirements.
 
 Next, we will introduce the release, access and application of WFS and
 its services.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_intro/section
+   sec2_wfs-client/section

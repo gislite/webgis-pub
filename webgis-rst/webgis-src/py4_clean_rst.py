@@ -14,7 +14,7 @@ def do_for_chapter(secws):
     rst_new_list = []
     for sec_dir in sec_list:
 
-        if sec_dir.startswith('sec') and sec_dir.endswith('rst') :
+        if sec_dir.startswith('sec')  :
             tt = sec_dir.split('_')
             feaname = '_'.join(tt[1:])
 
@@ -38,7 +38,7 @@ def do_for_chapter(secws):
                 break
             else:
                 fo.write(uu)
-        fo.write('''.. toctree::\n   :maxdepth: 2\n\n''')
+        fo.write('''\n.. toctree::\n   :maxdepth: 2\n\n''')
         for x in rst_new_list:
             fo.write('   {0}/section\n'.format(x))
 

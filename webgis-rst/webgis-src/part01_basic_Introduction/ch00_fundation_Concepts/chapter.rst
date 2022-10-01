@@ -65,3 +65,11 @@ structure GIS. With the functions, the B/S structure finally replaces
 the application of the C/S structure, and the spatial information grid
 is constructed through the interoperability and collaborative computing
 between the GIS application servers.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_intro/section
+   sec2_concept/section
+   sec3_foss/section
+   sec4_http/section

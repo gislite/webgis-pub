@@ -13,3 +13,9 @@ significant improvements in the GeoServer security module. The good news
 is that we will use the mouse more here than in any other chapter, so
 the keyboard will not be used for the time being. Let’s get started. Log
 in.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_getoknow/section
+   sec2_getoknow.rstx/section

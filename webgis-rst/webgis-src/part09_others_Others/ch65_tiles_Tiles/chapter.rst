@@ -31,3 +31,13 @@ experiments and mistakes, but for profit, Mapbox recently released an
 open source program called TileMill, which can be run on Mac and
 Windows, with Mapnik as the bottom layer, providing a beautiful window
 interface, thus simplifying the drawing process.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_priciple/section
+   sec2_getmap/section
+   sec3_mapproxy/section
+   sec4_mapproxy-a/section
+   sec5_mapproxy-b/section
+   sec6_mapproxy-c/section

@@ -41,3 +41,19 @@ by supporting several standards from the OGC Consortium. Whether using
 the MapServer CGI module or the server-side scripting language
 MapScript, the dynamic interaction between the server and the client
 browser can be realized.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_one-layer/section
+   sec2_two-layers/section
+   sec3_multiple-layers/section
+   sec4_classes/section
+   sec5_labels/section
+   sec6_symbol/section
+   sec7_projection/section
+   sec8_scalebar/section
+   sec9_legend/section
+   sec10_raster/section
+   sec11_grid/section
+   sec12_format/section

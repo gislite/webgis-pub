@@ -21,3 +21,10 @@ function is also an important function of MapServer. But the design of
 MapServer is old, and the query function is clumsy to use. Only a simple
 description, more query functions, described in the later section of the
 map service.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_mapserver-cgi-intro/section
+   sec2_mode/section
+   sec3_zoom/section

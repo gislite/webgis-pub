@@ -8,13 +8,5 @@ Welcome to WebGISPub's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :numbered: 2
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

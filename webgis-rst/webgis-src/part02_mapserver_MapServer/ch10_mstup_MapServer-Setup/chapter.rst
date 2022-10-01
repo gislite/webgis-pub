@@ -27,3 +27,14 @@ permissions are set correctly. Because more useful MapServer
 applications have more lines of code and contain many HTML templates,
 keep the application simple to make it easier to debug when errors
 occur.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_mapserver/section
+   sec2_setup/section
+   sec3_hello-mapserver/section
+   sec4_one-raster/section
+   sec5_label-on-raster/section
+   sec6_render-dem/section
+   sec7_mapfile-basic/section

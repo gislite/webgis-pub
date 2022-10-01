@@ -18,3 +18,8 @@ one WCS endpoint to use, you will not be able to write your own code.
 Similarly, if you have multidimensional coverage and want to provide
 two-dimensional data, you have to do the same. Examples can be found on
 the Internet.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_wcs/section

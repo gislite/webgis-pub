@@ -19,3 +19,7 @@ In CGI mode, HTML templates are widely used to build queries and
 organize the information returned by queries, which usually involves
 complex interactions with map files, templates, and MapServerCGI
 programs.
+
+.. toctree::
+   :maxdepth: 2
+

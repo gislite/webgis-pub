@@ -14,3 +14,12 @@ interoperability of geographic information has become an inevitable
 trend in the development of GIS technology. Therefore, at present, most
 of the open map service resources are released based on the OGC service
 specification, providing standard OGC map services to the public.
+
+.. toctree::
+   :maxdepth: 2
+
+   sec1_ogc-standard/section
+   sec2_opengis/section
+   sec3_introduction/section
+   sec4_serviece-standard/section
+   sec5_wmts/section
