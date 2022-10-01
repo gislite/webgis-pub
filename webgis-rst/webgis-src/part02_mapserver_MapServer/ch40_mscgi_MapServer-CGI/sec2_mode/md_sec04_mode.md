@@ -7,10 +7,7 @@
 ## View examples
 
 
-<p align="center">
-<img border= "1"
-     src="{SITE_URL}/cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=map"/>
-</p>
+
 
 
 The map above is in ``map`` Generated in mode. It is a static map (nothing changes when you click).

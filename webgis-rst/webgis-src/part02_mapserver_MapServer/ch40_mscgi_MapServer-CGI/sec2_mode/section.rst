@@ -8,11 +8,8 @@ View examples
 
 .. raw:: html
 
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+   <img border= "1"
+   src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=map"/>
 
 The map above is in ``map`` Generated in mode. It is a static map
 (nothing changes when you click).
@@ -36,30 +33,22 @@ Another way is to use a form to submit parameters. Here is a form:
 
 .. raw:: html
 
-   <form method="POST" action="/cgi-bin/mapserv" role="form" class="form-horizontal" style="border: 1px solid saddlebrown;">
+   <form method=POST action="/cgi-bin/mapserv" role="form"  class="form-horizontal" style="border: 1px solid saddlebrown;">
+   <input type="hidden" name="map" value="/owg/mfc1.map">
+   <input type="hidden" name="layer" value="modis">
+   <input type="hidden" name="layer" value="states_line">
 
-.. container:: form-group
-
-   .. container:: col-sm-3
-
-.. raw:: html
+   <div class="form-group">
+   <label for="subit"  class="col-sm-2 control-label"> </label>
+   <div class="col-sm-3">
+   <input id='subit' class="form-control btn btn-primary" type="submit" value="Generate map using POST">
+   </div>
+   </div>
 
    <!--<input type="hidden" name="map_web_imagepath" -->
-
-.. raw:: html
-
    <!--value="/var/www/ms_tmp/">-->
-
-.. raw:: html
-
    <!--<input type="hidden" name="map_web"-->
-
-.. raw:: html
-
    <!--value="imagepath+/var/www/ms_tmp/+imageurl+/ms_tmp/">-->
-
-.. raw:: html
-
    </form>
 
 POST form
