@@ -14,10 +14,10 @@ def do_for_chapter(secws):
     rst_new_list = []
     for sec_dir in sec_list:
         if sec_dir.startswith('sec'):
-            tt = sec_dir.split('-')
-            feaname = '-'.join(tt[1:])
+            tt = sec_dir.split('_')
+            feaname = '_'.join(tt[1:])
 
-            outname = 'sec{0}-{1}'.format(index, feaname)
+            outname = 'sec{0}_{1}'.format(index, feaname)
             index = index + 1
             rst_new_list.append(outname)
             inpath = os.path.join(secws, sec_dir)
