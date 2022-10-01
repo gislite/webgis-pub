@@ -18,7 +18,7 @@ def do_for_chapter(secws):
             tt = sec_dir.split('_')
             feaname = '_'.join(tt[1:])
 
-            outname = 'sec{0}_{1}'.format(index, feaname)
+            outname = f'sec{index:2}_{feaname}'
             index = index + 1
             rst_new_list.append(outname)
             inpath = os.path.join(secws, sec_dir)
