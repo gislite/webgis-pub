@@ -34,13 +34,14 @@ occur.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_mapserver/section
-   sec2_setup/section
-   sec3_hello-mapserver/section
-   sec4_one-raster/section
-   sec5_label-on-raster/section
-   sec6_render-dem/section
-   sec7_mapfile-basic/section
+   sec01_mapserver/section
+   sec02_setup/section
+   sec03_hello-mapserver/section
+   sec04_one-raster/section
+   sec05_label-on-raster/section
+   sec06_render-dem/section
+   sec07_mapfile-basic/section

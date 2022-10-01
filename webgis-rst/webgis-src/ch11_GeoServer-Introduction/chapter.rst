@@ -10,9 +10,10 @@ to setup GeoServer.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_introduction/section
-   sec2_setup/section
-   sec3_pubpgis/section
+   sec01_introduction/section
+   sec02_setup/section
+   sec03_pubpgis/section

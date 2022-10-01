@@ -21,11 +21,12 @@ specification, providing standard OGC map services to the public.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_ogc-standard/section
-   sec2_opengis/section
-   sec3_introduction/section
-   sec4_serviece-standard/section
-   sec5_wmts/section
+   sec01_ogc-standard/section
+   sec02_opengis/section
+   sec03_introduction/section
+   sec04_serviece-standard/section
+   sec05_wmts/section

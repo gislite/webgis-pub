@@ -28,9 +28,10 @@ map service.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_mapserver-cgi-intro/section
-   sec2_mode/section
-   sec3_zoom/section
+   sec01_mapserver-cgi-intro/section
+   sec02_mode/section
+   sec03_zoom/section

@@ -25,7 +25,8 @@ the Internet.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_wcs/section
+   sec01_wcs/section

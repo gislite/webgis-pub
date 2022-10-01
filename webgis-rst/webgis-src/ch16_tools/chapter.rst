@@ -10,7 +10,8 @@ mappyfile, etc.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_owslib/section
+   sec01_owslib/section

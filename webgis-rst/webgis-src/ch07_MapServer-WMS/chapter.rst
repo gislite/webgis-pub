@@ -19,14 +19,15 @@ of these is WMS, used for map publishing.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_owslib/section
-   sec2_getcapabilityes/section
-   sec3_getmap/section
-   sec4_getfeatureinfo/section
-   sec5_wms-client/section
-   sec6_group/section
-   sec7_wms-sld/section
-   sec8_wms-metadata/section
+   sec01_owslib/section
+   sec02_getcapabilityes/section
+   sec03_getmap/section
+   sec04_getfeatureinfo/section
+   sec05_wms-client/section
+   sec06_group/section
+   sec07_wms-sld/section
+   sec08_wms-metadata/section

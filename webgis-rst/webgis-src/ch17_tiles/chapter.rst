@@ -38,12 +38,13 @@ interface, thus simplifying the drawing process.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_priciple/section
-   sec2_getmap/section
-   sec3_mapproxy/section
-   sec4_mapproxy-a/section
-   sec5_mapproxy-b/section
-   sec6_mapproxy-c/section
+   sec01_priciple/section
+   sec02_getmap/section
+   sec03_mapproxy/section
+   sec04_mapproxy-a/section
+   sec05_mapproxy-b/section
+   sec06_mapproxy-c/section

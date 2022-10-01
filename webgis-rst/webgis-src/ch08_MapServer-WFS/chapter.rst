@@ -23,8 +23,9 @@ its services.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_intro/section
-   sec2_wfs-client/section
+   sec01_intro/section
+   sec02_wfs-client/section

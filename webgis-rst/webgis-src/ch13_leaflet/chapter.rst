@@ -18,14 +18,15 @@ simple, readable source code.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_quickstart/section
-   sec2_markers/section
-   sec3_geoJSON/section
-   sec4_interactive_maps/section
-   sec5_layer/section
-   sec6_zoom_levels/section
-   sec7_using_WMS_and_TMS/section
-   sec8_Working_with_map_panes/section
+   sec01_quickstart/section
+   sec02_markers/section
+   sec03_geoJSON/section
+   sec04_interactive_maps/section
+   sec05_layer/section
+   sec06_zoom_levels/section
+   sec07_using_WMS_and_TMS/section
+   sec08_Working_with_map_panes/section

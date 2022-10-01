@@ -20,8 +20,9 @@ in.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_getoknow/section
-   sec2_getoknow.rstx/section
+   sec01_getoknow/section
+   sec02_getoknow.rstx/section

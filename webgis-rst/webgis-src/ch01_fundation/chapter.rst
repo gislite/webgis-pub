@@ -72,10 +72,11 @@ between the GIS application servers.
 
 
 
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_intro/section
-   sec2_concept/section
-   sec3_foss/section
-   sec4_http/section
+   sec01_intro/section
+   sec02_concept/section
+   sec03_foss/section
+   sec04_http/section
