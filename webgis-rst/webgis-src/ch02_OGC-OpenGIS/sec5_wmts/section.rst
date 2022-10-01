@@ -1,16 +1,20 @@
 .. Author: Bu Kun
 .. Title: Preliminary understanding and reading of WMTS service
 
-# Preliminary understanding and Reading of WMTS Service
+=====================================================================
+Preliminary understanding and Reading of WMTS Service
+=====================================================================
 
 Currently, most of the network map services use caching technology to replace real-time visualization of data to improve map response capabilities. Introduces the WMTS service of the caching technology standard proposed by OGC.
 
-## Introduction to WMTS
+Introduction to WMTS
+===================================
 
 WMTS, OpenGIS Web Map Tile Service, provides a standardized solution for publishing digital map services using predefined tile methods.
 The WMTS standard defines operations that allow users to access tiled maps. The WMTS service is an open standard service docking format proposed by OGC, and it is also an improved version of the WMS service. Therefore, more and more GIS projects use the WMTS service as the basemap service. The map as a basemap service is the WMTS service that connects to the sky map.
 
-## Difference between WMTS and WMS
+Difference between WMTS and WMS
+=====================================
 
 The WMTS service and the WMS service have different responses to the client's request for service. For example, when the client requests the WMTS service, a fixed-size tile is returned to the client. The client obtains each tile according to the index number, and then splices it. It is displayed as a map, as shown in Figure 1; since the rules of tiles are fixed, the server can cache the corresponding tiles in advance, and the client can return it directly when needed, so WMTS can be cached.
 
@@ -38,7 +42,8 @@ GoogleCRS84Quad and GoogleMapsCompatible.
 SuperMap iServer provides the ability to publish WMTS services
 And conforms to the WMTS implementation specification developed by OGC (Open Geospatial Consortium, Open Geographic Information Alliance).
 
-## Reading of WMTS
+Reading of WMTS
+==========================
 
 The WMTS 1.0.0 specification supports publishing WMTS services in HTTP KVP (Key-Value Pair), SOAP, and REST.
 Taking HTTTP KVP as an example, this paper introduces the three operations contained in WMTS service, which can be used to read WMTS service.

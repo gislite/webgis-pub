@@ -46,18 +46,20 @@ browser can be realized.
 
 
 
+
+
 .. toctree::
    :maxdepth: 2
 
-   sec1_one-layer/section
-   sec2_two-layers/section
-   sec3_multiple-layers/section
-   sec4_classes/section
-   sec5_labels/section
-   sec6_symbol/section
-   sec7_projection/section
-   sec8_scalebar/section
-   sec9_legend/section
-   sec10_raster/section
-   sec11_grid/section
-   sec12_format/section
+   sec1_raster/section
+   sec2_grid/section
+   sec3_format/section
+   sec4_one-layer/section
+   sec5_two-layers/section
+   sec6_multiple-layers/section
+   sec7_classes/section
+   sec8_labels/section
+   sec9_symbol/section
+   sec10_projection/section
+   sec11_scalebar/section
+   sec12_legend/section

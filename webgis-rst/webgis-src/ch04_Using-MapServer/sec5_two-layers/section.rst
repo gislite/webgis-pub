@@ -6,7 +6,10 @@ Static map with two layers
 View examples
 -------------
 
-.. container::
+.. raw:: html
+
+	<img  class="img_border"
+	src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa2.map&layer=world-country&layer=country-line&mode=map"/>
 
 .. raw:: html
 

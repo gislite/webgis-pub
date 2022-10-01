@@ -8,11 +8,8 @@ View examples
 
 .. raw:: html
 
-   <p align="center">
+   <img src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa5.map&layer=states&layer=states_line&layer=states_label&layer=topo&mode=map"/>
 
-.. raw:: html
-
-   </p>
 
 In addition to supporting vector data (points, lines, polygons and
 labels), MapServer can also display raster data. Through the use of the

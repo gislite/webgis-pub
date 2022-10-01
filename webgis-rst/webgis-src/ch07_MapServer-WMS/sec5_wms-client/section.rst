@@ -8,11 +8,7 @@ View examples
 
 .. raw:: html
 
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+   <img border= "1" src= "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb4.map&layers=topo_wms+states&mode=map" />
 
 Another exciting feature of MapServer is its ability to use layers
 provided by other map servers as its data source. In this case, the
