@@ -10,8 +10,21 @@ Welcome to WebGISPub's documentation!
    :maxdepth: 2
    :numbered: 2
 
-   part01_basic_Introduction/part.rst
-   part02_mapserver_MapServer/part.rst
-   part03_geoserver_GeoServer/part.rst
-   part04_f2e_Font2End/part.rst
-   part09_others_Others/part.rst
+   ch01_fundation/chapter
+   ch02_OGC-OpenGIS/chapter
+   ch03_MapServer-Setup/chapter
+   ch04_Using-MapServer/chapter
+   ch05_MapServer-CGI/chapter
+   ch06_Using-CGI/chapter
+   ch07_MapServer-WMS/chapter
+   ch08_MapServer-WFS/chapter
+   ch09_MapServer-WCS/chapter
+   ch10_ref-Addon/chapter
+   ch11_GeoServer-Introduction/chapter
+   ch12_GeoServer-Management/chapter
+   ch13_leaflet/chapter
+   ch14_openlayers/chapter
+   ch15_cesium/chapter
+   ch16_tools/chapter
+   ch17_tiles/chapter
+   ch18_gislite/chapter

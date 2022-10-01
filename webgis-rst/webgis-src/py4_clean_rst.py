@@ -51,10 +51,10 @@ def do_for_book(secws):
     rst_new_list = []
     for sec_dir in sec_list:
         if sec_dir.startswith('ch'):
-            tt = sec_dir.split('-')
+            tt = sec_dir.split('_')
             feaname = '-'.join(tt[1:])
 
-            outname = 'ch{0}-{1}'.format(str(index).zfill(2), feaname)
+            outname = 'ch{0}_{1}'.format(str(index).zfill(2), feaname)
 
             inpath = os.path.join(secws, sec_dir)
             outpath = os.path.join(secws, outname)
