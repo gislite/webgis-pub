@@ -13,7 +13,8 @@ def do_for_chapter(secws):
     index = 1
     rst_new_list = []
     for sec_dir in sec_list:
-        if sec_dir.startswith('sec'):
+
+        if sec_dir.startswith('sec') and sec_dir.endswith('rst') :
             tt = sec_dir.split('_')
             feaname = '_'.join(tt[1:])
 
