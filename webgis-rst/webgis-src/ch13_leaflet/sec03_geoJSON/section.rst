@@ -156,7 +156,7 @@ polygon style accordingly:
        }}
    }}).addTo(map);
 
-Point Layer（ ``pointToLayer``\ ）
+Point Layer（ ``pointToLayer`` ）
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Points are treated differently than polylines and polygons. By default,
@@ -223,7 +223,7 @@ attach pop-ups when clicking on a feature.
        onEachFeature: onEachFeature
    }}).addTo(map);
 
-Filter（ ``filter``\ ）
+Filter（ ``filter`` ）
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 This filter option can be used to control the visibility of GeoJSON

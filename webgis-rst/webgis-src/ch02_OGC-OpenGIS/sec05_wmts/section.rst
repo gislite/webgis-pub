@@ -70,6 +70,7 @@ Taking HTTTP KVP as an example, this paper introduces the three operations conta
 In the three operations, you can first obtain a Capabilities document
 through the GetCapabilities operation.
 The capability document is in the form of xml structure.
+
 The document describes the resources available in the service and the necessary conditions
 for connecting the service.
 The following node information is from the capability document.

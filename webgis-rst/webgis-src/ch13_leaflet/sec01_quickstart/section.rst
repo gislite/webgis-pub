@@ -54,6 +54,7 @@ pop-up windows, and handling events.
    </tbody>
    </table>
 
+
 Prepare the page
 ----------------
 
