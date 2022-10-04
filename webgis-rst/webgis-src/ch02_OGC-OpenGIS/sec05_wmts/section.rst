@@ -63,15 +63,21 @@ Reading of WMTS
 The WMTS 1.0.0 specification supports publishing WMTS services in HTTP KVP (Key-Value Pair), SOAP, and REST.
 Taking HTTTP KVP as an example, this paper introduces the three operations contained in WMTS service, which can be used to read WMTS service.
 
-1. GetCapabilities operation to get the meta-information of the service
-2. GetTile operation, getting slices
+1. GetCapabilities operation to get the meta-information of the service;
+2. GetTile operation, getting slices;
 3. GetFeatureInfo operation to get the selected feature information.
 
 In the three operations, you can first obtain a Capabilities document
 through the GetCapabilities operation.
 The capability document is in the form of xml structure.
-The document describes the resources available in the service and the necessary conditions for connecting the service. The following node information is from the capability document. The key parameters that need to be obtained in the connection to the WMTS service.
+The document describes the resources available in the service and the necessary conditions
+for connecting the service.
+The following node information is from the capability document.
+The key parameters that need to be obtained in the connection to the WMTS service.
 
 .. figure:: fig-wmts-content.png
 
-In the document, the contents node describes the information of the WMTs service published by the server. Understanding the structure of layer (metadata of a top-level dataset on the server) and tilematrixset (description of map segmentation geometric rules) in the contents subset can help users obtain the corresponding data accurately.
+In the document, the contents node describes the information of the WMTs service published by the server.
+Understanding the structure of layer (metadata of a top-level dataset on the server)
+and tilematrixset (description of map segmentation geometric rules)
+in the contents subset can help users obtain the corresponding data accurately.

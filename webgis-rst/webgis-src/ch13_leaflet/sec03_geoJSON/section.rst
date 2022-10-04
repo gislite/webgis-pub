@@ -11,59 +11,19 @@ how to create and interact with a map vector in a GeoJSON object.
 .. raw:: html
 
    <table>
-
-.. raw:: html
-
    <tbody>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_with_geojson/example.html" width="616" height="416">
-
-.. raw:: html
-
+   <iframe src="http://webgis.pub/leaflet_with_geojson/example.html" width="616" height="416">
    </iframe>
-
-.. raw:: html
-
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-View this example
-
-.. raw:: html
-
+   View this example
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    </tbody>
-
-.. raw:: html
-
    </table>
 
 Introduction of GeoJSON

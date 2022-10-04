@@ -39,59 +39,19 @@ pop-up windows, and handling events.
 .. raw:: html
 
    <table>
-
-.. raw:: html
-
    <tbody>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_quickstart/example.html" width="616" height="416">
-
-.. raw:: html
-
+   <iframe src="http://webgis.pub/leaflet_quickstart/example.html" width="616" height="416">
    </iframe>
-
-.. raw:: html
-
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-View this example
-
-.. raw:: html
-
+   View this example
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    </tbody>
-
-.. raw:: html
-
    </table>
 
 Prepare the page
@@ -133,59 +93,19 @@ Create a map
 .. raw:: html
 
    <table>
-
-.. raw:: html
-
    <tbody>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_quickstart/example-basic.html" width="616" height="416">
-
-.. raw:: html
-
+   <iframe src="http://webgis.pub/leaflet_quickstart/example-basic.html" width="616" height="416">
    </iframe>
-
-.. raw:: html
-
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-View this example
-
-.. raw:: html
-
+   View this example
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    </tbody>
-
-.. raw:: html
-
    </table>
 
 1.Initialize the map and set its view to the geographic coordinates and
@@ -219,59 +139,19 @@ Dot mark, circle mark, and polygon mark
 .. raw:: html
 
    <table>
-
-.. raw:: html
-
    <tbody>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_quickstart/example-overlays.html" width="616" height="416">
-
-.. raw:: html
-
+   <iframe src="http://webgis.pub/leaflet_quickstart/example-overlays.html" width="616" height="416">
    </iframe>
-
-.. raw:: html
-
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-View this example
-
-.. raw:: html
-
+   View this example
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    </tbody>
-
-.. raw:: html
-
    </table>
 
 In addition to tiles, you can easily add other things to your map,
@@ -309,59 +189,19 @@ Use pop-up window
 .. raw:: html
 
    <table>
-
-.. raw:: html
-
    <tbody>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_quickstart/example-popups.html" width="616" height="416">
-
-.. raw:: html
-
+   <iframe src="http://webgis.pub/leaflet_quickstart/example-popups.html" width="616" height="416">
    </iframe>
-
-.. raw:: html
-
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    <tr>
-
-.. raw:: html
-
    <td style="text-align: center; border: none">
-
-View this example
-
-.. raw:: html
-
+   View this example
    </td>
-
-.. raw:: html
-
    </tr>
-
-.. raw:: html
-
    </tbody>
-
-.. raw:: html
-
    </table>
 
 Pop-up windows are usually used to attach some information to specific
