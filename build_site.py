@@ -36,7 +36,7 @@ pwd = os.path.split(__file__)[0]
 
 src_ws = os.path.join('templates')
 tpl_ws = os.path.join(pwd, 'static')
-dst_ws = os.path.join(pwd, 'owg')
+dst_ws = os.path.join(pwd, '_build')
 
 if os.path.exists(dst_ws):
     pass
@@ -290,6 +290,7 @@ def gen_html_pages(src_ws):
             dir_idx, dir_slug = bbcc
             dir_title = bbcc[-1]
 
+        dir_title =  ' '.join(dir_title.split('-'))
         md_index = os.path.join(src_ws, '{}_{}.md'.format(dir_idx, dir_slug))
         if os.path.exists(md_index):
             pass
