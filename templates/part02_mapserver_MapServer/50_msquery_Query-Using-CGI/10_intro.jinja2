@@ -12,14 +12,14 @@
 
     <h1>MapServer query mechanism</h1>
 
-    <p> MapServer除了其渲染能力，还提供了强大的查询功能，同时支持空间查询（基于位置选择）和属性查询（基于属性值选择）。
-        要做到这一点无需编程支持，MapServer广泛使用了模板来构建查询和呈现结果。
-        这导致 MapFile ，模板，MapServer程序之间的一些复杂的相互作用。
-        在使用中还有是大量不同的查询方式，以及不同的使用模板的方式。
-        出于这些原因，MapServer的查询工具可能是最令人困惑的方面。</p>
+    <p> In addition to its rendering capabilities, MapServer also provides powerful query functions, and supports spatial query (location based selection) and attribute query (attribute value based selection).
+To do this without programming support, MapServer uses templates extensively to build queries and present results.
+This leads to some complex interactions among MapFile, template and MapServer programs.
+There are also a lot of different query methods and different ways to use templates.
+For these reasons, MapServer's query tools are probably the most confusing aspect.</p>
 
-    <p> MapServer具有强大而复杂的查询功能，但在CGI模式下，它缺少允许真正的GIS提供的那种分析的工具。
-        本概述描述了MapServer的一些查询功能。</p>
+    <p> MapServer has powerful and complex query functions, but under CGI mode, it lacks the analysis tools that allow real GIS to provide.
+This overview describes some query functions of MapServer.</p>
 
 
     <h2 id="vka">Spatial retrieval concept</h2>
