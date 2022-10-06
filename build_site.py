@@ -228,7 +228,7 @@ def gen_chapter_index(the_dir, md_index='', idx_dir=0, list_main='', src_ws=src_
     else:
         dir_idx, dir_slug = bbcc
         dir_title = bbcc[-1]
-
+    dir_title =  ' '.join(dir_title.split('-'))
     out_html_file = os.path.join(dst_ws, '{}-index.html'.format(dir_slug))
     tpl_file = 'content.jinja2'
 
@@ -559,7 +559,7 @@ def fetch_structure(src_ws):
         else:
             dir_idx, dir_slug = bbcc
             dir_title = bbcc[-1]
-
+        dir_title =  ' '.join(dir_title.split('-'))
         # dir_idx, dir_slug, dir_title = the_dir.split('_')
 
         list_md = []
