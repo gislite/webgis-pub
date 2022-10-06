@@ -517,6 +517,8 @@ def fetch_part():
 
         dir_idx, dir_slug, dir_title = bbcc
 
+        dir_title =  ' '.join(dir_title.split('-'))
+
         list_main.append(
             {
                 'slug': dir_slug,
