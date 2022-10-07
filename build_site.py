@@ -566,7 +566,7 @@ def fetch_structure(src_ws):
         for wfile in the_files:
             the_file = os.path.join(wroot, wfile)
 
-            # print(the_file)
+            print(the_file)
 
             md_dic = {}
             with open(the_file) as fin:

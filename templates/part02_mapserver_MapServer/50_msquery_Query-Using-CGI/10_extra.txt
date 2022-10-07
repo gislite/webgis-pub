@@ -1,0 +1,43 @@
+
+    {#
+    <!-- The map_web variable will replace the TEMPLATE
+         parameter in the WEB object of the MAP file... -->
+
+    <form method="get" action="/cgi-bin/mapserv" class="form-horizontal">
+
+        <input type="hidden" name="root" value="/owg">
+        <input type="hidden" name="program" value="/cgi-bin/mapserv">
+
+        <!-- The map and layer variables are internal MapServer variables.
+             They are required by the mapping application. -->
+        <input type="hidden" name="map" value="/owg/mfd1.map">
+        <input type="hidden" name="layer" value="states">
+        <input type="hidden" name="zoom" value="0">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="col-sm-5">
+                    <select name="map_web" class="form-control">
+                        <option value="template example3-1.html">
+                            教程3.1: 查询模板
+                        </option>
+                        <option value="template example3-2.html">
+                            教程3.2: Layer-wide Header and Footer Templates
+                        </option>
+                        <option value="template example3-3.html">
+                            教程3.3: Map-wide Header and Footer Templates
+                        </option>
+                        <option value="template example3-4.html header ../templates/example3_header.html footer ../templates/example3_footer_querymap.html">
+                            教程3.4: The Query Map
+                        </option>
+                    </select> &nbsp;
+                </div>
+                <div class="col-sm-2">
+                    <input type="submit" name="submit" value="打开教程" class="btn btn-sm btn-primary">
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+     #}

@@ -5,6 +5,8 @@ On the server side, through the CGI application program to connect WebServer and
 the client only needs to use the browser to query and analyze the spatial data. 
 The famous open source GIS server-side tool MapServer uses CGI technology.
 
+## MapServer using CGI
+
 Compared with the many WebGIS solutions provided by commercial enterprises, 
 MapServer is an open source project. 
 This means that you can use MapServer for free and have the right to modify, copy, 
@@ -16,6 +18,8 @@ the function has been relatively perfect and the update is relatively small.
 At present, the mainstream Linux operating systems, such as Debian, Ubuntu, Centos and so on, 
 have MapServer versions above 7.0. 
 The content of this book is based on MapServer version 7. 0 and later.
+
+## About 
 
 This chapter explains the installation and configuration of MapServer to understand basic usage and related tools,
 how to generate map images, and how to access them through Web.
