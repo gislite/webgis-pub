@@ -68,9 +68,13 @@ Open a link
 
 ## View the map
 
-MapServer supports returning maps from the beginning, and you can use the ``mode=map`` Parameters.
+MapServer supports returning maps via CGI mode, and you can use the `mode=map` Parameters.
 
-<!--[view the map]({SITE_URL}/cgi-bin/mapserv?map=/owg/mfa1.map&layer=states&mode=map)-->
+For example:
+
+    {SITE_URL}/cgi-bin/mapserv?map=/owg/mfb1.map&layer=states&mode=map"
+
+Just as:
 
 <a href="{SITE_URL}/cgi-bin/mapserv?map=/owg/mfb1.map&layer=states&mode=map" target="_blank">
 <img class="img_border" src="{SITE_URL}/cgi-bin/mapserv?map=/owg/mfb1.map&layer=states&mode=map"> 

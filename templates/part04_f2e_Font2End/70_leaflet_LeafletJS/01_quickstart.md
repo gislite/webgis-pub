@@ -4,20 +4,30 @@
 # Introduction to Leaflet
 
 
-Leaflet is an open source JavaScript library for mobile rendering of interactive maps. Its design philosophy is efficient, lightweight and practical.
-It is only about 38KB in size, but it has the map manipulation capabilities that most developers need and can work on common desktop and mobile platforms. Has an extensible plug-in system, clear and readable code, and elegance documentation and easy-to-operate API.
+Leaflet is a modern, open source JavaScript library developed to build interactive maps for mobile devices.
+Its design philosophy is efficient, lightweight and practical.
+It is only about 42KB in size(Leaflet 1.9.0), 
+but it has the map manipulation capabilities that most developers need 
+and can work on common desktop and mobile platforms. 
+Leafjet has an extensible plug-in system, 
+clear and readable code, elegance documentation and easy-to-operate API.
 
 ## Brief introduction
 
-Leaflet is a modern, open source JavaScript library developed to build interactive maps for mobile devices.
-The code is only 33 KB, but it has most of the functions of developing online maps. Leaflet design adheres to the philosophy of simplicity, high performance and good usability.
-It works efficiently on all major desktop and mobile platforms, taking advantage of HTML5 and CSS3 in modern browsers, while also supporting access to older browsers.
-Support for plug-in extensions, with a friendly, easy-to-use API documentation and a simple, readable source code. Leaflet's powerful open source library plug-in involves all aspects of map applications, including map services.
-There are more than 140 plug-ins for data provision, data format, geocoding, route and route search, map controls and interactions.
-These controls enrich the functions of leaflet, at the same time, it is very convenient to implement custom controls with good expansibility.
+
+Leaflet design adheres to the philosophy of simplicity, high performance and good usability.
+It works efficiently on all major desktop and mobile platforms, 
+taking advantage of HTML5 and CSS3 in modern browsers, 
+while also supporting access to older browsers.
+Support for plug-in extensions, with a friendly, easy-to-use API documentation and a simple, readable source code. 
+Leaflet's powerful open source library plug-in involves all aspects of map applications, including map services.
+There are more than 140 plug-ins for data provision,
+data format, geocoding, route and route search, map controls and interactions.
+These plug-ins enrich the functions of leaflet.
+At the same time, it is very convenient to implement custom plug-ins with good expansibility.
 
 
-## Leaflet getting started Guid
+## Leaflet getting started Guide
 
 This step-by-step guide gives you a quick understanding of the basics of leaflet, 
 including building leaflet maps, using tags, 
@@ -25,18 +35,18 @@ multilines and pop-up windows, and handling events.
 
 <table> <tbody>
 <tr> <td style="text-align: center; border: none">
-        <iframe src="./leaflet_quickstart/example.html" width="616" height="416"></iframe>
-    </td> </tr>
+<iframe src="./leaflet_quickstart/example.html" width="616" height="416"></iframe>
+</td> </tr>
 <tr> <td style="text-align: center; border: none">
-        <small><a href="./leaflet_quickstart/example.html">View this example</a></small>
-    </td> </tr>
+<small><a href="./leaflet_quickstart/example.html">View this example</a></small>
+</td> </tr>
 </tbody> </table>
 
 ## Prepare the page
 
 Before you write the map code, you need to do the following on the page:
 
-On the page `<head>` Label vs. `</head>` Add the following code between the tags:
+Add the following code between the `<head>` and `</head>` tags :
 
     <link rel="stylesheet" href="/f2elib/leaflet-1.8.0/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -46,7 +56,7 @@ On the page `<head>` Label vs. `</head>` Add the following code between the tags
     integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
     crossorigin=""></script>
 
-Create a map where you want to create a map with a `id` Of `div` .
+Create a map where you want to create a map with a `id` of `div` tag.
 
     <div id="mapid"></div>
 
@@ -55,10 +65,7 @@ Make sure the map has a clear height, such as defined in CSS:
 
     #mapid {{ height: 180px; }}
 
-
-
 Now that the map has been initialized, you are ready to do something with it.
-
 
 ## Create a map
 

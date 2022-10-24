@@ -1,11 +1,13 @@
 ; Author: Bu Kun
-; Title: start using Mapfile
+; Title: Using Mapfile
 
-# Start using Mapfile
+# Using Mapfile in MapServer
 
 The core program of MapServer is used to generate maps based on geospatial data.
 Configure the function of using CGI and give it the function of WebGIS.
-MapServer uses a configuration file to declare the size and format of the generated map, all paths, names, formats of the data used, and various more complex control options. This configuration file is called Mapfile.
+MapServer uses a configuration file to declare the size and format of the generated map,
+all paths, names, formats of the data used, and various more complex control options. 
+This configuration file is called Mapfile.
 Mapfile is multi-layered, and each map file defines a large number of other objects.
 These objects include scale bars, legends, map colors, map names, map layers, and so on.
 There are more objects that need to be defined and will be discussed in more detail in the following sections.
@@ -44,12 +46,16 @@ Add appropriate comments to your MapFile to make it easier for others to underst
 
 - The syntax used for attribute names is ``[ATTRIBUTENAME]`` . Note: Property names are enclosed in square brackets and are case-sensitive. All attribute names in ESRI ShapeFiles (.dbf) are in uppercase, while in PostGIS all attribute names are in lowercase.
 
-The use of regular expressions in MapServer depends on the C language library used by the operating system you are using. For more details, please refer to the reference documentation provided by the C library.
-Under Linux this library is GlibC, under this system you can use ``man 7 regex`` . These regular expressions are POSIX compliant, so under Windows users can search the Internet for "man 7 regex".
+The use of regular expressions in MapServer depends 
+on the C language library used by the operating system you are using. 
+For more details, please refer to the reference documentation provided by the C library.
+Under Linux this library is GlibC, under this system you can use ``man 7 regex`` . 
+These regular expressions are POSIX compliant, so under Windows users can search the Internet for "man 7 regex".
   
 ### INCLUDE
 
-As of MapServer 5.0, multiple MapFiles can be created using the ``INCLUDE`` command, the files form a logically single file.
+As of MapServer 5.0, multiple MapFiles can be created using the ``INCLUDE`` command, 
+the files form a logically single file.
 
 Example: Include mylayer.map mymap.map in the mymap.map file as follows
 
@@ -94,28 +100,38 @@ In this case, mymap.map is logically equivalent to:
 ### CGI variable
 
 
-Variables are parameters that can be substituted in a MapFile file (same as variable types in programming languages, assignable values in a program, etc.).
-In this case, cookies and CGI parameter values are supported, which allows MapServer MapFiles to obtain user cookies (which enable secure authentication), or non-MapServer request parameters.
+Variables are parameters that can be substituted in a MapFile file 
+(same as variable types in programming languages, assignable values in a program, etc.).
+In this case, cookies and CGI parameter values are supported, 
+which allows MapServer MapFiles to obtain user cookies (which enable secure authentication),
+or non-MapServer request parameters.
 
 Syntax: ``%`` + ``variable name`` + ``%``
 
 Example 1: secure connection to spatial database
 
-You need access to a PostGIS database. The username and password were saved in cookies, ``uid`` and ``passwd`` in previous operations. Then in MapFile you can write:
+You need access to a PostGIS database. 
+The username and password were saved in cookies, ``uid`` and ``passwd`` in previous operations. 
+Then in MapFile you can write:
 
     CONNECTION "user=%uid% password=%passwd% dbname=postgis"
 
 Example 2: dealing with temporary files
 
-A program needs to generate the corresponding shapefile and store the produced data in the directory corresponding to the server user. ``username`` can be obtained from a cookie, and ``filename`` can be obtained from the request parameter number.
+A program needs to generate the corresponding shapefile and store the produced data 
+in the directory corresponding to the server user. ``username`` can be obtained from a cookie,
+and ``filename`` can be obtained from the request parameter number.
 
     DATA "/home/%username%/tempshp/%filename%"
 
-Such parameters can only be used in the CGI version of MapServer, if you use MapScript, you need to come up with the corresponding logic to achieve this function.
+Such parameters can only be used in the CGI version of MapServer, 
+if you use MapScript, 
+you need to come up with the corresponding logic to achieve this function.
 
 ## "Maps" that do not use data
 
-Let's take a look at the basic usage of MapServer without using any GIS data. The following figure shows the effect:
+Let's take a look at the basic usage of MapServer without using any GIS data. 
+The following figure shows the effect:
 
 <div align="center">
 <img border="1" src="{SITE_URL}/cgi-bin/mapserv?map=/owg/mfa0.map&mode=map"/>
@@ -125,20 +141,31 @@ The picture is shown above, and the code is:
 
     <img border="1" src="{SITE_URL}/cgi-bin/mapserv?map=/owg/mfa0.map&mode=map"/>
 
-The above code is the basic usage of declaring images in HTML, but the parameters of ``src`` are not common image formats such as Jpeg, PNG, GIF, but the MapServer CGI program and some parameters.
-All you need to know here is that the MapServer CGI program will return an image based on these parameters, so the HTML image declaration above is actually nothing special; the mechanism will be explained later.
+The above code is the basic usage of declaring images in HTML, 
+but the parameters of ``src`` are not common image formats such as Jpeg, PNG, GIF, 
+but the MapServer CGI program and some parameters.
+All you need to know here is that the MapServer CGI program will return an image based on these parameters, 
+so the HTML image declaration above is actually nothing special; the mechanism will be explained later.
 
 ## The basic usage of Mapfile
 
-A Mapfile defines a collection of cartographic objects, which together determine the appearance and behavior of the map displayed on the page. It functions similarly to Apache's ``httpd.conf`` configuration file. Based on the same geographic data, mapping applications can use different Mapfiles to present maps with different characteristics, corresponding to different user behaviors.
+A Mapfile defines a collection of cartographic objects, 
+which together determine the appearance and behavior of the map displayed on the page. 
+It functions similarly to Apache's ``httpd.conf`` configuration file.
+Based on the same geographic data, mapping applications can use different Mapfiles 
+to present maps with different characteristics, corresponding to different user behaviors.
 
-It may seem like a static configuration file would have limited functionality, but MapServer is designed so that using Mapfiles can produce very powerful applications.
+It may seem like a static configuration file would have limited functionality, 
+but MapServer is designed so that using Mapfiles can produce very powerful applications.
 
-The definition of a map file consists of key-value pairs. Some of the listed values are separated by spaces and must be enclosed in parentheses. Both single and double parentheses are fine.
+The definition of a map file consists of key-value pairs. 
+Some listed values are separated by spaces and must be enclosed in parentheses.
+Both single and double parentheses are fine.
 
 Keyword values with embedded spaces must be enclosed, which is good practice for all strings.
 
-At the same time, it should be noted that MapServer keywords are not case-sensitive, but some database retrieval methods are case-sensitive.
+At the same time, it should be noted that MapServer keywords are not case-sensitive, 
+but some database retrieval methods are case-sensitive.
 
 In MapServer, to generate the above picture, the Mapfile code is:
 
@@ -148,27 +175,34 @@ In MapServer, to generate the above picture, the Mapfile code is:
 
 The code is as follows, lines ``01`` to ``06`` establish the basic map image parameters.
 The keyword ``NAME`` defines the base name of any images created.
-Each time MapServer is called, it creates a unique identifier by concatenating the system time (i.e. the number of seconds since 1/1/1970 00:00:00) and the process ID.
+Each time MapServer is called, it creates a unique identifier by concatenating the system time
+(i.e. the number of seconds since 1/1/1970 00:00:00) and the process ID.
 This unique identifier is appended to the basename to form the filename.
 Two or three character expansion (depending on file type), then append.
-In some cases, another string is inserted after the base name of the map server to distinguish the reference map image or legend image from the map image itself.
+In some cases, another string is inserted after the base name of the map server 
+to distinguish the reference map image or legend image from the map image itself.
 
 Keyword ``SIZE`` specifies the pixel size (width × height) of the map image.
 
-``IMAGECOLOR`` sets the background color of the image to white (recall that the color is chosen on the map server by specifying three integer RGB component values between 0 and 255, and white is 255, 255, 255).
+``IMAGECOLOR`` sets the background color of the image to white 
+(recall that the color is chosen on the map server 
+by specifying three integer RGB component values between 0 and 255, and white is 255, 255, 255).
 
 Image type is set to ``PNG`` . It can also be used in Mapfile ``JPEG`` , or ``GIF`` Image.
 
 
-Layer objects are defined under the map object. Before displaying a map, you need to define at least one layer in your map file.
+Layer objects are defined under the map object. 
+Before displaying a map, you need to define at least one layer in your map file.
 You can define as many layers as you want in MapServer.
-In older versions of MapServer, the upper limit of the number of layers is defined in the source code. ``map.h`` Medium, limited to 100;
+In older versions of MapServer, the upper limit of the number of layers is defined in the source code.
+``map.h`` Medium, limited to 100;
 You can remove this restriction by modifying the source code.
 However, this restriction is no longer available in commonly used Linux distributions.
 
 ## Draw content
 
-MapServer now knows what kind of map to produce, including the size and background color, and how to display the map on a web page.
+MapServer now knows what kind of map to produce, including the size and background color,
+and how to display the map on a web page.
 But it's not clear what to draw and how to draw-the work is done by the LAYER object.
 
 The layer applies a single dataset and contains a series of elements,
@@ -179,12 +213,14 @@ Keyword ``STATUS`` Determines whether the layer is rendered.
 Default value ``Default`` It means it's always rendered.
 
 Each layer has a geometric type.
-In this example, the feature is a point feature (a pair of coordinate values), and the point feature is selected to simplify the example.
+In this example, the feature is a point feature (a pair of coordinate values), 
+and the point feature is selected to simplify the example.
 
 The value of the keyword TYPE is selected as ``POINT`` Layer types are described in more detail in the next chapter.
 
 In order to generate maps, MapServer must have spatial data.
-Instead of using complex real-world data to describe a messy "Hello World" map, it is built with artificial coordinate points (0. 0,0. 0).
+Instead of using complex real-world data to describe a messy "Hello World" map, 
+it is built with artificial coordinate points (0. 0,0. 0).
 
 Add the following to hello.map.
 
@@ -203,9 +239,11 @@ Add the following to hello.map.
 - ``CLASS`` also includes ``LABEL`` objects. The LABEL object is described within the class and specifies the font type, size and color of the label. Tags are far more complex than this, and are discussed in greater detail later in this book. Labels start with the keyword ``LABEL`` and end with ``END``.
 - The keyword ``TYPE`` determines the type of label font. There are two types: the ``bitmapped`` standard and the ``TrueType`` standard. Bitmapped fonts are generated internally without external references. TrueType must be installed and must also be determined by an alias in the file defined by the keyword FONTSET. For simplicity, the examples use bitmapped fonts.
 
-Note that the default color for labels is black - of course it could be a different color, but for now the default is used to simplify the example.
+Note that the default color for labels is black - 
+of course it could be a different color, but for now the default is used to simplify the example.
 
-The structure of the map file just shown is very simple, and the map it generates cannot be called a map at all. But it should paint a tagged image and display it on the web page.
+The structure of the map file just shown is very simple, 
+and the map it generates cannot be called a map at all. But it should paint a tagged image and display it on the web page.
 
 ## View the result
 
