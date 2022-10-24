@@ -129,25 +129,12 @@ Build under Python 3.7.3 , using the flollowing modules：
 - Markdown==3.3.7
 - PyYAML==6.0
 
+
 .. toctree::
    :maxdepth: 2
    :numbered: 2
 
-   ch01_fundation/chapter
-   ch02_OGC-OpenGIS/chapter
-   ch03_MapServer-Setup/chapter
-   ch04_Using-MapServer/chapter
-   ch05_MapServer-CGI/chapter
-   ch06_Using-CGI/chapter
-   ch07_MapServer-WMS/chapter
-   ch08_MapServer-WFS/chapter
-   ch09_MapServer-WCS/chapter
-   ch10_ref-Addon/chapter
-   ch11_GeoServer-Introduction/chapter
-   ch12_GeoServer-Management/chapter
-   ch13_leaflet/chapter
-   ch14_openlayers/chapter
-   ch15_cesium/chapter
-   ch16_tools/chapter
-   ch17_tiles/chapter
-   ch18_gislite/chapter
+   part1/part.rst
+   part2/part.rst
+   part3/part.rst
+   part4/part.rst
