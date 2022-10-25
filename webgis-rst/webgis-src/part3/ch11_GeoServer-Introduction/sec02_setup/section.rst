@@ -1,4 +1,4 @@
-; Author: YU Jinyao .. Title: Installation configuration
+.. Author: YU Jinyao .. Title: Installation configuration
 
 Install and configure GeoServer
 ===============================

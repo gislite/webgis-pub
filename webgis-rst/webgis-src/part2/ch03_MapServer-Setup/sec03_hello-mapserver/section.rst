@@ -1,14 +1,14 @@
 .. Author: Bu Kun .. Title: start using Mapfile
 
 Start using Mapfile
-===================
+===============================
 
 The core program of MapServer is used to generate maps based on
 geospatial data. Configure the function of using CGI and give it the
 function of WebGIS. MapServer uses a configuration file to declare the
 size and format of the generated map, all paths, names, formats of the
-data used, and various more complex control options. This configuration
-file is called Mapfile. Mapfile is multi-layered, and each map file
+data used, and various more complex control options.
+This configuration file is called Mapfile. Mapfile is multi-layered, and each map file
 defines a large number of other objects. These objects include scale
 bars, legends, map colors, map names, map layers, and so on. There are
 more objects that need to be defined and will be discussed in more

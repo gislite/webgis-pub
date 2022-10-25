@@ -6,10 +6,10 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'WebGISPub'
-copyright = '2022, gislite'
-author = 'gislite'
-release = '1'
+project = 'Open Source WebGIS'
+copyright = '2022, BU Kun'
+author = 'BU Kun'
+release = 'v 0.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

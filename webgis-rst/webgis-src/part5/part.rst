@@ -1,13 +1,15 @@
 =====================================
-Part1 Fundation
+Part5 Tiles and Tools
 =====================================
 
-Document for WebGIS fundation.
+
+Tiles and Tools.
 
 
 .. toctree::
    :maxdepth: 2
    :numbered:
 
-   ch01_fundation/chapter
-   ch02_OGC-OpenGIS/chapter
+   ch16_tools/chapter
+   ch17_tiles/chapter
+   ch18_gislite/chapter
