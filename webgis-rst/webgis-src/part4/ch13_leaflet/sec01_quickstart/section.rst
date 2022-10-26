@@ -42,7 +42,7 @@ pop-up windows, and handling events.
    <tbody>
    <tr>
    <td style="text-align: center; border: none">
-   <iframe src="http://webgis.pub/leaflet_quickstart/example.html" width="616" height="416">
+   <iframe src="./example.html" width="616" height="416">
    </iframe>
    </td>
    </tr>
@@ -270,4 +270,6 @@ Let’s improve our example by using pop-ups instead of alert:
 Try clicking on the map and you will see the coordinates in the pop-up
 window. Check out the complete example:
 
-Show the example
+.. raw:: html
+
+    <a target="_blank" href="./leaflet_quickstart/quickstart.html">Show the example</a>

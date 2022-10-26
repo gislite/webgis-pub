@@ -8,61 +8,20 @@ icon.
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_custom_icons/example.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+        <tbody>
+        <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_custom_icons/example.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_custom_icons/example.html">Show the example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
 Preparing images
 ----------------
@@ -102,61 +61,20 @@ Now it’s easy to put an icon on the map:
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_custom_icons/example-one-icon.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-View this example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+    <tbody>
+    <tr>
+        <td style="text-align: center; border: none">
+            <iframe src="./leaflet_custom_icons/example-one-icon.html" width="616" height="416"></iframe>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center; border: none">
+            <small><a href="./leaflet_custom_icons/example-one-icon.html">View this example</a></small>
+        </td>
+    </tr>
+    </tbody>
+    </table>
 
 Define icon class
 -----------------

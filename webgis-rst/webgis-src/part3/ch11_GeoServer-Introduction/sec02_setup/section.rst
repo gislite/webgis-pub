@@ -94,7 +94,7 @@ Restart tomcat after completion, and the server needs to be restarted
 each time the configuration file is modified.
 
 Download and install GeoServer
-------------------------------
+----------------------------------------
 
 Download address:
 

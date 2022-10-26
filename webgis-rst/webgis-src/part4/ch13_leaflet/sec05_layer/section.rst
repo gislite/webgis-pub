@@ -9,61 +9,16 @@ between different layers on the map.
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_layer_control/example.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+        <tbody>
+        <tr> <td style="text-align: center; border: none">
+                <iframe src="./leaflet_layer_control/example.html" width="616" height="416"></iframe>
+        </td> </tr>
+        <tr> <td style="text-align: center; border: none">
+                <small><a href="./leaflet_layer_control/example.html">Show the example</a></small>
+         </td> </tr>
+        </tbody>
+    </table>
 
 Layer group
 -----------
@@ -112,7 +67,6 @@ Now let’s create the base layer and add the default layer to the map:
 
    var grayscale = L.tileLayer(mapboxUrl, {{id: 'MapID', attribution: mapboxAttribution}}),
    streets   = L.tileLayer(mapboxUrl, {{id: 'MapID', attribution: mapboxAttribution}});
-
    var map = L.map('map', {{
    center: [39.73, -104.99],
    zoom: 10,
@@ -167,4 +121,4 @@ map’s labels gray:
    "Streets": streets
    }};
 
-Now let’s take a separate page View results→
+Now let’s take a separate page View results:  ./leaflet_layer_control/example.html

@@ -1,4 +1,4 @@
-; Author: YU Jinyao .. Title: Introduction and installation of PostGIS
+.. Author: YU Jinyao .. Title: Introduction and installation of PostGIS
 
 Introduction and installation of PostGIS
 ========================================

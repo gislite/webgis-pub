@@ -8,61 +8,14 @@ controls, creates a color interactive US state population density map.
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_choropleth/example.html" width="816" height="516">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table> <tbody>
+        <tr> <td style="text-align: center; border: none">
+                <iframe src="./leaflet_choropleth/example.html" width="816" height="516"></iframe>
+        </td> </tr>
+        <tr> <td style="text-align: center; border: none">
+                <small><a href="./leaflet_choropleth/example.html">Show the example</a></small>
+        </td> </tr>
+    </tbody> </table>
 
 Data source
 -----------
@@ -99,63 +52,17 @@ Let’s display our states data on the map in a custom Mapbox style.
    }}).addTo(map);
    L.geoJson(statesData).addTo(map);
 
-.. raw:: html
-
-   <table>
 
 .. raw:: html
 
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_choropleth/example-basic.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table> <tbody>
+        <tr> <td style="text-align: center; border: none">
+            <iframe src="./leaflet_choropleth/example-basic.html" width="616" height="416"></iframe>
+        </td> </tr>
+        <tr> <td style="text-align: center; border: none">
+                <small><a href="./leaflet_choropleth/example-basic.html">Show the example</a></small>
+        </td> </tr>
+    </tbody> </table>
 
 Adding colors
 -------------
@@ -201,61 +108,19 @@ It looks much better now!
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_choropleth/example-color.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-View this example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+        <tbody>   <tr>
+            <td style="text-align: center; border: none">
+                <iframe src="./leaflet_choropleth/example-color.html" width="616" height="416"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center; border: none">
+                <small><a href="./leaflet_choropleth/example-color.html">View this example</a></small>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
 Adding Interaction
 ------------------
@@ -436,4 +301,4 @@ The CSS style of the control (we also reuse the previously defined
    opacity: 0.7;
    }}
 
-Enjoy results at the top of this page, or on a separate page.
+Enjoy <a href="./leaflet_choropleth/choropleth.html">results</a> at the top of this page, or on a separate page.

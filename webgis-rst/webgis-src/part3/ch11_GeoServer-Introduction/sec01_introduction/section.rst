@@ -1,4 +1,4 @@
-; Author: YU Jinyao .. Title: Introduction to GeoServer
+.. Author: YU Jinyao .. Title: Introduction to GeoServer
 
 Introduction to GeoServer
 =========================

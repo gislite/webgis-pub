@@ -34,15 +34,10 @@ parameters, for example:
 
    https://demo.boundlessgeo.com/geoserver/ows?
 
-.. raw:: html
-
-   <p>
 
 The way to use this in Leaflet’s map is simple:
 
-.. raw:: html
 
-   </p>
 
 ::
 
@@ -78,61 +73,16 @@ default) will be used as a slice to form an overlay.
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_using_wms_tms/wms-example1.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+    <tbody>
+    <tr> <td style="text-align: center; border: none">
+    <iframe src="./leaflet_using_wms_tms/wms-example1.html" width="616" height="416"></iframe>
+    </td> </tr>
+    <tr> <td style="text-align: center; border: none">
+    <small><a href="./leaflet_using_wms_tms/wms-example1.html">Show the example</a> </small>
+    </td> </tr>
+    </tbody>
+    </table>
 
 Or we can try the WMS layer of ``nasa:bluemarble``:
 
@@ -144,61 +94,23 @@ Or we can try the WMS layer of ``nasa:bluemarble``:
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_using_wms_tms/wms-example2.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+    <tbody>
+    <tr>
+    <td style="text-align: center; border: none">
+    <iframe src="./leaflet_using_wms_tms/wms-example2.html"
+    width="616" height="416"></iframe>
+    </td>
+    </tr>
+    <tr>
+    <td style="text-align: center; border: none">
+    <small><a
+    href="./leaflet_using_wms_tms/wms-example2.html">Show the example</a>
+    </small>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 The ``layers`` option is a comma-separated list of layers. If the WMS
 service defines multiple layers, the map can introduce multiple layers
@@ -258,61 +170,17 @@ combine the layers depends on the WMS server.
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_using_wms_tms/wms-example3.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+    <tbody>
+    <tr> <td style="text-align: center; border: none">
+    <iframe src="./leaflet_using_wms_tms/wms-example3.html" width="616" height="416"></iframe>
+    </td> </tr>
+    <tr> <td style="text-align: center; border: none">
+    <small><a href="./leaflet_using_wms_tms/wms-example3.html">Show the example</a>
+    </small>
+    </td> </tr>
+    </tbody>
+    </table>
 
 Information for GIS users of WMS services
 -----------------------------------------
@@ -344,61 +212,20 @@ initializing your map, add it to any WMS layer:
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_using_wms_tms/wms-example-crs.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table>
+    <tbody>
+    <tr>
+    <td style="text-align: center; border: none">
+    <iframe src="./leaflet_using_wms_tms/wms-example-crs.html" width="616" height="416"></iframe>
+    </td>
+    </tr>
+    <tr>
+    <td style="text-align: center; border: none">
+    <small> <a href="./leaflet_using_wms_tms/wms-example-crs.html">Show the example</a> </small>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 TMS in Leaflet
 --------------
@@ -443,61 +270,14 @@ Use the ``tms:true`` option when instantiating a layer as follows:
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_using_wms_tms/wms-example4.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table> <tbody>
+    <tr> <td style="text-align: center; border: none">
+    <iframe src="./leaflet_using_wms_tms/wms-example4.html" width="616" height="416"></iframe>
+    </td> </tr>
+    <tr> <td style="text-align: center; border: none">
+    <small><a href="./leaflet_using_wms_tms/wms-example4.html">Show the example</a> </small>
+    </td> </tr>
+    </tbody> </table>
 
 A new feature of **Leaflet 1.0** is the ability to use ``{{-y}}``
 instead of ``tms: true`` options, for example:

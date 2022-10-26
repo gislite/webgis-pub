@@ -29,7 +29,7 @@ In some special cases, the default layer sorting is not always
 appropriate. We use the following basemap and an example of a label
 layer to explain:
 
-.. raw:: html
+::
 
    <style>
        .tiles img {{
@@ -38,23 +38,24 @@ layer to explain:
        }}
    </style>
 
-.. container:: col-sm-12
 
-   ::
+.. raw:: html
 
-      <div class="col-sm-4">
-          <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img"><br>
-          Basemap without annotation
-      </div>
-      <div class="col-sm-4">
-          <img src="./leaflet_with_map_panes/5.png" class="bordered-img"><br>
-          Transparent label layer
-      </div>
-      <div class="col-sm-4">
-          <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img">
-          <img src="./leaflet_with_map_panes/5.png" style="position:absolute; left:0; top:0;"><br>
-          Label the layer above the basemap
-      </div>
+    <div class="col-sm-12">
+        <div class="col-sm-4">
+            <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img"><br>
+            Basemap without annotation
+        </div>
+        <div class="col-sm-4">
+            <img src="./leaflet_with_map_panes/5.png" class="bordered-img"><br>
+            Transparent label layer
+        </div>
+        <div class="col-sm-4">
+            <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img">
+            <img src="./leaflet_with_map_panes/5.png" style="position:absolute; left:0; top:0;"><br>
+            Label the layer above the basemap
+        </div>
+    </div>
 
 If we add the above basemap and annotation layer to the Leaflet map, any
 polygons or markers will appear above the two layers, but it might be
@@ -63,61 +64,14 @@ this?
 
 .. raw:: html
 
-   <table>
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-.. raw:: html
-
-   <iframe src="./leaflet_with_map_panes/example.html" width="616" height="416">
-
-.. raw:: html
-
-   </iframe>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td style="text-align: center; border: none">
-
-Show the example
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
+    <table> <tbody>
+    <tr> <td style="text-align: center; border: none">
+    <iframe src="./leaflet_with_map_panes/example.html" width="616" height="416"></iframe>
+    </td> </tr>
+    <tr> <td style="text-align: center; border: none">
+    <small><a href="./leaflet_with_map_panes/example.html">Show the example</a></small>
+    </td> </tr>
+    </tbody> </table>
 
 Custom panes
 ------------
