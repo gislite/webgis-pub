@@ -15,10 +15,10 @@ import htmlmin
 from docutils.core import publish_string
 from config import SITE_URL
 
-if os.path.exists('./owg/ms_tmp'):
+if os.path.exists('./_build/ms_tmp'):
     pass
 else:
-    os.makedirs('./owg/ms_tmp')
+    os.makedirs('./_build/ms_tmp')
 
 # import render_jinja
 import helper
