@@ -67,6 +67,7 @@ The structure of the map file, through the object, looks like this
                STYLE-|       |-STYLE              |-STYLE
    </pre>
 
+
 The changes in the documents are as follows:
 
 
@@ -165,8 +166,7 @@ the following code:
 
    EXPRESSION ( '[STATE_FIPS]' eq 'MN' )
 
-This will include a feature only if this value attribute ```` state\_
-FIPS ```` is equal to the string Mn. Logical expressions can be combined
+This will include a feature only if this value attribute ``state_FIPS`` is equal to the string Mn. Logical expressions can be combined
 using conjunctions and separation operators and or. Consider the
 following example:
 

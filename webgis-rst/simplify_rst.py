@@ -9,7 +9,21 @@ else:
     outws.mkdir()
 
 for wfile in inws.rglob('*'):
-    if wfile.name == 'part.rst':
+    if wfile.name == 'index.rst':
+        dst = outws / 'index.rst'
+
+        cnts = open(wfile).readlines()
+        with open(dst,'w') as fo:
+            for cnt in cnts:
+                cnt_strip = cnt.strip()
+                if cnt_strip.startswith('part') and cnt_strip.endswith('part'):
+                    sig = cnt_strip.split('/')[0].split('_')[-1]
+                    print(sig)
+                    fo.write(f'   {sig}\n')
+                else:
+                    fo.write(cnt)
+
+    elif wfile.name == 'part.rst':
         dst = outws / (wfile.parent.name.split('_')[-1] + '.rst')
 
         cnts = open(wfile).readlines()
@@ -18,7 +32,7 @@ for wfile in inws.rglob('*'):
                 cnt_strip = cnt.strip()
                 if cnt_strip.startswith('ch') and cnt_strip.endswith('chapter'):
                     sig = cnt_strip.split('/')[0].split('_')[-1]
-                    print(sig)
+                    # print(sig)
                     fo.write(f'   {sig}\n')
                 else:
                     fo.write(cnt)
@@ -30,7 +44,7 @@ for wfile in inws.rglob('*'):
                 cnt_strip = cnt.strip()
                 if cnt_strip.startswith('sec') and cnt_strip.endswith('section'):
                     sig = wfile.parent.name.split('_')[-1] + '-' + cnt_strip.split('/')[0].split('_')[-1]
-                    print(sig)
+                    # print(sig)
                     fo.write(f'   {sig}\n')
                 else:
                     fo.write(cnt)

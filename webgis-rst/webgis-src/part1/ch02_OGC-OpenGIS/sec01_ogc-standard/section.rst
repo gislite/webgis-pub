@@ -166,13 +166,10 @@ Web Feature Service (WFS) supports users to insert, update, delete, retrieve and
 WFS constructs query conditions through OGC Filter, supports query based on spatial geometric relationship, query based on attribute domain, and of course also includes common query based on spatial relationship and attribute domain. WFS provides the following operations:
 
 - GetCapabitities: Returns service-level metadata, which is a description of service information content and required parameters. 
-- DescribeFeatureType: Generate a Schema to describe the feature types that the WFS implementation can provide. 
- - The Schema description defines how the WFS implementation encodes a feature instance on input and generates a feature instance on output. 
+- DescribeFeatureType: Generate a Schema to describe the feature types that the WFS implementation can provide.  The Schema description defines how the WFS implementation encodes a feature instance on input and generates a feature instance on output. 
 - GetFeature: A data document that conforms to the GML specification can be returned according to the query requirements.
-- LockFeature: When the user requests through Transaction, in order to ensure the consistency of the feature information,
- - That is, when a transaction accesses a data item, other transactions cannot modify the data item and add element locks to the element data.
-- Transaction: Interaction with feature instances. 
- - This operation can not only provide feature reading, but also support feature online editing and transaction processing. The Transaction operation is optional, and the server chooses whether to support this operation according to the nature of the data.
+- LockFeature: When the user requests through Transaction, in order to ensure the consistency of the feature information, That is, when a transaction accesses a data item, other transactions cannot modify the data item and add element locks to the element data.
+- Transaction: Interaction with feature instances.  This operation can not only provide feature reading, but also support feature online editing and transaction processing. The Transaction operation is optional, and the server chooses whether to support this operation according to the nature of the data.
  
 Web Feature Services (WFS) supports insert, update, delete, retrieve, and discover services for geographic features. The service returns GML data based on HTTP client requests.Its basic interfaces are: ``GetCapabilities``, ``DescribeFeatureType``, ``GetFeature``.
 
