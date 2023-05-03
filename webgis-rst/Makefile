@@ -6,6 +6,7 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = webgis-src
+# SOURCEDIR     = xx_rst
 BUILDDIR      = _build
 
 # Put it first so that "make" without argument is like "make help".
