@@ -117,7 +117,7 @@ You can use a coordinate sequence to define a vector symbol or you can
 define a specified XY The ellipse of the radius to define the vector
 symbol.
 
-.. figure:: imgs/image010.jpg
+.. figure:: image010.jpg
    :alt: image10
 
    image10
@@ -143,7 +143,7 @@ the starting coordinates are the same as the ending coordinates):
 In theory, the best way to construct the above symbols is to use a
 square style, which does not need to be so complex.
 
-.. figure:: imgs/image011.jpg
+.. figure:: image011.jpg
    :alt: image11
 
    image11
@@ -189,7 +189,7 @@ Examples of combined use of vector symbols:
 
 The result of the above code is as follows:
 
-.. figure:: imgs/image012.jpg
+.. figure:: image012.jpg
    :alt: image12
 
    image12
@@ -199,7 +199,7 @@ The result of the above code is as follows:
 
 The basic vector symbol consists of a series of points.
 
-.. figure:: imgs/image013.jpg
+.. figure:: image013.jpg
    :alt: image13
 
    image13
@@ -217,7 +217,7 @@ as follows:
      STYLE 2 1 END
    END
 
-.. figure:: imgs/image014.jpg
+.. figure:: image014.jpg
    :alt: image14
 
    image14
@@ -262,14 +262,14 @@ combination line:
 
 The display results are as follows:
 
-.. figure:: imgs/image015.jpg
+.. figure:: image015.jpg
    :alt: image15
 
    image15
 
 Cartoline Line type:
 
-.. figure:: imgs/image016.jpg
+.. figure:: image016.jpg
    :alt: image16
 
    image16
@@ -291,7 +291,7 @@ Where LINEJOINMAXSIZE defines the maximum length for miter type of joins
 As a factor of M to avoid spikes when d (3 means i.e. M = 3 times d)
 Lines are almost parallel:
 
-.. figure:: imgs/image017.jpg
+.. figure:: image017.jpg
    :alt: image17
 
    image17
@@ -332,7 +332,7 @@ The definition of LAYER in Mapfile is as follows (nds up with a 45
 The following example is a combination of the above two, we can make a
 linear pentagram sequence.
 
-.. figure:: imgs/image018.jpg
+.. figure:: image018.jpg
    :alt: image18
 
    image18
@@ -404,7 +404,7 @@ END
 You can use techniques similar to the above to make the following
 symbols. "
 
-.. figure:: imgs/image019.jpg
+.. figure:: image019.jpg
    :alt: image19
 
    image19
@@ -485,42 +485,42 @@ Symbols used
 
 Filling effect of face area
 
-.. figure:: imgs/image020.jpg
+.. figure:: image020.jpg
    :alt: image20
 
    image20
 
-.. figure:: imgs/image021.jpg
+.. figure:: image021.jpg
    :alt: image21
 
    image21
 
-.. figure:: imgs/image022.jpg
+.. figure:: image022.jpg
    :alt: image22
 
    image22
 
-.. figure:: imgs/image023.jpg
+.. figure:: image023.jpg
    :alt: image23
 
    image23
 
-.. figure:: imgs/image024.jpg
+.. figure:: image024.jpg
    :alt: image24
 
    image24
 
-.. figure:: imgs/image025.jpg
+.. figure:: image025.jpg
    :alt: image25
 
    image25
 
-.. figure:: imgs/image026.jpg
+.. figure:: image026.jpg
    :alt: image26
 
    image26
 
-.. figure:: imgs/image027.jpg
+.. figure:: image027.jpg
    :alt: image27
 
    image27
@@ -620,7 +620,7 @@ lower left corner of the Character Map tool window you can see the
 UNICODE character and ASCII text description of the currently selected
 character. As shown below:
 
-.. figure:: imgs/image028.jpg
+.. figure:: image028.jpg
    :alt: image28
 
    image28
