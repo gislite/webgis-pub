@@ -17,11 +17,7 @@ else:
 
 ############################################################
 
-pwd = os.path.abspath(os.path.split(__file__)[0])
-
-src_ws = Path(os.path.join(pwd, 'templates'))
-
-def run_it():
+def run_it(src_ws):
     for wfile in src_ws.rglob('*'):
         if wfile.name == 'script_mapfile_pub.sh':
             os.chdir(wfile.parent)
@@ -34,4 +30,10 @@ def run_it():
 
 
 if __name__ == '__main__':
-    run_it()
+    pwd = os.path.abspath(os.path.split(__file__)[0])
+
+    src_ws = Path(os.path.join(pwd, 'templates'))
+    run_it(src_ws)
+    src_ws = Path(os.path.join(pwd, 'webgis-rst'))
+    run_it(src_ws)
+
