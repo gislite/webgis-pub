@@ -15,7 +15,6 @@ different thematic maps and different application scenarios.
 Define vector layers in Mapfile
 -------------------------------
 
-.. container::
 
 Mapserver can create an image and save it to a local directory, or
 deliver it directly to a web browser on demand (as in this example).
@@ -26,8 +25,7 @@ behind in the page is:
 ::
 
    <img alt="" border="1"
-    src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&layer=world-country&mode=map"
-    />
+    src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&layer=world-country&mode=map" />
 
 Instead of browsing it on the HTML page, you can just enter this URL:
 

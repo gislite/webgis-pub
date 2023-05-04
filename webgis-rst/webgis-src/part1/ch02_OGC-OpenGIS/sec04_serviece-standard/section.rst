@@ -134,12 +134,8 @@ The main operations defined by WPS are GetCapabilities, DescribeProcess, and Exe
 (6) other Web service standards
 ---------------------------------------------------------
 
-- Catalog Service for Web (CSW): Catalog Service is an important technology for sharing geospatial information. CSW supports searching and publishing of geospatial metadata, which allows users to query metadata to discover the geographic data and services they need, and allows providers to publish and update metadata. There are two types of CSW: read-only CSW and transactional CSW.
-Read-only CSW supports operations such as GetCapabilities, DescribeRecord, GetRecords, GetRecordByld, and GetDomain, and only supports metadata query and reading.
-Transactional CSW supports metadata reading and writing, allowing users to publish, edit, and delete metadata through ``transaction`` and ``harvest`` operations (OGC, 2007b). Products such as ArcGIS Geoportal Server provide a CSW interface.
-
-- Open location Services (OpenLS-Open Location Service): this is a series of Web service specifications provided by OGC for location-based services (LBS; see Chapter 5).
-Including yellow pages search, tracking mobile phone users' location and navigation services (OGC, 2004).
+- Catalog Service for Web (CSW): Catalog Service is an important technology for sharing geospatial information. CSW supports searching and publishing of geospatial metadata, which allows users to query metadata to discover the geographic data and services they need, and allows providers to publish and update metadata. There are two types of CSW: read-only CSW and transactional CSW.  Read-only CSW supports operations such as GetCapabilities, DescribeRecord, GetRecords, GetRecordByld, and GetDomain, and only supports metadata query and reading.  Transactional CSW supports metadata reading and writing, allowing users to publish, edit, and delete metadata through ``transaction`` and ``harvest`` operations (OGC, 2007b). Products such as ArcGIS Geoportal Server provide a CSW interface.  
+- Open location Services (OpenLS-Open Location Service): this is a series of Web service specifications provided by OGC for location-based services (LBS; see Chapter 5).  Including yellow pages search, tracking mobile phone users' location and navigation services (OGC, 2004).
 
 - Sensor Network Integration Framework (SWE—Sensor Web Enablement): The SWE framework includes a series of Web service standards: Sensor Observation Service (SOS), Sensor Planning Service (SPS), and Sensor Alarm Service (SAS). These standards enable users to discover and obtain sensor data from sensor networks.
 
@@ -236,8 +232,7 @@ This section describes how to improve the quality of service (quality of service
 
 - Performance: describes the response efficiency of the system, usually measured by response time
 - Scalability: describes whether the system can maintain high performance with an increase in the number of users, usually measured by the number of users it can support at the same time
-- Availability: describes how accessible and operable a system is, usually as a percentage of the system's elapsed time.
-The availability of a system is ``99.99%`` Then the system can only have a maximum of 9 seconds of downtime per day (including accidental downtime caused by failure and artificial downtime required for system maintenance)
+- Availability: describes how accessible and operable a system is, usually as a percentage of the system's elapsed time.  The availability of a system is ``99.99%`` Then the system can only have a maximum of 9 seconds of downtime per day (including accidental downtime caused by failure and artificial downtime required for system maintenance)
 - Security: describes the confidentiality and defense capabilities of the system.
 
 Preprocessing (caching)
@@ -301,9 +296,7 @@ If a GIS server computer becomes unavailable, the Web gateway can assign request
 
 The Web service receives the client's request and returns the result to the client. The data transmission between the two, especially the transmission of geographic data, often requires considerable Internet bandwidth; otherwise, the quality of the Web service will be affected. The following methods can reduce the pressure on Internet bandwidth, which can improve the quality of web services.
 
-- Take advantage of the browser-side cache: the browser-side cache is different from the server-side cache. The server-side cache is mainly used to generate map tiles or other results in advance.
-The browser-side cache mainly refers to those content that has been downloaded to the browser, do not download again.
-The cache content on the browser side is often identified by URL, so the REST-style Web service makes it easy for the system to make full use of the cache on the browser side to improve the performance of the system.
+- Take advantage of the browser-side cache: the browser-side cache is different from the server-side cache. The server-side cache is mainly used to generate map tiles or other results in advance.  The browser-side cache mainly refers to those content that has been downloaded to the browser, do not download again.  The cache content on the browser side is often identified by URL, so the REST-style Web service makes it easy for the system to make full use of the cache on the browser side to improve the performance of the system.
 - Use HTTP compression: enable the compression option of the web server, compress the request and result of the web service, and then transmit it, which can reduce the amount of data transmission by 50% and improve the transmission efficiency of the system.
 - Choose the appropriate data format: for example, in many cases, JS0N and AMF are lighter than XML and easier to transmit than XML.
 

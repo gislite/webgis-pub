@@ -96,7 +96,7 @@ Components: Datum, legend, and scale bar (Reference Map, Legend, Scale Bar)
 
 The following components can be defined in the MapFile file:
 
-.. figure:: imgs/image001.jpg
+.. figure:: image001.jpg
    :alt: image0
 
    image0
@@ -112,7 +112,7 @@ Fig. 1 Eagle eye diagram example
 3. SCALEBAR: The start tag of the Scalebar object. It defines how the
    map scale toolbar is generated.
 
-.. figure:: imgs/image002.jpg
+.. figure:: image002.jpg
    :alt: image1
 
    image1
@@ -239,7 +239,7 @@ allows you to create high-quality images. The MapServer5.0 version and
 its higher versions support AGG. For the same MapFile, you can use
 either AGG for rendering or GD.
 
-.. figure:: imgs/image003.jpg
+.. figure:: image003.jpg
    :alt: image2
 
    image2
@@ -635,7 +635,7 @@ restaurants text.
 
 As shown below:
 
-.. figure:: imgs/image004.jpg
+.. figure:: image004.jpg
    :alt: image3
 
    image3
@@ -803,7 +803,7 @@ PHP, etc.
 
 Example:
 
-.. figure:: imgs/image005.jpg
+.. figure:: image005.jpg
    :alt: image4
 
    image4
@@ -870,7 +870,7 @@ Example 1:
 
 The illustration bar is as follows:
 
-.. figure:: imgs/image006.jpg
+.. figure:: image006.jpg
    :alt: image5
 
    image5
@@ -895,7 +895,7 @@ Example 2:
 
 The illustration bar is as follows:
 
-.. figure:: imgs/image002.jpg
+.. figure:: image002.jpg
    :alt: image6
 
    image6

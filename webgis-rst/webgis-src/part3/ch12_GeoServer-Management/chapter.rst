@@ -26,4 +26,3 @@ in.
    :maxdepth: 2
 
    sec01_getoknow/section
-   sec02_getoknow.rstx/section

@@ -465,7 +465,7 @@ http://mapserver.gis.umn.edu/development/rfc/ms-rfc-4)[.](http://mapserver.gis.u
 
 PROCESSING “RESAMPLE=AVERAGE”
 
-.. figure:: imgs/image007.jpg
+.. figure:: image007.jpg
    :alt: image7
 
    image7
@@ -476,7 +476,7 @@ Outputting to 256 color images (8 bit, such as PNG and GIF):
 
 PROCESSING “DITHER=YES”
 
-.. figure:: imgs/image008.jpg
+.. figure:: image008.jpg
    :alt: image8
 
    image8
@@ -611,7 +611,7 @@ into a single label. For example:
 
 Results:
 
-.. figure:: imgs/image009.jpg
+.. figure:: image009.jpg
    :alt: image9
 
    image9

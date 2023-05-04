@@ -316,12 +316,8 @@ MapFile.
 -  Style Object
 -  Grid Object
 
-.. figure:: zz_fig_obj_rel1.png
-   :alt: Objects and their hierarchical relationships in MapFile; note
-   that some objects are omitted Object for drawing convenience
+.. zz_fig_obj_rel1.png :alt: Objects and their hierarchical relationships in MapFile; note that some objects are omitted Object for drawing convenience
 
-   Objects and their hierarchical relationships in MapFile; note that
-   some objects are omitted Object for drawing convenience
 
 Objects and their hierarchical relationships in MapFile; note that some
 objects are omitted Object for drawing convenience

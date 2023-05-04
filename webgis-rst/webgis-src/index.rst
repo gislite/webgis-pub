@@ -132,7 +132,6 @@ Build under Python 3.7.3 , using the flollowing modules：
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 2
 
    part1/part
    part2/part

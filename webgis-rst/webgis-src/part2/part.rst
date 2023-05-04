@@ -7,7 +7,7 @@ MapServer.
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
+   :numbered: 2
 
    ch03_MapServer-Setup/chapter
    ch04_Using-MapServer/chapter

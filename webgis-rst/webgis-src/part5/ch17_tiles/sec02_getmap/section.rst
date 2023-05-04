@@ -79,7 +79,6 @@ frames.
           </li>
       </ul>
 
-.. container:: clear
 
 parameter
 ---------

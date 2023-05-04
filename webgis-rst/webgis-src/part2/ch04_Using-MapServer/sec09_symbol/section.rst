@@ -12,7 +12,6 @@ surfaces.
 Point
 -----
 
-.. container::
 
 The Mapfile used is:
 
@@ -24,7 +23,6 @@ The Mapfile used is:
 Line fill example
 -----------------
 
-.. container::
 
 The Mapfile used is:
 
@@ -36,7 +34,6 @@ The Mapfile used is:
 Circular fill exampl
 --------------------
 
-.. container::
 
 The Mapfile used is:
 
@@ -51,9 +48,6 @@ River style
 .. raw:: html
 
    <p align="center">
-
-.. raw:: html
-
    </p>
 
 The Mapfile used is:
@@ -68,7 +62,4 @@ The Mapfile used is:
 .. raw:: html
 
    <p align="center">
-
-.. raw:: html
-
    </p>

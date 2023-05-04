@@ -21,13 +21,9 @@ Instruction of Beginning MapServer
 
 The book’s URL: https://www.apress.com/cn/book/9781590594902 .
 
-Introduction on Douban Reading: https://book.douban.com/subject/1756263/
-.
+Introduction on Douban Reading: https://book.douban.com/subject/1756263/ .
 
-.. figure:: ./book_begms.jpg
-   :alt: Beginning MapServer Cover
-
-   Beginning MapServer Cover
+.. ./book_begms.jpg Beginning MapServer Cover
 
 The code for this book is hosted on Github at
 https://github.com/Apress/beg-mapserver< /a> . The data and code used in

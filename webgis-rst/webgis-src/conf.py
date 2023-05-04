@@ -9,7 +9,7 @@
 project = 'Open Source WebGIS'
 copyright = '2022, BU Kun'
 author = 'BU Kun'
-release = 'v 0.1'
+release = 'v 0.11'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

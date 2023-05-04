@@ -183,6 +183,7 @@ WFS constructs query conditions through OGC Filter, supports query based on spat
 On the Web, WFS requests are not implemented in SQL, but through Filter XML, which is more scalable. 
 
 .. ToDo: A bit of a problem. More than just queries. And processing. This is only explained from the operation, not comprehensive. 
+
 What WFS returns is the result set of the query, to a certain extent, it is different from the "data representation" of WMS, The result set of WFS is a result set defined and constrained by a complete Schema, with GML as the carrier. This result set is similar to the data table of the query results of the desktop program.
 
 Web Feature Services (WFS)

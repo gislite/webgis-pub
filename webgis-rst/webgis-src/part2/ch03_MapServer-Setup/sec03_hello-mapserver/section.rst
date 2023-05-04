@@ -159,7 +159,6 @@ achieve this function.
 Let’s take a look at the basic usage of MapServer without using any GIS
 data. The following figure shows the effect:
 
-.. container::
 
 The picture is shown above, and the code is:
 
