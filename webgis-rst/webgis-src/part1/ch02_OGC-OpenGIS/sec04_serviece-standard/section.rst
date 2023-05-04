@@ -180,7 +180,7 @@ The World Health Organization (WHO) publishes the latest epidemics and infectiou
 The U.S. government posted thousands of RSS; using RSS on its e-government portal (http://USA.gov), and the Federal Emergency Management Agency released news and pictures related to emergencies.
 The U. S. Census Bureau releases news such as current demographics; the Centers for Disease Control and Prevention releases the latest reports on disease morbidity and mortality.
 
-![The US government publishes thousands of RSS on its e-government portal (http://USA.gov)](imgvze39.jpeg) 
+![The US government publishes thousands of RSS on its e-government portal (http://USA.gov) ](imgvze39.jpeg) 
 
 With the popularity of RSS, people want to see not only what happened, but also where it happened.
 GeoRSS is a standard (OGC,2006c) for adding location information to RSS and other XML.
