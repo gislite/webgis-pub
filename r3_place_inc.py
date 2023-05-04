@@ -1,6 +1,6 @@
 from pathlib import Path
 
-inws = Path('webgis-src/part2')
+inws = Path('webgis-rst/webgis-src/part2')
 
 for wfile in inws.rglob('*.rst'):
     print(wfile)
