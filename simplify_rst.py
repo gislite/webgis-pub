@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 inws = Path('webgis-rst/webgis-src')
-outws = Path('webgis-pub/xx_rst')
+outws = Path('_pub/xx_rst')
 if outws.exists():
     pass
 else:
