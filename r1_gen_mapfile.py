@@ -10,10 +10,10 @@ import subprocess
 
 from pathlib import Path
 
-if os.path.exists('./owg/ms_tmp'):
-    pass
-else:
-    os.makedirs('./owg/ms_tmp')
+# if os.path.exists('./owg/ms_tmp'):
+#     pass
+# else:
+#     os.makedirs('./owg/ms_tmp')
 
 ############################################################
 
