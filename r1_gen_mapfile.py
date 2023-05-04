@@ -32,8 +32,8 @@ def run_it(src_ws):
 if __name__ == '__main__':
     pwd = os.path.abspath(os.path.split(__file__)[0])
 
-    src_ws = Path(os.path.join(pwd, 'templates'))
-    run_it(src_ws)
+    # src_ws = Path(os.path.join(pwd, 'templates'))
+    # run_it(src_ws)
     src_ws = Path(os.path.join(pwd, 'webgis-rst'))
     run_it(src_ws)
 
