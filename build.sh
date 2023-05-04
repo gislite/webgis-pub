@@ -1,6 +1,6 @@
 # python3 r1_gen_mapfile.py
 # python3 r2_place_inc.py
-# python3 r3_pub_rst.py
+python3 r3_pub_rst.py
 cd _pub
 . /xpy/bin/activate && make html
 sudo rsync -avp _build/html/ /owg/

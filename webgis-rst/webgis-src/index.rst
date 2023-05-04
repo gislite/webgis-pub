@@ -12,6 +12,8 @@ Use Open Source GIS “Geo for All” is the Open Source Geospatial Foundation�
 for Educational outreach and works in close collaboration with ICA, ISPRS, UN-GIS, AGILE, UCGIS ,
 IGU and other partners worldwide in our mission for making geospatial education and opportunities accessible to all.
 
+.. image:: ./webgis-logo.png
+
 
 Introduction
 ===================================
@@ -26,6 +28,8 @@ MapServer
 
 .. <img src="/images/logo_mapserver.png" style="float: right; width:100px; margin:10px;"/>
 .. {# MapServer可以看作是两个独立模块的统称：MapServer CGI模块和MapScript模块。  #}
+
+.. image:: ./logo_mapserver.png
 
 MapServer was originally an open source WebGIS software developed by the University of Minnesota and the US Space Agency (NASA).
 MapServer itself is a program written in C language, providing two development modes, one based on CGI and the other in MapScript mode;
@@ -42,6 +46,12 @@ MapProxy
 
 .. <img src="/images/logo_mapproxy.png" style="float: right; width:200px; margin:10px;"/>
 
+
+
+.. image:: ./logo_mapproxy.png
+
+
+
 MapProxy is the Swiss Army Knife for WMS web map services and slice service providers. It caches, accelerates, and converts data services for existing services to any OGC-compliant desktop and web client. MapProxy is flexible to develop and easy to integrate with the Apache environment. MapProxy can also be used as a standalone service. This is the easiest way for new users.
 The MapProxy example is a basic WMS slice client. It shows the various layers of the configuration. It doesn't have the complex features of changing projections, but it's enough to verify that the service is working.
 
@@ -51,6 +61,9 @@ LeafletJS
 
 
 .. <img src="/images/logo_leaflet.png" style="float: right; width:200px;margin:10px;"/>
+
+
+.. image:: ./logo_leaflet.png
 
 Leaflet is a modern, open-source JavaScript library developed for building mobile-friendly interactive maps. It was developed by Vladimir Agafonkin, a team of professional contributors, with a small amount of code, but it has most of the features developers develop online maps. The Leaflet design adheres to the idea of simplicity, high performance and usability, and operates efficiently on all major desktop and mobile platforms.
 The advantages of HTML5 and CSS3 are exploited in modern browsers, while old browser access is also supported.
@@ -62,6 +75,8 @@ OpenLayers
 
 
 .. <img src="/images/logo_openlayers.png" style="float: right;width:200px;margin:10px;"/>
+
+.. image:: ./logo_openlayers.png
 
 OpenLayers is a JavaScript package for developing WebGIS clients.
 Sources supported by OpenLayers include Google Maps, Yahoo, Map, Microsoft Virtual Earth, etc.
@@ -80,6 +95,7 @@ Cesium
 .. <img src="/images/logo_cesium.png" style="float: right;width:200px;margin:10px;"/>
 
 
+.. image:: ./logo_cesium.png
 
 WebGL-based front-end 3D JavaScript class library. Cesium launched the 3D Tiles data specification around March 2016, providing LOD capabilities on a glTF basis. Positioning is massive 3D model data in the Web environment.
 Although the current 3D Tiles is still in the Beta stage, there are quite a few flaws.
@@ -98,6 +114,9 @@ Wang Juanle
 Institute of Geographic Sciences and Natural Resources Research, Chinese Academy of Sciences. Ph.D, Research Professorship
 
 Director of World Data System (WDS) for Renewable Resources and Environment
+
+
+.. image:: ./authors.jpg
 
 - The development of this new website is to promote the use of open source WebGIS;
 - The Chinese version of this tutorial is maintained by OSGeo China Center - Open Geospatial Laboratory;
