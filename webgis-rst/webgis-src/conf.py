@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Open Source WebGIS'
-copyright = '2022, BU Kun'
-author = 'BU Kun'
+copyright = 'Since 2020'
+author = 'gislite'
 release = 'v 0.11'
 
 # -- General configuration ---------------------------------------------------
