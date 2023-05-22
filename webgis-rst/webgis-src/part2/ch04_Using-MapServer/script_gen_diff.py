@@ -5,7 +5,7 @@
 '''
 import os
 import datetime
-
+import difflib
 from difflib import HtmlDiff
 
 tmpl = '''<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -58,9 +58,50 @@ def diff_it(infile1, infile2):
         fo.write(aa)
         # fo.write('''</body></html>''')
 
+def _read_file( file):
+    """
+    读取文件内容，以列表形式返回
+    :param file: 文件路径
+    :return:
+    """
+    try:
+        with open(file, "rb") as fp:
+            # 二进制方式读取文件内容，并转换为str类型
+            lines = fp.read().decode('utf-8')
+            # 按行进行分割
+            text = lines.splitlines()
+            # print text
+            return text
+    except Exception as e:
+        print("ERROR: %s" % str(e))
+
+
+def compare_file( file1, file2):
+    """
+    比较文件，生成html格式
+    :param file1: 第1个文件路径
+    :param file2: 第2个文件路径
+    :param out_file: 比较结果文件路径
+    :return:
+    """
+
+    sig1 = os.path.splitext(file1)[0].split('_')[-1]
+    sig2 = os.path.splitext(file2)[0].split('_')[-1]
+    out_file = 'yy_diff_{}_{}.html'.format(sig1, sig2)
+ 
+    file1_content = _read_file(file1)
+    file2_content = _read_file(file2)
+
+    compare = difflib.HtmlDiff()
+    compare_result = compare.make_file(file1_content, file2_content)
+    with open(out_file, 'w') as fp:
+        fp.writelines(compare_result)
 
 if __name__ == '__main__':
     diff_it('mfa2.map', 'mfa1.map')
+    compare_file('mfa2.map', 'mfa1.map')
+
+
     diff_it('mfa3.map', 'mfa2.map')
     diff_it('mfa4.map', 'mfa3.map')
     diff_it('mfa5.map', 'mfa4.map')
