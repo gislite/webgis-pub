@@ -16,7 +16,7 @@ The MapScript module is used as an extension to PHP and is placed in the extensi
 Then, the programmer can use PHP to flexibly select the MapFile API to modify the MapFile file on the server side; it is not as rigid as the MapServer CGI module.
 At the same time, combined with PHP support for many databases - non-spatial databases, such as Oracle, Sybase, MySQL, etc, it is easy to integrate spatial data and non-spatial data in WebGIS.
 
-Languages ​​supported by MapScript: PHP, Perl, Python, Java, Tcl, C#, etc.
+Languages supported by MapScript: PHP, Perl, Python, Java, Tcl, C#, etc.
 
 ## Mapfile Basic Requirements
 
@@ -130,7 +130,8 @@ An example of developing a WebGIS using the MapServer CGI module is provided in 
 
 
 Programming with CGI modules takes advantage of CGI variables and its replacement variables, while CGI modules are compiled programs (mapserv.exe);
-It is difficult to implement more complex dynamic interactions using CGI modules. Complex WebGIS functionality is made easier with other server-side scripting languages ​​and MapScript.
+It is difficult to implement more complex dynamic interactions using CGI modules.
+Complex WebGIS functionality is made easier with other server-side scripting languages and MapScript.
 
 Here we will introduce the use of MapScript module with the popular server-side scripting language PHP as an example.
 PHP is installed in the Web Server as a CGI program. The MapScript module is placed under the extensions of the PHP installation path. The php.int file is configured to support the use of the MapScript module to complete the PHP/Mapscript installation.

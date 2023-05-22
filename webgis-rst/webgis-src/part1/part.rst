@@ -1,5 +1,5 @@
 =====================================
-Part1 Fundation
+WebGIS Fundation
 =====================================
 
 Document for WebGIS fundation.

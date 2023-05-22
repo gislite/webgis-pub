@@ -10,7 +10,7 @@ An example of this section is from "Beginning MapServer".
 ## Instruction of Beginning MapServer
 
 > Beginning MapServer: Open source GIS development is the first book of its kind. It provides a comprehensive introduction to MapServer, a development platform that integrates map mapping technology into Internet applications.
-> You will learn how to build and extend dynamic applications using popular languages ​​such as PHP, Perl, and Python.
+> You will learn how to build and extend dynamic applications using popular languages such as PHP, Perl, and Python.
 > After you have detailed the installation and configuration, you will discover the basic Mapserver themes and examples. You will also learn about advanced MapServer features.
 > How to query dynamic data and incorporate it into your application. This book ends with the creation of an actual map application.
 

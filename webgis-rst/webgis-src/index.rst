@@ -1,7 +1,3 @@
-.. WebGISPub documentation master file, created by
-   sphinx-quickstart on Sat Oct  1 13:10:29 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 =====================================
 Open Source WebGIS online Tutorial
@@ -9,8 +5,10 @@ Open Source WebGIS online Tutorial
 
 Making geospatial education and opportunities accessible to all.
 Use Open Source GIS “Geo for All” is the Open Source Geospatial Foundation’s Committee
-for Educational outreach and works in close collaboration with ICA, ISPRS, UN-GIS, AGILE, UCGIS ,
-IGU and other partners worldwide in our mission for making geospatial education and opportunities accessible to all.
+for Educational outreach and works in close collaboration with ICA,
+ISPRS, UN-GIS, AGILE, UCGIS ,
+IGU and other partners worldwide in our mission for making geospatial education
+and opportunities accessible to all.
 
 .. image:: ./webgis-logo.png
 
@@ -18,8 +16,14 @@ IGU and other partners worldwide in our mission for making geospatial education 
 Introduction
 ===================================
 
-The Open Source WebGIS Tutorial Website was created by the two authors based on their practical work experience in the process of cooperation. Open-source WebGIS has many meanings and skills for GIS technology and data sharing.
-As an online tutorial of open source GIS, the design of this website uses examples that can be accessed and operated online to facilitate users to understand the principles and technologies of WebGIS. In addition, it also explains some principles and background of WebGIS, which can be used as a general WebGIS tutorial.
+The Open Source WebGIS Tutorial Website was created by the two authors
+based on their practical work experience in the process of cooperation.
+Open-source WebGIS has many meanings and skills for GIS technology and data sharing.
+As an online tutorial of open source GIS, the design of this website uses examples
+that can be accessed and operated online to facilitate users
+to understand the principles and technologies of WebGIS.
+In addition, it also explains some principles and background of WebGIS,
+which can be used as a general WebGIS tutorial.
 
 
 
@@ -31,15 +35,17 @@ MapServer
 
 .. image:: ./logo_mapserver.png
 
-MapServer was originally an open source WebGIS software developed by the University of Minnesota and the US Space Agency (NASA).
-MapServer itself is a program written in C language, providing two development modes, one based on CGI and the other in MapScript mode;
+MapServer was originally an open source WebGIS software developed
+by the University of Minnesota and the US Space Agency (NASA).
+MapServer itself is a program written in C language, providing two development modes,
+one based on CGI and the other in MapScript mode;
 You can use any module on the server-side to write a WebGIS program.
 MapServer as a WebGIS solution is object-based, and the basic configuration files The API organization of the MapFile and MapScript modules is object-based.
 MapServer supports OGC's WMS/WFS service specification by implementing several standards of OGC, supporting distributed access and interoperability.
 MapServer is a WebGIS platform developed based on the fat server/thin client mode to read geographic data.
 The GD library is used to render the JPeg/PNG/GIF format image and then sent back to the client browser.
 MapServer supports multiple platforms such as Windows, UNIX, and Linux.
-Languages ​​supported by MapScript include Python, PHP, Perl, Java, Tcl, C#, and more.
+Languages supported by MapScript include Python, PHP, Perl, Java, Tcl, C#, and more.
 
 MapProxy
 ---------------------------------------------
