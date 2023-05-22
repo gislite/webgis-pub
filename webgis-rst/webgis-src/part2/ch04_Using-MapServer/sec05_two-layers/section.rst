@@ -74,7 +74,7 @@ The structure of MapFile looks like this:
 
 Compared to the previous Mapfile, the changes are as follows:
 
-`Open the file <./diff_mfa2_mfa1.html>`_
+`Open the file:diff_mfa2_mfa1.html <./diff_mfa2_mfa1.html>`_
 
 .. aa literalinclude:: ./xx_diff_mfa2_mfa1.htmp
 

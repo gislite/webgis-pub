@@ -67,7 +67,7 @@ The MapFile structure, by object, looks like this:
 
 The changes in the documents are as follows:
 
-`Open the file <./diff_mfa4_mfa3.html>`_
+`Open the file:diff_mfa4_mfa3.html <./diff_mfa4_mfa3.html>`_
 
 .. ./xx_diff_mfa4_mfa3.htmp
 
@@ -165,7 +165,7 @@ label text is larger than the marked polygon). This feature is done
 through the addition of MS RFC 81: offset labels with leaders. This
 feature is for polygon annotations only.
 
-`Open the file <./diff_mfs8_mfs2.html>`_
+`Open the file:diff_mfs8_mfs2.html <./diff_mfs8_mfs2.html>`_
 
 .. ./xx_diff_mfs8_mfs2.htmp
 

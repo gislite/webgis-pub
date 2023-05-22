@@ -60,7 +60,7 @@ The structure of mapfile, through objects, looks like this:
 
 The modifications are as follows:
 
-`Open the file <./diff_mfa5_mfa4.html>`_
+`Open the file:diff_mfa5_mfa4.html <./diff_mfa5_mfa4.html>`_
 
 .. aa literalinclude:: ./xx_diff_mfa5_mfa4.htmp
 

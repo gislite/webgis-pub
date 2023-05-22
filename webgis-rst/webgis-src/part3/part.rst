@@ -1,5 +1,5 @@
 =====================================
-Part3 GeoServer
+Part 3 GeoServer
 =====================================
 
 GeoServer for WebGIS.

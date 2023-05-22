@@ -71,7 +71,7 @@ The structure of the map file, through the object, looks like this
 The changes in the documents are as follows:
 
 
-`Open the file <./diff_mfa3_mfa2.html>`_
+`Open the file:diff_mfa3_mfa2.html <./diff_mfa3_mfa2.html>`_
 
 .. aa literalinclude:: ./xx_diff_mfa3_mfa2.htmp
 

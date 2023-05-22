@@ -58,7 +58,7 @@ Code modification
 Compared with the previously released image map, the code changes are as
 follows:
 
-`Open the file <./diff_mfd8_mfa5.html>`_
+`Open the file:diff_mfd8_mfa5.html <./diff_mfd8_mfa5.html>`_
 
 .. aa literalinclude:: ./xx_diff_mfd8_mfa5.htmp
 
