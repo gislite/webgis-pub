@@ -60,9 +60,10 @@ The structure of mapfile, through objects, looks like this:
 
 The modifications are as follows:
 
+`Open the file <./diff_mfa5_mfa4.html>`_
 
-.. literalinclude:: ./xx_diff_mfa5_mfa4.htmp
-   :lineno-start: 1
+.. aa literalinclude:: ./xx_diff_mfa5_mfa4.htmp
+
 
 
 When you are in MapFile , you will see that the new layer ``"modis"`` is

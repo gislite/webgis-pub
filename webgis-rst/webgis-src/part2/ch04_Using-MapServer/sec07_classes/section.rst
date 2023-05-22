@@ -39,7 +39,7 @@ or:
 
 .. raw:: html
 
-    <img class="img_border" src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa3.map&layer=states_poly&layer=states_line&mode=map" />
+   <img class="img_border" src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa3.map&layer=states_poly&layer=states_line&mode=map" />
 
 
 Map file
@@ -71,8 +71,10 @@ The structure of the map file, through the object, looks like this
 The changes in the documents are as follows:
 
 
-.. literalinclude:: ./xx_diff_mfa3_mfa2.htmp
-   :lineno-start: 1
+`Open the file <./diff_mfa3_mfa2.html>`_
+
+.. aa literalinclude:: ./xx_diff_mfa3_mfa2.htmp
+
 
 
 Attribute description in Mapfile

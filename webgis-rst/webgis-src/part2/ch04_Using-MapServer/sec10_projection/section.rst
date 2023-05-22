@@ -36,8 +36,10 @@ example:
 The changes in the documents are as follows:
 
 
-.. literalinclude:: ./xx_diff_mfa6_mfa5.htmp
-   :lineno-start: 1
+`Open the file: diff_mfa6_mfa5.html <./diff_mfa6_mfa5.html>`_
+
+.. ./xx_diff_mfa6_mfa5.htmp
+
 
 
 The first thing you will notice is that the MapFile is the original

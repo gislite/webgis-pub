@@ -6,10 +6,9 @@ Static map with two layers
 View examples
 -------------
 
-.. raw:: html
 
-	<img  class="img_border"
-	src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa2.map&layer=world-country&layer=country-line&mode=map"/>
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa2.map&layer=world-country&layer=country-line&mode=map
+
 
 .. raw:: html
 
@@ -75,9 +74,10 @@ The structure of MapFile looks like this:
 
 Compared to the previous Mapfile, the changes are as follows:
 
+`Open the file <./diff_mfa2_mfa1.html>`_
 
-.. literalinclude:: ./xx_diff_mfa2_mfa1.htmp
-   :lineno-start: 1
+.. aa literalinclude:: ./xx_diff_mfa2_mfa1.htmp
+
 
 
 Here, the original layer is divided into two layers. The first layer is

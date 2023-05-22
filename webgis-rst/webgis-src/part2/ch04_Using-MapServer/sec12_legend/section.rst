@@ -8,13 +8,7 @@ The map legend of MapServer can be added to or separated from the map.
 Effect
 ------
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa9.map&layer=states&layer=states_label&layer=topo&mode=map
 
 Key code
 --------
