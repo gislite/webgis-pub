@@ -4,6 +4,8 @@ Use GetMap to generate slices
 
 Here to see the basic principles of map tiles.
 
+
+
 Show map slices using an HTML table
 =======================================
 
@@ -29,6 +31,22 @@ placed in table cells in the appropriate locations.
         <td width="200">
             <img src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=80,-40,140,10&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=">
         </td>
+        </tr>
+    </table>
+
+
+The parameters passed to MapServer list in the following table.
+
+.. raw:: html
+
+    <table class="table table-bordered table-condensed" style="width: 420px">
+        <tr>
+            <td width="200"> BBOX=20,10,80,60 </td>
+            <td width="200"> BBOX=80,10,140,60 </td>
+        </tr>
+        <tr>
+            <td width="200"> BBOX=20,-40,80,10 </td>
+            <td width="200"> BBOX=80,-40,140,10 </td>
         </tr>
     </table>
 
@@ -73,20 +91,4 @@ frames.
 Here show the different result.
 
 
-parameters
-=======================================
 
-The parameters passed to MapServer list in the following table.
-
-.. raw:: html
-
-    <table class="table table-bordered table-condensed" style="width: 420px">
-        <tr>
-            <td width="200"> BBOX=20,10,80,60 </td>
-            <td width="200"> BBOX=80,10,140,60 </td>
-        </tr>
-        <tr>
-            <td width="200"> BBOX=20,-40,80,10 </td>
-            <td width="200"> BBOX=80,-40,140,10 </td>
-        </tr>
-    </table>
