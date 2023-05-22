@@ -1,0 +1,142 @@
+MAP
+    NAME "EX1.8_"
+    EXTENT 201621.496941 -294488.285333 1425518.020722 498254.511514
+    SIZE 400 300
+    IMAGECOLOR 255 255 255
+    SHAPEPATH "/gdata/data"
+    SYMBOLSET "../symbols/symbols35.sym"
+    FONTSET "../fonts/fonts.list"
+    IMAGETYPE "PNG24"
+    OUTPUTFORMAT
+        NAME "png"
+        DRIVER "GD/PNG"
+        MIMETYPE "image/png"
+        IMAGEMODE PC256
+        EXTENSION "png"
+    END
+    OUTPUTFORMAT
+        NAME "png24"
+        DRIVER "GD/PNG"
+        MIMETYPE "image/png"
+        IMAGEMODE RGBA
+        EXTENSION "png"
+    END
+    OUTPUTFORMAT
+        NAME "GTiff"
+        DRIVER "GDAL/GTiff"
+        MIMETYPE "image/tiff"
+        IMAGEMODE RGB
+        EXTENSION "tif"
+    END
+    OUTPUTFORMAT
+        NAME "AGG"
+        DRIVER "AGG/PNG"
+        IMAGEMODE RGB
+    END
+    OUTPUTFORMAT
+        NAME "AGGA"
+        DRIVER "AGG/PNG"
+        IMAGEMODE RGBA
+    END
+    OUTPUTFORMAT
+        NAME "AGGJ"
+        DRIVER "AGG/JPEG"
+        IMAGEMODE RGB
+    END
+    WEB
+        IMAGEPATH "/ms4w/tmp/ms_tmp/"
+        IMAGEURL "/ms_tmp/"
+    END
+    PROJECTION
+        "init=epsg:2163"
+    END
+    LAYER
+        NAME "states"
+        DATA "states_ugl"
+        STATUS OFF
+        TYPE POLYGON
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASSITEM "CLASS"
+        CLASS
+            EXPRESSION "land"
+            STYLE
+                SYMBOL 0
+                COLOR 232 232 232
+            END
+        END
+    END
+    LAYER
+        NAME "modis"
+        DATA "raster/mod09a12003161_ugl_ll_8bit.tif"
+        STATUS OFF
+        TYPE RASTER
+        PROCESSING "BANDS=1,2,3"
+        OFFSITE 71 74 65
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "modis_jpl"
+        TYPE RASTER
+        OFFSITE 0 0 0
+        STATUS OFF
+        CONNECTIONTYPE WMS
+        CONNECTION "http://wms.jpl.nasa.gov/wms.cgi?"
+        METADATA
+            "wms_srs" "EPSG:4326"
+            "wms_name" "modis"
+            "wms_server_version" "1.1.1"
+            "wms_format" "image/jpeg"
+        END
+        PROJECTION
+            "init=epsg:4326"
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "states_ugl"
+        STATUS OFF
+        TYPE LINE
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASSITEM "CLASS"
+        CLASS
+            EXPRESSION "land"
+            STYLE
+                COLOR 32 32 32
+            END
+        END
+    END
+    LAYER
+        NAME "states"
+        DATA "states_ugl"
+        STATUS OFF
+        TYPE POLYGON
+        PROJECTION
+            "init=epsg:4326"
+        END
+        CLASSITEM "CLASS"
+        LABELITEM "STATE"
+        CLASS
+            EXPRESSION "land"
+            STYLE
+                COLOR -1 -1 -1
+            END
+            LABEL
+                COLOR 255 255 255
+                TYPE TRUETYPE
+                FONT "arial-bold"
+                SIZE 12
+                ANTIALIAS TRUE
+                POSITION CL
+                PARTIALS FALSE
+                MINDISTANCE 300
+                BUFFER 4
+            END
+        END
+    END
+END
