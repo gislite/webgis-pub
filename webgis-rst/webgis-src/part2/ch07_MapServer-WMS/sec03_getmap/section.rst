@@ -53,11 +53,18 @@ The first is Mapfile:
 Compared to the previous ``mfa1.map``:
 
 
-.. literalinclude:: ./xx_diff_mfb1_mfa1.htmp
-   :lineno-start: 1
+
+`diff_mfb1_mfa1.html <diff_mfb1_mfa1.html>`_
+
 
 
 This Mapfile is configured with the WMS service. View function:
+
+`Open a link <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_ 
+   
+   
+
+
 
 Open a link
 
@@ -66,7 +73,12 @@ View the map
 
 Here, use the ``map`` mode of MapServer to view.
 
-View the map
+
+.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&layer=states&mode=map
+
+   View the map
+
+
 
 Configure with GetMap
 ---------------------
@@ -98,7 +110,12 @@ set, the access will appear:
    msWMSLoadGetMapParams(): WMS server error. Cannot set new CRS on a map that doesn't have any projection set. Please make sure your mapfile has a projection defined at the top level.
    </ServiceException></ServiceExceptionReport>
 
-Click to view
+
+.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
+
+   Click to view
+
+
 
 Correct access
 ~~~~~~~~~~~~~~
@@ -108,7 +125,13 @@ parameters passed to the server graph in URL.
 
 It looks like ``GETMAP`` is similar to MapServer’s ``mode=map``.
 
-Use GetMap
+.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
+
+
+
+`Use GetMap <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_
+
+
 
 Note：
 
@@ -125,7 +148,14 @@ The range used above is consistent with the range of the entire data,
 and the results look no different. Let’s zoom out to get a section of
 the map.
 
-Get a partial map with GetMap
+
+.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
+
+
+
+`Get a partial map with GetMap <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_
+
+
 
 According to the description, the parameter ``CRS = EPSG: 4326`` can
 also be used. But I didn’t succeed. You may need to configure mapfile.
