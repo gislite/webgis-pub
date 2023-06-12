@@ -12,6 +12,7 @@ surfaces.
 Point
 -----
 
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfy3.map&layer=world-country&layer=world-city&mode=map
 
 The Mapfile used is:
 
@@ -22,6 +23,8 @@ The Mapfile used is:
 
 Line fill example
 -----------------
+
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfu1.map&layer=world-country&mode=map
 
 
 The Mapfile used is:
@@ -34,6 +37,7 @@ The Mapfile used is:
 Circular fill exampl
 --------------------
 
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfu2.map&layer=world-country&mode=map
 
 The Mapfile used is:
 
@@ -45,10 +49,8 @@ The Mapfile used is:
 River style
 -----------
 
-.. raw:: html
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfmr.map&layer=wroads&mode=map
 
-   <p align="center">
-   </p>
 
 The Mapfile used is:
 
@@ -59,7 +61,4 @@ The Mapfile used is:
 
 ``GepMap`` can be further used to get the effect of the magnification:
 
-.. raw:: html
-
-   <p align="center">
-   </p>
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfmr.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=wroads&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=500&height=300&styles=

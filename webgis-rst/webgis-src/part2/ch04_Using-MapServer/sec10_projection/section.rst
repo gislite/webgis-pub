@@ -6,13 +6,7 @@ Define projection and extent
 View examples
 -------------
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa6.map&layer=topo&mode=map
 
 This map is clearly a region from the one shown earlier, but it doesn’t
 look the same. This map uses another map projection.

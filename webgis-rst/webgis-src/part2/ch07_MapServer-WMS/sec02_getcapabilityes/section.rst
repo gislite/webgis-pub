@@ -103,6 +103,7 @@ View the map
 MapServer supports returning maps from the beginning, and you can use
 the ``mode=map`` Parameters.
 
-.. raw:: html
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&layer=states&mode=map
 
-   <!--[view the map](http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&layer=states&mode=map)-->
+
+
