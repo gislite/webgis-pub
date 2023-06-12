@@ -8,13 +8,13 @@ Effect after direct addition
 
 |image0|
 
-Use Processing
---------------
+Use ``Processing``
+---------------------------------------------
 
 |image1|
 
-Use CLASS
----------
+Use ``CLASS``
+-------------------------------------
 
 |image2|
 

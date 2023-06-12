@@ -37,16 +37,10 @@ The image below is an example, drawn on a map with latitude and
 longitude lines, with the longitude and latitude of the longitude lines
 drawn to the ends of the line.
 
-.. raw:: html
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfd8.map&layer=states&layer=states_line&layer=states_label&layer=topo&layer=grid&mode=map
 
-   <p align="center">
-
-.. raw:: html
-
-   </p>
 
 Here is its Mapfile :
-
 
 .. literalinclude:: ./mfd8.map
    :lineno-start: 1

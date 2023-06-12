@@ -10,9 +10,7 @@ dimensions. It provides the use of bitmapped and TrueType fonts.
 View examples
 -------------
 
-.. raw:: html
-
-	<img class="img_border" src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa4.map&layer=states_poly&layer=states_line&mode=map" />
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa4.map&layer=states_poly&layer=states_line&mode=map
 
 
 MapServer has a very flexible annotation engine. It supports local
@@ -156,6 +154,8 @@ Automatic optimization of annotations
 To prevent the map from looking cluttered, MapServer optimizes the
 labeling according to the scale of the data.
 
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfs2.map&layer=states_poly&layer=states_line&mode=map
+
 Annotation processing
 ---------------------
 
@@ -164,6 +164,8 @@ functions that are problematic in the label space (usually when the
 label text is larger than the marked polygon). This feature is done
 through the addition of MS RFC 81: offset labels with leaders. This
 feature is for polygon annotations only.
+
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfs8.map&layer=states_poly&layer=states_line&mode=map
 
 `Open the file:diff_mfs8_mfs2.html <./diff_mfs8_mfs2.html>`_
 

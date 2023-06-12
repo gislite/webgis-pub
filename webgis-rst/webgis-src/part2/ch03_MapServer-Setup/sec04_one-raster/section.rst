@@ -38,3 +38,7 @@ of the spatial dataset. The initial map range is determined by the
 coordinates of the specified southwest and northeast corners.
 
 Here is the effect:
+
+
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mf3t.map&layer=topo&mode=map
+

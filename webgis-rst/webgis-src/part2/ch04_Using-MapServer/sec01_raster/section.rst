@@ -44,9 +44,7 @@ Annotated Mapfile
 
 The structure of mapfile, through objects, looks like this:
 
-.. raw:: html
-
-   <pre>
+::
 
                                                   MAP
                   LAYER #1-------------LAYER #2----|----LAYER #3--------LAYER #4
@@ -56,7 +54,7 @@ The structure of mapfile, through objects, looks like this:
                 |   |                                     |                 |
           STYLE-|   |-STYLE                               |-STYLE     STYLE-|-LABEL
 
-   </pre>
+
 
 The modifications are as follows:
 
@@ -174,10 +172,4 @@ reverse the order of bands:
 
 The results are as follows:
 
-.. raw:: html
-
-   <p align="center">
-
-.. raw:: html
-
-   </p>
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfr1.map&layer=topo&mode=map

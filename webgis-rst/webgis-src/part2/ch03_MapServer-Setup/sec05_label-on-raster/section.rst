@@ -18,8 +18,4 @@ Effect
 
 Here is the effect:
 
-.. raw:: html
-
-   <img alt="" border="1"
-   src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mf9a.map&layer=topo&layer=label&mode=map"
-   />
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mf9a.map&layer=topo&layer=label&mode=map
