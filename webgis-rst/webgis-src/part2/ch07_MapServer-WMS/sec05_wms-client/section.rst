@@ -51,12 +51,12 @@ Definition of MapServer
 
 Let’s look at the WMS layer:
 
-``LAYER``, marking the beginning of the WMS layer object.
-``NAME modis_jpl``, the layer identifier. ``TYPE RASTER``, since this
-WMS layer is an image, use the raster layer type. ``OFFSITE 0 0 0`` ,
-ignore black background color ``STATUS OFF``, this layer is turned off
-by default. ``CONNECTIONTYPE WMS`` Input layer connection use. Defaults
-to local .
+- ``LAYER``, marking the beginning of the WMS layer object.
+- ``NAME modis_jpl``, the layer identifier.
+- ``TYPE RASTER``, since this WMS layer is an image, use the raster layer type.
+- ``OFFSITE 0 0 0`` , ignore black background color
+- ``STATUS OFF``, this layer is turned off by default.
+- ``CONNECTIONTYPE WMS`` Input layer connection use. Defaults to local .
 
 If we had to be explicit, we would add all other vector and raster
 layers locally in our MapFile CONNECTIONTYPE. Instead, we only define
@@ -80,8 +80,10 @@ external WMS servers do not support this kind of projection.
 
 ``"wms_name" "modis"`` , the name of the WMS layer to add. It’s like
 adding the parameter ``"layers=modis"`` ,
+
 ``"wms_server_version" "1.1.1"`` , the version of the server for the WMS
 version. More supported versions can be viewed.
+
 ``"wms_format" "image/jpeg"`` , the image format we expect to receive
 from the WMS server. You can try ``image/png`` or other allowed values.
 

@@ -9,7 +9,7 @@ pre-processing vector or image data and using efficient caching
 mechanisms (such as pyramids). It is organized in a “level, row, column”
 way, and can be quickly loaded in the web page. Therefore, tile map
 loading is to obtain the tiles of the grid under the corresponding level
-(i.e. the image pre cut by the server) by calculating the row and column
+(i.e. the image pre cut by the server) by calculating the row and column
 number according to the map range and level requested by the client, and
 these tiles are collected to form a map at the client, as shown in
 Figure 2.21.

@@ -18,13 +18,6 @@ Next, we will introduce the release, access and application of WFS and
 its services.
 
 
-
-
-
-
-
-
-
 .. toctree::
    :maxdepth: 2
 

@@ -209,7 +209,7 @@ First Mapfile
 The code is as follows, lines ``01`` to ``06`` establish the basic map
 image parameters. The keyword ``NAME`` defines the base name of any
 images created. Each time MapServer is called, it creates a unique
-identifier by concatenating the system time (i.e. the number of seconds
+identifier by concatenating the system time (i.e. the number of seconds
 since 1/1/1970 00:00:00) and the process ID. This unique identifier is
 appended to the basename to form the filename. Two or three character
 expansion (depending on file type), then append. In some cases, another

@@ -16,6 +16,10 @@ Mapfile definition
 As in WMS and WFS support, WCS publishing is enabled by adding certain
 metadata key/value pairs to the ``.map`` file.
 
+.. figure:: fig-wcs2.jpg
+
+    WMS
+
 MapServer targets only layers that meet the following conditions and
 includes them in its WCS function:
 
@@ -44,8 +48,7 @@ GetCapabilities request
 As in WMS and WFS, you can also use ``GetCapabilities`` to view the
 capabilities of WCS:
 
-`http://webgis.pub /
-cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__
+`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__
 
 Parse the parameters using Python:
 
@@ -81,8 +84,7 @@ DescribeCoverage request
 The ``DescribeCoverage`` request lists more information about a specific
 coverage product.
 
-`http://webgis.pub /
-cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img>`__
+`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img>`__
 
 The parameters are described as follows:
 
@@ -100,8 +102,7 @@ results are also different. You can open the link to have a look at it:
 
 WFS 1.0.0:
 
-http://webgis.pub /
-cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.0.0&REQUEST=DescribeCoverage&COVERAGE=world-img
+http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.0.0&REQUEST=DescribeCoverage&COVERAGE=world-img
 
 Parse the URL:
 
@@ -116,8 +117,7 @@ Parse the URL:
 
 WFS 1.1.1:
 
-http://webgis.pub /
-cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.1&REQUEST=DescribeCoverage&IDENTIFIERS=world-img
+http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.1&REQUEST=DescribeCoverage&IDENTIFIERS=world-img
 
 Parse the URL:
 
@@ -138,8 +138,7 @@ cannot specify the name and suffix of the file at this time, the file
 can be downloaded and saved, and modified into a file with ``.tif`` as
 the suffix. This file has geospatial information.
 
-`http://webgis.pub /
-cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326 <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326>`__
+`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326 <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326>`__
 
 The parameters are decomposed as follows:
 
@@ -165,3 +164,11 @@ used in the web page as an ``<image>`` object.
 The following is an example, the picture in the web page, which cannot
 be displayed here. But by “right click” -> “view image”, you can see
 that it is a picture.
+
+
+http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png
+
+
+.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png
+
+    Result of WCS

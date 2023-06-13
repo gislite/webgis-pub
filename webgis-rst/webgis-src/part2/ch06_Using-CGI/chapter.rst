@@ -22,12 +22,7 @@ programs.
 
 
 
-
-
-
-
-
-
 .. toctree::
    :maxdepth: 2
 
+   sec01_mechanism/section

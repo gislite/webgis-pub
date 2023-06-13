@@ -99,7 +99,7 @@ relational or non-relational database structures. In this website, we
 pay special attention to GIS server as well as client application. Many
 GIS servers are on the internet such as GeoServer, MapServer, Mapnik,
 MapGuide, QGIS Server, etc. All of these servers are open source
-servers, i.e. freely available. ArcGIS also provides a server, but it is
+servers, i.e. freely available. ArcGIS also provides a server, but it is
 not freely available but has many additional features. All open source
 servers are free to download from their respective websites.
 

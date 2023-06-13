@@ -23,10 +23,10 @@ Example effect
 
 The effect is:
 
-|image0|
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mft6.map&layers=states%20wcity_wfs&mode=map
 
 Note that the above graph is a traditional MapServer generated map.
 Defined by the WFS point layer in front, so it’s mostly occluded by
 polygons.
 
-.. |image0| image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mft6.map&layers=states%20wcity_wfs&mode=map
+

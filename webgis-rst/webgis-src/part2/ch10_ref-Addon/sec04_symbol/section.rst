@@ -288,7 +288,7 @@ Cartoline Line type:
    END
 
 Where LINEJOINMAXSIZE defines the maximum length for miter type of joins
-As a factor of M to avoid spikes when d (3 means i.e. M = 3 times d)
+As a factor of M to avoid spikes when d (3 means i.e. M = 3 times d)
 Lines are almost parallel:
 
 .. figure:: image017.jpg
@@ -413,7 +413,7 @@ Example of diagonal fill:
 
 SYMBOL
 
-NAME “diag45fill \_ thin”
+NAME “diag45fill \_ thin”
 
 TYPE vector
 
@@ -450,7 +450,7 @@ END
 The path to the above picture must be absolute or relative to the symbol
 file.
 
-Optionally, you can use TRANSPARENT [color index] to set a transparent
+Optionally, you can use TRANSPARENT [color index] to set a transparent
 color. If you set up
 
 The output image format IMAGETYPE does not support transparency, so you
@@ -629,7 +629,7 @@ In the image above:
 
 l ASCII character is: Question Mark = “?”
 
-l Unicode number 003F (hexadecimal number) is the character # 63 in
+l Unicode number 003F (hexadecimal number) is the character # 63 in
 Symbol We can define it in the file as follows:
 
 ::

@@ -183,7 +183,7 @@ Rarely used parameters
    users Can’t monkey with support files via URLs. This allows you to
    isolate one Application from another if you desire, with the default
    operation being Very conservative. See also TEMPLATEPATTERN below.
-   Value: [regular expression
+   Value: [regular expression
 
 3. DEBUG: Enable debugging on the MAP object. The detailed information
    of the system operation will be output to the LOG file specified by
@@ -646,7 +646,7 @@ Legends using Templates
 MapServer version 3.5 and above can use template files to generate
 legends. In MapFile The TEMPLATE parameter is used in the file to enable
 template-based legend generation. Set up TEMPLATE file, the file will
-replace main HTML The content referred to by the [legend] tag in the
+replace main HTML The content referred to by the [legend] tag in the
 file. Template files must have an. Html extension.
 
 HTML Legend template File
@@ -735,8 +735,8 @@ c) [metadata name=<metadata_field_to_display>] Returns the specified
 <a href=“[leg_layer_name]”>[metadata name=WMS_TITLE]</a><BR>
 [/leg_layer_html]
 
-3) CLASS block tag:[leg \_ class \_ html & lt;OPTIONAL PARAMS>] .[/
-   leg \_ class \_ html]
+3) CLASS block tag:[leg \_ class \_ html & lt;OPTIONAL PARAMS>] .[/
+   leg \_ class \_ html]
 
 If not set, no style will be displayed.
 

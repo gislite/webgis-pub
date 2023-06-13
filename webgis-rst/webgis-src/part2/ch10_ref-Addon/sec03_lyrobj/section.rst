@@ -105,7 +105,7 @@ Data in Shapefile format is the most widely used data in MapServer.
 
 ^ 1) ^ DATA shapefile The name and path of the file without an
 extension. The path can be absolute or relative to ~ SHAPEPATH The path
-of. Value: [path/filename].
+of. Value: [path/filename].
 
 Example:
 
@@ -251,7 +251,7 @@ found in the configuration document corresponding to WMS.
 
      wms\_connectiontimeout        wms\_latlonboundingbox  wms\_style
 
-Wms \_ & lt;stylename> \_ sld
+Wms \_ & lt;stylename> \_ sld
 
 ::
 
@@ -446,7 +446,7 @@ The GetFeatureInfo option is useful, and the default is false.
    different instructions. Current raster image support (handled by
    GDAL): SCALE,BANDS,
 
-COLOR \_ MATCH \_ THRESHOLD and DITHER. For example:
+COLOR \_ MATCH \_ THRESHOLD and DITHER. For example:
 
 ::
 
@@ -485,7 +485,7 @@ An **image would often use up all 256 color entries**. The Following
 processing is a way to avoid “stealing” your whole colormap For a raster
 layer. Normally values in the range 2-6 will give good Results:
 
-PROCESSING “COLOR \_ MATCH \_ THRESHOLD=n”
+PROCESSING “COLOR \_ MATCH \_ THRESHOLD=n”
 
 7) REQUIRES:~ sets whether the layer tag is displayed. Such as: ~
 
@@ -933,7 +933,7 @@ TABLE “data/owners.dbf”
 
 FROM NUMBER
 
-TO PARCEL \_ NR
+TO PARCEL \_ NR
 
 TYPE multiple
 

@@ -9,10 +9,10 @@ Introduction
 OGC Web services (OWS) can combine with a given resource (WMS layer, WFS
 FeatureType, WCS Coverage, SOS ObservationOffering) associated content
 metadata is published to the feature document as a reference to a given
-URL (i.e. an ISO metadata XML document).
+URL (i.e. an ISO metadata XML document).
 
-MapServer supports both inline (e.g. ``wms_title`` , ``wms_abstract`` )
-and URL-based (e.g. ``wms_metadataurl_href`` ) metadata publishing for
+MapServer supports both inline (e.g. ``wms_title`` , ``wms_abstract`` )
+and URL-based (e.g. ``wms_metadataurl_href`` ) metadata publishing for
 OWS functions.
 
 MapServer OGC Service Capabilities Formal XML metadata in XML provides

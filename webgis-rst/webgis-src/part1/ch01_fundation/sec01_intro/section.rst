@@ -8,7 +8,7 @@ The role of maps
 
 Maps have played an important role in human activities for thousands of
 years. The world consists of things that have a geographic
-(i.e. spatial) relationship to each other, and while a map can be an
+(i.e. spatial) relationship to each other, and while a map can be an
 exact replica of the world, it usually isn’t. Maps are models that
 contain representations of things in the world, but those models don’t
 need to be represented in a similar way to the things they represent, or

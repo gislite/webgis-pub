@@ -60,7 +60,7 @@ Prepare the page
 
 Before you write the map code, you need to do the following on the page:
 
-On the page ``<head>`` Label vs. ``</head>`` Add the following code
+On the page ``<head>`` Label vs. ``</head>`` Add the following code
 between the tags:
 
 ::

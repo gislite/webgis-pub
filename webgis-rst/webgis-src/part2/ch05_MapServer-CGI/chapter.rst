@@ -36,3 +36,4 @@ map service.
    sec01_mapserver-cgi-intro/section
    sec02_mode/section
    sec03_zoom/section
+   sec04_control/section
