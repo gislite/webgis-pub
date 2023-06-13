@@ -33,7 +33,9 @@ and the client can return it directly when needed, so WMTS can be cached.
 
 .. figure:: fig-wmts-server.png
 
-When the client requests the WMS service, a complete picture is returned to the client, and the client can get it and display it directly, as shown in Figure 2; the client can request any area, because of this arbitrariness and the server can only Returning a picture of a specified range, the probability of reuse is low and low. When the concurrency increases, the performance of the server will be greatly reduced, so WMS only focuses on flexibility. The Internet era focuses on efficiency. Compared with flexibility, people prefer to use cacheable WMTS services with better performance.
+When the client requests the WMS service, a complete picture is returned to the client,
+and the client can get it and display it directly, as shown in Figure 2;
+the client can request any area, because of this arbitrariness and the server can only Returning a picture of a specified range, the probability of reuse is low and low. When the concurrency increases, the performance of the server will be greatly reduced, so WMS only focuses on flexibility. The Internet era focuses on efficiency. Compared with flexibility, people prefer to use cacheable WMTS services with better performance.
 
 Principle of WMTS slicing
 ============================================

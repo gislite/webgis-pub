@@ -80,8 +80,7 @@ This Mapfile is configured with the WMS service. The contents of Mapfile
 With the front ``mfa1.map`` Compared to:
 
 
-.. literalinclude:: ./xx_diff_mfb1_mfa1.htmp
-   :lineno-start: 1
+`diff_mfb1_mfa1.html <diff_mfb1_mfa1.html>`_
 
 
 Note the version ``1.3.0`` here. OGC’s WMS has two major versions,

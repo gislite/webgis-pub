@@ -168,11 +168,17 @@ National Oceanic and Atmospheric Administration uses KML to issue weather foreca
 (2) GeoRSS
 --------------------------------------------------------
 
-RSS is short for Really Simple Syndication, also known as rich site summary (Rich Site Summary) or RDF site summary (Resource Description Framework Site Summary).
-It is a main format for publishing information on the Internet, especially effective information (such as news and fire bulletins, etc.).
+RSS is short for Really Simple Syndication, also known as rich site summary (Rich Site Summary)
+or RDF site summary (Resource Description Framework Site Summary).
+It is a main format for publishing information on the Internet,
+especially effective information (such as news and fire bulletins, etc.).
 The RSS family includes RSS and ATOM formats, the former in 1999 and the latter in 2003.
-They are all simple XML format, with only a few tags to describe the name, summary, full-text link and release time of each message, etc., which are very easy to understand and use, and have been widely used.
-Subscribers can "aggregate" multiple RSS they are interested in into RSS reader software to provide themselves with a convenient "one-stop" service without having to go to each website to see if they have been updated over and over again.
+They are all simple XML format, with only a few tags to describe the name,
+summary, full-text link and release time of each message, etc.,
+which are very easy to understand and use, and have been widely used.
+Subscribers can "aggregate" multiple RSS they are interested in into RSS reader software
+to provide themselves with a convenient "one-stop" service without having
+to go to each website to see if they have been updated over and over again.
 
 RSS is used by many news media, social networking sites and official government websites as a way to release new news.
 For example, CNN, the New York Times, Reuters, Science magazine, Twitter (a Weibo site in the United States) and Y0uTube (a famous video site) all use this technology to publish information in a timely manner.
