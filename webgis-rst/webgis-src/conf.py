@@ -40,3 +40,6 @@ html_theme_options = {
 }
 
 html_logo = "_static/webgis-logo.png"
+
+locale_dirs = ['xx_locale/']   # path is example but recommended.
+gettext_compact = False     # optional.

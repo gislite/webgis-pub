@@ -151,3 +151,5 @@ wwwpub/templates/99_gislite_GISLite/*.jinja2
 .vscode
 
 f2elib
+
+locales
