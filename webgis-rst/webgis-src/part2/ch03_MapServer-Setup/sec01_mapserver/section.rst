@@ -138,14 +138,7 @@ read more than 20 formats (including Windows bitmaps, GIF, and JPEG)
 through the GDAL package, although MapServer understands and can render
 these grid types, it cannot mark images with spatial information.
 
-.. raw:: html
 
-   <!--
-   .. An important distinction should be made between vector data and raster data, because each is used and stored differently.
-   .. The vector representation of a geometric object basically consists of a list of coordinates that define the points of the object.
-   .. A grid object, on the other hand, consists of a series of values that represent a digital image.
-   .. A vector object by definition contains explicit spatial references; a grid object, because it is just an image, needs to be marked so that it can be properly positioned, oriented, and scaled.
-   -->
 
 Components of MapServer
 -----------------------

@@ -5,7 +5,9 @@
 Preliminary understanding and Reading of WMTS Service
 =====================================================================
 
-Currently, most of the network map services use caching technology to replace real-time visualization of data to improve map response capabilities. Introduces the WMTS service of the caching technology standard proposed by OGC.
+Currently, most of the network map services use caching technology
+to replace real-time visualization of data to improve map response capabilities.
+Introduces the WMTS service of the caching technology standard proposed by OGC.
 
 Introduction to WMTS
 ===================================
@@ -35,7 +37,8 @@ and the client can return it directly when needed, so WMTS can be cached.
 
 When the client requests the WMS service, a complete picture is returned to the client,
 and the client can get it and display it directly, as shown in Figure 2;
-the client can request any area, because of this arbitrariness and the server can only Returning a picture of a specified range, the probability of reuse is low and low. When the concurrency increases, the performance of the server will be greatly reduced, so WMS only focuses on flexibility. The Internet era focuses on efficiency. Compared with flexibility, people prefer to use cacheable WMTS services with better performance.
+the client can request any area,
+because of this arbitrariness and the server can only Returning a picture of a specified range, the probability of reuse is low and low. When the concurrency increases, the performance of the server will be greatly reduced, so WMS only focuses on flexibility. The Internet era focuses on efficiency. Compared with flexibility, people prefer to use cacheable WMTS services with better performance.
 
 Principle of WMTS slicing
 ============================================
@@ -45,11 +48,14 @@ Each tile matrix is identified by the tile matrix identifier (usually the serial
 
 .. figure:: fig-wmts-tiles.png
 
-Each tile in the tile matrix is identified by the row and column number of the tile. The row and column numbers are counted from the tile where the upper left corner of the tile matrix is located, and the starting row and column values are (0, 0), in order downward. Increase to the right, as shown in Figure 2, that is, take the index number of the tile.
+Each tile in the tile matrix is identified by the row and column number of the tile.
+The row and column numbers are counted from the tile where the upper left corner of the tile matrix is located, and the starting row and column values are (0, 0), in order downward. Increase to the right, as shown in Figure 2, that is, take the index number of the tile.
 
 .. figure:: fig-tiles-matrix.png
 
-WMTS service providers can publish WMTS services as long as they follow the WMTS specification of the OGC standard, but in order to improve service compatibility
+WMTS service providers can publish WMTS services
+as long as they follow the WMTS specification of the OGC standard,
+but in order to improve service compatibility
 WMTS also proposed the concept of well-known scale set (Well-known scale set).
 It is a well-known combination of a coordinate reference system and several scale sets.
 Common well-known scale sets are GlobalCRS84Scale, GlobalCRS84Pixel,
@@ -62,8 +68,11 @@ And conforms to the WMTS implementation specification developed by OGC
 Reading of WMTS
 ==========================
 
-The WMTS 1.0.0 specification supports publishing WMTS services in HTTP KVP (Key-Value Pair), SOAP, and REST.
-Taking HTTTP KVP as an example, this paper introduces the three operations contained in WMTS service, which can be used to read WMTS service.
+The WMTS 1.0.0 specification supports publishing WMTS services in HTTP KVP (Key-Value Pair),
+SOAP, and REST.
+Taking HTTTP KVP as an example,
+this paper introduces the three operations contained in WMTS service,
+which can be used to read WMTS service.
 
 1. GetCapabilities operation to get the meta-information of the service;
 2. GetTile operation, getting slices;
@@ -80,7 +89,8 @@ The key parameters that need to be obtained in the connection to the WMTS servic
 
 .. figure:: fig-wmts-content.png
 
-In the document, the contents node describes the information of the WMTs service published by the server.
+In the document, the contents node describes the information
+of the WMTs service published by the server.
 Understanding the structure of layer (metadata of a top-level dataset on the server)
 and tilematrixset (description of map segmentation geometric rules)
 in the contents subset can help users obtain the corresponding data accurately.
