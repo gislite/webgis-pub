@@ -1,0 +1,296 @@
+{% extends "base.jinja2" %}
+
+{% block headbody %}
+    <link rel="stylesheet" href="/f2elib/leaflet_1.7.1/leaflet.css"/>
+    <script src="/f2elib/leaflet_1.7.1/leaflet.js"></script>
+    <style>
+        #mapid {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block mainbody %}
+    <div class="container">
+        <div id="mapid"></div>
+        <script>
+            {#创建地图并设置地理坐标和缩放级别#}
+            var mymap = L.map('mapid').setView([25, 105], 2);
+
+            {#添加Mapbox streets#}
+
+            var wmsLayer = L.tileLayer.wms('http://47.94.22.90:9011/service?', {
+                layers: 'maplet_mulwold',
+                format: 'image/png',
+                transparent: true
+            }).addTo(mymap);
+
+            {#添加点状标记#}
+            L.marker([39.9788, 116.30226]).addTo(mymap).bindPopup("Beijing<br>").openPopup();
+
+            {#添加圆形标记#}
+            L.circle([39.9908, 116.26625], 500, {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(mymap).bindPopup("颐和园欢迎你");
+
+            {#添加多边形标记#}
+            L.polygon([
+                [39.92096, 116.38591],
+                [39.91079, 116.38676],
+                [39.91118, 116.3962],
+                [39.92014, 116.39482]
+            ]).addTo(mymap).bindPopup("故宫");
+
+            {#定义弹窗#}
+            var popup = L.popup();
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("当前所在的坐标为" + e.latlng.toString())
+                    .openOn(mymap);
+            }
+
+            mymap.on('click', onMapClick);
+        </script>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-body" style="font-size:14px;">
+                        <div class="col-sm-12">
+                            <img src="/images/logo_geo4all.png" style="width: 100%"/>
+                            {#                            <div>#}
+                            {#                                Making geospatial education and opportunities accessible to all.#}
+                            {#                                Use Open Source GIS “Geo for All” is the Open Source Geospatial Foundation’s#}
+                            {#                                Committee for Educational outreach and works in close collaboration with ICA,#}
+                            {#                                ISPRS, UN-GIS, AGILE, UCGIS , IGU and other partners worldwide in our mission for#}
+                            {#                                making geospatial education and opportunities accessible to all.#}
+                            {#                                <hr/>#}
+                            {#                            </div>#}
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                “人人共享”使命的核心是认为知识是一种公共利益，教育中的开放原则将为每个人提供巨大的机会。
+                                虽然我们社区的成员来自不同的背景，但我们都寻求消除数字鸿沟，赋予所有人充分的公民权利，并为建立开放知识做出贡献，造福于整个社会和子孙后代。
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="/images/weixin.jpg" style="width: 98%; "/>
+                            <div>
+                                <p style="text-align: center;">
+                                    关注公众号
+                                </p>
+
+                                <hr/>
+                                <p style="text-align: center;">
+                                    或
+                                </p>
+
+                                <p style=" text-align: center;">
+                                    <a target="_blank"
+                                       href="//shang.qq.com/wpa/qunwpa?idkey=34cc461af0113da0ac4b96df1ffe71d7c8071aa27fe03870963cfdeef8558684">
+                                        <img border="0" src="//pub.idqqimg.com/wpa/images/group.png"
+                                             alt="OSGeo:开源GIS技术群"
+                                             title="OSGeo:开源GIS技术群">
+                                    </a>
+                                </p>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="font-size: 16px;">
+                        购买《开源WebGIS》
+                    </div>
+                    <div class="panel-body" style="font-size:14px;">
+
+                        <p>《开源 WebGIS 在线教程：地图发布与地图服务》已于2020年11月由科学出版社正式出版。有需要的读者可以通过下面方式购买。</p>
+                        <p>请注意，本书涉及的WebGIS技术包括MapServer、MapProxy、Leaflet，不包括<del>GeoServer、OpenLayers</del>。</p>
+
+                            <ul>
+                                <li>
+                                    <a href="https://item.jd.com/13037734.html" target="_blank">
+                                        通过京东购书：
+                                        <img src="https://www.osgeo.cn/pygis/_static/logo_jd.jpg"
+                                             style="width:100px;margin:5px;"/>
+                                    </a>
+
+                                </li>
+
+                                <li></li>
+
+
+                                <li><a href="http://product.dangdang.com/29164357.html" target="_blank">
+                                    通过当当购书：<img src="https://www.osgeo.cn/pygis/_static/logo_dd.png"
+                                                style="width:100px;margin:5px;"/></a>
+                                </li>
+
+                            </ul>
+
+                        <hr />
+                        <img src="/images/authors.jpg"
+                                 style="width:260px; text-align:center; border: 1px solid slategrey;" alt="开源WebGIS一书作者"/>
+
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="font-size: 16px;">
+                        网站说明
+                    </div>
+                    <div class="panel-body" style="font-size:14px;">
+                        ● 本网站的开发，基于项目工作中的经验进行总结，是为推广宣传开源 WebGIS 的使用；<br/>
+                        ● 此教程中文版本由OSGeo中国中心——开放地理空间实验室维护； <br>
+                        ● 教程最开始做的是 MapServer 教程中文翻译；原来 MapServer 教程运行在PHP环境下，目前完全使用Python重写生成静态网站；<br>
+                        ● 教程的开发使用了一些英文教程及官网案例；<br>
+                        ● 配置了单独的MapServer服务器提供地图服务；<br>
+                        ● 任何问题与建议请发送至邮件 bukun (at) osgeo.cn ，会及时进行修正。<br>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="font-size: 16px;">
+                        网站运行与编译环境
+                    </div>
+                    <div class="panel-body" style="font-size:14px;">
+                        <p>本网站运行的服务器配置环境如下：</p>
+                        <ul>
+                            <li>- 操作系统：Debian Linux 10, 64位</li>
+                            <li>- Apache 2.4.38-3+deb10u4/li>
+                            <li>- CGI MapServer 7.2.2-1</li>
+                            <li>- MapProxy 1.11.0-3+deb10u1</li>
+                        </ul>
+                        <hr/>
+                        <p>本网站使用 Python 3.7.3 生成，使用下面的模块：</p>
+                        <ul>
+                            <li>- OpenpyXL==2.4.9</li>
+                            <li>- BeautifulSoup4==4.7.1</li>
+                            <li>- Jinja2==2.10-2</li>
+                            <li>- lxml==4.3.2-1</li>
+                            <li>- MappyFile==0.8.2</li>
+                            <li>- Markdown==3.0.1-3</li>
+                            <li>- PyYAML==3.13-2</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="font-size: 16px;">
+                        友情链接
+                    </div>
+                    <div class="panel-body" style="font-size:14px;">
+                        <ul>
+                            <li><a href="http://www.wds-china.org">● 世界数据系统中国门户</a></li>
+                            <li><a href="http://eng.wdc.cn">● 可再生资源与环境数据中心</a></li>
+                            <li><a href="http://drr.ikcest.org">● 防灾减灾知识服务系统</a></li>
+                            <li><a href="http://www.data.ac.cn">● 资源学科创新平台网站</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8">
+                <div class="articleList articleList00">
+
+                    <div class="content">
+
+                        <h1>开源 WebGIS 在线教程：地图发布与地图服务</h1>
+
+                        <div class="well">
+                            <img src="/images/book-cover.jpg"
+                                 style="width:260px; float: right;border: 1px solid slategrey;" alt="开源WebGIS封面"/>
+                            <p style="margin: 0; padding: 0; text-indent: 0;">作者：</p>
+                            <dl>
+                                <dt>卜坤</dt>
+                                <dd>中国科学院东北理与农业生态研究所，博士，高级工程师</dd>
+                                <dt>王卷乐</dt>
+                                <dd>中国科学院地理科学与资源研究所，博士，研究员；世界数据系统-可再生资源与环境数据中心主任</dd>
+                            </dl>
+
+                            <p></p>
+                            <h3>教程说明</h3>
+                            <p>开源WebGIS教程网站是两位作者在合作过程中基于实际工作经验进行总结提炼而产生的。开源 WebGIS 对于GIS技术与数据共享工作都有很多意义，也有很多技巧值得分享。
+                            <p>
+                            <p>本网站设计作为开源 GIS 的在线教程，使用可在线访问、操作的实例以方便用户实际了解 WebGIS 的原理与技术。
+                                另外，也对 WebGIS 的一些原理与背景进行说明，可用作一般的 WebGIS 教程。</p>
+                        </div>
+
+
+                        <h2>MapServer</h2>
+                        <img src="/images/logo_mapserver.png"
+                             style="float: right; width:100px; margin:10px;"/>
+                        {# MapServer可以看作是两个独立模块的统称：MapServer CGI模块和MapScript模块。  #}
+                        <p>
+                            MapServer最初是由美国明尼苏达大学和美国太空总署（NASA）开发的一个开源的WebGIS软件。
+                            MapsServer本身是由C语言编写的程序，提供了两种开发模式，一种是基于CGI的，另一种是MapScript方式；
+                            在服务器端可以使用任一模块，编写WebGIS程序。
+                            MapServer作为WebGIS解决方案是基于对象的，基本配置文件 MapFile 和 MapScript 模块的API组织都是基于对象的。
+                            MapServer通过实现 OGC 的若干标准，支持分布式访问和互操作，支持 OGC 的 WMS/WFS 服务规范。
+                            MapServer是基于胖服务器/瘦客户端模式开发的 WebGIS 平台，读取地理数据，
+                            并利用 AGG 库渲染 JPeg/PNG/GIF 格式的图片后再传回客户端浏览器。
+                            MapServer支持 Windows、UNIX、Linux等多种平台，
+                            支持的语言包括 Python，PHP，Perl，Java，Tcl，C# 等。
+                        </p>
+
+                        <h2>MapProxy</h2>
+                        <img src="/images/logo_mapproxy.png"
+                             style="float: right; width:200px; margin:10px;"/>
+                        <p>
+                            MapProxy 是 WMS 网页地图服务与切片服务提供者的瑞士军刀。它对已有地图服务的数据服务进行缓存、加速和转换，服务任何支持 OGC 标准的桌面与网页客户端。
+                            MapProxy 开发与部署方式灵活，易于同 Apache/Nginx 环境等集成。MapProxy 也能作为一个独立服务使用，这是对于新用户而言最容易的方式。
+                            　MapProxy 的默认示例是一个基本的 WMS 切片客户端，它显示了配置的各个图层；不具备改变投影等复杂功能，但足以验证服务是否正常运行。
+                        </p>
+
+
+                        <h2>LeafletJS</h2>
+                        <img src="/images/logo_leaflet.png" style="float: right; width:200px;margin:10px;"/>
+                        <p>
+                            Leaflet 是一个为建设移动设备友好的互动地图，而开发的现代的、开源的 JavaScript 库。
+                            它是由 Vladimir Agafonkin 带领一个专业贡献者团队开发，代码量很小，但具有开发人员开发在线地图的大部分功能。
+                            Leaflet设计坚持简便、高性能和可用性好的思想，在所有主要桌面和移动平台能高效运作，
+                            在现代浏览器上会利用HTML5和CSS3的优势，同时也支持旧的浏览器访问。
+                            支持插件扩展，有一个友好、易于使用的API文档和一个简单的、可读的源代码。
+                        </p>
+
+                        <h2>OpenLayers</h2>
+                        <img src="/images/logo_openlayers.png" style="float: right;width:200px;margin:10px;"/>
+                        <p>
+                            OpenLayers是一个用于开发WebGIS客户端的JavaScript包。
+                            OpenLayers 支持的地图来源包括Google Maps、Yahoo、Map、微软Virtual Earth 等，
+                            用户还可以用简单的图片地图作为背景图，与其他的图层在OpenLayers 中进行叠加，
+                            在这一方面OpenLayers提供了非常多的选择。
+                            除此之外，OpenLayers实现访问地理空间数据的方法都符合行业标准。
+                            OpenLayers 支持Open GIS 协会制定的WMS（Web Mapping Service）和WFS（Web Feature
+                            Service）等网络服务规范，可以通过远程服务的方式，
+                            将以OGC 服务形式发布的地图数据加载到基于浏览器的OpenLayers 客户端中进行显示。
+                            OpenLayers采用面向对象方式开发，并使用来自 Prototype.js 和 Rico 中的一些组件。
+                        </p>
+
+                        <h2>Cesium</h2>
+                        <img src="/images/logo_cesium.png" style="float: right;width:200px;margin:10px;"/>
+                        <p>
+                            基于 WebGL 的前端3D JavaScript 类库。
+                            Cesium在2016年3月份左右推出3D Tiles数据规范，在glTF基础上提供了LOD能力，
+                            位就是Web环境下海量三维模型数据。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+{% endblock %}

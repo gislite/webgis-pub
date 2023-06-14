@@ -1,0 +1,51 @@
+{% extends "base.jinja2" %}
+
+
+{% block mainbody %}
+
+
+    <div class="col-sm-2">
+        <div class="panel-group">
+            <div class="panel xmjj">
+                <div class="panel-heading"><a>{{ dir_title }}</a></div>
+            </div>
+            {{ leftnav }}
+        </div>
+    </div>
+    <div class="col-sm-10">
+        <ol class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
+            <li>{{ first_nav }}</li>
+            <li>{{ dir_title }}</li>
+            <li>{{ title }}</li>
+        </ol>
+
+        <div class="row">
+
+            {% if cntnav %}
+                <div class="col-xs-12">
+
+                    <div class="col-xs-9 content" id="con">
+                        {{ cnt }}
+                    </div>
+                    <div class="col-xs-3 visible-lg" id="myScrollspy">
+                        <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125" >
+                            {{ cntnav }}
+                        </ul>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-xs-12 content">
+                    {{ cnt }}
+                </div>
+
+            {% endif %}
+
+
+        </div>
+    </div>
+
+
+    <div class="clear"></div>
+
+{% endblock %}
