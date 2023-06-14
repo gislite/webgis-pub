@@ -3,6 +3,24 @@
 Source Code for website //webgis.pub .
 
 
+## 
+
+This website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
+
+Went through a series of refactoring.
+
+1. Rebuild with PHP, using templates.
+2. Integrated into TorCMS to serve as dynamic website.
+3. Using Python to write the SSG for Mapfile processing, and using Jinja2 for webpage management.
+4. Finally using Sphinx for the management of the pages. And keep the scripts for Mapfiles.
+
+Based on MapServer, and would supply WebGIS relevant technologies.
+
+There are a large number of historical legacy issues that need 
+to be addressed during the conversion process.
+All the pull requests arc welcome.
+
+
 
 
 ## Install and setup
@@ -17,32 +35,6 @@ Install softwares:
     sudo a2enmod cgi
     sudo service apache2 restart
 
-Fetch the f2elib:
-
-
-
-    git clone https://github.com/bukun/torcms_f2elib.git ./static/f2elib
-
-
-Setup for Apache2:
-
-
-    # Alias /owg/ "/wegis/"
-    <Directory "/owg/">
-      AllowOverride None
-      Options Indexes FollowSymLinks Multiviews
-      Require all granted
-    </Directory>
-
-    ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
-    <Directory "/usr/lib/cgi-bin">
-        AllowOverride None
-        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
-        Require all granted
-    </Directory>
-
-
-
 Setup using shell:
 
     sudo ln -s `pwd`/owg /owg
@@ -55,7 +47,5 @@ Setup using shell:
 
 Running via Apache2. Run the following code for deployment：
 
-
-    cd /home/bk/coding/book_webgis/webgis_cases
-    python3 build_site.py
-    chown -R www-data.www-data owg/
+   
+    sh build.sh

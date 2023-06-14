@@ -13,6 +13,24 @@ and opportunities accessible to all.
 .. image:: ./webgis-logo.png
 
 
+This website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
+
+Went through a series of refactoring.
+
+1. Rebuild with PHP, using templates.
+2. Integrated into TorCMS to serve as dynamic website.
+3. Using Python to write the SSG for Mapfile processing, and using Jinja2 for webpage management.
+4. Finally using Sphinx for the management of the pages. And keep the scripts for Mapfiles.
+
+Based on MapServer, and would supply WebGIS relevant technologies.
+
+There are a large number of historical legacy issues that need
+to be addressed during the conversion process.
+All the pull requests arc welcome.
+
+
+This website is open-source. Hosted on github: https://github.com/gislite/webgis-pub
+
 Introduction
 ===================================
 
@@ -24,6 +42,7 @@ that can be accessed and operated online to facilitate users
 to understand the principles and technologies of WebGIS.
 In addition, it also explains some principles and background of WebGIS,
 which can be used as a general WebGIS tutorial.
+
 
 
 
