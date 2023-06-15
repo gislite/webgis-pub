@@ -5,7 +5,7 @@ Source Code for website //webgis.pub .
 
 ## 
 
-This website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
+The idea of this website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
 
 Went through a series of refactoring.
 
