@@ -16,8 +16,7 @@ The map above is in ``map`` Generated in mode. It is a static map
 
 But open the map below and you can use mouse clicks to interoperate.
 
-http://webgis.pub /
-cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=browse
+http://webgis.pub/cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=browse
 
 Submit CGI variables using Post form
 ------------------------------------
