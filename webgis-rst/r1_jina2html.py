@@ -55,7 +55,7 @@ def gen_html_pages(src_ws):
     '''
 
     for wfile in src_ws.rglob('*.jinja2'):
-        out_html_file = Path('/tmp') / (wfile.stem + '.html')
+        out_html_file = Path('/owg') / (wfile.stem + '.html')
         print(wfile)
         render_html(
             str(wfile), str(out_html_file),

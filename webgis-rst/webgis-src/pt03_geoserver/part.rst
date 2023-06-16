@@ -6,7 +6,7 @@ GeoServer for WebGIS.
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 2
+   :numbered:
 
-   ch11_GeoServer-Introduction/chapter
-   ch12_GeoServer-Management/chapter
+   ch01_GeoServer-Introduction/chapter
+   ch02_GeoServer-Management/chapter

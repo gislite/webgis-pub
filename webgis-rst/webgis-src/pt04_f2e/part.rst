@@ -6,8 +6,8 @@ Front to end libraries, includeing LeafletJS, OpenLayers and Cesium.
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 2
+   :numbered:
 
-   ch13_leaflet/chapter
-   ch14_openlayers/chapter
-   ch15_cesium/chapter
+   ch01_leaflet/chapter
+   ch02_openlayers/chapter
+   ch03_cesium/chapter

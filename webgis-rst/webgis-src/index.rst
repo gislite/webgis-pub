@@ -177,8 +177,8 @@ Build under Python 3.7.3 , using the flollowing modules：
 .. toctree::
    :maxdepth: 2
 
-   part1/part
-   part2/part
-   part3/part
-   part4/part
-   part5/part
+   pt01_principle/part
+   pt02_mapserver/part
+   pt03_geoserver/part
+   pt04_f2e/part
+   pt05_misc/part

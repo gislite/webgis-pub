@@ -26,8 +26,8 @@ simple, readable source code.
    sec01_quickstart/section
    sec02_markers/section
    sec03_geoJSON/section
-   sec04_interactive_maps/section
+   sec04_interactive-maps/section
    sec05_layer/section
-   sec06_zoom_levels/section
-   sec07_using_WMS_and_TMS/section
-   sec08_Working_with_map_panes/section
+   sec06_zoom-levels/section
+   sec07_using-WMS-and-TMS/section
+   sec08_Working-with-map-panes/section

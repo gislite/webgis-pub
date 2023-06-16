@@ -16,7 +16,7 @@ def chuli_a():
             with open(dst,'w') as fo:
                 for cnt in cnts:
                     cnt_strip = cnt.strip()
-                    if cnt_strip.startswith('part') and cnt_strip.endswith('part'):
+                    if cnt_strip.startswith('pt') :
                         sig = cnt_strip.split('/')[0].split('_')[-1]
                         print(sig)
                         fo.write(f'   {sig}\n'.lower())
