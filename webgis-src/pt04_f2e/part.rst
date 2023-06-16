@@ -1,5 +1,5 @@
 =====================================
-Part 4 Front to end
+Part 4 Frontend(Client)
 =====================================
 
 Front to end libraries, includeing LeafletJS, OpenLayers and Cesium.
