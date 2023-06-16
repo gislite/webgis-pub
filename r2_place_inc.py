@@ -1,6 +1,6 @@
 from pathlib import Path
 
-inws = Path('webgis-rst/webgis-src/part2')
+inws = Path('webgis-src/pt2_mapserver')
 
 for wfile in inws.rglob('*.rst'):
     print(wfile)

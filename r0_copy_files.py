@@ -1,7 +1,7 @@
 from pathlib import Path
 
 def chuli_b():
-    inws = Path('webgis-rst/webgis-src')
+    inws = Path('webgis-src')
     outws = Path('/owg')
     if outws.exists():
         pass

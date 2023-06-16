@@ -1,7 +1,7 @@
 from pathlib import Path
 
 def chuli_a():
-    inws = Path('webgis-rst/webgis-src')
+    inws = Path('webgis-src')
     outws = Path('_pub/xx_rst')
     if outws.exists():
         pass
@@ -59,7 +59,7 @@ def chuli_a():
         else:
             pass
 def chuli_b():
-    inws = Path('webgis-rst/webgis-src/_static')
+    inws = Path('webgis-src/_static')
     outws = Path('_pub/xx_rst/_static')
     if outws.exists():
         pass
