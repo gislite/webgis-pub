@@ -4,19 +4,19 @@
 原始教程在：
 http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv&map_web=template+example2-2.html
 #}
-<title>MapServer交互：鹰眼图</title>
+<title>MapServer interaction: Hawkeye map</title>
 
 {% block mainbody %}
 
     <div class="container">
 
-        <h1 align="center">使用 MapServer 鹰眼图</h1>
+        <h1 align="center">Use the MapServer hawkeye map</h1>
 
 
         <!-- START OF MAPSERVER FORM -->
         <form name="mapserv" method="GET" action="[program]" class="form-horizontal">
             <fieldset>
-                <legend>鹰眼图</legend>
+                <legend>Hawkeye map</legend>
 
                 <br>
                 <!-- HIDDEN MAPSERVER CGI VARIABLES -->
@@ -29,27 +29,27 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
 
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">选择图层:</label>
+                    <label class="col-sm-2 control-label">Select the layer:</label>
 
                     <div class="col-sm-3">
                         <!-- SPECIFY VECTOR LAYERS -->
                         <input type="checkbox" name="layer" value="states_line" [states_line_check]>
-                        国家与地区界线
+                        National and regional boundaries
                     </div>
                     <div class="col-sm-3">
                         <input type="checkbox" name="layer" value="wriver" [wriver_check]>
-                        河流
+                        River
                     </div>
                     <div class="col-sm-3">
                         <input type="checkbox" name="layer" value="wroads" [wroads_check]>
-                        道路
+                        Road
                         <br>
 
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">选择背景:</label>
+                    <label class="col-sm-2 control-label">Select a background:</label>
 
                     <div class="col-sm-8">
                         <!-- SPECIFY RASTER LAYERS -->
@@ -57,17 +57,17 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
                         <select name="layer" class="form-control">
                             <option value=" " [ _select]>No Background</option>
                             <option value="modis_jpl" [modis_jpl_select]>
-                                全球地形（来自OSGeo WMS ）
+                                Global Topography (from OSGeo WMS)
                             </option>
                             <option value="modis" [modis_select]>
-                                全球地球表层
+                                Global surface layer
                             </option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">地图模式:</label>
+                    <label class="col-sm-2 control-label">Map mode:</label>
 
                     <div class="col-sm-8">
                         <select name="mode" class="form-control">
@@ -77,17 +77,17 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">地图控制:</label>
+                    <label class="col-sm-2 control-label">Map control:</label>
 
                     <div class="col-sm-8">
                         <select name="zoom" class="form-control">
-                            <option value="4" [zoom_4_select]>放大4倍</option>
-                            <option value="3" [zoom_3_select]>放大3倍</option>
-                            <option value="2" [zoom_2_select]>放大2倍</option>
-                            <option value="1" [zoom_1_select] selected>置中</option>
-                            <option value="-2" [zoom_-2_select]>缩小2倍</option>
-                            <option value="-3" [zoom_-3_select]>缩小3倍</option>
-                            <option value="-4" [zoom_-4_select]>缩小4倍</option>
+                            <option value="4" [zoom_4_select]>Zoom to 4</option>
+                            <option value="3" [zoom_3_select]>Zoom to 3</option>
+                            <option value="2" [zoom_2_select]>Zoom to 2</option>
+                            <option value="1" [zoom_1_select] selected>Zoom to 1</option>
+                            <option value="-2" [zoom_-2_select]>Zoom to -2</option>
+                            <option value="-3" [zoom_-3_select]>Zoom to -3</option>
+                            <option value="-4" [zoom_-4_select]>Zoom to -4</option>
 
                         </select>
                     </div>
@@ -96,7 +96,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
                     <label class="col-sm-2 control-label"></label>
 
                     <div class="col-sm-8">
-                        <input type="submit" name="submit" value="刷新" class="btn btn-sm btn-primary">
+                        <input type="submit" name="submit" value="Refresh9" class="btn btn-sm btn-primary">
                     </div>
                 </div>
 
@@ -115,7 +115,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
 
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">鹰眼图:</label>
+                    <label class="col-sm-2 control-label">Hawkeye map:</label>
 
                     <div class="col-sm-8">
 
