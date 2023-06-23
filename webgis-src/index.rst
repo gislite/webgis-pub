@@ -10,6 +10,9 @@ ISPRS, UN-GIS, AGILE, UCGIS ,
 IGU and other partners worldwide in our mission for making geospatial education
 and opportunities accessible to all.
 
+
+This website is open-source. Hosted on github: https://github.com/gislite/webgis-pub
+
 .. image:: ./webgis-logo.png
 
 
@@ -29,7 +32,6 @@ to be addressed during the conversion process.
 All the pull requests arc welcome.
 
 
-This website is open-source. Hosted on github: https://github.com/gislite/webgis-pub
 
 Introduction
 ===================================

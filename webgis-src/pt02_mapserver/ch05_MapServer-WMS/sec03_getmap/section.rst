@@ -98,6 +98,8 @@ Projection for WMS
 
 Note that to use ``GetMap`` request , the projection must be set. 
 If it is not set, the access will appear: 
+
+
 ::
 
    <ServiceExceptionReport version="1.3.0" xsi:schemaLocation="http://www.opengis.net/ogc http://schemas.opengis.net/wms/1.3.0/exceptions_1_3_0.xsd"><ServiceException code="InvalidCRS">
@@ -105,10 +107,7 @@ If it is not set, the access will appear:
    </ServiceException></ServiceExceptionReport>
 
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
-
-   Click to view
-
+`Yo can click the link to view the actual Error result page.  <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`__ 
 
 
 Request the WMS
@@ -127,7 +126,7 @@ It looks like that the  ``GETMAP`` request result is similar to MapServer’s ``
 
 
 
-.. note： Version of WMS 1.1.1 and WMS 1.3.0 have different request parameter for coordinate system :
+.. note:: Version of WMS 1.1.1 and WMS 1.3.0 have different request parameter for coordinate system :
 
 -  ``SRS=EPSG:4326`` for 1.1.1
 -  ``CRS=CRS:84`` for 1.3.0
