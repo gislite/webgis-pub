@@ -1,16 +1,16 @@
 {% extends "content.jinja2" %}
 
 {#
-原始教程在：
+The original tutorial is at:
 http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv&map_web=template+example2-2.html
 #}
-<title>MapServer交互：地图图例</title>
+<title>MapServer interaction: Map legend</title>
 
 {% block mainbody %}
 
     <div class="container">
 
-        <h2 align="center">地图图例</h2>
+        <h2 align="center">Map legend</h2>
 
 
         <!-- START OF MAPSERVER FORM -->
@@ -26,27 +26,27 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
 
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">选择图层:</label>
+                <label class="col-sm-2 control-label">Select layer:</label>
 
                 <div class="col-sm-3">
                     <!-- SPECIFY VECTOR LAYERS -->
                     <input type="checkbox" name="layer" value="states_line" [states_line_check]>
-                    国家与地区界线
+                    National and regional boundaries
                 </div>
                 <div class="col-sm-3">
                     <input type="checkbox" name="layer" value="wriver" [wriver_check]>
-                    河流
+                    River
                 </div>
                 <div class="col-sm-3">
                     <input type="checkbox" name="layer" value="wroads" [wroads_check]>
-                    道路
+                    Roads
                     <br>
 
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">选择背景:</label>
+                <label class="col-sm-2 control-label">Select background:</label>
 
                 <div class="col-sm-10">
                     <!-- SPECIFY RASTER LAYERS -->
@@ -68,7 +68,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
 
 
                 <!-- SPECIFY MAP MODE -->
-                <label class="col-sm-2 control-label">地图模式：</label>
+                <label class="col-sm-2 control-label">Map mode:</label>
 
                 <div class="col-sm-8">
                     <select name="mode" class="form-control">
@@ -80,20 +80,20 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
 
             <div class="form-group">
 
-                <label class="col-sm-2 control-label">地图控制：</label>
+                <label class="col-sm-2 control-label">Map control:</label>
 
                 <div class="col-sm-8">
                     <!-- ZOOM/PAN CONTROLS -->
 
 
                     <select name="zoom" class="form-control">
-                        <option value="4" [zoom_4_select]>放大4倍</option>
-                        <option value="3" [zoom_3_select]>放大3倍</option>
-                        <option value="2" [zoom_2_select]>放大2倍</option>
+                        <option value="4" [zoom_4_select]>Zoom to 4</option>
+                        <option value="3" [zoom_3_select]>Zoom to 3</option>
+                        <option value="2" [zoom_2_select]>Zoom to 2</option>
                         <option value="1" [zoom_1_select] selected>Recenter</option>
-                        <option value="-2" [zoom_-2_select]>缩小2倍</option>
-                        <option value="-3" [zoom_-3_select]>缩小3倍</option>
-                        <option value="-4" [zoom_-4_select]>缩小4倍</option>
+                        <option value="-2" [zoom_-2_select]>Zoom to -2</option>
+                        <option value="-3" [zoom_-3_select]>Zoom to -3</option>
+                        <option value="-4" [zoom_-4_select]>Zoom to -4</option>
                     </select>
                 </div>
             </div>
@@ -105,7 +105,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
                 <div class="col-sm-8">
                     <!-- FORM SUBMIT BUTTON -->
 
-                    <input type="submit" name="submit" value="刷新" class="btn btn-sm btn-primary">
+                    <input type="submit" name="submit" value="Refresh" class="btn btn-sm btn-primary">
 
                 </div>
 
@@ -125,7 +125,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
 
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">参考:</label>
+                <label class="col-sm-2 control-label">Refer to:</label>
 
                 <div class="col-sm-8">
 
