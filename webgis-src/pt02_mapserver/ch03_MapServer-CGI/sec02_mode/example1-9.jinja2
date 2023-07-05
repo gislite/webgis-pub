@@ -1,13 +1,13 @@
 {% extends "content.jinja2" %}
 
-<title>MapServer交互：MapServer的交互地图及Browse模式 </title>
+<title>MapServer interaction: Interactive map and Browse mode of MapServer </title>
 
 {% block mainbody %}
 
     <div class="container">
-        <h1 align="center" id="vk8"> MapServer 交互地图及Browse模式 </h1>
+        <h1 align="center" id="vk8"> MapServer Interactive map and Browse mode </h1>
 
-        <!-- MAPSERVER 表单 -->
+        <!-- MAPSERVER form -->
 
         <form name="mapserv" method="GET" action="/cgi-bin/mapserv" class="form-horizontal">
             <!-- MAPSERVER CGI Vars -->
@@ -24,15 +24,15 @@
         </form>
         <br>
         <!-- END OF MAPSERVER FORM -->
-        <p>这幅动态地图是在<code>browse</code>模式下生成的。在地图上用鼠标点击，会发现地图动起来了。 </p>
+        <p>This dynamic map was generated in<code>browse</code>mode. Click on the map with the mouse, you will find that the map moves. </p>
         <p>
-            这个地图与前面的静态地图都使用相同的 Mapfile 定义。 不同之处在于第二个地图（动态创建的地图）依赖于HTML表单进行交互。
-            如果您查看此页面与上一页的源代码，会发现它们之间的不同。
-            这个页面在MapServer术语中称为HTML模板。
+            This map uses the same Mapfile definition as the previous static maps. The difference is that the second map (the dynamically created one) relies on HTML forms for interaction.
+If you look at the source code on this page and the previous page, you'll notice the differences between them.
+This page is called an HTML template in MapServer terminology.
         </p>
 
         <p>
-            在地图上点击后，会发现页面的URL改变了。下面将 URL 中的参数解析一下，要注意URL的一些参数与用户的点击有关系：
+           After clicking on the map, you will find that the URL of the page has changed. Let's parse the parameters in the URL, and note that some parameters of the URL are related to the user's click:
         </p>
 
         <pre><code>

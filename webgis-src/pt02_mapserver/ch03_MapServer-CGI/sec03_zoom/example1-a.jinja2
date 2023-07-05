@@ -1,24 +1,24 @@
 {% extends "content.jinja2" %}
 
 {#
-原始英文教程：
+Original English course:
 http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/example2.map&layer=states&zoom=0&mode=browse&root=/tutorial&program=/cgi-bin/mapserv&map_web=template+example2-1.html
 
 #}
 
-<title>MapServer交互：缩放与浏览控制</title>
+<title>MapServer interaction: Zoom and browse control</title>
 
 {% block mainbody %}
 
     <div class="container">
 
-        <h2>示例 2.1: 缩放与浏览控制</h2>
+        <h2>Example 2.1: Scaling and browsing controls</h2>
 
         <!-- START OF MAPSERVER FORM -->
         <form name="mapserv" method="GET" action="[program]" class="form-horizontal" role="form">
 
             <fieldset>
-                <legend>地图的缩放与浏览控制</legend>
+                <legend>Map zoom and browse control</legend>
 
                 <br>
                 <!-- HIDDEN MAPSERVER CGI VARIABLES -->
@@ -32,7 +32,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
                 <input type="hidden" name="zoom" value="[zoom]"/>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="mode">地图模式：</label>
+                    <label class="col-sm-2 control-label" for="mode">Map mode:</label>
 
                     <div class="col-sm-8">
                         <select name="mode" class="form-control">
@@ -43,17 +43,17 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="zoom">地图控制：</label>
+                    <label class="col-sm-2 control-label" for="zoom">Map control:</label>
 
                     <div class="col-sm-8">
                         <select name="zoom" class="form-control">
-                            <option value="4" [zoom_4_select]>放大4倍</option>
-                            <option value="3" [zoom_3_select]>放大3倍</option>
-                            <option value="2" [zoom_2_select]>放大2倍</option>
-                            <option value="0" [zoom_0_select]>置中</option>
-                            <option value="-2" [zoom_-2_select]>缩小2倍</option>
-                            <option value="-3" [zoom_-3_select]>缩小3倍</option>
-                            <option value="-4" [zoom_-4_select]>缩小4倍</option>
+                            <option value="4" [zoom_4_select]>Zoom to 4</option>
+                            <option value="3" [zoom_3_select]>Zoom to 3</option>
+                            <option value="2" [zoom_2_select]>Zoom to 2</option>
+                            <option value="0" [zoom_0_select]>Recenter</option>
+                            <option value="-2" [zoom_-2_select]>Zoom to -2</option>
+                            <option value="-3" [zoom_-3_select]>Zoom to -3</option>
+                            <option value="-4" [zoom_-4_select]>Zoom to -4</option>
                         </select>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
                     <label class="col-sm-2 control-label"></label>
 
                     <div class="col-sm-8">
-                        <input type="submit" name="submit" value="刷新" class="btn btn-primary">
+                        <input type="submit" name="submit" value="Refresh" class="btn btn-primary">
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@ http://demo.mapserver.org/cgi-bin/mapserv?map=/osgeo/mapserver/tutorial/htdocs/e
         <hr>
 
         <p>
-            在上面的表单中，用到了一些参数：
+            In the form above, some parameters are used:
         </p>
 
         <pre><code>
