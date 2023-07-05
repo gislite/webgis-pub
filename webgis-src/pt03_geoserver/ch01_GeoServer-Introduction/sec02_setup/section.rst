@@ -53,7 +53,7 @@ Open the browser address bar to enter
 
 The following page indicates that the configuration is successful:
 
-.. figure:: ./tomcat_start.png
+.. figure:: tomcat_start.png
    :alt: Tomcat configured successfully
 
    Tomcat configured successfully
@@ -71,7 +71,7 @@ file address.
 There is a tomcat-user.xmlwen file opened in the file and added at the
 end of the file. Set the login account password to ``admin``, ``tomcat``
 
-.. figure:: ./tomcat_conf1.png
+.. figure:: tomcat_conf1.png
    :alt: Tomcat configuration password
 
    Tomcat configuration password
@@ -85,7 +85,7 @@ GeoServer after the configuration is complete.
    cd dir/apache-tomcat-7.0.94/webapps/manager/WEB-INF
    vi web.xml
 
-.. figure:: ./tomcat_conf2.png
+.. figure:: tomcat_conf2.png
    :alt: Tomcat configuration size
 
    Tomcat configuration size
@@ -106,7 +106,7 @@ Download the .war file and .bin file, here we mainly use the .war file
 as an example to decompress and copy the files to the webapps folder as
 shown in the figure.
 
-.. figure:: ./gerserver_1.png
+.. figure:: gerserver_1.png
    :alt: Geoserver installation
 
    Geoserver installation
@@ -119,14 +119,14 @@ Now you can enter the browser and use it. Open the browser to enter.
 
 Click manager app
 
-.. figure:: ./geoserver_2.png
+.. figure:: geoserver_2.png
    :alt: Manager enters
 
    Manager enters
 
 Click on geoserver.war
 
-.. figure:: ./geoserver_3.png
+.. figure:: geoserver_3.png
    :alt: Geoserver enters
 
    Geoserver enters

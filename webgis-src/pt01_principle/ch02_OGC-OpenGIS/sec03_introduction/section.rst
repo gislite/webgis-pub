@@ -53,7 +53,7 @@ The complete Web service system has three parts: provider, user and portal. The 
 Providers can register their Web service information in the portal, and users can query the portal, find the services they need, and then use these services (below).
 
 
-.. figure:: ./imgvze23.png
+.. figure:: imgvze23.png
 
 Web services inherit the characteristics of both Web programs and development interfaces. Compared with traditional computing methods, Web services have the following advantages:
 

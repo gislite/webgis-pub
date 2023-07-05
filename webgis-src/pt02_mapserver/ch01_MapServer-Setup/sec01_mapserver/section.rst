@@ -165,7 +165,7 @@ MapServer supports a three-tier architecture:
 A simple MapServer consists of the following parts, as shown in the
 figure:
 
-.. figure:: ./mapserver_general.png
+.. figure:: mapserver_general.png
    :alt: Schematic of MapServer principle
 
    Schematic of MapServer principle

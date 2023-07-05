@@ -44,7 +44,7 @@ In map slicing, there are three important concepts: 1. slice origin; 2.
 slice resolution (scale); 3. initial slice range. The following is a
 brief introduction to these three concepts.
 
-.. figure:: ./img_tiles.png
+.. figure:: img_tiles.png
    :alt: Map slicing schematic diagram
 
    Map slicing schematic diagram

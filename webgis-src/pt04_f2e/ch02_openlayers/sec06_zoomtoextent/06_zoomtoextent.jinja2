@@ -1,0 +1,57 @@
+{% extends "contentj.jinja2" %}
+  <title>ZoomToExtent Control</title>
+
+    {% block headbody %}
+
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-6.14.1/ol.css" type="text/css">
+
+    <!--导入最新版本ol的js文件。-->
+	<script src="https://www.osgeo.cn/static/f2elib/ol-6.14.1/ol.js"></script>
+
+
+  <style>
+        #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+    {% endblock %}
+
+{%  block cntbody %}
+
+      <div id="olmap" class="olmap"></div>
+    <br>
+    <div>This example demonstrates how to use the ol.control.ZoomToExtent control. Click to go directly to the set coordinate position. </div>
+    <script>
+	//加载地图
+      var olmap = new ol.Map({
+        controls: ol.control.defaults({			//设置控件中的控件集。	
+          attributionOptions: {				//属性选项
+            collapsible: false				//折叠属性。
+          }
+        }).extend([
+          new ol.control.ZoomToExtent({		//按钮控件，当按下时，将地图视图更改为特定范围。使用CSS选择器
+							//来调整此控件的样式
+            extent: [				//放大的程度。如果未定义，则使用视图投影的有效范围。
+              813079.7791264898, 5929220.284081122,
+              848966.9639063801, 5936863.986909639
+            ]
+          })
+        ]),
+        layers: [	//加载图层
+          new ol.layer.Tile({		//加载瓦片图层
+            source: new ol.source.OSM()		//加载OpenStreetMap层源
+          })
+        ],
+        target: 'olmap',		//地图容器div的id
+          view: new ol.View({	//地图为2D视图
+          center: [0, 0],	//地图初始中心点
+          zoom: 2		//地图初始级别
+        })
+      });
+    </script>
+
+{% endblock %}
+<!--这个例子显示了如何使用ol.control.ZoomToExtent控制装置-->

@@ -119,7 +119,7 @@ For the management of the PostgreSQL database, we can use ``pgadmin``
 GUI programe. This tool could be downloaded via
 https://www.pgadmin.org/download/ .
 
-.. figure:: ./pgadmin.png
+.. figure:: pgadmin.png
    :alt: pgadmin
 
    pgadmin
@@ -129,7 +129,7 @@ Use
 
 First, prepare a ``shpfile`` File.
 
-.. figure:: ./shpfile.png
+.. figure:: shpfile.png
    :alt: Shpfile display
 
    Shpfile display
@@ -154,7 +154,7 @@ Method 1
 
 -  Open ``pgadmin`` click on the plugin ``import``\ ；
 
-.. figure:: ./pgadmin_2.png
+.. figure:: pgadmin_2.png
    :alt: Openpg
 
    Openpg
@@ -163,7 +163,7 @@ Method 1
    ``PostGIS``: Click ``connection`` to enter the username, password,
    and database to be used
 
-.. figure:: ./pgadmin_1.png
+.. figure:: pgadmin_1.png
    :alt: Connectionpg
 
    Connectionpg
@@ -171,7 +171,7 @@ Method 1
 -  After the prompt is successful, click ``Add file`` to select the file
    extension you want to import with the suffix ``.shp``
 
-.. figure:: ./pgadmin_3.png
+.. figure:: pgadmin_3.png
    :alt: Select filepg
 
    Select filepg
@@ -179,7 +179,7 @@ Method 1
 -  After adding, modify the ``schema`` ``table`` and add it to the
    position you want
 
-.. figure:: ./pgadmin_4.png
+.. figure:: pgadmin_4.png
    :alt: Add filepg
 
    Add filepg
@@ -187,7 +187,7 @@ Method 1
 -  After setting, click ``import`` as shown in the figure below,
    indicating that the import is complete.
 
-.. figure:: ./pgadmin_5.png
+.. figure:: pgadmin_5.png
    :alt: Success filepg
 
    Success filepg
@@ -220,7 +220,7 @@ Import with the command line tool:
 
 -  | Pipe sql into database
 
-.. figure:: ./psql.png
+.. figure:: psql.png
    :alt: Successpsql
 
    Successpsql
@@ -232,14 +232,14 @@ Enter the ``GeoServer`` operation page:
 
 -  Select the left workspace
 
-.. figure:: ./gp_w0.png
+.. figure:: gp_w0.png
    :alt: New workspace
 
    New workspace
 
 -  Select new workspace
 
-.. figure:: ./gp_w1.png
+.. figure:: gp_w1.png
    :alt: New workspace1
 
    New workspace1
@@ -248,14 +248,14 @@ Enter the ``GeoServer`` operation page:
 
 -  Select data within ``Datastore``
 
-.. figure:: ./gp_0.png
+.. figure:: gp_0.png
    :alt: New workspace
 
    New workspace
 
 -  Add new datastore
 
-.. figure:: ./gp_1.png
+.. figure:: gp_1.png
    :alt: Add storage
 
    Add storage
@@ -263,14 +263,14 @@ Enter the ``GeoServer`` operation page:
 -  Select the workspace, fill in the connection parameter database,
    username and password
 
-.. figure:: ./gp_2.png
+.. figure:: gp_2.png
    :alt: Fill in the parameters
 
    Fill in the parameters
 
 -  After saving, it will automatically jump and click the publish button
 
-.. figure:: ./gp_3.png
+.. figure:: gp_3.png
    :alt: Publish
 
    Publish
@@ -280,14 +280,14 @@ Enter the ``GeoServer`` operation page:
 
 -  reference and border
 
-.. figure:: ./gp_4.png
+.. figure:: gp_4.png
    :alt: New workspace
 
    New workspace
 
 -  After saving, find ``layer Preview`` in the left menu bar
 
-.. figure:: ./gp_5.png
+.. figure:: gp_5.png
    :alt: view
 
    view
@@ -295,14 +295,14 @@ Enter the ``GeoServer`` operation page:
 -  After clicking, you can find the layer we want to publish and click
    ``Openlayers``
 
-.. figure:: ./gp_6.png
+.. figure:: gp_6.png
    :alt: view
 
    view
 
 -  As shown below
 
-.. figure:: ./gp_7.png
+.. figure:: gp_7.png
    :alt: view
 
    view

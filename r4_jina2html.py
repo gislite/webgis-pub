@@ -55,10 +55,21 @@ def gen_html_pages(src_ws):
     '''
 
     for wfile in src_ws.rglob('*.jinja2'):
+        xx_html_file = wfile.parent / f'xx_{wfile.stem}.html'
         out_html_file = Path('/owg') / (wfile.stem + '.html')
         print(wfile)
         render_html(
             str(wfile), str(out_html_file),
+            # dir_title=dir_title,
+            # title=get_html_title(jinja2_file),
+            # leftnav=format_leftnav(list_main[idx_dir]['list_md'], slug),
+            # nav=nav_formated,
+            # cntnav=format_cntnav(cnt_title_arr),
+            # SITE_URL = SITE_URL,
+            # first_nav=str(src_ws).split('_')[2]
+        )
+        render_html(
+            str(wfile), str(xx_html_file),
             # dir_title=dir_title,
             # title=get_html_title(jinja2_file),
             # leftnav=format_leftnav(list_main[idx_dir]['list_md'], slug),

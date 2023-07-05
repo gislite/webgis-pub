@@ -13,7 +13,7 @@ and opportunities accessible to all.
 
 This website is open-source. Hosted on github: https://github.com/gislite/webgis-pub
 
-.. image:: ./webgis-logo.png
+.. image:: webgis-logo.png
 
 
 This website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
@@ -54,7 +54,7 @@ MapServer
 .. <img src="/images/logo_mapserver.png" style="float: right; width:100px; margin:10px;"/>
 .. {# MapServer可以看作是两个独立模块的统称：MapServer CGI模块和MapScript模块。  #}
 
-.. image:: ./logo_mapserver.png
+.. image:: logo_mapserver.png
 
 MapServer was originally an open source WebGIS software developed
 by the University of Minnesota and the US Space Agency (NASA).
@@ -75,7 +75,7 @@ MapProxy
 
 
 
-.. image:: ./logo_mapproxy.png
+.. image:: logo_mapproxy.png
 
 
 
@@ -90,7 +90,7 @@ LeafletJS
 .. <img src="/images/logo_leaflet.png" style="float: right; width:200px;margin:10px;"/>
 
 
-.. image:: ./logo_leaflet.png
+.. image:: logo_leaflet.png
 
 Leaflet is a modern, open-source JavaScript library developed for building mobile-friendly interactive maps. It was developed by Vladimir Agafonkin, a team of professional contributors, with a small amount of code, but it has most of the features developers develop online maps. The Leaflet design adheres to the idea of simplicity, high performance and usability, and operates efficiently on all major desktop and mobile platforms.
 The advantages of HTML5 and CSS3 are exploited in modern browsers, while old browser access is also supported.
@@ -103,7 +103,7 @@ OpenLayers
 
 .. <img src="/images/logo_openlayers.png" style="float: right;width:200px;margin:10px;"/>
 
-.. image:: ./logo_openlayers.png
+.. image:: logo_openlayers.png
 
 OpenLayers is a JavaScript package for developing WebGIS clients.
 Sources supported by OpenLayers include Google Maps, Yahoo, Map, Microsoft Virtual Earth, etc.
@@ -122,7 +122,7 @@ Cesium
 .. <img src="/images/logo_cesium.png" style="float: right;width:200px;margin:10px;"/>
 
 
-.. image:: ./logo_cesium.png
+.. image:: logo_cesium.png
 
 WebGL-based front-end 3D JavaScript class library. Cesium launched the 3D Tiles data specification around March 2016, providing LOD capabilities on a glTF basis. Positioning is massive 3D model data in the Web environment.
 Although the current 3D Tiles is still in the Beta stage, there are quite a few flaws.
@@ -143,7 +143,7 @@ Institute of Geographic Sciences and Natural Resources Research, Chinese Academy
 Director of World Data System (WDS) for Renewable Resources and Environment
 
 
-.. image:: ./authors.jpg
+.. image:: authors.jpg
 
 - The development of this new website is to promote the use of open source WebGIS;
 - The Chinese version of this tutorial is maintained by OSGeo China Center - Open Geospatial Laboratory;
@@ -178,6 +178,7 @@ Build under Python 3.7.3 , using the flollowing modules：
 
 .. toctree::
    :maxdepth: 2
+   :numbered: 3
 
    pt01_principle/part
    pt02_mapserver/part

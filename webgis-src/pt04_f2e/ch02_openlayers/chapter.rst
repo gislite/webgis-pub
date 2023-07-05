@@ -15,4 +15,5 @@ applications. This part introduces it.
 .. toctree::
    :maxdepth: 2
 
-   sec01_intro/section
+   sec01_int/section
+   sec02_intro/section

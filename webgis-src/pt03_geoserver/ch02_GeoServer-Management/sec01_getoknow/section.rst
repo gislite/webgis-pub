@@ -8,7 +8,7 @@ After logging in to GeoServer, now focus on the layout.
 As you can see in the screenshot below, the GeoServer Web interface has
 three main areas.
 
-.. figure:: ./geoserver_index_x7w.png
+.. figure:: geoserver_index_x7w.png
    :alt: GeoServer home page interface
 
    GeoServer home page interface
@@ -37,7 +37,7 @@ About and status
 This area provides information about run-time variables and how to
 describe GeoServer to clients connected to GeoServer.
 
-.. figure:: ./image42_x70.jpg
+.. figure:: image42_x70.jpg
    :alt: image42
 
    image42
@@ -52,7 +52,7 @@ to providing information, this view allows you to perform some
 maintenance operations. We will describe the main items listed in the
 following screenshot:
 
-.. figure:: ./server_stutas_xn8.png
+.. figure:: server_stutas_xn8.png
    :alt: Server status of GeoServer
 
    Server status of GeoServer
@@ -123,7 +123,7 @@ From here you can preview the current log file or download the full
 content from the link at the bottom. It can be useful when you cannot
 access the file system where the actual log files are stored.
 
-.. figure:: ./image44_x2b.png
+.. figure:: image44_x2b.png
    :alt: GeoServer log
 
    GeoServer log
@@ -131,7 +131,7 @@ access the file system where the actual log files are stored.
 The record of each execution is also saved in the log, and the
 configuration location of the saved location is in the global.
 
-.. figure:: ./log_xyu.png
+.. figure:: log_xyu.png
    :alt: log
 
    log
@@ -151,7 +151,7 @@ About
 As it says, this is just build information and where to find the
 entirety of the GeoServer documentation, bug tracker and wiki.
 
-.. figure:: ./image45_xq9.png
+.. figure:: image45_xq9.png
    :alt: GeoServer about the interface
 
    GeoServer about the interface

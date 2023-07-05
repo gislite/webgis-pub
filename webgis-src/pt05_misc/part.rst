@@ -8,7 +8,6 @@ Tiles and Tools.
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
 
    ch01_tools/chapter
    ch02_tiles/chapter
