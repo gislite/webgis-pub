@@ -117,8 +117,8 @@ created for convenience, such as:
        return new L.Icon(options);
    }};
 
-You can also do the same thing in class. Ok, let’s put the markers for
-these icons on the map:
+You can also do the same thing in class.
+OK, let’s put the markers for these icons on the map:
 
 ::
 
