@@ -3,7 +3,7 @@
 MapServer interaction: browse and zoom control
 ==============================================
 
-This paper introduces how to realize the control of map browsing and
+This section introduces how to realize the control of map browsing and
 zooming through CGI in MapServer.
 
 How to browse and zoom
