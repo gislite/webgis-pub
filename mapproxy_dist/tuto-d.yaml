@@ -1,0 +1,84 @@
+caches:
+  maplet_WorldCountry3:
+    grids:
+    - germany
+    sources:
+    - smaplet_WorldCountry
+  maplet_WorldCountry2:
+    grids:
+    - webmercator
+    sources:
+    - smaplet_WorldCountry
+  maplet_WorldCountry1:
+    grids:
+    - res_grid
+    sources:
+    - smaplet_WorldCountry
+  osm_cache:
+    grids:
+    - res_grid
+    sources:
+    - osm_wms
+globals: null
+grids:
+  webmercator:
+    base: GLOBAL_WEBMERCATOR
+  res_grid:
+    base: GLOBAL_GEODETIC
+    res: [1, 0.5, 0.25, 0.125, 0.0625]
+  germany:
+    srs: 'EPSG:4326'
+    bbox: [6, 47.3, 15.1, 55]
+    bbox_srs: 'EPSG:4326'
+layers:
+- name: osm
+  sources:
+  - osm_cache
+  title: Omniscale OSM WMS - osm.omniscale.net
+- name: maplet_WorldCountry
+  sources:
+  - smaplet_WorldCountry
+  title: maplet_WorldCountry
+- name: maplet_WorldCountry1
+  sources:
+  - maplet_WorldCountry1
+  title: maplet_WorldCountry
+- name: maplet_WorldCountry2
+  sources:
+  - maplet_WorldCountry2
+  title: maplet_WorldCountry
+- name: maplet_WorldCountry3
+  sources:
+  - maplet_WorldCountry3
+  title: maplet_WorldCountry3
+services:
+  demo: null
+  kml:
+    use_grid_names: true
+  tms:
+    origin: nw
+    use_grid_names: true
+  wms:
+    md:
+      abstract: This is a minimal MapProxy example.
+      title: MapProxy WMS Proxy
+  wmts: null
+sources:
+  smaplet_WorldCountry:
+    image:
+      transparent_color: '#ffffff'
+      transparent_color_tolerance: 0
+    req:
+      layers: lyr_WorldCountry
+      url: http://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
+    type: wms
+    coverage:
+      bbox: [5.5, 47.4, 15.2, 54.8]
+      bbox_srs: 'EPSG:4326'
+  osm_wms:
+    req:
+      layers: osm
+      url: http://osm.omniscale.net/proxy/service?
+    type: wms
+
+

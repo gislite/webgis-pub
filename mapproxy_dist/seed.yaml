@@ -1,0 +1,27 @@
+# ---------------------------------------
+# MapProxy example seeding configuration.
+# ---------------------------------------
+#
+# This is a minimal MapProxy seeding configuration.
+# See full_seed_example.yaml and the documentation for more options.
+#
+
+seeds:
+  myseed1:
+    caches: [osm_cache]
+    # grids: []
+    # coverages: []
+    levels:
+      to: 10
+    refresh_before:
+      time: 2013-10-10T12:35:00
+
+cleanups:
+  myclean1:
+    caches: [osm_cache]
+    remove_before:
+      days: 14
+    levels:
+        from: 11
+
+coverages:
