@@ -36,13 +36,16 @@ including predicates expressing spatial relationships.
 
 Spatial query and analysis are at the core of GIS,
 and most of the daily tasks in GIS projects are related to queries.
-GIS query types can be divided into the following three types: simple attribute query, query related to spatial location, and joint query related to spatial location and attribute.
+GIS query types can be divided into the following three types:
+simple attribute query, query related to spatial location,
+and joint query related to spatial location and attribute.
 
 
 Basic requirements for implementing spatial retrieval in MapServer
 
 
-The query template is an HTML fragment that is a suitable HTML interface when placed together by the MapServer CGI program.
+The query template is an HTML fragment that
+is a suitable HTML interface when placed together by the MapServer CGI program.
 
 
 The following two variables are user-defined variables. 
@@ -54,7 +57,8 @@ The ``map`` and ``layer`` variables are interactive MapServer variables that
 are required by the map application.
 
 
-The variable passed by ``map_web`` will replace the ``TEMPLATE`` parameter in the WEB object of the Mapfile.
+The variable passed by ``map_web`` will replace the ``TEMPLATE`` parameter
+in the WEB object of the Mapfile.
 This variable is different from a user-defined variable.
   
 

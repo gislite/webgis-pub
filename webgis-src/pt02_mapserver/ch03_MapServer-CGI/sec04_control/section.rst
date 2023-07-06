@@ -12,7 +12,7 @@ How to control layers
 Being able to turn map layers on and off is a standard feature of web mapping applications.
 There are many ways to accomplish this using form objects as control.
 You can use the drop box/menu, check boxes, and/or radio buttons.
-In this example you'll see how to implement layer selection using check boxes and drop boxes.</p>
+In this example you'll see how to implement layer selection using check boxes and drop boxes.
 
 Here is the corresponding Mapfile:
 
@@ -20,10 +20,11 @@ Here is the corresponding Mapfile:
    :lineno-start: 1
 
 
-Notice how the layer STATUS has been changed to OFF except for the &quot;States&quot;
-polygon background. The states background was left as default so our map will always have something
+Notice how the layer ``STATUS`` has been changed to ``OFF`` except for the "States"
+polygon background.
+The states background was left as default so our map will always have something
 when drawn without any layers turned on. 
-The users of our application should have control of which layers to turn on or leave off.</p>
+The users of our application should have control of which layers to turn on or leave off.
 
 You'll understand how the layers are turned on/off by MapServ if you look at the:
 
@@ -59,7 +60,8 @@ You'll understand how the layers are turned on/off by MapServ if you look at the
     </form>
 
 
-## Open and close map layers
+Open and close map layers
+===================================================
 
 The demo could be opened directly via the following link:
 
@@ -69,7 +71,9 @@ The demo could be opened directly via the following link:
                target="_blank">Open layer control page</a>
     <hr/>
 
-The following shows a form submission, and various parameters are passed through the hidden `input` control. The effect is the same as above：
+The following shows a form submission,
+and various parameters are passed through the hidden `input` control.
+The effect is the same as above：
 
 ::
 
