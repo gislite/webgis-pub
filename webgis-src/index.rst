@@ -157,15 +157,15 @@ Director of World Data System (WDS) for Renewable Resources and Environment
 Technical Environment
 ---------------------------------------------------------
 
-- Operating system：Debian Linux 10 (buster), 64bit
-- Apache 2.4.38-3+deb10u8
-- CGI MapServer 7.2.2-1
-- MapProxy 1.11.0-3+deb10u1
+- Operating system：Debian Linux 12 (bookworm), 64bit
+- Apache 2.4.57-2
+- cgi-mapserver 8.0.0-3+b8
+- MapProxy 1.15.1-2
 
 Building Environment
 ------------------------------------------
 
-Build under Python 3.7.3 , using the flollowing modules：
+Build under Python 3.11.2 , using the flollowing modules：
 
 
 - beautifulsoup4==4.11.1
@@ -175,10 +175,13 @@ Build under Python 3.7.3 , using the flollowing modules：
 - Markdown==3.3.7
 - PyYAML==6.0
 
+Logs
+--------------------------------------------------
+
+- 2023-07-07: The operating system is switched to Debian 12. (used to be Debian 10)
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
 
    pt01_principle/part
    pt02_mapserver/part

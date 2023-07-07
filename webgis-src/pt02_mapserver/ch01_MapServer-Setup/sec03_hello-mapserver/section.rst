@@ -159,21 +159,15 @@ achieve this function.
 Let’s take a look at the basic usage of MapServer without using any GIS
 data. The following figure shows the effect:
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa0.map&mode=map
+.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa0.map&mode=map&format=jpeg
 
 
 
-The picture is shown above, and the code is:
-
-::
-
-   .. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa0.map&mode=map
-
-Or most common in HTML result:
+The codes for the picture shown above is :
 
 ::
 
-   <img border="1" src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa0.map&mode=map"/>
+   <img border="1" src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa0.map&mode=map&format=jpeg" />
 
 The above code is the basic usage of declaring images in HTML, but the
 parameters of ``src`` are not common image formats such as Jpeg, PNG,

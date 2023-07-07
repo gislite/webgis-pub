@@ -205,6 +205,18 @@ well-designed package management tool is really enjoyable. To install
 MapServer, simply run the following installation command (administrator
 privileges are required):
 
+In Debian 12:
+
+::
+
+   apt install -y apache2 php8.2 libapache2-mod-fcgid cgi-mapserver \
+       mapserver-bin libapache2-mod-php
+   a2enmod authnz_fcgi
+   a2enmod cgi
+   service apache2 restart
+
+
+
 In Debian 9:
 
 ::
@@ -243,7 +255,13 @@ on the terminal to view the results:
        SUPPORTS=THREADS SUPPORTS=GEOS INPUT=JPEG INPUT=POSTGIS 
        INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE
 
-A little note about FastCGI.
+
+And some configureations are needed for the service of MapServer.
+The config files could be founds under the `etc` directory of the soruce codes.
+May be you just need Apache. 
+Howerver, //webgis.pub uses Nginx for reverse proxy  to Apache.
+
+Notes about FastCGI.
 
 CGI (Common Gateway Interface) defines the method of interaction between
 web server and external content generation program, which usually refers
