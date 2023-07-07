@@ -13,6 +13,10 @@ and opportunities accessible to all.
 
 This website is open-source. Hosted on github: https://github.com/gislite/webgis-pub
 
+.. attention:: The OS has been upgraded to Debian 12. The MapServer has been upgraded to 8.0. 
+   Since 2023/7/7 .
+
+
 .. image:: webgis-logo.png
 
 

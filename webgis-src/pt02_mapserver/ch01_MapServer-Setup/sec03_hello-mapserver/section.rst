@@ -323,6 +323,8 @@ View the result
 With MapFile, you can render it as a picture using the following
 command.
 
+note: The ``map2img`` command is introduced in MapServer 8.0. It used to be ``shp2img`` .
+
 ::
 
-   shp2img  -m hello.map  -o out.png
+   map2img  -m hello.map  -o out.png

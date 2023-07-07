@@ -37,7 +37,6 @@ MAP
         STATUS ON
         CLASS
             NAME "Graticule"
-            COLOR 0 0 0
             LABEL
                 COLOR 255 0 0
                 FONT "arial-bold"

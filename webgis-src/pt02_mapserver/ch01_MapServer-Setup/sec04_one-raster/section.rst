@@ -37,8 +37,8 @@ remote sensing image data source:
 of the spatial dataset. The initial map range is determined by the
 coordinates of the specified southwest and northeast corners.
 
-Here is the effect:
+Here is the result:
 
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mf3t.map&layer=topo&mode=map
+.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mf3t.map&layer=topo&mode=map&format=jpeg
 
