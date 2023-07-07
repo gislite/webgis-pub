@@ -48,7 +48,8 @@ GetCapabilities request
 As in WMS and WFS, you can also use ``GetCapabilities`` to view the
 capabilities of WCS:
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__
+`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities  <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__
+
 
 Parse the parameters using Python:
 
@@ -84,7 +85,7 @@ DescribeCoverage request
 The ``DescribeCoverage`` request lists more information about a specific
 coverage product.
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img>`__
+`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img>`__
 
 The parameters are described as follows:
 
@@ -138,7 +139,7 @@ cannot specify the name and suffix of the file at this time, the file
 can be downloaded and saved, and modified into a file with ``.tif`` as
 the suffix. This file has geospatial information.
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326 <%7BSITE_URL%7D/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326>`__
+http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326 
 
 The parameters are decomposed as follows:
 
