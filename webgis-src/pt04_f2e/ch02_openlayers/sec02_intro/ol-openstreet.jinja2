@@ -1,0 +1,43 @@
+{% extends "contentj.jinja2" %}
+<title>OpenStreetMap Map</title>
+
+{% block cntbody %}
+
+    <div id="olmap" class="olmap" tabindex="0"></div>
+    <script>
+        //layers、target、view是地图最基本的部分，是必需的
+        //初始换Map对象，显示地图。
+        var olmap = new ol.Map({
+            //在地图容器中加载地图
+            layers: [
+                {#
+                new ol.layer.Tile({				// 加载瓦片图层数据
+                    source: new ol.source.OSM()		// 图层对应的数据源，此处加载OpenStreetMap在线瓦片服务数据
+                }),
+                 #}
+
+                new ol.layer.Tile({  //加载瓦片图层
+                    source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+                        layer: 'terrain'
+                    })
+                }),
+            ],
+
+            target: 'olmap',						// 地图容器div层的id值
+            controls: ol.control.defaults.defaults({		 // 设置地图控件，collapsible控件不显示。
+                attributionOptions: {
+                    collapsible: false
+                }
+            }),
+            //表示显示简单的2D视图地图。
+            view: new ol.View({
+                center: [0, 0],	//地图初始中心点
+                zoom: 2			//地图初始显示级别为2
+            })
+        });
+
+    </script>
+
+{% endblock %}
+
+

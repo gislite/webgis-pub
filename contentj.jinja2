@@ -1,21 +1,25 @@
 {% extends "base.jinja2" %}
 
+{% block headbody %}
+
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
+    <!--导入最新版本ol的js文件。-->
+    <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
+    <style>
+        #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+{% endblock %}
+
 {% block mainbody %}
 
-<div class="col-sm-2">
-    <div class="panel-group">
-		<div class="panel xmjj">
-		    <div class="panel-heading"><a>{{ dir_title }}</a></div>
-		</div>
-		{{ leftnav }}
-    </div>
-</div>
-<div class="col-sm-10">
-    <ol class="breadcrumb">
-        <li><a href="/index.html">首页</a></li>
-        <li>{{ dir_title }}</li>
-        <li>{{ title }}</li>
-    </ol>
+
+<div class="col-sm-12">
+
     <div class="row">
 		<div class="col-xs-12">
 

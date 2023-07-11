@@ -1,0 +1,68 @@
+{% extends "contentj.jinja2" %}
+<title>Map overlay grid</title>
+
+{% block headbody %}
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
+
+    <!--导入最新版本ol的js文件。-->
+    <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
+    <style>
+        #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block cntbody %}
+
+
+    <div id="olmap" class="olmap"></div>
+    <br>
+    <div>This example shows how to add a grid overlay to a map. The grid adds latitude and longitude.</div>
+    <script>
+        //加载地图
+        var olmap = new ol.Map({
+            //加载图层
+            layers: [
+                {#
+              new ol.layer.Tile({		//加载瓦片图层
+                source: new ol.source.OSM({		//加载OpenStreetMap层源
+                  wrapX: false			//是否要把世界横向包裹起来。
+                })
+              }),
+                 #}
+                new ol.layer.Tile({  //加载瓦片图层
+                    source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+                        layer: 'terrain',
+                        wrapX: false
+                    })
+                }),
+            ],
+            target: 'olmap',		//地图容器div的id
+            view: new ol.View({		//地图为2D视图
+                center: ol.proj.fromLonLat([4.8, 47.75]),	//地图初始中心点
+                extent: ol.proj.get('EPSG:3857').getExtent(),	//约束中心的范围，换句话说，中心不能设置在这个范围之外。
+//默认是未定义的。
+                zoom: 5	//地图初始级别
+            })
+        });
+
+        // 创建分划组件
+        var graticule = new ol.Graticule({
+            // 用于线条的样式，可选。
+            strokeStyle: new ol.style.Stroke({
+                color: 'rgba(255,120,0,0.9)',
+                width: 2,		//宽度
+                lineDash: [0.5, 4]	//线划线模式。
+            }),
+            showLabels: true	//为每个分界线绘制相应纬度/经度的标签。
+        });
+
+        graticule.setMap(olmap);		//添加到地图中。
+    </script>
+
+{% endblock %}
+<!--这个例子展示了如何在地图上添加一个网格覆盖。-->

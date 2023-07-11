@@ -1,0 +1,66 @@
+{% extends "contentj.jinja2" %}
+  <title>Projection</title>
+
+    {% block headbody %}
+
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+    <!-- 下面的js只使用于 Internet Explorer和Android 4.x版本-->
+      <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <!--导入最新版本ol的js文件。-->
+	<script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js"></script>
+  <style>
+       #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+    {% endblock %}
+
+{%  block cntbody %}
+
+
+    <div id="olmap" class="olmap"></div>
+    <br>
+    <div>This example shows a client reprojection of a single image source. Data can be projected directly onto the map for easy access.</div>
+    <script>
+		//投影数据
+      proj4.defs('EPSG:27700', '+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 ' +
+          '+x_0=400000 +y_0=-100000 +ellps=airy ' +
+          '+towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 ' +
+          '+units=m +no_defs');
+      var imageExtent = [0, 0, 700000, 1300000];
+	//加载地图
+      var olmap = new ol.Map({
+	//加载图层
+        layers: [
+                         new ol.layer.Tile({  //加载瓦片图层
+                    source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+                        layer: 'terrain'
+                    })
+                }),
+          new ol.layer.Image({		//服务器渲染的图像，可用于任意范围和分辨率。
+            source: new ol.source.ImageStatic({		//用于显示单个静态图像的图层源。
+		//图片地址
+              url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/' +
+                     'British_National_Grid.svg/2000px-British_National_Grid.svg.png',
+              crossOrigin: '',
+              projection: 'EPSG:27700',	//投影
+              imageExtent: imageExtent	//地图坐标中图像的范围。 这是图像的[left，bottom，right，top]地图坐标
+            })
+          })
+        ],
+        target: 'olmap',		//地图容器div的id
+        view: new ol.View({		//地图视图为2D
+          center: ol.proj.transform(	//将坐标从源投影转换为目标投影。 这将返回一个新坐标（并且不会修改原始坐标）。
+              ol.extent.getCenter(imageExtent), 'EPSG:27700', 'EPSG:3857'),	//获取范围的中心坐标。
+          zoom: 4		//地图初始级别
+        })
+      });
+    </script>
+
+{% endblock %}
+<!--此示例显示单个图像源的客户端重新投影。-->
+ 

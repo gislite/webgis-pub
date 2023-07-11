@@ -1,0 +1,56 @@
+{% extends "contentj.jinja2" %}
+  <title>Tiandi map</title>
+
+    {% block headbody %}
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
+
+    <!--导入最新版本ol的js文件。-->
+	<script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
+  <style>
+        #olmap {
+            border: 1px solid #ddd;
+            width: 99%;
+            height: 400px;
+        }
+    </style>
+
+    {% endblock %}
+
+{%  block cntbody %}
+
+   <div id="olmap" class="olmap"> </div>
+    <br>
+    <div>The Openlayers application with the tiandi map as the base map.</div>
+    <script>
+     //layers、target、view是地图最基本的部分，是必需的
+            //初始换Map对象，显示地图。
+    var olmap = new ol.Map({
+        controls: ol.control.defaults.defaults().extend([
+            new ol.control.FullScreen() // 设置地图控件，添加全屏按钮控件。
+        ]),
+         //在地图容器中加载地图
+        layers: [
+            new ol.layer.Tile({ // 加载瓦片图层数据
+                source: new ol.source.XYZ({    //具有在URL模板中定义的设置XYZ格式的URL的切片数据的图层源。
+                    url: "http://t2.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}"  //图层源网址
+                })
+
+            })
+            ,
+            new ol.layer.Tile({
+                source: new ol.source.XYZ({   // 图层对应的数据源，此处加载天地图标注数据
+                    url: "http://t3.tianditu.com/DataServer?T=cva_w&x={x}&y={y}&l={z}"
+                })
+            })
+        ],
+        target: 'olmap', // 地图容器div层的id值
+        //表示显示简单的2D视图地图。
+        view: new ol.View({
+            center: [0,0], //地图初始中心点
+            zoom: 3  //地图初始显示级别为3
+        })
+    });
+</script>
+
+{% endblock %}
+<!--此示例为属性图标创建自定义元素。-->
