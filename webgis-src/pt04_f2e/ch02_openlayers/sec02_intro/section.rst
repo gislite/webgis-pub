@@ -16,9 +16,9 @@ The Second.
 
 .. raw:: html
 
-    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-6.14.1/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
     <!--导入最新版本ol的js文件。-->
-	<script src="https://www.osgeo.cn/static/f2elib/ol-6.14.1/ol.js"></script>
+	<script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
     <div id="olmap" class="olmap" style="height: 400px; width: 100%"></div>
     <script>
     //layers、target、view是地图最基本的部分，是必需的
