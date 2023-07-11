@@ -1,6 +1,7 @@
 # webgis-pub
 
-Source Code for website //webgis.pub .
+
+This directory is the source codes for //webgis.pub in Sphinx project structure.
 
 
 ## 
