@@ -19,27 +19,45 @@
 {% block cntbody %}
 
 
-        <h1>Technical overview</h1>
-        <div>OpenLayers is a JavaScript package for developing WebGIS clients. Sources supported by OpenLayers include Google Maps, Yahoo, Map, Microsoft Virtual Earth, etc. Users can also use a simple image map as a background image to overlay other layers in OpenLayers. In this regard, OpenLayers provides a lot of s Choice.
-        </div>
-        <div>
+    <h1>Technical overview</h1>
+    <div>OpenLayers is a JavaScript package for developing WebGIS clients. Sources supported by OpenLayers include
+        Google Maps, Yahoo, Map, Microsoft Virtual Earth, etc. Users can also use a simple image map as a background
+        image to overlay other layers in OpenLayers. In this regard, OpenLayers provides a lot of s Choice.
+    </div>
+    <div>
         The code implements the function of loading a tile map (ie OpenStreetMap map) and can pan and zoom the map.
-             When initializing a map, you need at least one view, one or more layers, and a target HTML tag for the map to load.
-        </div>
-        <br>
-        <div id="olmap" class="olmap" tabindex="0"></div>
+        When initializing a map, you need at least one view, one or more layers, and a target HTML tag for the map to
+        load.
+    </div>
     <br>
-    <div>The map element of this example sets its tabindex property to "0", which makes it focusable. To focus on the map element, you can navigate to it using the "Tab" key, or you can use a jump link. When focusing on the map element, the "+" and "-" keys can be used to zoom in and out, and the arrow keys can be used to pan the layer. </div>
+    <div id="olmap" class="olmap" tabindex="0"></div>
+    <br>
+    <div>The map element of this example sets its tabindex property to "0", which makes it focusable. To focus on the
+        map element, you can navigate to it using the "Tab" key, or you can use a jump link. When focusing on the map
+        element, the "+" and "-" keys can be used to zoom in and out, and the arrow keys can be used to pan the layer.
+    </div>
     <script>
         //layers、target、view是地图最基本的部分，是必需的
         //初始换Map对象，显示地图。
         var olmap = new ol.Map({
             //在地图容器中加载地图
             layers: [
+                {#
                 new ol.layer.Tile({				// 加载瓦片图层数据
                     source: new ol.source.OSM()		// 图层对应的数据源，此处加载OpenStreetMap在线瓦片服务数据
-                })
+                }),
+                 #}
+
+                new ol.layer.Tile({  //加载瓦片图层
+                    source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+                        layer: 'terrain'
+                    })
+                }),
+
+
             ],
+
+
             target: 'olmap',						// 地图容器div层的id值
             controls: ol.control.defaults({		 // 设置地图控件，collapsible控件不显示。
                 attributionOptions: {
