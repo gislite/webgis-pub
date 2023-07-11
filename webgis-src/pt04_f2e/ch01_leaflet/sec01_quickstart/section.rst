@@ -143,7 +143,7 @@ Dot mark, circle mark, and polygon mark
    <tbody>
    <tr>
    <td style="text-align: center; border: none">
-   <iframe src="http://webgis.pub/leaflet_quickstart/example-overlays.html" width="616" height="416">
+   <iframe src="http://webgis.pub/example-overlays.html" width="616" height="416">
    </iframe>
    </td>
    </tr>
@@ -193,7 +193,7 @@ Use pop-up window
    <tbody>
    <tr>
    <td style="text-align: center; border: none">
-   <iframe src="http://webgis.pub/leaflet_quickstart/example-popups.html" width="616" height="416">
+   <iframe src="http://webgis.pub/example-popups.html" width="616" height="416">
    </iframe>
    </td>
    </tr>
@@ -272,4 +272,4 @@ window. Check out the complete example:
 
 .. raw:: html
 
-    <a target="_blank" href="./leaflet_quickstart/quickstart.html">Show the example</a>
+    <a target="_blank" href="./quickstart.html">Show the example</a>

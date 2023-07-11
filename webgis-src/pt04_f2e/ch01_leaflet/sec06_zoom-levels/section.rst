@@ -98,12 +98,12 @@ width and height are doubled and can be represented by four 256-pixel by
 
     <div class="tiles" style="text-align: center">
     <div>
-    <img src="./0_002.png" class="bordered-img" alt=""><img src="./0_006.png" class="bordered-img" alt="">
-    </div>
-    <div>
-    <img src="./1_006.png" class="bordered-img" alt=""><img src="./1.png" class="bordered-img" alt="">
-    </div>
-    </div>
+    <img src="./0_002.png" class="bordered-img" alt="">
+    <img src="./0_006.png" class="bordered-img" alt="">
+    </div><div>
+    <img src="./1_006.png" class="bordered-img" alt="">
+    <img src="./1.png" class="bordered-img" alt="">
+    </div></div>
 
 At each zoom level, each tile is divided into four, the size (the length
 of the edge given by the ``tileSize`` option) doubles, and the area is
@@ -118,17 +118,21 @@ increased by a factor of three.
     </td><td>
     <div class="tiles small" style="text-align: center">
     <div>
-    <img src="./0_002.png" class="bordered-img" alt=""><img src="./0_006.png" class="bordered-img" alt="">
+    <img src="./0_002.png" class="bordered-img" alt="">
+    <img src="./0_006.png" class="bordered-img" alt="">
     </div>
     <div>
-    <img src="./1_006.png" class="bordered-img" alt=""><img src="./1.png" class="bordered-img" alt="">
+    <img src="./1_006.png" class="bordered-img" alt="">
+    <img src="./1.png" class="bordered-img" alt="">
     </div>
     </div>
     </td><td>
     <div class="tiles small" style="text-align: center">
     <div>
-    <img src="./0_007.png" class="bordered-img" alt=""><img src="./0_003.png" class="bordered-img" alt="">
-    <img src="./0_004.png" class="bordered-img" alt=""><img src="./0_005.png" class="bordered-img" alt="">
+    <img src="./0_007.png" class="bordered-img" alt="">
+    <img src="./0_003.png" class="bordered-img" alt="">
+    <img src="./0_004.png" class="bordered-img" alt="">
+    <img src="./0_005.png" class="bordered-img" alt="">
     </div>
     <div>
     <img src="./1_002.png" class="bordered-img" alt=""><img src="./1_003.png" class="bordered-img" alt="">

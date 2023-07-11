@@ -65,12 +65,12 @@ Now it’s easy to put an icon on the map:
     <tbody>
     <tr>
         <td style="text-align: center; border: none">
-            <iframe src="./leaflet_custom_icons/example-one-icon.html" width="616" height="416"></iframe>
+            <iframe src="./makericons.html" width="616" height="416"></iframe>
         </td>
     </tr>
     <tr>
         <td style="text-align: center; border: none">
-            <small><a href="./leaflet_custom_icons/example-one-icon.html">View this example</a></small>
+            <small><a href="./makericons.html">View this example</a></small>
         </td>
     </tr>
     </tbody>

@@ -10,11 +10,11 @@ efficiently, rather than processing one layer at a time.
 Map panes uses z-index CSS property Properties to control some layers to
 appear on top of other layers. The default order is as follows:
 
--  ``TileLayer``\ s and ``GridLayer``\ s
--  ``Path``\ s, like lines, polylines, circles, or ``GeoJSON`` layers.
+-  ``TileLayer`` s and ``GridLayer`` s
+-  ``Path`` s, like lines, polylines, circles, or ``GeoJSON`` layers.
 -  ``Marker`` shadows
 -  ``Marker`` icons
--  ``Popup``\ s
+-  ``Popup`` s
 
 That’s why in the Leaflet map, popups are displayed on top of other
 layers, markers are always displayed on the slice layer, and so on.

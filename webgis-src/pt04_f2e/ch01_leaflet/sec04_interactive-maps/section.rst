@@ -57,10 +57,10 @@ Let’s display our states data on the map in a custom Mapbox style.
 
     <table> <tbody>
         <tr> <td style="text-align: center; border: none">
-            <iframe src="./leaflet_choropleth/example-basic.html" width="616" height="416"></iframe>
+            <iframe src="./geojson-basic.html" width="616" height="416"></iframe>
         </td> </tr>
         <tr> <td style="text-align: center; border: none">
-                <small><a href="./leaflet_choropleth/example-basic.html">Show the example</a></small>
+                <small><a href="./geojson-basic.html">Show the example</a></small>
         </td> </tr>
     </tbody> </table>
 
@@ -111,12 +111,12 @@ It looks much better now!
     <table>
         <tbody>   <tr>
             <td style="text-align: center; border: none">
-                <iframe src="./leaflet_choropleth/example-color.html" width="616" height="416"></iframe>
+                <iframe src="./example-color.html" width="616" height="416"></iframe>
             </td>
         </tr>
         <tr>
             <td style="text-align: center; border: none">
-                <small><a href="./leaflet_choropleth/example-color.html">View this example</a></small>
+                <small><a href="./example-color.html">View this example</a></small>
             </td>
         </tr>
         </tbody>
@@ -301,4 +301,4 @@ The CSS style of the control (we also reuse the previously defined
    opacity: 0.7;
    }}
 
-Enjoy <a href="./leaflet_choropleth/choropleth.html">results</a> at the top of this page, or on a separate page.
+Enjoy <a href="./choropleth.html">results</a> at the top of this page, or on a separate page.
