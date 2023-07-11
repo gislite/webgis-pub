@@ -76,10 +76,10 @@ default) will be used as a slice to form an overlay.
     <table>
     <tbody>
     <tr> <td style="text-align: center; border: none">
-    <iframe src="./leaflet_using_wms_tms/wms-example1.html" width="616" height="416"></iframe>
+    <iframe src="./wms-example1.html" width="616" height="416"></iframe>
     </td> </tr>
     <tr> <td style="text-align: center; border: none">
-    <small><a href="./leaflet_using_wms_tms/wms-example1.html">Show the example</a> </small>
+    <small><a href="./wms-example1.html">Show the example</a> </small>
     </td> </tr>
     </tbody>
     </table>

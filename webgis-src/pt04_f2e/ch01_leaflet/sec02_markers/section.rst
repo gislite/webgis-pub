@@ -12,12 +12,12 @@ icon.
         <tbody>
         <tr>
             <td style="text-align: center; border: none">
-                <iframe src="./leaflet_custom_icons/example.html" width="616" height="416"></iframe>
+                <iframe src="./makericons.html" width="616" height="416"></iframe>
             </td>
         </tr>
         <tr>
             <td style="text-align: center; border: none">
-                <small><a href="./leaflet_custom_icons/example.html">Show the example</a></small>
+                <small><a href="./makericons.html">Show the example</a></small>
             </td>
         </tr>
         </tbody>

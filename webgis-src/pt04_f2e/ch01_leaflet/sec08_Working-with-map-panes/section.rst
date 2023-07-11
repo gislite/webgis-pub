@@ -43,16 +43,16 @@ layer to explain:
 
     <div class="col-sm-12">
         <div class="col-sm-4">
-            <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img"><br>
+            <img src="./5_002.png" class="bordered-img"><br>
             Basemap without annotation
         </div>
         <div class="col-sm-4">
-            <img src="./leaflet_with_map_panes/5.png" class="bordered-img"><br>
+            <img src="./5.png" class="bordered-img"><br>
             Transparent label layer
         </div>
         <div class="col-sm-4">
-            <img src="./leaflet_with_map_panes/5_002.png" class="bordered-img">
-            <img src="./leaflet_with_map_panes/5.png" style="position:absolute; left:0; top:0;"><br>
+            <img src="./5_002.png" class="bordered-img">
+            <img src="./5.png" style="position:absolute; left:0; top:0;"><br>
             Label the layer above the basemap
         </div>
     </div>
@@ -66,10 +66,10 @@ this?
 
     <table> <tbody>
     <tr> <td style="text-align: center; border: none">
-    <iframe src="./leaflet_with_map_panes/example.html" width="616" height="416"></iframe>
+    <iframe src="./with-map-panes.html" width="616" height="416"></iframe>
     </td> </tr>
     <tr> <td style="text-align: center; border: none">
-    <small><a href="./leaflet_with_map_panes/example.html">Show the example</a></small>
+    <small><a href="./with-map-panes.html">Show the example</a></small>
     </td> </tr>
     </tbody> </table>
 

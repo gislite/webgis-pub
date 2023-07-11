@@ -1,0 +1,37 @@
+<html lang="zh-cmn-Hans">
+<head>
+    <title>WMS示例 - Leaflet</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico"/>
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.css"  />
+    <script src="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.js"  ></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        #map {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id='map'></div>
+<script type="text/javascript">
+    var map = L.map('map', {
+        center: [0, 0],
+        zoom: 1
+    });
+    var wmsLayer = L.tileLayer.wms(
+        "http://47.94.22.90:6001/service?", {
+            layers: "maplet_WorldCountry",
+            format: "image/png",
+            transparent: true,
+            attribution: 'Map &copy; <a href=\"http://www.osgeo.cn/map/</a>'
+        }
+    ).addTo(map);
+</script>
+</body>
+</html>

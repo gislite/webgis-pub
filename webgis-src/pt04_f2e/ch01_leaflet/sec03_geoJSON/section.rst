@@ -14,7 +14,7 @@ how to create and interact with a map vector in a GeoJSON object.
    <tbody>
    <tr>
    <td style="text-align: center; border: none">
-   <iframe src="http://webgis.pub/leaflet_with_geojson/example.html" width="616" height="416">
+   <iframe src="http://webgis.pub/geojson.html" width="616" height="416">
    </iframe>
    </td>
    </tr>

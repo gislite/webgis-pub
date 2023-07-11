@@ -35,10 +35,10 @@ Let’s look at a simple map that is locked at level 0:
 
     <table>
     <tbody><tr><td style="text-align: center; border: none">
-    <iframe src="./leaflet_zoom_levels/example-zero.html" width="616" height="416"></iframe>
+    <iframe src="./example-zero.html" width="616" height="416"></iframe>
     </td></tr>
     <tr><td style="text-align: center; border: none">
-    <small><a href="./leaflet_zoom_levels/example-zero.html">Show the example</a></small>
+    <small><a href="./example-zero.html">Show the example</a></small>
     </td></tr></tbody></table>
 
 Please note that the “whole earth” is just a 256-pixel wide, 256-pixel
@@ -47,7 +47,7 @@ image:
 .. raw:: html
 
     <div class="tiles" style="text-align: center">
-    <img src="./leaflet_zoom_levels/0.png" class="bordered-img" alt="">
+    <img src="./0.png" class="bordered-img" alt="">
     </div>
 
 
@@ -59,7 +59,7 @@ similar to a sphere.
 
     <div class="tiles legend" style="text-align: center">
     <a title="By NASA/JPL/University of Texas Center for Space Research. (http://photojournal.jpl.nasa.gov/catalog/PIA12146) [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AGRACE_globe_animation.gif">
-    <img alt="GRACE globe animation" src="./leaflet_zoom_levels/GRACE_globe_animation.gif" width="256">
+    <img alt="GRACE globe animation" src="./GRACE_globe_animation.gif" width="256">
     <br>
     The potato earth image drawn by NASA/JPL/University of Texas Space Research with the help of the Grace satellite.</a>.
     </div>
@@ -72,7 +72,7 @@ square:
 
     <div class="tiles legend" style="text-align: center">
     <a title="By derived from US Government USGS [Public domain], via Wikimedia Commons" href="https://en.wikipedia.org/wiki/Map_projection#Cylindrical">
-    <img alt="Usgs map mercator" src="./leaflet_zoom_levels/512px-Usgs_map_mercator.png" width="512">
+    <img alt="Usgs map mercator" src="./512px-Usgs_map_mercator.png" width="512">
     <br>
     This is called "cylindrical map projection."
     </a>
@@ -86,7 +86,7 @@ Now let’s **assume** the world is a square:
 .. raw:: html
 
     <div class="tiles" style="text-align: center">
-    <img src="./leaflet_zoom_levels/0.png" class="bordered-img" alt="">
+    <img src="./0.png" class="bordered-img" alt="">
     </div>
 
 When the zoom level is 0, it represents the world, and its width and
@@ -98,10 +98,10 @@ width and height are doubled and can be represented by four 256-pixel by
 
     <div class="tiles" style="text-align: center">
     <div>
-    <img src="./leaflet_zoom_levels/0_002.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/0_006.png" class="bordered-img" alt="">
+    <img src="./0_002.png" class="bordered-img" alt=""><img src="./0_006.png" class="bordered-img" alt="">
     </div>
     <div>
-    <img src="./leaflet_zoom_levels/1_006.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/1.png" class="bordered-img" alt="">
+    <img src="./1_006.png" class="bordered-img" alt=""><img src="./1.png" class="bordered-img" alt="">
     </div>
     </div>
 
@@ -113,34 +113,34 @@ increased by a factor of three.
 
     <table><tbody><tr><td>
     <div class="tiles small" style="text-align: center">
-    <img src="./leaflet_zoom_levels/0.png" class="bordered-img" alt="">
+    <img src="./0.png" class="bordered-img" alt="">
     </div>
     </td><td>
     <div class="tiles small" style="text-align: center">
     <div>
-    <img src="./leaflet_zoom_levels/0_002.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/0_006.png" class="bordered-img" alt="">
+    <img src="./0_002.png" class="bordered-img" alt=""><img src="./0_006.png" class="bordered-img" alt="">
     </div>
     <div>
-    <img src="./leaflet_zoom_levels/1_006.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/1.png" class="bordered-img" alt="">
+    <img src="./1_006.png" class="bordered-img" alt=""><img src="./1.png" class="bordered-img" alt="">
     </div>
     </div>
     </td><td>
     <div class="tiles small" style="text-align: center">
     <div>
-    <img src="./leaflet_zoom_levels/0_007.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/0_003.png" class="bordered-img" alt="">
-    <img src="./leaflet_zoom_levels/0_004.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/0_005.png" class="bordered-img" alt="">
+    <img src="./0_007.png" class="bordered-img" alt=""><img src="./0_003.png" class="bordered-img" alt="">
+    <img src="./0_004.png" class="bordered-img" alt=""><img src="./0_005.png" class="bordered-img" alt="">
     </div>
     <div>
-    <img src="./leaflet_zoom_levels/1_002.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/1_003.png" class="bordered-img" alt="">
-    <img src="./leaflet_zoom_levels/1_004.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/1_005.png" class="bordered-img" alt="">
+    <img src="./1_002.png" class="bordered-img" alt=""><img src="./1_003.png" class="bordered-img" alt="">
+    <img src="./1_004.png" class="bordered-img" alt=""><img src="./1_005.png" class="bordered-img" alt="">
     </div>
     <div>
-    <img src="./leaflet_zoom_levels/2_002.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/2_003.png" class="bordered-img" alt="">
-    <img src="./leaflet_zoom_levels/2.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/2_004.png" class="bordered-img" alt="">
+    <img src="./2_002.png" class="bordered-img" alt=""><img src="./2_003.png" class="bordered-img" alt="">
+    <img src="./2.png" class="bordered-img" alt=""><img src="./2_004.png" class="bordered-img" alt="">
     </div>
     <div>
-    <img src="./leaflet_zoom_levels/3.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/3_003.png" class="bordered-img" alt="">
-    <img src="./leaflet_zoom_levels/3_002.png" class="bordered-img" alt=""><img src="./leaflet_zoom_levels/3_004.png" class="bordered-img" alt="">
+    <img src="./3.png" class="bordered-img" alt=""><img src="./3_003.png" class="bordered-img" alt="">
+    <img src="./3_002.png" class="bordered-img" alt=""><img src="./3_004.png" class="bordered-img" alt="">
     </div>
     </div>
     </td></tr>
@@ -173,10 +173,10 @@ doubled. The following example uses a JavaScript timeout to automate:
 
     <table>
     <tbody><tr><td style="text-align: center; border: none">
-    <iframe src="./leaflet_zoom_levels/example-scale.html" width="616" height="416"></iframe>
+    <iframe src="./example-scale.html" width="616" height="416"></iframe>
     </td></tr>
     <tr><td style="text-align: center; border: none">
-    <small><a href="./leaflet_zoom_levels/example-scale.html">Show the example</a></small>
+    <small><a href="./example-scale.html">Show the example</a></small>
     </td></tr></tbody></table>
 
 ``L.Control.Scale`` displays the scales that apply to the center point
@@ -206,10 +206,10 @@ zoom levels 0 and 1:
 
     <table>
     <tbody><tr><td style="text-align: center; border: none">
-    <iframe src="./leaflet_zoom_levels/example-setzoom.html" width="616" height="416"></iframe>
+    <iframe src="./example-setzoom.html" width="616" height="416"></iframe>
     </td></tr>
     <tr><td style="text-align: center; border: none">
-    <small><a href="./leaflet_zoom_levels/example-setzoom.html">Show the example</a></small>
+    <small><a href="./example-setzoom.html">Show the example</a></small>
     </td></tr></tbody></table>
 
 Other ways to set the zoom:
@@ -255,10 +255,10 @@ The following example uses the ``zoomSnap`` value as ``0.25``:
 
     <table>
     <tbody><tr><td style="text-align: center; border: none">
-    <iframe src="./leaflet_zoom_levels/example-fractional.html" width="616" height="416"></iframe>
+    <iframe src="./example-fractional.html" width="616" height="416"></iframe>
     </td></tr>
     <tr><td style="text-align: center; border: none">
-    <small><a href="./leaflet_zoom_levels/example-fractional.html">Show the example</a></small>
+    <small><a href="./example-fractional.html">Show the example</a></small>
     </td></tr></tbody></table>
 
 
@@ -298,10 +298,10 @@ Try the following to see how the zoom level changes:
 
     <table>
     <tbody><tr><td style="text-align: center; border: none">
-    <iframe src="./leaflet_zoom_levels/example-delta.html" width="616" height="416"></iframe>
+    <iframe src="./example-delta.html" width="616" height="416"></iframe>
     </td></tr>
     <tr><td style="text-align: center; border: none">
-    <small><a href="./leaflet_zoom_levels/example-delta.html">View the instance</a></small>
+    <small><a href="./example-delta.html">View the instance</a></small>
     </td></tr></tbody></table>
 
 This tutorial is over. Now show your zoom level on the map!

@@ -12,10 +12,10 @@ between different layers on the map.
     <table>
         <tbody>
         <tr> <td style="text-align: center; border: none">
-                <iframe src="./leaflet_layer_control/example.html" width="616" height="416"></iframe>
+                <iframe src="./layer-control.html" width="616" height="416"></iframe>
         </td> </tr>
         <tr> <td style="text-align: center; border: none">
-                <small><a href="./leaflet_layer_control/example.html">Show the example</a></small>
+                <small><a href="./layer-control.html">Show the example</a></small>
          </td> </tr>
         </tbody>
     </table>

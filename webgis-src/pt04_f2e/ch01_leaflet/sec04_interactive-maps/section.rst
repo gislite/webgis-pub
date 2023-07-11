@@ -10,10 +10,10 @@ controls, creates a color interactive US state population density map.
 
     <table> <tbody>
         <tr> <td style="text-align: center; border: none">
-                <iframe src="./leaflet_choropleth/example.html" width="816" height="516"></iframe>
+                <iframe src="./choropleth.html" width="816" height="516"></iframe>
         </td> </tr>
         <tr> <td style="text-align: center; border: none">
-                <small><a href="./leaflet_choropleth/example.html">Show the example</a></small>
+                <small><a href="./choropleth.html">Show the example</a></small>
         </td> </tr>
     </tbody> </table>
 
