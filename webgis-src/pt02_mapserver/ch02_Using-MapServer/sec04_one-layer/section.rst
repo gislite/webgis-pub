@@ -142,7 +142,7 @@ http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&layer=states&mode=browse&tem
 
 For OpenLayers mode, see:
 
-https://mapserver.org/uk/cgi/openlayers.html
+https://mapserver.org/cgi/openlayers.html
 
 You can try modifying the value of the keyword in MapFile and see the
 result. These experiments will help you understand these keywords.
