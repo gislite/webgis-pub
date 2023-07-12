@@ -6,7 +6,7 @@ MapProxy case: multiple layers
 Example
 -------
 
-http://webgis.cn:6002/
+http://webgis.pub:6002/
 
 MapProxy configuration file
 ---------------------------

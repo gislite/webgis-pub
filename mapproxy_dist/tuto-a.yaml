@@ -41,7 +41,7 @@ sources:
       transparent_color_tolerance: 0
     req:
       layers: lyr_WorldCountry
-      url: http://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
+      url: http://webgis.pub:8080/cgi-bin/mapserv?map=/gdata/mfile_world.map
     type: wms
   osm_wms:
     req:
