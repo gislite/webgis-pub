@@ -97,14 +97,13 @@ webgis-rev-*
 #############################################################
 
 ### Configure for TorCMS/torlite
-xx*.jinja2
+
 
 *.db
 *.rdb
 
 webgis_cases/wegis
 oswebgis
-owg
 dist_*
 .sass-cache
 
@@ -121,7 +120,7 @@ templates/99_gislite_GISLite/5*
 _dist_webgis
 
 # 生成的Mapfile
-xx*.htmp
+
 _build
 *.lock
 cache_data
@@ -140,7 +139,8 @@ docs/_build/
 target/
 
 cfg.py
-xx_*.jinja2
+xx_*
+yy_*
 
 wwwpub/oswebgis
 
