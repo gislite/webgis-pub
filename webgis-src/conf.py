@@ -9,7 +9,7 @@
 project = 'Open Source WebGIS'
 copyright = 'Since 2020'
 author = 'gislite'
-release = 'v 0.11'
+release = 'v 0.13'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

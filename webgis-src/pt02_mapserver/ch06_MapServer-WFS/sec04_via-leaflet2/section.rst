@@ -28,7 +28,7 @@ On the client side, you can define the implementation style of anonymous functio
     }},
 
 
-结果
+Example
 ======================================
 
 .. raw:: html
