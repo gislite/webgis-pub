@@ -1,13 +1,9 @@
 {% extends "contentj.jinja2" %}
 
-
 {% block headbody %}
-    <link rel="stylesheet" href="/f2elib/leaflet-1.8.0/leaflet.css" crossorigin=""/>
-    <script src="/f2elib/leaflet-1.8.0/leaflet.js" crossorigin=""></script>
-
-
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.css"/>
+    <script src="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.js"></script>
     <title>Access WFS using LeafletJS</title>
-
     <style>
         html, body {
             height: 100%;
@@ -19,46 +15,9 @@
             height: 500px;
         }
     </style>
-
 {% endblock %}
 
 {% block cntbody %}
-    <h1 id="markers-with-custom-icons"> Access WFS using LeafletJS </h1>
-
-    <p>The WFS service returns data(or features), not maps.
-        Returning data means more information. Users can parse information to accomplish more complex tasks.
-But it also means that the task of drawing is left to the client, which requires more coding work.
-</p>
-
-
-    <h2 id="vjm">Config WFS in MapServer</h2>
-
-    <p>Leaflet can be drawn using GeoJSON data. To display the data returned by the WFS service,
-        using JSON as the data type returned, you need to open it in MapServer.
-</p>
-
-<pre><code>OUTPUTFORMAT
-  NAME "geojson"
-  DRIVER "OGR/GEOJSON"
-  MIMETYPE "application/json; subtype=geojson"
-  FORMATOPTION "STORAGE=stream"
-  FORMATOPTION "FORM=SIMPLE"
-END</code></pre>
-
-    <p>In METADATA, it is stated that:</p>
-
-<pre><code>"wfs_getfeature_formatlist" "geojson"</code></pre>
-
-    <p>You can view the information about the service by following links.</p>
-
-    <a href="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities">http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities</a>
-
-    <h2 id="l9i">Example</h2>
-
-    <p>The following is an example of using Leaflet.
-        Note that due to the size of data, the filter is used to get the data of China.
-	But maybe you will still have to wait for a while for the data loaded.
-    </p>
 
     <div id='mapdiv'></div>
 
@@ -112,8 +71,6 @@ END</code></pre>
 
         loadWFS('world-country', '4326')
         // loadWFS('wriver', '3857')
-
-
 
 
     </script>

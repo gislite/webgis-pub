@@ -2,8 +2,9 @@
 
 
 {% block headbody %}
-    <link rel="stylesheet" href="/f2elib/leaflet-1.8.0/leaflet.css" crossorigin=""/>
-    <script src="/f2elib/leaflet-1.8.0/leaflet.js" crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.css"  />
+    <script src="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.js"  ></script>
 
     <title>Leaflet render WFS with custom styles</title>
 
@@ -22,32 +23,6 @@
 {% endblock %}
 
 {% block cntbody %}
-    <h1 id="markers-with-custom-icons"> Leaflet render WFS with custom styles </h1>
-
-    <h2 id="vjm">Example</h2>
-
-    <p>WMS completes the task of map rendering by server. If you want to customize the map style, you can use SLD to transfer the definition file of style to the server.
-The server returns the result of the map. The data returned by WFS can be adjusted and rendered by client.
-
-    </p>
-
-    <p>In this case, there is no need to make any changes to the server, the server can only provide data.</p>
-
-    <p>On the client side, you can define the implementation style of anonymous functions.</p>
-
-    <pre><code>style:function(feature){
-    return {
-        stroke:true,
-        color:'#333333',
-        opacity: 1,
-        fillOpacity: 0.1,
-        fillColor: '#333333',
-        weight:1
-    }
-},
-</code></pre>
-
-<h2 id="k8c">结果</h2>
 
     <div id='mapdiv'></div>
 
@@ -98,8 +73,6 @@ The server returns the result of the map. The data returned by WFS can be adjust
             }
         }
         loadWFS('world-country', '4326')
-        // loadWFS('wriver', '3857')
-
 
 
 

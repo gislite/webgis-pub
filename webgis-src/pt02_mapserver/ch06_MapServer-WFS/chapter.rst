@@ -23,3 +23,5 @@ its services.
 
    sec01_intro/section
    sec02_wfs-client/section
+   sec03_via-leaflet1/section
+   sec04_via-leaflet2/section

@@ -9,11 +9,9 @@ add key-value pairs about WFS in the METADATA section of the Mapfile
 configuration file. MapServer will only include WFS functionality if the
 layer meets the following conditions:
 
--  The data source is vector data: shapefile, OGR, Postgis, sde
-   (ArcSDE);
+-  The data source is vector data: shapefile, OGR, Postgis, sde    (ArcSDE);
 -  Layer name must be set;
--  The layer data space type must be one of ``point`` , ``line`` ,
-   ``polygon``;
+-  The layer data space type must be one of ``point`` , ``line`` ,    ``polygon``;
 -  ``wfs_onlineresource`` and ``wfs_enable_request`` must be set.
 
 MapServer itself can be configured to support WFS, and you can also use
