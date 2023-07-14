@@ -184,11 +184,65 @@ Logs
 
 - 2023-07-07: The operating system is switched to Debian 12. (used to be Debian 10)
 
+
+Catalog
+====================================
+
 .. toctree::
    :maxdepth: 2
+   :numbered: 3
+   :caption: Part Ⅰ  Fundation
 
-   pt01_principle/part
-   pt02_mapserver/part
-   pt03_geoserver/part
-   pt04_f2e/part
-   pt05_misc/part
+   cha1_fundation/chapter
+   cha2_OGC-OpenGIS/chapter
+
+
+.. toctree::
+   :maxdepth: 2
+   :numbered: 3
+   :caption: Part Ⅱ  MapServer
+
+   chb1_MapServer-Setup/chapter
+   chb2_Using-MapServer/chapter
+   chb3_MapServer-CGI/chapter
+   chb4_Using-CGI/chapter
+   chb5_MapServer-WMS/chapter
+   chb6_MapServer-WFS/chapter
+   chb7_MapServer-WCS/chapter
+   chb8_ref-Addon/chapter
+
+
+
+GeoServer for WebGIS.
+
+.. toctree::
+   :maxdepth: 2
+   :numbered: 3
+   :caption: Part  Ⅲ GeoServer
+
+   chc1_GeoServer-Introduction/chapter
+   chc2_GeoServer-Management/chapter
+
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :numbered: 3
+   :caption: Part Ⅳ Front End(Client)
+
+   chd1_leaflet/chapter
+   chd2_openlayers/chapter
+   chd3_cesium/chapter
+
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :numbered: 3
+   :caption: Part Ⅴ  Tiles and Tools
+
+   che1_tools/chapter
+   che2_tiles/chapter
+   che3_gislite/chapter
