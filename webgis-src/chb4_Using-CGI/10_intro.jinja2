@@ -3,8 +3,8 @@
 <title>MapServer query mechanism</title>
 
 <!--
-在第二节中，我们使用一个HTML模板文件来为网页地图应用创建一个用户界面。我们以一个应用。
-        程序结束，在这里用户能放大，缩小，选择图层。
+In the second section, we use an HTML template file to create a user interface for the web map application. Let's use an application.
+At the end of the program, the user can zoom in, zoom out, and select layers.
 -->
 
 {% block cntbody %}
@@ -12,14 +12,14 @@
 
     <h1>MapServer query mechanism</h1>
 
-    <p> MapServer除了其渲染能力，还提供了强大的查询功能，同时支持空间查询（基于位置选择）和属性查询（基于属性值选择）。
-        要做到这一点无需编程支持，MapServer广泛使用了模板来构建查询和呈现结果。
-        这导致 MapFile ，模板，MapServer程序之间的一些复杂的相互作用。
-        在使用中还有是大量不同的查询方式，以及不同的使用模板的方式。
-        出于这些原因，MapServer的查询工具可能是最令人困惑的方面。</p>
+    <p> In addition to its rendering capabilities, MapServer also provides powerful query capabilities, supporting both spatial queries (based on location selection) and property queries (based on property value selection).
+To do this without programming support, MapServer makes extensive use of templates to build queries and render results.
+This leads to some complex interactions between MapFile, template, and MapServer programs.
+There are also a number of different query methods in use, as well as different ways of using templates.
+For these reasons, MapServer's query tools can be the most confusing aspect.</p>
 
-    <p> MapServer具有强大而复杂的查询功能，但在CGI模式下，它缺少允许真正的GIS提供的那种分析的工具。
-        本概述描述了MapServer的一些查询功能。</p>
+    <p> MapServer has powerful and complex query capabilities, but in CGI mode, it lacks the tools to allow the kind of analysis that a true GIS provides.
+This overview describes some of MapServer's query capabilities.</p>
 
 
     <h2 id="vka">Spatial retrieval concept</h2>
@@ -53,7 +53,7 @@
 
 
     {#
-<h2 id="v91">打开教程</h2>
+<h2 id="v91">Open tutorial</h2>
     <!-- The map_web variable will replace the TEMPLATE
          parameter in the WEB object of the MAP file... -->
 
@@ -72,21 +72,21 @@
                 <div class="col-sm-5">
                     <select name="map_web" class="form-control">
                         <option value="template example3-1.html">
-                            教程3.1: 查询模板
+                            Tutorial 3.1: Querying Templates
                         </option>
                         <option value="template example3-2.html">
-                            教程3.2: Layer-wide Header and Footer Templates
+                           Tutorial 3.2: Layer-wide Header and Footer Templates
                         </option>
                         <option value="template example3-3.html">
-                            教程3.3: Map-wide Header and Footer Templates
+                            Tutorial 3.3: Map-wide Header and Footer Templates
                         </option>
                         <option value="template example3-4.html header ../templates/example3_header.html footer ../templates/example3_footer_querymap.html">
-                            教程3.4: The Query Map
+                            Tutorial 3.4: The Query Map
                         </option>
                     </select> &nbsp;
                 </div>
                 <div class="col-sm-2">
-                    <input type="submit" name="submit" value="打开教程" class="btn btn-sm btn-primary">
+                    <input type="submit" name="submit" value="Open tutorial" class="btn btn-sm btn-primary">
                 </div>
             </div>
         </div>
