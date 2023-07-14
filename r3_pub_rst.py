@@ -16,26 +16,26 @@ def chuli_a():
             with open(dst,'w') as fo:
                 for cnt in cnts:
                     cnt_strip = cnt.strip()
-                    if cnt_strip.startswith('pt') :
-                        sig = cnt_strip.split('/')[0].split('_')[-1]
-                        print(sig)
-                        fo.write(f'   {sig}\n'.lower())
-                    else:
-                        fo.write(cnt)
-
-        elif wfile.name == 'part.rst':
-            dst = outws / (wfile.parent.name.split('_')[-1] + '.rst').lower()
-
-            cnts = open(wfile).readlines()
-            with open(dst,'w') as fo:
-                for cnt in cnts:
-                    cnt_strip = cnt.strip()
                     if cnt_strip.startswith('ch') and cnt_strip.endswith('chapter'):
                         sig = cnt_strip.split('/')[0].split('_')[-1]
                         # print(sig)
                         fo.write(f'   {sig}\n'.lower())
                     else:
                         fo.write(cnt)
+
+        # elif wfile.name == 'part.rst':
+        #     dst = outws / (wfile.parent.name.split('_')[-1] + '.rst').lower()
+        #
+        #     cnts = open(wfile).readlines()
+        #     with open(dst,'w') as fo:
+        #         for cnt in cnts:
+        #             cnt_strip = cnt.strip()
+        #             if cnt_strip.startswith('ch') and cnt_strip.endswith('chapter'):
+        #                 sig = cnt_strip.split('/')[0].split('_')[-1]
+        #                 # print(sig)
+        #                 fo.write(f'   {sig}\n'.lower())
+        #             else:
+        #                 fo.write(cnt)
         elif wfile.name == 'chapter.rst':
             dst = outws / ( wfile.parent.name.split('_')[-1] + '.rst').lower()
             cnts = open(wfile).readlines()
