@@ -54,21 +54,13 @@ xx*
 *.db
 *.rdb
 
-
 dist_*
 .sass-cache
-
 
 cfg.py
 *.ovr
 *.aux.xml
 
-
-
-_dist_webgis
-
-# 生成的Mapfile
-# xmf*.map
 _build
 .idea
 
@@ -77,45 +69,18 @@ _build*
 
 cache_data
 
-
-#############################################################
-# webgis_cn
-#############################################################
-
-### Configure for TorCMS/torlite
-
-
-*.db
-*.rdb
-
-webgis_cases/wegis
-oswebgis
 dist_*
 .sass-cache
 
-section.html
+
 cfg.py
 *.ovr
 *.aux.xml
 
 
-
-# 生成的Mapfile
-
 _build
 *.lock
 cache_data
-
-
-
-#############################################################
-# webgis_pub
-#############################################################
-
-
-# Sphinx documentation
-docs/_build/
-
 # PyBuilder
 target/
 
@@ -123,12 +88,7 @@ cfg.py
 xx_*
 yy_*
 
-
-
 .sass-cache
-
 .vscode
-
 f2elib
-
 locales
