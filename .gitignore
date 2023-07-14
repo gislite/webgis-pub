@@ -54,20 +54,16 @@ xx*
 *.db
 *.rdb
 
-webgis_cases/wegis
-oswebgis
+
 dist_*
 .sass-cache
 
-section.html
+
 cfg.py
 *.ovr
 *.aux.xml
 
-templates/99_gislite_GISLite/2*
-templates/99_gislite_GISLite/3*
-templates/99_gislite_GISLite/4*
-templates/99_gislite_GISLite/5*
+
 
 _dist_webgis
 
@@ -76,20 +72,10 @@ _dist_webgis
 _build
 .idea
 
-_webgis_html
+
 _build*
 
 cache_data
-
-xch*.pdf
-x0*.pdf
-
-# 示例数据与图
-demo/figs/shp*
-demo/figs/fig*
-webgis-rev-*
-
-
 
 
 #############################################################
@@ -112,19 +98,14 @@ cfg.py
 *.ovr
 *.aux.xml
 
-templates/99_gislite_GISLite/2*
-templates/99_gislite_GISLite/3*
-templates/99_gislite_GISLite/4*
-templates/99_gislite_GISLite/5*
 
-_dist_webgis
 
 # 生成的Mapfile
 
 _build
 *.lock
 cache_data
-gdata/raster/*
+
 
 
 #############################################################
@@ -142,9 +123,7 @@ cfg.py
 xx_*
 yy_*
 
-wwwpub/oswebgis
 
-wwwpub/templates/99_gislite_GISLite/*.jinja2
 
 .sass-cache
 
