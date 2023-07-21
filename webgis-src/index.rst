@@ -194,7 +194,7 @@ Catalog
    :caption: Part Ⅰ  Fundation
 
    cha1_fundation/chapter
-   cha2_OGC-OpenGIS/chapter
+   cha2_ogc-opengis/chapter
 
 
 .. toctree::
@@ -202,14 +202,14 @@ Catalog
    :numbered: 3
    :caption: Part Ⅱ  MapServer
 
-   chb1_MapServer-Setup/chapter
-   chb2_Using-MapServer/chapter
-   chb3_MapServer-CGI/chapter
-   chb4_Using-CGI/chapter
-   chb5_MapServer-WMS/chapter
-   chb6_MapServer-WFS/chapter
-   chb7_MapServer-WCS/chapter
-   chb8_ref-Addon/chapter
+   chb1_mapserver-setup/chapter
+   chb2_using-mapserver/chapter
+   chb3_mapserver-cgi/chapter
+   chb4_using-cgi/chapter
+   chb5_mapserver-wms/chapter
+   chb6_mapserver-wfs/chapter
+   chb7_mapserver-wcs/chapter
+   chb8_ref-addon/chapter
 
 
 
@@ -220,8 +220,8 @@ GeoServer for WebGIS.
    :numbered: 3
    :caption: Part  Ⅲ GeoServer
 
-   chc1_GeoServer-Introduction/chapter
-   chc2_GeoServer-Management/chapter
+   chc1_geoserver-introduction/chapter
+   chc2_geoserver-management/chapter
 
 
 
