@@ -3,7 +3,7 @@
 Introduction and installation of PostGIS
 ========================================
 
-PostgresSQL:
+PostgresSQL
 ------------
 
 PostgreSQL is an object-relational database management system (ORDBMS),
@@ -22,7 +22,7 @@ they will notify the spatial data engine, and there is an engine. Take
 data from relational databases and convert it into a way that customers
 can use.
 
-PostGIS:
+PostGIS
 --------
 
 PostGIS is an extension of the object-relational database system
