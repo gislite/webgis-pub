@@ -227,6 +227,16 @@ In Debian 9:
    a2enmod cgi
    service apache2 restart
 
+In Ubuntu 22.04:
+
+::
+
+   apt install -y apache2 php8.1 libapache2-mod-fcgid cgi-mapserver \
+       mapserver-bin libapache2-mod-php
+   a2enmod authnz_fcgi
+   a2enmod cgi
+   service apache2 restart
+
 In Ubuntu 18.04:
 
 ::
@@ -237,12 +247,11 @@ In Ubuntu 18.04:
    a2enmod cgi
    service apache2 restart
 
-Almost no difference except the newer ``php 7.2`` version used in Ubuntu
-18.04. When installing these packages, if the corresponding dependencies
-are missing, they will be installed automatically.
+Almost no difference except the different versions of PHP Debian/Ubuntu. 
+When installing these packages, if the corresponding dependencies are missing, 
+they will be installed automatically.
 
-After the installation is complete, you can enter the following command
-on the terminal to view the results:
+After the installation is complete, you can enter the following command on the terminal to view the results:
 
 ::
 
@@ -282,6 +291,21 @@ variables and the page request to the FastCGI process through a socket,
 such as the FastCGI process and the web server (both locally), or a TCP
 connection (FastCGI process on the remote server farm) is passed to the
 FastCGI process.
+
+Configure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Then, edit the file of Apache2 configure. Sush as ``more /etc/apache2/sites-enabled/webgis_pub_apache.conf`` .
+
+::
+
+    ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+    <Directory "/usr/lib/cgi-bin">
+    AllowOverride None
+    Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+    Require all granted
+    </Directory>
+
 
 Installation under Windows system
 ---------------------------------
