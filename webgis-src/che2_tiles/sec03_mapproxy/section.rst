@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Installation and use of MapProxy
+.. Author: gislite .. Title: Installation and use of MapProxy
 
 Installation and use of MapProxy
 ================================

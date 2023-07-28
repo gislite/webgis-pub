@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: MAP object in Mapfile
+.. Author: gislite .. Title: MAP object in Mapfile
 
 MAP Object
 ==========

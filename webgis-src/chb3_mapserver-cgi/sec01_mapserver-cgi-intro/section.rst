@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: MapSever interaction using CGI
+.. Author: gislite .. Title: MapSever interaction using CGI
 
 MapSever interaction using CGI
 ==============================

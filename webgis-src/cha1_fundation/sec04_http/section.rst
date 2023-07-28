@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Principle and method of HTTP
+.. Author: gislite .. Title: Principle and method of HTTP
 
 Principle and method of HTTP
 ============================
@@ -105,14 +105,14 @@ Submission form of the parameter
 The data of the GET request will be attached to the URL (that is, the
 data will be placed in the HTTP protocol header), the URL and the
 transmission data are separated by ``?``, and the parameters are
-connected by ``&``, such as:
-``login. action name=hyddd&password=idontknow&verify=%E4%BD%A0%E5%A5%BD``.
-If the data is English letters/numbers, send it as it is, if it is a
-space, convert it to +, if it is Chinese/other characters, directly
-encrypt the string with BASE64, and get such as: %E4%BD%A0%E5%A5% BD,
-where XX in %XX is the ASCII hex representation of the symbol.
+connected by ``&``.
 
-POST places the submitted data in the body of the HTTP package.
+If the data is English letters/numbers, send it as it is, if it is a
+space, convert it to `+` , if it is Chinese/other characters, directly
+encrypt the string with BASE64, and get such as:  ``%E4%BD%A0%E5%A5%`` BD,
+where ``XX`` in ``%XX`` is the ASCII hex representation of the symbol.
+
+POST request places the submitted data in the body of the HTTP package.
 
 Restrictions on submitting parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,8 +141,8 @@ For ASP programs, there is a 100K data length limit when the Request
 object processes each form field. But if you use Request.BinaryRead
 there is no such restriction.
 
-From this extension, Microsoft has increased the restrictions on IIS
-6.0for security reasons.
+From this extension, Microsoft has increased the restrictions
+on IIS 6.0 for security reasons.
 
 So the above 80K and 100K may just be the default values (Note: I have
 not confirmed the parameters of IIS4 and IIS5), but they can definitely

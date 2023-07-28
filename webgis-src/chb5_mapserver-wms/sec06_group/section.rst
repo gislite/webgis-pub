@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Draw maps with style layer
+.. Author: gislite .. Title: Draw maps with style layer
 
 Draw maps with style layer
 ==========================

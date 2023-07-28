@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Understand the interface of GeoServer
+.. Author: gislite .. Title: Understand the interface of GeoServer
 
 Understand the interface of GeoServer
 =====================================

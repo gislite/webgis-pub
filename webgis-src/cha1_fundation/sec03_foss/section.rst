@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Introduction to major open source WebGIS
+.. Author: gislite .. Title: Introduction to major open source WebGIS
 
 Introduction to major open source WebGIS
 ========================================
@@ -103,15 +103,7 @@ servers, i.e. freely available. ArcGIS also provides a server, but it is
 not freely available but has many additional features. All open source
 servers are free to download from their respective websites.
 
-.. raw:: html
 
-   <!--
-   Client: The client is a place for users to interact with spatially object and analysis functions in web GIS. It is also a place for Internet GIS programs to present outputs to the users.
-   Web server and application server: The web server responds to request from web browser via HTTP. When the web server passes the requests to other programs, it requests service from application servers. An application server acts as a translator or connector between the web server and the GIS server.
-   GIS server: A GIS server is a major workhorse component that fulfills spatial queries, conducts spatial analysis, and generates and delivers maps to the client based on the user's request.
-   Data server: A data server serves data, spatial and non-spatial, in a relational or non-relational database structure.
-   In this post we are focusing particularly on GIS servers. There are many GIS servers available on the internet such as GeoServer, MapServer, Mapnik, MapGuide, QGIS server etc. All these servers are open source servers i.e. Freely available. ArcGIS also provides server but it is not available for free, but with many add on features. All the open source servers can be freely downloaded from their respective websites.
-   -->
 
 Component product
 -----------------
@@ -122,11 +114,6 @@ with other tools in various combinations to create custom applications.
 MapServer
 ~~~~~~~~~
 
-.. raw:: html
-
-   <!--
-   MapServer is an open source platform for publishing spatial data and creating interactive mapping applications to the web. It has been in existence since the mid 90s and is recognized as mature and stable, with ongoing active development. Its primary focus is producing maps from multiple layers including base imagery and spatial data sets. It also provides intelligent labeling with advanced typography and layout including collision-detection. It can read and serve spatial data in a variety of formats including Shapefiles, WMS, GDAL, PostGIS, and GeoTIFF. It is often used to produce map tiles along with its MapCache extensions. It has libraries that enable application development in a variety of languages including Python, Perl, Ruby, Java, and PHP.
-   -->
 
 MapServer is an open source platform for publishing spatial data and
 creating interactive map applications to the Web. It has been around
@@ -157,20 +144,6 @@ http://postgis.net/
 OpenLayers
 ~~~~~~~~~~
 
-.. raw:: html
-
-   <!--
-   OpenLayers is a front-end UI library for creating web-based spatial apps
-
-   For example, map tiles can be pulled from GoogleMaps or from a custom tile source.
-   The advantage this brings is that it enables developers to reuse elements
-   Such as tile sources, and focus instead on the more unique aspects
-   Of their application such as the "business logic".
-   Default components such as tile sources can easily be swapped out at a later time.
-   It supports bitmap and vector layers, including points, lines and polygons.
-   One of its most widely used features is the ability to overlay data layers
-   On top of base maps.
-   -->
 
 OpenLayers is a front-end UI library for creating web-based spatial
 applications using javascript. It supports various layer sources and
@@ -188,19 +161,6 @@ http://openlayers.org
 GDAL (Geospatial Data Abstraction Library)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
-   <!--
-   GDAL is a translation library for geospatial data formats.
-   It enables import and export of a very large variety of file and encoding types.
-   It can be used to transform spatial data between different projection systems.
-   Raster data formats are handled by GDAL, and vector data formats are handled by OGR
-   Which is now included with GDAL.
-   It can also be used to create mosaics from multiple image file sources.
-   GDAL is a valuable tool for taking data from disparate sources
-   And converting them to work together.
-   -->
-
 GDAL is a translation library for geospatial data formats. It can import
 and export a wide variety of file and encoding types. It can be used to
 convert spatial data between different projection systems. Raster data
@@ -213,20 +173,6 @@ http://www.gdal.org
 
 TileMill
 ~~~~~~~~
-
-.. raw:: html
-
-   <!--
-   TileMill is a desktop application that is used to generate map tile images
-   Which are then hosted as static files for use as base layers.
-   TileMill can be used to create base layers which are visually stunning.
-   It has a strong emphasis on aesthetics including many well-thought-out presets
-   Which enable people without a background in design
-   To produce very attractive and professional map layers.
-   TileMill's development is lead by a company called MapBox.
-   They offer several attractive paid services including tile hosting
-   And an excellent collection of curated and highly-tuned base layers.
-   -->
 
 TileMill is a desktop application for generating map tile images, which
 are then hosted as static files to be used as base layers. TileMill can
@@ -254,14 +200,6 @@ http://leafletjs.com/
 Stack Products
 --------------
 
-.. raw:: html
-
-   <!--
-   The following products are distributed as "stacks" or "bundles".
-   They are pre-configured combinations of modular products.
-   Some can be used as-is (after adding configuration and base layers)
-   And all of them can be further extended to create custom applications.
-   -->
 
 The following products are distributed as “stacks” or “bundles”. They
 are preconfigured combinations of modular products. Some can be used as
@@ -270,21 +208,6 @@ extended further to create custom applications.
 
 GeoServer
 ~~~~~~~~~
-
-.. raw:: html
-
-   <!--
-   GeoServer is primarily based on the Java language.
-   It provides basic functionality for creating and editing geospatial data
-   And making maps available in a service-oriented architecture.
-   It uses the OpenLayers module and provides and implementation
-   Of the Web Map Service (WMS) standard.
-   It also makes use of the GeoTools framework
-   Which covers a slightly smaller subset of MapServer's functionality.
-   Like GeoServer itself, is written in Java.
-   It will appeal largely to developers already working
-   With Java- based tools and platforms.
-   -->
 
 GeoServer is mainly based on the Java language. It provides basic
 functionality for creating and editing geospatial data and providing
@@ -299,21 +222,6 @@ http://geoserver.org/display/GEOS/Welcome
 
 MapGuide
 ~~~~~~~~
-
-.. raw:: html
-
-   <!--
-   MapGuide is a full-featured web-based GIS application
-   Primarily written in PHP and Javascript.
-   It includes an AJAX-based application UI for viewing and creating mapsand data layers.
-   It supports an impressive range of layer formats including ESRI SHP
-   SDF, ESRI ArcSDE, PostGIS, SQL Server Spatial, Raster file formats (via GDA)
-   OGC, WMS and WFS.
-   It also makes use of the OpenLayers toolkit
-   And supports custom application development in PHP and Java.
-   It will appeal primarily based on its support for various input formats
-   Out-of-the-box editing tools, as well as to developers already working with PHP.
-   -->
 
 MapGuide is a full-featured web-based GIS application written primarily
 in PHP and Javascript. It includes an AJAX-based application UI for
@@ -330,22 +238,6 @@ http://mapguide.osgeo.org
 GeoMoose
 ~~~~~~~~
 
-.. raw:: html
-
-   <!--
-   GeoMoose combines several popular open source libraries to create a powerful
-   And flexible mapping platform
-   With emphasis on Javascript/AJAX on the front-end.
-   It uses MapServer as a back-end and OpenLayers and Dojo (both Javascript-based)
-   For its user interface.
-   It provides a robust set of tools for viewing, editing
-   And querying data from the browser.
-   Its development community seems to be very active and have a good forward trajectory.
-   Its appeal comes from its feature set and its modern, approachable UI.
-   Its well-documented Javascript APIs will make it approachable
-   For both Javascript developers and other web builders
-   As most web developers have at least some exposure to Javascript.
-   -->
 
 GeoMoose combines several popular open source libraries to create a
 powerful and flexible mapping platform with an emphasis on
@@ -364,24 +256,6 @@ http://www.geomoose.org
 GeoDjango
 ~~~~~~~~~
 
-.. raw:: html
-
-   <!--
-   GeoDjango is a set of spatial extensions for the Django application framework.
-   Django is written primarily in Python and is one
-   Of the most popular general-purpose frameworks
-   For building web apps with Python. Unlike GeoMoose or MapGuide
-   It does not provide an application out of the box
-   And is rather a set of very nicely crafted building blocks
-   For building custom applications.
-   Unlike some of the other stack products described above
-   It makes less assumptions about which other geospatial tools will be used in the stack
-   And provides integration points through a series of clearly-designed
-   Well-documented APIs.
-   It will likely appeal to developers who want more choice
-   And control in the building of their applications
-   As well as those who prefer the Python language.
-   -->
 
 GeoDjango is a set of spatial extensions to the Django application
 framework. Written primarily in Python, Django is one of the most
@@ -400,22 +274,6 @@ http://geodjango.org
 MapFish
 ~~~~~~~
 
-.. raw:: html
-
-   <!--
-   MapFish is another stack product from the Python community.
-   It is based on the (Python-based) Pylons framework
-   As well as (Javascript-based) OpenLayers and ExtJs frameworks.
-   Unlike GeoDjango, it provides a simple application out-of-the-box
-   Which can be customized and extended.
-   It also supports development in Rails and PHP via plugins.
-   Its appeal is based on the fact that it provides a clean
-   Compact starting point, that can be easily extended in a variety of languages.
-   Its trade-off relative to GeoDjango is that it makes more choices for the developer
-   So makes getting started a bit faster.
-   It will likely appeal to developers who have Python or Javascript experience
-   As well as Rails/PHP developers who value its clean, compact design.
-   -->
 
 MapFish is another stack product from the Python community. It is based
 on the (Python-based) Pylons framework, as well as the

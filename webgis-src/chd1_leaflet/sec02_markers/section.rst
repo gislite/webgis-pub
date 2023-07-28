@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Custom callout icon
+.. Author: gislite .. Title: Custom callout icon
 
 Custom callout icon
 ===================

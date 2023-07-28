@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: LAYER object of Mapfile
+.. Author: gislite .. Title: LAYER object of Mapfile
 
 LAYER Object
 ============

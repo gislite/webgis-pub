@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Interactive map and Browse mode
+.. Author: gislite .. Title: Interactive map and Browse mode
 
 Interactive Map and Browse Model
 ================================

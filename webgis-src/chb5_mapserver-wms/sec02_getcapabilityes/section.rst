@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: WMS GetCapabilities access
+.. Author: gislite .. Title: WMS GetCapabilities access
 
 WMS service with ``GetCapabilities`` access
 ============================================

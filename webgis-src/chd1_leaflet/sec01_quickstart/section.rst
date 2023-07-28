@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use LeafletJS for the first time
+.. Author: gislite .. Title: Use LeafletJS for the first time
 
 Introduction to Leaflet
 =======================

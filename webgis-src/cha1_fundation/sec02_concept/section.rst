@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Basic concept of WebGIS
+.. Author: gislite .. Title: Basic concept of WebGIS
 
 Basic concept of WebGIS
 =======================

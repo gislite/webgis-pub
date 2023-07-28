@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Add a scale bar
+.. Author: gislite .. Title: Add a scale bar
 
 Add a scale bar
 ===============

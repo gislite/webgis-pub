@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Map and WebGIS
+.. Author: gislite .. Title: Map and WebGIS
 
 Map and WebGIS
 ==============

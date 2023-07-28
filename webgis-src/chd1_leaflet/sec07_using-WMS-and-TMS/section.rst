@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use WMS with TMS services
+.. Author: gislite .. Title: Use WMS with TMS services
 
 Use WMS with TMS services
 =========================

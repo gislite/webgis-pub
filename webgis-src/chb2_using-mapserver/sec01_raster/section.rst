@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Add a grid layer
+.. Author: gislite .. Title: Add a grid layer
 
 Add a grid layer
 ================

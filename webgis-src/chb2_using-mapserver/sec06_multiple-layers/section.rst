@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Build a map with multiple layers
+.. Author: gislite .. Title: Build a map with multiple layers
 
 Build a map with multiple layers
 ================================

@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: WMS layer metadata
+.. Author: gislite .. Title: WMS layer metadata
 
 WMS layer metadata
 ==================

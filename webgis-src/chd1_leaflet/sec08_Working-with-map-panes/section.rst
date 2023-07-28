@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use the map panes
+.. Author: gislite .. Title: Use the map panes
 
 Use the map panes
 =================

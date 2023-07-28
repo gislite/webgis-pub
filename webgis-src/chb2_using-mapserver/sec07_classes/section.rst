@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Display layers by attribute category
+.. Author: gislite .. Title: Display layers by attribute category
 
 Display layers by attribute category
 ====================================

@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Change the output format of the map
+.. Author: gislite .. Title: Change the output format of the map
 
 Change the output format of the map
 ===================================

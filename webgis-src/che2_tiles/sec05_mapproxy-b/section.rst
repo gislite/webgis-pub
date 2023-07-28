@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: MapProxy case- multiple layers
+.. Author: gislite .. Title: MapProxy case- multiple layers
 
 MapProxy case: multiple layers
 ==============================

@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Interactive Choropleth Map
+.. Author: gislite .. Title: Interactive Choropleth Map
 
 Interactive Choropleth Map
 ==========================

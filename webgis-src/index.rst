@@ -11,16 +11,16 @@ IGU and other partners worldwide in our mission for making geospatial education
 and opportunities accessible to all.
 
 
-This website is open-source. Hosted on github: https://github.com/gislite/webgis-pub
-
-.. attention:: The OS has been upgraded to Debian 12. The MapServer has been upgraded to 8.0. 
-   Since 2023/7/7 .
-
-
-.. image:: webgis-logo.png
+.. attention:: This website is open-source. Hosted on github: https://github.com/gislite/webgis-pub . Stars are welcome.
 
 
 This website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
+
+Log:
+
+- July, 2023: The OS has been upgraded to Debian 12. The MapServer has been upgraded to 8.0. Since 2023/7/7 .
+- 2022: The source codes of this tutorial are published on Github .
+
 
 Went through a series of refactoring.
 
@@ -136,7 +136,7 @@ About the website
 ===========================================
 
 
-Author: Bu Kun
+Author: gislite
 
 Northeast Institute of Geography and Agroecology, Chinese Academy of Sciences. Ph.D, Senior Engineer
 

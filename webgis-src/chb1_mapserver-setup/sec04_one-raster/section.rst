@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Release remote sensing images
+.. Author: gislite .. Title: Release remote sensing images
 
 Release remote sensing images
 =============================

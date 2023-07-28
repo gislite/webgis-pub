@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: start using Mapfile
+.. Author: gislite .. Title: start using Mapfile
 
 Start using Mapfile
 ===============================

@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use DEM data in MapServer
+.. Author: gislite .. Title: Use DEM data in MapServer
 
 Use DEM data in MapServer
 =========================

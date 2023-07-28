@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Introduction to MapServer
+.. Author: gislite .. Title: Introduction to MapServer
 
 Introduction to MapServer
 =========================

@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: WCS service foundation
+.. Author: gislite .. Title: WCS service foundation
 
 WCS Map Service
 ===============

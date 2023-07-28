@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use GeoJSON
+.. Author: gislite .. Title: Use GeoJSON
 
 Use GeoJSON and Leaflet
 =======================

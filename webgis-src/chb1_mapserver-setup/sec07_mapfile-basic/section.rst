@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Basic usage of MapServer
+.. Author: gislite .. Title: Basic usage of MapServer
 
 Usage process of MapServer
 ==========================

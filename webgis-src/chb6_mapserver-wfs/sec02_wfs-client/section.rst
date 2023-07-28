@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use MapServer as a WFS client
+.. Author: gislite .. Title: Use MapServer as a WFS client
 
 Use MapServer as the WFS client
 ===============================

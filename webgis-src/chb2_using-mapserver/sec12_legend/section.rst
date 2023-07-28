@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Add legend
+.. Author: gislite .. Title: Add legend
 
 Add Legend
 ==========

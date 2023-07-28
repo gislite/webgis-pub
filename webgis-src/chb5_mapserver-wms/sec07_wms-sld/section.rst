@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: WMS layers use SLD
+.. Author: gislite .. Title: WMS layers use SLD
 
 WMS layers use SLD
 ==================

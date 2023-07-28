@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: WMS GetFeatureInfo access
+.. Author: gislite .. Title: WMS GetFeatureInfo access
 
 WMS GetFeatureInfo access
 =========================

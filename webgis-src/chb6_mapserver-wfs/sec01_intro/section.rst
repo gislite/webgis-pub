@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: WFS service foundation
+.. Author: gislite .. Title: WFS service foundation
 
 Geographic Web Services
 =======================

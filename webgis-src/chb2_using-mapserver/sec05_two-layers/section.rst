@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Map with two layers
+.. Author: gislite .. Title: Map with two layers
 
 Static map with two layers
 ==========================

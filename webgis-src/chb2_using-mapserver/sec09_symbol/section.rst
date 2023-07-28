@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use custom styles in Mapfile
+.. Author: gislite .. Title: Use custom styles in Mapfile
 
 Use custom styles in Mapfile
 ============================

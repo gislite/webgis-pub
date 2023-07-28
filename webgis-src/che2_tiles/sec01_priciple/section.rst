@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Principle of map slicing
+.. Author: gislite .. Title: Principle of map slicing
 
 Principle of map tiles
 ======================

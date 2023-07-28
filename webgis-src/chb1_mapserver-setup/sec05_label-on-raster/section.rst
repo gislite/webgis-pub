@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Labeling on remote sensing images
+.. Author: gislite .. Title: Labeling on remote sensing images
 
 Labeling on remote sensing images
 =================================

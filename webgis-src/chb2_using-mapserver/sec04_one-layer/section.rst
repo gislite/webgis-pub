@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Publish a vector layer
+.. Author: gislite .. Title: Publish a vector layer
 
 Publish a vector layer
 ======================

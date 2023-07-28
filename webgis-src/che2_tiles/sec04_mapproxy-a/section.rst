@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: MapProxy case - a layer
+.. Author: gislite .. Title: MapProxy case - a layer
 
 MapProxy case: a layer
 ======================

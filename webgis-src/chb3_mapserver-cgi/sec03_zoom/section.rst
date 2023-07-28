@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Browse and zoom control
+.. Author: gislite .. Title: Browse and zoom control
 
 MapServer interaction: browse and zoom control
 ==============================================

@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Layer group and layer control
+.. Author: gislite .. Title: Layer group and layer control
 
 Layer group and layer control
 =============================

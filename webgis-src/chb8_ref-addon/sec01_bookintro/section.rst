@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: About Beginning MapServer
+.. Author: gislite .. Title: About Beginning MapServer
 
 About Beginning MapServer
 =========================

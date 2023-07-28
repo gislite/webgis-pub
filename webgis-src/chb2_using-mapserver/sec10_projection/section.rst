@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Define projection and extent
+.. Author: gislite .. Title: Define projection and extent
 
 Define projection and extent
 ============================

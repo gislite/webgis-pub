@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Use MapServer as a WMS client
+.. Author: gislite .. Title: Use MapServer as a WMS client
 
 Use MapServer as a WMS client
 =============================

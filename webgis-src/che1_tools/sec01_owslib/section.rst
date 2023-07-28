@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Introduction and installation of OWSlib
+.. Author: gislite .. Title: Introduction and installation of OWSlib
 
 Introduction and installation of OWSlib
 =======================================

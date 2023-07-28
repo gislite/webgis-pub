@@ -16,7 +16,7 @@ GeoServer can easily publish map data and allow users to update, delete
 and insert feature data. GeoServer can easily and quickly share spatial
 geographic information among users.
 
-Main characteristics
+Main features
 --------------------
 
 Compatible with WMS and WFS features; support PostgreSQL, Shapefile,

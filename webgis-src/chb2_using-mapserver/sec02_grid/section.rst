@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Add a graticule
+.. Author: gislite .. Title: Add a graticule
 
 Add a graticule
 ===============

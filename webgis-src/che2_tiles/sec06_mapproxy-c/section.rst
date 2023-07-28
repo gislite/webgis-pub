@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: MapProxy case - layer merging
+.. Author: gislite .. Title: MapProxy case - layer merging
 
 MapProxy case: layer merging
 ============================

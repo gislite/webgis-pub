@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Zoom Level
+.. Author: gislite .. Title: Zoom Level
 
 Zoom Level
 ==========

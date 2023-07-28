@@ -1,4 +1,4 @@
-.. Author: Bu Kun
+.. Author: gislite
 .. Title: Principle of Geographic Web Service
 
 ==========================================

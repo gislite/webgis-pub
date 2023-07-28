@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Annotations in a map
+.. Author: gislite .. Title: Annotations in a map
 
 Annotations in a map
 ====================

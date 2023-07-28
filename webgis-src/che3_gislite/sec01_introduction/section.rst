@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Introduction to GISLite
+.. Author: gislite .. Title: Introduction to GISLite
 
 Introduction to GISLite
 =======================

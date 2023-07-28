@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: Symbols in Mapfile
+.. Author: gislite .. Title: Symbols in Mapfile
 
 Symbols
 =======

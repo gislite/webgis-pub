@@ -1,4 +1,4 @@
-.. Author: Bu Kun
+.. Author: gislite
 .. Title: Preliminary understanding and reading of WMTS service
 
 =====================================================================

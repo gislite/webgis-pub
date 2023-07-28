@@ -1,4 +1,4 @@
-.. Author: Bu Kun .. Title: WMS GetMap access
+.. Author: gislite .. Title: WMS GetMap access
 
 Use WMS Services GetMap in MapServer
 ====================================
