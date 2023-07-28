@@ -1,7 +1,7 @@
 project = 'Open Source WebGIS'
 copyright = 'Since 2020'
 author = 'gislite'
-release = 'v 0.14'
+release = 'v 0.15'
 
 extensions = []
 
