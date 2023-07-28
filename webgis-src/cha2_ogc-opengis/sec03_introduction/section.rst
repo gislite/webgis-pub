@@ -6,11 +6,23 @@ Geographic Web service
 ==========================================
 
 
-Web service is a major progress in the development of WebGIS, and it is the core technology and important symbol of modern WebGIS. It combines the advantages of GIS, program components and the Internet, and profoundly changes the way GIS is developed and applied. It bypasses the complex links of local data conversion and local software installation, enables different computer systems and different departments to integrate at the Web service level, provides a new basic module for software application development, and a new way for cross-departmental coordination and cooperation, provide a technical framework for the National Spatial Data Infrastructure (NSDI).
+Web service is a major progress in the development of WebGIS,
+and it is the core technology and important symbol of modern WebGIS.
+It combines the advantages of GIS, program components and the Internet,
+and profoundly changes the way GIS is developed and applied.
+It bypasses the complex links of local data conversion and local software installation,
+enables different computer systems and different departments to integrate at the Web service level,
+provides a new basic module for software application development,
+and a new way for cross-departmental coordination and cooperation,
+provide a technical framework for the National Spatial Data Infrastructure (NSDI).
 
-More and more organizations are publishing and sharing their own data and functions as Web services for their own organization and often other organizations. These services can then be combined into other WebGIS applications.
+More and more organizations are publishing and sharing their own data and functions
+as Web services for their own organization and often other organizations.
+These services can then be combined into other WebGIS applications.
 
-Focus on the basics of web services, including the concept, impact, role and advantages of web services, SOAP and REST-style web services, web services related standards such as WMS, WFS, WCS, CSW, GML, KML and GeoRSS, and Optimization of Web Services.
+Focus on the basics of web services, including the concept, impact, role and advantages of web services,
+SOAP and REST-style web services, web services related standards such as WMS, WFS, WCS, CSW, GML, KML and GeoRSS,
+and Optimization of Web Services.
 
 From Web site to Web service
 =============================================
@@ -19,7 +31,11 @@ From Web site to Web service
 Emergence and advantages of Web Service
 -------------------------------------------------------------------
 
-WebGIS developed rapidly after its emergence in the early 1990s, but the early Web application systems and software, including WebGIS, were mostly websites that could only be used independently. This system gradually shows its limitations in both internal structure and external opening, and it is difficult to give full play to the potential of WebGIS.
+WebGIS developed rapidly after its emergence in the early 1990s,
+but the early Web application systems and software,
+including WebGIS, were mostly websites that could only be used independently.
+This system gradually shows its limitations in both internal structure and external opening,
+and it is difficult to give full play to the potential of WebGIS.
 
 > Limitation 1
 >
@@ -90,11 +106,16 @@ At present, Web service has become the core of GIS, and its appearance has had a
 
 (1) It is an accelerator for WebGIS product differentiation and new market formation
 
-With web services as the center, the geographic information community has released new products or new functions to realize a series of workflow such as the production of Geographic Resources (author), the publication of services (publish), the discovery and use of services.
+With web services as the center, the geographic information community has released new products
+or new functions to realize a series of workflow such as the production of Geographic Resources (author),
+the publication of services (publish), the discovery and use of services.
 
-![Web service is the core of WebGIS. WebGIS products are divided into a variety of products that support the creation, distribution, registration, query and use of geospatial Web services.](imgvze24.png)
+Web service is the core of WebGIS. WebGIS products are divided into a variety of products that support the creation,
+distribution, registration, query and use of geospatial Web services.
 
-On the server side: if you have a lot of data, you can be a provider of data and map services. If you have unique analytical models, you can publish them as professional geoprocessing services. These services can be free or pay-per-use.
+On the server side: if you have a lot of data, you can be a provider of data and map services.
+If you have unique analytical models, you can publish them as professional geoprocessing services.
+These services can be free or pay-per-use.
 
 On the client side: If you are good at development, you can choose to develop a desktop client or a mobile client for Web services, showing your advantages in terms of supported service types or availability.
  
@@ -102,9 +123,14 @@ In the aspect of portal website: you can collect certain areas, certain topics o
 
 (2) It is the basic component of GIS integration into mainstream information systems
 
-Before geographic Web services, the integration of GIS and other information systems was often implemented “locally”, that is, the geographic data was copied to the local, the GIS software was installed locally, and the invocation of GIS functions was very complicated and limited. These reasons have limited GIS to a small circle for many years, hindering the seamless integration of GIS with mainstream information systems. 
+Before geographic Web services, the integration of GIS and other information systems was often implemented “locally”,
+that is, the geographic data was copied to the local, the GIS software was installed locally,
+and the invocation of GIS functions was very complicated and limited.
+These reasons have limited GIS to a small circle for many years,
+hindering the seamless integration of GIS with mainstream information systems.
 
-Geographic Web services hide the above-mentioned complexities, and other information systems, such as enterprise resource planning (ERP) and customer relationship management (CRM) systems, can flexibly and easily invoke and integrate remote geographic Web services to obtain maps, data and geographic Analysis function. The openness and flexibility of Web services will greatly expand the market of GIS.
+Geographic Web services hide the above-mentioned complexities,
+and other information systems, such as enterprise resource planning (ERP) and customer relationship management (CRM) systems, can flexibly and easily invoke and integrate remote geographic Web services to obtain maps, data and geographic Analysis function. The openness and flexibility of Web services will greatly expand the market of GIS.
 
 (3) It is a new way to achieve interoperability
 
@@ -248,22 +274,28 @@ The following figure shows the same function in the above figure in the form of 
 
 
 
-It can be seen that the URL hierarchy of this directory structure is intuitive, predictable, and easy to understand, without requiring excessive documentation, and developers can easily construct these URLs to point to the web resources they need.
+It can be seen that the URL hierarchy of this directory structure is intuitive, predictable,
+and easy to understand, without requiring excessive documentation,
+and developers can easily construct these URLs to point to the web resources they need.
 
-Web resources in REST services support specific operations. For example, a map service can perform mapping and query operations, and a single data layer in a map service can perform query operations. 
+Web resources in REST services support specific operations.
+For example, a map service can perform mapping and query operations,
+and a single data layer in a map service can perform query operations.
 
-The results of these operations can be returned to the client in formats such as JSON. For example, to request a map service to make a map of the United States through the REST interface, and to return a JPEG image of ``800x500`` pixels, the URL request is roughly
+The results of these operations can be returned to the client in formats such as JSON.
+For example, to request a map service to make a map of the United States through the REST interface,
+and to return a JPEG image of ``800x500`` pixels, the URL request is roughly
 
 
 ::
 
-    http://server.mycompany.com/ArcGIS/rest/services/QSMap/MapServer/
-    export?
-    bbox=-185.33, 15.20, -9 .53 , 74 .08
-    &size=800 , 500
-    &format=jpg
-    &dpi=96
-    &f=image
+   http://server.mycompany.com/ArcGIS/rest/services/QSMap/MapServer/
+   export?
+   bbox=-185.33, 15.20, -9 .53 , 74 .08
+   &size=800 , 500
+   &format=jpg
+   &dpi=96
+   &f=image
 
 Using REST to query the median household income of each county in California in a map service, the request returns JSON format, and the URL request is roughly:
 
