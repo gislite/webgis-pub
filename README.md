@@ -12,8 +12,10 @@ Went through a series of refactoring.
 
 1. Rebuild with PHP, using templates.
 2. Integrated into TorCMS to serve as dynamic website.
-3. Using Python to write the SSG for Mapfile processing, and using Jinja2 for webpage management.
-4. Finally using Sphinx for the management of the pages. And keep the scripts for Mapfiles.
+3. Using Python to write the SSG for Mapfile processing, 
+   and using Jinja2 for webpage management.
+4. Finally using Sphinx for the management of the pages. 
+And keep the scripts for Mapfiles.
 
 Based on MapServer, and would supply WebGIS relevant technologies.
 

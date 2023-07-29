@@ -18,14 +18,15 @@ On the client side, you can define the implementation style of anonymous functio
 ::
 
     style:function(feature){
-    return {
-        stroke:true,
-        color:'#333333',
-        opacity: 1,
-        fillOpacity: 0.1,
-        fillColor: '#333333',
-        weight:1
-    }},
+        return {
+            stroke:true,
+            color:'#333333',
+            opacity: 1,
+            fillOpacity: 0.1,
+            fillColor: '#333333',
+            weight:1
+        }
+    },
 
 
 Example

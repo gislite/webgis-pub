@@ -65,13 +65,13 @@ Now let’s create the base layer and add the default layer to the map:
 
 ::
 
-   var grayscale = L.tileLayer(mapboxUrl, {{id: 'MapID', attribution: mapboxAttribution}}),
-   streets   = L.tileLayer(mapboxUrl, {{id: 'MapID', attribution: mapboxAttribution}});
-   var map = L.map('map', {{
-   center: [39.73, -104.99],
-   zoom: 10,
-   layers: [grayscale, cities]
-   }});
+   var grayscale = L.tileLayer(mapboxUrl, {id: 'MapID', attribution: mapboxAttribution}),
+   streets   = L.tileLayer(mapboxUrl, {id: 'MapID', attribution: mapboxAttribution});
+   var map = L.map('map', {
+       center: [39.73, -104.99],
+       zoom: 10,
+       layers: [grayscale, cities]
+   });
 
 Next, we create two objects. One contains our base layer and one
 contains our overlay layer. These are just simple objects with key/value
@@ -81,14 +81,14 @@ example, ``streets`` ).
 
 ::
 
-   var baseMaps = {{
-   "Grayscale": grayscale,
-   "Streets": streets
-   }};
+   var baseMaps = {
+       "Grayscale": grayscale,
+       "Streets": streets
+   };
 
-   var overlayMaps = {{
-   "Cities": cities
-   }};
+   var overlayMaps = {
+       "Cities": cities
+   };
 
 Now, just create a layer control and add it to the map. The first
 parameter passed when the layer control is created is the base layer
@@ -116,9 +116,9 @@ map’s labels gray:
 
 ::
 
-   var baseMaps = {{
+   var baseMaps = {
    "<span style='color: gray'>Grayscale</span>": grayscale,
    "Streets": streets
-   }};
+   };
 
 Now let’s take a separate page View results:  ./leaflet_layer_control/example.html

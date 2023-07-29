@@ -43,18 +43,18 @@ Leaflet vector. Here’s an example of a simple GeoJSON feature:
 
 ::
 
-   var geojsonFeature = {{
+   var geojsonFeature = {
        "type": "Feature",
-       "properties": {{
+       "properties": {
            "name": "Coors Field",
            "amenity": "Baseball Stadium",
            "popupContent": "This is where the Rockies play!"
-       }},
-       "geometry": {{
+       },
+       "geometry": {
            "type": "Point",
            "coordinates": [-104.99404, 39.75621]
-       }}
-   }};
+       }
+   };
 
 GeoJSON Layer
 -------------
@@ -70,13 +70,13 @@ GeoJSON objects can also be passed as arrays of valid GeoJSON objects.
 
 ::
 
-   var myLines = [{{
+   var myLines = [{
        "type": "LineString",
        "coordinates": [[-100, 40], [-105, 45], [-110, 55]]
-   }}, {{
+   }, {
        "type": "LineString",
        "coordinates": [[-105, 40], [-110, 45], [-115, 55]]
-   }}];
+   }];
 
 Alternatively, we can create an empty GeoJSON layer and assign it to a
 variable so that we can add more features later.
@@ -95,23 +95,23 @@ way through a simple object:
 
 ::
 
-   var myLines = [{{
+   var myLines = [{
        "type": "LineString",
        "coordinates": [[-100, 40], [-105, 45], [-110, 55]]
-   }}, {{
+   }, {
        "type": "LineString",
        "coordinates": [[-105, 40], [-110, 45], [-115, 55]]
-   }}];
+   }];
 
-   var myStyle = {{
+   var myStyle = {
        "color": "#ff7800",
        "weight": 5,
        "opacity": 0.65
-   }};
+   };
 
-   L.geoJSON(myLines, {{
+   L.geoJSON(myLines, {
        style: myStyle
-   }}).addTo(map);
+   }).addTo(map);
 
 Or, we can use functions to set the style of their various properties.
 In the following example, we check the “party” attribute and set our
@@ -119,10 +119,10 @@ polygon style accordingly:
 
 ::
 
-   var states = [{{
+   var states = [{
    "type": "Feature",
-   "properties": {{"party": "Republican"}},
-   "geometry": {{
+   "properties": {"party": "Republican"},
+   "geometry": {
        "type": "Polygon",
        "coordinates": [[
            [-104.05, 48.99],
@@ -131,11 +131,11 @@ polygon style accordingly:
            [-104.03, 45.94],
            [-104.05, 48.99]
        ]]
-   }}
-   }}, {{
+   }
+   }, {
        "type": "Feature",
-       "properties": {{"party": "Democrat"}},
-       "geometry": {{
+       "properties": {"party": "Democrat"},
+       "geometry": {
            "type": "Polygon",
            "coordinates": [[
                [-109.05, 41.00],
@@ -144,17 +144,17 @@ polygon style accordingly:
                [-109.04, 36.99],
                [-109.05, 41.00]
            ]]
-       }}
-   }}];
+       }
+   }];
 
-   L.geoJSON(states, {{
-       style: function(feature) {{
-           switch (feature.properties.party) {{
-               case 'Republican': return {{color: "#ff0000"}};
-               case 'Democrat':   return {{color: "#0000ff"}};
-           }}
-       }}
-   }}).addTo(map);
+   L.geoJSON(states, {
+       style: function(feature) {
+           switch (feature.properties.party) {
+               case 'Republican': return {color: "#ff0000"};
+               case 'Democrat':   return {color: "#0000ff"};
+           }
+       }
+   }).addTo(map);
 
 Point Layer（ ``pointToLayer`` ）
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,20 +170,20 @@ We can also create a circular tag using the ``pointToLayer`` option:
 
 ::
 
-   var geojsonMarkerOptions = {{
+   var geojsonMarkerOptions = {
        radius: 8,
        fillColor: "#ff7800",
        color: "#000",
        weight: 1,
        opacity: 1,
        fillOpacity: 0.8
-   }};
+   };
 
-   L.geoJSON(someGeojsonFeature, {{
-       pointToLayer: function (feature, latlng) {{
+   L.geoJSON(someGeojsonFeature, {
+       pointToLayer: function (feature, latlng) {
            return L.circleMarker(latlng, geojsonMarkerOptions);
-       }}
-   }}).addTo(map);
+       }
+   }).addTo(map);
 
 We can also set the ``style`` of the property in this example - If you
 create a circle-like vector layer inside the pointToLayer function, the
@@ -199,29 +199,29 @@ attach pop-ups when clicking on a feature.
 
 ::
 
-   function onEachFeature(feature, layer) {{
+   function onEachFeature(feature, layer) {
        // does this feature have a property named popupContent?
-       if (feature.properties && feature.properties.popupContent) {{
+       if (feature.properties && feature.properties.popupContent) {
            layer.bindPopup(feature.properties.popupContent);
-       }}
-   }}
+       }
+   }
 
-   var geojsonFeature = {{
+   var geojsonFeature = {
        "type": "Feature",
-       "properties": {{
+       "properties": {
            "name": "Coors Field",
            "amenity": "Baseball Stadium",
            "popupContent": "This is where the Rockies play!"
-       }},
-       "geometry": {{
+       },
+       "geometry": {
            "type": "Point",
            "coordinates": [-104.99404, 39.75621]
-       }}
-   }};
+       }
+   };
 
-   L.geoJSON(geojsonFeature, {{
+   L.geoJSON(geojsonFeature, {
        onEachFeature: onEachFeature
-   }}).addTo(map);
+   }).addTo(map);
 
 Filter（ ``filter`` ）
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,30 +236,30 @@ In the example below, “Busch Field” will not be displayed on the map.
 
 ::
 
-   var someFeatures = [{{
+   var someFeatures = [{
    "type": "Feature",
-   "properties": {{
+   "properties": {
        "name": "Coors Field",
        "show_on_map": true
-   }},
-   "geometry": {{
+   },
+   "geometry": {
        "type": "Point",
        "coordinates": [-104.99404, 39.75621]
-   }}
-   }}, {{
+   }
+   }, {
        "type": "Feature",
-       "properties": {{
+       "properties": {
            "name": "Busch Field",
            "show_on_map": false
-       }},
-       "geometry": {{
+       },
+       "geometry": {
            "type": "Point",
            "coordinates": [-104.98404, 39.74621]
-       }}
-   }}];
+       }
+   }];
 
-   L.geoJSON(someFeatures, {{
-       filter: function(feature, layer) {{
+   L.geoJSON(someFeatures, {
+       filter: function(feature, layer) {
            return feature.properties.show_on_map;
-       }}
-   }}).addTo(map);
+       }
+   }).addTo(map);

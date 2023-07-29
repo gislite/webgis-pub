@@ -83,7 +83,7 @@ Make sure the map has a clear height, such as defined in CSS:
 
 ::
 
-   #mapid {{ height: 180px; }}
+   #mapid { height: 180px; }
 
 Now that the map has been initialized, you are ready to do something
 with it.
@@ -93,21 +93,15 @@ Create a map
 
 .. raw:: html
 
-   <table>
-   <tbody>
+   <table><tbody>
    <tr>
    <td style="text-align: center; border: none">
    <iframe src="http://webgis.pub/leaflet_quickstart/example-basic.html" width="616" height="416">
    </iframe>
-   </td>
-   </tr>
-   <tr>
+   </td></tr><tr>
    <td style="text-align: center; border: none">
    View this example
-   </td>
-   </tr>
-   </tbody>
-   </table>
+   </td></tr></tbody></table>
 
 1.Initialize the map and set its view to the geographic coordinates and
 zoom level we selected：
@@ -124,12 +118,12 @@ on, and it has zoom and property controls.
 
 ::
 
-   L.tileLayer('https://api.tiles.mapbox.com/v4/{{id}}/{{z}}/{{x}}/{{y}}.png?access_token={{accessToken}}', {{
+   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
        maxZoom: 18,
        id: 'mapbox.streets',
        accessToken: 'your.mapbox.access.token'
-   }}).addTo(mymap);
+   }).addTo(mymap);
 
 Make sure that all the code is used to display the map ``div`` And
 ``leaflet.js`` Called after containing.
@@ -139,21 +133,14 @@ Dot mark, circle mark, and polygon mark
 
 .. raw:: html
 
-   <table>
-   <tbody>
-   <tr>
+   <table><tbody><tr>
    <td style="text-align: center; border: none">
    <iframe src="http://webgis.pub/example-overlays.html" width="616" height="416">
    </iframe>
-   </td>
-   </tr>
-   <tr>
+   </td></tr><tr>
    <td style="text-align: center; border: none">
    View this example
-   </td>
-   </tr>
-   </tbody>
-   </table>
+   </td></tr></tbody></table>
 
 In addition to tiles, you can easily add other things to your map,
 including markers, broken lines, polygons, circles and pop-ups. Let’s
@@ -167,12 +154,12 @@ Add a circle tag:
 
 ::
 
-   var circle = L.circle([51.508, -0.11], {{
+   var circle = L.circle([51.508, -0.11], {
        color: 'red',
        fillColor: '#f03',
        fillOpacity: 0.5,
        radius: 500
-   }}).addTo(mymap);
+   }).addTo(mymap);
 
 Adding polygon tags is equally simple:
 
@@ -243,9 +230,9 @@ interaction:
 
 ::
 
-   function onMapClick(e) {{
+   function onMapClick(e) {
        alert("You clicked the map at " + e.latlng);
-   }}
+   }
    mymap.on('click', onMapClick);
 
 Each object has its own set of events, and the first parameter of the
@@ -259,12 +246,12 @@ Let’s improve our example by using pop-ups instead of alert:
 ::
 
    var popup = L.popup();
-   function onMapClick(e) {{
+   function onMapClick(e) {
        popup
            .setLatLng(e.latlng)
            .setContent("You clicked the map at " + e.latlng.toString())
            .openOn(mymap);
-   }}
+   }
    mymap.on('click', onMapClick);
 
 Try clicking on the map and you will see the coordinates in the pop-up

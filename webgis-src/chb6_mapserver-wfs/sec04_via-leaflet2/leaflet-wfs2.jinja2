@@ -3,8 +3,8 @@
 
 {% block headbody %}
 
-    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.css"  />
-    <script src="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.js"  ></script>
+    <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.css"/>
+    <script src="https://www.osgeo.cn/static/f2elib/leaflet-1.9.x/leaflet.js"></script>
 
     <title>Leaflet render WFS with custom styles</title>
 
@@ -57,23 +57,23 @@
             function loadWfsHandler(data) {
                 console.log(data);
                 layer = L.geoJson(data, {
- 					style:function(feature){
- 						return {
- 							stroke:true,
- 							color:'#333333',
- 							opacity: 1,
- 			                fillOpacity: 0.1,
- 			                fillColor: '#333333',
- 							weight:1
- 						}
- 					},
+                    style: function (feature) {
+                        return {
+                            stroke: true,
+                            color: '#333333',
+                            opacity: 1,
+                            fillOpacity: 0.1,
+                            fillColor: '#333333',
+                            weight: 1
+                        }
+                    },
                     pointToLayer: function (featyre, latlng) {
                     }
                 }).addTo(map);
             }
         }
-        loadWFS('world-country', '4326')
 
+        loadWFS('world-country', '4326')
 
 
     </script>

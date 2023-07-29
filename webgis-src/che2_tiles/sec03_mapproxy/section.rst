@@ -170,10 +170,10 @@ The code for posting OpenLayers is as follows:
 
 ::
 
-   var raster = new ol.layer.Tile({{
-           source: new ol.source.XYZ({{
+   var raster = new ol.layer.Tile({
+           source: new ol.source.XYZ({
    url:'http://localhost:8080/tms/1.0.0/my_layer/webmercator/.png'
-           }}),
+           }),
    opacity: 1,
    visible:false
-       }});
+       });

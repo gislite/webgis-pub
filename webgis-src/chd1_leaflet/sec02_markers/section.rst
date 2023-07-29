@@ -42,7 +42,7 @@ green leaf icon:
 
 ::
 
-   var greenIcon = L.icon({{
+   var greenIcon = L.icon({
        iconUrl: 'leaf-green.png',
        shadowUrl: 'leaf-shadow.png',
 
@@ -51,30 +51,26 @@ green leaf icon:
        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
        shadowAnchor: [4, 62],  // the same for the shadow
        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-   }});
+   });
 
 Now it’s easy to put an icon on the map:
 
 ::
 
-   L.marker([51.5, -0.09], {{icon: greenIcon}}).addTo(map);
+   L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
 
 .. raw:: html
 
-    <table>
-    <tbody>
+    <table><tbody>
     <tr>
         <td style="text-align: center; border: none">
             <iframe src="./makericons.html" width="616" height="416"></iframe>
         </td>
-    </tr>
-    <tr>
+    </tr><tr>
         <td style="text-align: center; border: none">
             <small><a href="./makericons.html">View this example</a></small>
         </td>
-    </tr>
-    </tbody>
-    </table>
+    </tr></tbody></table>
 
 Define icon class
 -----------------
@@ -85,24 +81,24 @@ easy to inherit Leaflet from the L icon (　``L.Icon``　):
 
 ::
 
-   var LeafIcon = L.Icon.extend({{
-       options: {{
+   var LeafIcon = L.Icon.extend({
+       options: {
            shadowUrl: 'leaf-shadow.png',
            iconSize:     [38, 95],
            shadowSize:   [50, 64],
            iconAnchor:   [22, 94],
            shadowAnchor: [4, 62],
            popupAnchor:  [-3, -76]
-       }}
-   }});
+       }
+   });
 
 Now we can create these three leaf icons in this class and use them:
 
 ::
 
-   var greenIcon = new LeafIcon({{iconUrl: 'leaf-green.png'}}),
-   redIcon = new LeafIcon({{iconUrl: 'leaf-red.png'}}),
-   orangeIcon = new LeafIcon({{iconUrl: 'leaf-orange.png'}});
+   var greenIcon = new LeafIcon({iconUrl: 'leaf-green.png'}),
+   redIcon = new LeafIcon({iconUrl: 'leaf-red.png'}),
+   orangeIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
 
 As you may have noticed, we created a leaf icon instance using the
 keyword ``new``. So why aren’t all Leaflet classes created with it? The
@@ -113,17 +109,17 @@ created for convenience, such as:
 
 ::
 
-   L.icon = function (options) {{
+   L.icon = function (options) {
        return new L.Icon(options);
-   }};
+   };
 
 You can also do the same thing in class.
 OK, let’s put the markers for these icons on the map:
 
 ::
 
-   L.marker([51.5, -0.09], {{icon: greenIcon}}).addTo(map).bindPopup("I am a green leaf.");
-   L.marker([51.495, -0.083], {{icon: redIcon}}).addTo(map).bindPopup("I am a red leaf.");
-   L.marker([51.49, -0.1], {{icon: orangeIcon}}).addTo(map).bindPopup("I am an orange leaf.");
+   L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.");
+   L.marker([51.495, -0.083], {icon: redIcon}).addTo(map).bindPopup("I am a red leaf.");
+   L.marker([51.49, -0.1], {icon: orangeIcon}).addTo(map).bindPopup("I am an orange leaf.");
 
 Now open the full example .

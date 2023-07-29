@@ -19,14 +19,14 @@ Let’s look at a simple map that is locked at level 0:
 
 ::
 
-   var map = L.map('map', {{
-   minZoom: 0,
-   maxZoom: 0
-   }});
+   var map = L.map('map', {
+       minZoom: 0,
+       maxZoom: 0
+   });
 
-   var positron = L.tileLayer('http://{{s}}.basemaps.cartocdn.com/light_all/{{z}}/{{x}}/{{y}}.png', {{
+   var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
    attribution: cartodbAttribution
-   }}).addTo(map);
+   }).addTo(map);
 
    map.setView([0, 0], 0);
 
@@ -165,12 +165,12 @@ doubled. The following example uses a JavaScript timeout to automate:
 
    L.control.scale().addTo(map);
 
-   setInterval(function(){{
+   setInterval(function(){
        map.setView([0, 0]);
-       setTimeout(function(){{
+       setTimeout(function(){
            map.setView([60, 0]);
-       }}, 2000);
-   }}, 4000);
+       }, 2000);
+   }, 4000);
 
 
 .. raw:: html
@@ -199,12 +199,12 @@ zoom levels 0 and 1:
 
 ::
 
-   setInterval(function(){{
+   setInterval(function(){
        map.setZoom(0);
-       setTimeout(function(){{
+       setTimeout(function(){
            map.setZoom(1);
-       }}, 2000);
-   }}, 4000);
+       }, 2000);
+   }, 4000);
 
 .. raw:: html
 
@@ -218,16 +218,16 @@ zoom levels 0 and 1:
 
 Other ways to set the zoom:
 
--  \ ``setView(center, zoom)``\ , It also sets the center of the map
--  \ ``flyTo(center, zoom)``\ , Similar to ``setView``, but it has
+-  ``setView(center, zoom)`` , It also sets the center of the map
+-  ``flyTo(center, zoom)`` , Similar to ``setView``, but it has
    smooth animations
--  \ ``zoomIn()`` / ``zoomIn(delta)``\ , Zoom in to the ``delta`` zoom
+-  ``zoomIn()`` / ``zoomIn(delta)`` , Zoom in to the ``delta`` zoom
    level with a default zoom level of ``1``
--  \ ``zoomOut()`` / ``zoomOut(delta)``\ , Reduce the ``delta`` zoom
+-  ``zoomOut()`` / ``zoomOut(delta)`` , Reduce the ``delta`` zoom
    level with a default zoom level of ``1``
--  \ ``setZoomAround(fixedPoint, zoom)``\ , Set the ``delta`` level
+-  ``setZoomAround(fixedPoint, zoom)`` , Set the ``delta`` level
    while maintaining a fixed point (scroll mouse wheel zoom)
--  \ ``fitBounds(bounds)``\ ,Automatically calculate scaling to match
+-  ``fitBounds(bounds)`` ,Automatically calculate scaling to match
    rectangular areas on the map
 
 Fractional scaling
@@ -251,9 +251,9 @@ The following example uses the ``zoomSnap`` value as ``0.25``:
 
 ::
 
-   var map = L.map('map', {{
+   var map = L.map('map', {
        zoomSnap: 0.25
-   }});
+   });
 
 .. raw:: html
 
@@ -285,10 +285,10 @@ Here’s an example where ``zoomSnap`` is set to zero:
 
 ::
 
-   var map = L.map('map', {{
+   var map = L.map('map', {
        zoomDelta: 0.25,
        zoomSnap: 0
-   }});
+   });
 
 Try the following to see how the zoom level changes:
 

@@ -32,10 +32,10 @@ layer to explain:
 ::
 
    <style>
-       .tiles img {{
+       .tiles img {
            border: 1px solid #ccc;
            border-radius: 5px;
-       }}
+       }
    </style>
 
 
@@ -113,14 +113,14 @@ the ``pane`` option on the label layer:
 
 ::
 
-   var positron = L.tileLayer('http://{{s}}.basemaps.cartocdn.com/light_nolabels/{{z}}/{{x}}/{{y}}.png', {{
+   var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
        attribution: '©OpenStreetMap, ©CartoDB'
-   }}).addTo(map);
+   }).addTo(map);
 
-   var positronLabels = L.tileLayer('http://{{s}}.basemaps.cartocdn.com/light_only_labels/{{z}}/{{x}}/{{y}}.png', {{
+   var positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
        attribution: '©OpenStreetMap, ©CartoDB',
        pane: 'labels'
-   }}).addTo(map);
+   }).addTo(map);
 
    var geojson = L.geoJson(GeoJsonData, geoJsonOptions).addTo(map);
 
@@ -128,9 +128,9 @@ Finally, add some interactive features to the GeoJSON layer:
 
 ::
 
-   geojson.eachLayer(function (layer) {{
-   layer.bindPopup(layer.feature.properties.name);
-   }});
+   geojson.eachLayer(function (layer) {
+       layer.bindPopup(layer.feature.properties.name);
+   });
    map.fitBounds(geojson.getBounds());
 
 This way the example map is complete!
