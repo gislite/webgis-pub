@@ -44,10 +44,6 @@ which sources many of MapServer’s input formats, and can also provide
 output in ``PNG``, ``JPEG``, ``TIFF/GeoTIFF``, and other raster formats;
 the pdflib library provides PDF output.
 
-.. raw:: html
-
-   <!-- Mingku provides flash output -->
-
 Have a look at your MAPFILE object by changing the keyword ``IMAGETYPE``
 and experiment with ``OUTPUTFORMAT`` . It should be used as
 ``IMAGETYPE`` value (eg: ``IMAGETYPE png`` or ``PNG24 IMAGETYPE`` ), the

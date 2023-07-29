@@ -19,8 +19,7 @@ View examples
        &amp;layer=states_poly&amp;layer=states_line&amp;mode=map
      </a>. This is how most of the examples in this section work.-->
 
-In this example, the image is generated to the source of the URL
-connection ``<img>`` Label:
+In this example, the image is generated to the source of the URL:
 
 ::
 
@@ -43,15 +42,15 @@ This Mapfile defines two layers:
 
 
 It’s important to remember that MapServer’s render layers are in the
-order they are specified in the mapfile. The last layer in the Mapfile
-is the top layer of the map rendering result, building the map on top of
-all the previous layers. This means that details shown earlier in the
-Mapfile (ie, lower layers in the map image) may be obscured. This is
-most important when rendering polygon layers, since polygons can be
-filled with a specified color. If the map server renders a point layer
-(that is, for example, the location of a city), then the render state
-represents a polygon layer, and the city will not be visible unless the
-specified polygon layer color is transparent.
+order they are specified in the mapfile.
+The last layer in the Mapfile is the top layer of the map rendering result,
+building the map on top of all the previous layers.
+This means that details shown earlier in the Mapfile (ie, lower layers in the map image) may be obscured.
+This is most important when rendering polygon layers, since polygons can be
+filled with a specified color.
+If the map server renders a point layer (that is, for example, the location of a city),
+then the render state represents a polygon layer,
+and the city will not be visible unless the specified polygon layer color is transparent.
 
 This problem is easily remedied by defining the polygon layer in front.
 Polygons can also be rendered as a series of lines (ie, a line layer).
