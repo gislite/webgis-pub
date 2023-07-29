@@ -1,0 +1,23 @@
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:191: WARNING: fundation is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:191: WARNING: ogc-opengis is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: mapserver-setup is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: using-mapserver is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: mapserver-cgi is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: using-cgi is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: mapserver-wms is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: mapserver-wfs is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: mapserver-wcs is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:200: WARNING: ref-addon is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:218: WARNING: geoserver-introduction is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:218: WARNING: geoserver-management is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:241: WARNING: tools is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:241: WARNING: tiles is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/index.rst:241: WARNING: gislite is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/f2e.rst:7: WARNING: leaflet is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/f2e.rst:7: WARNING: openlayers is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/f2e.rst:7: WARNING: cesium is already assigned section numbers (nested numbered toctree?)
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/f2e.rst: WARNING: document isn't included in any toctree
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/geoserver.rst: WARNING: document isn't included in any toctree
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/mapserver.rst: WARNING: document isn't included in any toctree
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/misc.rst: WARNING: document isn't included in any toctree
+/home/gislite/gitee/webgis-pub/_pub/xx_rst/principle.rst: WARNING: document isn't included in any toctree
