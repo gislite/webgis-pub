@@ -1,38 +1,51 @@
-# webgis-pub
+# Introduction of webgis-pub
 
 
-This directory is the source codes for //webgis.pub in Sphinx project structure.
+The repository is the source codes for //webgis.pub in Sphinx project structure.
+There are Python codes for some automated stuff for MapServer, 
+and lots of JavaScript demos for Leaflet/OpenLayers.
 
+![webgis-pub logo](./webgis-src/webgis-logo.png)
 
-## 
-
-The idea of this website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
+The idea of this website is comes on https://demo.mapserver.org/tutorial/ 
+and has undergone significant improvements.
 
 Went through a series of refactoring.
 
 1. Rebuild with PHP, using templates.
 2. Integrated into TorCMS to serve as dynamic website.
-3. Using Python to write the SSG for Mapfile processing, 
+3. Using Python to write the SSG for Mapfile processing,
    and using Jinja2 for webpage management.
-4. Finally using Sphinx for the management of the pages. 
-And keep the scripts for Mapfiles.
+4. Sphinx is introduced for the management of the pages.
+   And keep the scripts for Mapfiles.
 
 Based on MapServer, and would supply WebGIS relevant technologies.
 
-There are a large number of historical legacy issues that need 
+There are a large number of historical legacy issues that need
 to be addressed during the conversion process.
-All the pull requests arc welcome.
+All the pull requests are welcome.
+
+## How to contribute
 
 
+
+### For tutorial contents
+
+
+The source files for the tutorial are under ``webgis-src`` .
+You can edit the ``.rst`` file as reStructureText.
+
+### For WebGIS coders
+
+Python language is mainly used for files generating and website deployment.
+And some demos are written in HTML/JavaScript.
 
 
 ## Install and setup
 
-Install softwares:
+Install softwares under Debian(now Debian 12):
 
-
-
-    sudo apt install -y apache2 php7.3 libapache2-mod-fcgid cgi-mapserver \
+    sudo apt install -y apache2 php8.2 libapache2-mod-fcgid cgi-mapserver \
 		mapserver-bin libapache2-mod-php
     sudo a2enmod authnz_fcgi
     sudo a2enmod cgi
@@ -50,5 +63,5 @@ Setup using shell:
 
 Running via Apache2. Run the following code for deployment：
 
-   
+
     sh build.sh
