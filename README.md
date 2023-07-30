@@ -1,7 +1,7 @@
-# Introduction of webgis-pub
+# Introduction of webgis-pub (Open-source WebGIS tutorial)
 
 
-The repository is the source codes for //webgis.pub in Sphinx project structure.
+The repository is the source codes for //webgis.pub (Open-source WebGIS tutorial) in Sphinx project structure.
 There are Python codes for some automated stuff for MapServer, 
 and lots of JavaScript demos for Leaflet/OpenLayers.
 
