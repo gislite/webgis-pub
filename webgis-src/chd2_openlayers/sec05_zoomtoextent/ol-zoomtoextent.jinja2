@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
 
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
     <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
 
 
@@ -24,35 +24,35 @@
     <div id="olmap" class="olmap"></div>
 
     <script>
-        //加载地图
+        //Load map
         var olmap = new ol.Map({
-            controls: ol.control.defaults.defaults({			//设置控件中的控件集。
-                attributionOptions: {				//属性选项
-                    collapsible: false				//折叠属性。
+            controls: ol.control.defaults.defaults({			//Sets the control set in the control.
+                attributionOptions: {				//Attribute option
+                    collapsible: false				//Collapse properties.
                 }
             }).extend([
-                new ol.control.ZoomToExtent({		//按钮控件，当按下时，将地图视图更改为特定范围。使用CSS选择器
-                    //来调整此控件的样式
-                    extent: [				//放大的程度。如果未定义，则使用视图投影的有效范围。
+                new ol.control.ZoomToExtent({		//Button control that, when pressed, changes the map view to a specific range. Use CSS selectors to adjust the style of this control
+                     
+                    extent: [				//The degree of amplification. If not defined, the valid range of the view projection is used.
                         813079.7791264898, 5929220.284081122,
                         848966.9639063801, 5936863.986909639
                     ]
                 })
             ]),
-            layers: [	//加载图层
-                new ol.layer.Tile({  //加载瓦片图层
-                    source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+            layers: [	//Load layer
+                new ol.layer.Tile({  //Load the tile layer
+                    source: new ol.source.Stamen({        //Layer source for Stamen Tile server.
                         layer: 'terrain'
                     })
                 }),
             ],
-            target: 'olmap',		//地图容器div的id
-            view: new ol.View({	//地图为2D视图
-                center: [0, 0],	//地图初始中心点
-                zoom: 2		//地图初始级别
+            target: 'olmap',		//id of the map container div
+            view: new ol.View({	//The map is in 2D view
+                center: [0, 0],	//Initial center of the map
+                zoom: 2		//Map initial level
             })
         });
     </script>
 
 {% endblock %}
-<!--这个例子显示了如何使用ol.control.ZoomToExtent控制装置-->
+<!--This example shows how to use ol.control.ZoomToExtent control device-->
