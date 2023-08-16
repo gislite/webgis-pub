@@ -4,7 +4,7 @@
     {% block headbody %}
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
 
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
 	<script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
 
   <style>
@@ -24,33 +24,33 @@
     <br>
 
      <script>
-	 // 定义url对象
+	 // Defining url objects
       var url = 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer';
 		
-      var layers = [           //定义layers对象
-        new ol.layer.Tile({			// 加载瓦片图层数据
-          source: new ol.source.OSM()			// 图层对应的数据源，此处加载OpenStreetMap在线瓦片服务数据
+      var layers = [           //Defining layers objects
+        new ol.layer.Tile({			// Load the tile layer data
+          source: new ol.source.OSM()			// The layer corresponds to the data source where the OpenStreetMap online tile service data is loaded
         }),
-        new ol.layer.Image({			// 加载图片
-          source: new ol.source.ImageArcGISRest({  //图片对应的数据源
-            ratio: 1,					//比率。1意味着图像请求是地图视口的大小，2意味着地图视口大小的两倍，等等。
-            params: {},					//默认值将用于未指定的任何字段.
-            url: url					// 用于地图服务或图像服务。URL应该包含/MapServer或ImageServer。
+        new ol.layer.Image({			// Load picture
+          source: new ol.source.ImageArcGISRest({  //The data source corresponding to the picture
+            ratio: 1,					//Ratio. 1 means the image request is the size of the map viewport, 2 means twice the size of the map viewport, and so on.
+            params: {},					//The default value will be used for any fields not specified.
+            url: url					// For map service or image service. The URL should contain /MapServer or ImageServer.
           })	
         })
       ];
-	  //初始换Map对象，显示地图。
+	  //Initially change the Map object to display the map.
       var olmap = new ol.Map({
-	  //在地图容器中加载地图
-        layers: layers,			// 加载瓦片图层数据为定义的数据layers
-        target: 'olmap',			// 地图容器div层的id值
-		//表示显示简单的2D视图地图。
+	  //Load the map in the map container
+        layers: layers,			// Load the tile layer data as defined data layers
+        target: 'olmap',			// The id value of the div layer of the map container
+		//Displays a simple 2D view of the map.
         view: new ol.View({
-          center: [-10997148, 4569099],		//地图初始中心点
-          zoom: 4							//地图初始显示级别为4
+          center: [-10997148, 4569099],		//Initial center of the map
+          zoom: 4							//The initial map display level is 4
         })
       });	
     </script>
 
 {% endblock %}
-<!--这个例子展示了如何使用动态ArcGIS REST MapService。此源类型支持地图和图像服务。对于动态的ArcGIS服务。（图像ArcGIS层的例子。） -->
+<!--This example shows how to use dynamic ArcGIS REST MapService. This source type supports map and image services. For dynamic ArcGIS services. (Image ArcGIS layer example.) -->
