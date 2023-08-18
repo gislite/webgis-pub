@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
 
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
     <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
     <style>
         #olmap {
@@ -24,28 +24,28 @@
 
 
     <script>
-        //定义osm加载图层源
-        new ol.layer.Tile({  //加载瓦片图层
-            source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+        //Define the osm load layer source
+        new ol.layer.Tile({  //Load the tile layer
+            source: new ol.source.Stamen({        //Layer source for Stamen Tile server.
                 layer: 'terrain'
             })
         });
-        //加载地图
+        //Load map
         var olmap = new ol.Map({
-            layers: [osm],	//加载图层为osm对象
-            target: 'olmap',	//地图容器div的id
-            //控件最初添加到map中。
-            controls: ol.control.defaults.defaults({		//设置控件中的控件集。
-                attributionOptions: {			//属性选项
-                    collapsible: false			//折叠属性。
+            layers: [osm],	//Load layers as osm objects
+            target: 'olmap',	//id of the map container div
+            //Controls are initially added to the map.
+            controls: ol.control.defaults.defaults({		//Sets the control set in the control.
+                attributionOptions: {			//Attribute option
+                    collapsible: false			//Collapse properties.
                 }
             }),
-            view: new ol.View({		//地图为2D视图
-                center: [0, 0],		//地图初始中心点
-                zoom: 2			//地图初始级别。
+            view: new ol.View({		//The map is in 2D view
+                center: [0, 0],		//Initial center of the map
+                zoom: 2			//Initial map level.
             })
         });
-        //图层剪裁
+        //Layer clipping
         osm.on('precompose', function (event) {
             var ctx = event.context;
             ctx.save();
@@ -75,4 +75,4 @@
     </script>
 
 {% endblock %}
-<!--层裁剪示例-->
+<!--Layer clipping example-->
