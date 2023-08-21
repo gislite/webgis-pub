@@ -4,7 +4,7 @@
     {% block headbody %}
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
 
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
 	<script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
   <style>
         #olmap {
@@ -45,7 +45,7 @@
     <br>
 
     <script>
-	//定义mapConfig对象
+	//Define the mapConfig object
       var mapConfig = {
         'layers': [{
           'type': 'cartodb',
@@ -56,33 +56,34 @@
           }
         }]
       };
-	// 定义对象cartoDBsource的数据源
+	// Define the data source for the cartoDBsource object
       var cartoDBSource = new ol.source.CartoDB({
-        account: 'documentation',		//CartoDB账户名称必须项	
+        account: 'documentation',		//CartoDB account name is mandatory	
         config: mapConfig
       });
-		//初始换Map对象，显示地图。
+		//Initially change the Map object to display the map.
       var olmap = new ol.Map({
-	   //在地图容器中加载地图
+	   //Load the map in the map container
         layers: [
             {#
-          new ol.layer.Tile({	// 加载瓦片图层数据
-            source: new ol.source.OSM()	// 图层对应的数据源，此处加载OpenStreetMap在线瓦片服务数据
+          new ol.layer.Tile({	// Load the tile layer data
+            source: new ol.source.OSM()	// The layer corresponds to the data source where the OpenStreetMap online tile service data is loaded
           }),
              #}
-                            new ol.layer.Tile({  //加载瓦片图层
-                    source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+                            new ol.layer.Tile({  //Load the tile layer
+                    source: new ol.source.Stamen({        //Layer source for Stamen Tile server.
                         layer: 'terrain'
                     })
                 }),
-          new ol.layer.Tile({		// 加载瓦片图层数据
-            source: cartoDBSource	// 图层对应的数据源，此处加载cartoDBSource服务数据
+          new ol.layer.Tile({		// Load the tile layer data
+            source: cartoDBSource	// For the data source corresponding to the layer, load cartoDBSource service data here
           })
         ],
-        target: 'olmap',		// 地图容器div层的id
+        target: 'olmap',		// id of the div layer of the map container
         view: new ol.View({
-          center: [38, 116],		//地图初始中心点
-          zoom: 2				//地图初始显示级别为2
+          center: [38, 116],		//Initial center of the map
+          zoom: 2				//The initial map display level is 2
+
         })
       });
 
@@ -99,4 +100,4 @@
     </script>
 
 {% endblock %}
-<!--一个简单的Cartodb map示例-->
+<!--A simple Cartodb map example-->
