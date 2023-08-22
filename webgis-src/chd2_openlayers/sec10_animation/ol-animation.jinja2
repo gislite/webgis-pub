@@ -4,7 +4,7 @@
 {% block headbody %}
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
 
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
     <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
     <style>
         #olmap {
@@ -34,42 +34,42 @@
     <br>
 
     <script>
-        //定义几处坐标原点。
+        //Define the origin of several coordinates.
         var london = ol.proj.fromLonLat([-0.12755, 51.507222]);
         var moscow = ol.proj.fromLonLat([37.6178, 55.7517]);
         var istanbul = ol.proj.fromLonLat([28.9744, 41.0128]);
         var rome = ol.proj.fromLonLat([12.5, 41.9]);
         var bern = ol.proj.fromLonLat([7.4458, 46.95]);
-        //表示显示简单的2D视图地图。
+        //Displays a simple 2D view of the map.
         var view = new ol.View({
-            center: istanbul,    //地图初始中心点为定义的坐标原点istanbul
-            zoom: 6				// 地图初始显示级别为6
+            center: istanbul,    //The initial center point of the map is the defined coordinate origin istanbul
+            zoom: 6				// The initial map display level is 6
         });
 
         var olmap = new ol.Map({
-            target: 'olmap',		//地图容器div的id
-            //在地图容器中加载地图
+            target: 'olmap',		//id of the map container div
+            //Load the map in the map container
             layers: [
                 {#
-              new ol.layer.Tile({			// 加载瓦片图层数据
-                preload: 4,					// 预加载。加载低分辨率瓦片到预加载级别。0意味着没有预加载。
-                source: new ol.source.OSM()		// 图层对应的数据源，此处加载OpenStreetMap在线瓦片服务数据
+              new ol.layer.Tile({			// Load the tile layer data
+                preload: 4,					// Preload. Load low resolution tiles to preload level. 0 means no preload.
+                source: new ol.source.OSM()		// The layer corresponds to the data source where the OpenStreetMap online tile service data is loaded
               }),
                  #}
 
-                new ol.layer.Tile({  //加载瓦片图层
-                    preload: 4,					// 预加载。加载低分辨率瓦片到预加载级别。0意味着没有预加载。
-                    source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+                new ol.layer.Tile({  //Load the tile layer
+                    preload: 4,					// Preload. Load low resolution tiles to preload level. 0 means no preload.
+                    source: new ol.source.Stamen({        //Layer source for Stamen Tile server.
                         layer: 'terrain'
                     })
                 }),
             ],
-            // 通过在动画时加载切片来改善用户体验。 会在移动设备或慢速设备上制作动画。
+            // Improve the user experience by loading slices during animation. Animation will be made on mobile or slow devices.
             loadTilesWhileAnimating: true,
             view: view
         });
 
-        //弹跳放松法 (来自 https://github.com/DmitryBaranovskiy/raphael).
+        //Bounce relaxation method (From https://github.com/DmitryBaranovskiy/raphael).
         function bounce(t) {
             var s = 7.5625, p = 2.75, l;
             if (t < (1 / p)) {
@@ -91,7 +91,7 @@
             return l;
         }
 
-        // 弹性缓和方法 (from https://github.com/DmitryBaranovskiy/raphael).
+        // Elastic relaxation method (from https://github.com/DmitryBaranovskiy/raphael).
         function elastic(t) {
             return Math.pow(2, -10 * t) * Math.sin((t - 0.075) * (2 * Math.PI) / 0.3) + 1;
         }
@@ -113,7 +113,7 @@
         });
 
         onClick('rotate-around-rome', function () {
-            // 旋转动画采用最短弧线，因此动画分为两部分
+            // Rotation animation uses the shortest arc, so the animation is divided into two parts
             var rotation = view.getRotation();
             view.animate({
                 rotation: rotation + Math.PI,
@@ -150,7 +150,7 @@
         });
 
         onClick('spin-to-rome', function () {
-            // 旋转动画采用最短弧线，因此动画分为两部分
+            // Rotation animation uses the shortest arc, so the animation is divided into two parts
             var center = view.getCenter();
             view.animate({
                 center: [
@@ -166,7 +166,7 @@
             });
         });
 
-        // 飞行动画
+        // Flight animation
         function flyTo(location, done) {
             var duration = 2000;
             var zoom = view.getZoom();
@@ -229,4 +229,4 @@
     </script>
 
 {% endblock %}
-<!--地图移动动画-->
+<!--Map movement animation-->
