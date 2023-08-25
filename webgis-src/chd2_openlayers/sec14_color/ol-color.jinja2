@@ -4,7 +4,7 @@
 {% block headbody %}
 
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
     <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
     <style>
         #olmap {
@@ -41,7 +41,7 @@
 
     <script>
       /**
-       *以下颜色处理功能改编自https://github.com/d3/d3-color。
+       *The following color manipulation features are adapted from https://github.com/d3/d3-color。
        */
       var Xn = 0.950470;
       var Yn = 1;
@@ -54,9 +54,9 @@
 
 
       /**
-       * 将RGB像素转换为HCL像素。
-       * @param {Array.<number>} pixel RGB空间中的一个像素。
-       * @return {Array.<number>}HCL空间中的一个像素.
+       * Convert RGB pixels to HCL pixels.
+       * @param {Array.<number>} pixel A pixel in RGB space.
+       * @return {Array.<number>}A pixel in the HCL space.
        */
       function rgb2hcl(pixel) {
         var red = rgb2xyz(pixel[0]);
@@ -89,9 +89,9 @@
 
 
       /**
-       * 将HCL像素转换为RGB像素。
-       * @param {Array.<number>} pixel HCL空间中的一个像素.
-       * @return {Array.<number>} RGB空间中的像素.
+       * Convert HCL pixels to RGB pixels.
+       * @param {Array.<number>} pixel A pixel in the HCL space.
+       * @return {Array.<number>} Pixels in RGB space.
        */
       function hcl2rgb(pixel) {
         var h = pixel[0];
@@ -132,9 +132,9 @@
         return 255 * (x <= 0.0031308 ?
           12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
       }
-        //定义图层
-      var raster = new ol.source.Raster({ //使用ol.RasterOperation函数从任意数量的输入源转换数据以将输入像素值转换为输出像素值的源。
-        sources: [new ol.source.Stamen({            //输入源.用于Stamen tile服务器的层源。
+        //Define layer
+      var raster = new ol.source.Raster({ //The ol.RasterOperation function is used to convert data from any number of input sources to convert input pixel values to sources of output pixel values.
+        sources: [new ol.source.Stamen({            //Input source. Layer source for Stamen tile server.
           layer: 'watercolor',
           transition: 0
         })],
@@ -183,24 +183,25 @@
 
       var olmap = new ol.Map({
         layers: [
-          new ol.layer.Image({  //服务器渲染的图像，可用于任意范围和分辨率。 请注意，选项中设置的任何属性都设置为图层对象上的ol.Object属性; 例如，设置标题：选项中的“我的标题”表示标题是可观察的，并且具有获取/设置访问者。
-            source: raster      //此图层的来源
+          new ol.layer.Image({  //The images rendered by the server can be used at any range and resolution. Note that any properties set in the options are set to the ol.
+          //Object property on the layer object; For example, Set the title: "My title" in the option means that the title is observable and has a Get/set visitor.
+            source: raster      //The source of this layer
           })
         ],
-        target: 'olmap', // 地图容器div层的id值
-           //表示显示简单的2D视图地图。
+        target: 'olmap', // The id value of the div layer of the map container
+           //Displays a simple 2D view of the map.
         view: new ol.View({
-          center: [0, 2500000], //地图初始中心点
-          zoom: 2,      // 地图初始显示级别为2
-          maxZoom: 18       // 用于确定分辨率约束的最大缩放级别。 它与minZoom（或maxResolution）和zoomFactor一起使用。 默认值为28.请注意，如果还提供了minResolution，则它优先于maxZoom。
+          center: [0, 2500000], //Initial center of the map
+          zoom: 2,      // The initial map display level is 2
+          maxZoom: 18       // Used to determine the maximum scaling level for resolution constraints. It is used with minZoom (or maxResolution) and zoomFactor. The default value is 28. Note that if minResolution is also provided, it takes precedence over maxZoom.
         })
       });
-        //ID控件事件
+        //ID control event
       var controlIds = ['hue', 'chroma', 'lightness'];
       controlIds.forEach(function(id) {
         var control = document.getElementById(id);
         var output = document.getElementById(id + 'Out');
-        control.addEventListener('input', function() {      // 添加事件监听器
+        control.addEventListener('input', function() {      // Add an event listener
           output.innerText = control.value;
           raster.changed();
         });
