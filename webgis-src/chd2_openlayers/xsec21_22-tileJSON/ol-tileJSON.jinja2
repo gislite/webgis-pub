@@ -4,7 +4,7 @@
 {% block headbody %}
 
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
     <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
     <style>
         #olmap {
@@ -23,20 +23,20 @@
     <br>
    <div>Example for TileJSON layer.</div>
    <script>
-      var olmap = new ol.Map({   //初始换Map对象，显示地图。
-          //在地图容器中加载地图
+      var olmap = new ol.Map({   //Initially change the Map object to display the map.
+          //Load the map in the map container
         layers: [
           new ol.layer.Tile({
-            source: new ol.source.TileJSON({        // TileJSON格式的图块数据的图层源。
-              url: 'https://api.tiles.mapbox.com/v3/mapbox.geography-class.json?secure', // 图层源地址
-              crossOrigin: 'anonymous'  // 已加载图像的crossOrigin属性。 请注意，如果使用WebGL渲染器或者要使用Canvas渲染器访问像素数据，则必须提供crossOrigin值。
+            source: new ol.source.TileJSON({        // TileJSON format layer source for block data.
+              url: 'https://api.tiles.mapbox.com/v3/mapbox.geography-class.json?secure', // Layer source address
+              crossOrigin: 'anonymous'  // The crossOrigin property of the image has been loaded. Note that crossOrigin values must be provided if you use the WebGL renderer or if you want to access pixel data using the Canvas renderer.
             })
           })
         ],
-        target: 'olmap',	// 地图容器div层的id值
-        view: new ol.View({  //表示显示简单的2D视图地图。
-          center: [0, 0],  //地图初始中心点
-          zoom: 2  //地图初始显示级别为2
+        target: 'olmap',	// The id value of the div layer of the map container
+        view: new ol.View({  //Displays a simple 2D view of the map.
+          center: [0, 0],  //Initial center of the map
+          zoom: 2  //The initial map display level is 2
         })
       });
     </script>
