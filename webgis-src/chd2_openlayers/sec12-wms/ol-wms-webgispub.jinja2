@@ -4,7 +4,7 @@
 {% block headbody %}
 
     <link rel="stylesheet" href="https://www.osgeo.cn/static/f2elib/ol-7.4.x/ol.css" type="text/css">
-    <!--导入最新版本ol的js文件。-->
+    <!--Import the js file of the latest ol version.-->
     <script src="https://www.osgeo.cn/static/f2elib/ol-7.4.x/dist/ol.js"></script>
     <style>
         #olmap {
@@ -35,37 +35,37 @@
         return new Date(Math.round(Date.now() / 3600000) * 3600000 - 3600000 * 3);
       }
 
-      //将范围从源投影转换为目标投影。 这将返回一个新范围（并且不会修改原始范围）。
+      //Converts the range from the source projection to the target projection. This returns a new scope (and does not modify the original scope).
       var extent = ol.proj.transformExtent([-126, 24, -66, 50], 'EPSG:4326', 'EPSG:3857');
       var startDate = threeHoursAgo();
-      var frameRate = 0.5; // 每秒帧数
+      var frameRate = 0.5; // Frames per second
       var animationId = null;
 
       var layers = [
-        new ol.layer.Tile({  //加载瓦片图层
-          source: new ol.source.Stamen({        //Stamen磁贴服务器的图层源。
+        new ol.layer.Tile({  //Load the tile layer
+          source: new ol.source.Stamen({        //Layer source for Stamen Tile server.
             layer: 'terrain'
           })
         }),
         new ol.layer.Tile({
-          extent: extent,  //图层渲染的边界范围。 图层不会在此范围之外呈现。
-          source: new ol.source.TileWMS({       // 来自WMS服务器的磁贴数据的层源。
-            attributions: ['Iowa State University'],        //属性
-            url: 'http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&', //数据源地址
-            params: {'LAYERS': 'states'}       // WMS请求参数。 至少需要一个LAYERS参数。 STYLES默认是''。 VERSION默认为1.3.0。 WIDTH，HEIGHT，BBOX和CRS（WMS版本<1.3.0的SRS）将动态设置。 需要。
+          extent: extent,  //The boundary range of the layer rendering. Layers are not rendered outside this range.
+          source: new ol.source.TileWMS({       // Layer source of tile data from the WMS server.
+            attributions: ['Iowa State University'],        //Stats
+            url: 'http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&', //Data source address
+            params: {'LAYERS': 'states'}       // WMS request parameters. At least one LAYERS parameter is required. STYLES defaults to ''. The default VERSION is 1.3.0. WIDTH, HEIGHT, BBOX, and CRS (SRS for WMS version <1.3.0) will be set dynamically. Yes.
           })
         })
       ];
-      //加载地图
+      //Load map
       var olmap = new ol.Map({
-        layers: layers, // 加载已定义的图层
-        target: 'olmap',   //地图容器div的id
-        view: new ol.View({  //地图为2D视图
-          center: ol.extent.getCenter(extent), //获取范围的中心坐标。
-          zoom: 4  //初始显示级别
+        layers: layers, // Load the defined layer
+        target: 'olmap',   //id of the map container div
+        view: new ol.View({  //The map is in 2D view
+          center: ol.extent.getCenter(extent), //Gets the center coordinates of the range.
+          zoom: 4  //Initial display level
         })
       });
-        // 按钮事件
+        // Button event
       function updateInfo() {
         var el = document.getElementById('info');
         el.innerHTML = startDate.toISOString();
@@ -92,7 +92,7 @@
         stop();
         animationId = window.setInterval(setTime, 1000 / frameRate);
       };
-        //两个按钮控件
+        //Two button control
       var startButton = document.getElementById('play');
       startButton.addEventListener('click', play, false);
 
