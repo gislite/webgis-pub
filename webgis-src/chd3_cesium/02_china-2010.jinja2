@@ -50,10 +50,10 @@
     <script>
         function startup(Cesium) {
             widget = new Cesium.Viewer('bottom2');
-            url = 'http://wcs.osgeo.cn:8088/service?';   //wms地址
+            url = 'http://wcs.osgeo.cn:8088/service?';   //wms address
             layers = widget.scene.globe.imageryLayers;
             layers.removeAll();
-            var blackMarble = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({  //加载一个新的图层
+            var blackMarble = layers.addImageryProvider(new Cesium.WebMapServiceImageryProvider({  //Load a new layer
                 url: url,
                 layers: 'maplet_v001',// Here just give layer name
                 version: '1.1.0',
@@ -64,13 +64,13 @@
             }));
             // Start off looking at Australia.
             widget.camera.setView({
-                destination: Cesium.Rectangle.fromDegrees(-100, 0, 310, 80)  //给地图显示页定位
+                destination: Cesium.Rectangle.fromDegrees(-100, 0, 310, 80)  //Locate the map display page
             });
             //Sandcastle_End
-            Sandcastle.finishedLoading();  //加载地图
+            Sandcastle.finishedLoading();  //Load map
         }
 
-        if (typeof Cesium !== "undefined") {  //调用starup()
+        if (typeof Cesium !== "undefined") {  //Call starup()
             startup(Cesium);
         } else if (typeof require === "function") {
             require(["Cesium"], startup);
