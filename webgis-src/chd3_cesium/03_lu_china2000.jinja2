@@ -203,16 +203,16 @@
             }, 45000);
         }
 
-        flags.moveBackward = true;  // 向后拉
-        setTimeout(function () {  // 向前拉
+        flags.moveBackward = true;  // Pull back
+        setTimeout(function () {  // Pull forward
             flags.moveBackward = false;
             flags.moveForward = true;
         }, 3000);
-        setTimeout(function () { // 向左拉 2s
+        setTimeout(function () { // Pull left 2s
             flags.moveForward = false;
             flags.moveLeft = true;
         }, 10000);
-        setTimeout(function () { // 向右拉 3s
+        setTimeout(function () { // Pull to the right 3s
             flags.moveLeft = false;
             flags.moveRight = true;
         }, 12000);
@@ -232,7 +232,7 @@
             flags.moveUp = false;
             flags.moveBackward = true;
         }, 21000);
-        setTimeout(function () {  // 向前拉
+        setTimeout(function () {  // Pull forward
             flags.moveBackward = false;
             zizhuan()
         }, 21000 + 4000);
