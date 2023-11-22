@@ -5,7 +5,7 @@ Running with python3, with markdown module.
 '''
 
 from pathlib import Path
-import logging
+# import logging
 
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
@@ -32,20 +32,20 @@ def render_html(tmpl, outfile, **kwargs):
         fh.write(output_from_parsed_template)
 
 
-import os
-
-logger = logging.getLogger('fib')
-
-# 设置logger的level为DEBUG
-logger.setLevel(logging.DEBUG)
-
-# 创建一个输出日志到控制台的StreamHandler
-hdr = logging.StreamHandler()
-formatter = logging.Formatter('[%(asctime)s] %(name)s:%(levelname)s: %(message)s')
-hdr.setFormatter(formatter)
-
-# 给logger添加上handler
-logger.addHandler(hdr)
+# import os
+#
+# logger = logging.getLogger('fib')
+#
+# # 设置logger的level为DEBUG
+# logger.setLevel(logging.DEBUG)
+#
+# # 创建一个输出日志到控制台的StreamHandler
+# hdr = logging.StreamHandler()
+# formatter = logging.Formatter('[%(asctime)s] %(name)s:%(levelname)s: %(message)s')
+# hdr.setFormatter(formatter)
+#
+# # 给logger添加上handler
+# logger.addHandler(hdr)
 
 
 def gen_html_pages(src_ws):
@@ -67,9 +67,6 @@ def gen_html_pages(src_ws):
         )
 
 
-def run_it():
-    gen_html_pages(Path('./webgis-src'))
-
 
 if __name__ == '__main__':
-    run_it()
+    gen_html_pages(Path('./webgis-src'))

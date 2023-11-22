@@ -1,6 +1,6 @@
 from pathlib import Path
 
-def chuli_b():
+def run():
     inws = Path('webgis-src')
     outws = Path('/owg')
     if outws.exists():
@@ -16,4 +16,4 @@ def chuli_b():
             pass
 
 if __name__ == '__main__':
-    chuli_b()
+    run()

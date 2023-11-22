@@ -16,9 +16,13 @@ and opportunities accessible to all.
 
 This website is based on https://demo.mapserver.org/tutorial/ and has undergone significant improvements.
 
-Log:
+.. note:: Many thanks to `JET BRAINS <https://www.jetbrains.com/>`_  for the free license for the repo of this tutorial. 
+   Lots of technologies are involved in WebGIS, the  `PyCharm IDE <https://www.jetbrains.com/pycharm/>`_ is essential and suitable for the project.
 
-- July, 2023: The OS has been upgraded to Debian 12. The MapServer has been upgraded to 8.0. Since 2023/7/7 .
+Logs:
+
+- August, 2023: Recieved the free license form JET BRAINS for IDE.
+- July, 2023: The OS has been upgraded to Debian 12 (Used to be Debian 10). The MapServer has been upgraded to 8.0. Since 2023/7/7 .
 - 2022: The source codes of this tutorial are published on Github .
 
 
@@ -55,9 +59,6 @@ which can be used as a general WebGIS tutorial.
 MapServer
 ---------------------------------------------------------------------
 
-.. <img src="/images/logo_mapserver.png" style="float: right; width:100px; margin:10px;"/>
-.. {# MapServer可以看作是两个独立模块的统称：MapServer CGI模块和MapScript模块。  #}
-
 .. image:: logo_mapserver.png
 
 MapServer was originally an open source WebGIS software developed
@@ -75,37 +76,29 @@ Languages supported by MapScript include Python, PHP, Perl, Java, Tcl, C#, and m
 MapProxy
 ---------------------------------------------
 
-.. <img src="/images/logo_mapproxy.png" style="float: right; width:200px; margin:10px;"/>
-
-
 
 .. image:: logo_mapproxy.png
 
 
-
-MapProxy is the Swiss Army Knife for WMS web map services and slice service providers. It caches, accelerates, and converts data services for existing services to any OGC-compliant desktop and web client. MapProxy is flexible to develop and easy to integrate with the Apache environment. MapProxy can also be used as a standalone service. This is the easiest way for new users.
-The MapProxy example is a basic WMS slice client. It shows the various layers of the configuration. It doesn't have the complex features of changing projections, but it's enough to verify that the service is working.
+The MapProxy example is a basic WMS slice client. It shows the various layers of the configuration.
+It doesn't have the complex features of changing projections, but it's enough to verify that the service is working.
 
 
 LeafletJS
 --------------------
 
 
-.. <img src="/images/logo_leaflet.png" style="float: right; width:200px;margin:10px;"/>
-
-
 .. image:: logo_leaflet.png
 
-Leaflet is a modern, open-source JavaScript library developed for building mobile-friendly interactive maps. It was developed by Vladimir Agafonkin, a team of professional contributors, with a small amount of code, but it has most of the features developers develop online maps. The Leaflet design adheres to the idea of simplicity, high performance and usability, and operates efficiently on all major desktop and mobile platforms.
+Leaflet is a modern, open-source JavaScript library developed for building mobile-friendly interactive maps.
+It was developed by Vladimir Agafonkin, a team of professional contributors, with a small amount of code, but it has most of the features developers develop online maps.
+The Leaflet design adheres to the idea of simplicity, high performance and usability, and operates efficiently on all major desktop and mobile platforms.
 The advantages of HTML5 and CSS3 are exploited in modern browsers, while old browser access is also supported.
 Support for plugin extensions, a friendly, easy to use API documentation and a simple, readable source code.
 
 OpenLayers
 ------------------------------
 
-
-
-.. <img src="/images/logo_openlayers.png" style="float: right;width:200px;margin:10px;"/>
 
 .. image:: logo_openlayers.png
 
@@ -123,12 +116,11 @@ OpenLayers is developed in an object-oriented way and uses some components from 
 Cesium
 ------------------
 
-.. <img src="/images/logo_cesium.png" style="float: right;width:200px;margin:10px;"/>
-
-
 .. image:: logo_cesium.png
 
-WebGL-based front-end 3D JavaScript class library. Cesium launched the 3D Tiles data specification around March 2016, providing LOD capabilities on a glTF basis. Positioning is massive 3D model data in the Web environment.
+WebGL-based front-end 3D JavaScript class library.
+Cesium launched the 3D Tiles data specification around March 2016, providing LOD capabilities on a glTF basis.
+Positioning is massive 3D model data in the Web environment.
 Although the current 3D Tiles is still in the Beta stage, there are quite a few flaws.
 However, the 3D Tiles data specification began the OGC standardization process on September 30, 2016, and the active component is still very large.
 
@@ -179,11 +171,6 @@ Build under Python 3.11.2 , using the flollowing modules：
 - Markdown==3.3.7
 - PyYAML==6.0
 
-Logs
---------------------------------------------------
-
-- 2023-07-07: The operating system is switched to Debian 12. (used to be Debian 10)
-
 
 Catalog
 ====================================
@@ -212,9 +199,6 @@ Catalog
    chb8_ref-addon/chapter
 
 
-
-GeoServer for WebGIS.
-
 .. toctree::
    :maxdepth: 2
    :numbered: 3
@@ -222,8 +206,6 @@ GeoServer for WebGIS.
 
    chc1_geoserver-introduction/chapter
    chc2_geoserver-management/chapter
-
-
 
 
 .. toctree::
@@ -234,8 +216,6 @@ GeoServer for WebGIS.
    chd1_leaflet/chapter
    chd2_openlayers/chapter
    chd3_cesium/chapter
-
-
 
 
 .. toctree::
