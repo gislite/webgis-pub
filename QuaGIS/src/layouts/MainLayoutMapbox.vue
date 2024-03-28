@@ -38,6 +38,18 @@ const linksList = [
     icon: 'school',
     link: '/#/mapbox'
   },
+    {
+    title: 'GLTF',
+    caption: '内容介绍说明',
+    icon: 'school',
+    link: '/#/mapbox/gltf'
+  },
+   {
+    title: 'Simple Mapbox',
+    caption: '内容介绍说明',
+    icon: 'school',
+    link: '/#/mapbox/bmapbox'
+  },
 ];
 
 export default defineComponent({

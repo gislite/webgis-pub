@@ -1,0 +1,168 @@
+{"type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "海伦站",
+                "kind": "1",
+              "edit": "侯广冰", "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0201x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [126.916666666666671, 47.45]}
+        },
+        {
+            "type": "Feature",
+            "properties": { "edit": "侯广冰", "edit_time": "2021-07-01", "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0205x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [123.85, 45.6]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "长岭站",
+                "kind": "1",
+                "introduce": "中国科学院长岭草地农牧生态研究站于2009年建立，实验站面积达4500亩，投入专项经费支持台站基础设施和人才队伍建设，并与东北师范大学、吉林大学、东北农业大学以及美国、澳大利亚、新西兰等国内外研究单位合作开展科学研究，集中了土壤学、生态学、植物学、动物学等多学科专家学者，对盐碱化草地植物生长适应策略、盐碱化草地生态系统过程与功能、盐碱化草地恢复、改良与优化利用、盐碱化草地牧草资源培育及其利用、盐碱化草地放牧饲养及其牲畜设计饲养等多个方向开展深入系统研究。在Journal of Ecology、Functional Ecology、Annals of Botany等一流国际刊物发表SCI论文150余篇，申请发明专利60余项，授权专利20余项，处于国内一流水平。获批国家重点研究计划课题、国家自然科学基金重点项目、中科院战略先导专项子课题等项目50余项，经费达3000余万元。目前与东北师范大学联合申请并获批了吉林松嫩草地生态系统野外科学观测研究站。",
+                "edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0206x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [123.625748396779713, 44.480718056290833]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "水保站",
+                "kind": "1",
+               "edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0202x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [126.833333333333329, 47.35]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "长春站",
+                "kind": "1","edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0213x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [125.410276, 44.007712]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "辽河源基地",
+                "kind": "1", "edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0209x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [125.410276, 42.89]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "三江站",
+                "kind": "2","edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0212x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [133.51666666666668, 47.583333333333336]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "兴凯湖站", "kind": "2",
+                "edit": "侯广冰", "edit_time": "2021-07-02", "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0211x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [132.342, 45.368]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "盘锦站",
+                "kind": "2",
+                "introduce": "中国科学院盘锦滨海湿地生态观测研究站是中国科学院东北地理与农业生态研究所所属的野外台站之一，是东北湿地生态系统观测研究网络的重要组成部分。东北湿地生态系统观测研究网络以中国科学院三江平原沼泽湿地生态试验站为核心站，包括中国科学院大兴安岭森林湿地生态观测研究站（寒温带）、中国科学院兴凯湖湿地生态观测研究站(中温带)、中国科学院盘锦滨海湿地生态观测研究站（暖温带），形成了覆盖东北地区主要温度带和湿地类型的野外长期定位观测网络。该平台以东北地区湿地生态系统为主要对象，开展沼泽湿地生态系统要素和主要生态过程长期定位观测，为沼泽湿地生态过程、区域沼泽湿地资源保护、区域生态与环境安全管理等研究提供科学支撑平台",
+                "edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0216x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [121.61276487537279, 40.966465420243082]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "大兴安岭站", "kind": "2",
+                "edit": "侯广冰", "edit_time": "2021-07-05", "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0215x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [125.5, 51.416666666666664]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "盐碱湿地站",
+                "kind": "2",
+                "introduce": "地处生态脆弱带的松嫩平原西部半干旱地区，是中国内陆盐碱湿地集中分布的区域之一，但目前呈不同程度的退化，部分已演变成寸草不生的碱斑地。为了探索内陆退化盐碱湿地生态恢复重建与合理利用方面的技术模式，以刘兴土院士为首的科研团队从2002年开始，在松嫩平原西部霍林河流域，对严重退化的牛心套保芦苇湿地进行了生态恢复研究与示范，并应用生态学的生物共生与物质循环原理，建立了苇-鱼（蟹）-稻复合生态工程模式，社会、经济与生态效益显著，建成退化盐碱湿地恢复示范区50000亩。2013年东北地理所与吉林省林业厅联合在示范区建立了湿地恢复与合理利用研究示范基地，2015年，研究所将基地列入“东北湿地生态系统观测研究网络建设”，设立“中国科学院松嫩平原西部盐碱湿地生态研究站”。2017年4月1日，中国科学院东北地理与农业生态研究所与大安市政府隆重举行了战略合作协议签约暨中国科学院松嫩平原西部盐碱湿地生态研究站揭牌仪式，研究站进入新的建设发展阶段，研究对象覆盖松嫩平原西部所有盐碱湿地。",
+                "edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0210x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [123.35, 45.233333333333334]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "净月潭站",
+                "kind": "4", "edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0207x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [125.433333333333337, 43.783333333333331]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "乌兰敖都站",
+                "kind": "1","edit": "侯广冰",
+                "edit_time": "2021-07-02",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0203x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [119.5, 43.033333333333331]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "额尔古纳站",
+                "kind": "3","edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0217x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [119.5, 50.2]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "长白山站", "kind": "3",  "edit": "侯广冰", "edit_time": "2021-07-02",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0204x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [128.466666666666669, 42.4]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "沈阳站", "kind": "1", "edit": "侯广冰", "edit_time": "2021-07-01", "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0214x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [123.402794533316893, 41.596775398883018]}
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "label": "清原站",
+                "kind": "1","edit": "侯广冰",
+                "edit_time": "2021-07-01",
+                "img": "http://r.osgeo.cn:8008/htimg/taizhan/i0208x.webp"
+            },
+            "geometry": {"type": "Point", "coordinates": [124.933333333333337, 41.85]}
+        }
+    ]
+}

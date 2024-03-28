@@ -22,7 +22,8 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayoutMapbox.vue'),
     children: [
       {path: '', component: () => import('pages/mapbox_index/mapbox_foo.vue')},
-
+      {path: 'gltf', component: () => import('pages/mapbox_index/mapbox_gltf.vue')},
+      {path: 'bmapbox', component: () => import('pages/mapbox_index/mapdde_foo.vue')},
     ],
   },
 
@@ -48,7 +49,7 @@ const routes: RouteRecordRaw[] = [
       {path: 'lf15', component: () => import('pages/leaf/leaf_leaflet_f15.vue')},
       {path: 'bleaflet', component: () => import('pages/leaf/leaf_leaflet_foo.vue')},
       {path: 'bmaptalks', component: () => import('pages/maptalks_foo.vue')},
-      {path: 'bmapbox', component: () => import('pages/mapbox_dde/mapdde_foo.vue')},
+
       {path: 'bcesium', component: () => import('pages/cesium_foo.vue')},
       {path: 'bwind', component: () => import('pages/leaf/leaf_leaflet_wind.vue')},
     ],
