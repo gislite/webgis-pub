@@ -16,6 +16,7 @@
       <q-route-tab to="/openlayers" label="OpenLayers"/>
       <q-route-tab to="/maptalks" label="MapTalks"/>
       <q-route-tab to="/cesium" label="Cesium"/>
+      <q-route-tab to="/mapbox" label="Mapbox"/>
 
     </q-tabs>
   </q-header>

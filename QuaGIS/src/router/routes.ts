@@ -17,7 +17,14 @@ const routes: RouteRecordRaw[] = [
       {path: 'intro3', component: () => import('pages/index_maptalks_foo.vue')},
     ],
   },
+  {
+    path: '/mapbox',
+    component: () => import('layouts/MainLayoutMapbox.vue'),
+    children: [
+      {path: '', component: () => import('pages/mapbox_index/mapbox_foo.vue')},
 
+    ],
+  },
 
   {
     path: '/leaflet',
