@@ -1,0 +1,34 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+{% end %}
+
+
+{% block content %}
+
+<div id="mapid" style="width: 810px; height: 400px;"></div>
+ <script type="text/javascript">
+
+	var bounds = [[0,0], [1570,1910]];
+
+	var map = L.map('mapid', {
+		crs: L.CRS.Simple,
+		maxZoom: 0,
+		minZoom: -4,
+		maxBounds: bounds
+	});
+
+	map.getContainer().style.width = '810px';
+	map.getContainer().style.height= '400px';
+	document.body.style.margin = 0;
+
+	var image = L.imageOverlay('/static/images/class-diagram.png', bounds).addTo(map);
+
+	map.fitBounds(bounds);
+
+</script>
+
+
+{% end %}

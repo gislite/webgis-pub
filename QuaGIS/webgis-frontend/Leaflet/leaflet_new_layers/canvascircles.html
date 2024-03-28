@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>CanvasCircles - Leaflet</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico"/>
+
+    <link rel="stylesheet" href="/f2elib/leaflet-1.8.0/leaflet.css"/>
+    <script src="/f2elib/leaflet-1.8.0/leaflet.js"></script>
+
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #map {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div id='map'></div>
+
+<script type="text/javascript">
+
+    var map = L.map('map', {
+        center: [0, 0],
+        zoom: 0
+    });
+
+    L.GridLayer.CanvasCircles = L.GridLayer.extend({
+        createTile: function (coords) {
+            var tile = document.createElement('canvas');
+
+            var tileSize = this.getTileSize();
+            tile.setAttribute('width', tileSize.x);
+            tile.setAttribute('height', tileSize.y);
+
+            var ctx = tile.getContext('2d');
+
+            // Draw whatever is needed in the canvas context
+            // For example, circles which get bigger as we zoom in
+            ctx.arc(tileSize.x / 2, tileSize.x / 2, 4 + coords.z * 4, 0, 2 * Math.PI, false);
+            ctx.fill();
+
+            return tile;
+        }
+    });
+
+    L.gridLayer.canvasCircles = function (opts) {
+        return new L.GridLayer.CanvasCircles(opts);
+    };
+
+    map.addLayer(L.gridLayer.canvasCircles());
+
+</script>
+
+
+</body>
+</html>

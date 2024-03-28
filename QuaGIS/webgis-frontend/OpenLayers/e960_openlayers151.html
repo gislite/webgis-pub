@@ -1,0 +1,86 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+ <div role="group" aria-label="Animation controls">
+      <button id="play" type="button" class="btn btn-primary btn-sm">Play</button>
+      <button id="pause" type="button" class="btn btn-primary btn-sm">Pause</button>
+      <span id="info"></span>
+    </div>
+    <script>
+      function threeHoursAgo() {
+        return new Date(Math.round(Date.now() / 3600000) * 3600000 - 3600000 * 3);
+      }
+
+      var extent = ol.proj.transformExtent([-126, 24, -66, 50], 'EPSG:4326', 'EPSG:3857');
+      var startDate = threeHoursAgo();
+      var frameRate = 0.5; // frames per second
+      var animationId = null;
+
+      var layers = [
+        new ol.layer.Tile({
+          source: new ol.source.Stamen({
+            layer: 'terrain'
+          })
+        }),
+        new ol.layer.Tile({
+          extent: extent,
+          source: new ol.source.TileWMS(/** @type {olx.source.TileWMSOptions} */ ({
+            attributions: ['Iowa State University'],
+            url: 'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r-t.cgi',
+            params: {'LAYERS': 'nexrad-n0r-wmst'}
+          }))
+        })
+      ];
+      var map = new ol.Map({
+        layers: layers,
+        target: 'mapol',
+        view: new ol.View({
+          center: ol.extent.getCenter(extent),
+          zoom: 4
+        })
+      });
+
+      function updateInfo() {
+        var el = document.getElementById('info');
+        el.innerHTML = startDate.toISOString();
+      }
+
+      function setTime() {
+        startDate.setMinutes(startDate.getMinutes() + 15);
+        if (startDate > Date.now()) {
+          startDate = threeHoursAgo();
+        }
+        layers[1].getSource().updateParams({'TIME': startDate.toISOString()});
+        updateInfo();
+      }
+      setTime();
+
+      var stop = function() {
+        if (animationId !== null) {
+          window.clearInterval(animationId);
+          animationId = null;
+        }
+      };
+
+      var play = function() {
+        stop();
+        animationId = window.setInterval(setTime, 1000 / frameRate);
+      };
+
+      var startButton = document.getElementById('play');
+      startButton.addEventListener('click', play, false);
+
+      var stopButton = document.getElementById('pause');
+      stopButton.addEventListener('click', stop, false);
+
+      updateInfo();
+    </script>
+{% end %}

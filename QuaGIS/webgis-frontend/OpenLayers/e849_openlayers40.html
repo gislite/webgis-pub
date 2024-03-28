@@ -1,0 +1,83 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+<style>
+      .fullscreen:-moz-full-screen {
+        height: 100%;
+      }
+      .fullscreen:-webkit-full-screen {
+        height: 100%;
+      }
+      .fullscreen:-ms-fullscreen {
+        height: 100%;
+      }
+
+      .fullscreen:fullscreen {
+        height: 100%;
+      }
+
+      .fullscreen {
+        margin-bottom: 10px;
+        width: 100%;
+        height: 400px;
+      }
+
+      .ol-rotate {
+        top: 3em;
+      }
+
+      .mapol {
+        width: 80%;
+        height: 100%;
+        float: left;
+      }
+
+      .sidepanel {
+        background: #1F6B75;
+        width: 20%;
+        height: 100%;
+        float: left;
+      }
+
+      .sidepanel-title {
+        width: 100%;
+        font-size: 3em;
+        color: #ffffff;
+        display: block;
+        text-align: center;
+      }
+    </style>
+{% end %}
+{% block content %}
+ <div id="fullscreen" class="fullscreen">
+      <div id="mapol" class="mapol"></div>
+      <div class="sidepanel">
+        <span class="sidepanel-title">Side Panel</span>
+      </div>
+    </div>
+
+    <script>
+      var view = new ol.View({
+        center: [-9101767, 2822912],
+        zoom: 14
+      });
+
+      var map = new ol.Map({
+        controls: ol.control.defaults().extend([
+          new ol.control.FullScreen({
+            source: 'fullscreen'
+          })
+        ]),
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'mapol',
+        view: view
+      });
+    </script>
+{% end %}

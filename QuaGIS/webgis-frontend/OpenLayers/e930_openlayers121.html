@@ -1,0 +1,43 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+<script>
+      // Map views always need a projection.  Here we just want to map image
+      // coordinates directly to map coordinates, so we create a projection that uses
+      // the image extent in pixels.
+      var extent = [0, 0, 1024, 968];
+      var projection = new ol.proj.Projection({
+        code: 'xkcd-image',
+        units: 'pixels',
+        extent: extent
+      });
+
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Image({
+            source: new ol.source.ImageStatic({
+              attributions: '© <a href="http://xkcd.com/license.html">xkcd</a>',
+              url: 'https://imgs.xkcd.com/comics/online_communities.png',
+              projection: projection,
+              imageExtent: extent
+            })
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          projection: projection,
+          center: ol.extent.getCenter(extent),
+          zoom: 2,
+          maxZoom: 8
+        })
+      });
+    </script>
+{% end %}

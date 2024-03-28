@@ -1,0 +1,64 @@
+﻿<html lang="zh-cmn-Hans">
+<head>
+	
+	<title>WMS 示例 - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="/f2elib/leaflet-1.8.0/leaflet.css"  />
+    <script src="/f2elib/leaflet-1.8.0/leaflet.js"  ></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+<div id='map'></div>
+
+<script type="text/javascript">
+
+	var map = L.map('map', {
+		center: [-17, -67],
+		zoom: 3
+	});
+
+	var basemaps = {
+		Countries: L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+			layers: 'ne:ne_10m_admin_0_countries'
+		}),
+
+		Boundaries: L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+			layers: 'ne:ne_10m_admin_0_boundary_lines_land'
+		}),
+
+		'Countries, then boundaries': L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+			layers: 'ne:ne_10m_admin_0_countries,ne:ne_10m_admin_0_boundary_lines_land'
+		}),
+
+		'Boundaries, then countries': L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+			layers: 'ne:ne_10m_admin_0_boundary_lines_land,ne:ne_10m_admin_0_countries'
+		})
+	};
+
+	L.control.layers(basemaps, {}, {collapsed: false}).addTo(map);
+
+	basemaps.Countries.addTo(map);
+
+</script>
+
+
+
+</body>
+</html>

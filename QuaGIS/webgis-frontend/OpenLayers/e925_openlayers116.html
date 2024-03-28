@@ -1,0 +1,60 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+ <style>
+      @media (min-width: 800px) {
+        .half {
+          padding: 0 10px;
+          width: 50%;
+          float: left;
+        }
+      }
+    </style>
+{% end %}
+{% block content %}
+ <div class="half">
+      <h4>Canvas</h4>
+      <div id="canvasMap" class="mapol"></div>
+    </div>
+    <div class="half">
+      <h4>WebGL</h4>
+      <div id="webglMap" class="mapol"></div>
+      <div id="no-webgl" class="alert alert-danger" style="display: none">
+        This map requires a browser that supports <a href="http://get.webgl.org/">WebGL</a>.
+      </div>
+    </div>
+    <script>
+      var layer = new ol.layer.Tile({
+        source: new ol.source.OSM()
+      });
+
+      var view = new ol.View({
+        center: [0, 0],
+        zoom: 1
+      });
+
+      var map1 = new ol.Map({
+        target: 'canvasMap',
+        layers: [layer],
+        view: view
+      });
+
+      if (ol.has.WEBGL) {
+        var map2 = new ol.Map({
+          target: 'webglMap',
+          renderer: /** @type {ol.renderer.Type} */ ('webgl'),
+          layers: [layer],
+          view: view
+        });
+      } else {
+        var info = document.getElementById('no-webgl');
+        /**
+         * display error message
+         */
+        info.style.display = '';
+      }
+    </script>
+{% end %}

@@ -1,0 +1,39 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+{% end %}
+
+
+{% block content %}
+
+<div id="mapid" style="width: 810px; height: 400px;"></div>
+<script type="text/javascript">
+
+	var map = L.map('mapid', {
+		crs: L.CRS.Simple,
+		center: [0, 0],
+		zoom: 5
+	});
+
+	L.TileLayer.Kitten = L.TileLayer.extend({
+		getTileUrl: function(coords) {
+			var i = Math.ceil( Math.random() * 4 );
+			return "http://placekitten.com/256/256?image=" + i;
+		},
+        getAttribution: function() {
+            return "<a href='http://placekitten.com/attribution.html'>PlaceKitten</a>"
+        }
+	});
+
+	L.tileLayer.kitten = function() {
+		return new L.TileLayer.Kitten();
+	}
+
+	map.addLayer( L.tileLayer.kitten() );
+
+</script>
+
+
+{% end %}

@@ -1,0 +1,44 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+<style>
+      .rotate-north {
+        top: 65px;
+        left: .5em;
+      }
+      .ol-touch .rotate-north {
+        top: 80px;
+      }
+    </style>
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"><div id="popup"></div></div>
+<br>
+ <script>
+      var logoElement = document.createElement('a');
+      logoElement.href = 'https://www.osgeo.org/';
+      logoElement.target = '_blank';
+
+      var logoImage = document.createElement('img');
+      logoImage.src = 'https://www.osgeo.org/sites/all/themes/osgeo/logo.png';
+
+      logoElement.appendChild(logoImage);
+
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2
+        }),
+        logo: logoElement
+      });
+    </script>
+{% end %}

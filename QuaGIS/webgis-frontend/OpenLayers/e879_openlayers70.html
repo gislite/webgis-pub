@@ -1,0 +1,113 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+<style>
+      #layertree li > span {
+        cursor: pointer;
+      }    </style>
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+<div id="layertree">
+      <h5>Click on layer nodes below to change their properties.</h5>
+      <ul>
+        <li><span>OSM layer</span>
+          <fieldset id="layer0">
+            <label class="checkbox" for="visible0">
+              <input id="visible0" class="visible" type="checkbox"/>visibility
+            </label>
+            <label>opacity</label>
+            <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+          </fieldset>
+        </li>
+        <li><span>Layer group</span>
+          <fieldset id="layer1">
+            <label class="checkbox" for="visible1">
+              <input id="visible1" class="visible" type="checkbox"/>visibility
+            </label>
+            <label>opacity</label>
+            <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+          </fieldset>
+          <ul>
+            <li><span>Food insecurity layer</span>
+              <fieldset id="layer10">
+                <label class="checkbox" for="visible10">
+                  <input id="visible10" class="visible" type="checkbox"/>visibility
+                </label>
+                <label>opacity</label>
+                <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+              </fieldset>
+            </li>
+            <li><span>World borders layer</span>
+              <fieldset id="layer11">
+                <label class="checkbox" for="visible11">
+                  <input id="visible11" class="visible" type="checkbox"/>visibility
+                </label>
+                <label>opacity</label>
+                <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+              </fieldset>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          }), new ol.layer.Group({
+            layers: [
+              new ol.layer.Tile({
+                source: new ol.source.TileJSON({
+                  url: 'https://api.tiles.mapbox.com/v3/mapbox.20110804-hoa-foodinsecurity-3month.json?secure',
+                  crossOrigin: 'anonymous'
+                })
+              }),
+              new ol.layer.Tile({
+                source: new ol.source.TileJSON({
+                  url: 'https://api.tiles.mapbox.com/v3/mapbox.world-borders-light.json?secure',
+                  crossOrigin: 'anonymous'
+                })
+              })
+            ]
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.40570, 8.81566]),
+          zoom: 4
+        })
+      });
+
+      function bindInputs(layerid, layer) {
+        var visibilityInput = $(layerid + ' input.visible');
+        visibilityInput.on('change', function() {
+          layer.setVisible(this.checked);
+        });
+        visibilityInput.prop('checked', layer.getVisible());
+
+        var opacityInput = $(layerid + ' input.opacity');
+        opacityInput.on('input change', function() {
+          layer.setOpacity(parseFloat(this.value));
+        });
+        opacityInput.val(String(layer.getOpacity()));
+      }
+      map.getLayers().forEach(function(layer, i) {
+        bindInputs('#layer' + i, layer);
+        if (layer instanceof ol.layer.Group) {
+          layer.getLayers().forEach(function(sublayer, j) {
+            bindInputs('#layer' + i + j, sublayer);
+          });
+        }
+      });
+
+      $('#layertree li > span').click(function() {
+        $(this).siblings('fieldset').toggle();
+      }).siblings('fieldset').hide();
+    </script>
+{% end %}

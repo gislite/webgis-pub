@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" async="" src="Raster%20Reprojection1_files/analytics.js"></script><script async="" src="Raster%20Reprojection1_files/js.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-2577926-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="Raster%20Reprojection1_files/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="Raster%20Reprojection1_files/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="Raster%20Reprojection1_files/prism.css" type="text/css">
+    <link rel="stylesheet" href="Raster%20Reprojection1_files/ol.css" type="text/css">
+    <link rel="stylesheet" href="Raster%20Reprojection1_files/layout.css" type="text/css">
+    
+    
+    <script src="Raster%20Reprojection1_files/polyfill.js"></script>
+    <script src="Raster%20Reprojection1_files/clipboard.js"></script>
+    <title>Raster Reprojection</title>
+  </head>
+  <body>
+
+    <header class="navbar" role="navigation">
+      <div class="container">
+        <div class="display-table pull-left" id="navbar-logo-container">
+          <a class="navbar-brand" href="https://openlayers.org/en/master/examples/"><img src="Raster%20Reprojection1_files/logo-70x70.png">&nbsp;OpenLayers Examples</a>
+        </div>
+        <!-- menu items that get hidden below 768px width -->
+        <nav class="collapse navbar-collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="https://openlayers.org/en/master/doc">Docs</a></li>
+            <li><a class="active" href="https://openlayers.org/en/master/examples/index.html">Examples</a></li>
+            <li><a href="https://openlayers.org/en/master/apidoc">API</a></li>
+            <li><a href="https://github.com/openlayers/openlayers">Code</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+
+      <div id="latest-check" class="alert alert-warning alert-dismissible" role="alert" style="display:none">
+        <button id="latest-dismiss" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        This example uses OpenLayers v<span>5.2.0</span>. The <a id="latest-link" href="#" class="alert-link">latest</a> is v<span id="latest-version">5.2.0</span>.
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <h4 id="title">Raster Reprojection</h4>
+          <div id="map" class="map"><div class="ol-viewport" style="position: relative; overflow: hidden; width: 100%; height: 100%; touch-action: none;" data-view="32"><canvas style="width: 100%; height: 100%; display: block;" class="ol-unselectable" width="1799" height="558"></canvas><div class="ol-overlaycontainer"></div><div class="ol-overlaycontainer-stopevent"><div class="ol-zoom ol-unselectable ol-control"><button class="ol-zoom-in" type="button" title="Zoom in">+</button><button class="ol-zoom-out" type="button" title="Zoom out">−</button></div><div class="ol-rotate ol-unselectable ol-control ol-hidden"><button class="ol-rotate-reset" type="button" title="Reset rotation"><span class="ol-compass" style="transform: rotate(0rad);">⇧</span></button></div><div class="ol-attribution ol-unselectable ol-control ol-collapsed"><ul><li>© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li></ul><button type="button" title="Attributions"><span>i</span></button></div></div></div></div>
+<form class="form-inline">
+  <div class="col-md-3">
+    <label>Base map:</label>
+    <select id="base-layer">
+      <option value="osm" selected="selected">OSM (EPSG:3857)</option>
+      <option value="wms4326">WMS (EPSG:4326)</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label>Overlay map:</label>
+    <select id="overlay-layer">
+      <option value="bng" selected="selected">British National Grid (EPSG:27700)</option>
+      <option value="wms21781">Swisstopo WMS (EPSG:21781)</option>
+      <option value="wmts3413">NASA Arctic WMTS (EPSG:3413)</option>
+      <option value="grandcanyon">Grand Canyon HiDPI (EPSG:3857)</option>
+      <option value="states">United States (EPSG:3857)</option>
+    </select>
+  </div>
+  <div class="col-md-5">
+    <label>View projection:</label>
+    <select id="view-projection">
+      <option value="EPSG:3857" selected="selected">Spherical Mercator (EPSG:3857)</option>
+      <option value="EPSG:4326">WGS 84 (EPSG:4326)</option>
+      <option value="ESRI:54009">Mollweide (ESRI:54009)</option>
+      <option value="EPSG:27700">British National Grid (EPSG:27700)</option>
+      <option value="EPSG:23032">ED50 / UTM zone 32N (EPSG:23032)</option>
+      <option value="EPSG:2163">US National Atlas Equal Area (EPSG:2163)</option>
+      <option value="EPSG:3413">NSIDC Polar Stereographic North (EPSG:3413)</option>
+      <option value="EPSG:5479">RSRGD2000 / MSLC2000 (EPSG:5479)</option>
+    </select>
+  </div>
+  <label>
+    Render reprojection edges
+    <input type="checkbox" id="render-edges">
+  </label>
+</form>
+
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <p id="shortdesc">Demonstrates client-side raster reprojection between various projections.</p>
+          <div id="docs"><p>This example shows client-side raster reprojection between various projections.</p>
+</div>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div id="source-controls">
+          <a id="copy-button" data-clipboard-target="#example-source"><i class="fa fa-clipboard"></i> Copy</a>
+          <!-- <a id="codepen-button"><i class="fa fa-codepen"></i> Edit</a> -->
+        </div>
+        <form method="POST" id="codepen-form" target="_blank" action="https://codepen.io/pen/define/">
+          <textarea class="hidden" name="title">Raster Reprojection</textarea>
+          <textarea class="hidden" name="description">Demonstrates client-side raster reprojection between various projections.</textarea>
+          <textarea class="hidden" name="js">import Map from 'ol/Map.js';
+import View from 'ol/View.js';
+import {getWidth, getCenter} from 'ol/extent.js';
+import WMTSCapabilities from 'ol/format/WMTSCapabilities.js';
+import TileLayer from 'ol/layer/Tile.js';
+import {get as getProjection} from 'ol/proj.js';
+import {register} from 'ol/proj/proj4.js';
+import {OSM, TileImage, TileWMS, XYZ} from 'ol/source.js';
+import WMTS, {optionsFromCapabilities} from 'ol/source/WMTS.js';
+import TileGrid from 'ol/tilegrid/TileGrid.js';
+import proj4 from 'proj4';
+
+
+proj4.defs('EPSG:27700', '+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 ' +
+    '+x_0=400000 +y_0=-100000 +ellps=airy ' +
+    '+towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 ' +
+    '+units=m +no_defs');
+proj4.defs('EPSG:23032', '+proj=utm +zone=32 +ellps=intl ' +
+    '+towgs84=-87,-98,-121,0,0,0,0 +units=m +no_defs');
+proj4.defs('EPSG:5479', '+proj=lcc +lat_1=-76.66666666666667 +lat_2=' +
+    '-79.33333333333333 +lat_0=-78 +lon_0=163 +x_0=7000000 +y_0=5000000 ' +
+    '+ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs');
+proj4.defs('EPSG:21781', '+proj=somerc +lat_0=46.95240555555556 ' +
+    '+lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel ' +
+    '+towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs');
+proj4.defs('EPSG:3413', '+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 ' +
+    '+x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs');
+proj4.defs('EPSG:2163', '+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 ' +
+    '+a=6370997 +b=6370997 +units=m +no_defs');
+proj4.defs('ESRI:54009', '+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 ' +
+    '+units=m +no_defs');
+register(proj4);
+
+var proj27700 = getProjection('EPSG:27700');
+proj27700.setExtent([0, 0, 700000, 1300000]);
+
+var proj23032 = getProjection('EPSG:23032');
+proj23032.setExtent([-1206118.71, 4021309.92, 1295389.00, 8051813.28]);
+
+var proj5479 = getProjection('EPSG:5479');
+proj5479.setExtent([6825737.53, 4189159.80, 9633741.96, 5782472.71]);
+
+var proj21781 = getProjection('EPSG:21781');
+proj21781.setExtent([485071.54, 75346.36, 828515.78, 299941.84]);
+
+var proj3413 = getProjection('EPSG:3413');
+proj3413.setExtent([-4194304, -4194304, 4194304, 4194304]);
+
+var proj2163 = getProjection('EPSG:2163');
+proj2163.setExtent([-8040784.5135, -2577524.9210, 3668901.4484, 4785105.1096]);
+
+var proj54009 = getProjection('ESRI:54009');
+proj54009.setExtent([-18e6, -9e6, 18e6, 9e6]);
+
+
+var layers = {};
+
+layers['bng'] = new TileLayer({
+  source: new XYZ({
+    projection: 'EPSG:27700',
+    url: 'https://tileserver.maptiler.com/miniscale/{z}/{x}/{y}.png',
+    crossOrigin: '',
+    maxZoom: 6
+  })
+});
+
+layers['osm'] = new TileLayer({
+  source: new OSM()
+});
+
+layers['wms4326'] = new TileLayer({
+  source: new TileWMS({
+    url: 'https://ahocevar.com/geoserver/wms',
+    crossOrigin: '',
+    params: {
+      'LAYERS': 'ne:NE1_HR_LC_SR_W_DR',
+      'TILED': true
+    },
+    projection: 'EPSG:4326'
+  })
+});
+
+layers['wms21781'] = new TileLayer({
+  source: new TileWMS({
+    attributions: '© &lt;a href="http://www.geo.admin.ch/internet/geoportal/' +
+      'en/home.html"&gt;Pixelmap 1:1000000 / geo.admin.ch&lt;/a&gt;',
+    crossOrigin: 'anonymous',
+    params: {
+      'LAYERS': 'ch.swisstopo.pixelkarte-farbe-pk1000.noscale',
+      'FORMAT': 'image/jpeg'
+    },
+    url: 'https://wms.geo.admin.ch/',
+    projection: 'EPSG:21781'
+  })
+});
+
+var parser = new WMTSCapabilities();
+var url = 'https://map1.vis.earthdata.nasa.gov/wmts-arctic/' +
+    'wmts.cgi?SERVICE=WMTS&amp;request=GetCapabilities';
+fetch(url).then(function(response) {
+  return response.text();
+}).then(function(text) {
+  var result = parser.read(text);
+  var options = optionsFromCapabilities(result, {
+    layer: 'OSM_Land_Mask',
+    matrixSet: 'EPSG3413_250m'
+  });
+  options.crossOrigin = '';
+  options.projection = 'EPSG:3413';
+  options.wrapX = false;
+  layers['wmts3413'] = new TileLayer({
+    source: new WMTS(/** @type {!module:ol/source/WMTS~Options} */ (options))
+  });
+});
+
+layers['grandcanyon'] = new TileLayer({
+  source: new XYZ({
+    url: 'https://tileserver.maptiler.com/grandcanyon@2x/{z}/{x}/{y}.png',
+    crossOrigin: '',
+    tilePixelRatio: 2,
+    maxZoom: 15,
+    attributions: 'Tiles © USGS, rendered with ' +
+      '&lt;a href="http://www.maptiler.com/"&gt;MapTiler&lt;/a&gt;'
+  })
+});
+
+var startResolution =
+    getWidth(getProjection('EPSG:3857').getExtent()) / 256;
+var resolutions = new Array(22);
+for (var i = 0, ii = resolutions.length; i &lt; ii; ++i) {
+  resolutions[i] = startResolution / Math.pow(2, i);
+}
+
+layers['states'] = new TileLayer({
+  source: new TileWMS({
+    url: 'https://ahocevar.com/geoserver/wms',
+    crossOrigin: '',
+    params: {'LAYERS': 'topp:states'},
+    serverType: 'geoserver',
+    tileGrid: new TileGrid({
+      extent: [-13884991, 2870341, -7455066, 6338219],
+      resolutions: resolutions,
+      tileSize: [512, 256]
+    }),
+    projection: 'EPSG:3857'
+  })
+});
+
+
+var map = new Map({
+  layers: [
+    layers['osm'],
+    layers['bng']
+  ],
+  target: 'map',
+  view: new View({
+    projection: 'EPSG:3857',
+    center: [0, 0],
+    zoom: 2
+  })
+});
+
+
+var baseLayerSelect = document.getElementById('base-layer');
+var overlayLayerSelect = document.getElementById('overlay-layer');
+var viewProjSelect = document.getElementById('view-projection');
+var renderEdgesCheckbox = document.getElementById('render-edges');
+var renderEdges = false;
+
+function updateViewProjection() {
+  var newProj = getProjection(viewProjSelect.value);
+  var newProjExtent = newProj.getExtent();
+  var newView = new View({
+    projection: newProj,
+    center: getCenter(newProjExtent || [0, 0, 0, 0]),
+    zoom: 0,
+    extent: newProjExtent || undefined
+  });
+  map.setView(newView);
+
+  // Example how to prevent double occurrence of map by limiting layer extent
+  if (newProj == getProjection('EPSG:3857')) {
+    layers['bng'].setExtent([-1057216, 6405988, 404315, 8759696]);
+  } else {
+    layers['bng'].setExtent(undefined);
+  }
+}
+
+
+/**
+ * Handle change event.
+ */
+viewProjSelect.onchange = function() {
+  updateViewProjection();
+};
+
+updateViewProjection();
+
+var updateRenderEdgesOnLayer = function(layer) {
+  if (layer instanceof TileLayer) {
+    var source = layer.getSource();
+    if (source instanceof TileImage) {
+      source.setRenderReprojectionEdges(renderEdges);
+    }
+  }
+};
+
+
+/**
+ * Handle change event.
+ */
+baseLayerSelect.onchange = function() {
+  var layer = layers[baseLayerSelect.value];
+  if (layer) {
+    layer.setOpacity(1);
+    updateRenderEdgesOnLayer(layer);
+    map.getLayers().setAt(0, layer);
+  }
+};
+
+
+/**
+ * Handle change event.
+ */
+overlayLayerSelect.onchange = function() {
+  var layer = layers[overlayLayerSelect.value];
+  if (layer) {
+    layer.setOpacity(0.7);
+    updateRenderEdgesOnLayer(layer);
+    map.getLayers().setAt(1, layer);
+  }
+};
+
+
+/**
+ * Handle change event.
+ */
+renderEdgesCheckbox.onchange = function() {
+  renderEdges = renderEdgesCheckbox.checked;
+  map.getLayers().forEach(function(layer) {
+    updateRenderEdgesOnLayer(layer);
+  });
+};
+</textarea>
+          <textarea class="hidden" name="css"></textarea>
+          <textarea class="hidden" name="html">&lt;div id="map" class="map"&gt;&lt;/div&gt;
+&lt;form class="form-inline"&gt;
+  &lt;div class="col-md-3"&gt;
+    &lt;label&gt;Base map:&lt;/label&gt;
+    &lt;select id="base-layer"&gt;
+      &lt;option value="osm"&gt;OSM (EPSG:3857)&lt;/option&gt;
+      &lt;option value="wms4326"&gt;WMS (EPSG:4326)&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="col-md-4"&gt;
+    &lt;label&gt;Overlay map:&lt;/label&gt;
+    &lt;select id="overlay-layer"&gt;
+      &lt;option value="bng"&gt;British National Grid (EPSG:27700)&lt;/option&gt;
+      &lt;option value="wms21781"&gt;Swisstopo WMS (EPSG:21781)&lt;/option&gt;
+      &lt;option value="wmts3413"&gt;NASA Arctic WMTS (EPSG:3413)&lt;/option&gt;
+      &lt;option value="grandcanyon"&gt;Grand Canyon HiDPI (EPSG:3857)&lt;/option&gt;
+      &lt;option value="states"&gt;United States (EPSG:3857)&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="col-md-5"&gt;
+    &lt;label&gt;View projection:&lt;/label&gt;
+    &lt;select id="view-projection"&gt;
+      &lt;option value="EPSG:3857"&gt;Spherical Mercator (EPSG:3857)&lt;/option&gt;
+      &lt;option value="EPSG:4326"&gt;WGS 84 (EPSG:4326)&lt;/option&gt;
+      &lt;option value="ESRI:54009"&gt;Mollweide (ESRI:54009)&lt;/option&gt;
+      &lt;option value="EPSG:27700"&gt;British National Grid (EPSG:27700)&lt;/option&gt;
+      &lt;option value="EPSG:23032"&gt;ED50 / UTM zone 32N (EPSG:23032)&lt;/option&gt;
+      &lt;option value="EPSG:2163"&gt;US National Atlas Equal Area (EPSG:2163)&lt;/option&gt;
+      &lt;option value="EPSG:3413"&gt;NSIDC Polar Stereographic North (EPSG:3413)&lt;/option&gt;
+      &lt;option value="EPSG:5479"&gt;RSRGD2000 / MSLC2000 (EPSG:5479)&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;label&gt;
+    Render reprojection edges
+    &lt;input type="checkbox" id="render-edges"&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+</textarea>
+          <input type="hidden" name="data">
+        </form>
+        <pre class=" language-markup"><code id="example-source" class=" language-markup"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Raster Reprojection<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/f2elib/ol-6.14.1/ol.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- The line below is only needed for old environments like Internet Explorer and Android 4.x --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-md-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>Base map:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>base-layer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>osm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>OSM (EPSG:3857)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wms4326<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>WMS (EPSG:4326)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-md-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>Overlay map:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>overlay-layer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bng<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>British National Grid (EPSG:27700)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wms21781<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Swisstopo WMS (EPSG:21781)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wmts3413<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>NASA Arctic WMTS (EPSG:3413)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>grandcanyon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Grand Canyon HiDPI (EPSG:3857)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>states<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>United States (EPSG:3857)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-md-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>View projection:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>view-projection<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>EPSG:3857<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Spherical Mercator (EPSG:3857)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>EPSG:4326<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>WGS 84 (EPSG:4326)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ESRI:54009<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mollweide (ESRI:54009)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>EPSG:27700<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>British National Grid (EPSG:27700)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>EPSG:23032<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ED50 / UTM zone 32N (EPSG:23032)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>EPSG:2163<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>US National Atlas Equal Area (EPSG:2163)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>EPSG:3413<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>NSIDC Polar Stereographic North (EPSG:3413)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>EPSG:5479<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>RSRGD2000 / MSLC2000 (EPSG:5479)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>
+        Render reprojection edges
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>render-edges<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+      <span class="token keyword">import</span> Map <span class="token keyword">from</span> <span class="token string">'ol/Map.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> View <span class="token keyword">from</span> <span class="token string">'ol/View.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> <span class="token punctuation">{</span>getWidth<span class="token punctuation">,</span> getCenter<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ol/extent.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> WMTSCapabilities <span class="token keyword">from</span> <span class="token string">'ol/format/WMTSCapabilities.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> TileLayer <span class="token keyword">from</span> <span class="token string">'ol/layer/Tile.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> <span class="token punctuation">{</span><span class="token keyword">get</span> <span class="token keyword">as</span> getProjection<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ol/proj.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> <span class="token punctuation">{</span>register<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ol/proj/proj4.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> <span class="token punctuation">{</span>OSM<span class="token punctuation">,</span> TileImage<span class="token punctuation">,</span> TileWMS<span class="token punctuation">,</span> XYZ<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ol/source.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> WMTS<span class="token punctuation">,</span> <span class="token punctuation">{</span>optionsFromCapabilities<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ol/source/WMTS.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> TileGrid <span class="token keyword">from</span> <span class="token string">'ol/tilegrid/TileGrid.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> proj4 <span class="token keyword">from</span> <span class="token string">'proj4'</span><span class="token punctuation">;</span>
+
+
+      proj4<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token string">'EPSG:27700'</span><span class="token punctuation">,</span> <span class="token string">'+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 '</span> <span class="token operator">+</span>
+          <span class="token string">'+x_0=400000 +y_0=-100000 +ellps=airy '</span> <span class="token operator">+</span>
+          <span class="token string">'+towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 '</span> <span class="token operator">+</span>
+          <span class="token string">'+units=m +no_defs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj4<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token string">'EPSG:23032'</span><span class="token punctuation">,</span> <span class="token string">'+proj=utm +zone=32 +ellps=intl '</span> <span class="token operator">+</span>
+          <span class="token string">'+towgs84=-87,-98,-121,0,0,0,0 +units=m +no_defs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj4<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token string">'EPSG:5479'</span><span class="token punctuation">,</span> <span class="token string">'+proj=lcc +lat_1=-76.66666666666667 +lat_2='</span> <span class="token operator">+</span>
+          <span class="token string">'-79.33333333333333 +lat_0=-78 +lon_0=163 +x_0=7000000 +y_0=5000000 '</span> <span class="token operator">+</span>
+          <span class="token string">'+ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj4<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token string">'EPSG:21781'</span><span class="token punctuation">,</span> <span class="token string">'+proj=somerc +lat_0=46.95240555555556 '</span> <span class="token operator">+</span>
+          <span class="token string">'+lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel '</span> <span class="token operator">+</span>
+          <span class="token string">'+towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj4<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token string">'EPSG:3413'</span><span class="token punctuation">,</span> <span class="token string">'+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 '</span> <span class="token operator">+</span>
+          <span class="token string">'+x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj4<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token string">'EPSG:2163'</span><span class="token punctuation">,</span> <span class="token string">'+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 '</span> <span class="token operator">+</span>
+          <span class="token string">'+a=6370997 +b=6370997 +units=m +no_defs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj4<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token string">'ESRI:54009'</span><span class="token punctuation">,</span> <span class="token string">'+proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 '</span> <span class="token operator">+</span>
+          <span class="token string">'+units=m +no_defs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">register</span><span class="token punctuation">(</span>proj4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> proj27700 <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:27700'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj27700<span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">700000</span><span class="token punctuation">,</span> <span class="token number">1300000</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> proj23032 <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:23032'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj23032<span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1206118.71</span><span class="token punctuation">,</span> <span class="token number">4021309.92</span><span class="token punctuation">,</span> <span class="token number">1295389.00</span><span class="token punctuation">,</span> <span class="token number">8051813.28</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> proj5479 <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:5479'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj5479<span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">6825737.53</span><span class="token punctuation">,</span> <span class="token number">4189159.80</span><span class="token punctuation">,</span> <span class="token number">9633741.96</span><span class="token punctuation">,</span> <span class="token number">5782472.71</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> proj21781 <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:21781'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj21781<span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">485071.54</span><span class="token punctuation">,</span> <span class="token number">75346.36</span><span class="token punctuation">,</span> <span class="token number">828515.78</span><span class="token punctuation">,</span> <span class="token number">299941.84</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> proj3413 <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:3413'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj3413<span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">4194304</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4194304</span><span class="token punctuation">,</span> <span class="token number">4194304</span><span class="token punctuation">,</span> <span class="token number">4194304</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> proj2163 <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:2163'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj2163<span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">8040784.5135</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2577524.9210</span><span class="token punctuation">,</span> <span class="token number">3668901.4484</span><span class="token punctuation">,</span> <span class="token number">4785105.1096</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> proj54009 <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'ESRI:54009'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      proj54009<span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">18e6</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">9e6</span><span class="token punctuation">,</span> <span class="token number">18e6</span><span class="token punctuation">,</span> <span class="token number">9e6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+      <span class="token keyword">var</span> layers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+      layers<span class="token punctuation">[</span><span class="token string">'bng'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TileLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        source<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">XYZ</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          projection<span class="token punctuation">:</span> <span class="token string">'EPSG:27700'</span><span class="token punctuation">,</span>
+          url<span class="token punctuation">:</span> <span class="token string">'https://tileserver.maptiler.com/miniscale/{z}/{x}/{y}.png'</span><span class="token punctuation">,</span>
+          crossOrigin<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+          maxZoom<span class="token punctuation">:</span> <span class="token number">6</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      layers<span class="token punctuation">[</span><span class="token string">'osm'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TileLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        source<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">OSM</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      layers<span class="token punctuation">[</span><span class="token string">'wms4326'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TileLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        source<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">TileWMS</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          url<span class="token punctuation">:</span> <span class="token string">'https://ahocevar.com/geoserver/wms'</span><span class="token punctuation">,</span>
+          crossOrigin<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+          params<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'LAYERS'</span><span class="token punctuation">:</span> <span class="token string">'ne:NE1_HR_LC_SR_W_DR'</span><span class="token punctuation">,</span>
+            <span class="token string">'TILED'</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          projection<span class="token punctuation">:</span> <span class="token string">'EPSG:4326'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      layers<span class="token punctuation">[</span><span class="token string">'wms21781'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TileLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        source<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">TileWMS</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          attributions<span class="token punctuation">:</span> <span class="token string">'© &lt;a href="http://www.geo.admin.ch/internet/geoportal/'</span> <span class="token operator">+</span>
+            <span class="token string">'en/home.html"&gt;Pixelmap 1:1000000 / geo.admin.ch&lt;/a&gt;'</span><span class="token punctuation">,</span>
+          crossOrigin<span class="token punctuation">:</span> <span class="token string">'anonymous'</span><span class="token punctuation">,</span>
+          params<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'LAYERS'</span><span class="token punctuation">:</span> <span class="token string">'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'</span><span class="token punctuation">,</span>
+            <span class="token string">'FORMAT'</span><span class="token punctuation">:</span> <span class="token string">'image/jpeg'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          url<span class="token punctuation">:</span> <span class="token string">'https://wms.geo.admin.ch/'</span><span class="token punctuation">,</span>
+          projection<span class="token punctuation">:</span> <span class="token string">'EPSG:21781'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> parser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WMTSCapabilities</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token string">'https://map1.vis.earthdata.nasa.gov/wmts-arctic/'</span> <span class="token operator">+</span>
+          <span class="token string">'wmts.cgi?SERVICE=WMTS&amp;request=GetCapabilities'</span><span class="token punctuation">;</span>
+      <span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> result <span class="token operator">=</span> parser<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token function">optionsFromCapabilities</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          layer<span class="token punctuation">:</span> <span class="token string">'OSM_Land_Mask'</span><span class="token punctuation">,</span>
+          matrixSet<span class="token punctuation">:</span> <span class="token string">'EPSG3413_250m'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        options<span class="token punctuation">.</span>crossOrigin <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+        options<span class="token punctuation">.</span>projection <span class="token operator">=</span> <span class="token string">'EPSG:3413'</span><span class="token punctuation">;</span>
+        options<span class="token punctuation">.</span>wrapX <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        layers<span class="token punctuation">[</span><span class="token string">'wmts3413'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TileLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          source<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">WMTS</span><span class="token punctuation">(</span><span class="token comment">/** @type {!module:ol/source/WMTS~Options} */</span> <span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      layers<span class="token punctuation">[</span><span class="token string">'grandcanyon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TileLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        source<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">XYZ</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          url<span class="token punctuation">:</span> <span class="token string">'https://tileserver.maptiler.com/grandcanyon@2x/{z}/{x}/{y}.png'</span><span class="token punctuation">,</span>
+          crossOrigin<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+          tilePixelRatio<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          maxZoom<span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+          attributions<span class="token punctuation">:</span> <span class="token string">'Tiles © USGS, rendered with '</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;a href="http://www.maptiler.com/"&gt;MapTiler&lt;/a&gt;'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> startResolution <span class="token operator">=</span>
+          <span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:3857'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getExtent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">256</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> resolutions <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> ii <span class="token operator">=</span> resolutions<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> ii<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        resolutions<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> startResolution <span class="token operator">/</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      layers<span class="token punctuation">[</span><span class="token string">'states'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TileLayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        source<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">TileWMS</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          url<span class="token punctuation">:</span> <span class="token string">'https://ahocevar.com/geoserver/wms'</span><span class="token punctuation">,</span>
+          crossOrigin<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+          params<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'LAYERS'</span><span class="token punctuation">:</span> <span class="token string">'topp:states'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          serverType<span class="token punctuation">:</span> <span class="token string">'geoserver'</span><span class="token punctuation">,</span>
+          tileGrid<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">TileGrid</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            extent<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">13884991</span><span class="token punctuation">,</span> <span class="token number">2870341</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">7455066</span><span class="token punctuation">,</span> <span class="token number">6338219</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            resolutions<span class="token punctuation">:</span> resolutions<span class="token punctuation">,</span>
+            tileSize<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">512</span><span class="token punctuation">,</span> <span class="token number">256</span><span class="token punctuation">]</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          projection<span class="token punctuation">:</span> <span class="token string">'EPSG:3857'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+      <span class="token keyword">var</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        layers<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          layers<span class="token punctuation">[</span><span class="token string">'osm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          layers<span class="token punctuation">[</span><span class="token string">'bng'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        target<span class="token punctuation">:</span> <span class="token string">'map'</span><span class="token punctuation">,</span>
+        view<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">View</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          projection<span class="token punctuation">:</span> <span class="token string">'EPSG:3857'</span><span class="token punctuation">,</span>
+          center<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          zoom<span class="token punctuation">:</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+      <span class="token keyword">var</span> baseLayerSelect <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'base-layer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> overlayLayerSelect <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'overlay-layer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> viewProjSelect <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'view-projection'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> renderEdgesCheckbox <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'render-edges'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> renderEdges <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">function</span> <span class="token function">updateViewProjection</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> newProj <span class="token operator">=</span> <span class="token function">getProjection</span><span class="token punctuation">(</span>viewProjSelect<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> newProjExtent <span class="token operator">=</span> newProj<span class="token punctuation">.</span><span class="token function">getExtent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> newView <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">View</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          projection<span class="token punctuation">:</span> newProj<span class="token punctuation">,</span>
+          center<span class="token punctuation">:</span> <span class="token function">getCenter</span><span class="token punctuation">(</span>newProjExtent <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          zoom<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+          extent<span class="token punctuation">:</span> newProjExtent <span class="token operator">||</span> undefined
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">setView</span><span class="token punctuation">(</span>newView<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Example how to prevent double occurrence of map by limiting layer extent</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>newProj <span class="token operator">==</span> <span class="token function">getProjection</span><span class="token punctuation">(</span><span class="token string">'EPSG:3857'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          layers<span class="token punctuation">[</span><span class="token string">'bng'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1057216</span><span class="token punctuation">,</span> <span class="token number">6405988</span><span class="token punctuation">,</span> <span class="token number">404315</span><span class="token punctuation">,</span> <span class="token number">8759696</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          layers<span class="token punctuation">[</span><span class="token string">'bng'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">setExtent</span><span class="token punctuation">(</span>undefined<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+
+      <span class="token comment">/**
+       * Handle change event.
+       */</span>
+      viewProjSelect<span class="token punctuation">.</span><span class="token function-variable function">onchange</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">updateViewProjection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+      <span class="token function">updateViewProjection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">var</span> <span class="token function-variable function">updateRenderEdgesOnLayer</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>layer <span class="token keyword">instanceof</span> <span class="token class-name">TileLayer</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">var</span> source <span class="token operator">=</span> layer<span class="token punctuation">.</span><span class="token function">getSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>source <span class="token keyword">instanceof</span> <span class="token class-name">TileImage</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            source<span class="token punctuation">.</span><span class="token function">setRenderReprojectionEdges</span><span class="token punctuation">(</span>renderEdges<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+      <span class="token comment">/**
+       * Handle change event.
+       */</span>
+      baseLayerSelect<span class="token punctuation">.</span><span class="token function-variable function">onchange</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> layer <span class="token operator">=</span> layers<span class="token punctuation">[</span>baseLayerSelect<span class="token punctuation">.</span>value<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>layer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          layer<span class="token punctuation">.</span><span class="token function">setOpacity</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token function">updateRenderEdgesOnLayer</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          map<span class="token punctuation">.</span><span class="token function">getLayers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> layer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+      <span class="token comment">/**
+       * Handle change event.
+       */</span>
+      overlayLayerSelect<span class="token punctuation">.</span><span class="token function-variable function">onchange</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> layer <span class="token operator">=</span> layers<span class="token punctuation">[</span>overlayLayerSelect<span class="token punctuation">.</span>value<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>layer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          layer<span class="token punctuation">.</span><span class="token function">setOpacity</span><span class="token punctuation">(</span><span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token function">updateRenderEdgesOnLayer</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          map<span class="token punctuation">.</span><span class="token function">getLayers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> layer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+      <span class="token comment">/**
+       * Handle change event.
+       */</span>
+      renderEdgesCheckbox<span class="token punctuation">.</span><span class="token function-variable function">onchange</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        renderEdges <span class="token operator">=</span> renderEdgesCheckbox<span class="token punctuation">.</span>checked<span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">getLayers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">updateRenderEdgesOnLayer</span><span class="token punctuation">(</span>layer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre>
+      </div>
+    </div>
+
+    <script src="Raster%20Reprojection1_files/common.js"></script>
+    <script src="Raster%20Reprojection1_files/prism.js"></script>
+    <script src="Raster%20Reprojection1_files/common_002.js"></script><script src="Raster%20Reprojection1_files/reprojection.js"></script>
+  
+  <script>
+  var packageUrl = 'https://raw.githubusercontent.com/openlayers/openlayers.github.io/build/package.json';
+  fetch(packageUrl).then(function(response) {
+    return response.json();
+  }).then(function(json) {
+    var latestVersion = json.version;
+    document.getElementById('latest-version').innerHTML = latestVersion;
+    var url = window.location.href;
+    var branchSearch = url.match(/\/([^\/]*)\/examples\//);
+    var cookieText = 'dismissed=-' + latestVersion + '-';
+    var dismissed = document.cookie.indexOf(cookieText) != -1;
+    if (branchSearch && !dismissed && /^v[0-9\.]*$/.test(branchSearch[1]) && '5.2.0' != latestVersion) {
+      var link = url.replace(branchSearch[0], '/latest/examples/');
+      fetch(link, {method: 'head'}).then(function(response) {
+        var a = document.getElementById('latest-link');
+        a.href = response.status == 200 ? link : '../../latest/examples/';
+      });
+      var latestCheck = document.getElementById('latest-check');
+      latestCheck.style.display = '';
+      document.getElementById('latest-dismiss').onclick = function() {
+        latestCheck.style.display = 'none';
+        document.cookie = cookieText;
+      }
+    }
+  });
+  </script>
+
+</body></html>

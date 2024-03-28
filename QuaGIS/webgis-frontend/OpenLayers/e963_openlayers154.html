@@ -1,0 +1,49 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+<style>
+      .mapol {
+        background: white;
+      }
+    </style>
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+   <script>
+      var capabilitiesUrl = 'https://www.basemap.at/wmts/1.0.0/WMTSCapabilities.xml';
+
+      // HiDPI support:
+      // * Use 'bmaphidpi' layer (pixel ratio 2) for device pixel ratio > 1
+      // * Use 'geolandbasemap' layer (pixel ratio 1) for device pixel ratio == 1
+      var hiDPI = ol.has.DEVICE_PIXEL_RATIO > 1;
+      var layer = hiDPI ? 'bmaphidpi' : 'geolandbasemap';
+      var tilePixelRatio = hiDPI ? 2 : 1;
+
+      var map = new ol.Map({
+        target: 'mapol',
+        view: new ol.View({
+          center: [1823849, 6143760],
+          zoom: 11
+        })
+      });
+
+      fetch(capabilitiesUrl).then(function(response) {
+        return response.text();
+      }).then(function(text) {
+        var result = new ol.format.WMTSCapabilities().read(text);
+        var options = ol.source.WMTS.optionsFromCapabilities(result, {
+          layer: layer,
+          matrixSet: 'google3857',
+          style: 'normal'
+        });
+        options.tilePixelRatio = tilePixelRatio;
+        map.addLayer(new ol.layer.Tile({
+          source: new ol.source.WMTS(options)
+        }));
+      });
+    </script>
+{% end %}

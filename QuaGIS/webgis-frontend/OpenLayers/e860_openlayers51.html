@@ -1,0 +1,37 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+ <div id="mapol" class="mapol"></div>
+<br>
+ <script>
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          center: ol.proj.fromLonLat([4.8, 47.75]),
+          zoom: 5
+        })
+      });
+
+      // Create the graticule component
+      var graticule = new ol.Graticule({
+        // the style to use for the lines, optional.
+        strokeStyle: new ol.style.Stroke({
+          color: 'rgba(255,120,0,0.9)',
+          width: 2,
+          lineDash: [0.5, 4]
+        })
+      });
+      graticule.setMap(map);
+    </script>
+{% end %}

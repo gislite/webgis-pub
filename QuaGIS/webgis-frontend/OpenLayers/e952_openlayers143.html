@@ -1,0 +1,26 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+<style>
+      .log-container {
+        height: 400px;
+        overflow: scroll;
+      }
+    </style>
+{% end %}
+{% block content %}
+ <pre class="log-container"><code id="log"></code></pre>
+    <script>
+      var parser = new ol.format.WMSCapabilities();
+
+      fetch('https://openlayers.org/en/v4.0.1/examples/data/ogcsample.xml').then(function(response) {
+        return response.text();
+      }).then(function(text) {
+        var result = parser.read(text);
+        document.getElementById('log').innerText = JSON.stringify(result, null, 2);
+      });
+    </script>
+{% end %}

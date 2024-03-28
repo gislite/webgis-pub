@@ -1,0 +1,74 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+ <div class="row-fluid">
+      <div class="span12">
+        <div id="mapol" class="mapol"></div>
+          <br>
+        <div>
+        <form class="form-horizontal">
+          <label>
+            Show countries larger than
+            <select id="country-area" class="form-control">
+              <option value="0" default>0 ㎢</option>
+              <option value="5000">5000 ㎢</option>
+              <option value="10000">10000 ㎢</option>
+              <option value="50000">50000 ㎢</option>
+              <option value="100000">100000 ㎢</option>
+            </select>
+          </label>
+        </form>
+      </div>
+    </div>
+ </div>
+    <script>
+      var mapConfig = {
+        'layers': [{
+          'type': 'cartodb',
+          'options': {
+            'cartocss_version': '2.1.1',
+            'cartocss': '#layer { polygon-fill: #F00; }',
+            'sql': 'select * from european_countries_e where area > 0'
+          }
+        }]
+      };
+
+      var cartoDBSource = new ol.source.CartoDB({
+        account: 'documentation',
+        config: mapConfig
+      });
+
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          }),
+          new ol.layer.Tile({
+            source: cartoDBSource
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2
+        })
+      });
+
+      function setArea(n) {
+        mapConfig.layers[0].options.sql =
+            'select * from european_countries_e where area > ' + n;
+        cartoDBSource.setConfig(mapConfig);
+      }
+
+
+      document.getElementById('country-area').addEventListener('change', function() {
+        setArea(this.value);
+      });
+    </script>
+{% end %}

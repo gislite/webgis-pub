@@ -1,0 +1,40 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+
+
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+ <div id="mapol" class="mapol"></div>
+    <script>
+      var url = 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/' +
+          'Specialty/ESRI_StateCityHighway_USA/MapServer';
+
+      var layers = [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
+        new ol.layer.Image({
+          source: new ol.source.ImageArcGISRest({
+            ratio: 1,
+            params: {},
+            url: url
+          })
+        })
+      ];
+      var map = new ol.Map({
+        layers: layers,
+        target: 'mapol',
+        view: new ol.View({
+          center: [-10997148, 4569099],
+          zoom: 4
+        })
+      });
+    </script>
+
+{% end %}

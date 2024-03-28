@@ -1,0 +1,50 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+  <div id="mapol" class="mapol"></div>
+<Br>
+ <select id="units">
+      <option value="degrees">degrees</option>
+      <option value="imperial">imperial inch</option>
+      <option value="us">us inch</option>
+      <option value="nautical">nautical mile</option>
+      <option value="metric" selected>metric</option>
+    </select>
+    <script>
+      var scaleLineControl = new ol.control.ScaleLine();
+
+      var map = new ol.Map({
+        controls: ol.control.defaults({
+          attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+            collapsible: false
+          })
+        }).extend([
+          scaleLineControl
+        ]),
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2
+        })
+      });
+
+
+      var unitsSelect = document.getElementById('units');
+      function onChange() {
+        scaleLineControl.setUnits(unitsSelect.value);
+      }
+      unitsSelect.addEventListener('change', onChange);
+      onChange();
+    </script>
+{% end %}

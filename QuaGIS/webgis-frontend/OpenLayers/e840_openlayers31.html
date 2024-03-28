@@ -1,0 +1,39 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+ <br>
+ <script>
+      var layers = [
+        new ol.layer.Tile({
+          source: new ol.source.TileWMS({
+            url: 'https://ahocevar.com/geoserver/wms',
+            params: {
+              'LAYERS': 'ne:NE1_HR_LC_SR_W_DR'
+            }
+          })
+        })
+      ];
+
+      var map = new ol.Map({
+        controls: ol.control.defaults().extend([
+          new ol.control.ScaleLine({
+            units: 'degrees'
+          })
+        ]),
+        layers: layers,
+        target: 'mapol',
+        view: new ol.View({
+          projection: 'EPSG:4326',
+          center: [0, 0],
+          zoom: 2
+        })
+      });
+    </script>
+{% end %}

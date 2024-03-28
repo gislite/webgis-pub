@@ -1,0 +1,44 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+<script>
+      /**
+       * Create the map.
+       */
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM(),
+            minResolution: 200,
+            maxResolution: 2000
+          }),
+          new ol.layer.Tile({
+            source: new ol.source.TileJSON({
+              url: 'https://api.tiles.mapbox.com/v3/mapbox.natural-earth-hypso-bathy.json?secure',
+              crossOrigin: 'anonymous'
+            }),
+            minResolution: 2000,
+            maxResolution: 20000
+          })
+        ],
+        target: 'mapol',
+        controls: ol.control.defaults({
+          attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+            collapsible: false
+          })
+        }),
+        view: new ol.View({
+          center: [653600, 5723680],
+          zoom: 5
+        })
+      });
+    </script>
+{% end %}

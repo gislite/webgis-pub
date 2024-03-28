@@ -1,0 +1,27 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+{% end %}
+
+
+{% block content %}
+
+<div id="mapid" style="width: 810px; height: 400px;"></div>
+ <script>
+
+	var map = L.map('mapid', {
+		crs: L.CRS.Simple
+	});
+
+	var bounds = [[0,0], [1000,1000]];
+	var image = L.imageOverlay('/static/images/uqm_map_full.png', bounds).addTo(map);
+
+	map.fitBounds(bounds);
+
+</script>
+
+
+
+{% end %}

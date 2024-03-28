@@ -1,0 +1,74 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+ <div id="mapol" class="mapol"></div>
+<br>
+  <script>
+      function createStyle(src, img) {
+        return new ol.style.Style({
+          image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+            anchor: [0.5, 0.96],
+            src: src,
+            img: img,
+            imgSize: img ? [img.width, img.height] : undefined
+          }))
+        });
+      }
+
+      var iconFeature = new ol.Feature(new ol.geom.Point([0, 0]));
+      iconFeature.set('style', createStyle('https://openlayers.org/en/v4.0.1/examples/data/icon.png', undefined));
+
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.Stamen({layer: 'watercolor'})
+          }),
+          new ol.layer.Vector({
+            style: function(feature) {
+              return feature.get('style');
+            },
+            source: new ol.source.Vector({features: [iconFeature]})
+          })
+        ],
+        target: document.getElementById('mapol'),
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 3
+        })
+      });
+
+      var selectStyle = {};
+      var select = new ol.interaction.Select({
+        style: function(feature) {
+          var image = feature.get('style').getImage().getImage();
+          if (!selectStyle[image.src]) {
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            canvas.width = image.width;
+            canvas.height = image.height;
+            context.drawImage(image, 0, 0, image.width, image.height);
+            var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            var data = imageData.data;
+            for (var i = 0, ii = data.length; i < ii; i = i + (i % 4 == 2 ? 2 : 1)) {
+              data[i] = 255 - data[i];
+            }
+            context.putImageData(imageData, 0, 0);
+            selectStyle[image.src] = createStyle(undefined, canvas);
+          }
+          return selectStyle[image.src];
+        }
+      });
+      map.addInteraction(select);
+
+      map.on('pointermove', function(evt) {
+        map.getTargetElement().style.cursor =
+            map.hasFeatureAtPixel(evt.pixel) ? 'pointer' : '';
+      });
+    </script>
+{% end %}

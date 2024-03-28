@@ -1,0 +1,31 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+  <div id="mapol" class="mapol"></div>
+<script>
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          }),
+          new ol.layer.Tile({
+            source: new ol.source.TileJSON({
+              url: 'https://api.tiles.mapbox.com/v3/mapbox.va-quake-aug.json?secure',
+              crossOrigin: 'anonymous'
+            })
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-77.93255, 37.9555]),
+          zoom: 7
+        })
+      });
+    </script>
+{% end %}

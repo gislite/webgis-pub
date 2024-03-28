@@ -1,0 +1,187 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+<div style="line-height: 40px;">
+    <button  class="btn btn-primary btn-sm" id="rotate-left" title="Rotate clockwise">↻</button>
+    <button  class="btn btn-primary btn-sm" id="rotate-right" title="Rotate counterclockwise">↺</button>
+    <button  class="btn btn-primary btn-sm" id="pan-to-london">Pan to London</button>
+    <button  class="btn btn-primary btn-sm" id="elastic-to-moscow">Elastic to Moscow</button>
+    <button  class="btn btn-primary btn-sm" id="bounce-to-istanbul">Bounce to Istanbul</button>
+    <button  class="btn btn-primary btn-sm" id="spin-to-rome">Spin to Rome</button>
+    <button  class="btn btn-primary btn-sm" id="fly-to-bern">Fly to Bern</button>
+    <button  class="btn btn-primary btn-sm" id="rotate-around-rome">Rotate around Rome</button>
+    <button  class="btn btn-primary btn-sm" id="tour">Take a tour</button>
+</div>
+    <script>
+      var london = ol.proj.fromLonLat([-0.12755, 51.507222]);
+      var moscow = ol.proj.fromLonLat([37.6178, 55.7517]);
+      var istanbul = ol.proj.fromLonLat([28.9744, 41.0128]);
+      var rome = ol.proj.fromLonLat([12.5, 41.9]);
+      var bern = ol.proj.fromLonLat([7.4458, 46.95]);
+
+      var view = new ol.View({
+        center: istanbul,
+        zoom: 6
+      });
+
+      var map = new ol.Map({
+        target: 'mapol',
+        layers: [
+          new ol.layer.Tile({
+            preload: 4,
+            source: new ol.source.OSM()
+          })
+        ],
+        // Improve user experience by loading tiles while animating. Will make
+        // animations stutter on mobile or slow devices.
+        loadTilesWhileAnimating: true,
+        view: view
+      });
+
+      // A bounce easing method (from https://github.com/DmitryBaranovskiy/raphael).
+      function bounce(t) {
+        var s = 7.5625, p = 2.75, l;
+        if (t < (1 / p)) {
+          l = s * t * t;
+        } else {
+          if (t < (2 / p)) {
+            t -= (1.5 / p);
+            l = s * t * t + 0.75;
+          } else {
+            if (t < (2.5 / p)) {
+              t -= (2.25 / p);
+              l = s * t * t + 0.9375;
+            } else {
+              t -= (2.625 / p);
+              l = s * t * t + 0.984375;
+            }
+          }
+        }
+        return l;
+      }
+
+      // An elastic easing method (from https://github.com/DmitryBaranovskiy/raphael).
+      function elastic(t) {
+        return Math.pow(2, -10 * t) * Math.sin((t - 0.075) * (2 * Math.PI) / 0.3) + 1;
+      }
+
+      function onClick(id, callback) {
+        document.getElementById(id).addEventListener('click', callback);
+      }
+
+      onClick('rotate-left', function() {
+        view.animate({
+          rotation: view.getRotation() + Math.PI / 2
+        });
+      });
+
+      onClick('rotate-right', function() {
+        view.animate({
+          rotation: view.getRotation() - Math.PI / 2
+        });
+      });
+
+      onClick('rotate-around-rome', function() {
+        view.animate({
+          rotation: view.getRotation() + 2 * Math.PI,
+          anchor: rome
+        });
+      });
+
+      onClick('pan-to-london', function() {
+        view.animate({
+          center: london,
+          duration: 2000
+        });
+      });
+
+      onClick('elastic-to-moscow', function() {
+        view.animate({
+          center: moscow,
+          duration: 2000,
+          easing: elastic
+        });
+      });
+
+      onClick('bounce-to-istanbul', function() {
+        view.animate({
+          center: istanbul,
+          duration: 2000,
+          easing: bounce
+        });
+      });
+
+      onClick('spin-to-rome', function() {
+        view.animate({
+          center: rome,
+          rotation: 2 * Math.PI,
+          duration: 2000
+        });
+      });
+
+      function flyTo(location, done) {
+        var duration = 2000;
+        var zoom = view.getZoom();
+        var parts = 2;
+        var called = false;
+        function callback(complete) {
+          --parts;
+          if (called) {
+            return;
+          }
+          if (parts === 0 || !complete) {
+            called = true;
+            done(complete);
+          }
+        }
+        view.animate({
+          center: location,
+          duration: duration
+        }, callback);
+        view.animate({
+          zoom: zoom - 1,
+          duration: duration / 2
+        }, {
+          zoom: zoom,
+          duration: duration / 2
+        }, callback);
+      }
+
+      onClick('fly-to-bern', function() {
+        flyTo(bern, function() {});
+      });
+
+      function tour() {
+        var locations = [london, bern, rome, moscow, istanbul];
+        var index = -1;
+        function next(more) {
+          if (more) {
+            ++index;
+            if (index < locations.length) {
+              var delay = index === 0 ? 0 : 750;
+              setTimeout(function() {
+                flyTo(locations[index], next);
+              }, delay);
+            } else {
+              alert('Tour complete');
+            }
+          } else {
+            alert('Tour cancelled');
+          }
+        }
+        next(true);
+      }
+
+      onClick('tour', tour);
+    </script>
+
+{% end %}

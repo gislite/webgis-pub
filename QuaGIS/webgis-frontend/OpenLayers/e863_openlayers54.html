@@ -1,0 +1,95 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+ <div id="mapol" class="mapol"></div>
+<br>
+ <form class="form-inline">
+      <span id="status">&nbsp;No feature got hit.</span>
+      <br />
+      <label>Hit tolerance for selecting features </label>
+      <select id="hitTolerance" class="form-control">
+        <option value="0" selected>0 Pixels</option>
+        <option value="5">5 Pixels</option>
+        <option value="10">10 Pixels</option>
+      </select>
+      <br />
+      Area: &nbsp;<canvas id="circle" style="vertical-align: middle"/>
+    </form>
+    <script>
+      var raster = new ol.layer.Tile({
+        source: new ol.source.OSM()
+      });
+
+      var style = new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'black',
+          width: 1
+        })
+      });
+
+      var feature = new ol.Feature(new ol.geom.LineString([[-4000000, 0], [4000000, 0]]));
+
+      var vector = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: [feature]
+        }),
+        style: style
+      });
+
+      var map = new ol.Map({
+        layers: [raster, vector],
+        target: 'mapol',
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2
+        })
+      });
+
+      var hitTolerance;
+
+      var statusElement = document.getElementById('status');
+
+      map.on('singleclick', function(e) {
+        var hit = false;
+        map.forEachFeatureAtPixel(e.pixel, function() {
+          hit = true;
+        }, {
+          hitTolerance: hitTolerance
+        });
+        if (hit) {
+          style.getStroke().setColor('green');
+          statusElement.innerHTML = '&nbsp;A feature got hit!';
+        } else {
+          style.getStroke().setColor('black');
+          statusElement.innerHTML = '&nbsp;No feature got hit.';
+        }
+        feature.changed();
+      });
+
+      var selectHitToleranceElement = document.getElementById('hitTolerance');
+      var circleCanvas = document.getElementById('circle');
+
+      var changeHitTolerance = function() {
+        hitTolerance = parseInt(selectHitToleranceElement.value, 10);
+
+        var size = 2 * hitTolerance + 2;
+        circleCanvas.width = size;
+        circleCanvas.height = size;
+        var ctx = circleCanvas.getContext('2d');
+        ctx.clearRect(0, 0, size, size);
+        ctx.beginPath();
+        ctx.arc(hitTolerance + 1, hitTolerance + 1, hitTolerance + 0.5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+      };
+
+      selectHitToleranceElement.onchange = changeHitTolerance;
+      changeHitTolerance();
+    </script>
+{% end %}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>OpenLayers - Introduction</title>
+    <script type="text/javascript" async src="OpenLayers%20-%20Introduction_files/analytics.js"></script><script async src="OpenLayers%20-%20Introduction_files/js.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-2577926-1');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="OpenLayers%20-%20Introduction_files/css.css" rel="stylesheet" type="text/css">
+    <script src="OpenLayers%20-%20Introduction_files/jquery-1.js"></script>
+    <link rel="stylesheet" href="OpenLayers%20-%20Introduction_files/bootstrap.css">
+    <link rel="stylesheet" href="OpenLayers%20-%20Introduction_files/font-awesome.css">
+    <link href="OpenLayers%20-%20Introduction_files/site.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="http://openlayers.org/assets/theme/img/favicon.ico">
+    
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top" role="navigation">
+      <div class="container">
+
+        <!-- button that shows up below 768px width -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a href="http://openlayers.org/" class="navbar-brand"><img src="OpenLayers%20-%20Introduction_files/logo70.png">&nbsp;OpenLayers</a>
+
+        <!-- menu items that get hidden below 768px width -->
+        <nav class="collapse navbar-collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="http://openlayers.org/en/latest/doc/" class="active">Docs</a></li>
+            <li><a href="http://openlayers.org/en/latest/examples/">Examples</a></li>
+            <li><a href="http://openlayers.org/en/latest/apidoc/">API</a></li>
+            <li><a href="https://github.com/openlayers/openlayers">Code</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+
+<div class="container">
+<h1 id="introduction">介绍</h1>
+<h2 id="objectives">目标</h2>
+<p>OpenLayers是一个模块化、高性能、功能丰富的库，用于在网页上创建交互式地图。</p>
+<p>该库支持大量的矢量数据格式。有了OpenLayers的地图投影支持，数据可以用于任何投影。</p>
+<h2 id="public-api">公共API</h2>
+<p>OpenLayers作为<a href="https://npmjs.com/package/ol"><code>ol</code> npm package</a>，提供官方支持的所有的API所有模块。</a>.</p>
+<h2 id="renderers-and-browser-support">渲染器和浏览器支持</h2>
+<p>默认情况下，OpenLayers使用性能优越的画布渲染器进行渲染。</p>
+<p>OpenLayers可以运行在支持HTML5和ECMAScript 5的所有现代浏览器上，包括Chrome, Firefox, Safari 和 Edge。</p>
+<p>该库可以用于桌面、笔记本和移动设备，它支持指针交互和触摸交互。</p>
+<h2 id="module-and-naming-conventions">模块及命名规范</h2> 
+<p>OpenLayers默认使用“驼峰式命名法”为模块命名导出，并且可以包含附加常量或函数作为命名导出:</p>
+<pre><code class="language-js">import Map from <span class="string">'ol/Map'</span>;
+import View from <span class="string">'ol/View'</span>;</code></pre>
+<p>在包的子文件夹中提供了按父类分组的类层次结构，例如<code>layer/</code>。</p>
+<p>为了方便起见，这些也可用作命名导出，例如：</p>
+<pre><code class="language-js">import {Map, View} from <span class="string">'ol'</span>;
+import {Tile, Vector} from <span class="string">'ol/layer'</span>;</code></pre>
+<p>除此之外，具有小写名称的模块还提供常量或函数作为命名导出:</p>
+<pre><code class="language-js">import {inherits} from <span class="string">'ol'</span>;
+import {fromLonLat} from <span class="string">'ol/proj'</span>;</code></pre>
+
+</div>
+
+    <footer>
+      Code licensed under the <a href="http://www.tldrlegal.com/license/bsd-2-clause-license-(freebsd)">2-Clause BSD</a>.  All documentation <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Thanks to our <a href="http://openlayers.org/sponsors.html">sponsors</a>.
+    </footer>
+    <script src="OpenLayers%20-%20Introduction_files/jquery-1_002.js"></script>
+    <script src="OpenLayers%20-%20Introduction_files/bootstrap.js"></script>
+    
+  
+
+</body></html>

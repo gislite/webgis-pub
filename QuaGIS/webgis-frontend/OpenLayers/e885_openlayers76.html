@@ -1,0 +1,42 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+ <style>
+       button.code {
+         font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+         font-size: 12px;
+         padding: 5px;
+         margin: 0 5px;
+       }    </style>
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+<button id="set-source" class="code">layer.setSource(source)</button>
+    <button id="unset-source" class="code">layer.setSource(null)</button>
+    <script>
+      var source = new ol.source.OSM();
+
+      var layer = new ol.layer.Tile();
+
+      var map = new ol.Map({
+        layers: [layer],
+        target: 'mapol',
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2
+        })
+      });
+
+      document.getElementById('set-source').onclick = function() {
+        layer.setSource(source);
+      };
+
+      document.getElementById('unset-source').onclick = function() {
+        layer.setSource(null);
+      };
+    </script>
+{% end %}

@@ -1,0 +1,29 @@
+{% extends "../../../theme/view_js.html" %}
+
+{% block headinfo %}
+
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+
+{% end %}
+{% block content %}
+<div id="mapol" class="mapol"></div>
+<br>
+ <script>
+      var map = new ol.Map({
+        controls: ol.control.defaults().extend([
+          new ol.control.OverviewMap()
+        ]),
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'mapol',
+        view: new ol.View({
+          center: [500000, 6000000],
+          zoom: 7
+        })
+      });
+    </script>
+{% end %}
