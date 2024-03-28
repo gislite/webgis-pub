@@ -50,7 +50,7 @@ const routes: RouteRecordRaw[] = [
       {path: 'bleaflet', component: () => import('pages/leaf/leaf_leaflet_foo.vue')},
       {path: 'bmaptalks', component: () => import('pages/maptalks_foo.vue')},
 
-      {path: 'bcesium', component: () => import('pages/cesium_foo.vue')},
+      {path: 'bcesium', component: () => import('pages/cesium/cesium_foo.vue')},
       {path: 'bwind', component: () => import('pages/leaf/leaf_leaflet_wind.vue')},
     ],
   },
@@ -77,10 +77,9 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/cesium',
-    component: () => import('layouts/MainLayoutMapbox.vue'),
+    component: () => import('layouts/MainLayoutCesium.vue'),
     children: [
-      {path: '', component: () => import('pages/IndexPage.vue')},
-      {path: 'bcesium', component: () => import('pages/cesium_foo.vue')},
+      {path: '', component: () => import('pages/cesium/cesium_foo.vue')},
     ],
   },
 

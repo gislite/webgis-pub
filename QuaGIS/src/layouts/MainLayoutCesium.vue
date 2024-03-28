@@ -33,42 +33,11 @@ import  EssentialHead from 'components/Head.vue';
 
 const linksList = [
   {
-    title: 'Home',
+    title: 'Cesium',
     caption: '内容介绍说明',
     icon: 'school',
-    link: '/leaflet'
+    link: '/#/'
   },
-  {
-    title: 'Leaflet',
-    caption: '轻量级WebGIS类库',
-    icon: 'code',
-    link: '/#/leaflet/bleaflet'
-  },
-  {
-    title: 'OpenLayers',
-    caption: '全能型WebGIS类库',
-    icon: 'chat',
-    link: '/#/leaflet/bopenlayers'
-  },
-  {
-    title: 'MapTalks',
-    caption: 'Developed in China',
-    icon: 'record_voice_over',
-    link: '/#/smaptalks'
-  },
-  {
-    title: 'MapBox',
-    caption: '精美地图',
-    icon: 'rss_feed',
-    link: '/#/smapbox'
-  },
-
-  {
-    title: 'Cesium',
-    caption: '开源的3D GIS',
-    icon: 'favorite',
-    link: '/#/scesium'
-  }
 ];
 
 export default defineComponent({
