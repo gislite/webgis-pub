@@ -37,6 +37,12 @@ const linksList = [
     icon: 'school',
     link: '/#/maptalks'
   },
+   {
+    title: '3D',
+    caption: '内容介绍说明',
+    icon: 'school',
+    link: '/#/maptalks/three'
+  },
 ];
 
 export default defineComponent({

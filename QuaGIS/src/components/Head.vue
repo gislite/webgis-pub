@@ -11,7 +11,7 @@
     </q-toolbar>
 
     <q-tabs align="left">
-      <q-route-tab to="/" label="Home"/>
+<!--      <q-route-tab to="/" label="Home"/>-->
       <q-route-tab to="/leaflet" label="Leaflet"/>
       <q-route-tab to="/openlayers" label="OpenLayers"/>
       <q-route-tab to="/maptalks" label="MapTalks"/>

@@ -3,7 +3,11 @@ import {RouteRecordRaw} from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+   component: () => import('layouts/MainLayoutLeaflet.vue'),
+    children: [
+       {path: '', component: () => import('pages/leaf/leaf_leaflet_f1.vue')},
+
+    ],
 
   },
 
@@ -31,7 +35,7 @@ const routes: RouteRecordRaw[] = [
     path: '/leaflet',
     component: () => import('layouts/MainLayoutLeaflet.vue'),
     children: [
-      {path: '', component: () => import('pages/IndexPage.vue')},
+      {path: '', component: () => import('pages/leaf/leaf_leaflet_f1.vue')},
       {path: 'lf1', component: () => import('pages/leaf/leaf_leaflet_f1.vue')},
       {path: 'lf3', component: () => import('pages/leaf/leaf_leaflet_f3.vue')},
       {path: 'lf4', component: () => import('pages/leaf/leaf_leaflet_f4.vue')},
@@ -48,9 +52,8 @@ const routes: RouteRecordRaw[] = [
       {path: 'lf14', component: () => import('pages/leaf/leaf_leaflet_f14.vue')},
       {path: 'lf15', component: () => import('pages/leaf/leaf_leaflet_f15.vue')},
       {path: 'bleaflet', component: () => import('pages/leaf/leaf_leaflet_foo.vue')},
-      {path: 'bmaptalks', component: () => import('pages/maptalks_foo.vue')},
+      // {path: 'bmaptalks', component: () => import('pages/maptalks_foo.vue')},
 
-      {path: 'bcesium', component: () => import('pages/cesium/cesium_foo.vue')},
       {path: 'bwind', component: () => import('pages/leaf/leaf_leaflet_wind.vue')},
     ],
   },
@@ -60,10 +63,9 @@ const routes: RouteRecordRaw[] = [
     path: '/openlayers',
     component: () => import('layouts/MainLayoutOpenLayers.vue'),
     children: [
-      {path: '', component: () => import('pages/IndexPage.vue')},
-
-      {path: 'ol1', component: () => import('pages/ol_openlayers_foo.vue')},
-      {path: 'ol2', component: () => import('pages/ol_openlayers_show2.vue')},
+     {path: '', component: () => import('pages/openlayers/ol_openlayers_foo.vue')},
+      {path: 'ol1', component: () => import('pages/openlayers/ol_openlayers_foo.vue')},
+      {path: 'ol2', component: () => import('pages/openlayers/ol_openlayers_show2.vue')},
 
     ],
   },
@@ -72,7 +74,8 @@ const routes: RouteRecordRaw[] = [
     path: '/maptalks',
     component: () => import('layouts/MainLayoutMaptalks.vue'),
     children: [
-      {path: '', component: () => import('pages/IndexPage.vue')},
+      {path: '', component: () => import('pages/maptalks/maptalks_foo.vue')},
+      {path: 'three', component: () => import('pages/maptalks/maptalks_3d.vue')},
     ],
   },
   {

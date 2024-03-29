@@ -135,25 +135,25 @@ const linksList = [
     icon: 'code',
     link: '/#/leaflet/lf14'
   },
-  {
-    title: 'MapTalks',
-    caption: 'Developed in China',
-    icon: 'record_voice_over',
-    link: '/#/leaflet/bmaptalks'
-  },
-  {
-    title: 'MapBox',
-    caption: '精美地图',
-    icon: 'rss_feed',
-    link: '/#/leaflet/bmapbox'
-  },
-
-  {
-    title: 'Cesium',
-    caption: '开源的3D GIS',
-    icon: 'favorite',
-    link: '/#/leaflet/bcesium'
-  }
+  // {
+  //   title: 'MapTalks',
+  //   caption: 'Developed in China',
+  //   icon: 'record_voice_over',
+  //   link: '/#/leaflet/bmaptalks'
+  // },
+  // {
+  //   title: 'MapBox',
+  //   caption: '精美地图',
+  //   icon: 'rss_feed',
+  //   link: '/#/leaflet/bmapbox'
+  // },
+  //
+  // {
+  //   title: 'Cesium',
+  //   caption: '开源的3D GIS',
+  //   icon: 'favorite',
+  //   link: '/#/leaflet/bcesium'
+  // }
 ];
 
 export default defineComponent({
