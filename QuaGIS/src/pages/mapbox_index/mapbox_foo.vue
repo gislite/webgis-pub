@@ -95,6 +95,7 @@ export default {
     });
 
 
+
     function addMvt() {
         map_dde.addLayer({
             // id: 'MULTIPOLYGON',
@@ -130,6 +131,24 @@ export default {
           })
 
     }
+
+    map_dde.on('load', function() {
+    // 添加WMS源
+    map_dde.addSource('wms-source', {
+        type: 'raster',
+        tiles: ['http://tile.igadc.cn/service'],
+
+    });
+
+    // 添加WMS图层
+    map_dde.addLayer({
+        id: 'qn9326',
+        type: 'raster',
+        source: 'wms-source',
+        minzoom: 0,
+        maxzoom: 22
+    });
+});
     };
 
     let close_e = true;

@@ -1,4 +1,38 @@
 <template>
+    <div
+        style="z-index: 100; float: right;width: 200px; padding:5px;margin: 5px; height:930px;background:rgba(50, 50 ,50, 0.8);position: absolute;border-radius: 4px">
+
+      <form action="">
+
+        <fieldset style="border: none;">
+
+          <div class="button blue" v-on:click.stop.prevent="initTileset()">
+            <div class="shine"></div>
+            南京大雁塔
+          </div>
+          <div class="button blue" v-on:click.stop.prevent="initCCjz()">
+            <div class="shine"></div>
+            长春建筑3dtiles
+          </div>
+          <br/>
+          <div class="button blue" v-on:click.stop.prevent="initGltf()">
+            <div class="shine"></div>
+            GLTF
+          </div>
+          <p/>
+          <div class="button blue" v-on:click.stop.prevent="create_box()">
+            <div class="shine"></div>
+            添加形状
+          </div>
+           <div class="button blue" v-on:click.stop.prevent="initCCjson()">
+            <div class="shine"></div>
+            长春建筑 geojson
+          </div>
+        </fieldset>
+      </form>
+
+
+    </div>
   <div id="cesiumContainer" ref="cesiumContainer"></div>
 </template>
 
@@ -13,7 +47,7 @@ window.CESIUM_BASE_URL = "/Cesium/";
 
 
 onMounted(() => {
-  var viewer = new Cesium.Viewer("cesiumContainer", {
+  const viewer = new Cesium.Viewer("cesiumContainer", {
     // 是否显示信息窗口
     // infoBox: false,
     // 是否创建动画
@@ -91,6 +125,7 @@ onMounted(() => {
       viewer.zoomTo(dataSourcePromise);
 
       window.viewer = viewer;
+
 });
 
 

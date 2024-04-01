@@ -33,6 +33,18 @@ export default {
           subdomains: ['a', 'b', 'c', 'd'],
           attribution: '© <a href="http://osm.org">OpenStreetMap</a> contributors, © <a href="https://carto.com/">CARTO</a>',
         }),
+        layers: [
+          new maptalks.WMSTileLayer('wms', {
+            'urlTemplate': 'http://tile.igadc.cn/service?',
+            'crs': 'EPSG:3857',
+            'layers': 'qn9326',
+            'styles': '',
+            'version': '1.3.0',
+            'format': 'image/png',
+            'transparent': true,
+            'uppercase': true
+          })
+        ]
       });
 
 
@@ -83,21 +95,21 @@ export default {
           window.meshes = meshes;
         });
 
-          function getColor(height) {
-      let rgb;
-      if (height < 61.4) {
-        rgb = "112,112,123";
-      } else if (height >= 61.4 && height < 104.8) {
-        rgb = "135,139,155";
-      } else if (height >= 104.8 && height < 148.2) {
-        rgb = "231,241,245";
-      } else if (height >= 148.2 && height < 236) {
-        rgb = "162,169,183";
-      } else {
-        rgb = "1,0,0";
+      function getColor(height) {
+        let rgb;
+        if (height < 61.4) {
+          rgb = "112,112,123";
+        } else if (height >= 61.4 && height < 104.8) {
+          rgb = "135,139,155";
+        } else if (height >= 104.8 && height < 148.2) {
+          rgb = "231,241,245";
+        } else if (height >= 148.2 && height < 236) {
+          rgb = "162,169,183";
+        } else {
+          rgb = "1,0,0";
+        }
+        return `rgb(${rgb})`;
       }
-      return `rgb(${rgb})`;
-    }
     },
 
 
