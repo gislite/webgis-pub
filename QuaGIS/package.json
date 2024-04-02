@@ -13,7 +13,7 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.21.1",
-    "cesium": "^1.115.0",
+    "cesium": "^1.116.0",
     "leaflet": "^1.8.0",
     "leaflet-velocity": "^2.1.2",
     "mapbox": "^1.0.0-beta10",

@@ -48,7 +48,7 @@ export default {
     window.CESIUM_BASE_URL = "/Cesium/";
     let viewer = null
     onMounted(() => {
-       viewer = new Cesium.Viewer("cesiumContainer", {
+      viewer = new Cesium.Viewer("cesiumContainer", {
         // 是否显示信息窗口
         // infoBox: false,
         // 是否创建动画
@@ -125,9 +125,9 @@ export default {
       viewer.zoomTo(dataSourcePromise);
 
 
-
     });
-  function create_box() {
+
+    function create_box() {
       var redBox = viewer.entities.add({
         name: 'Red box with black outline',
         position: Cesium.Cartesian3.fromDegrees(107.0, 40.0, 300000.0),
@@ -141,6 +141,7 @@ export default {
 
       viewer.zoomTo(redBox);
     }
+
     function initCCjz() {
 
       var tileset = new Cesium.Cesium3DTileset({url: './data/tiles/tileset.json'})
@@ -148,24 +149,24 @@ export default {
       //   color:'#f00'
       // })
 
-      tileset.readyPromise.then(function (argument) {
-
-        // tileset.style = new Cesium.Cesium3DTileStyle({
-        //   color: {
-        //     conditions: [
-        //
-        //       ["${height} >= 30", "rgba(45, 0, 75, 0.5)"],
-        //       ["${height} >= 24", "rgb(102, 71, 151)"],
-        //       ["${height} >= 18", "rgb(170, 162, 204)"],
-        //       ["${height} >= 12", "rgb(224, 226, 238)"],
-        //       ["${height} >= 8", "rgb(252, 230, 200)"],
-        //       ["${height} >= 5", "rgb(248, 176, 87)"],
-        //       ["${height} >= 3", "rgb(198, 106, 11)"],
-        //       ["true", "rgb(127, 59, 8)"],
-        //     ]
-        //   }
-        // })
-      })
+      // tileset.then(function (argument) {
+      //    viewer.scene.primitives.add(tileset);
+      //   // tileset.style = new Cesium.Cesium3DTileStyle({
+      //   //   color: {
+      //   //     conditions: [
+      //   //
+      //   //       ["${height} >= 30", "rgba(45, 0, 75, 0.5)"],
+      //   //       ["${height} >= 24", "rgb(102, 71, 151)"],
+      //   //       ["${height} >= 18", "rgb(170, 162, 204)"],
+      //   //       ["${height} >= 12", "rgb(224, 226, 238)"],
+      //   //       ["${height} >= 8", "rgb(252, 230, 200)"],
+      //   //       ["${height} >= 5", "rgb(248, 176, 87)"],
+      //   //       ["${height} >= 3", "rgb(198, 106, 11)"],
+      //   //       ["true", "rgb(127, 59, 8)"],
+      //   //     ]
+      //   //   }
+      //   // })
+      // })
 
       // // 高亮元素
       // const hightLighted = {
@@ -197,14 +198,11 @@ export default {
       // }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 
 
-      viewer.scene.primitives.add(tileset);
-      viewer.flyTo(tileset)
-      window.baiMoObject = tileset
     }
 
 
     function initCCjson() {
-      viewer.scene.primitives.remove(window.baiMoObject);
+
       var promise = Cesium.GeoJsonDataSource.load('./data/cc.geojson', {clampToGround: true})
 
       promise.then(function (dataSources) {
@@ -274,18 +272,24 @@ export default {
 
     function initTileset() {
 
-      var tileset = viewer.scene.primitives.add(
-       new Cesium.Cesium3DTileset({
-          url: 'https://earthsdk.com/v/last/Apps/assets/dayanta/tileset.json'
-        })
-      );
+      try {
+        var tileset = Cesium.Cesium3DTileset.fromUrl('https://earthsdk.com/v/last/Apps/assets/dayanta/tileset.json');
+
+        // var tileset = viewer.scene.primitives.add(
+        //   new Cesium.Cesium3DTileset({
+        //     url: 'https://earthsdk.com/v/last/Apps/assets/dayanta/tileset.json'
+        //   })
+        // );
 
 
-      tileset.readyPromise.then(function () {
-     
-        viewer.camera.viewBoundingSphere(tileset.boundingSphere, new Cesium.HeadingPitchRange(0, -0.5, 0));
-        viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
-      });
+        tileset.then(function (tileset) {
+          viewer.scene.primitives.add(tileset);
+          viewer.camera.viewBoundingSphere(tileset.boundingSphere, new Cesium.HeadingPitchRange(0, -0.5, 0));
+          viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+        });
+      } catch (error) {
+        console.log(error)
+      }
 
     }
 
@@ -312,6 +316,7 @@ export default {
   width: 84vw;
   height: 89.6vh;
 }
+
 .button {
   min-height: 0.5em;
   display: inline-block;
@@ -324,7 +329,7 @@ export default {
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
-  text-shadow: rgba(0,0,0,1) 0px 1px 2px;
+  text-shadow: rgba(0, 0, 0, 1) 0px 1px 2px;
 
   background: #434343;
   border: 1px solid #242424;
@@ -334,84 +339,100 @@ export default {
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -khtml-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -o-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
   -webkit-transition: all 0.1s linear;
   -khtml-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;
 }
+
 .button:hover {
-  -webkit-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -khtml-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -moz-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -o-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -khtml-box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px, inset rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(0, 0, 0, 0.25) 0px 0px 0px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
 }
+
 .button:active {
-  -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0) 0px 1px 0px, inset rgba(0, 0, 0, 0.5) 0px 0px 5px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -khtml-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0) 0px 1px 0px, inset rgba(0, 0, 0, 0.5) 0px 0px 5px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0) 0px 1px 0px, inset rgba(0, 0, 0, 0.5) 0px 0px 5px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  -o-box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0) 0px 1px 0px, inset rgba(0, 0, 0, 0.5) 0px 0px 5px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px, inset rgba(255, 255, 255, 0) 0px 1px 0px, inset rgba(0, 0, 0, 0.5) 0px 0px 5px, inset rgba(255, 255, 255, 0.03) 0px 20px 0px, inset rgba(0, 0, 0, 0.15) 0px -20px 20px, inset rgba(255, 255, 255, 0.05) 0px 20px 20px;
 }
+
 .shine {
   z-index: 999;
   display: block;
   position: relative;
-  background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-  background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-  background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
-  background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#00ffffff', GradientType=1);
+  background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
   padding: 0px 12px;
   top: -12px;
   left: -24px;
   height: 1px;
-  -webkit-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
-  -khtml-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
-  -moz-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
-  -o-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
-  box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 5px;
+  -khtml-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 5px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 5px;
+  -o-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 5px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 5px;
   -webkit-transition: all 0.3s ease-in-out;
   -khtml-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.button:hover .shine {left: 24px;}
-.button:active .shine {opacity: 0;}
 
-.button.gray {background: #555;}
-.button.blue {background: #3a617e;}
-.button.green {background: #477343;}
-.button.red {background: #723131;}
-.button.purple {background: #4b3f5e;}
-.button.orange {background: #624529;}
-.button.info {background: #309e70;}
-.button.primay {background: #337ab7;;}
-.button {
-  &.activity {
-    //background: #204d74;
-    -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-    -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-    -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-    -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-    box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
-  }}
-.blue{
-  &.activity {
-    background: #122b40;}
+.button:hover .shine {
+  left: 24px;
 }
-.green{
-  &.activity {
-    background: #3c763d;}
+
+.button:active .shine {
+  opacity: 0;
 }
+
+.button.gray {
+  background: #555;
+}
+
+.button.blue {
+  background: #3a617e;
+}
+
+.button.green {
+  background: #477343;
+}
+
+.button.red {
+  background: #723131;
+}
+
+.button.purple {
+  background: #4b3f5e;
+}
+
+.button.orange {
+  background: #624529;
+}
+
+.button.info {
+  background: #309e70;
+}
+
+.button.primay {
+  background: #337ab7;;
+}
+
 
 </style>
