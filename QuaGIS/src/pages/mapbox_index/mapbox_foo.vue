@@ -58,7 +58,23 @@ export default {
         // bearing: -17.6, //地图的初始方向，值是北的逆时针度数，默认是0，即是正北
         // antialias: true, //抗锯齿，通过false关闭提升性能
       });
+map_dde.on('load', function() {
 
+     map_dde.addSource('wms-test-source', {
+            'type': 'raster',
+            'tiles': [
+                'http://tile.igadc.cn/service?&SERVICE=WMS&REQUEST=GetMap&LAYERS=qn9326&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&BBOX={bbox-epsg-3857}'
+            ],
+            'tileSize': 256
+        });
+        map_dde.addLayer(
+            {
+                'id': 'wms-test-layer',
+                'type': 'raster',
+                'source': 'wms-test-source',
+                'paint': {}
+            },)
+})
 
       // function onMapClick(e) {
       //   let popup = new mapboxgl.Popup()
@@ -132,23 +148,8 @@ export default {
 
     }
 
-    map_dde.on('load', function() {
-    // 添加WMS源
-    map_dde.addSource('wms-source', {
-        type: 'raster',
-        tiles: ['http://tile.igadc.cn/service'],
 
-    });
 
-    // 添加WMS图层
-    map_dde.addLayer({
-        id: 'qn9326',
-        type: 'raster',
-        source: 'wms-source',
-        minzoom: 0,
-        maxzoom: 22
-    });
-});
     };
 
     let close_e = true;

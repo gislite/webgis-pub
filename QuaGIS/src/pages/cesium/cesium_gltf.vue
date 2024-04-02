@@ -51,52 +51,24 @@ export default {
       viewer.scene.globe.enableLighting = true;
 
 
-
-      var czml = [
-        {
-          "id": "document",
-          "name": "box",
-          "version": "1.0"
-        }, {
-          "id": "shape2",
-          "name": "Red box with black outline",
-          "position": {
-            "cartographicDegrees": [-107.0, 40.0, 300000.0]
-          },
-          "box": {
-            "dimensions": {
-              "cartesian": [400000.0, 300000.0, 500000.0]
-            },
-            "material": {
-              "solidColor": {
-                "color": {
-                  "rgba": [255, 0, 0, 128]
-                }
-              }
-            },
-            "outline": true,
-            "outlineColor": {
-              "rgba": [0, 0, 0, 255]
-            }
-          }
-        }];
-      var dataSourcePromise = Cesium.CzmlDataSource.load(czml);
-      viewer.dataSources.add(dataSourcePromise);
-      viewer.zoomTo(dataSourcePromise);
-
-
+      var entity = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(
+          148.9819,
+          -35.3981,
+        ),
+        model: {
+          uri: "https://docs.mapbox.com/mapbox-gl-js/assets/34M_17/34M_17.gltf",
+        }
+      });
+      viewer.zoomTo(entity)
     });
 
 
-
-    return {
-
-    }
+    return {}
   }
 
 }
 </script>
-
 <style>
 * {
   margin: 0;

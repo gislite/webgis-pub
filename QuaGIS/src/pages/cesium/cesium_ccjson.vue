@@ -51,52 +51,41 @@ export default {
       viewer.scene.globe.enableLighting = true;
 
 
+     var promise = Cesium.GeoJsonDataSource.load('./data/cc.geojson', {clampToGround: true})
 
-      var czml = [
-        {
-          "id": "document",
-          "name": "box",
-          "version": "1.0"
-        }, {
-          "id": "shape2",
-          "name": "Red box with black outline",
-          "position": {
-            "cartographicDegrees": [-107.0, 40.0, 300000.0]
-          },
-          "box": {
-            "dimensions": {
-              "cartesian": [400000.0, 300000.0, 500000.0]
-            },
-            "material": {
-              "solidColor": {
-                "color": {
-                  "rgba": [255, 0, 0, 128]
-                }
-              }
-            },
-            "outline": true,
-            "outlineColor": {
-              "rgba": [0, 0, 0, 255]
-            }
-          }
-        }];
-      var dataSourcePromise = Cesium.CzmlDataSource.load(czml);
-      viewer.dataSources.add(dataSourcePromise);
-      viewer.zoomTo(dataSourcePromise);
+      promise.then(function (dataSources) {
+        viewer.dataSources.add(dataSources)
+        let entities = dataSources.entities.values
+        for (let i = 0; i < entities.length; i++) {
+          let entity = entities[i]
+          entity.polygon.height = 0
+          entity.polygon.heightReference = Cesium.HeightReference.RELATIVE_TO_GROUND
+          entity.polygon.extrudedHeightReference = Cesium.HeightReference.RELATIVE_TO_GROUND
+          entity.polygon.extrudedHeight = entity.properties.Elevation._value
+          entity.polygon.material = Cesium.Color.RED.withAlpha(0.6)
+          entity.polygon.outline = true
+          entity.polygon.outlineColor = Cesium.Color.BLUE
+          entity.polygon.extrudedHeight = 200
 
+        }
+
+      })
+      viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(125.1, 47.15, 1700000),
+        orientation: {
+          heading: Cesium.Math.toRadians(0),
+          pitch: Cesium.Math.toRadians(-90),
+          roll: Cesium.Math.toRadians(0)
+        }
+      })
 
     });
-
-
-
     return {
-
     }
   }
 
 }
 </script>
-
 <style>
 * {
   margin: 0;

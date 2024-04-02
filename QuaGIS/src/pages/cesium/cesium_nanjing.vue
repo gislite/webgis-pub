@@ -49,43 +49,30 @@ export default {
 
       viewer.cesiumWidget.creditContainer.style.display = "none";
       viewer.scene.globe.enableLighting = true;
+     try {
+        var tileset = Cesium.Cesium3DTileset.fromUrl('https://earthsdk.com/v/last/Apps/assets/dayanta/tileset.json');
+
+        // var tileset = viewer.scene.primitives.add(
+        //   new Cesium.Cesium3DTileset({
+        //     url: 'https://earthsdk.com/v/last/Apps/assets/dayanta/tileset.json'
+        //   })
+        // );
 
 
-
-      var czml = [
-        {
-          "id": "document",
-          "name": "box",
-          "version": "1.0"
-        }, {
-          "id": "shape2",
-          "name": "Red box with black outline",
-          "position": {
-            "cartographicDegrees": [-107.0, 40.0, 300000.0]
-          },
-          "box": {
-            "dimensions": {
-              "cartesian": [400000.0, 300000.0, 500000.0]
-            },
-            "material": {
-              "solidColor": {
-                "color": {
-                  "rgba": [255, 0, 0, 128]
-                }
-              }
-            },
-            "outline": true,
-            "outlineColor": {
-              "rgba": [0, 0, 0, 255]
-            }
-          }
-        }];
-      var dataSourcePromise = Cesium.CzmlDataSource.load(czml);
-      viewer.dataSources.add(dataSourcePromise);
-      viewer.zoomTo(dataSourcePromise);
+        tileset.then(function (tileset) {
+          viewer.scene.primitives.add(tileset);
+          viewer.camera.viewBoundingSphere(tileset.boundingSphere, new Cesium.HeadingPitchRange(0, -0.5, 0));
+          viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+        });
+      } catch (error) {
+        console.log(error)
+      }
 
 
     });
+
+
+
 
 
 
@@ -96,7 +83,6 @@ export default {
 
 }
 </script>
-
 <style>
 * {
   margin: 0;

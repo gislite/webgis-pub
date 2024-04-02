@@ -33,20 +33,20 @@ import  EssentialHead from 'components/Head.vue';
 
 const linksList = [
   {
-    title: 'Home',
-    caption: '内容介绍说明',
+    title: '长春3维可视化',
+    caption: '长春建筑3维展示',
     icon: 'school',
     link: '/#/mapbox'
   },
     {
-    title: 'GLTF',
-    caption: '内容介绍说明',
+    title: '加载GLTF',
+    caption: '加载GLTF数据展示',
     icon: 'school',
     link: '/#/mapbox/gltf'
   },
    {
-    title: 'Simple Mapbox',
-    caption: '内容介绍说明',
+    title: '基础实例',
+    caption: 'Mapbox简单基础示例',
     icon: 'school',
     link: '/#/mapbox/bmapbox'
   },

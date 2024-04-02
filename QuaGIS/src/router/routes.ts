@@ -83,6 +83,9 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayoutCesium.vue'),
     children: [
       {path: '', component: () => import('pages/cesium/cesium_foo.vue')},
+      {path: 'gltf', component: () => import('pages/cesium/cesium_gltf.vue')},
+      {path: 'ccjson', component: () => import('pages/cesium/cesium_ccjson.vue')},
+      {path: 'nanjing', component: () => import('pages/cesium/cesium_nanjing.vue')},
     ],
   },
 

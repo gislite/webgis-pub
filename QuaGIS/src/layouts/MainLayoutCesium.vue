@@ -33,10 +33,28 @@ import  EssentialHead from 'components/Head.vue';
 
 const linksList = [
   {
-    title: 'Cesium',
-    caption: '内容介绍说明',
+    title: 'CMZL',
+    caption: '加载CZML格式数据图形',
     icon: 'school',
-    link: '/#/'
+    link: '/#/cesium/'
+  },
+  {
+    title: 'GLTF',
+    caption: '加载GLTF 3D数据',
+    icon: 'school',
+    link: '/#/cesium/gltf'
+  },
+  {
+    title: '长春建筑geojson',
+    caption: '加载长春建筑Geojson格式数据',
+    icon: 'school',
+    link: '/#/cesium/ccjson'
+  },
+   {
+    title: '南京大雁塔',
+    caption: '加载南京大雁塔3D模型',
+    icon: 'school',
+    link: '/#/cesium/nanjing'
   },
 ];
 
