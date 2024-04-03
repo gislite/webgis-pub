@@ -39,12 +39,7 @@ const linksList = [
     link: '/#/leaflet/'
   },
 
-  {
-    title: 'Leaflet',
-    caption: '简单示例',
-    icon: 'code',
-    link: '/#/leaflet/lf1'
-  },
+
   {
     title: '使用GeoJson',
     caption: '全能型WebGIS类库',
@@ -69,12 +64,7 @@ const linksList = [
     icon: 'code',
     link: '/#/leaflet/lf4'
   },
-  {
-    title: 'Leaflet图层控件',
-    caption: 'Leaflet 简单示例',
-    icon: 'code',
-    link: '/#/leaflet/lf5'
-  },
+
   {
     title: 'Leaflet坐标弹窗',
     caption: 'Leaflet 简单示例',
@@ -99,18 +89,7 @@ const linksList = [
     icon: 'code',
     link: '/#/leaflet/lf9'
   },
-  {
-    title: 'Extending Leaflet',
-    caption: 'Leaflet 简单示例',
-    icon: 'code',
-    link: '/#/leaflet/lf10'
-  },
-    {
-    title: 'Leaflet点击坐标信息',
-    caption: 'Leaflet 简单示例',
-    icon: 'code',
-    link: '/#/leaflet/lf11'
-  },
+  
      {
     title: 'Leaflet Geojson 点击弹窗',
     caption: 'Leaflet 简单示例',
