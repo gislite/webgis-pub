@@ -5,7 +5,7 @@ const routes: RouteRecordRaw[] = [
     path: '/',
    component: () => import('layouts/MainLayoutLeaflet.vue'),
     children: [
-       {path: '', component: () => import('pages/leaf/leaf_leaflet_f1.vue')},
+       {path: '', component: () => import('pages/leaf/leaf_leaflet_f3.vue')},
 
     ],
 
@@ -35,18 +35,13 @@ const routes: RouteRecordRaw[] = [
     path: '/leaflet',
     component: () => import('layouts/MainLayoutLeaflet.vue'),
     children: [
-      {path: '', component: () => import('pages/leaf/leaf_leaflet_f1.vue')},
-      {path: 'lf1', component: () => import('pages/leaf/leaf_leaflet_f1.vue')},
+      {path: '', component: () => import('pages/leaf/leaf_leaflet_f3.vue')},
       {path: 'lf3', component: () => import('pages/leaf/leaf_leaflet_f3.vue')},
       {path: 'lf4', component: () => import('pages/leaf/leaf_leaflet_f4.vue')},
-      {path: 'lf5', component: () => import('pages/leaf/leaf_leaflet_f5.vue')},
       {path: 'lf6', component: () => import('pages/leaf/leaf_leaflet_f6.vue')},
       {path: 'lf7', component: () => import('pages/leaf/leaf_leaflet_f7.vue')},
       {path: 'lf8', component: () => import('pages/leaf/leaf_leaflet_f8.vue')},
       {path: 'lf9', component: () => import('pages/leaf/leaf_leaflet_f9.vue')},
-      {path: 'lf10', component: () => import('pages/leaf/leaf_leaflet_f10.vue')},
-      {path: 'lf10', component: () => import('pages/leaf/leaf_leaflet_f10.vue')},
-      {path: 'lf11', component: () => import('pages/leaf/leaf_leaflet_f11.vue')},
       {path: 'lf12', component: () => import('pages/leaf/leaf_leaflet_f12.vue')},
       {path: 'lf13', component: () => import('pages/leaf/leaf_leaflet_f13.vue')},
       {path: 'lf14', component: () => import('pages/leaf/leaf_leaflet_f14.vue')},
