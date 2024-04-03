@@ -52,16 +52,16 @@ export default {
 
 
       try {
-        var tileset = new Cesium.Cesium3DTileset({url: './data/tiles/tileset.json'})
+        var tileset = Cesium.Cesium3DTileset.fromUrl({url: './data/tiles/tileset.json'})
         // tileset.style = new Cesium.Cesium3DTileStyle({
         //   color:'#f00'
         // })
 
-   // 将3D Tileset添加到Cesium Viewer
-viewer.scene.primitives.add(tileset);
+    tileset.then(function (tileset) {
+          viewer.scene.primitives.add(tileset);
 
-// 确保视图定位到3D Tileset
-viewer.zoomTo(tileset);
+        });
+
 
       } catch (error) {
         console.log(error)
