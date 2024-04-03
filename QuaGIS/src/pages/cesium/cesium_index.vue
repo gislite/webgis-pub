@@ -52,28 +52,16 @@ export default {
 
 
       try {
-        var tileset = Cesium.Cesium3DTileset.fromUrl({url: './data/tiles/tileset.json'})
+        var tileset = new Cesium.Cesium3DTileset({url: './data/tiles/tileset.json'})
         // tileset.style = new Cesium.Cesium3DTileStyle({
         //   color:'#f00'
         // })
 
-        tileset.then(function (argument) {
-          viewer.scene.primitives.add(tileset);
-          tileset.style = new Cesium.Cesium3DTileStyle({
-            color: {
-              conditions: [
-                ["${height} >= 30", "rgba(45, 0, 75, 0.5)"],
-                ["${height} >= 24", "rgb(102, 71, 151)"],
-                ["${height} >= 18", "rgb(170, 162, 204)"],
-                ["${height} >= 12", "rgb(224, 226, 238)"],
-                ["${height} >= 8", "rgb(252, 230, 200)"],
-                ["${height} >= 5", "rgb(248, 176, 87)"],
-                ["${height} >= 3", "rgb(198, 106, 11)"],
-                ["true", "rgb(127, 59, 8)"],
-              ]
-            }
-          })
-        })
+   // 将3D Tileset添加到Cesium Viewer
+viewer.scene.primitives.add(tileset);
+
+// 确保视图定位到3D Tileset
+viewer.zoomTo(tileset);
 
       } catch (error) {
         console.log(error)
