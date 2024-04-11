@@ -58,23 +58,23 @@ export default {
         // bearing: -17.6, //地图的初始方向，值是北的逆时针度数，默认是0，即是正北
         // antialias: true, //抗锯齿，通过false关闭提升性能
       });
-map_dde.on('load', function() {
+      map_dde.on('load', function () {
 
-     map_dde.addSource('wms-test-source', {
-            'type': 'raster',
-            'tiles': [
-                'http://tile.igadc.cn/service?&SERVICE=WMS&REQUEST=GetMap&LAYERS=qn9326&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&BBOX={bbox-epsg-3857}'
-            ],
-            'tileSize': 256
+        map_dde.addSource('wms-test-source', {
+          'type': 'raster',
+          'tiles': [
+            'http://tile.igadc.cn/service?&SERVICE=WMS&REQUEST=GetMap&LAYERS=qn9326&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&BBOX={bbox-epsg-3857}'
+          ],
+          'tileSize': 256
         });
         map_dde.addLayer(
-            {
-                'id': 'wms-test-layer',
-                'type': 'raster',
-                'source': 'wms-test-source',
-                'paint': {}
-            },)
-})
+          {
+            'id': 'wms-test-layer',
+            'type': 'raster',
+            'source': 'wms-test-source',
+            'paint': {}
+          },)
+      })
 
       // function onMapClick(e) {
       //   let popup = new mapboxgl.Popup()
@@ -102,52 +102,80 @@ map_dde.on('load', function() {
       // map_dde.on('click', onMapClick);
       // map_dde.on('zoom', onMapZoom);
       map_dde.on('move', onMapmove);
-          let popup = new mapboxgl.Popup({
-          closeButton: true,
-          closeOnClick: true,
-        })
-  map_dde.on('load', () => {
+      let popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+      })
+      map_dde.on('load', () => {
         addMvt();
-    });
+      });
 
 
-
-    function addMvt() {
+      function addMvt() {
         map_dde.addLayer({
-            // id: 'MULTIPOLYGON',
-            id: 'multipolygon',
-            type: 'fill-extrusion',
-            source: {
-                type: 'vector',
-                url: 'http://39.100.72.56:6799/martin_cc'
-            },
-            'source-layer': 'martin_cc',
-            paint: {
-                'fill-extrusion-color': 'red',
-                "fill-extrusion-height": ["get", "height"],
+          // id: 'MULTIPOLYGON',
+          id: 'multipolygon',
+          type: 'fill-extrusion',
+          source: {
+            type: 'vector',
+            url: 'http://39.100.72.56:6799/martin_new'
+          },
+          'source-layer': 'martin_new',
+          paint: {
+            'fill-extrusion-color': 'red',
+            "fill-extrusion-height": ["to-number", ["get", "height"]],
             "fill-extrusion-base": ["get", "baseHeight"],
             "fill-extrusion-opacity": 0.6,
             // "fill-extrusion-ambient-occlusion-ground-attenuation": 0.6,
 
-            }
+          }
         });
-      map_dde.on('click', 'multipolygon', (e) => {
-              popup
-                  .setLngLat([Number(e.lngLat.lng), Number(e.lngLat.lat)])
-                  .setHTML(
-                    ` <div class="hover-popup" >
+        map_dde.on('click', 'multipolygon', (e) => {
+          popup
+            .setLngLat([Number(e.lngLat.lng), Number(e.lngLat.lat)])
+            .setHTML(
+              ` <div class="hover-popup" >
               <div style="font-size:14px; color:#333">
-                <div style="margin-top:5px"><span style="color:#999;">位置：</span><span>` +e.features[0].properties['layer'] +`</span></div>
-                <div style="margin-top:5px"><span style="color:#999;">高度：</span><span>` +e.features[0].properties['height'] +`</span></div>
+                <div style="margin-top:5px"><span style="color:#999;">Area：</span><span>` + e.features[0].properties['shape_area'] + `</span></div>
+                <div style="margin-top:5px"><span style="color:#999;">高度：</span><span>` + e.features[0].properties['height'] + `</span></div>
               </div>
             </div>
               `
-                  )
-                  .addTo(map_dde)
-          })
+            )
+            .addTo(map_dde)
+        })
 
-    }
 
+        map_dde.addLayer({
+
+          id: 'point',
+          type: 'circle',
+          source: {
+            type: 'vector',
+            url: 'http://39.100.72.56:6799/martin_dm'
+          },
+          'source-layer': 'martin_dm',
+          paint: {
+            'circle-color': '#00f',
+            'circle-opacity': 0.4,
+            'circle-radius': 4,
+          }
+        });
+        map_dde.on('click', 'point', (e) => {
+          popup
+            .setLngLat([Number(e.lngLat.lng), Number(e.lngLat.lat)])
+            .setHTML(
+              ` <div class="hover-popup" >
+              <div style="font-size:14px; color:#333">
+                <div style="margin-top:5px"><span style="color:#999;">地址：</span><span>` + e.features[0].properties['name'] + `</span></div>
+                <div style="margin-top:5px"><span style="color:#999;">Location：</span><span>` + e.features[0].properties['location'] + `</span></div>
+              </div>
+            </div>
+              `
+            ).addTo(map_dde)
+        })
+
+      }
 
 
     };
