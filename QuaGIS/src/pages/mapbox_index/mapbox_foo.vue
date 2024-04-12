@@ -122,7 +122,7 @@ export default {
           },
           'source-layer': 'martin_new',
           paint: {
-            'fill-extrusion-color': '#8b3fe0',
+            'fill-extrusion-color': '#c3d6ea',
             "fill-extrusion-height": ["to-number", ["get", "height"]],
             "fill-extrusion-base": ["get", "baseHeight"],
             "fill-extrusion-opacity": 1,
@@ -156,12 +156,15 @@ export default {
           },
           'source-layer': 'martin_dm',
           paint: {
-            "text-color": '#000',
+            "text-color": '#043cca',
+            "text-halo-color": '#fff',
+            "text-halo-width": 1,
           },
             "layout": {
-            "text-size": 12,
+            "text-size": 13,
             "text-field": '{name}',
-            "text-optional": true,
+            // "text-allow-overlap": true,
+            // "text-optional": true,
 
           },
         });
