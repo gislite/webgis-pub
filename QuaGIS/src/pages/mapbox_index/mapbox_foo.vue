@@ -122,10 +122,10 @@ export default {
           },
           'source-layer': 'martin_new',
           paint: {
-            'fill-extrusion-color': 'red',
+            'fill-extrusion-color': '#c3d6ea',
             "fill-extrusion-height": ["to-number", ["get", "height"]],
             "fill-extrusion-base": ["get", "baseHeight"],
-            "fill-extrusion-opacity": 0.6,
+            "fill-extrusion-opacity": 1,
             // "fill-extrusion-ambient-occlusion-ground-attenuation": 0.6,
 
           }
@@ -149,31 +149,22 @@ export default {
         map_dde.addLayer({
 
           id: 'point',
-          type: 'circle',
+          type: 'symbol',
           source: {
             type: 'vector',
             url: 'http://39.100.72.56:6799/martin_dm'
           },
           'source-layer': 'martin_dm',
           paint: {
-            'circle-color': '#00f',
-            'circle-opacity': 0.4,
-            'circle-radius': 4,
-          }
+            "text-color": '#000',
+          },
+            "layout": {
+            "text-size": 12,
+            "text-field": '{name}',
+            "text-optional": true,
+
+          },
         });
-        map_dde.on('click', 'point', (e) => {
-          popup
-            .setLngLat([Number(e.lngLat.lng), Number(e.lngLat.lat)])
-            .setHTML(
-              ` <div class="hover-popup" >
-              <div style="font-size:14px; color:#333">
-                <div style="margin-top:5px"><span style="color:#999;">地址：</span><span>` + e.features[0].properties['name'] + `</span></div>
-                <div style="margin-top:5px"><span style="color:#999;">Location：</span><span>` + e.features[0].properties['location'] + `</span></div>
-              </div>
-            </div>
-              `
-            ).addTo(map_dde)
-        })
 
       }
 
