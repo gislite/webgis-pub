@@ -122,7 +122,7 @@ export default {
           },
           'source-layer': 'martin_new',
           paint: {
-            'fill-extrusion-color': '#c3d6ea',
+            'fill-extrusion-color': '#8b3fe0',
             "fill-extrusion-height": ["to-number", ["get", "height"]],
             "fill-extrusion-base": ["get", "baseHeight"],
             "fill-extrusion-opacity": 1,
