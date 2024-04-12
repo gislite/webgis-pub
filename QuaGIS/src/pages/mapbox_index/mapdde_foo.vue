@@ -159,7 +159,7 @@ export default {
 <style>
 #mapbox_dde {
   width: 100%;
-  height: 100vh;
+    height: 89.9vh;
   z-index: 1;
 }
 
