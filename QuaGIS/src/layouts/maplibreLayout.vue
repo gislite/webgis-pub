@@ -40,6 +40,12 @@ const linksList = [
     icon: 'school',
     link: '/#/maplibre/index'
   },
+  {
+    title: '添加控件',
+    caption: '示例2',
+    icon: 'school',
+    link: '/#/maplibre/demo2'
+  },
 
 
 

@@ -133,7 +133,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/maptalks/maptalks_foo.vue')
       },
       {path: 'index', component: () => import('pages/maplibre/demo_1.vue')},
-      // {path: 'demo2', component: () => import('pages/maptalks/maptalks_3d.vue')},
+      {path: 'demo2', component: () => import('pages/maplibre/demo_2.vue')},
     ],
   },
 

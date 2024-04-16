@@ -13,7 +13,7 @@
 
 
     const initMap = () => {
-   
+
 
        const MAPTILER_KEY = 'hAA4PuTSrWhRcIgil5Fy';
       const map = new maplibregl.Map({
@@ -99,7 +99,9 @@
 
 <style scoped>
   #mapid {
-    height: 100vh;
-    width: 100vw
+    bottom: 0;
+    right: 0;
+    height: 80vh;
+    width: 80vw
   }
 </style>
