@@ -8,8 +8,8 @@
 
       <q-list>
         <q-item-label header>
-          页面Leaflet <p />
-          Essential Links
+          页面Leaflet
+
         </q-item-label>
 
         <EssentialLink
@@ -36,7 +36,7 @@ const linksList = [
     title: 'Home',
     caption: '内容介绍说明',
     icon: 'school',
-    link: '/#/leaflet/'
+    link: '/#/leaflet/index'
   },
 
 
@@ -89,7 +89,7 @@ const linksList = [
     icon: 'code',
     link: '/#/leaflet/lf9'
   },
-  
+
      {
     title: 'Leaflet Geojson 点击弹窗',
     caption: 'Leaflet 简单示例',

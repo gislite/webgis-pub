@@ -9,7 +9,7 @@
       <q-list>
         <q-item-label header>
           页面三
-          Essential Links
+
         </q-item-label>
 
         <EssentialLink
@@ -36,7 +36,7 @@ const linksList = [
     title: '长春3维可视化',
     caption: '长春建筑3维展示',
     icon: 'school',
-    link: '/#/mapbox'
+    link: '/#/mapbox/index'
   },
     {
     title: '加载GLTF',

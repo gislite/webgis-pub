@@ -36,7 +36,7 @@ const linksList = [
     title: 'CMZL',
     caption: '加载CZML格式数据图形',
     icon: 'school',
-    link: '/#/cesium/'
+    link: '/#/cesium/index'
   },
   {
     title: 'GLTF',

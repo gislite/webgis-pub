@@ -8,8 +8,8 @@
 
       <q-list>
         <q-item-label header>
-          页面Leaflet <p />
-          Essential Links
+          页面Leaflet
+
         </q-item-label>
 
         <EssentialLink
@@ -36,7 +36,7 @@ const linksList = [
     title: 'Home',
     caption: '内容介绍说明',
     icon: 'school',
-    link: '/#/intro'
+    link: '/#/intro/index'
   },
   {
     title: 'Leaflet',

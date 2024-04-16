@@ -9,7 +9,7 @@
       <q-list>
         <q-item-label header>
           页面三
-          Essential Links
+
         </q-item-label>
 
         <EssentialLink
@@ -36,7 +36,7 @@ const linksList = [
     title: 'Home',
     caption: '内容介绍说明',
     icon: 'school',
-    link: '/#/openlayers'
+    link: '/#/openlayers/index'
   },
   {
     title: 'OpenLayers基础',

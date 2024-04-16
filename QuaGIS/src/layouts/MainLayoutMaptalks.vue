@@ -35,7 +35,7 @@ const linksList = [
     title: 'Home',
     caption: '内容介绍说明',
     icon: 'school',
-    link: '/#/maptalks'
+    link: '/#/maptalks/index'
   },
    {
     title: '3D',

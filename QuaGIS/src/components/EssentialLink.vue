@@ -3,6 +3,8 @@
     clickable
     tag="a"
     :href="link"
+    v-ripple
+    active-class="bg-grey-14 text-white"
   >
     <q-item-section
       v-if="icon"

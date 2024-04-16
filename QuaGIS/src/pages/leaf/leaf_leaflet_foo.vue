@@ -398,100 +398,100 @@ export default {
     },
     filterMedia2() {
 
-      if (this.$refs.i2.checked == true) {
-
-        this.gson_shifanqv.eachLayer(function (feature) {
-
-
-          feature.openTooltip();
-
-        });
-      } else {
-        this.gson_shifanqv.eachLayer(function (feature) {
-
-          feature.closeTooltip();
-
-        });
-
-      }
+      // if (this.$refs.i2.checked == true) {
+      //
+      //   this.gson_shifanqv.eachLayer(function (feature) {
+      //
+      //
+      //     feature.openTooltip();
+      //
+      //   });
+      // } else {
+      //   this.gson_shifanqv.eachLayer(function (feature) {
+      //
+      //     feature.closeTooltip();
+      //
+      //   });
+      //
+      // }
     },
     filterMedia3() {
 
-      if (this.$refs.i3.checked == true) {
-
-        this.gson_shebei.eachLayer(function (feature) {
-
-
-          feature.openTooltip();
-
-        });
-      } else {
-        this.gson_shebei.eachLayer(function (feature) {
-
-          feature.closeTooltip();
-
-        });
-
-      }
+      // if (this.$refs.i3.checked == true) {
+      //
+      //   this.gson_shebei.eachLayer(function (feature) {
+      //
+      //
+      //     feature.openTooltip();
+      //
+      //   });
+      // } else {
+      //   this.gson_shebei.eachLayer(function (feature) {
+      //
+      //     feature.closeTooltip();
+      //
+      //   });
+      //
+      // }
     },
     filterMedia4() {
 
-      if (this.$refs.i4.checked == true) {
-
-        this.gson_jiankong.eachLayer(function (feature) {
-
-
-          feature.openTooltip();
-
-        });
-      } else {
-        this.gson_jiankong.eachLayer(function (feature) {
-
-          feature.closeTooltip();
-
-        });
-
-      }
+      // if (this.$refs.i4.checked == true) {
+      //
+      //   this.gson_jiankong.eachLayer(function (feature) {
+      //
+      //
+      //     feature.openTooltip();
+      //
+      //   });
+      // } else {
+      //   this.gson_jiankong.eachLayer(function (feature) {
+      //
+      //     feature.closeTooltip();
+      //
+      //   });
+      //
+      // }
     },
     filterMedia5() {
 
-      if (this.$refs.i5.checked == true) {
-        this.map.addLayer(this.base_geography);
-      } else {
-        this.map.removeLayer(this.base_geography);
-      }
+      // if (this.$refs.i5.checked == true) {
+      //   this.map.addLayer(this.base_geography);
+      // } else {
+      //   this.map.removeLayer(this.base_geography);
+      // }
     },
     filterMedia6() {
 
-      if (this.$refs.i6.checked == true) {
-        this.map.addLayer(this.geomor);
-      } else {
-        this.map.removeLayer(this.geomor);
-      }
+      // if (this.$refs.i6.checked == true) {
+      //   this.map.addLayer(this.geomor);
+      // } else {
+      //   this.map.removeLayer(this.geomor);
+      // }
     },
     filterMedia7() {
 
-      if (this.$refs.i7.checked == true) {
-        this.map.addLayer(this.landuse);
-      } else {
-        this.map.removeLayer(this.landuse);
-      }
+      // if (this.$refs.i7.checked == true) {
+      //   this.map.addLayer(this.landuse);
+      // } else {
+      //   this.map.removeLayer(this.landuse);
+      // }
     },
     filterMedia8() {
 
-      if (this.$refs.i8.checked == true) {
-        this.map.addLayer(this.soil);
-      } else {
-        this.map.removeLayer(this.soil);
-      }
+      // if (this.$refs.i8.checked == true) {
+      //   this.map.addLayer(this.soil);
+      // } else {
+      //   this.map.removeLayer(this.soil);
+      // }
     },
     filterMedia9() {
 
-      if (this.$refs.i9.checked == true) {
-        this.map.addLayer(this.vegetation);
-      } else {
-        this.map.removeLayer(this.vegetation);
-      }
+      // if (this.$refs.i9.checked == true) {
+      //   this.map.addLayer(this.vegetation);
+      // } else {
+      //   this.map.removeLayer(this.vegetation);
+      // }
     },
     onMapClick(e) {
       this.popup
