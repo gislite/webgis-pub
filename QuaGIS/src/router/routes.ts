@@ -119,6 +119,24 @@ const routes: RouteRecordRaw[] = [
     ],
   },
 
+
+
+
+
+  {
+    path: '/maplibre',
+    component: () => import('layouts/maplibreLayout.vue'),
+    children: [
+    {
+        path: '',
+        redirect: ('/maplibre/index'),
+        component: () => import('pages/maptalks/maptalks_foo.vue')
+      },
+      {path: 'index', component: () => import('pages/maplibre/demo_1.vue')},
+      // {path: 'demo2', component: () => import('pages/maptalks/maptalks_3d.vue')},
+    ],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {

@@ -3,7 +3,7 @@
 
     <EssentialHead />
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer show-if-above v-model="store.leftDrawerOpen" side="left" bordered>
 
 
       <q-list>
@@ -30,6 +30,7 @@
 import {defineComponent, ref} from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
 import  EssentialHead from 'components/Head.vue';
+  import {useCommonFunctionStore} from 'stores/common_function'
 
 const linksList = [
   {
@@ -67,14 +68,12 @@ export default defineComponent({
   },
 
   setup() {
-    const leftDrawerOpen = ref(false)
 
+      const store = useCommonFunctionStore();
     return {
       essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+   store
+
     }
   }
 });

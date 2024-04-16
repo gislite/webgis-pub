@@ -1,14 +1,15 @@
 <template>
   <q-layout view="hHh lpR fFf">
 
-    <EssentialHead />
+ <EssentialHead />
 
     <q-drawer show-if-above v-model="store.leftDrawerOpen" side="left" bordered>
 
 
       <q-list>
         <q-item-label header>
-          页面三
+
+          MAPLIBRE-GL
 
         </q-item-label>
 
@@ -29,36 +30,27 @@
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
-import  EssentialHead from 'components/Head.vue';
-
+import EssentialHead from "components/Head.vue";
   import {useCommonFunctionStore} from 'stores/common_function'
+
 const linksList = [
   {
-    title: '长春3维可视化',
-    caption: '长春建筑3维展示',
+    title: '3D街道地图',
+    caption: '示例1',
     icon: 'school',
-    link: '/#/mapbox/index'
+    link: '/#/maplibre/index'
   },
-    {
-    title: '加载GLTF',
-    caption: '加载GLTF数据展示',
-    icon: 'school',
-    link: '/#/mapbox/gltf'
-  },
-   {
-    title: '基础实例',
-    caption: 'Mapbox简单基础示例',
-    icon: 'school',
-    link: '/#/mapbox/bmapbox'
-  },
+
+
+
 ];
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink,
-    EssentialHead
+    EssentialHead,
+    EssentialLink
   },
 
   setup() {
@@ -66,7 +58,8 @@ export default defineComponent({
       const store = useCommonFunctionStore();
     return {
       essentialLinks: linksList,
-  store
+
+      store
     }
   }
 });
