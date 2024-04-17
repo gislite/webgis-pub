@@ -41,10 +41,16 @@ const linksList = [
     link: '/maplibre/index'
   },
   {
-    title: '添加控件',
+    title: '添加地图自带控件',
     caption: '示例2',
     icon: 'school',
     link: '/maplibre/demo2'
+  },
+  {
+    title: '',
+    caption: '示例3',
+    icon: 'school',
+    link: '/maplibre/demo3'
   },
 
 
