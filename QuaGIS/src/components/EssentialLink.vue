@@ -2,9 +2,9 @@
   <q-item
     clickable
     tag="a"
-    :href="link"
+    :to="link"
     v-ripple
-    active-class="bg-grey-14 text-white"
+    active-class="bg-blue-1"
   >
     <q-item-section
       v-if="icon"

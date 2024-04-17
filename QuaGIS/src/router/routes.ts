@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
     {
         path: '',
         redirect: ('/leaflet/index'),
-        component: () => import('pages/mapbox_index/mapbox_foo.vue')
+        component: () => import('pages/leaf/leaf_leaflet_f3.vue')
       },
     ],
 
@@ -34,11 +34,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayoutMapbox.vue'),
     children: [
 
-      {
-        path: '',
-        redirect: ('/mapbox/index'),
-        component: () => import('pages/mapbox_index/mapbox_foo.vue')
-      },
+
       {path: 'index', component: () => import('pages/mapbox_index/mapbox_foo.vue')},
       {path: 'gltf', component: () => import('pages/mapbox_index/mapbox_gltf.vue')},
       {path: 'bmapbox', component: () => import('pages/mapbox_index/mapdde_foo.vue')},
@@ -52,10 +48,9 @@ const routes: RouteRecordRaw[] = [
     {
         path: '',
         redirect: ('/leaflet/index'),
-        component: () => import('pages/mapbox_index/mapbox_foo.vue')
+        component: () => import('pages/leaf/leaf_leaflet_f3.vue')
       },
       {path: 'index', component: () => import('pages/leaf/leaf_leaflet_f3.vue')},
-      {path: 'lf3', component: () => import('pages/leaf/leaf_leaflet_f3.vue')},
       {path: 'lf4', component: () => import('pages/leaf/leaf_leaflet_f4.vue')},
       {path: 'lf6', component: () => import('pages/leaf/leaf_leaflet_f6.vue')},
       {path: 'lf7', component: () => import('pages/leaf/leaf_leaflet_f7.vue')},
@@ -77,12 +72,7 @@ const routes: RouteRecordRaw[] = [
     path: '/openlayers',
     component: () => import('layouts/MainLayoutOpenLayers.vue'),
     children: [
-    {
-        path: '',
-        redirect: ('/openlayers/index'),
-        component: () => import('pages/openlayers/ol_openlayers_foo.vue')
-      },
-     {path: 'index', component: () => import('pages/openlayers/ol_openlayers_foo.vue')},
+
       {path: 'ol1', component: () => import('pages/openlayers/ol_openlayers_foo.vue')},
       {path: 'ol2', component: () => import('pages/openlayers/ol_openlayers_show2.vue')},
 
@@ -93,11 +83,7 @@ const routes: RouteRecordRaw[] = [
     path: '/maptalks',
     component: () => import('layouts/MainLayoutMaptalks.vue'),
     children: [
-    {
-        path: '',
-        redirect: ('/maptalks/index'),
-        component: () => import('pages/maptalks/maptalks_foo.vue')
-      },
+
       {path: 'index', component: () => import('pages/maptalks/maptalks_foo.vue')},
       {path: 'three', component: () => import('pages/maptalks/maptalks_3d.vue')},
     ],
@@ -106,16 +92,12 @@ const routes: RouteRecordRaw[] = [
     path: '/cesium',
     component: () => import('layouts/MainLayoutCesium.vue'),
     children: [
-    {
-        path: '',
-        redirect: ('/cesium/index'),
-        component: () => import('pages/cesium/cesium_foo.vue')
-      },
+
       {path: 'index', component: () => import('pages/cesium/cesium_foo.vue')},
       {path: 'gltf', component: () => import('pages/cesium/cesium_gltf.vue')},
       {path: 'ccjson', component: () => import('pages/cesium/cesium_ccjson.vue')},
       {path: 'nanjing', component: () => import('pages/cesium/cesium_nanjing.vue')},
-      {path: 'index', component: () => import('pages/cesium/cesium_index.vue')},
+      {path: 'index2', component: () => import('pages/cesium/cesium_index.vue')},
     ],
   },
 

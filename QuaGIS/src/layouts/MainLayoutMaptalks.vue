@@ -33,16 +33,16 @@ import  EssentialHead from 'components/Head.vue';
   import {useCommonFunctionStore} from 'stores/common_function'
 const linksList = [
   {
-    title: 'Home',
+    title: 'Example 1',
     caption: '内容介绍说明',
     icon: 'school',
-    link: '/#/maptalks/index'
+    link: '/maptalks/index'
   },
    {
     title: '3D',
     caption: '内容介绍说明',
     icon: 'school',
-    link: '/#/maptalks/three'
+    link: '/maptalks/three'
   },
 ];
 

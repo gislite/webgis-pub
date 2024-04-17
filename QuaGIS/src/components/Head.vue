@@ -12,12 +12,12 @@
 
     <q-tabs align="left">
 <!--      <q-route-tab to="/" label="Home"/>-->
-      <q-route-tab to="/leaflet" label="Leaflet"/>
-      <q-route-tab to="/openlayers" label="OpenLayers"/>
-      <q-route-tab to="/maptalks" label="MapTalks"/>
-      <q-route-tab to="/cesium" label="Cesium"/>
-      <q-route-tab to="/mapbox" label="Mapbox"/>
-      <q-route-tab to="/maplibre" label="maplibre"/>
+      <q-route-tab to="/leaflet/index" label="Leaflet"/>
+      <q-route-tab to="/openlayers/ol1" label="OpenLayers"/>
+      <q-route-tab to="/maptalks/index" label="MapTalks"/>
+      <q-route-tab to="/cesium/index" label="Cesium"/>
+      <q-route-tab to="/mapbox/index" label="Mapbox"/>
+      <q-route-tab to="/maplibre/index" label="maplibre"/>
 
     </q-tabs>
   </q-header>

@@ -38,13 +38,13 @@ const linksList = [
     title: '3D街道地图',
     caption: '示例1',
     icon: 'school',
-    link: '/#/maplibre/index'
+    link: '/maplibre/index'
   },
   {
     title: '添加控件',
     caption: '示例2',
     icon: 'school',
-    link: '/#/maplibre/demo2'
+    link: '/maplibre/demo2'
   },
 
 

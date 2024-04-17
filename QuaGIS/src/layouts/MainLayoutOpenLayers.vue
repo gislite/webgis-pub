@@ -33,23 +33,18 @@ import EssentialHead from "components/Head.vue";
 
   import {useCommonFunctionStore} from 'stores/common_function'
 const linksList = [
-  {
-    title: 'Home',
-    caption: '内容介绍说明',
-    icon: 'school',
-    link: '/#/openlayers/index'
-  },
+
   {
     title: 'OpenLayers基础',
     caption: 'OpenLayers基础',
     icon: 'code',
-    link: '/#/openlayers/ol1'
+    link: '/openlayers/ol1'
   },
   {
     title: 'OpenLayers底图',
     caption: '换用天地图底图',
     icon: 'code',
-    link: '/#/openlayers/ol2'
+    link: '/openlayers/ol2'
   },
 
 ];

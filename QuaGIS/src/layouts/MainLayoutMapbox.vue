@@ -37,19 +37,19 @@ const linksList = [
     title: '长春3维可视化',
     caption: '长春建筑3维展示',
     icon: 'school',
-    link: '/#/mapbox/index'
+    link: '/mapbox/index'
   },
     {
     title: '加载GLTF',
     caption: '加载GLTF数据展示',
     icon: 'school',
-    link: '/#/mapbox/gltf'
+    link: '/mapbox/gltf'
   },
    {
     title: '基础实例',
     caption: 'Mapbox简单基础示例',
     icon: 'school',
-    link: '/#/mapbox/bmapbox'
+    link: '/mapbox/bmapbox'
   },
 ];
 

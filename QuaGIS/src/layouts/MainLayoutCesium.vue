@@ -37,25 +37,25 @@ const linksList = [
     title: 'CMZL',
     caption: '加载CZML格式数据图形',
     icon: 'school',
-    link: '/#/cesium/index'
+    link: '/cesium/index'
   },
   {
     title: 'GLTF',
     caption: '加载GLTF 3D数据',
     icon: 'school',
-    link: '/#/cesium/gltf'
+    link: '/cesium/gltf'
   },
   {
     title: '长春建筑geojson',
     caption: '加载长春建筑Geojson格式数据',
     icon: 'school',
-    link: '/#/cesium/ccjson'
+    link: '/cesium/ccjson'
   },
    {
     title: '南京大雁塔',
     caption: '加载南京大雁塔3D模型',
     icon: 'school',
-    link: '/#/cesium/nanjing'
+    link: '/cesium/nanjing'
   },
 ];
 
