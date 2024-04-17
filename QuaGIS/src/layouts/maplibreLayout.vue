@@ -47,10 +47,46 @@ const linksList = [
     link: '/maplibre/demo2'
   },
   {
-    title: '',
+    title: '添加常用地图操作',
     caption: '示例3',
     icon: 'school',
     link: '/maplibre/demo3'
+  },
+  {
+    title: '为线条添加动画效果',
+    caption: '为线条添加动画效果',
+    icon: 'school',
+    link: '/maplibre/demo4'
+  },
+  {
+    title: '',
+    caption: '示例5',
+    icon: 'school',
+    link: '/maplibre/demo5'
+  },
+  {
+    title: '',
+    caption: '示例6',
+    icon: 'school',
+    link: '/maplibre/demo6'
+  },
+  {
+    title: '',
+    caption: '示例7',
+    icon: 'school',
+    link: '/maplibre/demo7'
+  },
+  {
+    title: '',
+    caption: '示例8',
+    icon: 'school',
+    link: '/maplibre/demo8'
+  },
+  {
+    title: '',
+    caption: '示例9',
+    icon: 'school',
+    link: '/maplibre/demo9'
   },
 
 

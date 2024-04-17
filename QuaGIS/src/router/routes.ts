@@ -117,6 +117,12 @@ const routes: RouteRecordRaw[] = [
       {path: 'index', component: () => import('pages/maplibre/demo_1.vue')},
       {path: 'demo2', component: () => import('pages/maplibre/demo_2.vue')},
       {path: 'demo3', component: () => import('pages/maplibre/demo_3.vue')},
+      {path: 'demo4', component: () => import('pages/maplibre/demo_4.vue')},
+      {path: 'demo5', component: () => import('pages/maplibre/demo_5.vue')},
+      {path: 'demo6', component: () => import('pages/maplibre/demo_6.vue')},
+      {path: 'demo7', component: () => import('pages/maplibre/demo_7.vue')},
+      {path: 'demo8', component: () => import('pages/maplibre/demo_8.vue')},
+      {path: 'demo9', component: () => import('pages/maplibre/demo_9.vue')},
     ],
   },
 
