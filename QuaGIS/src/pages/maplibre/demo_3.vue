@@ -30,7 +30,12 @@
     setup() {
 
       var map = null;
-      let marker=new maplibregl.Marker();
+      let marker = new maplibregl.Marker();
+      let popup = new maplibregl.Popup(
+        {
+          offset: 30,
+          closeOnClick: false
+        });
       let reac_list = reactive({
         mousePosition: ref([120.143, 30.236]),
         mapCenter: ref([120.143, 30.236]),
@@ -63,14 +68,20 @@
         });
 
         map.on('click', (e) => {
-          new maplibregl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML(`坐标：${e.lngLat}`)
+          // new maplibregl.Popup()
+          //   .setLngLat(e.lngLat)
+          //   .setHTML(`坐标：${e.lngLat}`)
+          //   .addTo(map);
+          marker.setLngLat(e.lngLat)
             .addTo(map);
-           marker.setLngLat(e.lngLat)
+          popup.setHTML(`坐标：${e.lngLat}`);
+          marker.setLngLat(e.lngLat)
+            .setPopup(popup)
             .addTo(map);
+          // marker.setLngLat(e.lngLat)
+          //   .setPopup(new maplibregl.Popup().setHTML("<h1>Hello World!</h1>"))
+          //   .addTo(map);
         });
-
         map.on('mousemove', mouseMove)
         map.on('zoom', zoomchange)
         // map.on('load', () => {

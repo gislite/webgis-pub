@@ -11,6 +11,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.4.3",
     "@quasar/extras": "^1.0.0",
     "@supermap/iclient-maplibregl": "^11.1.1",
     "axios": "^0.21.1",

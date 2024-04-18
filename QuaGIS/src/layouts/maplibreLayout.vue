@@ -35,6 +35,13 @@ import EssentialHead from "components/Head.vue";
 
 const linksList = [
   {
+    title: '添加GeoJSON图层，绑定交互事件',
+    caption: '示例9',
+    icon: 'school',
+    link: '/maplibre/demo9'
+  },
+
+  {
     title: '3D街道地图',
     caption: '示例1',
     icon: 'school',
@@ -59,36 +66,29 @@ const linksList = [
     link: '/maplibre/demo4'
   },
   {
-    title: '',
-    caption: '示例5',
+    title: '使一个点沿路线动画划过',
+    caption: '使用Turf沿着一条线的距离平滑地动画一个点。',
     icon: 'school',
     link: '/maplibre/demo5'
   },
   {
-    title: '',
+    title: '创建可拖动点、带动画的图标、带动画的标记',
     caption: '示例6',
     icon: 'school',
     link: '/maplibre/demo6'
   },
   {
-    title: '',
+    title: '添加wms图层',
     caption: '示例7',
     icon: 'school',
     link: '/maplibre/demo7'
   },
-  {
-    title: '',
-    caption: '示例8',
-    icon: 'school',
-    link: '/maplibre/demo8'
-  },
-  {
-    title: '',
-    caption: '示例9',
-    icon: 'school',
-    link: '/maplibre/demo9'
-  },
-
+  // {
+  //   title: '',
+  //   caption: '示例8',
+  //   icon: 'school',
+  //   link: '/maplibre/demo8'
+  // },
 
 
 ];

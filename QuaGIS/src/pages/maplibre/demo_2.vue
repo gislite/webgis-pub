@@ -7,23 +7,25 @@
   import maplibregl from 'maplibre-gl';
   import {onMounted} from "vue";
 
-import 'maplibre-gl/dist/maplibre-gl.css';
+  import 'maplibre-gl/dist/maplibre-gl.css';
+
   export default {
     name: "demo_2",
     setup() {
 
       var map = null;
       const initMap = () => {
-        var attribution = "<a href='https://maplibre.org/' target='_blank'>© MapLibre </a>" +
-          " with <span>© <a href='https://iclient.supermap.io' target='_blank'>SuperMap iClient</a> | </span>" +
-          " Map Data <span>© <a href='http://support.supermap.com.cn/product/iServer.aspx' target='_blank'>SuperMap iServer</a></span> ";
 
         map = new maplibregl.Map({
           container: 'mapid',
 
-           style: './data/style.json',
-          center: [120.143, 30.236], // 地图初始中心点
-          zoom: 3 // 地图初始缩放级别
+          style: './data/style.json',
+          // center: [120.143, 30.236], // 地图初始中心点
+          // zoom: 3 // 地图初始缩放级别
+
+        zoom: 12,
+        center: [11.39085, 47.27574],
+          pitch: 52,
         });
 
 
@@ -39,6 +41,33 @@ import 'maplibre-gl/dist/maplibre-gl.css';
           map.addControl(new maplibregl.FullscreenControl({}));
           //版权：
           map.addControl(new maplibregl.AttributionControl({}));
+          //添加水印
+          map.addControl(new maplibregl.LogoControl({compact: false}));
+
+
+          map.addSource('terrainSource', {
+            'type': 'raster-dem',
+            'url': 'https://demotiles.maplibre.org/terrain-tiles/tiles.json',
+            'tileSize': 256
+          });
+          map.addSource('hillshadeSource', {
+            'type': 'raster-dem',
+            'url': 'https://demotiles.maplibre.org/terrain-tiles/tiles.json',
+            'tileSize': 256
+          });
+          map.addLayer({
+            'id': 'hills',
+            'type': 'hillshade',
+            'source': 'hillshadeSource',
+            'layout': {'visibility': 'visible'},
+            'paint': {'hillshade-shadow-color': '#473B24'}
+          });
+          map.addControl(
+            new maplibregl.TerrainControl({
+              source: 'terrainSource',
+              exaggeration: 1
+            }))
+
         })
 
       }

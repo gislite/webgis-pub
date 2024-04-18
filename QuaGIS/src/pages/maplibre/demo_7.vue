@@ -18,31 +18,31 @@
 
         map = new maplibregl.Map({
           container: 'mapid',
-          style: {
-            "version": 8,
-            "sources": {
-              "raster-tiles": {
-                "type": "raster",
-                "tiles": ['https://iserver.supermap.io/iserver/services/map-china400/rest/maps/China/zxyTileImage.png?z={z}&x={x}&y={y}'],
-                "tileSize": 256
-              }
-            },
-            "layers": [{
-              "id": "simple-tiles",
-              "type": "raster",
-              "source": "raster-tiles",
-              "minzoom": 0,
-              "maxzoom": 22
-            }]
-          },
-          center: [120.143, 30.236], // 地图初始中心点
-          zoom: 3 // 地图初始缩放级别
+
+          style: './data/style.json',
+          center: [ 126.82767,43.289783], // 地图初始中心点
+          zoom: 5 // 地图初始缩放级别
         });
 
 
         map.on('load', () => {
-          //导航控件：
-          console.log()
+         map.addSource('wms-test-source', {
+            'type': 'raster',
+            // use the tiles option to specify a WMS tile source URL
+            // https://maplibre.org/maplibre-style-spec/sources/
+            'tiles': [
+              'http://tile.igadc.cn/service?&SERVICE=WMS&REQUEST=GetMap&LAYERS=qn1964&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&BBOX={bbox-epsg-3857}'
+          ],
+            'tileSize': 256
+        });
+        map.addLayer(
+            {
+                'id': 'wms-test-layer',
+                'type': 'raster',
+                'source': 'wms-test-source',
+                'paint': {}
+            }
+        );
         })
 
       }

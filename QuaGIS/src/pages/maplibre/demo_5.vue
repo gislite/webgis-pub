@@ -1,7 +1,9 @@
 <template>
 
   <div id="mapid" class="absolute"></div>
-  <q-btn id="pause"/>
+  <div class="overlay">
+    <q-btn id="replay">Replay</q-btn>
+  </div>
 </template>
 
 <script>
@@ -85,7 +87,7 @@
         // Used to increment the value of the point measurement against the route.
         let counter = 0;
 
-        map.on('load', () => {
+        map.on('load', async () => {
           // Add a source and layer displaying a point which will be animated in a circle.
           map.addSource('route', {
             'type': 'geojson',
@@ -106,29 +108,26 @@
               'line-color': '#007cbf'
             }
           });
+          var image = await map.loadImage('./data/飞机.png');
 
-          map.loadImage(
-            'data/飞机.png',
-            function (error, image) {
-              if (error) throw error;
-              //添加图片到map上
-              map.addImage('newplane', image); //参数一位名称，参数二位加载的图片
+          map.addImage('newplane', image.data);
+
 
           map.addLayer({
             'id': 'point',
             'source': 'point',
             'type': 'symbol',
             'layout': {
+              // 'icon-image': 'airport_15',
               'icon-image': 'newplane',
               'icon-rotate': ['get', 'bearing'],
               'icon-rotation-alignment': 'map',
               'icon-overlap': 'always',
-              'icon-ignore-placement': true
+              'icon-ignore-placement': true,
+
+              'icon-size': 0.25
             }
           });
-            }
-          )
-
 
           function animate() {
             // Update point geometry to a new position based on counter denoting
@@ -164,7 +163,7 @@
           }
 
           document
-            .getElementById('pause')
+            .getElementById('replay')
             .addEventListener('click', () => {
               // Set the coordinates of the original point back to origin
               point.features[0].geometry.coordinates = origin;
@@ -202,20 +201,26 @@
     width: 60vw
   }
 
-  #pause {
+  .overlay {
     position: absolute;
     top: 20vh;
     right: 10vw;
-    margin: 20px;
   }
 
-  #pause::after {
-    content: 'Pause';
+  .overlay button {
+    font: 600 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #3386c0;
+    color: #fff;
+    display: inline-block;
+    margin: 0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
   }
 
-  #pause.pause::after {
-    content: 'Play';
+  .overlay button:hover {
+    background-color: #4ea0da;
   }
-
 
 </style>
