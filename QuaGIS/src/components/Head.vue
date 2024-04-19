@@ -17,7 +17,7 @@
       <q-route-tab to="/maptalks/index" label="MapTalks"/>
       <q-route-tab to="/cesium/index" label="Cesium"/>
       <q-route-tab to="/mapbox/index" label="Mapbox"/>
-      <q-route-tab to="/maplibre/index" label="maplibre"/>
+      <q-route-tab to="/maplibre/demo9" label="maplibre"/>
 
     </q-tabs>
   </q-header>

@@ -48,13 +48,13 @@ const linksList = [
     link: '/maplibre/index'
   },
   {
-    title: '添加地图自带控件',
+    title: '添加地图自带控件、3D地形',
     caption: '示例2',
     icon: 'school',
     link: '/maplibre/demo2'
   },
   {
-    title: '添加常用地图操作',
+    title: '自定义常用地图操作事件',
     caption: '示例3',
     icon: 'school',
     link: '/maplibre/demo3'
