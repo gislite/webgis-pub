@@ -9,6 +9,14 @@
             @click="toggle_click"
            class="absolute toggleclass"
   />
+<!--  <q-toggle  :label='showlayer?"关闭图层1111":"显示图层1111"'-->
+<!--            checked-icon='check'-->
+<!--            color='green'-->
+<!--            unchecked-icon='clear'-->
+<!--            v-model="showlayer"-->
+<!--            @click="toggle_visibility_click"-->
+<!--           class="absolute toggleclass"-->
+<!--  />-->
 </template>
 
 <script>
@@ -24,13 +32,21 @@
       var map = null;
       let showlayer = ref(true);
       let layer1 = ref(null);
-
+      //添加图层移除图层的方式控制图层
       function toggle_click() {
         if (!map.getLayer('wms-test-layer')) {
           map.addLayer(layer1.value)
         } else {
 
           map.removeLayer('wms-test-layer')
+        }
+      }
+      // 设置图层不可见的方式控制图层
+      function toggle_visibility_click() {
+        if (showlayer.value) {
+        map.setLayoutProperty('wms-test-layer', 'visibility');
+        } else {
+        map.setLayoutProperty('wms-test-layer', 'visibility', 'none');
         }
       }
 
@@ -51,7 +67,7 @@
             // use the tiles option to specify a WMS tile source URL
             // https://maplibre.org/maplibre-style-spec/sources/
             'tiles': [
-              'http://tile.igadc.cn/service?&SERVICE=WMS&REQUEST=GetMap&LAYERS=qn1964&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&BBOX={bbox-epsg-3857}'
+              'http://tile.igadc.cn/service?&SERVICE=WMS&REQUEST=GetMap&LAYERS=qn8675&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG%3A3857&BBOX={bbox-epsg-3857}'
             ],
             'tileSize': 256
           });
@@ -77,6 +93,7 @@
       return {
         showlayer,
         toggle_click,
+        toggle_visibility_click,
       }
     }
   }

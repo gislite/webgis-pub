@@ -9,25 +9,56 @@
 
   import 'maplibre-gl/dist/maplibre-gl.css';
 
+
   export default {
     name: "demo_10",
-    setup() {
-
+    setup: function () {
+      let hoveredStateId = null;
+      let popup = new maplibregl.Popup(
+        {
+          closeOnClick: false
+        });
       var map = null;
       const initMap = () => {
 
+       const MAPTILER_KEY = 'hAA4PuTSrWhRcIgil5Fy';
         map = new maplibregl.Map({
           container: 'mapid',
 
-          style: './data/style.json',
-          center: [120.143, 30.236], // 地图初始中心点
-          zoom: 3 // 地图初始缩放级别
+        style: `https://api.maptiler.com/maps/basic-v2/style.json?key=${MAPTILER_KEY}`,
+          center: [-116.231, 43.604], // starting position [lng, lat]
+          zoom: 11 // starting zoom
         });
 
 
-        map.on('load', () => {
-          //导航控件：
-          console.log()
+        map.on('load',  () => {
+          map.addSource('off-leash-areas', {
+            'type': 'geojson',
+            'data':
+              './data/boise.geojson'
+          });
+
+          map.addLayer({
+            'id': 'off-leash-areas',
+            'type': 'symbol',
+            'source': 'off-leash-areas',
+            'layout': {
+              'text-field': [
+                'format',
+                ['upcase', ['get', 'FacilityName']],
+                {'font-scale': 0.8},
+                '\n',
+                {},
+                ['downcase', ['get', 'Comments']],
+                {'font-scale': 0.6}
+              ],
+              // 'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+              'text-offset': [0, 0.6],
+              'text-anchor': 'top'
+            }
+          });
+
+
         })
 
       }
@@ -45,9 +76,9 @@
 
 <style scoped>
   #mapid {
-    top: 10vh;
+    top: 0;
     right: 10px;
-    height: 70vh;
-    width: 60vw
+    height: 80vh;
+    width: 100vw
   }
 </style>

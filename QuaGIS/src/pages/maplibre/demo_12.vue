@@ -16,12 +16,14 @@
       var map = null;
       const initMap = () => {
 
+        const MAPTILER_KEY = 'hAA4PuTSrWhRcIgil5Fy';
         map = new maplibregl.Map({
           container: 'mapid',
 
-          style: './data/style.json',
+          style:
+            `https://api.maptiler.com/maps/hybrid/style.json?key=${MAPTILER_KEY}`,
           center: [120.143, 30.236], // 地图初始中心点
-          zoom: 3 // 地图初始缩放级别
+          zoom: 9 // 地图初始缩放级别
         });
 
 

@@ -83,11 +83,41 @@ const linksList = [
     icon: 'school',
     link: '/maplibre/demo7'
   },
+  {
+    title: '修改标签的大小写',
+    caption: '使用大写和小写表达式更改标签的大小',
+    icon: 'school',
+    link: '/maplibre/demo10'
+  },
+  {
+    title: '使用本地生成的表意文字',
+    caption: '示例11',
+    icon: 'school',
+    link: '/maplibre/demo11'
+  },
+  {
+    title: '显示卫星地图',
+    caption: '显示卫星栅格基础图层',
+    icon: 'school',
+    link: '/maplibre/demo12'
+  },
+  {
+    title: '添加矢量切片源',
+    caption: '将矢量源添加到地图',
+    icon: 'school',
+    link: '/maplibre/demo13'
+  },
+  {
+    title: '',
+    caption: '示例14',
+    icon: 'school',
+    link: '/maplibre/demo14'
+  },
   // {
   //   title: '',
-  //   caption: '示例8',
+  //   caption: '示例15',
   //   icon: 'school',
-  //   link: '/maplibre/demo8'
+  //   link: '/maplibre/demo15'
   // },
 
 
