@@ -574,7 +574,7 @@ LEGEND Object In MapServer, there are three ways to create legends.
    method is very free, but it needs the corresponding HTML file, and it
    is troublesome to update it.
 
-Simple Image Legends*\*
+Simple Image Legends
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Define the mode of production of the legend file, and the CLASS object
