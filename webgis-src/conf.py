@@ -37,6 +37,7 @@ html_theme_options = {
 }
 
 html_logo = "_static/webgis-logo.png"
+html_title = 'Open-Source WebGIS'
 
 locale_dirs = ['locales']
 gettext_compact = True

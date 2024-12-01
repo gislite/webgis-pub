@@ -22,7 +22,7 @@ are small in scope and flat.
 
 .. figure:: fig-old-map.jpg
 
-	Map of the World
+   Map of the World
 
 The Golden Age of Maps and Cartography corresponds to the Age of
 Exploration, when maps were the key to great wealth. The tools that
