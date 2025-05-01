@@ -38,13 +38,21 @@ and the client can return it directly when needed, so WMTS can be cached.
 When the client requests the WMS service, a complete picture is returned to the client,
 and the client can get it and display it directly, as shown in Figure 2;
 the client can request any area,
-because of this arbitrariness and the server can only Returning a picture of a specified range, the probability of reuse is low and low. When the concurrency increases, the performance of the server will be greatly reduced, so WMS only focuses on flexibility. The Internet era focuses on efficiency. Compared with flexibility, people prefer to use cacheable WMTS services with better performance.
+because of this arbitrariness and the server can only Returning a picture of a specified range,
+the probability of reuse is low and low.
+When the concurrency increases, the performance of the server will be greatly reduced,
+so WMS only focuses on flexibility.
+The Internet era focuses on efficiency.
+Compared with flexibility, people prefer to use cacheable WMTS services with better performance.
 
 Principle of WMTS slicing
 ============================================
 
-WMTS stipulates that the tile matrix set (Tile Matrix Set) is used to represent the cut map, as shown in figure 1, different tile matrices have different scales (resolution).
-Each tile matrix is identified by the tile matrix identifier (usually the serial number of the tile matrix, and the lowest resolution layer is the 0 layer, which is arranged up in turn).
+WMTS stipulates that the tile matrix set (Tile Matrix Set) is used to represent the cut map,
+as shown in figure 1, different tile matrices have different scales (resolution).
+Each tile matrix is identified by the tile matrix identifier
+(usually the serial number of the tile matrix,
+and the lowest resolution layer is the 0 layer, which is arranged up in turn).
 
 .. figure:: fig-wmts-tiles.png
 

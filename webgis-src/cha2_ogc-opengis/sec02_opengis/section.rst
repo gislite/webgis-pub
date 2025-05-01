@@ -9,7 +9,8 @@ OGC and OpenGIS
 ============================================
 
 The OGC is made up of members from a variety of sectors including business sectors,
-government agencies, users, and data providers for the largest interoperability in the geographic information processing market.
+government agencies, users, and data providers for the largest interoperability
+in the geographic information processing market.
 The purpose of OGC is to integrate geospatial data resources into mainstream computing technologies
 through an information infrastructure,
 and to promote the widespread application of interoperable commercial geographic information processing software.

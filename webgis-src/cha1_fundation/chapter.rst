@@ -67,13 +67,6 @@ is constructed through the interoperability and collaborative computing
 between the GIS application servers.
 
 
-
-
-
-
-
-
-
 .. toctree::
    :maxdepth: 2
 

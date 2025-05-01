@@ -47,12 +47,15 @@ Standards for Web services
 
 
 This section mainly introduces the WMS, WMTS, WFS, WCS, CSW, WPS and OpenLS standards of OGC. 
-Readers can visit the official website of OGC (http://www.opengeospatial.org) to check the detailed documents of these specifications, and check which WebGIS software has been certified by OGC and which standards are supported.
+Readers can visit the official website of OGC (http://www.opengeospatial.org)
+to check the detailed documents of these specifications,
+and check which WebGIS software has been certified by OGC and which standards are supported.
 
 (1) Web Mapping Service (WMS-Web Map Service)
 ---------------------------------------------------
 
-WMS is a Web service specification developed by OGC for making maps on the Internet. The maps produced by WMS are generally presented in image formats, such as PNG, GIF or JPEG. Any web service that claims to conform to the WMS specification must support the following two necessary requests:
+WMS is a Web service specification developed by OGC for making maps on the Internet.
+The maps produced by WMS are generally presented in image formats, such as PNG, GIF or JPEG. Any web service that claims to conform to the WMS specification must support the following two necessary requests:
 
 GetCapabitities: Return the description information of the Web service to the client. The format of the returned result is XML, which describes the service's name, introduction, keywords, coverage, which data layers are included, what coordinate system each layer is, what attributes it has, and whether it can be queried. This metadata also includes the map image file format that the service can generate, the URL of each operation that can be supported, and so on.
 

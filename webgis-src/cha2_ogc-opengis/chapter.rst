@@ -16,13 +16,6 @@ of the open map service resources are released based on the OGC service
 specification, providing standard OGC map services to the public.
 
 
-
-
-
-
-
-
-
 .. toctree::
    :maxdepth: 2
 

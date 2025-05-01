@@ -249,7 +249,7 @@ SOAP-style Web services use HTTP Post and SOAP-encapsulated XML to send requests
 
 .. figure:: imgvze28.png
 
-	SOAP-based Web services rely on HTTP Post and SOAP encapsulated XML to send requests and pass results between the client and the server
+   SOAP-based Web services rely on HTTP Post and SOAP encapsulated XML to send requests and pass results between the client and the server
 
 
 SOAP-based Web services encapsulate the XML message body in another XML document. This "XML-in-XML" format is inconvenient for people to manually create SOAP requests and parse SOAP results, so it is difficult to invoke SOAP services. Of course, there are tools to simplify the invocation of SOAP services. SOAP-based Web services generally have WSDL (Web Service Description Language), that is, Web Service Description Language. 
@@ -270,7 +270,7 @@ The following figure shows the same function in the above figure in the form of 
 
 .. figure:: imgvze30.png
 
-	Services of the REST interface
+   Services of the REST interface
 
 
 

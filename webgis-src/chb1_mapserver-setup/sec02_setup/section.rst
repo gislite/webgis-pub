@@ -1,5 +1,6 @@
 .. Author: gislite .. Title: Install and configure MapServer
 
+===============================
 Install and configure MapServer
 ===============================
 
@@ -12,7 +13,8 @@ runtime environment. Many programmers cannot build a development
 environment by themselves, let alone a real production environment.
 
 Basic requirements for installing and configuring MapServer
------------------------------------------------------------
+==============================================================
+
 
 MapServer is an open source software written in C language, which itself
 relies on some open source or free libraries, such as Shapelib,
@@ -68,17 +70,9 @@ default.
 
 
 Detailed introduction of MapServer related class libraries
-----------------------------------------------------------
+==============================================================
 
-GD
-    GD is an image library. Since Mapserver uses GD for image rendering, it
-    must be installed. GD has its own dependent class library, including
-    zlib, libpng, FreeType2.x and libJPEG. These types enable GD to perform
-    image compression (for supported data), to render PNG images, to use
-    TrueType fonts, and to render JPEG images. Since the license on GIF has
-    expired, it is now available as well.
 
-    GD support has been removed in MapServer 7. 0.
 
 FreeType
     FreeType is a font rendering engine. It is not referenced directly by
@@ -129,34 +123,42 @@ SDE client library
     The SDE client library is part of ESRI’s spatial data warehouse.
     If you want Mapserver to access it, you need to compile the library.
 
+GD
+    GD support has been removed in MapServer 7. 0. GD is an image library.
+    GD has its own dependent class library, including
+    zlib, libpng, FreeType2.x and libJPEG. These types enable GD to perform
+    image compression (for supported data), to render PNG images, to use
+    TrueType fonts, and to render JPEG images. Since the license on GIF has
+    expired, it is now available as well.
+
 PostgreSQL client library
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 The PostgreSQL client library provides the ability to access PostGIS
 data using Mapserver. They provide similar functionality to ESRI
 products, but they are not open source.
 
 Oracle Spatial client library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 The Oracle Spatial client library enables users to access the Oracle
 Spatial Data Warehouse using MapServer. They provide similar
 functionality to ESRI products.
 
 Ming
-~~~~
+-------------------------------------------
 
 Ming enables MapServer to create SWF videos. It can provide some
 interesting functions.
 
 PDFLib
-~~~~~~
+-------------------------------------------
 
 It is also useful for PDFLib to be able to output in PDF format using
 MapServer.
 
 Installation under Debian / Ubuntu system
------------------------------------------
+==============================================================
 
 Debian / Ubuntu is my most commonly used Linux release, and its
 well-designed package management tool is really enjoyable. To install
@@ -165,7 +167,7 @@ privileges are required):
 
 In Debian 12:
 
-::
+.. code-block:: bash
 
    apt install -y apache2 php8.2 libapache2-mod-fcgid cgi-mapserver \
        mapserver-bin libapache2-mod-php
@@ -177,7 +179,7 @@ In Debian 12:
 
 In Debian 9:
 
-::
+.. code-block:: bash
 
    apt install -y apache2 php7.0 libapache2-mod-fcgid cgi-mapserver \
        mapserver-bin libapache2-mod-php
@@ -187,7 +189,7 @@ In Debian 9:
 
 In Ubuntu 22.04:
 
-::
+.. code-block:: bash
 
    apt install -y apache2 php8.1 libapache2-mod-fcgid cgi-mapserver \
        mapserver-bin libapache2-mod-php
@@ -197,7 +199,7 @@ In Ubuntu 22.04:
 
 In Ubuntu 18.04:
 
-::
+.. code-block:: bash
 
    apt install -y apache2 php7.2 libapache2-mod-fcgid cgi-mapserver \
        mapserver-bin libapache2-mod-php
@@ -211,7 +213,7 @@ they will be installed automatically.
 
 After the installation is complete, you can enter the following command on the terminal to view the results:
 
-::
+.. code-block:: bash
 
    $ mapserv -v
    MapServer version 7.0.4 OUTPUT=PNG OUTPUT=JPEG OUTPUT=KML SUPPORTS=PROJ
@@ -251,11 +253,11 @@ connection (FastCGI process on the remote server farm) is passed to the
 FastCGI process.
 
 Configure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 Then, edit the file of Apache2 configure. Sush as ``more /etc/apache2/sites-enabled/webgis_pub_apache.conf`` .
 
-::
+.. code-block:: bash
 
     ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
     <Directory "/usr/lib/cgi-bin">
@@ -266,7 +268,7 @@ Then, edit the file of Apache2 configure. Sush as ``more /etc/apache2/sites-enab
 
 
 Installation under Windows system
----------------------------------
+==============================================================
 
 To install MapServer under Windows, you also need to install Apache2,
 CGI, and MapServer programs, which also have binary packages under
