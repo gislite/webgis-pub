@@ -40,5 +40,5 @@ coordinates of the specified southwest and northeast corners.
 Here is the result:
 
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mf3t.map&layer=topo&mode=map&format=jpeg
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mf3t.map&layer=topo&mode=map&format=jpeg
 

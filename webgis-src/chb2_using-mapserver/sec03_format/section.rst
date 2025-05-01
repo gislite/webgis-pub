@@ -10,9 +10,9 @@ Depending on the format you choose, the image may not be displayed in
 your browser. If the link doesn’t appear in your browser, right-click on
 the image above to see what format is specified in MapFile for saving.
 
-.. http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa8.map&layers=land-shallow-topo+wcountry-line&map.imagetype=AGG&mode=map
+.. https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa8.map&layers=land-shallow-topo+wcountry-line&map.imagetype=AGG&mode=map
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa8.map&layers=land-shallow-topo+wcountry-line&mode=map
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa8.map&layers=land-shallow-topo+wcountry-line&mode=map
    :alt: Different output results
 
    Different output results

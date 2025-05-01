@@ -37,7 +37,7 @@ The image below is an example, drawn on a map with latitude and
 longitude lines, with the longitude and latitude of the longitude lines
 drawn to the ends of the line.
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfd8.map&layer=states&layer=states_line&layer=states_label&layer=topo&layer=grid&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfd8.map&layer=states&layer=states_line&layer=states_label&layer=topo&layer=grid&mode=map
 
 
 Here is its Mapfile :

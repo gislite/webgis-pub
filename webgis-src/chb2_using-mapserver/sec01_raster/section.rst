@@ -8,7 +8,7 @@ View examples
 
 .. raw:: html
 
-   <img src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa5.map&layer=states&layer=states_line&layer=states_label&layer=topo&mode=map"/>
+   <img src="https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa5.map&layer=states&layer=states_line&layer=states_label&layer=topo&mode=map"/>
 
 
 In addition to supporting vector data (points, lines, polygons and
@@ -172,4 +172,4 @@ reverse the order of bands:
 
 The results are as follows:
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfr1.map&layer=topo&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfr1.map&layer=topo&mode=map

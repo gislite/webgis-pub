@@ -18,4 +18,4 @@ Effect
 
 Here is the effect:
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mf9a.map&layer=topo&layer=label&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mf9a.map&layer=topo&layer=label&mode=map

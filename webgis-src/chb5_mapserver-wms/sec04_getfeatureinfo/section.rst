@@ -71,7 +71,7 @@ Compared to the previous ``mfb1.map``:
 
 This Mapfile is configured with the WMS service. View function:
 
-`Open a link <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_
+`Open a link <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_
 
 
 
@@ -81,7 +81,7 @@ View the map
 ------------
 
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&layer=states&mode=map
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&layer=states&mode=map
 
 
 
@@ -93,7 +93,7 @@ Access using GetFeatureInfo
 Use GetFeatureInfo
 
 
-`Use GetFeatureInfo <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&QUERY_LAYERS=states&LAYERS=states&BBOX=-96,45,-95,46&CRS=CRS:84&INFO_FORMAT=text/html&j=43&i=-95&WIDTH=256&HEIGHT=256&styles=&format=image/png>`_
+`Use GetFeatureInfo <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&QUERY_LAYERS=states&LAYERS=states&BBOX=-96,45,-95,46&CRS=CRS:84&INFO_FORMAT=text/html&j=43&i=-95&WIDTH=256&HEIGHT=256&styles=&format=image/png>`_
 
 
 The above results are output using a template.

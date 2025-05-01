@@ -56,6 +56,6 @@ WebGIS introduced on this website.
 “Python and Open Source GIS”, a tool for reading and processing GIS data
 using Python.
 
--  http://webgis.pub/
+-  https://webgis.pub/
 
 A basic introduction to MapServer, MapProxy and Leaflet.

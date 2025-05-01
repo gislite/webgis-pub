@@ -15,7 +15,7 @@ Initialize our application MapServ ( ``/cgi-bin/mapserv`` ). Here is a
 link:
 
 `Open sample map
-1 <http://webgis.pub/cgi-bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=topo&zoom=0&map_web=template+example2-1.html>`__
+1 <https://webgis.pub/cgi-bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=topo&zoom=0&map_web=template+example2-1.html>`__
 
 In Mapfile, you need to add: ``TEMPLATEPATTERN '.'`` ，otherwise, it may
 appear:
@@ -42,7 +42,7 @@ For clarity, use the Python code to list the parameters as follows:
    'map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=topo&zoom=0&map_web=template+example2-1.html'
 
 `Open sample Map
-2 <http://webgis.pub/cgi-bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=topo&layer=states_line&zoom=0&map_web=template+example2-1.html>`__
+2 <https://webgis.pub/cgi-bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=topo&layer=states_line&zoom=0&map_web=template+example2-1.html>`__
 
 If you want to use multiple layers, use the ``layer`` parameter multiple
 times. But the same template file can be used.
@@ -66,7 +66,7 @@ times. But the same template file can be used.
 This example seems to have no new knowledge points.
 
 `Open the sample
-map <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfc2.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=states&zoom=0&map_web=template+example2-1.html>`__
+map <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfc2.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=states&zoom=0&map_web=template+example2-1.html>`__
 
 This time we use ``browse`` mode instead of ``map`` mode. The ``browse``
 mode tells MapServer to create a map (image) on the ``/tmp/`` directory.
@@ -121,7 +121,7 @@ above:
 
 .. raw:: html
 
-	<form method="get" action="http://webgis.pub/cgi-bin/mapserv" role="form">
+	<form method="get" action="https://webgis.pub/cgi-bin/mapserv" role="form">
     	<!-- The following two variables are user defined variables.
          	MapServer will pass its value to the HTML template if the
          	proper tags are found, in square brackets "[]"  -->

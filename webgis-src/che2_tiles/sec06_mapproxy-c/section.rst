@@ -6,7 +6,7 @@ MapProxy case: layer merging
 Example
 -------
 
-http://webgis.pub:6003/
+https://webgis.pub:6003/
 
 MapProxy configuration file
 ---------------------------

@@ -18,7 +18,7 @@ LAYER
     OFFSITE 0 0 0
     STATUS off
     CONNECTIONTYPE WMS
-    CONNECTION "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfba.map&"
+    CONNECTION "https://webgis.pub/cgi-bin/mapserv?map=/owg/mfba.map&"
     METADATA
         "wms_srs" "EPSG:4326"
         "wms_name" "wcountry,wriver,wroads"

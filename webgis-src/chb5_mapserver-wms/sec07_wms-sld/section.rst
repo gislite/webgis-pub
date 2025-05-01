@@ -24,7 +24,7 @@ SDL is defined using the XML format. Let’s take a look at the example:
 
 Effect:
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=&SLD=http://webgis.pub/sld_world_lyr.xml
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=&SLD=https://webgis.pub/sld_world_lyr.xml
    :alt: Use GetMap operation with SLD
 
    Use GetMap operation with SLD
@@ -36,7 +36,7 @@ The URL is parsed as follows:
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map
    1 SERVICE=WMS
    2 VERSION=1.3.0
    3 REQUEST=GetMAP
@@ -48,7 +48,7 @@ The URL is parsed as follows:
    9 width=200
    10 height=150
    11 styles=
-   12 SLD=http://webgis.pub/sld_world_lyr.xml
+   12 SLD=https://webgis.pub/sld_world_lyr.xml
 
 Definition and effect of SLD 1.1.0
 ----------------------------------
@@ -63,7 +63,7 @@ version.
 
 Effect:
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=&SLD=http://webgis.pub/sld_world_lyr110.xml
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=&SLD=https://webgis.pub/sld_world_lyr110.xml
    :alt: The effect of SLD 1.0.0
 
    The effect of SLD 1.0.0
@@ -75,7 +75,7 @@ The URL is parsed as follows:
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map
    1 SERVICE=WMS
    2 VERSION=1.3.0
    3 REQUEST=GetMAP
@@ -87,4 +87,4 @@ The URL is parsed as follows:
    9 width=200
    10 height=150
    11 styles=
-   12 SLD=http://webgis.pub/sld_world_lyr110.xml
+   12 SLD=https://webgis.pub/sld_world_lyr110.xml

@@ -94,7 +94,7 @@ the browser.
 
 Open a link
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
 
 View the map
 ------------
@@ -102,7 +102,7 @@ View the map
 MapServer supports returning maps from the beginning, and you can use
 the ``mode=map`` Parameters.
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&layer=states&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb1.map&layer=states&mode=map
 
 
 

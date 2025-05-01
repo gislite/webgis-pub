@@ -62,7 +62,7 @@ Example
 
 Here is an example:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1
 
 Mapfile is as follows:
 
@@ -86,7 +86,7 @@ Use ``GetCapabilities`` to return:
 
 Consider the following sample WMS request snippet:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group3,group2
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group3,group2
 
 There are three style layers:
 
@@ -99,7 +99,7 @@ with different styles to achieve the desired effect. The following
 example draws the road layer using the ``casing`` and ``centerline``
 styles:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1,group2
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1,group2
 
 A WMS itself may not know how to make a meaningful combination of style
 layers, it’s all up to the client. WMS uses names to identify styles and

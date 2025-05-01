@@ -9,14 +9,14 @@ View examples
 .. raw:: html
 
    <img border= "1"
-   src="http://webgis.pub/cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=map"/>
+   src="https://webgis.pub/cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=map"/>
 
 The map above is in ``map`` Generated in mode. It is a static map
 (nothing changes when you click).
 
 But open the map below and you can use mouse clicks to interoperate.
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=browse
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=browse
 
 Submit CGI variables using Post form
 ------------------------------------
@@ -32,7 +32,7 @@ Another way is to use a form to submit parameters. Here is a form:
 
 .. raw:: html
 
-   <form method=POST action="http://webgis.pub/cgi-bin/mapserv" role="form"  class="form-horizontal" style="border: 1px solid saddlebrown;">
+   <form method=POST action="https://webgis.pub/cgi-bin/mapserv" role="form"  class="form-horizontal" style="border: 1px solid saddlebrown;">
    <input type="hidden" name="map" value="/owg/mfc1.map">
    <input type="hidden" name="layer" value="modis">
    <input type="hidden" name="layer" value="states_line">

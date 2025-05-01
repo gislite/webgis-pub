@@ -31,11 +31,11 @@ present some features with different attributes.
 By using non-spatial attribute information in the data, you can create a
 map like this:
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfk3.map&layer=country&layer=weq&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfk3.map&layer=country&layer=weq&mode=map
 
 or:
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa3.map&layer=states_poly&layer=states_line&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa3.map&layer=states_poly&layer=states_line&mode=map
 
 
 Map file

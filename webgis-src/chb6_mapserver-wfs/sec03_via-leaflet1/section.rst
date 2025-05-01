@@ -31,7 +31,7 @@ In METADATA, it is stated that:
 
 You can view the information about the service by following links.
 
-<a href="http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities">http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities</a>
+<a href="https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities">https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities</a>
 
 Example
 ======================================

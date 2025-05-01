@@ -9,7 +9,7 @@ map.
 Effect
 ------
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa7.map&layer=states&layer=states_label&layer=topo&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa7.map&layer=states&layer=states_label&layer=topo&mode=map
 
 Key code
 --------

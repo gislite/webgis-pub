@@ -59,7 +59,7 @@ Compared to the previous ``mfa1.map``:
 
 This Mapfile is configured with the WMS service. View function:
 
-`Open a link <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_ 
+`Open a link <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_
    
 
 
@@ -69,7 +69,7 @@ View the map
 Here, use the ``map`` mode of MapServer to view.
 
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&layer=states&mode=map
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&layer=states&mode=map
 
    View the map
 
@@ -107,7 +107,7 @@ If it is not set, the access will appear:
    </ServiceException></ServiceExceptionReport>
 
 
-`Yo can click the link to view the actual Error result page.  <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`__ 
+`Yo can click the link to view the actual Error result page.  <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`__
 
 
 Request the WMS
@@ -118,11 +118,11 @@ Note that the ``length`` and ``width`` parameters passed to the server graph in 
 
 It looks like that the  ``GETMAP`` request result is similar to MapServer’s ``mode=map``.
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
 
 
 
-`Use GetMap <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_
+`Use GetMap <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_
 
 
 
@@ -139,11 +139,11 @@ and the results look no different. Let’s zoom out to get a section of
 the map.
 
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=
 
 
 
-`Get a partial map with GetMap <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_
+`Get a partial map with GetMap <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_
 
 
 

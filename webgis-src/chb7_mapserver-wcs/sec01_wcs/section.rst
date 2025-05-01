@@ -48,7 +48,7 @@ GetCapabilities request
 As in WMS and WFS, you can also use ``GetCapabilities`` to view the
 capabilities of WCS:
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities  <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__
+`https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities  <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__
 
 
 Parse the parameters using Python:
@@ -56,7 +56,7 @@ Parse the parameters using Python:
 ::
 
    >>> [print(x) for x  in url.split('&')]
-   http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
+   https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
    SERVICE=WCS
    VERSION=2.0.1
    REQUEST=GetCapabilities
@@ -85,14 +85,14 @@ DescribeCoverage request
 The ``DescribeCoverage`` request lists more information about a specific
 coverage product.
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img>`__
+`https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID=world-img>`__
 
 The parameters are described as follows:
 
 ::
 
    >>> [print(x) for x  in url.split('&')]
-   http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
+   https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
    SERVICE=WCS
    VERSION=2.0.1
    REQUEST=DescribeCoverage
@@ -103,14 +103,14 @@ results are also different. You can open the link to have a look at it:
 
 WFS 1.0.0:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.0.0&REQUEST=DescribeCoverage&COVERAGE=world-img
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.0.0&REQUEST=DescribeCoverage&COVERAGE=world-img
 
 Parse the URL:
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
    1 SERVICE=WCS
    2 VERSION=1.0.0
    3 REQUEST=DescribeCoverage
@@ -118,14 +118,14 @@ Parse the URL:
 
 WFS 1.1.1:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.1&REQUEST=DescribeCoverage&IDENTIFIERS=world-img
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.1&REQUEST=DescribeCoverage&IDENTIFIERS=world-img
 
 Parse the URL:
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
    1 SERVICE=WCS
    2 VERSION=1.1.1
    3 REQUEST=DescribeCoverage
@@ -139,14 +139,14 @@ cannot specify the name and suffix of the file at this time, the file
 can be downloaded and saved, and modified into a file with ``.tif`` as
 the suffix. This file has geospatial information.
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326 
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326
 
 The parameters are decomposed as follows:
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map
    1 SERVICE=WCS
    2 VERSION=1.1.0
    3 REQUEST=GetCoverage
@@ -167,9 +167,9 @@ be displayed here. But by “right click” -> “view image”, you can see
 that it is a picture.
 
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png
 
 
-.. figure:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png
+.. figure:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER=world-img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png
 
     Result of WCS

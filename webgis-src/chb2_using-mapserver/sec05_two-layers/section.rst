@@ -7,7 +7,7 @@ View examples
 -------------
 
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa2.map&layer=world-country&layer=country-line&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa2.map&layer=world-country&layer=country-line&mode=map
 
 
 .. raw:: html
@@ -23,7 +23,7 @@ In this example, the image is generated to the source of the URL:
 
 ::
 
-   http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa2.map&layer=world-country&layer=country-line&mode=map
+   https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa2.map&layer=world-country&layer=country-line&mode=map
 
 Most traditional MapServer examples are shown in this way.
 

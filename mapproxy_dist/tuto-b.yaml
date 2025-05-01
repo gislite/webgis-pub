@@ -68,7 +68,7 @@ sources:
       transparent_color_tolerance: 0
     req:
       layers: lyr_WorldCountry
-      url: http://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
+      url: https://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
     type: wms
   maplet_WorldRailway:
     image:
@@ -76,7 +76,7 @@ sources:
       transparent_color_tolerance: 0
     req:
       layers: lyr_WorldRailway
-      url: http://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
+      url: https://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
     type: wms
   maplet_WorldRiver:
     image:
@@ -84,7 +84,7 @@ sources:
       transparent_color_tolerance: 0
     req:
       layers: lyr_WorldRiver
-      url: http://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
+      url: https://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
     type: wms
   maplet_WorldRoad:
     image:
@@ -92,7 +92,7 @@ sources:
       transparent_color_tolerance: 0
     req:
       layers: lyr_WorldRoad
-      url: http://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
+      url: https://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
     type: wms
   osm_wms:
     req:

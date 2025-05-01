@@ -96,7 +96,7 @@ Create a map
    <table><tbody>
    <tr>
    <td style="text-align: center; border: none">
-   <iframe src="http://webgis.pub/leaflet_quickstart/example-basic.html" width="616" height="416">
+   <iframe src="https://webgis.pub/leaflet_quickstart/example-basic.html" width="616" height="416">
    </iframe>
    </td></tr><tr>
    <td style="text-align: center; border: none">
@@ -135,7 +135,7 @@ Dot mark, circle mark, and polygon mark
 
    <table><tbody><tr>
    <td style="text-align: center; border: none">
-   <iframe src="http://webgis.pub/example-overlays.html" width="616" height="416">
+   <iframe src="https://webgis.pub/example-overlays.html" width="616" height="416">
    </iframe>
    </td></tr><tr>
    <td style="text-align: center; border: none">
@@ -180,7 +180,7 @@ Use pop-up window
    <tbody>
    <tr>
    <td style="text-align: center; border: none">
-   <iframe src="http://webgis.pub/example-popups.html" width="616" height="416">
+   <iframe src="https://webgis.pub/example-popups.html" width="616" height="416">
    </iframe>
    </td>
    </tr>

@@ -7,7 +7,7 @@ View examples
 -------------
 
   
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb4.map&layers=topo_wms+states&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb4.map&layers=topo_wms+states&mode=map
 
 Another exciting feature of MapServer is its ability to use layers
 provided by other map servers as its data source. In this case, the
@@ -63,7 +63,7 @@ layers locally in our MapFile CONNECTIONTYPE. Instead, we only define
 connection types that are external. WMS is an external data layer from
 other map servers.
 
-``CONNECTION "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map"``,
+``CONNECTION "https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map"``,
 the connection string that allows us to “get” data from another server.
 In the case of a WMS connection, this is a URL. If we were using a
 PostGIS database, this would be an SQL statement. Note that the string

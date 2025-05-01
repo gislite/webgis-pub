@@ -19,7 +19,7 @@ WEB
     METADATA
       # "wcs_label"           "WCS Demo" ### required
       # "wcs_description"     "WDC Demo from Mapserver."
-      "wcs_onlineresource"  "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map" ### recommended
+      "wcs_onlineresource"  "https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map" ### recommended
       #"wcs_fees"            "none"
       # "wcs_accessconstraints"    "none"
       "wcs_keywordlist"          "wcs,test"

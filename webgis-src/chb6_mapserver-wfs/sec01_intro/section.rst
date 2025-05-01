@@ -71,18 +71,18 @@ will return the result in GML format, and the call result can be viewed
 in the browser. WFS contains many operations, you can see the WFS
 operations supported by Mapfile from the ``GetCapabilities`` response:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities
 
 The following are those that use cities around the world:
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities>`__
+`https://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities>`__
 
 The URL is parsed as follows:
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
    1 SERVICE=WFS
    2 VERSION=2.0.0
    3 REQUEST=GetCapabilities
@@ -96,11 +96,11 @@ Sometimes we need to know what attributes a FeatureType has and what
 type they are, then we need the ``DescribeFeatureType`` method. A
 typical ``DescribeFeatureType`` call looks like this:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName=world-country
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName=world-country
 
 The following are those that use cities around the world:
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mf21.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName=world-country <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName=world-country>`__
+`https://webgis.pub/cgi-bin/mapserv?map=/owg/mf21.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName=world-country <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName=world-country>`__
 
 Pay attention to when configuring
 
@@ -114,7 +114,7 @@ The URL is parsed as follows:
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
    1 service=WFS
    2 VERSION=2.0.0
    3 request=DescribeFeatureType
@@ -127,18 +127,18 @@ Finally arrived at this method, this method can be said to be the basis
 of WFS, its purpose is clear at a glance, get Feature. If you type this
 call: The link below returns all the elements.
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country
 
 The following are those that use cities around the world:
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country>`__
+`https://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country>`__
 
 The URL is parsed as follows:
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
    1 service=WFS
    2 VERSION=2.0.0
    3 request=GetFeature
@@ -153,18 +153,18 @@ A limited number of features can be returned
 By using parameters ``count=2`` You can limit the number of features
 returned
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&count=2
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&count=2
 
 The following are those that use cities around the world:
 
-`http://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&count=2 <http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&count=2>`__
+`https://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&count=2 <https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&count=2>`__
 
 The resolution of URL is as follows:
 
 ::
 
    >>> [print(idx, x) for idx, x in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
    1 service=WFS
    2 VERSION=2.0.0
    3 request=GetFeature
@@ -186,12 +186,12 @@ Here ``OBJECTID`` Is a field in Shapefile.
 
 The following link returns the ID number as ``227`` Elements of:
 
-http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&FeatureId=world-country.227
+https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&FeatureId=world-country.227
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
    1 service=WFS
    2 VERSION=2.0.0
    3 request=GetFeature
@@ -205,14 +205,14 @@ According to the selector, such as:
 
 ::
 
-   http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&Filter=<Filter><PropertyIsEqualTo><PropertyName>OBJECTID</PropertyName><Literal>227</Literal></PropertyIsEqualTo></Filter>
+   https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&Filter=<Filter><PropertyIsEqualTo><PropertyName>OBJECTID</PropertyName><Literal>227</Literal></PropertyIsEqualTo></Filter>
 
 The URL is resolved as follows:
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
    1 service=WFS
    2 VERSION=2.0.0
    3 request=GetFeature
@@ -224,14 +224,14 @@ here, and the comparison of attributes is case-sensitive.
 
 ::
 
-   http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&Filter=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>CHINA</Literal></PropertyIsEqualTo></Filter>
+   https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName=world-country&Filter=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>CHINA</Literal></PropertyIsEqualTo></Filter>
 
 The resolution of URL is as follows:
 
 ::
 
    >>> [print(idx, x) for idx, x  in enumerate(url.split('&'))]
-   0 http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
+   0 https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw1.map
    1 service=WFS
    2 VERSION=2.0.0
    3 request=GetFeature

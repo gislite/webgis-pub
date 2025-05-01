@@ -17,7 +17,7 @@ data and manipulate them via URL.
 View examples
 -------------
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfml2.map&layer=states_poly&layer=states_line&layer=wriver&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfml2.map&layer=states_poly&layer=states_line&layer=wriver&mode=map
 
 To make the map richer, continue adding new data (river data) using a
 new ``LAYER`` object. The definitions of each layer are relatively
@@ -33,7 +33,7 @@ Here is the map file（mfml2.map）：
 The roads layer map ( ``wroads`` ) is also defined in the Mapfile above
 and this layer is further added to the map below.
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfml2.map&layer=states_poly&layer=states_line&layer=wriver&layer=wroads&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfml2.map&layer=states_poly&layer=states_line&layer=wriver&layer=wroads&mode=map
 
 Order of layers
 ---------------
@@ -47,7 +47,7 @@ can see that it is the same as the map above. The order of the layers
 defined in the Mapfile cannot be changed by passing parameters to the
 URL.
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfml2.map&layer=states_poly&layer=states_line&layer=wroads&layer=wriver&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfml2.map&layer=states_poly&layer=states_line&layer=wroads&layer=wriver&mode=map
 
 If you want to modify the order of layers, you can only modify it in the
 Mapfile:
@@ -60,4 +60,4 @@ Mapfile:
 You can see that although it is not obvious, the river layer is below
 the road layer.
 
-.. image:: http://webgis.pub/cgi-bin/mapserv?map=/owg/mfml.map&layer=states_poly&layer=states_line&layer=wroads&layer=wriver&mode=map
+.. image:: https://webgis.pub/cgi-bin/mapserv?map=/owg/mfml.map&layer=states_poly&layer=states_line&layer=wroads&layer=wriver&mode=map

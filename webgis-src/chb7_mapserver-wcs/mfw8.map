@@ -13,7 +13,7 @@ MAP
         IMAGEPATH "/owg/ms_tmp/"
         IMAGEURL "/ms_tmp/"
         METADATA
-            "wcs_onlineresource" "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map"
+            "wcs_onlineresource" "https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw8.map"
             "wcs_keywordlist" "wcs,test"
             "wcs_enable_request" "*"
         END

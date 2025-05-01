@@ -70,7 +70,7 @@ sources:
       transparent_color_tolerance: 0
     req:
       layers: lyr_WorldCountry
-      url: http://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
+      url: https://webgis.pub/cgi-bin/mapserv?map=/gdata/mfile_world.map
     type: wms
     coverage:
       bbox: [5.5, 47.4, 15.2, 54.8]

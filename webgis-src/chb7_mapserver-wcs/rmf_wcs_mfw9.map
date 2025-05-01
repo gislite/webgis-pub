@@ -19,7 +19,7 @@ WEB
     METADATA
       "wcs_label"           "GMap WCS Demo Server" ### required
       "wcs_description"     "Some text description of the service"
-      "wcs_onlineresource"  "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfw9.map&" ### recommended
+      "wcs_onlineresource"  "https://webgis.pub/cgi-bin/mapserv?map=/owg/mfw9.map&" ### recommended
       # "wcs_fees"            "none"
       # "wcs_accessconstraints"    "none"
       # "wcs_keywordlist"          "wcs,test"

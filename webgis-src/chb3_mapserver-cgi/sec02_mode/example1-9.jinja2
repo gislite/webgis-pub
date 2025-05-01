@@ -37,7 +37,7 @@ This page is called an HTML template in MapServer terminology.
 
         <pre><code>
 >>> url =
-'http://webgis.pub/cgi-bin/mapserv?map=%2Fowg%2Fmfc1.map&imgext=-77.658863+-140.267559+282.943144+39.732441&imgxy=300.0+150.0&zoom=0&layer=topo&layer=states_line&mode=browse&img.x=342&img.y=119'
+'https://webgis.pub/cgi-bin/mapserv?map=%2Fowg%2Fmfc1.map&imgext=-77.658863+-140.267559+282.943144+39.732441&imgxy=300.0+150.0&zoom=0&layer=topo&layer=states_line&mode=browse&img.x=342&img.y=119'
 >>> para_str = url.replace('%2F', '/').split('?')[-1].split('&')
 >>> from pprint import pprint
 >>> pprint([x.split('=') for x in para_str])

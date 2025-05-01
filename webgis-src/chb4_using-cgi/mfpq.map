@@ -61,13 +61,13 @@ MAP
     WEB
         HEADER "pq-header.html"
         FOOTER "pq-footer.html"
-        EMPTY "http://webgis.pub/pq-empty.html"
+        EMPTY "https://webgis.pub/pq-empty.html"
         TEMPLATE "to be replaced by map_web_template variable in section3.html"
         IMAGEPATH "/owg/ms_tmp/"
         IMAGEURL "/ms_tmp/"
         METADATA
             "wms_title" "WMS Demo Server"
-            "wms_onlineresource" "http://webgis.pub/cgi-bin/mapserv?map=/owg/mfpq.map&"
+            "wms_onlineresource" "https://webgis.pub/cgi-bin/mapserv?map=/owg/mfpq.map&"
             "wms_srs" "EPSG:3857 EPSG:4326"
         END
     END

@@ -9,7 +9,7 @@ MAP
         IMAGEURL "/ms_tmp/"
         METADATA
             "wfs_title" "world country"
-            "wfs_onlineresource" "http://webgis.pub/cgi-bin/mapserv?map=/owg/mft6.map"
+            "wfs_onlineresource" "https://webgis.pub/cgi-bin/mapserv?map=/owg/mft6.map"
             "wfs_srs" "EPSG:4326"
             "wfs_abstract" "This text describes your wfs service"
             "wfs_enable_request" "*"
@@ -35,7 +35,7 @@ MAP
         OFFSITE 0 0 0
         STATUS ON
         CONNECTIONTYPE WFS
-        CONNECTION "http://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&"
+        CONNECTION "https://webgis.pub/cgi-bin/mapserv?map=/owg/mft2.map&"
         METADATA
             "wfs_version" "1.0.0"
             "wfs_srs" "EPSG:4326"
