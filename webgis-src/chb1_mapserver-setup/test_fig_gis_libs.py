@@ -1,4 +1,4 @@
-'''
+"""
 .. graphviz::
 
    digraph G_libs{
@@ -42,16 +42,17 @@
         "libmapnik3.0" -> "mapnik-utils" ;
 
    }
-'''
+"""
 
 import os
 
+import pygraphviz as pgv
 from helper.textool import get_tmp_file
+
 # from pygraphviz import Digraph
 
 # from graphviz import Digraph, Graph
 
-import pygraphviz as pgv
 
 G = pgv.AGraph(directed=True, rankdir="LR", size=[8, 5], concentrate=True)
 # g = Graph(format='png')
@@ -62,23 +63,23 @@ G = pgv.AGraph(directed=True, rankdir="LR", size=[8, 5], concentrate=True)
 # dot = Digraph(comment='The Round Table')
 
 cfg = {
-    'shape': 'box',
-    'fixedsize': True,
-    'style': 'rounded,filled',
-    'width': 2,
-    'fontname': 'Arial',
-    'fontsize': 10,
-    'concentrate': True,
+    "shape": "box",
+    "fixedsize": True,
+    "style": "rounded,filled",
+    "width": 2,
+    "fontname": "Arial",
+    "fontsize": 10,
+    "concentrate": True,
 }
 
 cfg2 = {
-    'shape': 'ellipse',
-    'fixedsize': True,
-    'style': 'rounded,filled',
-    'width': 2,
-    'fontname': 'Arial',
-    'fontsize': 10,
-    'concentrate': True,
+    "shape": "ellipse",
+    "fixedsize": True,
+    "style": "rounded,filled",
+    "width": 2,
+    "fontname": "Arial",
+    "fontsize": 10,
+    "concentrate": True,
 }
 
 # for node_name in ['python3-shapely', 'python3-mapnik', 'python3-pyproj', 'python3-fiona', 'python3-mpltoolkits.basemap',
@@ -92,27 +93,25 @@ cfg2 = {
 # for node_name in ['libgdal20', 'libproj12', 'libgeos-c1v5', 'libspatialite7', 'libmapnik3.0']:
 #     G.add_node(node_name, fillcolor="#ffffff", **cfg2)
 
-G.add_edge('cgi-mapserver', 'libc6')
-G.add_edge('cgi-mapserver', 'libcairo2')
-G.add_edge('cgi-mapserver', 'libfreetype6')
-G.add_edge('cgi-mapserver', 'libgdal20')
-G.add_edge('cgi-mapserver', 'libmapserver2')
-G.add_edge('cgi-mapserver', 'libpng16-16')
-G.add_edge('cgi-mapserver', 'libpq5')
-G.add_edge('cgi-mapserver', 'libproj12')
+G.add_edge("cgi-mapserver", "libc6")
+G.add_edge("cgi-mapserver", "libcairo2")
+G.add_edge("cgi-mapserver", "libfreetype6")
+G.add_edge("cgi-mapserver", "libgdal20")
+G.add_edge("cgi-mapserver", "libmapserver2")
+G.add_edge("cgi-mapserver", "libpng16-16")
+G.add_edge("cgi-mapserver", "libpq5")
+G.add_edge("cgi-mapserver", "libproj12")
 
-G.add_edge('mapserver-bin', 'libc6')
-G.add_edge('mapserver-bin', 'libcairo2')
-G.add_edge('mapserver-bin', 'libfreetype6')
-G.add_edge('mapserver-bin', 'libgdal20')
-G.add_edge('mapserver-bin', 'libmapserver2')
-G.add_edge('mapserver-bin', 'libpng16-16')
-G.add_edge('mapserver-bin', 'libpq5')
-G.add_edge('mapserver-bin', 'libproj12')
-
-
+G.add_edge("mapserver-bin", "libc6")
+G.add_edge("mapserver-bin", "libcairo2")
+G.add_edge("mapserver-bin", "libfreetype6")
+G.add_edge("mapserver-bin", "libgdal20")
+G.add_edge("mapserver-bin", "libmapserver2")
+G.add_edge("mapserver-bin", "libpng16-16")
+G.add_edge("mapserver-bin", "libpq5")
+G.add_edge("mapserver-bin", "libproj12")
 
 
-G.layout(prog='dot')  # default to neato
-G.draw(get_tmp_file(__file__, '1', file_ext='pdf'))
-G.draw(get_tmp_file(__file__, '1', file_ext='png'))
+G.layout(prog="dot")  # default to neato
+G.draw(get_tmp_file(__file__, "1", file_ext="pdf"))
+G.draw(get_tmp_file(__file__, "1", file_ext="png"))

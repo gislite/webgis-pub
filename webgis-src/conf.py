@@ -1,18 +1,18 @@
-project = 'Open Source WebGIS'
-copyright = 'Since 2020'
-author = 'gislite'
-release = 'v 0.15'
+project = "Open Source WebGIS"
+copyright = "Since 2020"
+author = "gislite"
+release = "v 0.15"
 
 extensions = []
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
 
-html_theme = 'sphinx_book_theme'
-html_static_path = ['_static']
+html_theme = "sphinx_book_theme"
+html_static_path = ["_static"]
 
 html_theme_options = {
-    'repository_url': 'https://github.com/gislite/webgis-pub',
+    "repository_url": "https://github.com/gislite/webgis-pub",
     "icon_links": [
         {
             "name": "GitHub",
@@ -32,12 +32,11 @@ html_theme_options = {
             "icon": "https://img.shields.io/github/forks/gislite/webgis-pub.svg",
             "type": "url",
         },
-
-    ]
+    ],
 }
 
 html_logo = "_static/webgis-logo.png"
-html_title = 'Open-Source WebGIS'
+html_title = "Open-Source WebGIS"
 
-locale_dirs = ['locales']
+locale_dirs = ["locales"]
 gettext_compact = True

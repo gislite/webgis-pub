@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 
 import os
+
 import yaml
-from openpyxl import load_workbook
-from osgeo import gdal, ogr, osr
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
+from openpyxl import load_workbook
+from osgeo import gdal, ogr, osr
 
-JINJA_ENV = Environment(loader=FileSystemLoader('templates'))
+JINJA_ENV = Environment(loader=FileSystemLoader("templates"))
 
-TPL_MAP = '''
+TPL_MAP = """
 MAP
 NAME "{fc_name}"
 SIZE 300 300
@@ -38,7 +39,7 @@ IMAGETYPE png
 {fc_includes}
 
 END
-'''
+"""
 TPL_LAYER = """
 LAYER
     NAME 'land'
@@ -80,7 +81,7 @@ CLASS
 END
 """
 
-TPL_MAPPROXY = '''
+TPL_MAPPROXY = """
 services:
   demo:
   tms:
@@ -117,15 +118,15 @@ grids:
         base: GLOBAL_WEBMERCATOR
 
 globals:
-'''
+"""
 
 
 def get_mts(afile=None):
     if afile:
         return os.path.getmtime(afile)
     else:
-        if os.path.exists('mts.log'):
-            return os.path.getatime('mts.log')
+        if os.path.exists("mts.log"):
+            return os.path.getatime("mts.log")
         else:
             return 0
 
@@ -138,13 +139,13 @@ def lyr_list(mslug, xls_file):
 
     out_str = []
     for xx in range(1, max_row_num + 1):
-        the_cell = 'maplet_' + mslug + '_' + sheet.cell(row=xx, column=1).value
+        the_cell = "maplet_" + mslug + "_" + sheet.cell(row=xx, column=1).value
         out_str.append(the_cell)
     return out_str
 
 
 def get_html_title(html_file):
-    uu = BeautifulSoup(open(html_file), 'lxml')
+    uu = BeautifulSoup(open(html_file), "lxml")
     return uu.title.text
 
 
@@ -163,32 +164,84 @@ def hex2dec(string_num):
 
 def xlsx2dict(xls_file):
     COLOR_INDEX = (
-        '00000000', '00FFFFFF', '00FF0000', '0000FF00', '000000FF',
+        "00000000",
+        "00FFFFFF",
+        "00FF0000",
+        "0000FF00",
+        "000000FF",
         # 0-4
-        '00FFFF00', '00FF00FF', '0000FFFF', '00000000', '00FFFFFF',
+        "00FFFF00",
+        "00FF00FF",
+        "0000FFFF",
+        "00000000",
+        "00FFFFFF",
         # 5-9
-        '00FF0000', '0000FF00', '000000FF', '00FFFF00', '00FF00FF',
+        "00FF0000",
+        "0000FF00",
+        "000000FF",
+        "00FFFF00",
+        "00FF00FF",
         # 10-14
-        '0000FFFF', '00800000', '00008000', '00000080', '00808000',
+        "0000FFFF",
+        "00800000",
+        "00008000",
+        "00000080",
+        "00808000",
         # 15-19
-        '00800080', '00008080', '00C0C0C0', '00808080', '009999FF',
+        "00800080",
+        "00008080",
+        "00C0C0C0",
+        "00808080",
+        "009999FF",
         # 20-24
-        '00993366', '00FFFFCC', '00CCFFFF', '00660066', '00FF8080',
+        "00993366",
+        "00FFFFCC",
+        "00CCFFFF",
+        "00660066",
+        "00FF8080",
         # 25-29
-        '000066CC', '00CCCCFF', '00000080', '00FF00FF', '00FFFF00',
+        "000066CC",
+        "00CCCCFF",
+        "00000080",
+        "00FF00FF",
+        "00FFFF00",
         # 30-34
-        '0000FFFF', '00800080', '00800000', '00008080', '000000FF',
+        "0000FFFF",
+        "00800080",
+        "00800000",
+        "00008080",
+        "000000FF",
         # 35-39
-        '0000CCFF', '00CCFFFF', '00CCFFCC', '00FFFF99', '0099CCFF',
+        "0000CCFF",
+        "00CCFFFF",
+        "00CCFFCC",
+        "00FFFF99",
+        "0099CCFF",
         # 40-44
-        '00FF99CC', '00CC99FF', '00FFCC99', '003366FF', '0033CCCC',
+        "00FF99CC",
+        "00CC99FF",
+        "00FFCC99",
+        "003366FF",
+        "0033CCCC",
         # 45-49
-        '0099CC00', '00FFCC00', '00FF9900', '00FF6600', '00666699',
+        "0099CC00",
+        "00FFCC00",
+        "00FF9900",
+        "00FF6600",
+        "00666699",
         # 50-54
-        '00969696', '00003366', '00339966', '00003300', '00333300',
+        "00969696",
+        "00003366",
+        "00339966",
+        "00003300",
+        "00333300",
         # 55-59
-        '00993300', '00993366', '00333399', '00333333',
-        'System Foreground', 'System Background'
+        "00993300",
+        "00993366",
+        "00333399",
+        "00333333",
+        "System Foreground",
+        "System Background"
         # 60-64
     )
     wb = load_workbook(filename=xls_file)
@@ -196,24 +249,23 @@ def xlsx2dict(xls_file):
 
     max_row_num = sheet.max_row
     max_col_num = sheet.max_column
-    out_str = ''
+    out_str = ""
     for xx in range(1, max_row_num + 1):
         # print('x:', xx)
-        the_str = ''
+        the_str = ""
         sig = True
         for yy in range(1, max_col_num + 1):
             # print('y:', yy)
 
             the_cell = sheet.cell(row=xx, column=yy)
             if the_cell and the_cell.value:
-
                 the_cell_value = the_cell.value
 
                 colors = the_cell.fill.fgColor.index
                 # print(colors)
 
                 # '00000000' for not filled, 0 for `white`.
-                if colors in ['00000000', 0]:
+                if colors in ["00000000", 0]:
                     pass
                 elif len(colors) == 8:
                     a = int(hex2dec(colors[2:4]))
@@ -225,26 +277,27 @@ def xlsx2dict(xls_file):
                 #     out_dic[row[0].value] = row[1].value
 
                 if str(the_cell_value).lower() in [
-                    'class', 'classitem',
-                    'labelitem',
-                    'data',
-                    'labelminscaledenom',
-                    'labelmaxscaledenom',
-                    'encoding',
-                    'processing',
+                    "class",
+                    "classitem",
+                    "labelitem",
+                    "data",
+                    "labelminscaledenom",
+                    "labelmaxscaledenom",
+                    "encoding",
+                    "processing",
                 ]:
-                    the_str = '- ' + the_str
+                    the_str = "- " + the_str
 
                 if sig:
-                    the_str = the_str + str(the_cell_value) + ': '
+                    the_str = the_str + str(the_cell_value) + ": "
                     sig = False
                 else:
                     the_str = the_str + str(the_cell_value)
             else:
-                the_str = the_str + '  '
-        out_str = out_str + the_str + '\r'
+                the_str = the_str + "  "
+        out_str = out_str + the_str + "\r"
 
-    with open('xx_out.xbj', 'w') as fo:
+    with open("xx_out.xbj", "w") as fo:
         fo.write(out_str)
     uu = yaml.load(out_str)
     # from pprint import pprint
@@ -257,7 +310,7 @@ def get_epsg_code(img_file, raster=False):
     # print(img_file)
     if os.path.isdir(img_file):
         raster = True
-    elif img_file.lower().endswith('.tif'):
+    elif img_file.lower().endswith(".tif"):
         raster = True
     if raster:
         # print(img_file)
@@ -268,11 +321,11 @@ def get_epsg_code(img_file, raster=False):
         sr2.SetFromUserInput(srs)
         # print(sr2.ExportToPrettyWkt())
 
-        return {'epsg_code': '',
-                'proj4_code': sr2.ExportToProj4(),
-                'geom_type': 'raster'}
-
-
+        return {
+            "epsg_code": "",
+            "proj4_code": sr2.ExportToProj4(),
+            "geom_type": "raster",
+        }
 
     else:
         ds = ogr.Open(img_file)
@@ -298,11 +351,12 @@ def get_epsg_code(img_file, raster=False):
         geom_type = geom.GetGeometryName()
 
         return {
-            'proj4_code': srs.ExportToProj4(),
+            "proj4_code": srs.ExportToProj4(),
             # 'epsg_code': '', #epsg_code,
-            'geom_type': geom_type}
+            "geom_type": geom_type,
+        }
 
 
 # ws1=wb.get_sheet_by_name("Sheet1")
-if __name__ == '__main__':
-    xlsx2dict('meta_poly.xlsx')
+if __name__ == "__main__":
+    xlsx2dict("meta_poly.xlsx")

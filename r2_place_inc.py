@@ -1,14 +1,14 @@
 from pathlib import Path
 
-inws = Path('webgis-src/pt02_mapserver')
+inws = Path("webgis-src/pt02_mapserver")
 
-for wfile in inws.rglob('*.rst'):
+for wfile in inws.rglob("*.rst"):
     print(wfile)
     cnts = open(wfile).readlines()
     for cnt in cnts:
         cnt = cnt.strip()
-        if cnt.startswith('.. literal'): #  and 'htmp' in cnt:
-            file_name = cnt.split('/')[-1]
+        if cnt.startswith(".. literal"):  #  and 'htmp' in cnt:
+            file_name = cnt.split("/")[-1]
             print(file_name)
             raw_file = wfile.parent.parent / file_name
             dst_file = wfile.parent / file_name
