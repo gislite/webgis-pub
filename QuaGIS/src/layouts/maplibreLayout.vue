@@ -113,12 +113,12 @@ const linksList = [
     icon: 'school',
     link: '/maplibre/demo14'
   },
-  // {
-  //   title: '',
-  //   caption: '示例15',
-  //   icon: 'school',
-  //   link: '/maplibre/demo15'
-  // },
+  {
+    title: '',
+    caption: '地理所办公室',
+    icon: 'school',
+    link: '/maplibre/demo16'
+  },
 
 
 ];

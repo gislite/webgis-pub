@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@mapbox/mapbox-gl-draw": "^1.4.3",
+    "@maplibre/maplibre-gl-geocoder": "^1.8.0",
     "@quasar/extras": "^1.0.0",
     "@supermap/iclient-maplibregl": "^11.1.1",
     "axios": "^0.21.1",
@@ -20,6 +21,7 @@
     "leaflet-velocity": "^2.1.2",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.8.2",
+    "maplibre": "^0.0.1-security",
     "maplibre-gl": "^4.1.2",
     "maptalks": "^1.0.0-rc.4",
     "maptalks.three": "^0.38.3",

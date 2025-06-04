@@ -128,6 +128,7 @@ const routes: RouteRecordRaw[] = [
       {path: 'demo12', component: () => import('pages/maplibre/demo_12.vue')},
       {path: 'demo13', component: () => import('pages/maplibre/demo_13.vue')},
       {path: 'demo14', component: () => import('pages/maplibre/demo_14.vue')},
+      {path: 'demo16', component: () => import('pages/maplibre/demo_16.vue')},
     ],
   },
 
