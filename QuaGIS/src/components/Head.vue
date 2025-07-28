@@ -18,6 +18,7 @@
       <q-route-tab to="/cesium/index" label="Cesium"/>
       <q-route-tab to="/mapbox/index" label="Mapbox"/>
       <q-route-tab to="/maplibre/demo9" label="maplibre"/>
+<!--      <q-route-tab to="/heitu/index" label="Heitu"/>-->
 
     </q-tabs>
   </q-header>

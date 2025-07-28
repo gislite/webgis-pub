@@ -132,6 +132,19 @@ const routes: RouteRecordRaw[] = [
     ],
   },
 
+  // {
+  //   path: '/heitu',
+  //   component: () => import('layouts/heituLayout.vue'),
+  //   children: [
+  //   {
+  //       path: '',
+  //       redirect: ('/heitu/index'),
+  //       component: () => import('pages/maptalks/maptalks_foo.vue')
+  //     },
+  //     {path: 'index', component: () => import('pages/heitu/knowlage_map.vue')},
+  //   ],
+  // },
+
   // Always leave this as last one,
   // but you can also remove it
   {
