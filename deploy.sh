@@ -5,4 +5,4 @@ python3 r3_pub_rst.py
 cd _pub
 . /xpy/bin/activate && make html
 sudo rsync -avp _build/html/ /owg/
-sudo chown -R www-data.www-data /owg/
+sudo chown -R www-data:www-data /owg/
