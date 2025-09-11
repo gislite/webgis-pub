@@ -65,6 +65,7 @@ def gen_html_pages(src_ws):
         # )
 
         xx_html_file = wfile.parent / f"xx-{wfile.stem}.html"
+        print(xx_html_file)
         render_html(
             str(wfile),
             str(xx_html_file),
