@@ -1,0 +1,1517 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:2
+msgid "Cartographic Application of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:4
+msgid ""
+"This part focuses on the techniques of cartography in MapServer. "
+"Including the use of layers and style settings, text annotations."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:7
+msgid ""
+"MapServer configures the map to publish through a map file (Mapfile). "
+"Mapfile is the core of using MapServer. It organizes various map elements"
+" into a hierarchical object system, declaring the size and format of the "
+"generated map, all the paths, names and formats of the data used, as well"
+" as a variety of more complex control options. The syntax for configuring"
+" Mapfile files is simple and easy to learn, especially if you have "
+"experience of using desktop GIS software such as ArcMap to make thematic "
+"maps. Mapfile is multi-layered, and each map file defines a large number "
+"of other objects. These objects include scale bars, legends, map colors, "
+"map names, map layers, and so on."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:18
+msgid ""
+"Configuring a complete Mapfile file requires GIS data sources, font "
+"files, and symbol files. GIS data sources can be distributed on different"
+" computers; font files are used to define the font types used in the "
+"output map. The point, line and surface symbols used in the map can be "
+"defined in the Symbol object of the Mapfile file; however, in order to "
+"achieve symbol reuse, independent symbol files are usually defined "
+"outside the Mapfile, and there is no need to define the same symbols in "
+"different Mapfile files."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:27
+msgid "After planning the WebGIS website, configure the Mapfile file steps:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:29
+msgid ""
+"Prepare the resources required for Mapfile files, including GIS data, "
+"font files, and symbol files."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:31
+msgid ""
+"According to the requirements of WebGIS website, follow the syntax of "
+"Mapfile, use text editing software or special Mapfile writing software "
+"such as MapLab to write Mapfile."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:34
+msgid ""
+"Use debugging software (such as MapLab) to test and see if the Mapfile "
+"configuration is correct and appropriate."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:37
+msgid ""
+"The core program of MapServer is used to generate maps according to "
+"geospatial data, configure the function of using CGI, and give it the "
+"function of WebGIS. MapServer supports distribution and interoperability "
+"by supporting several standards from the OGC Consortium. Whether using "
+"the MapServer CGI module or the server-side scripting language MapScript,"
+" the dynamic interaction between the server and the client browser can be"
+" realized."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:4
+msgid "Add a grid layer"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:7
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:25
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:7
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:7
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:18
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:11
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:7
+msgid "View examples"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:14
+msgid ""
+"In addition to supporting vector data (points, lines, polygons and "
+"labels), MapServer can also display raster data. Through the use of the "
+"GDAL library, MapServer can import and export a variety of raster "
+"formats. MapServer now supports RGB and multispectral images "
+"(multilayers). In versions prior to 4.0, raster input was limited to "
+"single-layer, grayscale or color image indices. This example shows how to"
+" use multispectral data to choose what layers to display. With RGB and "
+"multispectral images, there may be a significant performance penalty."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:23
+msgid ""
+"Since MapServer 5.x uses the GD 2.0.x library to generate image output, "
+"it supports RGB (24-bit true color) output as well. Therefore, it is now "
+"possible to use both ``PNG24`` (truecolor) output and 8-bit (indexed "
+"color or grayscale) PNGs. This example uses PNG24 IMAGETYPE. Just like "
+"RGB input, rendering results are significantly improved when using PNG24."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:30
+msgid ""
+"MapServer can actually use GDAL to generate output images, but that’s "
+"another topic. If you want to know more about it, see the specific usage "
+"of the ``OUTPUTFORMAT`` object in MapFile."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:34
+msgid "The following is the Mapfile (mfa5.map) used in this example:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:36
+msgid "The file changes are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:43
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:31
+msgid "Annotated Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:45
+msgid "The structure of mapfile, through objects, looks like this:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:59
+msgid "The modifications are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:61
+msgid "`Open the file:diff_mfa5_mfa4.html <./diff_mfa5_mfa4.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:67
+msgid ""
+"When you are in MapFile , you will see that the new layer ``\"modis\"`` "
+"is added after the polygon layer ``\"states\"``. MapServer displays "
+"layers in reverse order - last in first out (LIFO), with the first layer "
+"drawn in the MapFile defined at the bottom of the map."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:72
+msgid ""
+"So the country polygon layer, will be drawn at the bottom of the result. "
+"Since the raster layer is drawn on top of it, it won’t be seen. That’s "
+"why the first layer gets the status value ``STATUS OFF`` off. The line "
+"layer is defined below the raster layer, so it will be drawn on top of "
+"the result (you can see it). That’s why we started to separate the line "
+"layer from the polygon layer. Finally, labels are drawn on top of "
+"everything."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:80
+msgid ""
+"MapServer can automatically turn on or off the l layer according to the "
+"status of other layers (the polygon layer will be turned off when the "
+"raster layer is turned on). This is done with the ``REQUIRES`` parameter."
+" You should use this feature once you start creating your own MapServer "
+"applications."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:87
+msgid "Parameter description"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:89
+msgid "Let’s take a look at the new parameters introduced in MapFile:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:91
+msgid ""
+"``IMAGETYPE`` , which is not new, but the value is ``PNG24`` . PNG24 is a"
+" 24-bit true color version of the PNG format. Instead of output images "
+"being limited to 256 color combinations, map servers now have millions. "
+"By the way, try changing this value back to PNG. Note the formats that "
+"can be used, the time it takes to generate the image. Choose between true"
+" color and indexed color, taking into account the time it takes to "
+"generate the image."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:99
+msgid ""
+"``SYMBOLSET``, the path to the file defined by the symbols in the sub. "
+"Symbols in this file are referenced through the SYMBOL object in the "
+"class object. It’s not really needed at this point, but I thought I’d "
+"throw this out here for now. See the MapFile reference and for more "
+"information on MapServer Construction with Cartographic Symbols."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:105
+msgid ""
+"``DATA \"raster/mod09a12003161_ugl_ll_8bit.tif\"``, in the newly added "
+"layer object, the data parameter points to a GeoTIFF image. Like "
+"MapServer’s vector datasets, it supports multiple raster file formats. "
+"This support is through the use of the GDAL library. For more information"
+" on the different raster formats supported by MapServer and a general "
+"discussion of using raster map servers, please read how raster data works"
+" at http://www.mapserver.org/input/raster.html"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:113
+msgid ""
+"``TYPE RASTER``, when using raster data (images), the value is "
+"``RASTER``, not ``POLYGON``, ``LINE``, ``POINT``, or others."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:116
+msgid ""
+"``PROCESSING \"BANDS=1,2,3\"``, this layer object parameter is new in "
+"MapServer 4.x. The processing keyword has many values, but in this case, "
+"it is used to select the bands displayed in the multispectral image. The "
+"value string here will be passed to the GDAL library. Documentation for "
+"this is currently minimal, but see MAPFILE for more examples of using the"
+" processing keyword."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:123
+msgid ""
+"``OFFSITE``, this parameter tells MapServer which pixel values to render "
+"as the background (or ignore). You can get pixel value manipulation of "
+"images or image manipulation programs (eg GIMP, Photoshop)."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:128
+msgid "RGB and Index Image"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:130
+msgid ""
+"To compare the speed of creating a map using a RGB image with an indexed "
+"color image, replace the following line in MapFile:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:141
+msgid "Use the following code:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:150
+msgid "In addition, try changing ``IMAGETYPE`` from ``PNG24`` to ``PNG`` ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:153
+msgid "Use preprocessing"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:155
+msgid ""
+"Raster data, such as remote sensing images, is not just a picture. In a "
+"computer, an image is usually represented by three RGB channels. In "
+"remote sensing images, channels are generally called bands. Moreover, the"
+" band of the remote sensing image is different from the RGB channel of "
+"the image. It does not necessarily correspond to the tricolor of RGB, and"
+" the number of bands is not necessarily three."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:162
+msgid ""
+"In MapServer, in addition to rendering images by default, you can also "
+"define how to handle them, such as which three bands are used in false "
+"color, if the color is stretched, and so on."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:166
+msgid ""
+"For example, for remote sensing images, use the following statement to "
+"reverse the order of bands:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:173
+msgid "The results are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:4
+msgid "Add a graticule"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:6
+msgid ""
+"In order to accurately indicate the location of each place on the earth, "
+"people assume a coordinate system for the earth’s surface, which is the "
+"latitude and longitude coordinate system."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:10
+msgid ""
+"On maps and globes, we can see thin lines, some horizontal and some "
+"vertical, which are the longitude and latitude. The warp and weft are "
+"intertwined, much like the squares on a chessboard, forming a warp and "
+"weft network."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:15
+msgid ""
+"According to these longitude and latitude lines, the position and "
+"direction of any place on the ground can be accurately determined. Using "
+"the longitude and latitude marked on it, various locations, regions and "
+"various geographic locations on the earth’s surface can be determined. It"
+" is useful in military, aviation, navigation, etc. For example, a ship is"
+" sailing on the vast sea, and an airplane is flying in the vast sky. No "
+"matter where you go, people can use instruments to accurately measure its"
+" latitude and longitude to determine its position."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:27
+msgid ""
+"In MapServer, latitude and longitude lines can be drawn on the map "
+"according to its cartographic capabilities. This feature is a latecomer, "
+"originally developed by John Novak in 2003. The drawing of graticules is "
+"almost necessary for desktop mapping to facilitate location determination"
+" when reading maps; however, it is not necessary for WebGIS. WebGIS "
+"enhances the user’s operations on the map, and the latitude and longitude"
+" coordinates can be quickly obtained through the spatial query function."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:36
+msgid ""
+"The image below is an example, drawn on a map with latitude and longitude"
+" lines, with the longitude and latitude of the longitude lines drawn to "
+"the ends of the line."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:43
+msgid "Here is its Mapfile :"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:50
+msgid "Code modification"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:52
+msgid ""
+"Compared with the previously released image map, the code changes are as "
+"follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:55
+msgid "`Open the file:diff_mfd8_mfa5.html <./diff_mfd8_mfa5.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:4
+msgid "Change the output format of the map"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:9
+msgid ""
+"Depending on the format you choose, the image may not be displayed in "
+"your browser. If the link doesn’t appear in your browser, right-click on "
+"the image above to see what format is specified in MapFile for saving."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:18
+msgid "Different output results"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:21
+msgid "Mapfile example"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:23
+msgid "The following is the Mapfile used in this example ``mfa8.map`` ):"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:31
+msgid "Files are changed as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:33
+msgid "`Open the file: diff_mfa8_mfa6.html <./diff_mfa8_mfa6.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:36
+msgid ""
+"Now our MapFile contains a new object ``OUTPUTFORMAT`` . Within the "
+"``MAP`` object defined by this object, and when used with the keyword "
+"``IMAGETYPE``."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:40
+msgid ""
+"Depending on the compiled library of MapServer, you can have a variety of"
+" output formats to choose from - the GD library provides ``PNG`` (8-bit "
+"and 24-bit), ``GIF``, ``JPEG``, ``WBMP`` , the GDAL library, which "
+"sources many of MapServer’s input formats, and can also provide output in"
+" ``PNG``, ``JPEG``, ``TIFF/GeoTIFF``, and other raster formats; the "
+"pdflib library provides PDF output."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:47
+msgid ""
+"Have a look at your MAPFILE object by changing the keyword ``IMAGETYPE`` "
+"and experiment with ``OUTPUTFORMAT`` . It should be used as ``IMAGETYPE``"
+" value (eg: ``IMAGETYPE png`` or ``PNG24 IMAGETYPE`` ), the name of the "
+"output format."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:52
+msgid "Please consult the ``OUTPUTFORMAT`` object reference:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:54
+msgid "//www.mapserver.org/mapfile/outputformat.html#outputformat"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:4
+msgid "Publish a vector layer"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:6
+msgid ""
+"This section begins with using vector data in MapServer. Vector data is "
+"similar to vector data in CAD software or illustrator. In addition to the"
+" difference of geospatial location, another important aspect is that "
+"vector data in GIS has no style information. CAD or illustrator mainly "
+"focuses on drawing, and the vector data used need to be distinguished and"
+" beautified by width, color and style. In GIS, these works are completed "
+"by the map drawing stage. The same data can be drawn in different "
+"thematic maps and different application scenarios."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:16
+msgid "Define vector layers in Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:19
+msgid ""
+"Mapserver can create an image and save it to a local directory, or "
+"deliver it directly to a web browser on demand (as in this example). Note"
+" the above map, it is generated by the WebGIS server in the server-side "
+"background, and then transmitted to the client. The code behind in the "
+"page is:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:28
+msgid "Instead of browsing it on the HTML page, you can just enter this URL:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:30
+msgid ""
+"http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&layer=world-"
+"country&mode=map"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:32
+msgid ""
+"(Remember to replace the hostname or IP address; for example, use the "
+"local hostname ``localhost``, or use the IP address directly, such as "
+"``\"127.0.0.1\"``)"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:41
+msgid ""
+"Take a look at this Mapfile below. Lines ``07`` to ``19`` define the "
+"first layer of the map."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:44
+msgid ""
+"The layer starts with ``LAYER`` and ends with ``END``. Based on the "
+"spatial data of ``wcountry.shp1``, the polygon layer renders the global "
+"administrative division data. The ``NAME`` keyword specifies the name of "
+"the layer. The name itself is optional, but if you use one, it must be no"
+" more than 20 characters. The layer name is used in the HTML template "
+"layer as a ``CGI`` reference. A name must be specified if you want the "
+"interactive layer to be able to be toggled on and off from the HTML form."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:53
+msgid ""
+"The ``STATUS`` keyword determines whether the layer is rendered, and "
+"whether its state can be changed. ``STATUS`` the default layer is always "
+"rendered and can change state at the same time."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:57
+msgid ""
+"Lines ``12`` to ``18`` specify the only class object parameter at this "
+"level. A class object is started with the keyword ``class`` and "
+"terminated by the keyword ``END`` (line ``18``). While this application "
+"will use classes more extensively than previous maps, with this layer, "
+"you only need to specify a single default class that will include every "
+"feature in the shapefile. The name of the class will appear on the legend"
+" associated with the map. If a class has no name, it will still be "
+"rendered, but it will not appear in the legend. The style object keyword "
+"``COLOR`` specifies the color to paint, and ``OUTLINECOLOR`` specifies "
+"the color to paint the border. Since this layer is a polygon, it will be "
+"filled with the specified color. Note that if the layer is a line layer, "
+"the ``COLOR`` value will specify the color of the line."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:71
+msgid "URL parameter description"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:73
+msgid "The URL can be broken down into three parts:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:75
+msgid ""
+"The first part, ``http://webgis.pub/cgi-bin/mapserv?``, calls MapServer’s"
+" CGI program. On a different system, it might be ``mapserv`` or "
+"``mapserv.exe`` , or something else. If you directly call to open the "
+"above URL, you will get this message:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:84
+msgid "To get the correct information, you need to add additional parameters."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:86
+msgid ""
+"To get the correct information, additional parameters need to be added. "
+"The next three parts are the query string. The query string contains CGI "
+"parameters (variables and their values), with each parameter separated by"
+" a symbol (``&``)."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:91
+msgid ""
+"Now looking at the query string, the first parameter ``map`` has a value:"
+" ``/owg/mfa1.map``"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:94
+msgid ""
+"The next parameter, ``layer=states``, tells mapserv to use the ``states``"
+" layer. We named the layer object ``states`` in the Mapfile."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:97
+msgid ""
+"Next parameter ``layer=states`` Tell mapserv to use the ``states`` Layer."
+" We name it layer objects in Mapfile ``states`` ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:100
+msgid ""
+"The last parameter, ``mode=map`` , tells mapserv what to do to output "
+"MapFile in mode. In this case, it tells ``mapserv`` to dump the image "
+"directly to the web browser (client), without first creating a temporary "
+"image on the server."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:105
+msgid ""
+"The values for ``TYPE`` can be: ``'chart', 'circle', 'line', 'point', "
+"'polygon', 'raster', 'query', 'annotation'``."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:109
+msgid "Map extent"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:111
+msgid ""
+"In the Mapfile, the correct range needs to be set in order to display the"
+" data. For example, for China-wide data, the set range is: ``EXTENT 73 8 "
+"136 53``, the effect is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:115
+msgid "The complete Mapfile is:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:123
+msgid "Different modes viewed by MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:125
+msgid ""
+"Note the ``mode=map`` above, which is the viewing mode supported by "
+"MapServer. MapServer’s ``mode`` CGI variable can take values other than "
+"``map``. In addition to the ``map`` mode, there is also the ``browse`` "
+"mode. For example, if you use ``map=browse``, MapServer will dump the "
+"image to a temporary directory on the server."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:131
+msgid ""
+"Using browse mode requires specifying the ``template`` parameter. "
+"Generally, a template file needs to be defined first. Without a template "
+"file, browse mode cannot work properly, which will be explained later. In"
+" MapServer 6.x, the ``template`` parameter allows the use of the "
+"OpenLayers keyword, which can be used to view MapServer results."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:137
+msgid ""
+"The following directly uses the default configuration of OpenLayers to "
+"view the map. Note that the OpenLayers library of the MapServer website "
+"needs to be called, so it will be slower for the first time."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:141
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfa1.map&layer=states&mode=browse&template=OpenLayers"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:143
+msgid "For OpenLayers mode, see:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:145
+msgid "https://mapserver.org/cgi/openlayers.html"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:147
+msgid ""
+"You can try modifying the value of the keyword in MapFile and see the "
+"result. These experiments will help you understand these keywords."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:4
+msgid "Static map with two layers"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:22
+msgid "In this example, the image is generated to the source of the URL:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:28
+msgid "Most traditional MapServer examples are shown in this way."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:30
+msgid ""
+"This example is slightly different from the previous one, where the color"
+" of the polygon has been modified."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:34
+msgid "Mapfile description"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:36
+msgid ""
+"First take a look at the MapFile that this example uses ``mfa2.map`` ), "
+"This Mapfile defines two layers:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:44
+msgid ""
+"It’s important to remember that MapServer’s render layers are in the "
+"order they are specified in the mapfile. The last layer in the Mapfile is"
+" the top layer of the map rendering result, building the map on top of "
+"all the previous layers. This means that details shown earlier in the "
+"Mapfile (ie, lower layers in the map image) may be obscured. This is most"
+" important when rendering polygon layers, since polygons can be filled "
+"with a specified color. If the map server renders a point layer (that is,"
+" for example, the location of a city), then the render state represents a"
+" polygon layer, and the city will not be visible unless the specified "
+"polygon layer color is transparent."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:55
+msgid ""
+"This problem is easily remedied by defining the polygon layer in front. "
+"Polygons can also be rendered as a series of lines (ie, a line layer). "
+"Since a line is one-dimensional, there is no area to fill, so the details"
+" of the layers below are still visible. When there is no fill color, the "
+"specified color is: ``-1,-1,-1``, which can also achieve the effect of "
+"transparency."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:62
+msgid "The structure of MapFile looks like this:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:74
+msgid "Compared to the previous Mapfile, the changes are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:76
+msgid "`Open the file:diff_mfa2_mfa1.html <./diff_mfa2_mfa1.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:82
+msgid ""
+"Here, the original layer is divided into two layers. The first layer is "
+"still a polygon layer, but there is no ``OUTLINECOLOR`` attribute in the "
+"style anymore. The ``TYPE`` of the second layer is ``LINE`` and the color"
+" value is different from the ``OUTLINECOLOR`` in the first example. This "
+"produces a slightly different image from the first example."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:89
+msgid "Further explanation"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:91
+msgid ""
+"Here is an explanation of why this is done. If we continue to add layers "
+"on top of the state layer, the contours are most likely to be masked by "
+"these layers. To be able to see the borders and add other layers, we have"
+" to separate the borders layer from the state polygon layer and place it "
+"on top of the other other layers. There is an order in how to define/add "
+"layers, which will be explained later. Here you just need to remember "
+"according to “Later on top” (layers defined later will be displayed on "
+"the top)."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:4
+msgid "Build a map with multiple layers"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:6
+msgid ""
+"MapServer builds maps by stacking layers together. On every render, it is"
+" placed at the top of the stack. Each layer displays features selected "
+"from a single dataset. Features to display can be selected using Unix "
+"regular expressions, string comparisons and logical expressions. You can "
+"think of layers as topics due to the similarity of data and the "
+"similarity of style parameters such as scale, color, and labels. The "
+"display of layers is under interactive control, allowing the user to "
+"select which layers to render. While it is not possible to generate "
+"layers dynamically, it is possible to populate empty layers with dynamic "
+"data and manipulate them via URL."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:22
+msgid ""
+"To make the map richer, continue adding new data (river data) using a new"
+" ``LAYER`` object. The definitions of each layer are relatively "
+"independent and have nothing to do with each other."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:26
+msgid "Here is the map file（mfml2.map）："
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:33
+msgid ""
+"The roads layer map ( ``wroads`` ) is also defined in the Mapfile above "
+"and this layer is further added to the map below."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:39
+msgid "Order of layers"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:41
+msgid ""
+"Pay attention to the order of the layers. In this map, the river layer is"
+" above the road, which is inconsistent with the usual mapping principles."
+" Usually, the road layer is placed above the river layer."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:45
+msgid ""
+"Swap the position when passing parameters, the effect is as follows, you "
+"can see that it is the same as the map above. The order of the layers "
+"defined in the Mapfile cannot be changed by passing parameters to the "
+"URL."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:52
+msgid ""
+"If you want to modify the order of layers, you can only modify it in the "
+"Mapfile:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:60
+msgid ""
+"You can see that although it is not obvious, the river layer is below the"
+" road layer."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:4
+msgid "Display layers by attribute category"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:6
+msgid ""
+"In the previous example, the layers consisted of a set of features from "
+"the same dataset, rendered using the same style. However, you may not "
+"want to plot all features contained in a given dataset, or you may not "
+"want to plot all features in the same way. For example, making a world "
+"map containing all the roads for each dataset would take quite a while "
+"and the resulting map would be too cluttered to be very useful. The same "
+"symbols are used to render maps produced by country roads and highways, "
+"and there is no distinction between graphical functions; in the real "
+"world, the difference is obvious."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:17
+msgid "View the map"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:19
+msgid ""
+"Classes allow you to distinguish between features based on attributes and"
+" features based on classes. The previous diagram uses classes because "
+"each layer must have at least one class. At its simplest, the default "
+"class includes every feature of the dataset. In this case, the layer has "
+"a class and each feature in that class is rendered in the same way."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:25
+msgid ""
+"However, you usually want to avoid using only the default classes and "
+"choose classification features instead, for the two reasons mentioned "
+"earlier: First of all, you may not want to draw each feature, and second,"
+" you may want to use different symbols, colors or sizes to present some "
+"features with different attributes."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:31
+msgid ""
+"By using non-spatial attribute information in the data, you can create a "
+"map like this:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:36
+msgid "or:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:42
+msgid "Map file"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:44
+msgid "Here is the map file MapFile ( ``mfa3.map`` ):"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:51
+msgid "Mapfile for layer classification"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:53
+msgid "The structure of the map file, through the object, looks like this"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:67
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:66
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:30
+msgid "The changes in the documents are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:70
+msgid "`Open the file:diff_mfa3_mfa2.html <./diff_mfa3_mfa2.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:77
+msgid "Attribute description in Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:79
+msgid ""
+"MapFile still has only two layers, but polygon layers are subdivided into"
+" two broad categories. Take a look at the additional parameters:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:86
+msgid ""
+"This keyword is used to specify which properties are used by the detached"
+" class object. In this example, the property is ``NAME`` . If you open "
+"the Shapefile of the database file associated with the attribute, you "
+"will see that there is a column (property) called ``NAME`` ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:92
+msgid ""
+"The easiest (and fastest) way to define a class using an expression to "
+"determine which MapServer the class contains is to use a string "
+"comparison. You can use the hierarchy keyword ``CLASSITEM`` to identify "
+"the attribute name that will be used for the classification function. "
+"Then specify that the comparison string is expressed using class-level "
+"keywords. It is good practice to quote strings to ensure that characters "
+"are interpreted correctly. This is shown in the code snippet below. The "
+"``CLASSITEM`` attribute expresses the value of the string that will be "
+"associated with each feature of the dataset. If the expression string "
+"matches the same ``CLASSITEM`` value, the function will be included in "
+"this class. Although fast and easy to use, this method is not very "
+"flexible, since the specified string expression must be passed through "
+"``CLASSITEM`` to determine the matching attribute value."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:123
+msgid ""
+"Shapefile database records are stored in DBF files. You can open a "
+"spreadsheet program like Openoffice.org Compute, or a GIS software such "
+"as QGIS on the desktop. If the data has metadata (as it should), it can "
+"be known from the content of the metadata file. You can also use "
+"``ogrinfo`` to display basic property information in a Shapefile - look "
+"back at Example 1.1 (after the last few lines, “LayerSRS WKT:” displays "
+"property names and types)."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:135
+msgid ""
+"For each class, specify the property value to use. This is the simplest "
+"form of expression. Expressions can be more complex than this, allowing a"
+" regular comparison expression or logical expression."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:140
+msgid "Classification based on comparative expressions"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:142
+msgid ""
+"Allows for the classification of more complex functions, based on a "
+"logical expression of one or more attribute values. ``CLASSITEM`` does "
+"not need to be specified (actually, it will be ignored if so far). "
+"Keyword expressions introduce logical expressions, which are delimited "
+"within parentheses. The syntax is simple: a logical expression consists "
+"of the property name enclosed in square brackets, a comparison operator "
+"and the value. For example, the following code compares the number of "
+"values attributed to the population with the value 100000:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:155
+msgid ""
+"It will include a feature with less than 100,000 population attribute "
+"values. Like C and Perl, MapServer uses different comparisons for strings"
+" as well as comparisons for numbers, and you have to take care of "
+"observing the differences. If an attribute is a string value, then its "
+"reference must be enclosed in quotes and the values must be compared. "
+"Both single and double quotes can be used, but they must match. Consider "
+"the following code:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:167
+msgid ""
+"This will include a feature only if this value attribute ``state_FIPS`` "
+"is equal to the string Mn. Logical expressions can be combined using "
+"conjunctions and separation operators and or. Consider the following "
+"example:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:175
+msgid ""
+"This matches features with populations less than 100000 ``STATE_FIPS`` "
+"equal to MN."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:178
+msgid ""
+"Note that confusion may occur if a string-valued property contains "
+"numeric strings (eg ``\"123\"`` ). If you compare strings-valued "
+"properties numerically, there will never be a match ( ``123`` will never "
+"be equal to ``\"123\"`` ), and there will never be an error. You can "
+"learn more about data types."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:184
+msgid ""
+"Note that MapServer’s mapping file reference documentation has a "
+"misspelled numeric “not equals” operator, and ``!=`` does not display an "
+"exclamation mark ( ``!`` )."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:188
+msgid "Operator, Data Type"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:189
+msgid "``!=``, Numeric"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:190
+msgid "``=``, Numeric"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:191
+msgid "``>``, Numeric"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:192
+msgid "``<``, Numeric"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:193
+msgid "``>=``, Numeric"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:194
+msgid "``<=``, Numeric"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:195
+msgid "``and``, Logical"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:196
+msgid "``or``, Logical"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:197
+msgid "``eq``, String"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:198
+msgid "``ge``, String"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:199
+msgid "``gt``, String"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:200
+msgid "``le``, String"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:201
+msgid "``lt``, String"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:202
+msgid "``ne``, String"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:204
+msgid ""
+"Note that although a class must be defined with a single method, each "
+"class can use a different method at a level."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:4
+msgid "Annotations in a map"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:6
+msgid ""
+"When you generate a map, MapServer automatically performs multiple tasks."
+" It annotates features and prevents conflicts between adjacent "
+"dimensions. It provides the use of bitmapped and TrueType fonts."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:16
+msgid ""
+"MapServer has a very flexible annotation engine. It supports local "
+"bitmaps and TrueType fonts. Font scaling uses TrueType support. The angle"
+" and placement of the dimensions can be customized."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:24
+msgid "Here is the map file（mfa4.map）："
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:33
+msgid ""
+"The file contains the font alias font location determined by the "
+"``FONTSET`` Keyword assignment."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:36
+msgid ""
+"In order to label each city district with an attribute in the shapefile, "
+"determine the name as the value of the ``LABELITEM`` keyword. When "
+"rendering a country feature, the value of the feature’s ``NAME`` "
+"attribute will be used to create the label."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:41
+msgid ""
+"If you want to look at Shapefiles, there are several ways. You can open "
+"the associated DBF file in Excel or other spreadsheet program that can "
+"read DBF files, and you can see the feature attribute values. If you just"
+" want to find out the name of the attribute, you can use the utility "
+"dbfinfo, part of the shapelib library. In addition, the application "
+"``ogrinfo`` provides geographic information, as well as feature values."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:48
+msgid ""
+"Each district will be labelled with the labelling parameters specified in"
+" 027 to 030. Label objects start with the keyword Label and end with the "
+"keyword END (line 030). Layer object with LABELITEM value set to ‘name’. "
+"Select the attribute NAME as the source of the label text. Each label "
+"will be drawn black and its size will be small. Besides small, you can "
+"choose small, medium, large, or huge."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:55
+msgid "The MapFile structure, by object, looks like this:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:68
+msgid "`Open the file:diff_mfa4_mfa3.html <./diff_mfa4_mfa3.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:75
+msgid "Annotation parameter description"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:77
+msgid "Here, we introduce several parameters and dimension objects:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:83
+msgid ""
+"Here, we specify the file for the list of TrueType fonts (or the full "
+"path set of fonts). This file lists each available font. See the file "
+"itself and the MapFile reference for more information. The MAP object of "
+"FONTSET is a parameter."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:88
+msgid "The contents of this file are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:95
+msgid "``LABELITEM``"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:97
+msgid ""
+"In the ``\"STATE\"`` case, the specified data attribute is used for the "
+"annotation. ``LABELITEM`` is a parameter of the layer object."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:100
+msgid ""
+"``LABEL`` Marks the beginning of the definition ``LABEL`` Object. "
+"Dimension objects can be used for other objects (that is, scale bar "
+"objects)"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:104
+msgid ""
+"``COLOR`` objects within the callout, color specifies the color of the "
+"callout text."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:106
+msgid "``SHADOWCOLOR`` specifies the shadow color for dimension text."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:107
+msgid ""
+"``SHADOWSIZE`` specifies the size of the shadow. This value corresponds "
+"to the transition of pixels at ``X`` and ``Y``. Therefore, ``2`` means "
+"two pixels wide by two pixels high."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:110
+msgid ""
+"``TYPE`` in the LABEL object, the type specifies what type of font to "
+"use. We have a choice of TrueType or Bitmap (built-in fonts). We choose "
+"``TRUETYPE`` ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:113
+msgid ""
+"``FONT`` If specified as TrueType, you need to specify what font to use. "
+"The value mentioned here is “alias”; the “alias” in the font list file."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:116
+msgid ""
+"``SIZE`` If using a TrueType font, the value in pixels is the size of the"
+" dimension. If it’s a bitmap, say something like “small” or “big”."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:119
+msgid ""
+"``ANTIALIAS`` This turns truetype antialiasing on or off. Remember that "
+"the value is not ``OPEN`` or ``CLOSE`` , but ``TRUE`` or ``FALSE`` ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:122
+msgid ""
+"``POSITION`` locates the label point of the label text. The value is a "
+"combined vertical and horizontal position. You have the following "
+"options: ``C`` for center vertical alignment, ``U`` for upper, and ``L`` "
+"for lower. For horizontal alignment you have the following options: ``C``"
+" for center, ``L`` for left, and ``R`` for right. Therefore, to call the "
+"center of the callout ID for the text alignment, use the value ``CC`` "
+"(center - center). Or, if you wanted it to be the ID at the bottom left, "
+"you would use ``LL`` . Another approach is to let MapServer decide the "
+"best location for the label. For this, you can use the ``AUTO`` value."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:132
+msgid ""
+"``PARTIALS`` tells MapServer whether to generate incomplete label text. "
+"The default here is to not generate fragments of the label text. The "
+"value is ``TRUE`` or ``FALSE`` ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:135
+msgid ""
+"``MINDISTANCE`` is the minimum distance, in pixels, between duplicate "
+"annotations. See what happens if you increase or decrease the value."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:138
+msgid ""
+"``BUFFER`` Padding (pixels) of the callout. This is used to improve "
+"readability. A buffer of 4 pixels means that no labels will be drawn over"
+" the four pixels of each other. Again, change and see how it works."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:143
+msgid ""
+"You can also create dimensions to separate a polygon layer. You do it "
+"with the data type of the annotation. Take a look at the MapFile of the "
+"following example to see how you implement this tagging. You will find "
+"that the “annotation” layer within the class object has color parameter "
+"values. ``-1 -1 -1`` . Negative numbers tell MapServer to give this class"
+" a transparent color (the callout logo is not displayed). Again, modify "
+"these values and view the results to see how it affects the map."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:152
+msgid "Automatic optimization of annotations"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:154
+msgid ""
+"To prevent the map from looking cluttered, MapServer optimizes the "
+"labeling according to the scale of the data."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:160
+msgid "Annotation processing"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:162
+msgid ""
+"Since version 6.2, MapServer has been able to draw label lines for "
+"functions that are problematic in the label space (usually when the label"
+" text is larger than the marked polygon). This feature is done through "
+"the addition of MS RFC 81: offset labels with leaders. This feature is "
+"for polygon annotations only."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:170
+msgid "`Open the file:diff_mfs8_mfs2.html <./diff_mfs8_mfs2.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:4
+msgid "Use custom styles in Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:6
+msgid ""
+"Vector data can be divided into three types: point, line and surface. The"
+" simplicity of the data type structure gives the diversity of expression."
+" In MapServer, you can set styles in various dimensions such as color, "
+"size (thickness), and transparency for points, lines, and surfaces."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:13
+msgid "Point"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:17
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:30
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:42
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:55
+msgid "The Mapfile used is:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:25
+msgid "Line fill example"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:38
+msgid "Circular fill exampl"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:50
+msgid "River style"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:62
+msgid "``GepMap`` can be further used to get the effect of the magnification:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:4
+msgid "Define projection and extent"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:11
+msgid ""
+"This map is clearly a region from the one shown earlier, but it doesn’t "
+"look the same. This map uses another map projection."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:14
+msgid ""
+"In the projection definition part of the Mapfile, the projection is "
+"processed by the Proj.4 library through parameters. For more information "
+"about the PROJ.4 library, visit https://proj4.org/ ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:22
+msgid ""
+"The following is the Mapfile source file ``mfa6.map`` used in this "
+"example:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:33
+msgid "`Open the file: diff_mfa6_mfa5.html <./diff_mfa6_mfa5.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:39
+msgid ""
+"The first thing you will notice is that the MapFile is the original "
+"``EXTENT`` replaced by the new range value, which doesn’t look like "
+"longitude and latitude. In addition, a projection object ``PROJECTION`` "
+"was added, and a ``PROJECTION`` definition was added to ``LAYER``."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:44
+msgid "Take a look at the parameters of the new spatial extent:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:58
+msgid "Writing way of Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:60
+msgid ""
+"Projection can be defined in MAP objects, as well as in LAYER objects. "
+"Projections can be defined in MAP objects (only once, but multiple can be"
+" defined) This defined projection is the output projection of the map, "
+"and MapServer will use this projection to render the map result. The "
+"projection defined in the ``LAYER`` object is the input projection, that "
+"is, the projection of the data corresponding to the layer object. The "
+"definition of the projection in the layer object can be different from "
+"that in the map object, and MapServer will do the projection "
+"transformation and reproject to the output projection. If there is no "
+"projection information in the ``LAYER`` object, MapServer will assume "
+"that the input and output projections are the same."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:72
+msgid ""
+"In a Mapfile, the ``PROJECTION`` object is not required. But if you want "
+"to support the OGC interoperability specification (WMS/WFS/WCS), it still"
+" needs to be clearly defined in the Mapfile."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:76
+msgid ""
+"Defined only once in the map object, this definition becomes your output "
+"projection - MapServer will render your map in this projection. You can "
+"also define input projections using projection object layer objects. It "
+"is possible to project on different layers - MapServer reprojects them to"
+" your output projection. If no objects within the projection layer are "
+"defined, MapServer assumes that the input projection is the same as the "
+"output projection. This is not the desired object unless you create a map"
+" file that supports an OGC Interoperable Web Services Specification "
+"(WMS/WFS/WCS)."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:86
+msgid ""
+"MapServer’s projections are defined in two ways. The traditional way is "
+"to define it through the Proj.4 parameter, such as the Lambert Azimuthal "
+"Equal-Area projection of the continental United States defined below."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:90
+msgid "This is the output projection definition:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:101
+msgid ""
+"Another way is to use EPSG codes. These codes are standard projection "
+"codes (or spatial reference identifiers) as defined by the European "
+"Petroleum Survey Group (EPSG). Defined by the following EPSG code in "
+"MapServer, the following ``EPSG:2163`` also means (Lambert Azimuthal "
+"Equal-Area), the effect is the same:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:113
+msgid ""
+"If you want to learn more about EPSG code, take a look at "
+"``/usr/ROJ/PSG`` or ``C:/PROJ/NAD/EPSG`` (``/ms4w/proj/nad`` MS4W). Also,"
+" check out the EPSG website http://www.epsg.org ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:118
+msgid "Calculation of projection coordinates by cs2cs"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:120
+msgid ""
+"The projected coordinates can be calculated using QGIS or some other GIS "
+"package, or you can use PROJ.4’s cs2cs tool. The following commands are "
+"raw range values that can be used to reproject:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:128
+msgid ""
+"After typing the command, enter the southwest coordinate pair (lower left"
+" coordinate), separated by a space: ``-97.54 1.619778``"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:131
+msgid "The result returned by the ``cs2cs`` utility is:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:137
+msgid ""
+"Next, type the northeast coordinate pair (upper-right coordinate), also "
+"separated by a space: ``-82.122902 49.38562``, returns the following "
+"values:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:145
+msgid ""
+"``cs2cs`` returns a ternary value. The third value, 0.000, can be ignored"
+" and is meant to represent altitude (which we don’t use)."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:148
+msgid ""
+"Now, the extent of the map under this projection can be defined in the "
+"Mapfile:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:155
+msgid ""
+"Note that the definition here is not the same as what is actually used in"
+" Mapfile. When re-projecting, the map defined using the range of the data"
+" may not be what you expected. By considering “buffering” the range, the "
+"range can be extended a few kilometers up and down, left and right (this "
+"varies according to the projection and the specific application). How "
+"much expansion is needed can be assisted by desktop GIS software such as "
+"QGIS, which may be more convenient."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:164
+msgid "Map projection online document"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:166
+msgid ""
+"If you need to know more about map projection, take a look at some of the"
+" links below:"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:170
+msgid "http://www.colorado.edu/geography/gcraft/notes/mapproj/mapproj_f.html"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:171
+msgid "http://www.geography.hunter.cuny.edu/mp/"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:172
+msgid "http://www.nationalatlas.gov/articles/mapping/a_projections.html"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:173
+msgid "http://en.wikipedia.org/wiki/Map_projection"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:174
+msgid "http://erg.usgs.gov/isb/pubs/MapProjections/projections.html"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:4
+msgid "Add a scale bar"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:6
+msgid ""
+"The map scale of MapServer can be added to the map or separated from the "
+"map."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:10
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:9
+msgid "Effect"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:15
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:14
+msgid "Key code"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:38
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:30
+msgid ""
+"Where ``STATUS`` is set to ``embed`` , which can be directly mosaicked "
+"into the generated map."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:4
+msgid "Add Legend"
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:6
+msgid "The map legend of MapServer can be added to or separated from the map."
+msgstr ""
+

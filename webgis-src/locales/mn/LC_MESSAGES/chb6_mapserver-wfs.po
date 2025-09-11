@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:2
+msgid "Use of WFS in MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:4
+msgid ""
+"We can easily get the map in the specified area from the WMS server, but "
+"we can only get the rendered map. Sometimes we want to get data such as "
+"the geographical coordinates and attributes of a specified layer, and "
+"further, when we need to modify the data of the data source, WMS can not "
+"meet the needs."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:10
+msgid ""
+"However, you can also send data from the Web service to the client upon "
+"request. As long as the server and the client follow the same "
+"specification, the data can be in any format. In order to standardize the"
+" process of sending vector data through Web services, OGC provides us "
+"with another standard Web Feature Service (WFS) to meet the above "
+"requirements."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:17
+msgid ""
+"Next, we will introduce the release, access and application of WFS and "
+"its services."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:4
+msgid "Geographic Web Services"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:6
+msgid ""
+"MapServer publishing services are configured through Mapfile, and WFS "
+"services are no exception. Similar to configuring WMS, to publish WFS, "
+"add key-value pairs about WFS in the METADATA section of the Mapfile "
+"configuration file. MapServer will only include WFS functionality if the "
+"layer meets the following conditions:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:12
+msgid "The data source is vector data: shapefile, OGR, Postgis, sde    (ArcSDE);"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:13
+msgid "Layer name must be set;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:14
+msgid ""
+"The layer data space type must be one of ``point`` , ``line`` ,    "
+"``polygon``;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:15
+msgid "``wfs_onlineresource`` and ``wfs_enable_request`` must be set."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:17
+msgid ""
+"MapServer itself can be configured to support WFS, and you can also use "
+"TinyOWS. Using TinyOWS can support WFS-T and realize the function of "
+"online editing and saving."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:22
+msgid "Configure an instance"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:24
+msgid ""
+"Based on the Mapfile configuration of the published WMS, add the WFS "
+"configuration. The following is a Mapfile instance with WMS and WFS "
+"configured."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:28
+msgid "Mapfile is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:35
+msgid ""
+"Compared with the Mapfile that only configures WMS, the main change lies "
+"in the METADATA sub-object of the MAP object and the METADATA sub-object "
+"of the LAYER object. In the METADATA of the MAP object, the added key-"
+"value pairs include:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:40
+msgid ""
+"``wfs_title`` , required, returned in the ``GetCapabilities`` request as "
+"the ``title`` element of the XML document in the service response;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:42
+msgid "``wfs_onlineresource``, required, provide the server address of ``wfs``;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:44
+msgid ""
+"``wfs_srs``, the spatial reference system of the data (Spatial Reference "
+"System);"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:46
+msgid ""
+"``wfs_abstract`` , returned by the ``Abstract`` element of the XML "
+"document in the ``GetCapabilities`` request as the service response;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:48
+msgid ""
+"``wfs_enable_request``, which means to configure MapServer map to support"
+" all operations of ``wfs`` globally."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:51
+msgid ""
+"The key-value pair added to the METADATA of the LAYER object is as "
+"follows (Note: There are many repetitions of the METADATA of the "
+"configuration and the MAP object. If it is not set, the METADATA "
+"configuration of the MAP object will be inherited. If it is set, the "
+"configuration of the LAYER will be used, which is in a MAP Useful when "
+"the object contains multiple layers):"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:58
+msgid ""
+"``wfs_title`` , returned by the ``title`` element of the XML document in "
+"the ``GetCapabilities`` request as the service’s response;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:60
+msgid "``wfs_srs``, the Spatial Reference System of the data;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:61
+msgid ""
+"``gml_featureid`` , the attribute name of the feature ID corresponding to"
+" the layer;"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:63
+msgid ""
+"``wfs_enable_request`` , configures the layer to support all wfs "
+"operations."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:67
+msgid "Access"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:69
+msgid ""
+"We can call the MapServer WFS service through the URL. By default, WFS "
+"will return the result in GML format, and the call result can be viewed "
+"in the browser. WFS contains many operations, you can see the WFS "
+"operations supported by Mapfile from the ``GetCapabilities`` response:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:74
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:76
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:101
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:132
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:158
+msgid "The following are those that use cities around the world:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:78
+msgid ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities"
+" <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities>`__"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:80
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:112
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:136
+msgid "The URL is parsed as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:91
+msgid "DescribeFeatureType"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:93
+msgid ""
+"When operating the database, we sometimes need to reflect the structure "
+"of the database, and we also have the same problem when using WFS. "
+"Sometimes we need to know what attributes a FeatureType has and what type"
+" they are, then we need the ``DescribeFeatureType`` method. A typical "
+"``DescribeFeatureType`` call looks like this:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:99
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:103
+msgid ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mf21.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country>`__"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:105
+msgid "Pay attention to when configuring"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:124
+msgid "GetFeature"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:126
+msgid ""
+"Finally arrived at this method, this method can be said to be the basis "
+"of WFS, its purpose is clear at a glance, get Feature. If you type this "
+"call: The link below returns all the elements."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:130
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:134
+msgid ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country>`__"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:147
+msgid ""
+"This call means that all the data is returned, usually resulting in a "
+"large XML/GML document."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:151
+msgid "A limited number of features can be returned"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:153
+msgid ""
+"By using parameters ``count=2`` You can limit the number of features "
+"returned"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:156
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:160
+msgid ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2 <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2>`__"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:162
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:229
+msgid "The resolution of URL is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:175
+msgid "Return features according to the index"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:177
+msgid ""
+"You can return features based on the index, and to do this, you need to "
+"configure:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:185
+msgid "Here ``OBJECTID`` Is a field in Shapefile."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:187
+msgid "The following link returns the ID number as ``227`` Elements of:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:189
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&FeatureId=world-country.227"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:202
+msgid "Use Filter"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:204
+msgid "According to the selector, such as:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:210
+msgid "The URL is resolved as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:222
+msgid ""
+"More meaningfully, choose according to the name. Note the selection here,"
+" and the comparison of attributes is case-sensitive."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:4
+msgid "Use MapServer as the WFS client"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:6
+msgid ""
+"WFS can be added as a layer in MapServer. In this way, it is used as a "
+"WFS client."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:9
+msgid ""
+"Since WFS needs to transfer data over the network, it is best to use "
+"smaller amounts of data. The selection here is to use point feature data."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:14
+msgid "Writting way of MapFile"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:22
+msgid "Example effect"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:24
+msgid "The effect is:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:28
+msgid ""
+"Note that the above graph is a traditional MapServer generated map. "
+"Defined by the WFS point layer in front, so it’s mostly occluded by "
+"polygons."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:3
+msgid "Access WFS using LeafletJS"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:5
+msgid "The WFS service returns data(or features), not maps."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:7
+msgid ""
+"Returning data means more information. Users can parse information to "
+"accomplish more complex tasks. But it also means that the task of drawing"
+" is left to the client, which requires more coding work."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:11
+msgid "Config WFS in MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:13
+msgid ""
+"Leaflet can be drawn using GeoJSON data. To display the data returned by "
+"the WFS service, using JSON as the data type returned, you need to open "
+"it in MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:26
+msgid "In METADATA, it is stated that:"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:32
+msgid "You can view the information about the service by following links."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:34
+msgid ""
+"<a href=\"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities\">http://webgis.pub"
+"/cgi-"
+"bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities</a>"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:37
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:6
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:33
+msgid "Example"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:39
+msgid ""
+"The following is an example of using Leaflet. Note that due to the size "
+"of data, the filter is used to get the data of China. But maybe you will "
+"still have to wait for a while for the data loaded."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:48
+msgid "`Open the example </xx-leaflet-wfs1.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:3
+msgid "Leaflet render WFS with custom styles"
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:8
+msgid ""
+"WMS completes the task of map rendering by server. If you want to "
+"customize the map style, you can use SLD to transfer the definition file "
+"of style to the server. The server returns the result of the map. The "
+"data returned by WFS can be adjusted and rendered by client."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:14
+msgid ""
+"In this case, there is no need to make any changes to the server, the "
+"server can only provide data."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:16
+msgid ""
+"On the client side, you can define the implementation style of anonymous "
+"functions."
+msgstr ""
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:41
+msgid "`Open the example </xx-leaflet-wfs2.html>`_"
+msgstr ""
+

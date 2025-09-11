@@ -1,0 +1,562 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2007-10-18 14:00+0100\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Introduction and Install GeoServer"
+msgstr "Geoserver的介绍和安装"
+
+msgid ""
+"First, there will be an introduction for GeoServer. And, then show how to "
+"setup GeoServer."
+msgstr "首先，将对Geoserver进行介绍。然后，演示如何设置Geoserver。"
+
+msgid "Introduction to GeoServer"
+msgstr "Geoserver简介"
+
+msgid ""
+"GeoServer is a J2EE implementation of OpenGIS web server specification. "
+"GeoServer can easily publish map data and allow users to update, delete and "
+"insert feature data. GeoServer can easily and quickly share spatial "
+"geographic information among users. GeoServer is a community open source "
+"project, which can be downloaded directly through the community website. "
+"Please refer to the resource table at the end of this document for details."
+msgstr ""
+"Geoserver是OpenGIS "
+"Web服务器规范的J2EE实现。Geoserver可以轻松发布地图数据，并允许用户更新、删除和插入要素数据。Geoserver可以方便快捷地在用户之间共享空间地理信息。Geoserver是一个社区开源项目，可以通过社区网站直接下载。有关详细信息，请参阅本文末尾的资源表。"
+
+msgid ""
+"GeoServer is a J2EE implementation of OpenGIS web server specification. "
+"GeoServer can easily publish map data and allow users to update, delete and "
+"insert feature data. GeoServer can easily and quickly share spatial "
+"geographic information among users."
+msgstr ""
+"Geoserver是OpenGIS "
+"Web服务器规范的J2EE实现。Geoserver可以轻松发布地图数据，并允许用户更新、删除和插入要素数据。Geoserver可以方便快捷地在用户之间共享空间地理信息。"
+
+msgid "Main features"
+msgstr "主要特点"
+
+msgid ""
+"Compatible with WMS and WFS features; support PostgreSQL, Shapefile, ArcSDE,"
+" Oracle, VPF, MySQL, MapInfo; support hundreds of projections; can output "
+"network map to jpeg, gif, png, SVG, KML and other formats; can run on any "
+"J2EE/Servlet-based container; embed MapBuilder support AJAX map client "
+"OpenLayers;, in addition to many other features."
+msgstr ""
+"兼容WMS和WFS功能；支持PostgreSQL、shapefile、ArcSDE、Oracle、VPF、MySQL、MapInfo；支持数百种投影；可输出网络地图为jpeg、gif、png、SVG、KML等格式；可运行在任何基于J2EE/Servlet的容器上；Embedded"
+" MapBuilder支持AJAX地图客户端OpenLayers；此外还有许多其他功能。"
+
+msgid "Install and configure GeoServer"
+msgstr "安装和配置Geoserver"
+
+msgid ""
+"GeoServer is an open source server for sharing geospatial data. GeoServer "
+"implements industry standard OGC protocols such as Web Feature Service "
+"(WFS), Web Map Service (WMS), and Web Coverage Service (WCS). Additional "
+"formats and publishing options are available as extensions, including Web "
+"Processing Service (WPS) and Web Map Tile Service (WMTS). Both can be "
+"published using GeoServer as a server. Before using the GeoServer server, "
+"you need to download and install another web server tomcat. Someone may have"
+" already installed it, but it needs to be configured."
+msgstr ""
+"Geoserver是一个用于共享地理空间数据的开源服务器。Geoserver实施行业标准的OGC协议，如Web Feature "
+"Service(WFS)、Web Map Service(WMS)和Web Coverage "
+"Service(WCS)。其他格式和发布选项作为扩展提供，包括Web处理服务(WPS)和Web地图切片服务(WMTS)。两者都可以使用Geoserver作为服务器进行发布。在使用Geoserver服务器之前，您需要下载并安装另一个Web服务器Tomcat。可能有人已经安装了它，但需要进行配置。"
+
+msgid "Configure tomcat"
+msgstr "配置Tomcat"
+
+msgid ""
+"Tomcat server is a free and open source web application server, which is a "
+"lightweight application server. It is commonly used in small and medium-"
+"sized systems and occasions where there are not many concurrent access "
+"users. In fact, Tomcat is an extension of Apache server, but the runtime It "
+"runs standalone, so when you run tomcat, it actually runs as a separate "
+"process from Apache."
+msgstr ""
+"Tomcat服务器是一个免费的开源Web应用服务器，是一个轻量级的应用服务器。它通常用于中小型系统和并发访问用户不多的场合。事实上，Tomcat是Apache服务器的扩展，但它的运行时是独立运行的，所以当您运行Tomcat时，它实际上是作为一个独立于Apache的进程运行的。"
+
+msgid "Configuration process:"
+msgstr "配置流程："
+
+msgid "Install JDK"
+msgstr "安装JDK"
+
+msgid "Download and install tomcat"
+msgstr "下载并安装Tomcat"
+
+msgid "Modify the configuration file"
+msgstr "修改配置文件"
+
+msgid "Download address of Tomcat:"
+msgstr "Tomcat的下载地址："
+
+msgid ""
+"Currently the latest version of Tomcat is 9.0.27. Readers are free to "
+"download"
+msgstr "目前Tomcat的最新版本是9.0.27。读者可免费下载"
+
+msgid "Use console commands to operate after the download is complete"
+msgstr "下载完成后，使用控制台命令进行操作"
+
+msgid "Open the browser address bar to enter"
+msgstr "打开浏览器地址栏进入"
+
+msgid "The following page indicates that the configuration is successful:"
+msgstr "下一页显示配置成功："
+
+msgid "Tomcat configured successfully"
+msgstr "Tomcat配置成功"
+
+msgid "Let’s go ahead and modify the configuration file:"
+msgstr "让我们继续修改配置文件："
+
+msgid ""
+"First, set the user name and password, add security, and configure the file "
+"address."
+msgstr "首先，设置用户名和密码，增加安全性，并配置文件地址。"
+
+msgid ""
+"There is a tomcat-user.xmlwen file opened in the file and added at the end "
+"of the file. Set the login account password to ``admin``, ``tomcat``"
+msgstr ""
+"在文件中打开了一个tomcat-user.xmlwen文件，并将其添加到文件末尾。将登录帐户密码设置为  ``admin`` ，  ``tomcat``"
+
+msgid "Tomcat configuration password"
+msgstr "Tomcat配置密码"
+
+msgid ""
+"Next, modify web.xml, and change the file size from 50MB to 80MB, because "
+"the size of GeoServer will exceed 50MB, you can configure GeoServer after "
+"the configuration is complete."
+msgstr ""
+"接下来，修改web.xml，将文件大小从50MB改为80MB，因为Geoserver的大小将超过50MB，您可以在配置完成后配置Geoserver。"
+
+msgid "Tomcat configuration size"
+msgstr "Tomcat配置大小"
+
+msgid ""
+"Restart tomcat after completion, and the server needs to be restarted each "
+"time the configuration file is modified."
+msgstr "完成后重启Tomcat，每次修改配置文件都需要重启服务器。"
+
+msgid "Download and install GeoServer"
+msgstr "下载并安装Geoserver"
+
+msgid "Download address:"
+msgstr "下载地址："
+
+msgid ""
+"Download the .war file and .bin file, here we mainly use the .war file as an"
+" example to decompress and copy the files to the webapps folder as shown in "
+"the figure."
+msgstr "下载.war文件和.bin文件，这里我们主要以.war文件为例，将文件解压并复制到webapp文件夹中，如图所示。"
+
+msgid "Geoserver installation"
+msgstr "Geoserver安装"
+
+msgid "Now you can enter the browser and use it. Open the browser to enter."
+msgstr "现在您可以进入浏览器并使用它。打开浏览器进入。"
+
+msgid "Click manager app"
+msgstr "点击管理器应用程序"
+
+msgid "Manager enters"
+msgstr "经理进入"
+
+msgid "Click on geoserver.war"
+msgstr "点击geoserver.war"
+
+msgid "Geoserver enters"
+msgstr "Geoserver进入"
+
+msgid "Username and password can be set at the same time"
+msgstr "可以同时设置用户名和密码"
+
+msgid ""
+"The installation and configuration of Geoserver has been completed, and the "
+"next article focuses on the use of Geoserver in conjunction with other "
+"applications."
+msgstr "Geoserver的安装和配置已经完成，下一篇文章将重点介绍如何将Geoserver与其他应用程序结合使用。"
+
+msgid "Introduction and installation of PostGIS"
+msgstr "邮政地理信息系统的介绍与安装"
+
+msgid "PostgresSQL"
+msgstr "PostgresSQL"
+
+msgid ""
+"PostgreSQL is an object-relational database management system (ORDBMS), and "
+"it is also the most powerful, feature-rich and complex free software "
+"database system at present. It originated from Berkeley’s (BSD) database "
+"currently the most powerful, feature-rich and complex research program, and "
+"is currently one of the most important open source database product "
+"development projects with a very wide range of users."
+msgstr ""
+"PostgreSQL是一个对象-"
+"关系数据库管理系统(ORDBMS)，也是目前功能最强大、功能最丰富、最复杂的自由软件数据库系统。它起源于伯克利大学(BSD)数据库目前最强大、功能最丰富和最复杂的研究方案，也是目前最重要的开源数据库产品开发项目之一，拥有非常广泛的用户。"
+
+msgid ""
+"“Relational database + spatial data engine” is usually a middleware solution"
+" developed by GIS manufacturers in recent years. Users hand over their own "
+"spatial data to a spatial data engine independent of the database. There is "
+"a spatial data engine to organize the storage of spatial data in a "
+"relational database; when users need to access data, they will notify the "
+"spatial data engine, and there is an engine. Take data from relational "
+"databases and convert it into a way that customers can use."
+msgstr ""
+"关系数据库+空间数据引擎通常是地理信息系统厂商近年来开发的一种中间件解决方案。用户将他们自己的空间数据提交给独立于数据库的空间数据引擎。有一个空间数据引擎来组织空间数据在关系数据库中的存储；当用户需要访问数据时，他们会通知空间数据引擎，并且有一个引擎。从关系数据库中获取数据，并将其转换为客户可以使用的方式。"
+
+msgid "PostGIS"
+msgstr "邮政地理信息系统"
+
+msgid ""
+"PostGIS is an extension of the object-relational database system PostgreSQL."
+" PostGIS provides the following spatial information service functions: "
+"spatial objects, spatial indexes, spatial operation functions and spatial "
+"operators. Meanwhile, PostGIS follows the specifications of OpenGIS. The "
+"copyright of PostGIS is incorporated into the GNU GPL, which means that "
+"anyone can freely obtain the source code of PostGIS and do research and "
+"improvement on it. Because of this, PostGIS has developed rapidly, and more "
+"and more enthusiasts and research institutions are involved in the "
+"application development and improvement of PostGIS."
+msgstr ""
+"PostGIS是对象关系数据库系统PostgreSQL的扩展。PostGIS提供以下空间信息服务功能：空间对象、空间索引、空间操作功能和空间运算符。同时，PostGIS遵循OpenGIS的规范。PostGIS的版权被纳入GNU"
+" "
+"GPL，这意味着任何人都可以自由获取PostGIS的源代码并对其进行研究和改进。正因为如此，PostGIS得到了快速发展，越来越多的爱好者和研究机构参与到PostGIS的应用开发和完善中。"
+
+msgid ""
+"PostGIS supports all spatial data types including: POINT, LINESTRING, "
+"POLYGON, MULTIPOINT, MULTILINESTRING, MULTIPOLYGON, and GEOMETRYCOLLECTION "
+")and many more. PostGIS supports all object representation methods, such as "
+"WKT and WKB."
+msgstr ""
+"PostGIS支持所有空间数据类型，包括：POINT、LINESTRING、POLYGON、MULTPOINT、MULTILINESTRING、MULTIPOLYGON和GEOMETRYCOLLECTION等。PostGIS支持所有对象表示方法，如WKT和WKB。"
+
+msgid "Several advantages:"
+msgstr "以下几个优势："
+
+msgid ""
+"PostGIS supports all data access and construction methods, such as "
+"``GeomFromText()``, ``AsBinary()``, and GeometryN(), etc."
+msgstr ""
+"PostGIS支持所有数据访问和构造方法，例如  ``GeomFromText()`` ，  ``AsBinary()`` "
+"、和GeometryN()等。"
+
+msgid ""
+"PostGIS provides simple spatial analysis functions (such as Area and Length)"
+" and other functions with complex analysis functions, such as Distance."
+msgstr "PostGIS提供简单的空间分析功能(如面积和长度)和其他具有复杂分析功能的功能，如距离。"
+
+msgid ""
+"PostGIS provides support for metadata, such as ``GEOMETRY_COLUMNS`` and "
+"``SPATIAL_REF_SYS``, and PostGIS also provides corresponding support "
+"functions, such as ``AddGeometryColumn`` and ``DropGeometryColumn`` ."
+msgstr ""
+"PostGIS为元数据提供支持，例如  ``GEOMETRY_COLUMNS`` 和  ``SPATIAL_REF_SYS`` "
+"，而PostGIS也提供了相应的支持功能，如  ``AddGeometryColumn`` 和  ``DropGeometryColumn`` 。"
+
+msgid ""
+"PostGIS provides a series of binary predicates (such as Contains, Within, "
+"Overlaps and Touches) for detecting the spatial relationship between spatial"
+" objects, and returns a Boolean value to characterize the relationship "
+"between objects."
+msgstr "PostGIS提供了一系列二元谓词(如包含、范围、重叠和接触)来检测空间对象之间的空间关系，并返回一个布尔值来表征对象之间的关系。"
+
+msgid ""
+"PostGIS provides spatial operators (such as Union and Difference) for "
+"spatial data manipulation. For example, the Union operator blends the "
+"boundaries between polygons. Two overlapping polygons will form a new "
+"polygon through Union operation, and the boundary of this new polygon is the"
+" largest boundary of the two polygons."
+msgstr ""
+"PostGIS为空间数据操作提供了空间运算符(如Union和Difference)。例如，UNION操作符混合多边形之间的边界。两个重叠的多边形通过并运算形成一个新的多边形，这个新多边形的边界是两个多边形中最大的边界。"
+
+msgid "Several features are available:"
+msgstr "有几个功能可用："
+
+msgid ""
+"``Database Coordinate Transformation``: Geometry types in the database can "
+"be transformed from one projection system to another through the "
+"``Transform`` function. Geometry types in ``OpenGIS`` all have ``SRID`` as "
+"part of their structure, but for some reason, in the ``SFSQL`` specification"
+" of ``OpenGIS`` , and does not introduce ``Transform``."
+msgstr ""
+"``Database Coordinate Transformation`` ：可以将数据库中的几何图形类型从一个投影系统转换到另一个投影系统  "
+"``Transform`` 功能。中的几何图形类型  ``OpenGIS`` 所有人都有  ``SRID`` 作为它们结构的一部分，但出于某种原因，在"
+"  ``SFSQL`` 规格说明  ``OpenGIS`` ，并且不会引入  ``Transform`` 。"
+
+msgid ""
+"``Sphere length calculation``: Collection types stored in a common "
+"geographic coordinate system cannot perform degree calculations without "
+"coordinate transformation. The coordinate transformation provided by OpenGIS"
+" makes it possible to calculate the degree of accumulation type."
+msgstr ""
+"``Sphere length calculation`` "
+"：存储在公共地理坐标系中的集合类型在没有坐标变换的情况下无法执行度数计算。OpenGIS提供的坐标变换使计算积累度类型成为可能。"
+
+msgid ""
+"``3D geometry type``: The SFSQL specification is only for 2D collection "
+"types. ``OpenGIS`` provides support for 3D collection types, specifically "
+"using the input collection type dimension to determine the output "
+"representation. For example, pure 2D intersections are usually returned in "
+"2D even though all geometry objects are internally stored in 3D. In "
+"addition, the function of converting geometric objects between different "
+"dimensions is provided."
+msgstr ""
+"``3D geometry type`` ：SFSQL规范仅适用于2D集合类型。  ``OpenGIS`` "
+"提供对3D集合类型的支持，特别是使用输入集合类型维度来确定输出表示形式。例如，即使所有几何图形对象都在内部以三维形式存储，纯二维交点通常也以二维形式返回。此外，还提供了几何对象在不同维度之间的转换功能。"
+
+msgid ""
+"``Spatial aggregate function``: In a database, an aggregate function is a "
+"function that performs all data operations on an attribute column. For "
+"example, Sum and Average, Sum is to find the sum of the data of a relational"
+" attribute column, ``Average`` is to find the average of the data of a "
+"relational attribute column. Correspondingly, the spatial aggregate function"
+" also performs the same operation, but the object of the operation is "
+"spatial data. For example, the aggregate function Extent returns the largest"
+" wrapping rectangle in a series of elements. For example, the execution "
+"result of the SQL statement “SELECT EXTENT(GEOM) FROM ROADS” returns all "
+"wrapping rectangles in the ROADS data table."
+msgstr ""
+"``Spatial aggregate function`` ：在数据库中，聚合函数是对属性列执行所有数据操作的函数。例如，Sum and "
+"Average，Sum是找出关系属性列的数据之和，  ``Average`` "
+"是找出关系属性列数据的平均值。相应地，空间聚集函数也执行相同的操作，但操作的对象是空间数据。例如，聚合函数Extent返回一系列元素中最大的换行矩形。例如，SQL语句“SELECT"
+" EXTEND(GEOM)FROM ROADS”的执行结果将返回Roads数据表中的所有环绕矩形。"
+
+msgid ""
+"``Raster data type``: PostGIS provides storage for large raster data objects"
+" through a new data type slice. A slice consists of the following parts: a "
+"wrapping rectangle, ``SRID``, a type, and a sequence of bytes. Fast random "
+"access is made possible by keeping the slice size below the database page "
+"value (32x32)."
+msgstr ""
+"``Raster data type`` ：PostGIS通过新的数据类型切片为大型栅格数据对象提供存储。切片由以下部分组成：一个环绕矩形，  "
+"``SRID`` 、类型和字节序列。通过将片大小保持在数据库页面值(32x32)以下，可以实现快速随机访问。"
+
+msgid ""
+"Generally large pictures are also stored in the database by cutting them "
+"into 32×32 pixel slices."
+msgstr "通常，大图片也会通过将它们切成32×32像素的切片来存储在数据库中。"
+
+msgid "Installation"
+msgstr "安装"
+
+msgid "The installation command under Debian/Ubuntu Linux:"
+msgstr "Debian/Ubuntu Linux下的安装命令："
+
+msgid "or Download the binary file via https://www.postgresql.org/download/ :"
+msgstr "或通过https://www.postgresql.org/download/下载二进制文件："
+
+msgid ""
+"For the management of the PostgreSQL database, we can use ``pgadmin`` GUI "
+"programe. This tool could be downloaded via "
+"https://www.pgadmin.org/download/ ."
+msgstr ""
+"对于PostgreSQL数据库的管理，我们可以使用  ``pgadmin`` "
+"图形用户界面程序。该工具可以通过https://www.pgadmin.org/download/下载。"
+
+msgid "pgadmin"
+msgstr "Pgadmin"
+
+msgid "Use"
+msgstr "使用"
+
+msgid "First, prepare a ``shpfile`` File."
+msgstr "首先，准备一份  ``shpfile`` 档案。"
+
+msgid "Shpfile display"
+msgstr "Shpfile显示"
+
+msgid "There are two ways to import an shp file into a database:"
+msgstr "将shp文件导入数据库有两种方法："
+
+msgid ""
+"But first, you need to create a database and add ``PostGIS`` ， ``schema`` ( "
+"optional)"
+msgstr "但首先，您需要创建一个数据库并添加  ``PostGIS`` ，  ``schema`` (可选)"
+
+msgid "Method 1"
+msgstr "方法1"
+
+msgid "``pgadmin`` plugin ``import`` import directly："
+msgstr "``pgadmin`` 插件  ``import`` 直接导入："
+
+msgid "Open ``pgadmin`` click on the plugin ``import``\\ ；"
+msgstr "打开  ``pgadmin`` 单击该插件  ``import`` \\；"
+
+msgid "Openpg"
+msgstr "OpenPG"
+
+msgid ""
+"To connect to the database, first create the data and import it into "
+"``PostGIS``: Click ``connection`` to enter the username, password, and "
+"database to be used"
+msgstr ""
+"要连接到数据库，请首先创建数据并将其导入  ``PostGIS`` ：点击  ``connection`` 输入要使用的用户名、密码和数据库"
+
+msgid "Connectionpg"
+msgstr "Connectionpg"
+
+msgid ""
+"After the prompt is successful, click ``Add file`` to select the file "
+"extension you want to import with the suffix ``.shp``"
+msgstr "提示成功后，请单击  ``Add file`` 选择要使用后缀导入的文件扩展名  ``.shp``"
+
+msgid "Select filepg"
+msgstr "选择文件"
+
+msgid ""
+"After adding, modify the ``schema`` ``table`` and add it to the position you"
+" want"
+msgstr "添加后，修改  ``schema``   ``table`` 并将其添加到您想要的位置"
+
+msgid "Add filepg"
+msgstr "添加文件"
+
+msgid ""
+"After setting, click ``import`` as shown in the figure below, indicating "
+"that the import is complete."
+msgstr "设置完成后，点击  ``import`` 如下图所示，表示导入完成。"
+
+msgid "Success filepg"
+msgstr "成功文件"
+
+msgid "Method 2"
+msgstr "方法二"
+
+msgid "Import with the command line tool:"
+msgstr "使用命令行工具导入："
+
+msgid "s ``SRID``"
+msgstr "S  ``SRID``"
+
+msgid "I the address where the I file is located"
+msgstr "I I文件所在的地址"
+
+msgid "h server address"
+msgstr "H服务器地址"
+
+msgid "p port"
+msgstr "P端口"
+
+msgid "d database name"
+msgstr "%d个数据库名称"
+
+msgid "U username"
+msgstr "%u用户名"
+
+msgid "W password"
+msgstr "W密码"
+
+msgid "shpdata ``schema``"
+msgstr "Shpdata  ``schema``"
+
+msgid "Pipe sql into database"
+msgstr "通过管道将SQL导入数据库"
+
+msgid "Successpsql"
+msgstr "Successpsql"
+
+msgid "Publish"
+msgstr "出版"
+
+msgid "Enter the ``GeoServer`` operation page:"
+msgstr "输入  ``GeoServer`` 操作页面："
+
+msgid "Select the left workspace"
+msgstr "选择左侧工作空间"
+
+msgid "New workspace"
+msgstr "新工作空间"
+
+msgid "Select new workspace"
+msgstr "选择新工作区"
+
+msgid "New workspace1"
+msgstr "新工作空间1"
+
+msgid "Fill in ``name``\\ 、\\ ``URI``"
+msgstr "填入  ``name`` \\、\\  ``URI``"
+
+msgid "Select data within ``Datastore``"
+msgstr "选择范围内的数据  ``Datastore``"
+
+msgid "Add new datastore"
+msgstr "添加新数据存储区"
+
+msgid "Add storage"
+msgstr "添加存储"
+
+msgid ""
+"Select the workspace, fill in the connection parameter database, username "
+"and password"
+msgstr "选择工作空间，填写连接参数数据库、用户名和密码"
+
+msgid "Fill in the parameters"
+msgstr "填写参数"
+
+msgid "After saving, it will automatically jump and click the publish button"
+msgstr "保存后，会自动跳转并点击发布按钮"
+
+msgid "Set coordinate"
+msgstr "设置坐标"
+
+msgid "reference and border"
+msgstr "参考和边框"
+
+msgid "After saving, find ``layer Preview`` in the left menu bar"
+msgstr "保存后，查找  ``layer Preview`` 在左侧菜单栏中"
+
+msgid "view"
+msgstr "观"
+
+msgid ""
+"After clicking, you can find the layer we want to publish and click "
+"``Openlayers``"
+msgstr "单击后，您可以找到要发布的图层，然后单击  ``Openlayers``"
+
+msgid "As shown below"
+msgstr "如下所示"
+
+msgid "Full URL"
+msgstr "完整的URL"
+
+msgid "WMS selected services"
+msgstr "WMS选定的服务"
+
+msgid "version version information"
+msgstr "版本版本信息"
+
+msgid "request request method"
+msgstr "请求请求方法"
+
+msgid "style request a list of styles for the layer"
+msgstr "样式请求图层的样式列表"
+
+msgid "bbox map extent (minx,miny,maxx,maxy)"
+msgstr "BBox地图范围(Minx、Miny、Maxx、Maxy)"
+
+msgid "layers layer name"
+msgstr "图层图层名"
+
+msgid "width the width of the window"
+msgstr "宽度窗口的宽度"
+
+msgid "height the height of the window"
+msgstr "窗的高度"
+
+msgid "srs spatial coordinate reference system (namespace:identifier)"
+msgstr "SRS空间坐标系(命名空间：IDENTIFIER)"
+
+msgid "format format"
+msgstr "格式格式"

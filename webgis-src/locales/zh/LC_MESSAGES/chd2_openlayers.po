@@ -1,0 +1,222 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2007-10-18 14:00+0100\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "OpenLayers class library"
+msgstr "OpenLayers类库"
+
+msgid ""
+"OpenLayers implements more comprehensive and complex front-end WebGIS "
+"applications. This part introduces it."
+msgstr "OpenLayers实现了更全面、更复杂的前端WebGIS应用程序。这一部分对其进行了介绍。"
+
+msgid "Intruduction for OpenLayers"
+msgstr "OpenLayers简介"
+
+msgid "Intruduction for OpenLayers."
+msgstr "OpenLayers简介。"
+
+msgid ""
+"Technical overview OpenLayers is a JavaScript package for developing WebGIS "
+"clients. Sources supported by OpenLayers include Google Maps, Yahoo, Map, "
+"Microsoft Virtual Earth, etc. Users can also use a simple image map as a "
+"background image to overlay other layers in OpenLayers. In this regard, "
+"OpenLayers provides a lot of s Choice."
+msgstr ""
+"技术概述OpenLayers是一个用于开发WebGIS客户端的JavaScript包。OpenLayers支持的来源包括谷歌地图、雅虎、地图、微软虚拟地球等。用户还可以使用简单的图像地图作为背景图像来覆盖OpenLayers中的其他层。在这方面，OpenLayers为S提供了很多选择。"
+
+msgid ""
+"The code implements the function of loading a tile map (ie OpenStreetMap "
+"map) and can pan and zoom the map. When initializing a map, you need at "
+"least one view, one or more layers, and a target HTML tag for the map to "
+"load."
+msgstr ""
+"该代码实现了加载瓦片地图(即OpenStreetMap地图)的功能，并可以平移和缩放地图。在初始化地图时，您至少需要一个视图、一个或多个层以及一个目标HTML标记才能加载地图。"
+
+msgid "The Second."
+msgstr "第二个。"
+
+msgid "`View the example <xx-ol-openstreet.html>`_"
+msgstr "`View the example <xx-ol-openstreet.html>`_"
+
+msgid "Map drag and zoom"
+msgstr "地图拖动和缩放"
+
+msgid ""
+"The left mouse button can be used to drag the map, and the scroll wheel can "
+"zoom the map. Shift + left mouse button to rotate the map."
+msgstr "使用鼠标左键可以拖动地图，滚轮可以缩放地图。按住Shift键并使用鼠标左键旋转贴图。"
+
+msgid "`View the example <xx-ol-dragrotate.html>`_"
+msgstr "`View the example <xx-ol-dragrotate.html>`_"
+
+msgid "ZoomToExtent Control"
+msgstr "ZoomToExtent控件"
+
+msgid ""
+"This example demonstrates how to use the ``ol.control.ZoomToExtent`` "
+"control. Click to go directly to the set  coordinate position."
+msgstr "此示例演示如何使用  ``ol.control.ZoomToExtent`` 控制力。单击可直接转到设置的坐标位置。"
+
+msgid "`View the example <xx-ol-zoomtoextent.html>`_"
+msgstr "`View the example <xx-ol-zoomtoextent.html>`_"
+
+msgid "ArcGIS REST MapService"
+msgstr "ArcGIS REST地图服务"
+
+msgid ""
+"This example shows how to use ArcGIS REST MapService as a slice. This source"
+" type supports maps and image services. For cached ArcGIS services, use "
+"ol.source.XYZ for better performance."
+msgstr ""
+"此示例显示如何将ArcGIS REST "
+"MapService用作切片。此源类型支持地图和影像服务。对于缓存的ArcGIS服务，请使用ol.Soure.XYZ以获得更好的性能。"
+
+msgid "`View the example <xx-ol-arcgis.html>`_"
+msgstr "`View the example <xx-ol-arcgis.html>`_"
+
+msgid "Map drawing"
+msgstr "地图绘制"
+
+msgid ""
+"An example of using ``ol.interaction.Draw`` interaction and "
+"``ol.interaction.Modify`` interaction. You can paint on the   map. For "
+"example, points, lines, polygons, etc."
+msgstr ""
+"使用的一个示例  ``ol.interaction.Draw`` 互动和  ``ol.interaction.Modify`` "
+"互动。你可以在地图上画画。例如，点、线、多边形等。"
+
+msgid "`View the example <xx-ol-draw.html>`_"
+msgstr "`View the example <xx-ol-draw.html>`_"
+
+msgid "Layer clipping"
+msgstr "层剪裁"
+
+msgid "Layer clip example. Display the map directly as a cut shape."
+msgstr "层剪辑示例。将地图直接显示为切割形状。"
+
+msgid "`View the example <xx-ol-precompose.html>`_"
+msgstr "`View the example <xx-ol-precompose.html>`_"
+
+msgid "Cartodb Map"
+msgstr "CartoDB地图"
+
+msgid "A simple case of Cartodb map."
+msgstr "Cartodb映射的一个简单案例。"
+
+msgid "`View the example <xx-ol-cartadb.html>`_"
+msgstr "`View the example <xx-ol-cartadb.html>`_"
+
+msgid "Map move animation"
+msgstr "贴图移动动画"
+
+msgid ""
+"This example shows how to run one or more animations using the "
+"``view.animate()`` method."
+msgstr "此示例演示如何使用  ``view.animate()`` 方法。"
+
+msgid "`View the example <xx-ol-animation.html>`_"
+msgstr "`View the example <xx-ol-animation.html>`_"
+
+msgid "WMS"
+msgstr "WMS"
+
+msgid ""
+"A smooth reload of the presentation layer as the time dimension is "
+"continuously changed. The data shows that the IEM generated a NUS NEXRAD "
+"WSR-88D grade III alkali reflectance CONUS complex."
+msgstr "随着时间维度的连续变化，流畅地重新加载表示层。数据表明，IEM产生了NUS NEXRAD WSR-88D III级碱反射CONUS复合体。"
+
+msgid "`View the example <xx-ol-wms-webgispub.html>`_"
+msgstr "`View the example <xx-ol-wms-webgispub.html>`_"
+
+msgid "Map modification feature"
+msgstr "地图修改功能"
+
+msgid ""
+"This example shows how to use extent extens to draw a modifiable range."
+msgstr "此示例说明如何使用范围扩展来绘制可修改的范围。"
+
+msgid "`View the example <xx-ol-modify-features.html>`_"
+msgstr "`View the example <xx-ol-modify-features.html>`_"
+
+msgid "Control Color"
+msgstr "控制颜色"
+
+msgid ""
+"The raster source allows arbitrary manipulation of pixel values. In this "
+"example, the RGB values on the input tile source are adjusted in pixel mode "
+"before being rendered using the second raster source. The raster operation "
+"converts the pixels in the RGB space into HCL color spaces, adjusts the "
+"values according to the above controls, and then converts them back into RGB"
+" space for rendering."
+msgstr ""
+"栅格源允许任意操作像素值。在本例中，输入平铺源上的RGB值在使用第二个栅格源渲染之前以像素模式进行调整。栅格操作将RGB空间中的像素转换为HCL颜色空间，根据上述控件调整值，然后将它们转换回RGB空间进行渲染。"
+
+msgid "`View the example <xx-ol-color.html>`_"
+msgstr "`View the example <xx-ol-color.html>`_"
+
+msgid "CanvasPattern"
+msgstr "CanvasPattern"
+
+msgid ""
+"First, this example creates a reusable CanvasPattern and a CanvasGradient. "
+"These countries are loaded from the GeoJSON file. The style function "
+"determines whether each country is populated with a pre-generated "
+"CanvasGradient or CanvasPattern."
+msgstr ""
+"首先，本例创建了一个可重复使用的CanvesPattern和一个CanvesGRadient。这些国家/地区是从GeoJSON文件加载的。Style函数确定每个国家/地区是使用预先生成的CanvesGRadient填充还是使用CanvesPattern填充。"
+
+msgid "`View the example <xx-ol-canvaspattern.html>`_"
+msgstr "`View the example <xx-ol-canvaspattern.html>`_"
+
+msgid "Export"
+msgstr "出口"
+
+msgid ""
+"Export a map as an example of a PNG image. This example requires a browser "
+"that supports canvas.toBlob()."
+msgstr "以PNG图像为例导出地图。本例需要支持canvar.toBlob()的浏览器。"
+
+msgid "`View the example <xx-ol-export.html>`_"
+msgstr "`View the example <xx-ol-export.html>`_"
+
+msgid "XYZ Esri"
+msgstr "XYZ ESRI"
+
+msgid "``ol.source.XYZ`` supports ArcGIS REST tiles services."
+msgstr "``ol.source.XYZ`` 支持ArcGIS REST磁贴服务。"
+
+msgid "`View the example <xx-ol-XYZ.html>`_"
+msgstr "`View the example <xx-ol-XYZ.html>`_"
+
+msgid "Mouse position"
+msgstr "鼠标位置"
+
+msgid ""
+"An example of mouse position control outside the map. Display the "
+"coordinates of the mouse in real time."
+msgstr "地图外部鼠标位置控制的一个示例。实时显示鼠标的坐标。"
+
+msgid "`View the example <xx-ol-mouse.html>`_"
+msgstr "`View the example <xx-ol-mouse.html>`_"
+
+msgid "Constrained scaling"
+msgstr "有约束的缩放"
+
+msgid ""
+"The view of this map is limited to zoom levels 9 and 13. This can be done "
+"using the minZoom and maxZoom view options."
+msgstr "此地图的视图被限制为缩放级别9和13。这可以使用minZoom和MaxZoom视图选项来实现。"
+
+msgid "`View the example <xx-ol-constrained.html>`_"
+msgstr "`View the example <xx-ol-constrained.html>`_"

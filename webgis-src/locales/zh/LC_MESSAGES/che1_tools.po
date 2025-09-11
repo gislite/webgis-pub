@@ -1,0 +1,48 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2007-10-18 14:00+0100\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "WebGIS related tools"
+msgstr "WebGIS相关工具"
+
+msgid ""
+"This part introduces tools related to WebGIS, including OWSLib, mappyfile, "
+"etc."
+msgstr "这部分介绍了与WebGIS相关的工具，包括OWSLib、映射文件等。"
+
+msgid "Introduction and installation of OWSlib"
+msgstr "OWSlib简介及安装"
+
+msgid "Introduction"
+msgstr "引言"
+
+msgid ""
+"OWSLib is a Python package for client-side programming with the Open "
+"Geospatial Consortium (OGC) Web Services (OWS) interface standard and its "
+"associated content model."
+msgstr "OWSLib是一个使用开放地理空间联盟(OGC)Web服务(OWS)接口标准及其相关内容模型进行客户端编程的Python包。"
+
+msgid ""
+"OWSLib was originally included in PCL, but was proposed as a separate "
+"project in R481."
+msgstr "OWSLib最初包括在PCL中，但在R481中作为一个单独的项目提出。"
+
+msgid ""
+"OGC Web services toollibrary, Python package uses OGC maps, functions, and "
+"overlay services. OWSLib provides general API access GetCapabilities, "
+"service metadata and wrapper access maps, and GETFEATURE requests."
+msgstr ""
+"OGC "
+"Web服务工具库，Python包使用OGC地图、函数和覆盖服务。OWSLib提供通用的API访问GetCapability、服务元数据和包装器访问映射以及GETFEATURE请求。"
+
+msgid "Installation"
+msgstr "安装"

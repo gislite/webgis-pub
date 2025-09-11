@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/che1_tools/chapter.rst:2
+msgid "WebGIS related tools"
+msgstr ""
+
+#: ../../webgis-src/che1_tools/chapter.rst:4
+msgid ""
+"This part introduces tools related to WebGIS, including OWSLib, "
+"mappyfile, etc."
+msgstr ""
+
+#: ../../webgis-src/che1_tools/sec01_owslib/section.rst:4
+msgid "Introduction and installation of OWSlib"
+msgstr ""
+
+#: ../../webgis-src/che1_tools/sec01_owslib/section.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../webgis-src/che1_tools/sec01_owslib/section.rst:9
+msgid ""
+"OWSLib is a Python package for client-side programming with the Open "
+"Geospatial Consortium (OGC) Web Services (OWS) interface standard and its"
+" associated content model."
+msgstr ""
+
+#: ../../webgis-src/che1_tools/sec01_owslib/section.rst:13
+msgid ""
+"OWSLib was originally included in PCL, but was proposed as a separate "
+"project in R481."
+msgstr ""
+
+#: ../../webgis-src/che1_tools/sec01_owslib/section.rst:16
+msgid ""
+"OGC Web services toollibrary, Python package uses OGC maps, functions, "
+"and overlay services. OWSLib provides general API access GetCapabilities,"
+" service metadata and wrapper access maps, and GETFEATURE requests."
+msgstr ""
+
+#: ../../webgis-src/che1_tools/sec01_owslib/section.rst:22
+msgid "Installation"
+msgstr ""
+

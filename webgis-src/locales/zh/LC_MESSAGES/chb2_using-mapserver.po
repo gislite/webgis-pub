@@ -1,0 +1,1644 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2025-09-11 11:28+0800\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:2
+msgid "Cartographic Application of MapServer"
+msgstr "MapServer在地图制作中的应用"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:4
+msgid ""
+"This part focuses on the techniques of cartography in MapServer. "
+"Including the use of layers and style settings, text annotations."
+msgstr "本部分重点介绍了MapServer中的地图制作技术。包括使用图层和样式设置、文本注释。"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:7
+msgid ""
+"MapServer configures the map to publish through a map file (Mapfile). "
+"Mapfile is the core of using MapServer. It organizes various map elements"
+" into a hierarchical object system, declaring the size and format of the "
+"generated map, all the paths, names and formats of the data used, as well"
+" as a variety of more complex control options. The syntax for configuring"
+" Mapfile files is simple and easy to learn, especially if you have "
+"experience of using desktop GIS software such as ArcMap to make thematic "
+"maps. Mapfile is multi-layered, and each map file defines a large number "
+"of other objects. These objects include scale bars, legends, map colors, "
+"map names, map layers, and so on."
+msgstr ""
+"MapServer将地图配置为通过 Mapfile (Mapfile)发布。 Mapfile "
+"是使用MapServer的核心。它将各种地图元素组织到一个分层的对象系统中，声明生成的地图的大小和格式、使用的数据的所有路径、名称和格式，以及各种更复杂的控制选项。配置"
+" Mapfile 的语法简单易学，特别是如果您有使用桌面地理信息系统软件(如ArcMap)制作专题地图的经验。 Mapfile 是多层的，每个 "
+"Mapfile 定义了大量的其他对象。这些对象包括比例尺、图例、地图颜色、地图名称、地图层等。"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:18
+msgid ""
+"Configuring a complete Mapfile file requires GIS data sources, font "
+"files, and symbol files. GIS data sources can be distributed on different"
+" computers; font files are used to define the font types used in the "
+"output map. The point, line and surface symbols used in the map can be "
+"defined in the Symbol object of the Mapfile file; however, in order to "
+"achieve symbol reuse, independent symbol files are usually defined "
+"outside the Mapfile, and there is no need to define the same symbols in "
+"different Mapfile files."
+msgstr ""
+"配置完整的 Mapfile "
+"需要使用GIS数据源、字体文件和符号文件。GIS数据源可以分布在不同的计算机上；字体文件用于定义输出地图中使用的字体类型。地图中使用的点、线、面符号可以在Mapfile文件的符号对象中定义；但是，为了实现符号重用，独立的符号文件通常在Mapfile之外定义，不需要在不同的Mapfile文件中定义相同的符号。"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:27
+msgid "After planning the WebGIS website, configure the Mapfile file steps:"
+msgstr "规划WebGIS网站后，配置Mapfile文件步骤："
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:29
+msgid ""
+"Prepare the resources required for Mapfile files, including GIS data, "
+"font files, and symbol files."
+msgstr "准备 Mapfile 所需的资源，包括地理信息系统数据、字体文件和符号文件。"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:31
+msgid ""
+"According to the requirements of WebGIS website, follow the syntax of "
+"Mapfile, use text editing software or special Mapfile writing software "
+"such as MapLab to write Mapfile."
+msgstr "根据WebGIS网站的要求，遵循Mapfile的语法，使用文本编辑软件或MapLab等专门的Mapfile编写软件来编写Mapfile。"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:34
+msgid ""
+"Use debugging software (such as MapLab) to test and see if the Mapfile "
+"configuration is correct and appropriate."
+msgstr "使用调试软件(如MapLab)测试并查看Mapfile配置是否正确和合适。"
+
+#: ../../webgis-src/chb2_using-mapserver/chapter.rst:37
+msgid ""
+"The core program of MapServer is used to generate maps according to "
+"geospatial data, configure the function of using CGI, and give it the "
+"function of WebGIS. MapServer supports distribution and interoperability "
+"by supporting several standards from the OGC Consortium. Whether using "
+"the MapServer CGI module or the server-side scripting language MapScript,"
+" the dynamic interaction between the server and the client browser can be"
+" realized."
+msgstr ""
+"MapServer的核心程序用于根据地理空间数据生成地图，配置使用CGI的功能，并赋予其WebGIS功能。MapServer通过支持OGC联盟的几个标准来支持分发和互操作性。无论是使用MapServer"
+" CGI模块，还是使用服务器端脚本语言MapScrip，都可以实现服务器端与客户端浏览器的动态交互。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:4
+msgid "Add a grid layer"
+msgstr "添加格网图层"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:7
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:25
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:7
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:7
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:18
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:11
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:7
+msgid "View examples"
+msgstr "查看示例"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:14
+msgid ""
+"In addition to supporting vector data (points, lines, polygons and "
+"labels), MapServer can also display raster data. Through the use of the "
+"GDAL library, MapServer can import and export a variety of raster "
+"formats. MapServer now supports RGB and multispectral images "
+"(multilayers). In versions prior to 4.0, raster input was limited to "
+"single-layer, grayscale or color image indices. This example shows how to"
+" use multispectral data to choose what layers to display. With RGB and "
+"multispectral images, there may be a significant performance penalty."
+msgstr "除了支持矢量数据(点、线、多边形和标签)外，MapServer还可以显示栅格数据。通过使用GDAL库，MapServer可以导入和导出各种栅格格式。MapServer现在支持RGB和多光谱图像(多层)。在4.0之前的版本中，栅格输入仅限于单层、灰度或彩色图像索引。此示例说明如何使用多光谱数据来选择要显示的层。对于RGB和多光谱图像，可能会有显著的性能损失。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:23
+msgid ""
+"Since MapServer 5.x uses the GD 2.0.x library to generate image output, "
+"it supports RGB (24-bit true color) output as well. Therefore, it is now "
+"possible to use both ``PNG24`` (truecolor) output and 8-bit (indexed "
+"color or grayscale) PNGs. This example uses PNG24 IMAGETYPE. Just like "
+"RGB input, rendering results are significantly improved when using PNG24."
+msgstr ""
+"由于MapServer5.x使用GD2.0.x库来生成图像输出，因此它也支持RGB(24位真彩色)输出。因此，现在可以同时使用两者  "
+"``PNG24`` (真彩色)输出和8位(索引颜色或灰度)PNG。本例使用PNG24 "
+"ImageType。就像RGB输入一样，当使用PNG24时，渲染结果会得到显著改善。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:30
+msgid ""
+"MapServer can actually use GDAL to generate output images, but that’s "
+"another topic. If you want to know more about it, see the specific usage "
+"of the ``OUTPUTFORMAT`` object in MapFile."
+msgstr "MapServer实际上可以使用GDAL生成输出图像，但这是另一个主题。如果您想了解更多信息，请参阅  ``OUTPUTFORMAT`` 对象。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:34
+msgid "The following is the Mapfile (mfa5.map) used in this example:"
+msgstr "以下是本例中使用的映射文件(mfa5.map)："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:36
+msgid "The file changes are as follows:"
+msgstr "文件更改如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:43
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:31
+msgid "Annotated Mapfile"
+msgstr "带注记的 Mapfile "
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:45
+msgid "The structure of mapfile, through objects, looks like this:"
+msgstr "映射文件通过对象的结构如下所示："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:59
+msgid "The modifications are as follows:"
+msgstr "有关修改如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:61
+msgid "`Open the file:diff_mfa5_mfa4.html <./diff_mfa5_mfa4.html>`_"
+msgstr "`Open the file:diff_mfa5_mfa4.html <./diff_mfa5_mfa4.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:67
+msgid ""
+"When you are in MapFile , you will see that the new layer ``\"modis\"`` "
+"is added after the polygon layer ``\"states\"``. MapServer displays "
+"layers in reverse order - last in first out (LIFO), with the first layer "
+"drawn in the MapFile defined at the bottom of the map."
+msgstr ""
+"当您在 Mapfile 中时，您将看到新图层  ``\"modis\"`` 添加到多边形层之后  ``\"states\"`` "
+"。MapServer以相反的顺序显示图层-后进先出(LIFO)，在地图底部定义的Map文件中绘制的第一个图层。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:72
+msgid ""
+"So the country polygon layer, will be drawn at the bottom of the result. "
+"Since the raster layer is drawn on top of it, it won’t be seen. That’s "
+"why the first layer gets the status value ``STATUS OFF`` off. The line "
+"layer is defined below the raster layer, so it will be drawn on top of "
+"the result (you can see it). That’s why we started to separate the line "
+"layer from the polygon layer. Finally, labels are drawn on top of "
+"everything."
+msgstr ""
+"因此，将在结果的底部绘制国家多边形层。由于栅格层是在其上面绘制的，因此不会被看到。这就是第一个图层获取状态值的原因  ``STATUS OFF``"
+" "
+"脱下来。LINE层定义在栅格层下方，因此它将绘制在结果的顶部(您可以看到它)。这就是为什么我们开始分离线层和多边形层。最后，标签被画在所有东西的顶部。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:80
+msgid ""
+"MapServer can automatically turn on or off the l layer according to the "
+"status of other layers (the polygon layer will be turned off when the "
+"raster layer is turned on). This is done with the ``REQUIRES`` parameter."
+" You should use this feature once you start creating your own MapServer "
+"applications."
+msgstr ""
+"地图服务器可以根据其他层的状态自动打开或关闭L层(打开栅格层时，多边形层将被关闭)。这是通过  ``REQUIRES`` "
+"参数。一旦开始创建自己的MapServer应用程序，就应该使用此功能。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:87
+msgid "Parameter description"
+msgstr "参数说明"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:89
+msgid "Let’s take a look at the new parameters introduced in MapFile:"
+msgstr "让我们来看看MapFile中引入的新参数："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:91
+msgid ""
+"``IMAGETYPE`` , which is not new, but the value is ``PNG24`` . PNG24 is a"
+" 24-bit true color version of the PNG format. Instead of output images "
+"being limited to 256 color combinations, map servers now have millions. "
+"By the way, try changing this value back to PNG. Note the formats that "
+"can be used, the time it takes to generate the image. Choose between true"
+" color and indexed color, taking into account the time it takes to "
+"generate the image."
+msgstr ""
+"``IMAGETYPE`` ，这并不新鲜，但其价值是  ``PNG24`` "
+"。PNG24是PNG格式的24位真彩色版本。地图服务器现在拥有数百万种颜色组合，而不是限制输出256种颜色组合。顺便说一句，尝试将此值改回PNG。注意可以使用的格式，以及生成图像所需的时间。考虑到生成图像所需的时间，在真彩色和索引色之间进行选择。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:99
+msgid ""
+"``SYMBOLSET``, the path to the file defined by the symbols in the sub. "
+"Symbols in this file are referenced through the SYMBOL object in the "
+"class object. It’s not really needed at this point, but I thought I’d "
+"throw this out here for now. See the MapFile reference and for more "
+"information on MapServer Construction with Cartographic Symbols."
+msgstr ""
+"``SYMBOLSET`` "
+"由子中的符号定义的文件的路径。此文件中的符号通过类对象中的符号对象引用。在这一点上，它并不是真的需要，但我想我现在应该把它扔在这里。有关使用地图符号构建地图服务器的详细信息，请参阅《"
+" Mapfile 参考》和。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:105
+msgid ""
+"``DATA \"raster/mod09a12003161_ugl_ll_8bit.tif\"``, in the newly added "
+"layer object, the data parameter points to a GeoTIFF image. Like "
+"MapServer’s vector datasets, it supports multiple raster file formats. "
+"This support is through the use of the GDAL library. For more information"
+" on the different raster formats supported by MapServer and a general "
+"discussion of using raster map servers, please read how raster data works"
+" at http://www.mapserver.org/input/raster.html"
+msgstr ""
+"``DATA \"raster/mod09a12003161_ugl_ll_8bit.tif\"`` "
+"，在新添加的Layer对象中，Data参数指向GeoTIFF图像。与MapServer的矢量数据集一样，它支持多种栅格文件格式。这种支持是通过使用GDAL库实现的。有关地图服务器支持的不同栅格格式以及使用栅格地图服务器的一般讨论的详细信息，请阅读http://www.mapserver.org/input/raster.html上的栅格数据工作原理"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:113
+msgid ""
+"``TYPE RASTER``, when using raster data (images), the value is "
+"``RASTER``, not ``POLYGON``, ``LINE``, ``POINT``, or others."
+msgstr ""
+"``TYPE RASTER`` ，当使用栅格数据(图像)时，该值为  ``RASTER`` ，不是  ``POLYGON`` ，  "
+"``LINE`` ，  ``POINT`` ，或其他人。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:116
+msgid ""
+"``PROCESSING \"BANDS=1,2,3\"``, this layer object parameter is new in "
+"MapServer 4.x. The processing keyword has many values, but in this case, "
+"it is used to select the bands displayed in the multispectral image. The "
+"value string here will be passed to the GDAL library. Documentation for "
+"this is currently minimal, but see MAPFILE for more examples of using the"
+" processing keyword."
+msgstr ""
+"``PROCESSING \"BANDS=1,2,3\"`` ，此Layer对象参数是MapServer "
+"4.x中的新参数。PROCESSING关键字有很多值，但在本例中，它用于选择多光谱图像中显示的波段。这里的值字符串将被传递给GDAL库。目前有关这方面的文档很少，但有关使用处理关键字的更多示例，请参阅MAPFILE。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:123
+msgid ""
+"``OFFSITE``, this parameter tells MapServer which pixel values to render "
+"as the background (or ignore). You can get pixel value manipulation of "
+"images or image manipulation programs (eg GIMP, Photoshop)."
+msgstr ""
+"``OFFSITE`` "
+"，此参数告诉MapServer要将哪个像素值渲染为背景(或忽略)。你可以获得图像的像素值操作或图像处理程序(如GIMP，Photoshop)。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:128
+msgid "RGB and Index Image"
+msgstr "RGB和索引图像"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:130
+msgid ""
+"To compare the speed of creating a map using a RGB image with an indexed "
+"color image, replace the following line in MapFile:"
+msgstr "若要比较使用RGB图像和索引彩色图像创建贴图的速度，请在MapFile中替换以下行："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:141
+msgid "Use the following code:"
+msgstr "使用以下代码："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:150
+msgid "In addition, try changing ``IMAGETYPE`` from ``PNG24`` to ``PNG`` ."
+msgstr "另外，试着改变  ``IMAGETYPE`` 从…  ``PNG24`` 至  ``PNG`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:153
+msgid "Use preprocessing"
+msgstr "使用预处理"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:155
+msgid ""
+"Raster data, such as remote sensing images, is not just a picture. In a "
+"computer, an image is usually represented by three RGB channels. In "
+"remote sensing images, channels are generally called bands. Moreover, the"
+" band of the remote sensing image is different from the RGB channel of "
+"the image. It does not necessarily correspond to the tricolor of RGB, and"
+" the number of bands is not necessarily three."
+msgstr "栅格数据，如遥感图像，不仅仅是一张图片。在计算机中，一幅图像通常由三个RGB通道表示。在遥感图像中，通道通常称为波段。此外，遥感图像的波段与图像的RGB通道不同。它不一定对应于RGB的三原色，条带的数量也不一定是三条。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:162
+msgid ""
+"In MapServer, in addition to rendering images by default, you can also "
+"define how to handle them, such as which three bands are used in false "
+"color, if the color is stretched, and so on."
+msgstr "在MapServer中，除了默认情况下呈现图像外，您还可以定义如何处理图像，例如哪三个带使用假颜色、是否拉伸颜色等。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:166
+msgid ""
+"For example, for remote sensing images, use the following statement to "
+"reverse the order of bands:"
+msgstr "例如，对于遥感图像，使用以下语句来颠倒波段的顺序："
+
+#: ../../webgis-src/chb2_using-mapserver/sec01_raster/section.rst:173
+msgid "The results are as follows:"
+msgstr "结果如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:4
+msgid "Add a graticule"
+msgstr "添加经纬线"
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:6
+msgid ""
+"In order to accurately indicate the location of each place on the earth, "
+"people assume a coordinate system for the earth’s surface, which is the "
+"latitude and longitude coordinate system."
+msgstr "为了准确地指示地球上每个地方的位置，人们假定地球表面有一个坐标系，这就是纬度和经度坐标系。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:10
+msgid ""
+"On maps and globes, we can see thin lines, some horizontal and some "
+"vertical, which are the longitude and latitude. The warp and weft are "
+"intertwined, much like the squares on a chessboard, forming a warp and "
+"weft network."
+msgstr "在地图和地球仪上，我们可以看到细线，一些是水平的，一些是垂直的，这就是经度和纬度。经纬交织在一起，就像棋盘上的方块，形成了经纬网络。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:15
+msgid ""
+"According to these longitude and latitude lines, the position and "
+"direction of any place on the ground can be accurately determined. Using "
+"the longitude and latitude marked on it, various locations, regions and "
+"various geographic locations on the earth’s surface can be determined. It"
+" is useful in military, aviation, navigation, etc. For example, a ship is"
+" sailing on the vast sea, and an airplane is flying in the vast sky. No "
+"matter where you go, people can use instruments to accurately measure its"
+" latitude and longitude to determine its position."
+msgstr "根据这些经纬线，可以准确地确定地面上任何地方的位置和方向。利用标记在上面的经度和纬度，可以确定地球表面上的各种位置、地区和各种地理位置。它在军事、航空、航海等方面都很有用。例如，一艘船在浩瀚的大海上航行，一架飞机在浩瀚的天空中飞行。无论你走到哪里，人们都可以用仪器准确地测量它的纬度和经度来确定它的位置。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:27
+msgid ""
+"In MapServer, latitude and longitude lines can be drawn on the map "
+"according to its cartographic capabilities. This feature is a latecomer, "
+"originally developed by John Novak in 2003. The drawing of graticules is "
+"almost necessary for desktop mapping to facilitate location determination"
+" when reading maps; however, it is not necessary for WebGIS. WebGIS "
+"enhances the user’s operations on the map, and the latitude and longitude"
+" coordinates can be quickly obtained through the spatial query function."
+msgstr ""
+"在MapServer中，可以根据其制图功能在地图上绘制经纬线。该功能是一个后来者，最初由John "
+"Novak在2003年开发。绘制经纬线对于桌面地图几乎是必要的，以便于在阅读地图时确定位置；但对于WebGIS来说，这并不是必需的。WebGIS增强了用户在地图上的操作，通过空间查询功能可以快速获取经纬度坐标。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:36
+msgid ""
+"The image below is an example, drawn on a map with latitude and longitude"
+" lines, with the longitude and latitude of the longitude lines drawn to "
+"the ends of the line."
+msgstr "下图是一个示例，在地图上绘制了纬度和经度线，其中经度线的经度和纬度绘制到了线的末端。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:43
+msgid "Here is its Mapfile :"
+msgstr "以下是其映射文件："
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:50
+msgid "Code modification"
+msgstr "代码修改"
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:52
+msgid ""
+"Compared with the previously released image map, the code changes are as "
+"follows:"
+msgstr "与之前发布的图像地图相比，代码更改如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec02_grid/section.rst:55
+msgid "`Open the file:diff_mfd8_mfa5.html <./diff_mfd8_mfa5.html>`_"
+msgstr "`Open the file:diff_mfd8_mfa5.html <./diff_mfd8_mfa5.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:4
+msgid "Change the output format of the map"
+msgstr "更改地图的输出格式"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:9
+msgid ""
+"Depending on the format you choose, the image may not be displayed in "
+"your browser. If the link doesn’t appear in your browser, right-click on "
+"the image above to see what format is specified in MapFile for saving."
+msgstr "根据您选择的格式，图像可能不会显示在您的浏览器中。如果该链接没有出现在您的浏览器中，请在上面的图像上单击鼠标右键以查看在MapFile中指定要保存的格式。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:18
+msgid "Different output results"
+msgstr "不同的输出结果"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:21
+msgid "Mapfile example"
+msgstr "映射文件示例"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:23
+msgid "The following is the Mapfile used in this example ``mfa8.map`` ):"
+msgstr "以下是本例中使用的 Mapfile   ``mfa8.map`` )："
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:31
+msgid "Files are changed as follows:"
+msgstr "文件更改如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:33
+msgid "`Open the file: diff_mfa8_mfa6.html <./diff_mfa8_mfa6.html>`_"
+msgstr "`Open the file: diff_mfa8_mfa6.html <./diff_mfa8_mfa6.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:36
+msgid ""
+"Now our MapFile contains a new object ``OUTPUTFORMAT`` . Within the "
+"``MAP`` object defined by this object, and when used with the keyword "
+"``IMAGETYPE``."
+msgstr ""
+"现在，我们的 Mapfile 包含了一个新对象  ``OUTPUTFORMAT`` 。在  ``MAP`` 由该对象定义，并且在与关键字一起使用时"
+"  ``IMAGETYPE`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:40
+msgid ""
+"Depending on the compiled library of MapServer, you can have a variety of"
+" output formats to choose from - the GD library provides ``PNG`` (8-bit "
+"and 24-bit), ``GIF``, ``JPEG``, ``WBMP`` , the GDAL library, which "
+"sources many of MapServer’s input formats, and can also provide output in"
+" ``PNG``, ``JPEG``, ``TIFF/GeoTIFF``, and other raster formats; the "
+"pdflib library provides PDF output."
+msgstr ""
+"根据已编译的MapServer库，您可以选择多种输出格式--GD库提供  ``PNG`` (8位和24位)，  ``GIF`` ，  "
+"``JPEG`` ，  ``WBMP`` ，GDAL库，它提供了MapServer的许多输入格式，并且还可以在  ``PNG`` ，  "
+"``JPEG`` ，  ``TIFF/GeoTIFF`` 和其他栅格格式；pdflib库提供PDF输出。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:47
+msgid ""
+"Have a look at your MAPFILE object by changing the keyword ``IMAGETYPE`` "
+"and experiment with ``OUTPUTFORMAT`` . It should be used as ``IMAGETYPE``"
+" value (eg: ``IMAGETYPE png`` or ``PNG24 IMAGETYPE`` ), the name of the "
+"output format."
+msgstr ""
+"通过更改关键字来查看您的MAPFILE对象  ``IMAGETYPE`` 并尝试使用  ``OUTPUTFORMAT`` 。它应该被用作  "
+"``IMAGETYPE`` 价值(例如：  ``IMAGETYPE png`` 或  ``PNG24 IMAGETYPE`` )、输出格式的名称。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:52
+msgid "Please consult the ``OUTPUTFORMAT`` object reference:"
+msgstr "请查阅  ``OUTPUTFORMAT`` 对象引用："
+
+#: ../../webgis-src/chb2_using-mapserver/sec03_format/section.rst:54
+msgid "//www.mapserver.org/mapfile/outputformat.html#outputformat"
+msgstr "//www.mapserver.org/mapfile/outputformat.html#outputformat"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:4
+msgid "Publish a vector layer"
+msgstr "发布矢量层"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:6
+msgid ""
+"This section begins with using vector data in MapServer. Vector data is "
+"similar to vector data in CAD software or illustrator. In addition to the"
+" difference of geospatial location, another important aspect is that "
+"vector data in GIS has no style information. CAD or illustrator mainly "
+"focuses on drawing, and the vector data used need to be distinguished and"
+" beautified by width, color and style. In GIS, these works are completed "
+"by the map drawing stage. The same data can be drawn in different "
+"thematic maps and different application scenarios."
+msgstr "本部分从使用MapServer中的矢量数据开始。矢量数据类似于CAD软件或Illustrator中的矢量数据。除了地理空间位置的差异外，另一个重要的方面是地理信息系统中的矢量数据没有样式信息。CAD或Illustrator主要侧重于绘图，所使用的矢量数据需要根据宽度、颜色和样式进行区分和美化。在地理信息系统中，这些工作都是在地图绘制阶段完成的。相同的数据可以在不同的专题地图和不同的应用场景中绘制。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:16
+msgid "Define vector layers in Mapfile"
+msgstr "在 Mapfile 中定义矢量图层"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:19
+msgid ""
+"Mapserver can create an image and save it to a local directory, or "
+"deliver it directly to a web browser on demand (as in this example). Note"
+" the above map, it is generated by the WebGIS server in the server-side "
+"background, and then transmitted to the client. The code behind in the "
+"page is:"
+msgstr "地图服务器可以创建图像并将其保存到本地目录，或按需直接将其发送到Web浏览器(如本例所示)。注意上面的地图，它是由WebGIS服务器在服务器端后台生成的，然后传输到客户端。页面后面的代码是："
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:28
+msgid "Instead of browsing it on the HTML page, you can just enter this URL:"
+msgstr "您只需输入以下URL即可，而不是在HTML页面上浏览："
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:30
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&layer=world-"
+"country&mode=map"
+msgstr ""
+"http://webgis.pub/cgi-bin/mapserv?map=/owg/mfa1.map&layer=world-"
+"country&mode=map"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:32
+msgid ""
+"(Remember to replace the hostname or IP address; for example, use the "
+"local hostname ``localhost``, or use the IP address directly, such as "
+"``\"127.0.0.1\"``)"
+msgstr ""
+"(请记住替换主机名或IP地址；例如，使用本地主机名  ``localhost`` ，或直接使用IP地址，例如  ``\"127.0.0.1\"``"
+" )"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:41
+msgid ""
+"Take a look at this Mapfile below. Lines ``07`` to ``19`` define the "
+"first layer of the map."
+msgstr "请看下面的映射文件。线条  ``07`` 至  ``19`` 定义地图的第一个层。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:44
+msgid ""
+"The layer starts with ``LAYER`` and ends with ``END``. Based on the "
+"spatial data of ``wcountry.shp1``, the polygon layer renders the global "
+"administrative division data. The ``NAME`` keyword specifies the name of "
+"the layer. The name itself is optional, but if you use one, it must be no"
+" more than 20 characters. The layer name is used in the HTML template "
+"layer as a ``CGI`` reference. A name must be specified if you want the "
+"interactive layer to be able to be toggled on and off from the HTML form."
+msgstr ""
+"该层以  ``LAYER`` 并以  ``END`` 。基于的空间数据  ``wcountry.shp1`` ，多边形层渲染全局行政区划数据。这个"
+"  ``NAME`` 关键字指定层的名称。名称本身是可选的，但如果使用名称，则不能超过20个字符。层名称在HTML模板层中用作  ``CGI`` "
+"参考资料。如果您希望交互式层能够在HTML表单中打开和关闭，则必须指定名称。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:53
+msgid ""
+"The ``STATUS`` keyword determines whether the layer is rendered, and "
+"whether its state can be changed. ``STATUS`` the default layer is always "
+"rendered and can change state at the same time."
+msgstr ""
+"这个  ``STATUS`` 关键字确定是否呈现该层，以及是否可以更改其状态。  ``STATUS`` "
+"默认层始终处于渲染状态，并且可以同时更改状态。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:57
+msgid ""
+"Lines ``12`` to ``18`` specify the only class object parameter at this "
+"level. A class object is started with the keyword ``class`` and "
+"terminated by the keyword ``END`` (line ``18``). While this application "
+"will use classes more extensively than previous maps, with this layer, "
+"you only need to specify a single default class that will include every "
+"feature in the shapefile. The name of the class will appear on the legend"
+" associated with the map. If a class has no name, it will still be "
+"rendered, but it will not appear in the legend. The style object keyword "
+"``COLOR`` specifies the color to paint, and ``OUTLINECOLOR`` specifies "
+"the color to paint the border. Since this layer is a polygon, it will be "
+"filled with the specified color. Note that if the layer is a line layer, "
+"the ``COLOR`` value will specify the color of the line."
+msgstr ""
+"线条  ``12`` 至  ``18`` 在此级别指定唯一的类对象参数。类对象以关键字  ``class`` 并以关键字结束  ``END`` "
+"(行  ``18`` "
+")。虽然这个应用程序将比以前的地图更广泛地使用类，但对于这个层，您只需要指定一个默认类，它将包括shapefile中的每个要素。类的名称将显示在与地图关联的图例上。如果类没有名称，它仍将呈现，但不会显示在图例中。Style对象关键字"
+"  ``COLOR`` 指定要绘制的颜色，并  ``OUTLINECOLOR`` "
+"指定绘制边框的颜色。由于该层是一个多边形，因此将使用指定的颜色进行填充。请注意，如果该层是线层，则  ``COLOR`` 值将指定线条的颜色。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:71
+msgid "URL parameter description"
+msgstr "URL参数说明"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:73
+msgid "The URL can be broken down into three parts:"
+msgstr "该URL可以分为三个部分："
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:75
+#, fuzzy
+msgid ""
+"The first part, ``https://webgis.pub/cgi-bin/mapserv?``, calls "
+"MapServer’s CGI program. On a different system, it might be ``mapserv`` "
+"or ``mapserv.exe`` , or something else. If you directly call to open the "
+"above URL, you will get this message:"
+msgstr ""
+"第一部分，  ``http://webgis.pub/cgi-bin/mapserv?`` "
+"，调用MapServer的CGI程序。在不同的系统上，它可能是  ``mapserv`` 或  ``mapserv.exe`` "
+"，或者其他什么东西。如果你直接调用打开上面的URL，你会得到这样的信息："
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:84
+msgid "To get the correct information, you need to add additional parameters."
+msgstr "要获得正确的信息，您需要添加其他参数。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:86
+msgid ""
+"To get the correct information, additional parameters need to be added. "
+"The next three parts are the query string. The query string contains CGI "
+"parameters (variables and their values), with each parameter separated by"
+" a symbol (``&``)."
+msgstr "要获得正确的信息，需要添加其他参数。接下来的三部分是查询字符串。查询字符串包含CGI参数(变量及其值)，每个参数用符号分隔 (``&`` )。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:91
+msgid ""
+"Now looking at the query string, the first parameter ``map`` has a value:"
+" ``/owg/mfa1.map``"
+msgstr "现在查看查询字符串，第一个参数  ``map`` 有一个价值：  ``/owg/mfa1.map``"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:94
+msgid ""
+"The next parameter, ``layer=states``, tells mapserv to use the ``states``"
+" layer. We named the layer object ``states`` in the Mapfile."
+msgstr ""
+"下一个参数是  ``layer=states`` ，告诉mapserv使用  ``states`` 一层。我们将Layer对象命名为  "
+"``states`` 在映射文件中。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:97
+msgid ""
+"Next parameter ``layer=states`` Tell mapserv to use the ``states`` Layer."
+" We name it layer objects in Mapfile ``states`` ."
+msgstr ""
+"下一个参数  ``layer=states`` 告诉mapserv使用  ``states`` 图层。我们将其命名为 Mapfile "
+"中的Layer对象  ``states`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:100
+msgid ""
+"The last parameter, ``mode=map`` , tells mapserv what to do to output "
+"MapFile in mode. In this case, it tells ``mapserv`` to dump the image "
+"directly to the web browser (client), without first creating a temporary "
+"image on the server."
+msgstr ""
+"最后一个参数，  ``mode=map`` ，告诉mapserv如何在模式下输出MapFile。在这种情况下，它告诉我们  ``mapserv``"
+" 将映像直接转储到Web浏览器(客户端)，而无需首先在服务器上创建临时映像。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:105
+msgid ""
+"The values for ``TYPE`` can be: ``'chart', 'circle', 'line', 'point', "
+"'polygon', 'raster', 'query', 'annotation'``."
+msgstr ""
+"的值  ``TYPE`` 可以是：  ``'chart', 'circle', 'line', 'point', 'polygon', "
+"'raster', 'query', 'annotation'`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:109
+msgid "Map extent"
+msgstr "地图范围"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:111
+msgid ""
+"In the Mapfile, the correct range needs to be set in order to display the"
+" data. For example, for China-wide data, the set range is: ``EXTENT 73 8 "
+"136 53``, the effect is as follows:"
+msgstr "在映射文件中，需要设置正确的范围才能显示数据。例如，对于中国范围的数据，设置范围为：  ``EXTENT 73 8 136 53`` ，效果如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:115
+msgid "The complete Mapfile is:"
+msgstr "完整的映射文件为："
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:123
+msgid "Different modes viewed by MapServer"
+msgstr "MapServer查看的不同模式"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:125
+msgid ""
+"Note the ``mode=map`` above, which is the viewing mode supported by "
+"MapServer. MapServer’s ``mode`` CGI variable can take values other than "
+"``map``. In addition to the ``map`` mode, there is also the ``browse`` "
+"mode. For example, if you use ``map=browse``, MapServer will dump the "
+"image to a temporary directory on the server."
+msgstr ""
+"请注意  ``mode=map`` 这是MapServer支持的查看模式。地图服务器的  ``mode`` CGI变量可以采用非  ``map``"
+" 。除  ``map`` 模式，还有  ``browse`` 模式。例如，如果您使用  ``map=browse`` "
+"，MapServer会将图像转储到服务器上的临时目录中。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:131
+msgid ""
+"Using browse mode requires specifying the ``template`` parameter. "
+"Generally, a template file needs to be defined first. Without a template "
+"file, browse mode cannot work properly, which will be explained later. In"
+" MapServer 6.x, the ``template`` parameter allows the use of the "
+"OpenLayers keyword, which can be used to view MapServer results."
+msgstr ""
+"使用浏览模式需要指定  ``template`` "
+"参数。一般情况下，需要先定义模板文件。没有模板文件，浏览模式就不能正常工作，这将在后面解释。在MapServer 6.x中，  "
+"``template`` 参数允许使用OpenLayers关键字，该关键字可用于查看MapServer结果。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:137
+msgid ""
+"The following directly uses the default configuration of OpenLayers to "
+"view the map. Note that the OpenLayers library of the MapServer website "
+"needs to be called, so it will be slower for the first time."
+msgstr "下面直接使用OpenLayers的默认配置来查看地图。请注意，需要调用MapServer网站的OpenLayers库，因此它将第一次变慢。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:141
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfa1.map&layer=states&mode=browse&template=OpenLayers"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfa1.map&layer=states&mode=browse&template=OpenLayers"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:143
+msgid "For OpenLayers mode, see:"
+msgstr "有关OpenLayers模式，请参见："
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:145
+msgid "https://mapserver.org/cgi/openlayers.html"
+msgstr "https://mapserver.org/cgi/openlayers.html"
+
+#: ../../webgis-src/chb2_using-mapserver/sec04_one-layer/section.rst:147
+msgid ""
+"You can try modifying the value of the keyword in MapFile and see the "
+"result. These experiments will help you understand these keywords."
+msgstr "您可以尝试在MapFile中修改关键字的值并查看结果。这些实验将帮助您理解这些关键字。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:4
+msgid "Static map with two layers"
+msgstr "具有两个图层的静态地图"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:22
+msgid "In this example, the image is generated to the source of the URL:"
+msgstr "在本例中，生成的图像指向URL的来源："
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:28
+msgid "Most traditional MapServer examples are shown in this way."
+msgstr "大多数传统的MapServer示例都是这样显示的。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:30
+msgid ""
+"This example is slightly different from the previous one, where the color"
+" of the polygon has been modified."
+msgstr "此示例与上一个示例略有不同，在上一个示例中，已修改了多边形的颜色。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:34
+msgid "Mapfile description"
+msgstr "映射文件描述"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:36
+msgid ""
+"First take a look at the MapFile that this example uses ``mfa2.map`` ), "
+"This Mapfile defines two layers:"
+msgstr "首先来看一下本例使用的MapFile  ``mfa2.map`` )，该映射文件定义了两个层："
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:44
+msgid ""
+"It’s important to remember that MapServer’s render layers are in the "
+"order they are specified in the mapfile. The last layer in the Mapfile is"
+" the top layer of the map rendering result, building the map on top of "
+"all the previous layers. This means that details shown earlier in the "
+"Mapfile (ie, lower layers in the map image) may be obscured. This is most"
+" important when rendering polygon layers, since polygons can be filled "
+"with a specified color. If the map server renders a point layer (that is,"
+" for example, the location of a city), then the render state represents a"
+" polygon layer, and the city will not be visible unless the specified "
+"polygon layer color is transparent."
+msgstr ""
+"请务必记住，MapServer的渲染层是按照它们在映射文件中指定的顺序排列的。映射文件中的最后一层是地图渲染结果的顶层，在所有先前的层之上构建地图。这意味着"
+" Mapfile "
+"中先前显示的细节(即地图图像中的较低层)可能会被遮挡。这在渲染多边形层时非常重要，因为可以用指定的颜色填充多边形层。如果地图服务器渲染点图层(例如，城市的位置)，则渲染状态表示多边形层，除非指定的多边形层颜色是透明的，否则城市将不可见。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:55
+msgid ""
+"This problem is easily remedied by defining the polygon layer in front. "
+"Polygons can also be rendered as a series of lines (ie, a line layer). "
+"Since a line is one-dimensional, there is no area to fill, so the details"
+" of the layers below are still visible. When there is no fill color, the "
+"specified color is: ``-1,-1,-1``, which can also achieve the effect of "
+"transparency."
+msgstr ""
+"通过在前面定义多边形层，可以轻松解决此问题。也可以将多边形渲染为一系列线条(即线条层)。由于线是一维的，因此没有要填充的区域，因此下面的层的详细信息仍然可见。如果没有填充颜色，则指定的颜色为："
+"  ``-1,-1,-1`` ，也可以达到透明的效果。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:62
+msgid "The structure of MapFile looks like this:"
+msgstr "MapFile的结构如下所示："
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:74
+msgid "Compared to the previous Mapfile, the changes are as follows:"
+msgstr "与之前的映射文件相比，更改如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:76
+msgid "`Open the file:diff_mfa2_mfa1.html <./diff_mfa2_mfa1.html>`_"
+msgstr "`Open the file:diff_mfa2_mfa1.html <./diff_mfa2_mfa1.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:82
+msgid ""
+"Here, the original layer is divided into two layers. The first layer is "
+"still a polygon layer, but there is no ``OUTLINECOLOR`` attribute in the "
+"style anymore. The ``TYPE`` of the second layer is ``LINE`` and the color"
+" value is different from the ``OUTLINECOLOR`` in the first example. This "
+"produces a slightly different image from the first example."
+msgstr ""
+"这里，原始层分为两层。第一个层仍然是面层，但不存在  ``OUTLINECOLOR`` 属性添加到样式中。这个  ``TYPE`` 第二层的是  "
+"``LINE`` 并且颜色值与  ``OUTLINECOLOR`` 在第一个例子中。这将生成与第一个示例略有不同的图像。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:89
+msgid "Further explanation"
+msgstr "进一步解释"
+
+#: ../../webgis-src/chb2_using-mapserver/sec05_two-layers/section.rst:91
+msgid ""
+"Here is an explanation of why this is done. If we continue to add layers "
+"on top of the state layer, the contours are most likely to be masked by "
+"these layers. To be able to see the borders and add other layers, we have"
+" to separate the borders layer from the state polygon layer and place it "
+"on top of the other other layers. There is an order in how to define/add "
+"layers, which will be explained later. Here you just need to remember "
+"according to “Later on top” (layers defined later will be displayed on "
+"the top)."
+msgstr "以下是对为什么要这样做的解释。如果我们继续在状态层的顶部添加层，轮廓最有可能被这些层遮罩。为了能够看到边界并添加其他层，我们必须将边界层与州多边形层分开，并将其放置在其他层的顶部。如何定义/添加层是有顺序的，稍后将对其进行说明。在这里，您只需要记住根据“稍后在顶部”(稍后定义的层将显示在顶部)。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:4
+msgid "Build a map with multiple layers"
+msgstr "构建包含多个图层的地图"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:6
+msgid ""
+"MapServer builds maps by stacking layers together. On every render, it is"
+" placed at the top of the stack. Each layer displays features selected "
+"from a single dataset. Features to display can be selected using Unix "
+"regular expressions, string comparisons and logical expressions. You can "
+"think of layers as topics due to the similarity of data and the "
+"similarity of style parameters such as scale, color, and labels. The "
+"display of layers is under interactive control, allowing the user to "
+"select which layers to render. While it is not possible to generate "
+"layers dynamically, it is possible to populate empty layers with dynamic "
+"data and manipulate them via URL."
+msgstr "MapServer通过将层堆叠在一起来构建地图。在每次渲染时，它都被放置在堆栈的顶部。每个层都显示从单个数据集中选择的要素。可以使用Unix正则表达式、字符串比较和逻辑表达式选择要显示的功能。由于数据的相似性和样式参数(如比例、颜色和标签)的相似性，您可以将层视为主题。层的显示是在交互控制下进行的，允许用户选择要渲染的层。虽然不可能动态生成层，但可以使用动态数据填充空层并通过URL操作它们。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:22
+msgid ""
+"To make the map richer, continue adding new data (river data) using a new"
+" ``LAYER`` object. The definitions of each layer are relatively "
+"independent and have nothing to do with each other."
+msgstr "要使地图更加丰富，使用新的继续添加新数据(河流数据  ``LAYER`` 对象。每一层的定义都是相对独立的，互不相关。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:26
+msgid "Here is the map file（mfml2.map）："
+msgstr "以下是映射文件(mfml2.map)："
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:33
+msgid ""
+"The roads layer map ( ``wroads`` ) is also defined in the Mapfile above "
+"and this layer is further added to the map below."
+msgstr "Roads图层地图(  ``wroads`` )也在上面的 Mapfile 中定义，并且该层被进一步添加到下面的地图中。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:39
+msgid "Order of layers"
+msgstr "层的顺序"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:41
+msgid ""
+"Pay attention to the order of the layers. In this map, the river layer is"
+" above the road, which is inconsistent with the usual mapping principles."
+" Usually, the road layer is placed above the river layer."
+msgstr "注意各层的顺序。在这张地图中，河流层在道路之上，这与通常的制图原则不一致。通常，道路层放置在河层之上。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:45
+msgid ""
+"Swap the position when passing parameters, the effect is as follows, you "
+"can see that it is the same as the map above. The order of the layers "
+"defined in the Mapfile cannot be changed by passing parameters to the "
+"URL."
+msgstr "传递参数时调换位置，效果如下，可以看到与上图相同。不能通过将参数传递给URL来更改映射文件中定义的层的顺序。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:52
+msgid ""
+"If you want to modify the order of layers, you can only modify it in the "
+"Mapfile:"
+msgstr "如果要修改层的顺序，则只能在映射文件中进行修改："
+
+#: ../../webgis-src/chb2_using-mapserver/sec06_multiple-layers/section.rst:60
+msgid ""
+"You can see that although it is not obvious, the river layer is below the"
+" road layer."
+msgstr "你可以看到，虽然不明显，但河层在路层之下。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:4
+msgid "Display layers by attribute category"
+msgstr "按属性类别显示图层"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:6
+msgid ""
+"In the previous example, the layers consisted of a set of features from "
+"the same dataset, rendered using the same style. However, you may not "
+"want to plot all features contained in a given dataset, or you may not "
+"want to plot all features in the same way. For example, making a world "
+"map containing all the roads for each dataset would take quite a while "
+"and the resulting map would be too cluttered to be very useful. The same "
+"symbols are used to render maps produced by country roads and highways, "
+"and there is no distinction between graphical functions; in the real "
+"world, the difference is obvious."
+msgstr "在上一个示例中，这些层由同一数据集中的一组要素组成，使用相同的样式进行渲染。但是，您可能不想打印给定数据集中包含的所有要素，或者您可能不想以相同的方式打印所有要素。例如，制作一张包含每个数据集的所有道路的世界地图将需要相当长的时间，并且结果地图将太杂乱而不是很有用。同样的符号用于渲染乡村公路和高速公路生成的地图，图形功能之间没有区别；在现实世界中，区别是显而易见的。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:17
+msgid "View the map"
+msgstr "查看地图"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:19
+msgid ""
+"Classes allow you to distinguish between features based on attributes and"
+" features based on classes. The previous diagram uses classes because "
+"each layer must have at least one class. At its simplest, the default "
+"class includes every feature of the dataset. In this case, the layer has "
+"a class and each feature in that class is rendered in the same way."
+msgstr "类允许您区分基于属性的要素和基于类的要素。上图使用类，因为每个层必须至少有一个类。在最简单的情况下，默认类包括数据集的所有功能。在这种情况下，该层有一个类，该类中的每个要素都以相同的方式渲染。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:25
+msgid ""
+"However, you usually want to avoid using only the default classes and "
+"choose classification features instead, for the two reasons mentioned "
+"earlier: First of all, you may not want to draw each feature, and second,"
+" you may want to use different symbols, colors or sizes to present some "
+"features with different attributes."
+msgstr "然而，您通常希望避免只使用默认类，而是选择分类要素，这是出于前面提到的两个原因：首先，您可能不想绘制每个要素，其次，您可能希望使用不同的符号、颜色或大小来呈现具有不同属性的某些要素。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:31
+msgid ""
+"By using non-spatial attribute information in the data, you can create a "
+"map like this:"
+msgstr "通过使用数据中的非空间属性信息，可以创建如下地图："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:36
+msgid "or:"
+msgstr "或者："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:42
+msgid "Map file"
+msgstr " Mapfile "
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:44
+msgid "Here is the map file MapFile ( ``mfa3.map`` ):"
+msgstr "以下是 Mapfile MapFile(  ``mfa3.map`` )："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:51
+msgid "Mapfile for layer classification"
+msgstr "用于图层分类的 Mapfile "
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:53
+msgid "The structure of the map file, through the object, looks like this"
+msgstr "通过对象， Mapfile 的结构如下所示"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:67
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:66
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:30
+msgid "The changes in the documents are as follows:"
+msgstr "文件的更改如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:70
+msgid "`Open the file:diff_mfa3_mfa2.html <./diff_mfa3_mfa2.html>`_"
+msgstr "`Open the file:diff_mfa3_mfa2.html <./diff_mfa3_mfa2.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:77
+msgid "Attribute description in Mapfile"
+msgstr "映射文件中的属性描述"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:79
+msgid ""
+"MapFile still has only two layers, but polygon layers are subdivided into"
+" two broad categories. Take a look at the additional parameters:"
+msgstr "MapFile仍然只有两个层，但多边形层被细分为两大类。请看一下其他参数："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:86
+msgid ""
+"This keyword is used to specify which properties are used by the detached"
+" class object. In this example, the property is ``NAME`` . If you open "
+"the Shapefile of the database file associated with the attribute, you "
+"will see that there is a column (property) called ``NAME`` ."
+msgstr ""
+"此关键字用于指定分离的类对象使用哪些属性。在本例中，该属性为  ``NAME`` "
+"。如果打开与该属性相关联的数据库文件的shapefile，您将看到有一个名为的列(属性  ``NAME`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:92
+msgid ""
+"The easiest (and fastest) way to define a class using an expression to "
+"determine which MapServer the class contains is to use a string "
+"comparison. You can use the hierarchy keyword ``CLASSITEM`` to identify "
+"the attribute name that will be used for the classification function. "
+"Then specify that the comparison string is expressed using class-level "
+"keywords. It is good practice to quote strings to ensure that characters "
+"are interpreted correctly. This is shown in the code snippet below. The "
+"``CLASSITEM`` attribute expresses the value of the string that will be "
+"associated with each feature of the dataset. If the expression string "
+"matches the same ``CLASSITEM`` value, the function will be included in "
+"this class. Although fast and easy to use, this method is not very "
+"flexible, since the specified string expression must be passed through "
+"``CLASSITEM`` to determine the matching attribute value."
+msgstr ""
+"使用表达式定义类以确定类包含哪个MapServer的最简单(也是最快)方法是使用字符串比较。您可以使用Hierarchy关键字  "
+"``CLASSITEM`` "
+"以标识将用于分类功能的属性名称。然后指定使用类级关键字表示比较字符串。引用字符串以确保正确解释字符是一种很好的做法。这如下面的代码片段所示。这个"
+"  ``CLASSITEM`` 属性表示将与数据集的每个功能关联的字符串的值。如果表达式字符串与相同的  ``CLASSITEM`` "
+"值，则该函数将包含在此类中。尽管此方法快速且易于使用，但它并不十分灵活，因为必须传递指定的字符串表达式  ``CLASSITEM`` "
+"以确定匹配的属性值。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:123
+msgid ""
+"Shapefile database records are stored in DBF files. You can open a "
+"spreadsheet program like Openoffice.org Compute, or a GIS software such "
+"as QGIS on the desktop. If the data has metadata (as it should), it can "
+"be known from the content of the metadata file. You can also use "
+"``ogrinfo`` to display basic property information in a Shapefile - look "
+"back at Example 1.1 (after the last few lines, “LayerSRS WKT:” displays "
+"property names and types)."
+msgstr ""
+"Shapefile数据库记录存储在DBF文件中。你可以在桌面上打开一个电子表格程序，如OpenOffice.org "
+"Compute，或一个地理信息系统软件，如QGIS。如果数据具有元数据(应该如此)，则可以从元数据文件的内容中获知它。您还可以使用  "
+"``ogrinfo`` 要在shapefile中显示基本属性信息-请回顾示例1.1(在最后几行之后，“LayerSRS "
+"wkt：”显示属性名称和类型)。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:135
+msgid ""
+"For each class, specify the property value to use. This is the simplest "
+"form of expression. Expressions can be more complex than this, allowing a"
+" regular comparison expression or logical expression."
+msgstr "对于每个类，指定要使用的特性值。这是最简单的表达形式。表达式可以比这更复杂，允许使用正则比较表达式或逻辑表达式。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:140
+msgid "Classification based on comparative expressions"
+msgstr "基于比较表达式的分类"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:142
+msgid ""
+"Allows for the classification of more complex functions, based on a "
+"logical expression of one or more attribute values. ``CLASSITEM`` does "
+"not need to be specified (actually, it will be ignored if so far). "
+"Keyword expressions introduce logical expressions, which are delimited "
+"within parentheses. The syntax is simple: a logical expression consists "
+"of the property name enclosed in square brackets, a comparison operator "
+"and the value. For example, the following code compares the number of "
+"values attributed to the population with the value 100000:"
+msgstr ""
+"允许基于一个或多个属性值的逻辑表达式对更复杂的功能进行分类。  ``CLASSITEM`` "
+"不需要指定(实际上，如果到目前为止它将被忽略)。关键字表达式引入逻辑表达式，这些表达式在圆括号中分隔。语法很简单：逻辑表达式由方括号括起的属性名称、比较运算符和值组成。例如，下面的代码将属于总体的值数与值100000进行比较："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:155
+msgid ""
+"It will include a feature with less than 100,000 population attribute "
+"values. Like C and Perl, MapServer uses different comparisons for strings"
+" as well as comparisons for numbers, and you have to take care of "
+"observing the differences. If an attribute is a string value, then its "
+"reference must be enclosed in quotes and the values must be compared. "
+"Both single and double quotes can be used, but they must match. Consider "
+"the following code:"
+msgstr "它将包括人口属性值小于100,000的要素。与C和Perl一样，MapServer对字符串使用不同的比较，也对数字使用不同的比较，您必须注意观察差异。如果属性是字符串值，则必须用引号将其引用括起来，并且必须比较这些值。可以使用单引号和双引号，但它们必须匹配。请考虑以下代码："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:167
+msgid ""
+"This will include a feature only if this value attribute ``state_FIPS`` "
+"is equal to the string Mn. Logical expressions can be combined using "
+"conjunctions and separation operators and or. Consider the following "
+"example:"
+msgstr "仅当此值属性为  ``state_FIPS`` 等于字符串Mn。逻辑表达式可以使用合取、分隔运算符和或进行组合。请考虑以下示例："
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:175
+msgid ""
+"This matches features with populations less than 100000 ``STATE_FIPS`` "
+"equal to MN."
+msgstr "这将匹配人口少于100000的要素  ``STATE_FIPS`` 等于MN。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:178
+msgid ""
+"Note that confusion may occur if a string-valued property contains "
+"numeric strings (eg ``\"123\"`` ). If you compare strings-valued "
+"properties numerically, there will never be a match ( ``123`` will never "
+"be equal to ``\"123\"`` ), and there will never be an error. You can "
+"learn more about data types."
+msgstr ""
+"请注意，如果字符串值属性包含数字字符串(例如  ``\"123\"`` )。如果从数值上比较字符串值属性，则永远不会有匹配(  ``123`` "
+"永远不会等于  ``\"123\"`` )，并且永远不会有错误。您可以了解有关数据类型的更多信息。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:184
+msgid ""
+"Note that MapServer’s mapping file reference documentation has a "
+"misspelled numeric “not equals” operator, and ``!=`` does not display an "
+"exclamation mark ( ``!`` )."
+msgstr ""
+"请注意，MapServer的映射文件参考文档有一个拼写错误的数字运算符“Not Equals”，以及  ``!=`` 不显示感叹号(  ``!``"
+" )。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:188
+msgid "Operator, Data Type"
+msgstr "运算符，数据类型"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:189
+msgid "``!=``, Numeric"
+msgstr "``!=`` ，数字"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:190
+msgid "``=``, Numeric"
+msgstr "``=`` ，数字"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:191
+msgid "``>``, Numeric"
+msgstr "``>`` ，数字"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:192
+msgid "``<``, Numeric"
+msgstr "``<`` ，数字"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:193
+msgid "``>=``, Numeric"
+msgstr "``>=`` ，数字"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:194
+msgid "``<=``, Numeric"
+msgstr "``<=`` ，数字"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:195
+msgid "``and``, Logical"
+msgstr "``and`` ，合乎逻辑"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:196
+msgid "``or``, Logical"
+msgstr "``or`` ，合乎逻辑"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:197
+msgid "``eq``, String"
+msgstr "``eq`` ，字符串"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:198
+msgid "``ge``, String"
+msgstr "``ge`` ，字符串"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:199
+msgid "``gt``, String"
+msgstr "``gt`` ，字符串"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:200
+msgid "``le``, String"
+msgstr "``le`` ，字符串"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:201
+msgid "``lt``, String"
+msgstr "``lt`` ，字符串"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:202
+msgid "``ne``, String"
+msgstr "``ne`` ，字符串"
+
+#: ../../webgis-src/chb2_using-mapserver/sec07_classes/section.rst:204
+msgid ""
+"Note that although a class must be defined with a single method, each "
+"class can use a different method at a level."
+msgstr "请注意，尽管类必须使用单个方法定义，但每个类都可以在某个级别使用不同的方法。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:4
+msgid "Annotations in a map"
+msgstr "地图中的注记"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:6
+msgid ""
+"When you generate a map, MapServer automatically performs multiple tasks."
+" It annotates features and prevents conflicts between adjacent "
+"dimensions. It provides the use of bitmapped and TrueType fonts."
+msgstr "生成地图时，MapServer会自动执行多个任务。它可以注释特征并防止相邻尺寸之间的冲突。它提供位图和TrueType字体的使用。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:16
+msgid ""
+"MapServer has a very flexible annotation engine. It supports local "
+"bitmaps and TrueType fonts. Font scaling uses TrueType support. The angle"
+" and placement of the dimensions can be customized."
+msgstr "MapServer有一个非常灵活的注释引擎。它支持本地位图和TrueType字体。字体缩放使用TrueType支持。尺寸的角度和位置可以自定义。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:24
+msgid "Here is the map file（mfa4.map）："
+msgstr "以下是映射文件(mfa4.map)："
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:33
+msgid ""
+"The file contains the font alias font location determined by the "
+"``FONTSET`` Keyword assignment."
+msgstr "文件包含的字体别名字体位置由  ``FONTSET`` 关键字分配。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:36
+msgid ""
+"In order to label each city district with an attribute in the shapefile, "
+"determine the name as the value of the ``LABELITEM`` keyword. When "
+"rendering a country feature, the value of the feature’s ``NAME`` "
+"attribute will be used to create the label."
+msgstr ""
+"要在shapefile中使用属性标注每个城区，请将名称确定为的值  ``LABELITEM`` 关键字。渲染国家/地区要素时，要素的值  "
+"``NAME`` 属性将用于创建标签。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:41
+msgid ""
+"If you want to look at Shapefiles, there are several ways. You can open "
+"the associated DBF file in Excel or other spreadsheet program that can "
+"read DBF files, and you can see the feature attribute values. If you just"
+" want to find out the name of the attribute, you can use the utility "
+"dbfinfo, part of the shapelib library. In addition, the application "
+"``ogrinfo`` provides geographic information, as well as feature values."
+msgstr ""
+"如果你想看shapefile，有几种方法。可以在Excel或其他可以读取DBF文件的电子表格程序中打开关联的DBF文件，可以看到要素属性值。如果只想找出属性的名称，可以使用实用程序dbfinfo，它是shapelib库的一部分。此外，该应用程序"
+"  ``ogrinfo`` 提供地理信息以及要素值。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:48
+msgid ""
+"Each district will be labelled with the labelling parameters specified in"
+" 027 to 030. Label objects start with the keyword Label and end with the "
+"keyword END (line 030). Layer object with LABELITEM value set to ‘name’. "
+"Select the attribute NAME as the source of the label text. Each label "
+"will be drawn black and its size will be small. Besides small, you can "
+"choose small, medium, large, or huge."
+msgstr "每个地区将使用027至030中指定的标签参数进行标签。Label对象以关键字Label开始，以关键字End结束(第030行)。LABELITEM值设置为‘NAME’的Layer对象。选择属性名称作为标签文本的来源。每个标签都将绘制为黑色，并且其大小将很小。除了小号，你还可以选择小号、中号、大号或大号。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:55
+msgid "The MapFile structure, by object, looks like this:"
+msgstr "按对象划分的MapFile结构如下所示："
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:68
+msgid "`Open the file:diff_mfa4_mfa3.html <./diff_mfa4_mfa3.html>`_"
+msgstr "`Open the file:diff_mfa4_mfa3.html <./diff_mfa4_mfa3.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:75
+msgid "Annotation parameter description"
+msgstr "批注参数说明"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:77
+msgid "Here, we introduce several parameters and dimension objects:"
+msgstr "在这里，我们介绍几个参数和尺寸对象："
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:83
+msgid ""
+"Here, we specify the file for the list of TrueType fonts (or the full "
+"path set of fonts). This file lists each available font. See the file "
+"itself and the MapFile reference for more information. The MAP object of "
+"FONTSET is a parameter."
+msgstr ""
+"在这里，我们为TrueType字体列表(或字体的完整路径集)指定文件。该文件列出了每种可用的字体。有关详细信息，请参见文件本身和《 Mapfile"
+" 参考》。FONTSET的map对象是一个参数。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:88
+msgid "The contents of this file are as follows:"
+msgstr "此文件的内容如下："
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:95
+msgid "``LABELITEM``"
+msgstr "``LABELITEM``"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:97
+msgid ""
+"In the ``\"STATE\"`` case, the specified data attribute is used for the "
+"annotation. ``LABELITEM`` is a parameter of the layer object."
+msgstr "在  ``\"STATE\"`` 情况下，指定的数据属性用于批注。  ``LABELITEM`` 是Layer对象的参数。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:100
+msgid ""
+"``LABEL`` Marks the beginning of the definition ``LABEL`` Object. "
+"Dimension objects can be used for other objects (that is, scale bar "
+"objects)"
+msgstr "``LABEL`` 标志着定义的开始  ``LABEL`` 物体。标注对象可用于其他对象(即比例尺对象)"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:104
+msgid ""
+"``COLOR`` objects within the callout, color specifies the color of the "
+"callout text."
+msgstr "``COLOR`` 对象，则指定详图索引文本的颜色。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:106
+msgid "``SHADOWCOLOR`` specifies the shadow color for dimension text."
+msgstr "``SHADOWCOLOR`` 指定标注文字的阴影颜色。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:107
+msgid ""
+"``SHADOWSIZE`` specifies the size of the shadow. This value corresponds "
+"to the transition of pixels at ``X`` and ``Y``. Therefore, ``2`` means "
+"two pixels wide by two pixels high."
+msgstr "``SHADOWSIZE`` 指定阴影的大小。该值对应于  ``X`` 和  ``Y`` 。因此，  ``2`` 表示两个像素宽乘两个像素高。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:110
+msgid ""
+"``TYPE`` in the LABEL object, the type specifies what type of font to "
+"use. We have a choice of TrueType or Bitmap (built-in fonts). We choose "
+"``TRUETYPE`` ."
+msgstr ""
+"``TYPE`` 在标签对象中，类型指定要使用的字体类型。我们有TrueType或Bitmap(内置字体)可供选择。我们选择  "
+"``TRUETYPE`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:113
+msgid ""
+"``FONT`` If specified as TrueType, you need to specify what font to use. "
+"The value mentioned here is “alias”; the “alias” in the font list file."
+msgstr "``FONT`` 如果指定为TrueType，则需要指定要使用的字体。这里提到的值是“alias”；字体列表文件中的“alias”。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:116
+msgid ""
+"``SIZE`` If using a TrueType font, the value in pixels is the size of the"
+" dimension. If it’s a bitmap, say something like “small” or “big”."
+msgstr "``SIZE`` 如果使用TrueType字体，则以像素为单位的值是尺寸大小。如果是位图，就说“小”或“大”之类的东西。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:119
+msgid ""
+"``ANTIALIAS`` This turns truetype antialiasing on or off. Remember that "
+"the value is not ``OPEN`` or ``CLOSE`` , but ``TRUE`` or ``FALSE`` ."
+msgstr ""
+"``ANTIALIAS`` 这将打开或关闭Truetype抗锯齿。请记住，该值不是  ``OPEN`` 或  ``CLOSE`` ，但  "
+"``TRUE`` 或  ``FALSE`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:122
+msgid ""
+"``POSITION`` locates the label point of the label text. The value is a "
+"combined vertical and horizontal position. You have the following "
+"options: ``C`` for center vertical alignment, ``U`` for upper, and ``L`` "
+"for lower. For horizontal alignment you have the following options: ``C``"
+" for center, ``L`` for left, and ``R`` for right. Therefore, to call the "
+"center of the callout ID for the text alignment, use the value ``CC`` "
+"(center - center). Or, if you wanted it to be the ID at the bottom left, "
+"you would use ``LL`` . Another approach is to let MapServer decide the "
+"best location for the label. For this, you can use the ``AUTO`` value."
+msgstr ""
+"``POSITION`` 定位标签文本的标签点。该值是垂直和水平位置的组合。您有以下选项：  ``C`` 对于中心垂直对齐，  ``U`` "
+"对于上层，和  ``L`` 越低越好。对于水平对齐，您有以下选项：  ``C`` 对于中锋，  ``L`` 用于左侧，以及  ``R`` "
+"这是对的。因此，要调用标注ID的中心进行文本对齐，请使用值  ``CC`` (中心-中心)。或者，如果您希望它是左下角的ID，您可以使用  "
+"``LL`` 。另一种方法是让MapServer决定标签的最佳位置。为此，您可以使用  ``AUTO`` 价值。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:132
+msgid ""
+"``PARTIALS`` tells MapServer whether to generate incomplete label text. "
+"The default here is to not generate fragments of the label text. The "
+"value is ``TRUE`` or ``FALSE`` ."
+msgstr ""
+"``PARTIALS`` 告知MapServer是否生成不完整的标签文本。这里的默认设置是不生成标签文本的片段。该值为  ``TRUE`` 或  "
+"``FALSE`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:135
+msgid ""
+"``MINDISTANCE`` is the minimum distance, in pixels, between duplicate "
+"annotations. See what happens if you increase or decrease the value."
+msgstr "``MINDISTANCE`` 重复批注之间的最小距离(以像素为单位)。查看如果增大或减小该值会发生什么情况。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:138
+msgid ""
+"``BUFFER`` Padding (pixels) of the callout. This is used to improve "
+"readability. A buffer of 4 pixels means that no labels will be drawn over"
+" the four pixels of each other. Again, change and see how it works."
+msgstr ""
+"``BUFFER`` "
+"标注的填充(像素)。这用于提高可读性。4个像素的缓冲区意味着不会在彼此的4个像素上绘制任何标签。再说一次，改变一下，看看它是如何运作的。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:143
+msgid ""
+"You can also create dimensions to separate a polygon layer. You do it "
+"with the data type of the annotation. Take a look at the MapFile of the "
+"following example to see how you implement this tagging. You will find "
+"that the “annotation” layer within the class object has color parameter "
+"values. ``-1 -1 -1`` . Negative numbers tell MapServer to give this class"
+" a transparent color (the callout logo is not displayed). Again, modify "
+"these values and view the results to see how it affects the map."
+msgstr ""
+"还可以创建标注来分隔多边形层。您可以使用注释的数据类型来执行此操作。查看以下示例的MapFile，了解如何实现此标记。您将发现类对象中的“注解”层具有颜色参数值。"
+"  ``-1 -1 -1`` 。负数告诉MapServer为此类提供透明颜色(不显示标注徽标)。同样，修改这些值并查看结果，以了解它如何影响地图。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:152
+msgid "Automatic optimization of annotations"
+msgstr "注释的自动优化"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:154
+msgid ""
+"To prevent the map from looking cluttered, MapServer optimizes the "
+"labeling according to the scale of the data."
+msgstr "为了避免地图看起来杂乱无章，MapServer根据数据的比例优化了标注。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:160
+msgid "Annotation processing"
+msgstr "批注处理"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:162
+msgid ""
+"Since version 6.2, MapServer has been able to draw label lines for "
+"functions that are problematic in the label space (usually when the label"
+" text is larger than the marked polygon). This feature is done through "
+"the addition of MS RFC 81: offset labels with leaders. This feature is "
+"for polygon annotations only."
+msgstr ""
+"从6.2版开始，MapServer可以为标签空间中有问题的函数绘制标签线(通常在标签文本大于标记的多边形时)。此功能通过添加MS RFC "
+"81：带引线的偏移标签来实现。此功能仅适用于多边形注释。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec08_labels/section.rst:170
+msgid "`Open the file:diff_mfs8_mfs2.html <./diff_mfs8_mfs2.html>`_"
+msgstr "`Open the file:diff_mfs8_mfs2.html <./diff_mfs8_mfs2.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:4
+msgid "Use custom styles in Mapfile"
+msgstr "在 Mapfile 中使用自定义样式"
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:6
+msgid ""
+"Vector data can be divided into three types: point, line and surface. The"
+" simplicity of the data type structure gives the diversity of expression."
+" In MapServer, you can set styles in various dimensions such as color, "
+"size (thickness), and transparency for points, lines, and surfaces."
+msgstr "矢量数据可以分为三种类型：点、线和面。数据类型结构的简单性提供了表达的多样性。在MapServer中，可以设置各种尺寸的样式，例如点、线和曲面的颜色、大小(厚度)和透明度。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:13
+msgid "Point"
+msgstr "点"
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:17
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:30
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:42
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:55
+msgid "The Mapfile used is:"
+msgstr "使用的映射文件为："
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:25
+msgid "Line fill example"
+msgstr "线条填充示例"
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:38
+msgid "Circular fill exampl"
+msgstr "圆形填充示例"
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:50
+msgid "River style"
+msgstr "河水风貌"
+
+#: ../../webgis-src/chb2_using-mapserver/sec09_symbol/section.rst:62
+msgid "``GepMap`` can be further used to get the effect of the magnification:"
+msgstr "``GepMap`` 可以进一步使用以获得放大效果："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:4
+msgid "Define projection and extent"
+msgstr "定义投影和范围"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:11
+msgid ""
+"This map is clearly a region from the one shown earlier, but it doesn’t "
+"look the same. This map uses another map projection."
+msgstr "这张地图显然是与前面显示的那个区域不同，但它看起来不一样。这张地图使用了另一种地图投影。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:14
+msgid ""
+"In the projection definition part of the Mapfile, the projection is "
+"processed by the Proj.4 library through parameters. For more information "
+"about the PROJ.4 library, visit https://proj4.org/ ."
+msgstr "在映射文件的投影定义部分，投影由Proj.4库通过参数进行处理。有关PROJ.4库的更多信息，请访问https://proj4.org/。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:22
+msgid ""
+"The following is the Mapfile source file ``mfa6.map`` used in this "
+"example:"
+msgstr "以下是 Mapfile 源文件  ``mfa6.map`` 在本例中使用："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:33
+msgid "`Open the file: diff_mfa6_mfa5.html <./diff_mfa6_mfa5.html>`_"
+msgstr "`Open the file: diff_mfa6_mfa5.html <./diff_mfa6_mfa5.html>`_"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:39
+msgid ""
+"The first thing you will notice is that the MapFile is the original "
+"``EXTENT`` replaced by the new range value, which doesn’t look like "
+"longitude and latitude. In addition, a projection object ``PROJECTION`` "
+"was added, and a ``PROJECTION`` definition was added to ``LAYER``."
+msgstr ""
+"您会注意到的第一件事是， Mapfile 是原始的  ``EXTENT`` 替换为新的范围值，它看起来不像经度和纬度。另外，投影对象  "
+"``PROJECTION`` 已添加，并添加了  ``PROJECTION`` 定义已添加到  ``LAYER`` 。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:44
+msgid "Take a look at the parameters of the new spatial extent:"
+msgstr "查看新空间范围的参数："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:58
+msgid "Writing way of Mapfile"
+msgstr "Mapfile的编写方式"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:60
+msgid ""
+"Projection can be defined in MAP objects, as well as in LAYER objects. "
+"Projections can be defined in MAP objects (only once, but multiple can be"
+" defined) This defined projection is the output projection of the map, "
+"and MapServer will use this projection to render the map result. The "
+"projection defined in the ``LAYER`` object is the input projection, that "
+"is, the projection of the data corresponding to the layer object. The "
+"definition of the projection in the layer object can be different from "
+"that in the map object, and MapServer will do the projection "
+"transformation and reproject to the output projection. If there is no "
+"projection information in the ``LAYER`` object, MapServer will assume "
+"that the input and output projections are the same."
+msgstr ""
+"投影可以在地图对象中定义，也可以在层对象中定义。可以在地图对象中定义投影(只能定义一次，但可以定义多个)此定义的投影是地图的输出投影，MapServer将使用此投影来呈现地图结果。中定义的投影"
+"  ``LAYER`` "
+"对象是输入投影，即层对象对应的数据的投影。Layer对象中的投影定义可以与地图对象中的投影定义不同，MapServer将进行投影转换并重新投影到输出投影。中没有投影信息。"
+"  ``LAYER`` 对象时，MapServer将假定输入和输出投影相同。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:72
+msgid ""
+"In a Mapfile, the ``PROJECTION`` object is not required. But if you want "
+"to support the OGC interoperability specification (WMS/WFS/WCS), it still"
+" needs to be clearly defined in the Mapfile."
+msgstr ""
+"在映射文件中，  ``PROJECTION`` "
+"对象不是必需的。但是，如果您想要支持OGC互操作性规范(WMS/WFS/WCS)，则仍然需要在映射文件中对其进行明确定义。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:76
+msgid ""
+"Defined only once in the map object, this definition becomes your output "
+"projection - MapServer will render your map in this projection. You can "
+"also define input projections using projection object layer objects. It "
+"is possible to project on different layers - MapServer reprojects them to"
+" your output projection. If no objects within the projection layer are "
+"defined, MapServer assumes that the input projection is the same as the "
+"output projection. This is not the desired object unless you create a map"
+" file that supports an OGC Interoperable Web Services Specification "
+"(WMS/WFS/WCS)."
+msgstr "此定义仅在地图对象中定义一次，即成为您的输出投影-MapServer将在此投影中呈现您的地图。也可以使用投影对象层对象定义输入投影。可以在不同的层上投影-MapServer将它们重新投影到您的输出投影。如果未定义投影层中的对象，则MapServer会假定输入投影与输出投影相同。除非您创建支持OGC可互操作Web服务规范(WMS/WFS/WCS)的映射文件，否则这不是所需的对象。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:86
+msgid ""
+"MapServer’s projections are defined in two ways. The traditional way is "
+"to define it through the Proj.4 parameter, such as the Lambert Azimuthal "
+"Equal-Area projection of the continental United States defined below."
+msgstr "MapServer的预测有两种定义方式。传统的方法是通过Proj.4参数来定义它，例如下面定义的美国大陆的Lambert方位等面积投影。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:90
+msgid "This is the output projection definition:"
+msgstr "这是输出投影定义："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:101
+msgid ""
+"Another way is to use EPSG codes. These codes are standard projection "
+"codes (or spatial reference identifiers) as defined by the European "
+"Petroleum Survey Group (EPSG). Defined by the following EPSG code in "
+"MapServer, the following ``EPSG:2163`` also means (Lambert Azimuthal "
+"Equal-Area), the effect is the same:"
+msgstr ""
+"另一种方法是使用EPSG代码。这些代码是由欧洲石油调查集团(EPSG)定义的标准投影代码(或空间参考标识符)。由MapServer中的以下EPSG代码定义，"
+"  ``EPSG:2163`` 也表示(Lambert方位角等面积)，效果相同："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:113
+msgid ""
+"If you want to learn more about EPSG code, take a look at "
+"``/usr/ROJ/PSG`` or ``C:/PROJ/NAD/EPSG`` (``/ms4w/proj/nad`` MS4W). Also,"
+" check out the EPSG website http://www.epsg.org ."
+msgstr ""
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:118
+msgid "Calculation of projection coordinates by cs2cs"
+msgstr "用CS2CS计算投影坐标"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:120
+msgid ""
+"The projected coordinates can be calculated using QGIS or some other GIS "
+"package, or you can use PROJ.4’s cs2cs tool. The following commands are "
+"raw range values that can be used to reproject:"
+msgstr "投影坐标可以使用Qgis或其他地理信息系统软件包计算，也可以使用PROJ.4‘S cs2cs工具计算。以下命令是可用于重新投影的原始范围值："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:128
+msgid ""
+"After typing the command, enter the southwest coordinate pair (lower left"
+" coordinate), separated by a space: ``-97.54 1.619778``"
+msgstr "键入命令后，输入西南坐标对(左下坐标)，用空格分隔：  ``-97.54 1.619778``"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:131
+msgid "The result returned by the ``cs2cs`` utility is:"
+msgstr "方法返回的结果  ``cs2cs`` 实用程序为："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:137
+msgid ""
+"Next, type the northeast coordinate pair (upper-right coordinate), also "
+"separated by a space: ``-82.122902 49.38562``, returns the following "
+"values:"
+msgstr "接下来，键入同样由空格分隔的东北坐标对(右上角坐标)：  ``-82.122902 49.38562`` 返回下列值："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:145
+msgid ""
+"``cs2cs`` returns a ternary value. The third value, 0.000, can be ignored"
+" and is meant to represent altitude (which we don’t use)."
+msgstr "``cs2cs`` 返回一个三元值。第三个值0.000可以忽略，它用于表示海拔高度(我们不使用它)。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:148
+msgid ""
+"Now, the extent of the map under this projection can be defined in the "
+"Mapfile:"
+msgstr "现在，可以在映射文件中定义此投影下的地图范围："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:155
+msgid ""
+"Note that the definition here is not the same as what is actually used in"
+" Mapfile. When re-projecting, the map defined using the range of the data"
+" may not be what you expected. By considering “buffering” the range, the "
+"range can be extended a few kilometers up and down, left and right (this "
+"varies according to the projection and the specific application). How "
+"much expansion is needed can be assisted by desktop GIS software such as "
+"QGIS, which may be more convenient."
+msgstr "请注意，此处的定义与Mapfile中实际使用的定义不同。重新投影时，使用数据范围定义的地图可能与您预期的不同。通过考虑对射程进行缓冲，射程可以上下、左右扩展几公里(根据投影和具体应用的不同而不同)。需要多少扩容可以由QGIS等桌面GIS软件来辅助，这样可能会更方便。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:164
+msgid "Map projection online document"
+msgstr "地图投影在线文档"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:166
+msgid ""
+"If you need to know more about map projection, take a look at some of the"
+" links below:"
+msgstr "如果您需要了解更多有关地图投影的信息，请查看下面的一些链接："
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:170
+msgid "http://www.colorado.edu/geography/gcraft/notes/mapproj/mapproj_f.html"
+msgstr "http://www.colorado.edu/geography/gcraft/notes/mapproj/mapproj_f.html"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:171
+msgid "http://www.geography.hunter.cuny.edu/mp/"
+msgstr "http://www.geography.hunter.cuny.edu/mp/"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:172
+msgid "http://www.nationalatlas.gov/articles/mapping/a_projections.html"
+msgstr "http://www.nationalatlas.gov/articles/mapping/a_projections.html"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:173
+msgid "http://en.wikipedia.org/wiki/Map_projection"
+msgstr "http://en.wikipedia.org/wiki/Map_projection"
+
+#: ../../webgis-src/chb2_using-mapserver/sec10_projection/section.rst:174
+msgid "http://erg.usgs.gov/isb/pubs/MapProjections/projections.html"
+msgstr "http://erg.usgs.gov/isb/pubs/MapProjections/projections.html"
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:4
+msgid "Add a scale bar"
+msgstr "添加比例尺"
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:6
+msgid ""
+"The map scale of MapServer can be added to the map or separated from the "
+"map."
+msgstr "MapServer的地图比例可以添加到地图中，也可以从地图中分离出来。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:10
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:9
+msgid "Effect"
+msgstr "效果"
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:15
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:14
+msgid "Key code"
+msgstr "密钥码"
+
+#: ../../webgis-src/chb2_using-mapserver/sec11_scalebar/section.rst:38
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:30
+msgid ""
+"Where ``STATUS`` is set to ``embed`` , which can be directly mosaicked "
+"into the generated map."
+msgstr "哪里  ``STATUS`` 设置为  ``embed`` ，它可以直接镶嵌到生成的地图中。"
+
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:4
+msgid "Add Legend"
+msgstr "添加图例"
+
+#: ../../webgis-src/chb2_using-mapserver/sec12_legend/section.rst:6
+msgid "The map legend of MapServer can be added to or separated from the map."
+msgstr "MapServer的地图图例可以添加到地图中或从地图中分离出来。"
+

@@ -1,0 +1,18 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2007-10-18 14:00+0100\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Cesium front-end 3D GIS class library"
+msgstr "Cs前端3D地理信息系统类库"
+
+msgid "Cesium is a front-end 3D GIS class library based on WebGL."
+msgstr "Cs是一个基于WebGL的前端3DGIS类库。"

@@ -1,0 +1,597 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/che2_tiles/chapter.rst:2
+msgid "Map slicing technique"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/chapter.rst:4
+msgid ""
+"Map Tiles, translated into map tiles and map slices. In this book, it is "
+"considered that map slicing pays more attention to the process of "
+"operation, so the term “map tile” is adopted."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/chapter.rst:8
+msgid ""
+"If you want to improve the access speed of Web maps, using map slicing is"
+" a very effective method. Map slicing is to configure the map under "
+"multiple scale, and then draw the map under each scale as a small picture"
+" in advance and save it in a directory called cache on the server. In "
+"this way, when the client accesses the map, it can directly get the small"
+" pictures needed and splice them into the whole map, instead of "
+"dynamically creating a picture by the server and sending it to the "
+"client, thus greatly improving the access speed."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/chapter.rst:17
+msgid ""
+"There are many technical solutions for map slicing, and there are many "
+"open source tools for map slicing, which is a basic tool in all kinds of "
+"FOSS software at present. MapServer has MapCache module, GeoServer has "
+"GeoWebCache module to create map slices; TileMill and CartoCSS markup "
+"languages can create map slices in a more flexible way; and there are "
+"common gadgets such as GeoWebCach, TileCache, TileStache, Tile-Server and"
+" MapProxy. There are other tools that people know less about."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/chapter.rst:25
+msgid ""
+"The Mapnik library is a free and open source software written in C++ "
+"callable from Python and other languages for creating map tiles. Mapnik "
+"is an efficient rendering engine that includes advanced drawing options "
+"not found in common WMS layers. Although the use of Mapnik is not very "
+"convenient, it usually requires some knowledge of Linux and some "
+"experiments and mistakes, but for profit, Mapbox recently released an "
+"open source program called TileMill, which can be run on Mac and Windows,"
+" with Mapnik as the bottom layer, providing a beautiful window interface,"
+" thus simplifying the drawing process."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:4
+msgid "Principle of map tiles"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:6
+msgid ""
+"What is tile? A tile is a collection of pictures in a grid that are "
+"similar to tiles. Tile data is a cache image set formed by pre-processing"
+" vector or image data and using efficient caching mechanisms (such as "
+"pyramids). It is organized in a “level, row, column” way, and can be "
+"quickly loaded in the web page. Therefore, tile map loading is to obtain "
+"the tiles of the grid under the corresponding level (i.e. the image pre "
+"cut by the server) by calculating the row and column number according to "
+"the map range and level requested by the client, and these tiles are "
+"collected to form a map at the client, as shown in Figure 2.21."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:17
+msgid ""
+"Vector map and tile map have their own characteristics and advantages, "
+"and they can be applied in combination. The real-time generation of "
+"vector map can edit, query and analyze the map data online. it has "
+"spatial relationship and can support network analysis, spatial analysis "
+"and other applications. Because the tile map is a pre-cut cache picture "
+"collection, the network loading speed is fast and the effect is good, so "
+"it is often used as the base map."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:25
+msgid ""
+"Map slicing: the process in which the pre-generated method is stored on "
+"the server, and then the corresponding map tiles are sent to the client "
+"according to different requests submitted by the user. It is a multi-"
+"resolution hierarchical model, from the bottom of the tile pyramid to the"
+" top, the resolution is getting lower and lower, but the geographical "
+"range remains the same."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:32
+msgid ""
+"Map cache: Also known as map tiles, it is a directory containing map "
+"tiles of the entire map range at different scales, that is, a cached map "
+"service is a service that can use static images to quickly provide maps."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:36
+msgid "Here is an introduction to several important concepts in map slices."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:39
+msgid "Principle"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:41
+msgid "Several concepts:"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:43
+msgid ""
+"In map slicing, there are three important concepts: 1. slice origin; 2. "
+"slice resolution (scale); 3. initial slice range. The following is a "
+"brief introduction to these three concepts."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:50
+msgid "Map slicing schematic diagram"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:52
+msgid "1.Slice origin"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:54
+msgid ""
+"There are generally two types of slice origins: 1. the upper left corner;"
+" 2. the lower left corner. Most of the slicing algorithms use the upper "
+"left corner as the origin of the slice, such as Sky Map, ArcGIS Server, "
+"and so on. The slice origin defines the location of my first 256*256 "
+"slice."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:60
+msgid "2.Slice resolution (scale)"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:62
+msgid ""
+"The slice resolution and scale correspond one to one. Scale refers to the"
+" actual distance represented by a unit on my map. The resolution "
+"represents the actual distance represented by one pixel on the screen, so"
+" when one is determined, the corresponding one is also determined."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:67
+msgid ""
+"The slice resolution (scale) affects the actual coordinates of one of my "
+"256-256 images at that resolution (scale)."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:70
+msgid "3.Initialize the range of slices"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:72
+msgid ""
+"The initial slice range refers to the size of the image I sliced, and the"
+" image is how many 256*256 slices I can slice at this resolution."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:76
+msgid "Map tiles technique"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:78
+msgid ""
+"After understanding the principle of map slicing, we will find that as "
+"long as the relevant parameters (origin, resolution) are passed to the "
+"map server, through the ``GetMap`` You can get the slice. Of course, in "
+"the specific technical implementation, we still have to do some "
+"calculation, traversal and other operations."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:84
+msgid ""
+"To get a slice, you can see the previous section. ``GetMap`` The example "
+"illustrated in."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:88
+msgid "Map tiles software tool"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:90
+msgid ""
+"After the emergence of the concept of map slicing, many software tools "
+"for map slicing have been developed. On the one hand, the original GIS "
+"software added the function of map slicing; on the other hand, some "
+"independent map slicing tools have been developed."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:95
+msgid ""
+"On the Python side, TileCache was used earlier, but the last version of "
+"this tool ( tilecache-2.11 ) was released in October 2010 and has since "
+"been discontinued. TileCache is an implementation of a WMS-C (about) "
+"compliant service released by Metacarta under the BSD license. (and "
+"TileCacheConfig) TileCache originated from a resolution at the FOSS4G "
+"2006 conference, which was a later OGC recommendation, the WMS Tiling "
+"Client Recommendation. The so-called TileCache is because the ordinary "
+"WMS server needs to read data and generate pictures after receiving the "
+"request, and the efficiency is too low. Then for those immutable map "
+"services, you can encapsulate a TMS (Tiled Map Service) in the front end "
+"of WMS. TileCache first caches some WMS map images, provides a pseudo "
+"WMS, and only interacts with the background WMS server when appropriate. "
+"The implementation of this standard is provided by MetaCarta, the backend"
+" of OpenLayers, called TileCache. TileCache is implemented in Python and "
+"can be deployed and run on Apache and IIS as well as Python’s WSGI via "
+"cgi."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:128
+msgid ""
+"TileCache provides a Python-based WMS-C/TMS service with a pluggable "
+"caching mechanism and rendering backend. In the simplest use case, "
+"TileCache only needs write access to the disk, the ability to run Python "
+"CGI scripts, and the WMS to cache. With these resources, you can create "
+"your own local disk-based cache for any WMS server And use this result in"
+" any client that supports WMS-C, such as OpenLayers, or any client that "
+"supports TMS, such as OpenLayers and WorldKit."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:136
+msgid ""
+"MapProxy is another map slicing tool developed in Python language after "
+"TileCache. Its degree of perfection is much greater than TileCache, and "
+"the current development is still very active."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:141
+msgid "Tools for maps tiles"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:143
+msgid ""
+"When the user browses the system map, MapServer parses, draws and cuts "
+"the image according to the MapFile file in real time and returns the "
+"image to the client. The response time is acceptable when there is a "
+"small amount of local data, but when the amount of local data is large "
+"and accessed by a large number of users, the response time will be "
+"unbearable. This topic will use the open source tilecache technology to "
+"realize the map tile cache, and use the cache mechanism to improve the "
+"response efficiency of the system."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:152
+msgid ""
+"The idea of map tile comes from the hierarchical detail model, which can "
+"cut the whole image into a large number of small images with the same "
+"resolution. When users view the image, generally only a small number of "
+"tiles are operated at a time, and the server can send the corresponding "
+"tiles to meet the needs of users. In this way, while reducing the amount "
+"of network data and reducing the bandwidth, the use of Ajax technology to"
+" make tiles download asynchronously on the server can greatly reduce the "
+"system response time and improve the user experience."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:161
+msgid ""
+"The map tiles are organized and stored in groups according to proportion "
+"by pyramid structure (quadtree). For each increase in the browsing level,"
+" four images with higher resolution are used instead of one with lower "
+"resolution."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:166
+msgid ""
+"Each tile in the pyramid model is given a unique ID number. Using the "
+"numbered index, combined with the resolution required by the user to "
+"operate the map, we can determine which numbered tile is needed."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:170
+msgid ""
+"tilecache is a map tile buffer developed by MetaCarta Labs, which is used"
+" to cache maps. Only when the requested map is not in the tilecache "
+"buffer file, will it interact with the service to request the map (Li "
+"Zhenhua, Liu Peng, Wang Zhen, & Gao Chengxia, 2009), with OpenLayers to "
+"make map display faster. Tilecache supports multiple OGC service "
+"standards and multiple servers, and supports multiple request formats and"
+" methods."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:181
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:183
+msgid "Tilecache caching mechanism"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:185
+msgid ""
+"MapCache is a server that implements tiled caching to speed up access to "
+"the WMS tier. The main goal is to be fast and easy to deploy, while "
+"providing basic functionality (and more! Map slice caching solution"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec01_priciple/section.rst:189
+msgid ""
+"MapProxy is a map slicing tool developed by Python. It is easy to use and"
+" stable in production environment."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:3
+msgid "Use GetMap to generate slices"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:5
+msgid "Here to see the basic principles of map tiles."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:10
+msgid "Show map slices using an HTML table"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:12
+msgid ""
+"The following one uses four maps to stitch together into a larger map. To"
+" illustrate the problem, an HTML table was used and four tiles were "
+"placed in table cells in the appropriate locations."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:38
+msgid "The parameters passed to MapServer list in the following table."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:54
+msgid "Seamless stitching with DIV"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:56
+msgid ""
+"The other way is to seamlessly “splicing” the four images together. The "
+"effect is as follows, which is basically the actual effect of the current"
+" map tile. It looks like a map, actually consisting of four frames."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec02_getmap/section.rst:91
+msgid "Here show the different result."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:4
+msgid "Installation and use of MapProxy"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:6
+msgid ""
+"MapProxy is the Swiss Army knife of WMS web map service and slicing "
+"service provider. It caches, accelerates and transforms existing data "
+"services and serves any desktop and web client that supports the OGC "
+"standard."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:12
+msgid "MapProxy installation"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:14
+msgid ""
+"At present, MapProxy is already in the official source of Debian/Ubuntu, "
+"and you can use the ``apt`` Command to install."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:17
+msgid ""
+"To use a newer version, you can establish a Python virtual environment, "
+"and then use the ``pip`` Command to install."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:20
+msgid "MapProxy1.11.0 installation: refer to official help"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:22
+msgid "Create a virtual environment for Python"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:24
+msgid "Administrator privileges are required to install dependencies."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:31
+msgid ""
+"With regard to dependent class libraries, libproj, Proj4 is a coordinate "
+"transformation library; Pillow,Pillow (PIL) is an image processing "
+"library."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:35
+msgid "Installation"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:41
+msgid "Shapely and GEOS (optional)"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:43
+msgid ""
+"If you want to use the coverage feature of MapProxy, you need to install "
+"Shapely. Shapely provides Python bindings for the GEOS library. To "
+"install and use, you need ``libgeos-dev`` Vs. ``python-shapely`` . If a "
+"newer version (1.2.0 or later) of Shapely is not available on the system,"
+" you can use the ``pip`` Command is installed as a third-party package "
+"for Python."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:50
+msgid "GDAL (optional)"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:52
+msgid ""
+"The coverage feature allows users to read geometry from OGR databases "
+"(Shapefiles, PostGIS, etc.). This package is optional and only support "
+"for OGR data sources (BBOX,WKT and GeoJSON overrides are natively "
+"supported) is required. OGR is GDAL ( ``libgdal-dev`` ) part of the "
+"package."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:58
+msgid "Lxml (optional)"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:60
+msgid ""
+"Lxml is used to support more advanced WMS feature information operations,"
+" such as XSL transactions, or to connect multiple XML/HTML documents. The"
+" name of this package is ``python-lxml`` ."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:64
+msgid "Install MapProxy"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:70
+msgid "To check whether the installation is successful, use the following command"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:77
+msgid "Create a profile for MapProxy:"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:83
+msgid ""
+"This command creates a folder called mymapproxy that contains a minimum "
+"sample configuration ( ``mapproxy.yaml`` And ``seed.yaml`` ), and two "
+"completed sample configuration files ``full_example.yaml`` 和 "
+"``full_seed_example.yaml`` )."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:88
+msgid "Start the test service"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:95
+msgid "Start the service on the specified port"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:101
+msgid ""
+"MapProxy comes with a demo service that lists all configured WMS and TMS "
+"layers. You can access that service by visiting "
+"http://localhost:8080/demo/."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:106
+msgid "Use"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:108
+msgid ""
+"Then configure the mapproxy.yaml file according to the tutorial. The "
+"following is an introduction to the components of the configuration file."
+" During testing, only the mapproxy.yaml configuration was used."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:112
+msgid "mapproxy.yaml and seed.yaml"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:114
+msgid ""
+"Mapproxy.yaml: the main configuration file that configures all parts of "
+"the service, such as which services need to be started, where the data "
+"comes from, and those that need to be cached"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:118
+msgid ""
+"Mapproxy-seed mapproxy creates all the required images, and to speed up "
+"requests, this tool can cache one or more polygonal areas."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:121
+msgid ""
+"The configuration file uses the YAML format ``mapproxy.yaml`` It mainly "
+"includes the following parts:"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:124
+msgid ""
+"``globals`` : Set default values, global variables that can be used in "
+"other configuration sections."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:127
+msgid "``services`` : Services provided by MapProxy, such as jWMS or TMS."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:129
+msgid "``sources`` : Defines where MapProxy can fetch new datasets."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:131
+msgid "``caches`` : configure internal caches"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:133
+msgid ""
+"``layers`` : Configure the layers provided by MapProxy, each layer can "
+"contain multiple data sources and caches."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:136
+msgid "``grids`` : defines the grid that MapProxy uses to arrange cached images"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:138
+msgid ""
+"Note that to maintain formatting, you cannot use the tab key, but only "
+"the spacebar."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:141
+msgid ""
+"The contents of the configuration file are posted as follows, and the "
+"code looks like this:"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:166
+msgid "For this example, you can use LeafLetJS or OpenLayers for access testing."
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec03_mapproxy/section.rst:169
+msgid "The code for posting OpenLayers is as follows:"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec04_mapproxy-a/section.rst:4
+msgid "MapProxy case: a layer"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec04_mapproxy-a/section.rst:7
+#: ../../webgis-src/che2_tiles/sec05_mapproxy-b/section.rst:7
+#: ../../webgis-src/che2_tiles/sec06_mapproxy-c/section.rst:7
+msgid "Example"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec04_mapproxy-a/section.rst:9
+msgid "http://webgis.pub:6001/"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec04_mapproxy-a/section.rst:12
+#: ../../webgis-src/che2_tiles/sec05_mapproxy-b/section.rst:12
+#: ../../webgis-src/che2_tiles/sec06_mapproxy-c/section.rst:12
+msgid "MapProxy configuration file"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec05_mapproxy-b/section.rst:4
+msgid "MapProxy case: multiple layers"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec05_mapproxy-b/section.rst:9
+msgid "http://webgis.pub:6002/"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec06_mapproxy-c/section.rst:4
+msgid "MapProxy case: layer merging"
+msgstr ""
+
+#: ../../webgis-src/che2_tiles/sec06_mapproxy-c/section.rst:9
+msgid "http://webgis.pub:6003/"
+msgstr ""
+

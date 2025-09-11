@@ -1,0 +1,312 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2025-09-11 11:28+0800\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../webgis-src/chb7_mapserver-wcs/chapter.rst:2
+msgid "Use of WCS in MapServer"
+msgstr "WCS在MapServer中的使用"
+
+#: ../../webgis-src/chb7_mapserver-wcs/chapter.rst:4
+msgid ""
+"WFS publishes vector data service on the Web, while for raster data "
+"service, OGC formulates WCS (Web Coverage Services, network coverage "
+"service). The raster data set obtained through WCS service is called "
+"overlay, where the coverage is generally raster data, but also includes "
+"TIN and so on. The data returned by the WCS service can be used as input "
+"parameters for analysis and modeling operations. This is in sharp "
+"contrast to the OGC WMS service, which only returns pictures of the data."
+msgstr ""
+"WFS在Web上发布矢量数据服务，而对于栅格数据服务，OGC制定了WCS(Web Coverage "
+"Services，网络覆盖服务)。通过WCS服务获得的栅格数据集称为覆盖，其中覆盖通常是栅格数据，但也包括TIN等。WCS服务返回的数据可用作分析和建模操作的输入参数。这与OGC"
+" WMS服务形成鲜明对比，后者只返回数据的图片。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/chapter.rst:13
+msgid ""
+"There is no built-in support for WCS in the front-end libraries Leaflet "
+"and OpenLayers. If you are a service / data provider and the coverage "
+"data is two-dimensional, you can consider the WMS that provides the data "
+"at the same time. If you are not a service provider and you have only one"
+" WCS endpoint to use, you will not be able to write your own code. "
+"Similarly, if you have multidimensional coverage and want to provide two-"
+"dimensional data, you have to do the same. Examples can be found on the "
+"Internet."
+msgstr "在前端库、传单和OpenLayers中没有内置的WCS支持。如果您是服务/数据提供商，并且覆盖数据是二维的，则可以考虑同时提供数据的WMS。如果您不是服务提供商，并且只有一个WCS终结点可用，则您将无法编写自己的代码。同样，如果你有多维覆盖并想要提供二维数据，你也必须这样做。这些例子可以在互联网上找到。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:4
+msgid "WCS Map Service"
+msgstr "WCS地图服务"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:6
+msgid ""
+"WCS - Web Coverage Service, WCS is a specification for sharing geospatial"
+" data in the form of “Coverage” on the Web as defined by the OGC. The so-"
+"called “Coverage” refers to data that can return the value of any "
+"specified point in its space-time domain, and its form is easy to input "
+"into the model for use. The WCS service realizes the sharing of raster "
+"image datasets in the form of “Coverage”."
+msgstr ""
+"WCS-Web Coverage "
+"Service，WCS是一种规范，用于在OGC定义的Web上以“Coverage”的形式共享地理空间数据。所谓覆盖范围，是指能够返回其时空域中任意指定点的值，其形式便于输入模型使用的数据。WCS服务以Coverage的形式实现了栅格影像数据集的共享。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:14
+msgid "Mapfile definition"
+msgstr "映射文件定义"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:16
+msgid ""
+"As in WMS and WFS support, WCS publishing is enabled by adding certain "
+"metadata key/value pairs to the ``.map`` file."
+msgstr "与WMS和WFS支持一样，WCS发布是通过将某些元数据键/值对添加到  ``.map`` 文件。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:21
+msgid "WMS"
+msgstr "WMS"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:23
+msgid ""
+"MapServer targets only layers that meet the following conditions and "
+"includes them in its WCS function:"
+msgstr "MapServer仅针对满足以下条件的层，并将其包括在其WCS函数中："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:26
+msgid ""
+"the data source is a raster and can be processed using GDAL (eg GeoTIFF, "
+"Erdas Imaging, …);"
+msgstr "数据源为栅格，可使用GDAL进行处理(例如GeoTIFF、Erdas Image、…)；"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:28
+msgid "the layer name must be set;"
+msgstr "必须设置层名称；"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:29
+msgid "the layer type is set to ``RASTER`` ;"
+msgstr "将图层类型设置为  ``RASTER`` ；"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:30
+msgid "Web metadata or layer metadata ``wcs_enable_request`` must be set;"
+msgstr "Web元数据或层元数据  ``wcs_enable_request`` 必须设置；"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:31
+msgid "Web metadata ``wcs_label`` must be set;"
+msgstr "网络元数据  ``wcs_label`` 必须设置；"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:32
+msgid ""
+"must set layer metadata ``wcs_label`` , ``wcs_rangeset_name`` , ``wcs-"
+"rangeset-label`` ;"
+msgstr ""
+"必须设置图层元数据  ``wcs_label`` ，  ``wcs_rangeset_name`` ，  ``wcs-rangeset-"
+"label`` ；"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:34
+msgid "Layers can be served via WCS (see MS RFC 67);"
+msgstr "层可以通过WCS提供服务(参见MS RFC 67)；"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:35
+msgid ""
+"The layer projection must be set, even if the projection is set at the "
+"map level."
+msgstr "即使在地图级别设置了投影，也必须设置层投影。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:38
+msgid "Take a look at the Mapfile used in this section:"
+msgstr "请看一下本节中使用的映射文件："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:46
+msgid "GetCapabilities request"
+msgstr "获取能力请求"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:48
+msgid ""
+"As in WMS and WFS, you can also use ``GetCapabilities`` to view the "
+"capabilities of WCS:"
+msgstr "与在WMS和WFS中一样，您还可以使用  ``GetCapabilities`` 要查看WCS功能，请执行以下操作："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:51
+#, fuzzy
+msgid ""
+"`https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities"
+"  <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__"
+msgstr ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities"
+"  <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities>`__"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:54
+msgid "Parse the parameters using Python:"
+msgstr "使用Python解析参数："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:64
+msgid ""
+"View the output results in XML format. Only the parts related to version "
+"are shown here:"
+msgstr "以XML格式查看输出结果。此处仅显示与版本相关的部分："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:76
+msgid "You can see that the versions of WCS are:"
+msgstr "您可以看到WCS的版本是："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:78
+msgid "2.0.1"
+msgstr "2.0.1"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:79
+msgid "1.1.1"
+msgstr "1.1.1"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:80
+msgid "1.0.0"
+msgstr "1.0.0"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:83
+msgid "DescribeCoverage request"
+msgstr "描述承保请求"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:85
+msgid ""
+"The ``DescribeCoverage`` request lists more information about a specific "
+"coverage product."
+msgstr "这个  ``DescribeCoverage`` 请求列出有关特定覆盖范围产品的更多信息。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:88
+#, fuzzy
+msgid ""
+"`https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID"
+"=world-img <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID"
+"=world-img>`__"
+msgstr ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID"
+"=world-img <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=DescribeCoverage&COVERAGEID"
+"=world-img>`__"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:90
+msgid "The parameters are described as follows:"
+msgstr "具体参数说明如下："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:101
+msgid ""
+"The parameters vary greatly between different versions, and the returned "
+"results are also different. You can open the link to have a look at it:"
+msgstr "不同版本的参数差异很大，返回的结果也不一样。您可以打开链接查看："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:104
+msgid "WFS 1.0.0:"
+msgstr "WFS 1.0.0："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:106
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.0.0&REQUEST=DescribeCoverage&COVERAGE"
+"=world-img"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.0.0&REQUEST=DescribeCoverage&COVERAGE"
+"=world-img"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:108
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:123
+msgid "Parse the URL:"
+msgstr "解析URL："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:119
+msgid "WFS 1.1.1:"
+msgstr "WFS 1.1.1："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:121
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.1&REQUEST=DescribeCoverage&IDENTIFIERS"
+"=world-img"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.1&REQUEST=DescribeCoverage&IDENTIFIERS"
+"=world-img"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:135
+msgid "Usage of GetCoverage"
+msgstr "GetCoverage的用法"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:137
+msgid ""
+"``GetCoverage`` returns data, which is raster data. Since the request "
+"cannot specify the name and suffix of the file at this time, the file can"
+" be downloaded and saved, and modified into a file with ``.tif`` as the "
+"suffix. This file has geospatial information."
+msgstr ""
+"``GetCoverage`` 返回数据，即栅格数据。由于请求此时无法指定文件的名称和后缀，因此可以下载并保存该文件，并将其修改为  "
+"``.tif`` 作为后缀。此文件包含地理空间信息。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:142
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER"
+"=world-"
+"img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER"
+"=world-"
+"img&FORMAT=image/tiff&BOUNDINGBOX=43,33,44,34,urn:ogc:def:crs:EPSG::4326"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:144
+msgid "The parameters are decomposed as follows:"
+msgstr "参数分解如下："
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:158
+msgid "GetCoverage return image"
+msgstr "GetCoverage返回图像"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:160
+msgid ""
+"``GetCoverage`` can also directly return the image, just modify "
+"``format=image/png`` . However, it should be noted that the returned "
+"image must be returned by a separate request in the web, and cannot be "
+"used in the web page as an ``<image>`` object."
+msgstr ""
+"``GetCoverage`` 也可以直接返回图片，只需修改  ``format=image/png`` "
+"。但是，需要注意的是，返回的图像必须通过Web中的单独请求返回，并且不能在网页中作为  ``<image>`` 对象。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:165
+msgid ""
+"The following is an example, the picture in the web page, which cannot be"
+" displayed here. But by “right click” -> “view image”, you can see that "
+"it is a picture."
+msgstr "下面是一个例子，网页中的图片，不能在这里显示。但是通过“右键”->“查看图片”，你可以看到它是一张图片。"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:170
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER"
+"=world-"
+"img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw8.map&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&IDENTIFIER"
+"=world-"
+"img&FORMAT=image/tiff&BOUNDINGBOX=33,70,54,135,urn:ogc:def:crs:EPSG::4326&format=image/png"
+
+#: ../../webgis-src/chb7_mapserver-wcs/sec01_wcs/section.rst:175
+msgid "Result of WCS"
+msgstr "WCS的结果"
+

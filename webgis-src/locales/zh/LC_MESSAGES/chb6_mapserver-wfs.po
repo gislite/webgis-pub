@@ -1,0 +1,528 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2025-09-11 11:28+0800\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:2
+msgid "Use of WFS in MapServer"
+msgstr "WFS在MapServer中的使用"
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:4
+msgid ""
+"We can easily get the map in the specified area from the WMS server, but "
+"we can only get the rendered map. Sometimes we want to get data such as "
+"the geographical coordinates and attributes of a specified layer, and "
+"further, when we need to modify the data of the data source, WMS can not "
+"meet the needs."
+msgstr "我们可以很容易地从WMS服务器获取指定区域的地图，但我们只能获得渲染的地图。有时我们想要得到指定图层的地理坐标和属性等数据，进一步地，当我们需要修改数据源的数据时，WMS无法满足需要。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:10
+msgid ""
+"However, you can also send data from the Web service to the client upon "
+"request. As long as the server and the client follow the same "
+"specification, the data can be in any format. In order to standardize the"
+" process of sending vector data through Web services, OGC provides us "
+"with another standard Web Feature Service (WFS) to meet the above "
+"requirements."
+msgstr ""
+"但是，您也可以根据请求将数据从Web服务发送到客户端。只要服务器和客户端遵循相同的规范，数据就可以是任何格式。为了规范通过Web服务发送矢量数据的过程，OGC提供了另一种标准的Web"
+" Feature Service(WFS)来满足上述要求。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/chapter.rst:17
+msgid ""
+"Next, we will introduce the release, access and application of WFS and "
+"its services."
+msgstr "接下来，我们将介绍WFS及其服务的发布、访问和应用。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:4
+msgid "Geographic Web Services"
+msgstr "地理Web服务"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:6
+msgid ""
+"MapServer publishing services are configured through Mapfile, and WFS "
+"services are no exception. Similar to configuring WMS, to publish WFS, "
+"add key-value pairs about WFS in the METADATA section of the Mapfile "
+"configuration file. MapServer will only include WFS functionality if the "
+"layer meets the following conditions:"
+msgstr "MapServer发布服务是通过Mapfile配置的，WFS服务也不例外。与配置WMS类似，要发布WFS，请在映射文件配置文件的元数据部分添加关于WFS的键-值对。只有在图层满足以下条件时，MapServer才会包含WFS功能："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:12
+msgid "The data source is vector data: shapefile, OGR, Postgis, sde    (ArcSDE);"
+msgstr "数据源为矢量数据：Shapefile、OGR、Postgis、SDE(ArcSDE)；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:13
+msgid "Layer name must be set;"
+msgstr "必须设置层名称；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:14
+msgid ""
+"The layer data space type must be one of ``point`` , ``line`` ,    "
+"``polygon``;"
+msgstr "图层数据空间类型必须为以下类型之一  ``point`` ，  ``line`` ，  ``polygon`` ；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:15
+msgid "``wfs_onlineresource`` and ``wfs_enable_request`` must be set."
+msgstr "``wfs_onlineresource`` 和  ``wfs_enable_request`` 必须设置。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:17
+msgid ""
+"MapServer itself can be configured to support WFS, and you can also use "
+"TinyOWS. Using TinyOWS can support WFS-T and realize the function of "
+"online editing and saving."
+msgstr "MapServer本身可以配置为支持WFS，您也可以使用TinyOWS。使用TinyOWS可以支持WFS-T，并实现在线编辑和保存功能。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:22
+msgid "Configure an instance"
+msgstr "配置实例"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:24
+msgid ""
+"Based on the Mapfile configuration of the published WMS, add the WFS "
+"configuration. The following is a Mapfile instance with WMS and WFS "
+"configured."
+msgstr "根据发布的WMS的映射文件配置，添加WFS配置。以下是配置了WMS和WFS的Mapfile实例。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:28
+msgid "Mapfile is as follows:"
+msgstr "映射文件如下："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:35
+msgid ""
+"Compared with the Mapfile that only configures WMS, the main change lies "
+"in the METADATA sub-object of the MAP object and the METADATA sub-object "
+"of the LAYER object. In the METADATA of the MAP object, the added key-"
+"value pairs include:"
+msgstr "与只配置WMS的映射文件相比，主要的变化在于地图对象的元数据子对象和Layer对象的元数据子对象。在映射对象的元数据中，添加的键值对包括："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:40
+msgid ""
+"``wfs_title`` , required, returned in the ``GetCapabilities`` request as "
+"the ``title`` element of the XML document in the service response;"
+msgstr "``wfs_title`` ，必填，在  ``GetCapabilities`` 请求作为  ``title`` 服务响应中的XML文档的元素；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:42
+msgid "``wfs_onlineresource``, required, provide the server address of ``wfs``;"
+msgstr "``wfs_onlineresource`` ，提供的服务器地址为  ``wfs`` ；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:44
+msgid ""
+"``wfs_srs``, the spatial reference system of the data (Spatial Reference "
+"System);"
+msgstr "``wfs_srs`` 数据的空间参照系(空间参照系)；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:46
+msgid ""
+"``wfs_abstract`` , returned by the ``Abstract`` element of the XML "
+"document in the ``GetCapabilities`` request as the service response;"
+msgstr ""
+"``wfs_abstract`` ，由  ``Abstract`` 元素中的XML文档的  ``GetCapabilities`` "
+"请求作为服务响应；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:48
+msgid ""
+"``wfs_enable_request``, which means to configure MapServer map to support"
+" all operations of ``wfs`` globally."
+msgstr "``wfs_enable_request`` ，这意味着要将MapServer地图配置为支持  ``wfs`` 全球范围内。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:51
+msgid ""
+"The key-value pair added to the METADATA of the LAYER object is as "
+"follows (Note: There are many repetitions of the METADATA of the "
+"configuration and the MAP object. If it is not set, the METADATA "
+"configuration of the MAP object will be inherited. If it is set, the "
+"configuration of the LAYER will be used, which is in a MAP Useful when "
+"the object contains multiple layers):"
+msgstr "添加到Layer对象的元数据的键值对如下(注：配置和地图对象的元数据有很多重复。如果不设置，将继承地图对象的元数据配置。如果设置了该值，将使用该层的配置，当对象包含多个层时，该配置在地图中非常有用)："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:58
+msgid ""
+"``wfs_title`` , returned by the ``title`` element of the XML document in "
+"the ``GetCapabilities`` request as the service’s response;"
+msgstr "``wfs_title`` ，由  ``title`` 元素中的XML文档的  ``GetCapabilities`` 请求作为服务的响应；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:60
+msgid "``wfs_srs``, the Spatial Reference System of the data;"
+msgstr "``wfs_srs`` 数据的空间参考系；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:61
+msgid ""
+"``gml_featureid`` , the attribute name of the feature ID corresponding to"
+" the layer;"
+msgstr "``gml_featureid`` ，该层对应的特征ID的属性名称；"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:63
+msgid ""
+"``wfs_enable_request`` , configures the layer to support all wfs "
+"operations."
+msgstr "``wfs_enable_request`` 将层配置为支持所有WFS操作。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:67
+msgid "Access"
+msgstr "访问"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:69
+msgid ""
+"We can call the MapServer WFS service through the URL. By default, WFS "
+"will return the result in GML format, and the call result can be viewed "
+"in the browser. WFS contains many operations, you can see the WFS "
+"operations supported by Mapfile from the ``GetCapabilities`` response:"
+msgstr ""
+"我们可以通过URL调用MapServer "
+"WFS服务。默认情况下，WFS会以GML格式返回结果，可以在浏览器中查看调用结果。WFS包含许多操作，您可以从  "
+"``GetCapabilities`` 回应："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:74
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:76
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:101
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:132
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:158
+msgid "The following are those that use cities around the world:"
+msgstr "以下是那些在世界各地使用城市的公司："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:78
+#, fuzzy
+msgid ""
+"`https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities"
+" <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities>`__"
+msgstr ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities"
+" <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities>`__"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:80
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:112
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:136
+msgid "The URL is parsed as follows:"
+msgstr "URL的解析方式如下："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:91
+msgid "DescribeFeatureType"
+msgstr "DescribeFeatureType"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:93
+msgid ""
+"When operating the database, we sometimes need to reflect the structure "
+"of the database, and we also have the same problem when using WFS. "
+"Sometimes we need to know what attributes a FeatureType has and what type"
+" they are, then we need the ``DescribeFeatureType`` method. A typical "
+"``DescribeFeatureType`` call looks like this:"
+msgstr ""
+"在操作数据库时，我们有时需要反映数据库的结构，使用WFS时也存在同样的问题。有时我们需要知道FeatureType具有哪些属性以及它们是什么类型，然后我们需要"
+"  ``DescribeFeatureType`` 方法。一个典型的  ``DescribeFeatureType`` 呼叫如下所示："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:99
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:103
+#, fuzzy
+msgid ""
+"`https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mf21.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country>`__"
+msgstr ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mf21.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=DescribeFeatureType&TypeName"
+"=world-country>`__"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:105
+msgid "Pay attention to when configuring"
+msgstr "配置时请注意"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:124
+msgid "GetFeature"
+msgstr "GetFeature"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:126
+msgid ""
+"Finally arrived at this method, this method can be said to be the basis "
+"of WFS, its purpose is clear at a glance, get Feature. If you type this "
+"call: The link below returns all the elements."
+msgstr "最终得出了这种方法，这种方法可以说是WFS的基础，其目的是一目了然，获取功能。如果您输入此调用：下面的链接将返回所有元素。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:130
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:134
+#, fuzzy
+msgid ""
+"`https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country>`__"
+msgstr ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country>`__"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:147
+msgid ""
+"This call means that all the data is returned, usually resulting in a "
+"large XML/GML document."
+msgstr "这个调用意味着返回所有数据，通常会产生一个大的XML/GML文档。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:151
+msgid "A limited number of features can be returned"
+msgstr "可以返回的要素数量有限"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:153
+msgid ""
+"By using parameters ``count=2`` You can limit the number of features "
+"returned"
+msgstr "通过使用参数  ``count=2`` 您可以限制返回的要素数量"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:156
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:160
+#, fuzzy
+msgid ""
+"`https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2 <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2>`__"
+msgstr ""
+"`http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mft2.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2 <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&count=2>`__"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:162
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:229
+msgid "The resolution of URL is as follows:"
+msgstr "URL的解析方式如下："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:175
+msgid "Return features according to the index"
+msgstr "根据索引返回要素"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:177
+msgid ""
+"You can return features based on the index, and to do this, you need to "
+"configure:"
+msgstr "您可以根据索引返回要素，为此，您需要配置："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:185
+msgid "Here ``OBJECTID`` Is a field in Shapefile."
+msgstr "这里  ``OBJECTID`` 是Shapefile中的一个字段。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:187
+msgid "The following link returns the ID number as ``227`` Elements of:"
+msgstr "下面的链接将ID号返回为  ``227`` 以下元素："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:189
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&FeatureId=world-country.227"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&service=WFS&VERSION=2.0.0&request=GetFeature&TypeName"
+"=world-country&FeatureId=world-country.227"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:202
+msgid "Use Filter"
+msgstr "使用滤镜"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:204
+msgid "According to the selector, such as:"
+msgstr "根据选择器，例如："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:210
+msgid "The URL is resolved as follows:"
+msgstr "该URL的解析方式如下："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec01_intro/section.rst:222
+msgid ""
+"More meaningfully, choose according to the name. Note the selection here,"
+" and the comparison of attributes is case-sensitive."
+msgstr "更有意义的是，根据名字来选择。请注意此处的选择，属性的比较区分大小写。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:4
+msgid "Use MapServer as the WFS client"
+msgstr "使用地图服务器作为WFS客户端"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:6
+msgid ""
+"WFS can be added as a layer in MapServer. In this way, it is used as a "
+"WFS client."
+msgstr "WFS可以作为图层添加到MapServer中。通过这种方式，它被用作WFS客户端。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:9
+msgid ""
+"Since WFS needs to transfer data over the network, it is best to use "
+"smaller amounts of data. The selection here is to use point feature data."
+msgstr "由于WFS需要通过网络传输数据，因此最好使用较少的数据量。此处的选择是使用点要素数据。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:14
+msgid "Writting way of MapFile"
+msgstr "MapFile的写入方式"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:22
+msgid "Example effect"
+msgstr "范例效果"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:24
+msgid "The effect is:"
+msgstr "其效果是："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec02_wfs-client/section.rst:28
+msgid ""
+"Note that the above graph is a traditional MapServer generated map. "
+"Defined by the WFS point layer in front, so it’s mostly occluded by "
+"polygons."
+msgstr "请注意，上图是传统的MapServer生成的地图。由前面的WFS点层定义，因此它主要被多边形遮挡。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:3
+msgid "Access WFS using LeafletJS"
+msgstr "使用LeafletJS访问WFS"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:5
+msgid "The WFS service returns data(or features), not maps."
+msgstr "WFS服务返回数据(或要素)，而不是地图。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:7
+msgid ""
+"Returning data means more information. Users can parse information to "
+"accomplish more complex tasks. But it also means that the task of drawing"
+" is left to the client, which requires more coding work."
+msgstr "返回数据意味着更多信息。用户可以解析信息以完成更复杂的任务。但这也意味着绘图的任务留给了客户端，这需要更多的编码工作。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:11
+msgid "Config WFS in MapServer"
+msgstr "在MapServer中配置WFS"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:13
+msgid ""
+"Leaflet can be drawn using GeoJSON data. To display the data returned by "
+"the WFS service, using JSON as the data type returned, you need to open "
+"it in MapServer."
+msgstr "可以使用GeoJSON数据绘制传单。要使用JSON作为返回的数据类型来显示WFS服务返回的数据，您需要在MapServer中打开它。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:26
+msgid "In METADATA, it is stated that:"
+msgstr "在元数据中，指出："
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:32
+msgid "You can view the information about the service by following links."
+msgstr "您可以通过以下链接查看有关该服务的信息。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:34
+#, fuzzy
+msgid ""
+"`Open the Link <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities>`_"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfw1.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:37
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:6
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:33
+msgid "Example"
+msgstr "示例"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:39
+msgid ""
+"The following is an example of using Leaflet. Note that due to the size "
+"of data, the filter is used to get the data of China. But maybe you will "
+"still have to wait for a while for the data loaded."
+msgstr "下面是一个使用LEAFLE的例子。请注意，由于数据的大小，使用过滤器来获取中国的数据。但是，您可能仍然需要等待一段时间才能加载数据。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec03_via-leaflet1/section.rst:48
+msgid "`Open the example </xx-leaflet-wfs1.html>`_"
+msgstr "`Open the example </xx-leaflet-wfs1.html>`_"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:3
+msgid "Leaflet render WFS with custom styles"
+msgstr "Leaflet使用自定义样式渲染WFS"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:8
+msgid ""
+"WMS completes the task of map rendering by server. If you want to "
+"customize the map style, you can use SLD to transfer the definition file "
+"of style to the server. The server returns the result of the map. The "
+"data returned by WFS can be adjusted and rendered by client."
+msgstr "WMS通过服务器完成地图绘制任务。如果您想要自定义地图样式，可以使用SLD将样式的定义文件传输到服务器。服务器返回地图的结果。WFS返回的数据可以由客户端调整和渲染。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:14
+msgid ""
+"In this case, there is no need to make any changes to the server, the "
+"server can only provide data."
+msgstr "在这种情况下，不需要对服务器进行任何更改，服务器只提供数据。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:16
+msgid ""
+"On the client side, you can define the implementation style of anonymous "
+"functions."
+msgstr "在客户端，您可以定义匿名函数的实现风格。"
+
+#: ../../webgis-src/chb6_mapserver-wfs/sec04_via-leaflet2/section.rst:41
+msgid "`Open the example </xx-leaflet-wfs2.html>`_"
+msgstr "`Open the example </xx-leaflet-wfs2.html>`_"
+
+#~ msgid ""
+#~ "<a href=\"http://webgis.pub/cgi-"
+#~ "bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities\">http://webgis.pub"
+#~ "/cgi-"
+#~ "bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities</a>"
+#~ msgstr ""
+#~ "<a href=“http://webgis.pub/cgi-"
+#~ "bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities”>http://webgis.pub"
+#~ "/cgi-"
+#~ "bin/mapserv?map=/owg/mfw2.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities</a>"
+

@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/che3_gislite/chapter.rst:2
+msgid "Introduction of GISLite Project"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/chapter.rst:4
+msgid ""
+"GISLite is a static WebGIS project based on MapServer, Leaflet and "
+"MapProxy."
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:4
+msgid "Introduction to GISLite"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:7
+msgid "Brief introduction"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:9
+msgid ""
+"GISLite is an application that publishes GIS data in the form of static "
+"websites based on open source GIS technologies (including MapServer, "
+"MapProxy, Leafet). The purpose is to solve the problem of data update, "
+"style modification, and the application of different style combinations "
+"when publishing a large number of maps. Try to make the data source "
+"unique and use XLSX files to define styles. It mainly realizes the "
+"publishing of GIS data layers, but also realizes the function of "
+"publishing multi-source data to a single map slice and multiple layers to"
+" layer grouping."
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:19
+msgid ""
+"In addition to re-establishing the original MapServer tutorial using "
+"Python, another important reason for the development of this website is "
+"to explain some technologies used in the development of GISLite. From "
+"another perspective, it can also be said that GISLite is a comprehensive "
+"application of the main open source GIS technologies described on this "
+"website. Apart from the introduction, this part is published based on the"
+" GISLite program and integrated into this website as a demo."
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:27
+msgid ""
+"At present, GISLite has been registered and released in PYPI, and can be "
+"installed by the following command:"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:34
+msgid "Based on MapServer, MapProxy"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:35
+msgid "Define styles using the open spreadsheet format XLSX"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:36
+msgid ""
+"It can be used for rapid release and management of team geographic "
+"information data."
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:38
+msgid "Open source code, released on Github."
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:41
+msgid "Related website"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:43
+msgid "Project official website:https://www.osgeo.cn/gislite/"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:44
+msgid "Project GitHub address:https://github.com/bukun/GISLite"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:45
+msgid "Project PyPi address:https://pypi.org/project/gislite/"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:48
+msgid "Technical background website"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:50
+msgid ""
+"Technically, the development of GISLite mainly uses Python and open "
+"source GIS technology to read data. Integrate with the open source WebGIS"
+" introduced on this website."
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:54
+msgid "https://www.osgeo.cn/pygis/"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:56
+msgid ""
+"“Python and Open Source GIS”, a tool for reading and processing GIS data "
+"using Python."
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:59
+msgid "http://webgis.pub/"
+msgstr ""
+
+#: ../../webgis-src/che3_gislite/sec01_introduction/section.rst:61
+msgid "A basic introduction to MapServer, MapProxy and Leaflet."
+msgstr ""
+

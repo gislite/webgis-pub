@@ -1,0 +1,2058 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:2
+msgid "Installation and configuration of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:4
+msgid ""
+"One of the ways to realize WebGIS is to use Common Gateway Interface "
+"(CGI) technology. On the server side, through the CGI application program"
+" to connect WebServer and GIS spatial database, the client only needs to "
+"use the browser to query and analyze the spatial data. The famous open "
+"source GIS server-side tool MapServer uses CGI technology."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:10
+msgid ""
+"Compared with the many WebGIS solutions provided by commercial "
+"enterprises, MapServer is an open source project. This means that you can"
+" use MapServer for free and have the right to modify, copy, and "
+"redistribute it on your own. It should be pointed out that MapServer, as "
+"an open source project, is in continuous development, but in recent "
+"years, the function has been relatively perfect and the update is "
+"relatively small."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:18
+msgid ""
+"At present, the mainstream Linux operating systems, such as Debian, "
+"Ubuntu, Centos and so on, have MapServer versions above 7.0. The content "
+"of this book is based on MapServer version 7. 0 and later."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:22
+msgid ""
+"This chapter explains the installation and configuration of MapServer to "
+"understand basic usage and related tools, how to generate map images, and"
+" how to access them through Web. After you set up the MapServer, you need"
+" to tell it the location of all resources and make sure that all "
+"permissions are set correctly. Because more useful MapServer applications"
+" have more lines of code and contain many HTML templates, keep the "
+"application simple to make it easier to debug when errors occur."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:4
+msgid "Introduction to MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:6
+msgid ""
+"MapServer is a real-time map publishing system based on the fat "
+"server/thin client mode. When the client sends a data request, the server"
+" processes the spatial data in real time and sends the generated data to "
+"the client. The core part of MapServer is the map operation module "
+"written in C language, and the implementation of many functions of "
+"MapServer itself depends on some open source or free libraries."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:13
+msgid ""
+"The core part of MapServer is the map manipulation module written in C "
+"language, and many of its functions rely on some open source or free "
+"libraries. Using the support of GEOS and OGR/GDAL for a variety of vector"
+" and raster data, the projection transformation is carried out in real "
+"time through the Proj.4 shared library. MapServer follows OGC series "
+"specifications and can integrate PostGIS and open source database "
+"PostgreSQL, and store and SQL query the geospatial data. Based on a "
+"series of client-side JavaScript APIs such as ka-map, MapLab, Cartoweb "
+"and Chameleon to support the transmission and expression of geospatial "
+"data, and comply with a series of WMS, WFS, WCS, WMC, SLD, GML and Filter"
+" Encoding formulated by OGC specification."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:26
+msgid "Development history of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:28
+msgid ""
+"MapServer is an open source geospatial data rendering engine written in C"
+" language. It originated from the University of Minnesota (UMN), NASA and"
+" the Minnesota Department of Natural Resources (MNDNR) in the mid-1990s. "
+"A collaborative project - ForNet, and later the TerrSIP project. "
+"Government support played a big role in the early development of "
+"MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:35
+msgid ""
+"This is an open source software released under the MIT-style License for "
+"publishing spatial data and interactive map applications on the Web, "
+"supporting all major operating systems, including Windows, Linux, Mac OS "
+"X, etc. Its positioning is not to implement a full-featured GIS, but to "
+"provide most of the core GIS functions for Web applications."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:41
+msgid ""
+"In 1994, Steve Lime, the father of MapServer, and his MapServer were "
+"familiar to more people. MapServer is not isolated in its development and"
+" growth, but has been supported by many open source communities and open "
+"source enthusiasts. In November 2005, the MapServer Foundation was "
+"established with the aim of “promoting a professional open source network"
+" mapping development environment and community. Even though it initially "
+"focused on network mapping projects, it hopes to provide funding to other"
+" open source geographic information projects”, not only promotes the "
+"professional development of MapServer, but also promotes the development "
+"of the entire open source network mapping technology."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:52
+msgid ""
+"With the further development of open source geographic information system"
+" software and the further optimization of open source network mapping "
+"environment, in February 2006, the MapServer Foundation was officially "
+"renamed the Open Source Geospatial Foundation (OSGeo), and Autodesk added"
+" MapGuide as an open source code to the foundation. It will further "
+"promote the development of MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:60
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:272
+msgid "Characteristics of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:62
+msgid ""
+"MapServer is a popular open source project for displaying dynamic spatial"
+" maps on the Internet. It has the following characteristics:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:65
+msgid ""
+"Support for displaying and querying hundreds of grid, vector and database"
+" formats. Supported vector formats: ESRI shapefiles, PostGIS, ArcSDE of "
+"ESRI, etc. (implemented by OGR library). Supported grid formats: "
+"TIFF/GeoTIFF, EPPL7, etc. (implemented through the GDAL library). For "
+"shapefile files, you can build a quad tree spatial index."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:71
+msgid "Ability to run on many different systems (Windows, Linux, Mac OS X, etc.)"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:73
+msgid ""
+"Available in two ways: CGI (for CGI, Ajax, Flex developers) and MapScript"
+" (For Php, Java, C # developers), native CGI is the most efficient"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:76
+msgid ""
+"Support for popular scripting languages and development environments "
+"(PHP, Python, Perl, Ruby, Java, .NET)"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:78
+msgid "On-the-fly projection"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:79
+msgid "High quality rendering model"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:80
+msgid "The output of custom template is fully supported."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:81
+msgid "Many off-the-shelf open source application environments"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:82
+msgid ""
+"MapFile is the core of MapServer. It organizes various map elements into "
+"a hierarchical object system, and define the data source, the data format"
+" used, user interaction and support for the OGC protocol."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:85
+msgid ""
+"Support the font standard TrueType jointly developed by Microsoft and "
+"Apple."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:87
+msgid "Block (tiled) vector and raster data are supported."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:88
+msgid ""
+"Automatic control of map elements (such as scale, legend, reference, "
+"etc.)."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:90
+msgid "The image scale is adjusted automatically."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:91
+msgid "Generate thematic maps using logical or regular expressions."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:92
+msgid "Feature annotations (including dimension conflict resolution)."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:93
+msgid "MapServer can be configured dynamically through URLs."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:94
+msgid "Dynamic projection transformation is supported."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:95
+msgid ""
+"Support for several Open Geospatial Consortium network specifications: "
+"WMS (client/server), non-transactional WFS (client/server), WCS (server "
+"only), WMC, SLD,GML and Filter Encoding."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:99
+msgid ""
+"In its most basic form, MapServer is an inactive CGI program on a Web "
+"server. When a request is sent to MapServer, it uses the information and "
+"Mapfile passed in the requested URL. Creates an image of the requested "
+"map, the request can return the legend, ruler, reference map and variable"
+" values passed by CGI."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:105
+msgid ""
+"Compared with the many WebGIS solutions provided by commercial "
+"enterprises, MapServer is an open source project. This means that you can"
+" use MapServer for free and have the right to modify, copy and "
+"redistribute it yourself, MapServer has many advantages as well:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:110
+msgid ""
+"MapServer is an open source real-time map publishing system based on fat "
+"server / thin client mode. When the client sends data requests, the "
+"server processes the spatial data in real time and sends the generated "
+"data to the client. The core part of MapServer is the map operation "
+"module written in C language, and many of its functions depend on some "
+"open source or free libraries."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:117
+msgid ""
+"Using GEOS, OGR/GDAL to support a variety of vector and raster data, "
+"real-time projection transformation through the Proj.4 shared library. At"
+" the same time, it also integrates PostGIS and the open source database "
+"PostgreSQL to store and query geospatial data, and supports the "
+"transmission and expression of geospatial data based on a series of "
+"client-side JavaScript APIs such as ka-map, MapLab, Cartoweb, and "
+"Chameleon. A series of specifications such as WMS, WFS, WCS, WMC, SLD, "
+"GML and Filter Encoding formulated by OGC."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:126
+msgid ""
+"MapServer creates a map image based on spatial information stored in a "
+"digital format. It can handle vector and raster data. MapServer can "
+"render more than 20 different vector data formats, including "
+"shapefile,PostGIS and ArcSDE geometric features OPeNDAP,Arc/Info coverage"
+" and Census TIGER files."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:132
+msgid ""
+"Not all information displayed on the map must be in vector format. For "
+"example, aerial or satellite photos of an area can be displayed behind "
+"the rendered vector data to understand more clearly how these vector "
+"elements relate to the characteristics of the real world. MapServer reads"
+" two grid formats natively: GeoTIFF and EPPL7. However, you can read more"
+" than 20 formats (including Windows bitmaps, GIF, and JPEG) through the "
+"GDAL package, although MapServer understands and can render these grid "
+"types, it cannot mark images with spatial information."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:144
+msgid "Components of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:146
+msgid ""
+"One of the realization methods of WebGIS is to use Common Gateway "
+"Interface (CGI) technology. On the server side, the WebServer and the GIS"
+" spatial database are connected through the CGI application program, and "
+"the client side can query and analyze the spatial data only by using the "
+"browser [2]. The University of Minnesota in the United States provides a "
+"WebGIS solution: MapServer, which uses CGI technology."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:153
+msgid ""
+"MapServer is an open source WebGIS project developed in C language. It is"
+" a real-time map publishing system based on fat server / thin client "
+"mode. When the client sends data requests, the server processes the "
+"spatial data in real time and sends the generated data to the client."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:158
+msgid "MapServer supports a three-tier architecture:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:160
+msgid "Application layer: client browser"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:161
+msgid ""
+"Middle tier: MapServer CGI module / scripting language + MapScript, Web "
+"server"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:163
+msgid "Storage tier: GIS spatial database"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:165
+msgid ""
+"A simple MapServer consists of the following parts, as shown in the "
+"figure:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:171
+msgid "Schematic of MapServer principle"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:173
+msgid "MapFile"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:175
+msgid ""
+"Structured text configuration files for MapServer applications. It "
+"defines the field of the map and is used to tell MapServer where the data"
+" is and where to output the image. It also defines the map layer. "
+"Including their data source, projection and notation. It must have a .map"
+" extension, otherwise MapServer will not recognize it. MapFile files "
+"organize various map elements into a system of objects with hierarchical "
+"relationships. Data sources, data formats used, user interaction and "
+"support for the OGC protocol are also defined in MapFile. Objects "
+"included in MapFile and their hierarchical relationships:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:186
+msgid "Geographic Data"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:188
+msgid ""
+"MapServer can take advantage of many types of geographic information data"
+" sources. The default is the ESRI data format, and other formats of data "
+"are also supported."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:192
+msgid "HTMLPages"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:194
+msgid ""
+"It is the interface between the user and MapServer, usually located at "
+"the web root. In its simplest form, MapServer can be called to place a "
+"static map image on an HTML page. To make the map interactive, the image "
+"is placed on an HTML form on the page."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:199
+msgid "MapServer CGI"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:201
+msgid ""
+"Binary executables. It can receive requests to return images, data, etc.,"
+" located in the cgi-bin or scripts directory of the web server. The user "
+"of the WEB server must have execute permissions on these directories. For"
+" security reasons, they cannot be in the root directory of the web. By "
+"default, this program is called mapserv."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:207
+msgid "WEB/HTTP Server"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:209
+msgid ""
+"The HTML page is provided when the user’s browser is hit. You need a "
+"working Web (HTTP) server. For example, Apache or Microsoft’s IIS, they "
+"are on the same machine where you installed MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:214
+msgid "Two modes of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:216
+msgid ""
+"MapServer can be regarded as the general name of two independent modules:"
+" MapServer CGI module and MapScript module. On the server side, any "
+"module can be used to write WebGIS programs. However, they use the same "
+"configuration file MapFile."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:221
+msgid ""
+"MapServer can run in two different modes: CGI and MapScript. In CGI mode,"
+" MapServer runs as a CGI script in the Web server environment. This is "
+"easy to set up and produce fast, direct applications. In MapScript mode, "
+"you can access MapServer API from Perl,Python or PHP. The MapScript "
+"interface allows flexible, feature-rich applications that can still take "
+"advantage of MapServer’s template tools."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:229
+msgid "Comparison between MapServer and GeoServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:231
+msgid ""
+"MapServer and GeoServer are both widely used open source WebGIS tools. "
+"Both publish maps through the Internet and are often compared. MAPSERVER "
+"is also OGC-compliant WMS and non-transactional WFS, based on CGI and "
+"written in C++; GEOSERVER is written in Java (you need to install Java "
+"SDK (not JRE) to run it), based on servlet and using the struts "
+"framework."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:238
+msgid ""
+"Functionally: MapServer is weaker than GeoServer, QGIS and stronger than "
+"UDIG."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:240
+msgid ""
+"Efficiency: Mapserver’s support for WMS (Web Map service) is more "
+"efficient, while Geoserver is better at attribute queries combined with "
+"WFS (Web Feature service) specifications."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:244
+msgid ""
+"In addition to functional comparison, special attention should be paid to"
+" the technical selection during development. MapServer focuses on map "
+"service functions and can be used as project components (or even core "
+"components), but other functions need to be implemented by developers "
+"most of the time; GeoServer is a relatively complete suite, which can "
+"basically be used as a product after deployment and installation."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:251
+msgid ""
+"MapServer is not a full-featured GIS, it does not provide integrated DBMS"
+" (Database Management System) tools, it has limited analytical "
+"capabilities, and there are no georeferencing tools."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:255
+msgid ""
+"Which is better? It’s hard to tell, depending on how you want to publish "
+"your data and what language you’re better at using. Both are excellent "
+"and have excellent documentation and user base. GEOSERVER enables you to "
+"edit spatial data online and generate thematic maps. Maps are published "
+"in XML files. MAPSERVER is good at generating thematic maps and is more "
+"mature than ever. Maps are published through text configuration files."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:262
+msgid ""
+"Which one is more appropriate? I advocate using MapServer if you just "
+"publish the map and don’t allow modification, it’s easier to maintain. "
+"GeoServer was chosen because of wanting better features such as online "
+"editing and database support like PostgreSQL or Oracle spatial database, "
+"another advantage of GeoServer is that there is a free client software "
+"UDIG."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:274
+msgid ""
+"Provides two ways of working, the CGI way (for CGI, AJAX, FLEX "
+"developers) and the MapScript way (for Php, Java, C#, Python developers)."
+" The native CGI method is the most efficient, and with TileCache, large-"
+"scale map tile data can be quickly generated. Compared with commercial or"
+" open source platforms based on .Net and J2EE, MapServer is more suitable"
+" for high-load large-scale Internet map applications. MapServer is a map "
+"service software written based on C, which is faster than GeoServer "
+"written in JAVA. Moreover, the history of MapServer is longer than that "
+"of GeoServer, and even the performance of MapServer is comparable to that"
+" of commercial ArcIMS."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:286
+msgid "Characteristics of GeoServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:288
+msgid ""
+"GeoServer（http://geoserver.org/ ）is a J2EE compliant and implements the "
+"WCS, WMS and WFS specifications , supports TransactionWFS (WFS-T), and "
+"its technical core is the integration of the well-known Java-developed "
+"GIS tools GeoTools."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:293
+msgid ""
+"For spatial information storage, it supports ESRI Shapefile and spatial "
+"databases such as PostGIS, Oracle, and ArcSDE, and the output GML files "
+"meet the requirements of GML2.1."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:297
+msgid ""
+"Because it is pure Java, it is more suitable for complex environmental "
+"requirements, and because of its open source, development organizations "
+"can flexibly implement specific target requirements based on GeoServer, "
+"which are lacking in commercial GIS components."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:302
+msgid ""
+"As a pure Java implementation, GeoServer is deployed in application "
+"servers, such as Tomcat; its WMS and WFS components respond to requests "
+"from browsers or uDig to access configured spatial databases, such as "
+"PostGIS, OracleSpatial, etc., and generate Maps and GML documents are "
+"transferred to the client."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:308
+msgid "GeoServer has the following advantages:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:310
+msgid ""
+"Written in Java language, standard J2EE framework, based on servlet and "
+"STRUTS framework, supporting efficient Spring framework development;"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:313
+msgid "Compatible with WMS and WFS features, support WFS-T specification;"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:314
+msgid "Efficient database supports PostGIS, ShapeFile, ArcSDE,Oracle, MySQL, etc."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:316
+msgid "Support hundreds of projections;"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:317
+msgid "Ability to output network maps to formats such as jpeg, gif, png;"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:4
+msgid "Install and configure MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:6
+msgid ""
+"Setting up the initial runtime environment when starting a job can be "
+"tedious, especially when following the step-by-step steps, but the basic "
+"“Hello World” still doesn’t appear, and it can be maddening. Building a "
+"running environment requires comprehensive technology, some experience, "
+"and a bit of luck. Don’t underestimate the ability to configure the "
+"runtime environment. Many programmers cannot build a development "
+"environment by themselves, let alone a real production environment."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:15
+msgid "Basic requirements for installing and configuring MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:17
+msgid ""
+"MapServer is an open source software written in C language, which itself "
+"relies on some open source or free libraries, such as Shapelib, FreeType,"
+" Proj.4, GDAL/OGR, GD Library, Regex. MapServer is written in C, and the "
+"sub-projects it depends on have corresponding C language implementation "
+"versions. When running MapServer, the relevant class libraries must be "
+"installed, and sometimes they also depend on specific versions of certain"
+" class libraries. When compiling and installing MapServer, you need to "
+"have a certain understanding of these libraries."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:26
+msgid ""
+"Shapelib provides the ability to read, write and update data in the “ESRI"
+" Shapefile” format, and to modify the corresponding property file (.dbf);"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:29
+msgid ""
+"FreeType is a font rendering library, capable of rendering most vector "
+"and bitmap font formats, designed to be small, efficient, highly "
+"customizable, and as lightweight as possible without sacrificing "
+"performance and functionality;"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:33
+msgid ""
+"Proj.4 is a geographic projection library that provides a variety of "
+"projection definitions and interfaces;"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:35
+msgid ""
+"GDAL/OGR, GDAL (Geospatial Data Abstraction Library) is an open source "
+"raster spatial data conversion library under the X/MIT license. It "
+"utilizes an abstract data model to express the various file formats it "
+"supports. It also has a range of command line tools for data "
+"transformation and processing. OGR is a branch of the GDAL project, "
+"similar in function to GDAL, except that it provides support for vector "
+"data. There are many well-known GIS products that use the GDAL/OGR "
+"library, including ESRI’s ArcGIS 9.3, Google Earth and the cross-platform"
+" GRASS GIS system."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:44
+msgid ""
+"GD Library, generate images dynamically, supports most formats: JPEG, "
+"GIF, WEBP, XPM, BMP. Usually used to dynamically generate charts, "
+"pictures, thumbnails, etc., often used in the web environment;"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:47
+msgid "Regex, provides regular expression support for MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:49
+msgid ""
+"By understanding these libraries, you can simplify the installation "
+"process by reducing the number of features to install. Even though you "
+"only install a basic version of MapServer, it still has the ability to "
+"create a powerful application. After you become familiar with MapServer, "
+"you can add other features you want."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:55
+msgid ""
+"MapServer is a program that generates maps, but provides a CGI interface "
+"(the operation of MapServer CGI depends on PHP), and related functions "
+"can be called through Web access. So many times in order to run "
+"MapServer, you need to install a web server (such as Apache 2), and a "
+"tool (such as FastCGI) to let the application (MapServer) communicate "
+"with the web server (Apache). Apache 2 does not have CGI enabled by "
+"default."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:66
+msgid "Libraries that MapServer depends on"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:71
+msgid "Detailed introduction of MapServer related class libraries"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:81
+msgid "GD"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:74
+msgid ""
+"GD is an image library. Since Mapserver uses GD for image rendering, it "
+"must be installed. GD has its own dependent class library, including "
+"zlib, libpng, FreeType2.x and libJPEG. These types enable GD to perform "
+"image compression (for supported data), to render PNG images, to use "
+"TrueType fonts, and to render JPEG images. Since the license on GIF has "
+"expired, it is now available as well."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:81
+msgid "GD support has been removed in MapServer 7. 0."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:87
+msgid "FreeType"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:84
+msgid ""
+"FreeType is a font rendering engine. It is not referenced directly by "
+"Mapserver, but is used by GD to render fonts. Since TrueType is more "
+"attractive than the bitmap fonts provided by Mapserver, it is worth "
+"including this class library."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:94
+msgid "LibPNG"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:90
+msgid ""
+"LibPNG enables Mapserver to render JPEG images. A new version has been "
+"released since 2001. Generally speaking, this library should already be "
+"installed on the machine. If not, you can install it yourself. Libpng "
+"uses MapServer to render PNG images. It is not directly used by "
+"MapServer, but by GD. Libpng requires the library zlib."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:97
+msgid "Zlib"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:97
+msgid "Zlib is a data compression library used by GD."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:103
+msgid "GDAL"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:100
+msgid ""
+"GDAL is a conversion class library for raster data. It provides import "
+"and projection of raster images with geographic projections. You won’t "
+"use those features in this book, but this library is necessary to install"
+" basic Mapserver."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:107
+msgid "OGR"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:106
+msgid ""
+"The OGR library provides the ability to read and write some vector "
+"formats. In this book you will use some of the features provided by OGR."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:111
+msgid "Proj.4"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:110
+msgid ""
+"Proj.4 is a program for cartographic projection. It can be called by "
+"Mapserver, or it can be projected on the entire database alone."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:119
+msgid "Shapelib"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:114
+msgid ""
+"Shapelib is a C program to generate and process Shape files. You can use "
+"the useful tools provided by this class library without having to write "
+"any C code yourself. It has the contents of generating shape files "
+"(including DBF files) and destroying shape files and DBF files, and "
+"change the projection of the shape file. Some of these features are based"
+" on Proj.4."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:126
+msgid "Libcurl"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:122
+msgid ""
+"libcurl is a client library that supports FTP, FTPS, HTTP, HTTPS, GOPHER,"
+" TELNET, DICT, FILE and LDAP URL conversion. This library is required if "
+"you want to provide WMS support. The WMS protocol is used to transmit map"
+" images and file data over the network. To keep the Mapserver environment"
+" simple, you don’t have to install it."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:130
+msgid "SDE client library"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:129
+msgid ""
+"The SDE client library is part of ESRI’s spatial data warehouse. If you "
+"want Mapserver to access it, you need to compile the library."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:133
+msgid "PostgreSQL client library"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:135
+msgid ""
+"The PostgreSQL client library provides the ability to access PostGIS data"
+" using Mapserver. They provide similar functionality to ESRI products, "
+"but they are not open source."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:140
+msgid "Oracle Spatial client library"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:142
+msgid ""
+"The Oracle Spatial client library enables users to access the Oracle "
+"Spatial Data Warehouse using MapServer. They provide similar "
+"functionality to ESRI products."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:147
+msgid "Ming"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:149
+msgid ""
+"Ming enables MapServer to create SWF videos. It can provide some "
+"interesting functions."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:153
+msgid "PDFLib"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:155
+msgid ""
+"It is also useful for PDFLib to be able to output in PDF format using "
+"MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:159
+msgid "Installation under Debian / Ubuntu system"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:161
+msgid ""
+"Debian / Ubuntu is my most commonly used Linux release, and its well-"
+"designed package management tool is really enjoyable. To install "
+"MapServer, simply run the following installation command (administrator "
+"privileges are required):"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:166
+msgid "In Debian 12:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:178
+msgid "In Debian 9:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:188
+msgid "In Ubuntu 22.04:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:198
+msgid "In Ubuntu 18.04:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:208
+msgid ""
+"Almost no difference except the different versions of PHP Debian/Ubuntu. "
+"When installing these packages, if the corresponding dependencies are "
+"missing, they will be installed automatically."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:212
+msgid ""
+"After the installation is complete, you can enter the following command "
+"on the terminal to view the results:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:226
+msgid ""
+"And some configureations are needed for the service of MapServer. The "
+"config files could be founds under the `etc` directory of the soruce "
+"codes. May be you just need Apache. Howerver, //webgis.pub uses Nginx for"
+" reverse proxy  to Apache."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:231
+msgid "Notes about FastCGI."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:233
+msgid ""
+"CGI (Common Gateway Interface) defines the method of interaction between "
+"web server and external content generation program, which usually refers "
+"to CGI program or CGI script. It is the simplest and commonly used method"
+" to realize dynamic pages on the website, making the interaction between "
+"external program and web server possible. But early CGI programs ran in "
+"separate processes and created a process for each web request. This "
+"method is very easy to implement, but inefficient and difficult to scale."
+" In the face of a large number of requests, a large number of processes "
+"are created and killed, which greatly reduces the performance of the "
+"operating system. In addition, because the address space cannot be "
+"shared, resource reuse is also limited."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:245
+msgid ""
+"FastCGI uses persistent (daemon) processes to handle a chain of requests,"
+" these processes are managed by the FastCGI server, not the web server. "
+"When a request comes in, the web server passes the environment variables "
+"and the page request to the FastCGI process through a socket, such as the"
+" FastCGI process and the web server (both locally), or a TCP connection "
+"(FastCGI process on the remote server farm) is passed to the FastCGI "
+"process."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:254
+msgid "Configure"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:256
+msgid ""
+"Then, edit the file of Apache2 configure. Sush as ``more /etc/apache2"
+"/sites-enabled/webgis_pub_apache.conf`` ."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:269
+msgid "Installation under Windows system"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:271
+msgid ""
+"To install MapServer under Windows, you also need to install Apache2, "
+"CGI, and MapServer programs, which also have binary packages under "
+"Windows, but such a step-by-step installation is more troublesome and "
+"prone to problems. It is recommended to use ``MS4W`` (MapServer 4 "
+"Windows), the link is: https://www.ms4w.com/ ."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:4
+msgid "Start using Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:6
+msgid ""
+"The core program of MapServer is used to generate maps based on "
+"geospatial data. Configure the function of using CGI and give it the "
+"function of WebGIS. MapServer uses a configuration file to declare the "
+"size and format of the generated map, all paths, names, formats of the "
+"data used, and various more complex control options. This configuration "
+"file is called Mapfile. Mapfile is multi-layered, and each map file "
+"defines a large number of other objects. These objects include scale "
+"bars, legends, map colors, map names, map layers, and so on. There are "
+"more objects that need to be defined and will be discussed in more detail"
+" in the following sections. In addition, there is a comprehensive "
+"reference for special MapServer keywords."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:18
+msgid ""
+"The first application uses a simple Mapfile and does not actually "
+"generate a map， it generates a rectangular picture showing the word "
+"“Hello World”. This application is very simple, so configuration problems"
+" or errors can be easily found."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:23
+msgid ""
+"Each object is explained when it is used. The program does not use any "
+"resources, such as spatial data, symbols, fonts and so on. However, it "
+"needs space to store images. You will see how to specify the directory of"
+" images in MapServer and make sure that Apache can find this directory."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:30
+msgid "Grammar"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:32
+msgid "MapFile files ignore letter case"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:33
+msgid ""
+"Non-alphabetic strings or strings containing MapServer keywords must be "
+"enclosed in quotation marks. It is recommended that all strings be "
+"enclosed in double quotation marks."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:36
+msgid ""
+"File paths in MapFile can use absolute paths or relative paths, where "
+"relative paths are relative to ``SHAPEPATH``."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:38
+msgid ""
+"MapFile has a specific hierarchy, Map Object is the “root” of MapFile, "
+"and other objects are under it."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:40
+msgid ""
+"The comment in the MapFile file starts with ``#``, and the part from "
+"``#`` to the end of the line is the commented part, and the content of "
+"this part will be ignored when the program is executed. Writing notes is "
+"a good habit and recommended."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:45
+msgid ""
+"Add appropriate comments to your MapFile to make it easier for others to "
+"understand your file. Such as:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:58
+msgid ""
+"The syntax used for attribute names is ``[ATTRIBUTENAME]`` . Note: "
+"Property names are enclosed in square brackets and are case-sensitive. "
+"All attribute names in ESRI ShapeFiles (.dbf) are in uppercase, while in "
+"PostGIS all attribute names are in lowercase."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:63
+msgid ""
+"The use of regular expressions in MapServer depends on the C language "
+"library used by the operating system you are using. For more details, "
+"please refer to the reference documentation provided by the C library. "
+"Under Linux this library is GlibC, under this system you can use ``man 7 "
+"regex`` . These regular expressions are POSIX compliant, so under Windows"
+" users can search the Internet for “man 7 regex”."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:71
+msgid "INCLUDE"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:73
+msgid ""
+"As of MapServer 5.0, multiple MapFiles can be created using the "
+"``INCLUDE`` command, the files form a logically single file."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:76
+msgid "Example: Include mylayer.map mymap.map in the mymap.map file as follows"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:89
+msgid "The content of mylayer.map is as follows"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:103
+msgid "In this case, mymap.map is logically equivalent to:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:121
+msgid "CGI variable"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:123
+msgid ""
+"Variables are parameters that can be substituted in a MapFile file (same "
+"as variable types in programming languages, assignable values in a "
+"program, etc.). In this case, cookies and CGI parameter values are "
+"supported, which allows MapServer MapFiles to obtain user cookies (which "
+"enable secure authentication), or non-MapServer request parameters."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:129
+msgid "Syntax: ``%`` + ``variable name`` + ``%``"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:131
+msgid "Example 1: secure connection to spatial database"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:133
+msgid ""
+"You need access to a PostGIS database. The username and password were "
+"saved in cookies, ``uid`` and ``passwd`` in previous operations. Then in "
+"MapFile you can write:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:141
+msgid "Example 2: dealing with temporary files"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:143
+msgid ""
+"A program needs to generate the corresponding shapefile and store the "
+"produced data in the directory corresponding to the server user. "
+"``username`` can be obtained from a cookie, and ``filename`` can be "
+"obtained from the request parameter number."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:152
+msgid ""
+"Such parameters can only be used in the CGI version of MapServer, if you "
+"use MapScript, you need to come up with the corresponding logic to "
+"achieve this function."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:157
+msgid "“Maps” that do not use data"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:159
+msgid ""
+"Let’s take a look at the basic usage of MapServer without using any GIS "
+"data. The following figure shows the effect:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:166
+msgid "The codes for the picture shown above is :"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:172
+msgid ""
+"The above code is the basic usage of declaring images in HTML, but the "
+"parameters of ``src`` are not common image formats such as Jpeg, PNG, "
+"GIF, but the MapServer CGI program and some parameters. All you need to "
+"know here is that the MapServer CGI program will return an image based on"
+" these parameters, so the HTML image declaration above is actually "
+"nothing special; the mechanism will be explained later."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:180
+msgid "The basic usage of Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:182
+msgid ""
+"A Mapfile defines a collection of cartographic objects, which together "
+"determine the appearance and behavior of the map displayed on the page. "
+"It functions similarly to Apache’s ``httpd.conf`` configuration file. "
+"Based on the same geographic data, mapping applications can use different"
+" Mapfiles to present maps with different characteristics, corresponding "
+"to different user behaviors."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:189
+msgid ""
+"It may seem like a static configuration file would have limited "
+"functionality, but MapServer is designed so that using Mapfiles can "
+"produce very powerful applications."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:193
+msgid ""
+"The definition of a map file consists of key-value pairs. Some of the "
+"listed values are separated by spaces and must be enclosed in "
+"parentheses. Both single and double parentheses are fine."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:197
+msgid ""
+"Keyword values with embedded spaces must be enclosed, which is good "
+"practice for all strings."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:200
+msgid ""
+"At the same time, it should be noted that MapServer keywords are not "
+"case-sensitive, but some database retrieval methods are case-sensitive."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:203
+msgid "In MapServer, to generate the above picture, the Mapfile code is:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:210
+msgid "First Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:212
+msgid ""
+"The code is as follows, lines ``01`` to ``06`` establish the basic map "
+"image parameters. The keyword ``NAME`` defines the base name of any "
+"images created. Each time MapServer is called, it creates a unique "
+"identifier by concatenating the system time (i.e. the number of seconds "
+"since 1/1/1970 00:00:00) and the process ID. This unique identifier is "
+"appended to the basename to form the filename. Two or three character "
+"expansion (depending on file type), then append. In some cases, another "
+"string is inserted after the base name of the map server to distinguish "
+"the reference map image or legend image from the map image itself."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:222
+msgid ""
+"Keyword ``SIZE`` specifies the pixel size (width × height) of the map "
+"image."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:225
+msgid ""
+"``IMAGECOLOR`` sets the background color of the image to white (recall "
+"that the color is chosen on the map server by specifying three integer "
+"RGB component values between 0 and 255, and white is 255, 255, 255)."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:229
+msgid ""
+"Image type is set to ``PNG`` . It can also be used in Mapfile ``JPEG`` , "
+"or ``GIF`` Image."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:232
+msgid ""
+"Layer objects are defined under the map object. Before displaying a map, "
+"you need to define at least one layer in your map file. You can define as"
+" many layers as you want in MapServer. In older versions of MapServer, "
+"the upper limit of the number of layers is defined in the source code. "
+"``map.h`` Medium, limited to 100; You can remove this restriction by "
+"modifying the source code. However, this restriction is no longer "
+"available in commonly used Linux distributions."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:241
+msgid "Draw content"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:243
+msgid ""
+"MapServer now knows what kind of map to produce, including the size and "
+"background color, and how to display the map on a web page. But it’s not "
+"clear what to draw and how to draw-the work is done by the LAYER object."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:247
+msgid ""
+"The layer applies a single dataset and contains a series of elements, use"
+" specific projections (which will be included later in this book) to "
+"depict them on a specific scale. Layer with keyword ``LAYER`` Generate, "
+"with keyword ``END`` End."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:252
+msgid ""
+"Keyword ``STATUS`` Determines whether the layer is rendered. Default "
+"value ``Default`` It means it’s always rendered."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:255
+msgid ""
+"Each layer has a geometric type. In this example, the feature is a point "
+"feature (a pair of coordinate values), and the point feature is selected "
+"to simplify the example."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:259
+msgid ""
+"The value of the keyword TYPE is selected as ``POINT`` Layer types are "
+"described in more detail in the next chapter."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:262
+msgid ""
+"In order to generate maps, MapServer must have spatial data. Instead of "
+"using complex real-world data to describe a messy “Hello World” map, it "
+"is built with artificial coordinate points (0. 0,0. 0)."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:266
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:285
+msgid "Add the following to hello.map."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:268
+msgid ""
+"The keyword ``FEATURE`` specifies the associated geographic feature. "
+"Rather than reading records from a spatial database, FEATURE allows for "
+"the rapid creation of “features”."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:271
+msgid ""
+"The keyword ``FEATURE`` can only be used inside a LAYER object and must "
+"end with the keyword ``END``. Then specify the feature by the coordinate "
+"point."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:274
+msgid ""
+"The keyword ``POINTS`` describes the listed coordinate point pairs. "
+"Values are separated by spaces. Obviously, the number of values must be "
+"even. The listed values represent a single point (if there is only one "
+"coordinate pair), and can represent a line (if there are more than one "
+"pair)."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:279
+msgid ""
+"If the first pair of coordinates is the same as the last pair, then the "
+"value listed is the polygon (equal to the first and last point closing "
+"the figure). The keyword ``END`` ends."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:282
+msgid ""
+"The keyword ``TEXT`` specifies the text string used to label the feature."
+" Again, if there are spaces, they must be enclosed in quotes."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:287
+msgid ""
+"In each layer, one or more classes ( ``CLASS`` ) need to be defined. The "
+"default category without a specific selection will delineate all elements"
+" in the dataset. If selection criteria are specified, only content that "
+"meets the selection criteria will be depicted."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:291
+msgid ""
+"Labels, line shapes, annotation types, and colors for depicting features "
+"are all defined at the class level."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:293
+msgid ""
+"``STYLE`` objects define the properties of symbols used in classes to "
+"draw features. For simplicity, the value defines the color in this case. "
+"``STYLE`` objects are terminated by the keyword ``END``."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:296
+msgid ""
+"The keyword ``COLOR`` determines the color of the feature, by setting the"
+" ``RGB`` component to determine the color. The value is between "
+"``0-255``. Here, features are set as red dots with a default size of 1 "
+"pixel."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:300
+msgid ""
+"``CLASS`` also includes ``LABEL`` objects. The LABEL object is described "
+"within the class and specifies the font type, size and color of the "
+"label. Tags are far more complex than this, and are discussed in greater "
+"detail later in this book. Labels start with the keyword ``LABEL`` and "
+"end with ``END``."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:305
+msgid ""
+"The keyword ``TYPE`` determines the type of label font. There are two "
+"types: the ``bitmapped`` standard and the ``TrueType`` standard. "
+"Bitmapped fonts are generated internally without external references. "
+"TrueType must be installed and must also be determined by an alias in the"
+" file defined by the keyword FONTSET. For simplicity, the examples use "
+"bitmapped fonts."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:312
+msgid ""
+"Note that the default color for labels is black - of course it could be a"
+" different color, but for now the default is used to simplify the "
+"example."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:316
+msgid ""
+"The structure of the map file just shown is very simple, and the map it "
+"generates cannot be called a map at all. But it should paint a tagged "
+"image and display it on the web page."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:321
+msgid "View the result"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:323
+msgid "With MapFile, you can render it as a picture using the following command."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:326
+msgid ""
+"note: The ``map2img`` command is introduced in MapServer 8.0. It used to "
+"be ``shp2img`` ."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:4
+msgid "Release remote sensing images"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:6
+msgid "Let’s take a look at how to publish a three-band remote sensing image."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:9
+msgid "Conceptual differences between image, icon and picture"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:11
+msgid ""
+"Visualizations acquired by satellites or other sensor equipment are "
+"generally referred to as “image” rather than “icon.” The concept of "
+"“icon” has a broader connotation, and “image” is a kind of “icon”. Image "
+"and fihure together constitute the icon world. “Image” mainly refers to "
+"the replica image world formed by photography, television, film, digital "
+"imaging, computer painting, and network image, and of course, it also "
+"includes remote sensing means."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:19
+msgid ""
+"“Picture” refers to the flat media composed of graphics, images, etc. "
+"Note the definition here that “icon” is not a kind of “picture”. First of"
+" all, the picture is a medium (or medium) that actually exists (can be "
+"electronic); in addition, it is flat. “picture” is a form of expression "
+"of “icon”."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:26
+msgid "Add remote sensing image"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:28
+msgid ""
+"Similar to the Mapfile structure used earlier, but you need to define a "
+"remote sensing image data source:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:36
+msgid ""
+"``../geodata`` specified as MapServer will look for the base directory of"
+" the spatial dataset. The initial map range is determined by the "
+"coordinates of the specified southwest and northeast corners."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:40
+msgid "Here is the result:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:4
+msgid "Labeling on remote sensing images"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:7
+msgid "Mapfile code"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:9
+msgid "As follows:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:17
+msgid "Effect"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:19
+msgid "Here is the effect:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:4
+msgid "Use DEM data in MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:7
+msgid "Effect after direct addition"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:9
+msgid "|image0|"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:21
+msgid "image0"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:12
+msgid "Use ``Processing``"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:14
+msgid "|image1|"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:22
+msgid "image1"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:17
+msgid "Use ``CLASS``"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:19
+msgid "|image2|"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:23
+msgid "image2"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:4
+msgid "Usage process of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:6
+msgid ""
+"MapServer as a WebGIS solution. It is object-oriented, and the API "
+"organization of the basic profile MapFile and MapScript modules is "
+"object-based. MapServer supports distribution and interoperability by "
+"supporting several standards of the OGC Association. No matter using "
+"MapServer CGI module or server scripting language + MapScript, the "
+"dynamic interaction between server and client browser can be realized. "
+"The syntax for configuring MapFile files is simple and easy to learn, "
+"especially if you have experience of using desktop GIS software such as "
+"ArcMap to make thematic maps. Compared with commercial software, "
+"MapServer is open source, you can use it for free, and you can modify the"
+" source code as needed. It should be pointed out that MapServer, as an "
+"open source project, which is in continuous development; but in recent "
+"years, the function has been relatively perfect and the update is "
+"relatively small. The content of this website is based on Mapserver "
+"version 7. 0 and later."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:22
+msgid ""
+"Once the MapFile file is configured, you can use the MapServer CGI module"
+" or the MapScript module to develop WebGIS programs. The difference "
+"between them:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:26
+msgid ""
+"The work that needs to be done to use the MapServer CGI module: prepare "
+"the resources required by MapFile, configure MapFile, and design the user"
+" interface (ie html file, you can use scripting languages such as "
+"JavaScript to enhance interactivity). Server-side design is not possible "
+"because MapServer CGI itself is a customized server-side program. Of "
+"course, it is possible to make Map Server CGI have the desired features "
+"by modifying the source code."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:34
+msgid ""
+"Using the MapScript module requires other server-side solutions "
+"(referring to scripting languages), such as PHP (installed on the Web "
+"Server as a CGI module). The MapScript module, as a PHP extension module,"
+" is placed in the extensions directory of the PHP installation path. The "
+"MapScript module preserves the hierarchical object structure of the "
+"MapFile file and provides PHP with an API for the object structure. Then,"
+" the programmer can use PHP on the server side to flexibly choose to "
+"modify the MapFile file by calling the MapScript API; instead of being "
+"rigid like the MapServer CGI module. At the same time, combined with "
+"PHP’s support for many databases - non-spatial databases, such as Oracle,"
+" Sybase, MySQL, etc., it becomes easy to integrate spatial data and non-"
+"spatial data in WebGIS."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:48
+msgid ""
+"Languages supported by MapScript include PHP, Perl, Python, Java, Tcl, "
+"C#, etc."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:52
+msgid "Basic requirements of Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:54
+msgid ""
+"As you can see, the syntax of Mapfile is relatively simple. In general, "
+"the keywords and values of MapServer are not case-sensitive. In this "
+"book, however, the keywords are always uppercase and values are "
+"lowercase. This is for the sake of clarity and is not necessary. It is a "
+"good idea to assume that they are case-sensitive. However, you should be "
+"aware that in this case, it may be important that when you interact with "
+"a spatial dataset, the attribute values are still case-sensitive. For "
+"example, attribute names in the underlying database may be case-"
+"sensitive, so references to attributes that the expression contains will "
+"also be case-sensitive."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:71
+msgid ""
+"Strings that contain embedded spaces must be in quotation marks. Single "
+"or double quotation marks are acceptable, but they must be used in pairs."
+" You can’t let a string use two different quotation mark characters."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:77
+msgid "Analysis of MapServer Map File format"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:79
+msgid ""
+"MapServer configures the map to publish through a map file (mapfile). "
+"Mapfile is the core of MapServer, which organizes all kinds of map "
+"elements into a hierarchical object system. The mapfile defines the "
+"elements that make up the map and the relationships between them, and "
+"tells MapServer where to load the data and how to represent the data. In "
+"a Mapfile, a layer is a combination of data and styles; the data in it is"
+" a combination of spatial data and attribute data; styles are implemented"
+" through Class and Style objects."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:88
+msgid ""
+"Map files use ``#`` as line comment characters. The map files all use the"
+" keyword MAP as the beginning of the map object, and the keyword END as "
+"the end mark of the map object definition. The entire map file represents"
+" a map object. Between the MAP and END keys are key/value pairs "
+"describing the properties of the map object."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:94
+msgid ""
+"Map objects have many properties, such as map image format (IMAGETYPE), "
+"map size (SIZE), path to map data (SHAPEPATH), The extent of the map "
+"(EXTENT) and the symbol set (SYMBOLSET) and font set (FONTSET) used by "
+"the map."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:99
+msgid ""
+"Every map file must have at least one layer object. Users can define as "
+"many layers as they want, but MapServer has a default maximum layer limit"
+" of 100 layers. This parameter can be modified by modifying the ``map.h``"
+" file, However, after the modification is completed, MapServer needs to "
+"be recompiled before it can be used."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:105
+msgid ""
+"MapServer supports not only vector layers, but also raster image layers, "
+"such as GeoTIFF, JPEG, PNG and GIF. What is more noteworthy is that "
+"MapServer also supports WMS layers, that is, a layer that obtains map "
+"images from other WMS servers to form map objects."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:110
+msgid ""
+"Each layer also has some commonly used attributes such as layer name "
+"(NAME), dataset (DATA), type (TYPE) and whether to display (STATUS) and "
+"so on."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:114
+msgid ""
+"Each layer has one or more Class objects, which are used to classify the "
+"features in the layer. Usually, there is a keyword CLASSITEM in the layer"
+" object, which is used to specify a property field, so that layers can be"
+" divided into categories (Class) or themes (Theme) based on the value of "
+"this field. If the keyword CLASSITEM is specified in the layer object, a "
+"keyword EXPRESSION is required in each Class object to indicate the "
+"attribute value represented by the category. Class objects usually have a"
+" Name property."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:123
+msgid ""
+"Each Class object uses one or more Style objects to define the display "
+"style of this type of feature, such as the type of symbol (SYMBOL), the "
+"color of the fill (COLOR or OUTLINECOLOR), the size of the symbol (SIZE),"
+" and so on."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:129
+msgid "Structure of Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:131
+msgid ""
+"Mapfile consists of objects in a hierarchical structure. At the top of "
+"the hierarchy is the map object (that is, the Mapfile itself). Map "
+"objects contain both simple and structured projects. A simple project "
+"consists of key value pairs, and a structured project contains other "
+"projects, each of which can be simple or structural. You have seen "
+"examples of the structure of these two types of mapfile For example, "
+"first.map, discussed in Chapter 2, contains the following lines:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:144
+msgid ""
+"Each of these lines contains some simple mapfile objects. You will also "
+"notice that these keywords specify a value that makes the map as a whole "
+"meaningful. For example, the keyword name first sets the name of the map."
+" This keyword is used at the map level to specify a string that "
+"identifies all the maps produced in the mapfile’s process of generating "
+"the output file MapServer. Note, however, that a keyword can use the same"
+" name at other levels, and its function depends on where it’s used. "
+"Likewise, the scope of the keyword sets the scope of the entire map, so "
+"it must also be defined at the map hierarchy level. Like NAME, it can "
+"also be used at lower levels."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:155
+msgid ""
+"Note that if you are new to MapServer and user, using the same keywords "
+"(like name, template or color) at different levels in the mapfile can be "
+"confusing. When you’re familiar with the concept of mapfiles, this "
+"shouldn’t be a problem, in fact, you’ll appreciate that developers choose"
+" to define the same keywords at different levels with relatively similar "
+"concepts."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:162
+msgid "first.map including the following lines:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:172
+msgid ""
+"This is an example of a structured object. The Web object determines "
+"which HTML template MapServer will use, and where the template is "
+"located. The Web object is typically used to determine how MapServer "
+"responds to Web requests and can contain more keywords than those shown "
+"here. Due to the Web object definition is used to display the entire map,"
+" it makes sense to specify the map. However, the same keyword template "
+"can be used at a lower level, and its function is very different. A lot "
+"of MapServer objects can define maps, but now I’m going to introduce you "
+"to a layer object."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:183
+msgid "Using MapServer CGI module to develop WebGIS"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:185
+msgid ""
+"CGI is a set of rules that define the communication between a Web server "
+"and other software on the same machine. Other software that follows CGI "
+"communication rules is called CGI programs or CGI scripts. Web server can"
+" use CGI program to realize dynamic interaction function (Server-side). "
+"Usually, the CGI program runs on the server-side Mini Program and is "
+"called by the Web server. Process the data obtained from the web server "
+"(such as form data processing, query the database, etc.), and return the "
+"processing results to the web server:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:194
+msgid "Web servers-CGI programs-other software (such as databases)."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:196
+msgid ""
+"CGI programs can be written in any language, as long as they follow the "
+"CGI communication rules. Such as compilation languages: C, C++, etc.; "
+"scripting languages: Perl, Python, Bourne shell,Java, etc."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:200
+msgid ""
+"MapServer CGI module is a CGI program written in C language, which is "
+"very small. The core mapserv.exe of the MapServer CGI module is only "
+"36KB."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:204
+msgid ""
+"When the browser informs the Web Server to call the MapServer CGI module "
+"through the URL, the Web Server creates a process for the CGI module; the"
+" CGI module runs and loads the MapFile file specified by the URL, and "
+"reads the TEMPLATE file (HTML file) in the MapFile file. Replace the "
+"template substitutions of the CGI variables in the TEMPLATE file with "
+"specific values; after processing the TEMPLATE file, the CGI module "
+"returns the TEMPLATE file processing result (HTML file) to the Web "
+"Server, and the Web Server outputs the HTML file to on the user’s "
+"browser. At this time, the TEMPLATE file (HTML file) is used as the "
+"user’s interactive interface."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:215
+msgid "Basic steps to design WebGIS using MapServer CGI program:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:217
+msgid ""
+"Configure MapFile: Generally, the user interface used is specified in the"
+" TEMPLATE property of the Web Object. The user can also specify the user "
+"interface to use via the URL."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:221
+msgid ""
+"Design the initialization interface: Considering that the URL for "
+"accessing the CGI program (mapserv.exe) is very long, moreover, ordinary "
+"users do not know the URL format for accessing the CGI program "
+"(mapserv.exe); therefore, a link (URL) to the CGI program (mapserv.exe) "
+"is embedded in the initial interactive interface."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:227
+msgid ""
+"Design user interaction and interactive interface: Here we need to "
+"introduce the key concepts of MapServer CGI module: CGI variables and "
+"templates. MapServer CGI variable can be regarded as CGI module mapserv "
+"Exe interface. Calling CGI variables in URL or HTML forms can complete "
+"most dynamic interactions, such as layer selection, zooming in and out, "
+"etc."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:234
+msgid ""
+"Templates are HTML files or URLs. Templates contain CGI variables and its"
+" substitution variables, where the substitution variables (template "
+"substitutions) correspond to CGI variables one-to-one. Design user "
+"interactions and interactive interfaces, that is, use CGI variables and "
+"substitution variables in URLs or HTML files. So, since template "
+"substitutions correspond one-to-one with CGI variables, why introduce the"
+" concept of template substitutions? It’s a bit conceptually overkill "
+"indeed. However, the use of substitution variables can be used to "
+"indicate that a CGI variable has an empty value."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:244
+msgid ""
+"Examples of developing WebGIS using the MapServer CGI module will be "
+"provided in Appendix 2."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:248
+msgid "Developing WebGIS with MapScript Module"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:250
+msgid ""
+"CGI module programming is to use CGI variables and its substitution "
+"variables, and CGI modules are compiled programs (mapserv.exe); it is "
+"difficult to use CGI modules to achieve more complex dynamic "
+"interactions. Using other server-side scripting languages and MapScript "
+"can more easily implement complex WebGIS functions."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:256
+msgid ""
+"Here we will take the popular server-side scripting language PHP as an "
+"example to introduce the usage of MapScript modules. PHP is installed in "
+"the Web Server as a CGI program, the MapScript module is placed under the"
+" extensions in the PHP installation path, and the ``php.int`` file is "
+"configured to support the use of the MapScript module, and the "
+"PHP/Mapscript installation is completed. MapScript modules can be loaded "
+"using the function ``dl`` (“MapScript Module Name”) in a ``*.php`` file "
+"or ``*.phtml`` file. The API provided by the MapScript module is object-"
+"based, which organizes objects in MapFile into object interfaces. Object "
+"properties and methods can be called in ``*.php`` files or ``*.phtml`` "
+"files."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:268
+msgid ""
+"The source code of the program written by the author using PHP/MapScript "
+"will be provided in Appendix 3."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:272
+msgid "MapServer data processing flow"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:274
+msgid ""
+"The client sends the parameters and the required cgi program to "
+"MapServer. After MapServer receives the parameters sent by the client, it"
+" reads the mapfile file according to the mapfile path specified in the "
+"parameters. Read the relevant data according to the data path specified "
+"in the mapfile. Convert the read data to text data. This work is done by "
+"calling FreeType Font Engine with GD Graphics Library. After the graph is"
+" created, save it to the directory specified in the client parameters. "
+"According to the information defined in the mapfile, MapServer reads the "
+"specified template (template file), configures the html and screen "
+"display and related data, and creates and embeds graphics (such as scale "
+"size, sample image, reference text), Dynamically generated spatial "
+"infographics are embedded in templates to generate files that can be used"
+" by clients. Return to the client when done."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:289
+msgid "MapFile file"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:291
+msgid ""
+"Some tools for Mapfile, including VIM highlight tool, Sublime highlight "
+"tool."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:294
+msgid ""
+"MapFile files organize various map elements into object systems with "
+"hierarchical relationships. Data sources, data formats used, user "
+"interaction and support for the OGC protocol are also defined in MapFile."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:299
+msgid "MapObject"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:300
+msgid "Querymap"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:301
+msgid "Symbol"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:302
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:312
+msgid "Projection"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:303
+msgid "WebObject"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:304
+msgid "Reference Map"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:305
+msgid "Outputformat"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:306
+msgid "Scalebar"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:307
+msgid "Lengend"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:308
+msgid "Layer Object"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:309
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:310
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:315
+msgid "Label Object"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:311
+msgid "Feature"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:313
+msgid "Class Object"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:314
+msgid "Join Object"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:316
+msgid "Style Object"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:317
+msgid "Grid Object"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:322
+msgid ""
+"Objects and their hierarchical relationships in MapFile; note that some "
+"objects are omitted Object for drawing convenience"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:325
+msgid ""
+"The syntax of MapFile is simple. The keywords for MapFile include the "
+"object name (all the objects in figure 2), the object keyword, and the "
+"object closing tag “END”. Object names and object closing tag “END” are "
+"case-insensitive; attribute names are case-sensitive Shapfile files that "
+"configure ESRI should be uppercase, while PostGIS files are always "
+"lowercase. In MapFile files, the symbol ``#`` is used for single-line "
+"comments. MapFile files have a ``.map`` extension and can be written "
+"using various text editors."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:334
+msgid "Here is an example of MapFile:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:336
+msgid ""
+"Configuring a complete MapFile file requires: GIS data source, font file,"
+" symbol file. GIS data sources can be distributed on different computers:"
+" The font file is used to define the type of font used in the output map."
+" The point, line and face symbols used in the map can be defined in the "
+"Symbol object in the MapFile file; However, in order to achieve symbol "
+"reuse - without having to define the same symbols in different MapFile "
+"files, a separate symbol file is usually defined outside the MapFile."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:345
+msgid ""
+"Most of the objects in MapFile files either correspond to map elements, "
+"or are commonly used in GIS. Such as Lengend,Scalebar,Layer, etc. The "
+"function of these objects is obvious and easy to understand. The meaning "
+"of the objects and attributes in the MapFile file will be explained in "
+"detail in Appendix 1. Explain the meaning of four special objects here: "
+"Web Object,Outputformat Object,Query Object,Reference Map Object."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:352
+msgid ""
+"Web Object defines how to handle the web interface. Such as: the "
+"attribute IMAGEPATH defines the path to store temporary files and images,"
+" and TEMPLATE defines the interactive interface file used."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:355
+msgid ""
+"Outputformate Object defines the format of the output image. MapServer "
+"converts GIS data format files (such as shapefiles) into image formats "
+"supported by the MIME (Multipurpose Internet Mail Extensions) protocol, "
+"such as gif, png, jpeg, etc."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:359
+msgid ""
+"QueryMap Object defines the generation mechanism of query results. For "
+"example: the attribute STYLE (not an object) sets how the selected "
+"feature is displayed."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:362
+msgid ""
+"Reference Map Object defines how the reference map is created. MapServer "
+"supports three reference map types. The most common use of a reference "
+"map is as a map viewing window."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:366
+msgid ""
+"The query results can be observed using the reference map. When a point "
+"query occurs, a dot symbol is generated in the output Reference Map to "
+"indicate the location being queried. The area query generates a box in "
+"the Reference Map to indicate the query area. Feature queries display the"
+" features of the query in the Reference Map. In short, the Reference Map "
+"can be regarded as the observation window of the query [5]."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:373
+msgid "After planning the WebGIS website, configure the MapFile file steps:"
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:375
+msgid ""
+"Prepare the resources required by the MapFile file, including GIS data, "
+"font files, and symbol files."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:377
+msgid ""
+"According to the requirements of the WebGIS website, following the syntax"
+" of MapFile, use text editing software or special MapFile writing "
+"software such as MapLab to write MapFile."
+msgstr ""
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:380
+msgid ""
+"Use debugging software (such as MapLab) to test to see if the MapFile "
+"configuration is correct and appropriate."
+msgstr ""
+

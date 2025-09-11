@@ -1,0 +1,846 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:2
+msgid "CGI interaction of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:4
+msgid ""
+"So far, you can only view maps before creating maps. The general meaning "
+"of creating a Web mapping application is to create a map that can be "
+"changed by the user (the application). In other words, a user can change "
+"the content (or information) of the map. To do this, you need to use the "
+"MapServer HTML template."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:10
+msgid ""
+"The application will be interactive and allow users to zoom and roam the "
+"map image. You will see how to generate scale bars and legends, and how "
+"to embed valid information in the output HTML (similar to the size of the"
+" map and the coordinates of the mouse click). In other words, you will "
+"generate a “real” map application for the first time."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:16
+msgid ""
+"Also, in addition to being dynamic, scaleable maps also exhibit more ways"
+" of presenting detail in different ways."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:19
+msgid ""
+"This section explains more about the interoperation of CGI. Query "
+"function is also an important function of MapServer. But the design of "
+"MapServer is old, and the query function is clumsy to use. Only a simple "
+"description, more query functions, described in the later section of the "
+"map service."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:4
+msgid "MapSever interaction using CGI"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:6
+msgid ""
+"To map through the Mapfile configuration file, you have understood the "
+"basic ideas of maps, layers and classes, and know how the various parts "
+"of a Mapfile are combined. Now move on to an app that will offer full pan"
+" and zoom functionality, as well as the ability to toggle layers on and "
+"off."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:12
+msgid ""
+"So far, the map can only be viewed when the map is created. Creating a "
+"web mapping application usually means creating maps that can be changed "
+"by the user (of the application). That is, a user can change the content "
+"(or information) of the map. To do this interactively, we use the "
+"MapServer HTML template."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:18
+msgid ""
+"MapServer CGI is template based. When first executed in response to a web"
+" request, it reads a configuration file (Mapfile) that describes the "
+"map’s layers and other components. Then it draws and saves the map. Next,"
+" it reads one or more HTML template files identified in the Mapfile. Each"
+" template consists of traditional HTML markup tags and special MapServer "
+"replacement strings. For example, these strings are used to specify paths"
+" to map images created by MapServer, identify layers to render, and "
+"specify zoom levels and orientations. MapServer replaces the current "
+"values of these strings and sends the data stream to the web server, "
+"which then forwards it to the browser. When the requester changes any "
+"form element on the page (for example, by changing the zoom direction or "
+"zoom value) and clicks the submit button, MapServer will receive requests"
+" with these new values from the web server. Then the cycle starts again."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:34
+msgid "Technical note on network access of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:36
+msgid ""
+"Your original purpose is to generate maps in a CGI environment where "
+"users connect to the Apache web server through a web browser. In this "
+"environment, Apache calls MapServer, which can pass various forms of "
+"variables from the browser."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:41
+msgid ""
+"Using this information, MapServer generates maps and web pages, which "
+"Apache returns to the browser. Of course, it is not enough for MapServer "
+"to generate a map only from the browser’s information."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:45
+msgid ""
+"In fact, CGI MapServer network applications have four components: Map "
+"files, HTML initialization forms, one or more template files, and spatial"
+" data (libraries)."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:49
+msgid ""
+"Note: Web applications can provide fixed content for static pages, as "
+"well as dynamic content through scripts in response to web forms, as well"
+" as database queries and other functions."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:53
+msgid ""
+"The standard that determines the interaction between these scripts and "
+"the Web server is called the universal gateway interface, which is "
+"usually abbreviated to CGI."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:57
+msgid ""
+"These four components are discussed in this chapter. The premise is that "
+"the user’s web browser has already displayed the initialized file."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:60
+msgid ""
+"MapServer, like all web applications, is based on a stateless protocol - "
+"that is, on each call, it only knows what information the browser "
+"communicates to it. Stateless protocols preclude using programs to answer"
+" anything other than the last question. However, some clever code can "
+"provide a stateful environment that enables web applications to do more "
+"complex work. For example, state can be maintained between calls by "
+"storing state information in a variable in a hidden form, such as in a "
+"URL or a cookie. But some methods need to bootstrap the program, so it "
+"contains the information needed for the first call."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:70
+msgid ""
+"In MapServer, this is done by initializing the file. In CGI MapServer "
+"applications, initialization files are traditional HTML forms that have "
+"initialization information that converts hard-coding into form variables."
+" Almost all values used by MapServer can be set in the initialization "
+"file."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:76
+msgid ""
+"When Apache first calls MapServer using HTML’s initialization form, the "
+"form variable is used to specify the name of the map file (the extension "
+"is usually ``.map`` )."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:80
+msgid ""
+"It then finds the fonts, symbols, templates, and spatial data of the "
+"file. The map file also specifies the size and geographical range of the "
+"final map, and whether the map is in GIF,JPEG or PNG format. After "
+"reading the map file, MapServer renders one or more images: the map "
+"itself, legends and scale bars, and possibly a reference map. It stores "
+"these images in a specified location in the map file."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:87
+msgid ""
+"In order to show the results, MapServer needs to design the map format "
+"and organize the relevant elements to make it a web page. The program "
+"itself does not generate HTML; instead, it scans the HTML template to "
+"replace the string. String substitution can refer to files, details of "
+"map geometry, layer specifications, or scaling factors. They can also be "
+"constants of CGI variables, such as image size, name of the map file, map"
+" range, and so on."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:95
+msgid ""
+"MapServer replaces the string with the appropriate value and returns the "
+"modified HTML to the browser that requested the information."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:98
+msgid ""
+"In this chapter, you will build a map application to illustrate the "
+"simplicity of using MpaServer and how the components work together."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:101
+msgid ""
+"The following chapters will introduce the features of MapServer "
+"(projection, tile retrieval, notation, query, etc.), which will make the "
+"capabilities of MapServer more obvious."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:106
+msgid "MapServer application development through CGI"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:108
+msgid ""
+"MapServer provides two development interfaces: CGI and MapScript. CGI is "
+"the most basic method for MapServer application development. In CGI mode,"
+" MapServer uses the GD library to convert spatial data into geographic "
+"graphics and transmit them back to the user’s browser. Users do not need "
+"to install any specific browsing program to operate on it through the "
+"browser."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:115
+msgid ""
+"The user can send a request directly to the MapServer server through a "
+"URL similar to the following, and MapServer creates the appropriate map "
+"image according to the requested parameters, and returns the result to "
+"the user’s browser:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:124
+msgid ""
+"where ``/cgi-bin/mapserv`` is the MapServer CGI program. ``?`` is "
+"followed by a query string consisting of MapServer CGI parameters such as"
+" ``map`` , ``layer`` , and ``mode`` . The ``map`` parameter specifies the"
+" map file to be processed by MapServer, the ``layer`` parameter tells "
+"``mapserv`` to display the layer, and the ``mode`` parameter tells "
+"``mapserv`` to generate a static map image."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:131
+msgid ""
+"Alternatively, dynamic, interactive maps can be generated by specifying "
+"the value of the ``mode`` parameter to the browser. At this time, when "
+"the user clicks on the map, MapServer will generate a zoom-in, zoom-out "
+"or repositioning map centered on the user’s clicked location."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:136
+msgid ""
+"Generating a dynamic map requires an HTML template with a form to "
+"interact with the user."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:139
+msgid "A simple form is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:164
+msgid ""
+"A MapServer HTML template is an HTML-formatted file with MapServer tags. "
+"MapServer tags are MapServer CGI variables enclosed in square brackets "
+"(``[]``), such as ``[map]``, ``[img]``, and ``[mapext]``, etc., which "
+"represent Map file, map image URL, and extent of the map. Through HTML "
+"templates, MapServer CGI programming can be greatly simplified."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:170
+msgid ""
+"When the MapServer CGI program receives the request from the MapServer "
+"HTML template, The parameters are first parsed, the request is processed "
+"and the necessary output is generated, then some of these outputs are "
+"replaced with the corresponding MapServer tags (variables) in the HTML "
+"template, and finally the HTML (template) file with the output results is"
+" returned to the client browser. Since the map in the template is "
+"returned as a form element, the user can interact with it."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:178
+msgid ""
+"MapServer provides many CGI variables for Web mapping. Almost all "
+"keywords in MapServer’s map files can be defined as a variable, but there"
+" are not many CGI variables in the core of mapping. In addition, users "
+"can also customize variables, such as users can define a variable named "
+"``root``, which is used to represent the root directory of the "
+"application."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:185
+msgid ""
+"MMap browsing can only rely on MapServer to provide the basic functions "
+"of Web mapping services. In addition, MapServer also provides powerful "
+"spatial and attribute query functions. In CGI mode, HTML templates are "
+"used extensively to construct queries and organize the information "
+"returned by queries, which often involves complex interactions with map "
+"files, templates, and MapServer CGI programs."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:192
+msgid ""
+"MapServer has many modes ( ``mode``, and browse ( ``browse`` ) mode is "
+"the default mode of MapServer. There are 18 modes related to queries. By "
+"using these query modes, MapServer can implement points such as: querying"
+" points based on mouse position, querying points based on input "
+"coordinate values, querying attributes by inputting an expression, and "
+"querying based on the serial number of elements."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:199
+msgid ""
+"MapServer creates legends and scales (configurable in mapfile) and "
+"generates reference maps. The reference map displays the context of the "
+"currently displayed map. Zooming and panning are controlled by the user."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:204
+msgid "MapServer HTML template"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:206
+msgid ""
+"With the MapServer HTML template, you need to add the MapServers template"
+" declaration to each HTML template file. Otherwise, when using "
+"GetFeatureInfo (with an info_format collection) as the text/html request,"
+" you will get the following error message:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:216
+msgid "You need to add at the beginning of each template:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:222
+msgid "Example the exemplar template query footer.html is:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:228
+msgid ""
+"A MapServer HTML template is actually a MapServer-specific HTML file – "
+"these table tags are MapServer CGI variables enclosed in ``[]``. When a "
+"MapServer CGI program processes an application, it first parses the "
+"``query_string`` and map file, and produces the necessary output. These "
+"outputs need to be written in an HTML template file, which must be "
+"defined in the Mapfile by using the web template keyword (or in a "
+"separate HTML initialization file). The CGI program will replace all "
+"variables in the HTML template with appropriate values before sending it "
+"to the web browser. If you view the contents of the HTML template "
+"directly on a web browser, there will be no maps available, but empty "
+"images and other characters of unknown meaning."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:240
+msgid ""
+"MapServer’s network mapping provides some variables – ``img`` variables, "
+"which have been examples before, where several commonly used CGI "
+"variables are designed as part of the initialization of the map "
+"interface, but actually all MapFile parameters can be defined as "
+"variables."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:246
+msgid ""
+"An explicit reference to CGI variables is at: "
+"http://www.mapserver.org/cgi/index.html"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:249
+msgid ""
+"The CGI variables used by MapServer can also be defined by the developer "
+"and MapServer will pass it to the application. For example, we could "
+"create a variable called ``root`` to represent our root directory for "
+"this tutorial – the value of ``root`` will be read by ``/tutorial`` . "
+"When the MapServer CGI value processes our HTML template, it will replace"
+" every instance of the ``[root]`` tag and ``/tutorial``. You’ll see this "
+"in action in each of the following examples."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:4
+msgid "Interactive Map and Browse Model"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:7
+msgid "View examples"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:14
+msgid ""
+"The map above is in ``map`` Generated in mode. It is a static map "
+"(nothing changes when you click)."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:17
+msgid "But open the map below and you can use mouse clicks to interoperate."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:19
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=browse"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:22
+msgid "Submit CGI variables using Post form"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:24
+msgid ""
+"Previously, you put all the parameters needed by MapServer in URL, which "
+"is the way to use parameters explicitly, but it can cause the URL to "
+"become very long."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:29
+msgid "Instruction"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:31
+msgid "Another way is to use a form to submit parameters. Here is a form:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:54
+msgid "POST form"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:56
+msgid "This part of the code is as follows"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:68
+msgid "With POST submission, the parameters need to be placed in the form."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:85
+msgid "Mapfile and template file description"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:88
+msgid "Mapfile description"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:90
+msgid "Now, take a look at Mapfile:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:97
+msgid ""
+"Compared to static maps, only the following line is actually added to "
+"Mapfile:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:104
+msgid ""
+"This tells MapServer to use the page ``example1-9.html`` as the template "
+"file. MapServer will process this file and replace the tags it encounters"
+" before sending it to the web browser. This is the mechanism by which "
+"MapServer implements dynamic pages."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:109
+msgid ""
+"The above code snippet defines the parameters of the Web object, starting"
+" with the keyword ``WEB`` and ending with the keyword ``END``. The "
+"``WEB`` object tells the map server the name of the HTML template file "
+"(in this case, only one, named ``example1-9.html`` ), the paths to the "
+"images to create, and the URLs to point to those images. As before, "
+"IMAGEPATH specifies the path to images created by MapServer. In this case"
+" you use absolute paths, but you can also use relative paths from the "
+"location of the mapfile. Note that you cannot remove the leading or final"
+" slash ``/`` from the IMAGEURL. The string defined by IMAGEURL is "
+"appended to the base URL (ie, http://localhost ) to generate the URL for "
+"the image rendered on the page."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:121
+msgid ""
+"Note that if you’re not sure about the importance of ``/``, or what "
+"Apache’s ``DocumentRoot`` is, you can look it up at "
+"http://httpd.apache.org/docs/mod/core.html#documentroot."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:126
+msgid "HTML file"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:128
+msgid ""
+"In the template file, in addition to the HTML text content, the key is "
+"the form code block within this page (right-click on your browser page "
+"and select “View Source” or something similar):"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:132
+msgid "Now, let’s build an interactive interface for our application."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:134
+msgid ""
+"The following shows the use of a form for submission, with various "
+"parameters passed through the input control."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:143
+msgid ""
+"Each time the user clicks the map, this block executes the MapServer CGI "
+"program ( ``/cgi-bin/mapserv`` ). The program here can be defined using "
+"the following:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:151
+msgid ""
+"The following two variables are user-defined variables. If it finds the "
+"correct tag within square brackets ``[]``, MapServer will pass its value "
+"to the HTML template."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:155
+msgid ""
+"``map`` And ``layer`` Variables are MapServer internal variables. They "
+"are required for MapServer mapping applications."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:180
+msgid ""
+"The ``map_web_template`` variable will replace the TEMPLATE parameter in "
+"the WEB object in the Mapfile."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:183
+msgid ""
+"The map is actually in another form. ``input`` Using the following code "
+"to represent:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:190
+msgid ""
+"The items in square brackets (``[map]`` , ``[mapext]`` , and ``[img]`` ) "
+"are so-called MapServer tags - these are MapServer CGI variables, which "
+"are MapServer CGI program for assignment. The label ``[map]`` is a "
+"placeholder for the Mapfile path, so when MapServer runs, it will be "
+"replaced with ``\"/owg/mfc1.map\"`` . The label ``[mapext]`` will be "
+"replaced with the current map extent, which will change as you click on "
+"the map; The ``[img]`` tag will be replaced with the path to the image "
+"created by the MapServer CGI program, and the name will be passed to the "
+"client after MapServer renders the image on the server side. On the "
+"server, the path ``IMAGEPATH`` ( ``/owg/ms_tmp/`` ) must exist and have "
+"appropriate permissions. You can check to see if the image exists (on the"
+" server) under the ``IMAGEPATH`` ( ``/owg/ms_tmp/`` ) path in MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:204
+msgid ""
+"Note that the above call also has a hidden variable ``\"mode\"`` with the"
+" value ``\"browse\"\"``, which tells MapServer to create and store images"
+" in the ``tmp`` directory. Then, this Images are referenced as ``[img]``,"
+" which is what you see in the browser."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:210
+msgid "Requirements for MapServer template files"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:212
+msgid ""
+"The MapServer template file must contain the specific string ``mapserver "
+"template`` on the first line, usually given in the form of HTML, "
+"JavasSript or XML comments. This line is not passed to the client. This "
+"particular string is not case sensitive."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:217
+msgid ""
+"MapServer’s template file name suffix is limited. The available suffixes "
+"are: ``.gml`` , ``.html`` , ``.htm`` , ``.js`` , ``.kml`` , ``.svg`` , "
+"``.tmpl`` , ``.wml`` , ``.xml`` ."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:222
+msgid "CGI variable"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:224
+msgid ""
+"All CGI parameters can replace references, MapServer specific parameters,"
+" and user-defined parameters in the template. In principle, parameters "
+"are passed directly by MapServer without any processing. This feature is "
+"critical to implementing MapServer applications."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:229
+msgid ""
+"The following reference lists only the template placeholder-specific "
+"strings needed to obtain information about MapServer modifications, such "
+"as new scale bars, query results, and so on."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:233
+msgid "The placeholder string for the template is case-sensitive."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:235
+msgid ""
+"The property item substitution must be the same as the item name in the "
+"dbase file."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:238
+msgid ""
+"ArcView and ArcInfo usually generate dbase files with project names all "
+"in uppercase. When the template is URL, apply the appropriate URL "
+"encoding (that is, ``' '`` To ``'+'`` )."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:242
+msgid ""
+"Some placeholder strings can also be provided in escaped form, such as "
+"URL encoding."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:246
+msgid "Special character"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:248
+msgid ""
+"A template is simply an HTML file or URL string that contains special "
+"characters replaced by mapserv each time the template is processed. "
+"Simple substitution allows information such as the active layer or space "
+"range to be passed from the user to mapserv and back again. In most "
+"cases, the new value is dumped into the form variable that will be passed"
+" again. Here is a list of special characters and form variables. HTML "
+"templates can contain anything, including JavaScript and Java calls."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:257
+msgid ""
+"In HTML files, attribute values can be enclosed in quotation marks "
+"(``\"\"``). Writing property values within quotes allows you to set "
+"special characters that the value does not normally use (such as: ``]``, "
+"``=``, ``\"``, and spaces. To write single quotes within the property "
+"value, only Use two quotation marks (``\"\"``)."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:4
+msgid "MapServer interaction: browse and zoom control"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:6
+msgid ""
+"This section introduces how to realize the control of map browsing and "
+"zooming through CGI in MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:10
+msgid "How to browse and zoom"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:12
+msgid ""
+"As in the previous map, we pass our mapfile path and other parameters ( "
+"``map=/ms4w/apps/tutorial/htdocs/example2-1.map&amp;mode=browse`` ) "
+"Initialize our application MapServ ( ``/cgi-bin/mapserv`` ). Here is a "
+"link:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:17
+msgid ""
+"`Open sample map 1 <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=topo&zoom=0&map_web=template+example2-1.html>`__"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:20
+msgid ""
+"In Mapfile, you need to add: ``TEMPLATEPATTERN '.'`` ，otherwise, it may "
+"appear:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:27
+msgid "For clarity, use the Python code to list the parameters as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:44
+msgid ""
+"`Open sample Map 2 <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=topo&layer=states_line&zoom=0&map_web=template+example2-1.html>`__"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:47
+msgid ""
+"If you want to use multiple layers, use the ``layer`` parameter multiple "
+"times. But the same template file can be used."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:66
+msgid "This example seems to have no new knowledge points."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:68
+msgid ""
+"`Open the sample map <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfc2.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=states&zoom=0&map_web=template+example2-1.html>`__"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:71
+msgid ""
+"This time we use ``browse`` mode instead of ``map`` mode. The ``browse`` "
+"mode tells MapServer to create a map (image) on the ``/tmp/`` directory. "
+"The path and name of the image are referenced by MapServer under the name"
+" ``img`` . When MapServer parses the HTML template, it replaces the "
+"``[img]`` tag with the correct path to the image: ``img``."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:77
+msgid ""
+"There are a few things you can do with this map. First, click on any part"
+" of the image and the map will refresh and center the clicked point. This"
+" is panning. If you click the ``Map Control`` drop-down box, you can "
+"choose a ``zoom in`` or ``zoom out`` value. If you set it to ``Zoom In "
+"2x`` and then click on any part of the map, the map will be refreshed, "
+"zoomed in, and the clicked point will be centered. If you zoom out, the "
+"opposite happens. When you select a “Zoom In” or “Zoom Out” value and "
+"click the “Refresh” button, the map zooms in or out from the center of "
+"the previous map. You can refresh the map at any time using the refresh "
+"button."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:88
+msgid ""
+"The zoom/pan controls use internal MapServer CGI variables. This example "
+"shows how to use the “scale” variable. The value of zoom determines how "
+"far to zoom in or out. If the value is ‘0’, MapServer will reposition the"
+" image based on the user’s mouse click. If the value is greater than “0”,"
+" the CGI program zooms in (the current scale of the map multiplied by the"
+" zoom value). If it is negative, the CGI program zooms out (divides the "
+"current scale by the zoom value). Other variables that can be used to "
+"control zoom and pan are “zoomdir” and “zoomsize”. These two variables "
+"are almost the same as “zoom” - “zoomdir” controls the zoom direction, "
+"and “zoomsize” controls how far to zoom in or out. Check out the OSGeo "
+"Gallery or other examples in the MapServer wiki for other zoom/pan "
+"control options."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:101
+msgid ""
+"Try changing the “map mode” from ``browse`` to ``map``. What happens "
+"after hitting refresh? Remember, when we use ``mode=map``, MapServer "
+"returns a static map…it ignores the HTML template and just streams the "
+"map image directly to the browser."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:106
+msgid ""
+"Although more data layers have been added, it is still similar to Mapfile"
+" in part 1."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:109
+msgid ""
+"Now, look at the HTML template file. You’ll notice that it’s essentially "
+"an HTML form that calls a MapServer CGI program. Because it’s a form, you"
+" can implement your interface with radio buttons and checkboxes and "
+"dropdown boxes. Don’t be limited by this example - creativity is fine. ;)"
+" For more information, check out the HTML Template Reference page."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:116
+msgid "Pan and zoom map in WebGIS map: POST form submission"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:118
+msgid ""
+"The following shows the use of a form for submission, with various "
+"parameters through the ``input`` To pass on. The effect is the same as "
+"above:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:151
+msgid "View Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:153
+msgid "Take a look at Mapfile here:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:3
+msgid "MapServer interaction: layer control"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:6
+msgid "Author: bukun"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:7
+msgid "Update: 2022-10-7"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:10
+msgid "How to control layers"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:12
+msgid ""
+"Being able to turn map layers on and off is a standard feature of web "
+"mapping applications. There are many ways to accomplish this using form "
+"objects as control. You can use the drop box/menu, check boxes, and/or "
+"radio buttons. In this example you'll see how to implement layer "
+"selection using check boxes and drop boxes."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:17
+msgid "Here is the corresponding Mapfile:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:23
+msgid ""
+"Notice how the layer ``STATUS`` has been changed to ``OFF`` except for "
+"the \"States\" polygon background. The states background was left as "
+"default so our map will always have something when drawn without any "
+"layers turned on. The users of our application should have control of "
+"which layers to turn on or leave off."
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:29
+msgid ""
+"You'll understand how the layers are turned on/off by MapServ if you look"
+" at the:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:64
+msgid "Open and close map layers"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:66
+msgid "The demo could be opened directly via the following link:"
+msgstr ""
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:74
+msgid ""
+"The following shows a form submission, and various parameters are passed "
+"through the hidden `input` control. The effect is the same as above："
+msgstr ""
+

@@ -1,0 +1,1102 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2025-09-11 11:28+0800\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../webgis-src/chb5_mapserver-wms/chapter.rst:2
+msgid "Use of WMS in MapServer"
+msgstr "WMS在MapServer中的应用"
+
+#: ../../webgis-src/chb5_mapserver-wms/chapter.rst:4
+msgid ""
+"For many years, the standardization and interoperability of GIS "
+"applications have been concerned and actively engaged in by all "
+"organizations and individuals, including governments, enterprises, "
+"institutions and groups. Under the common concern of the whole society "
+"represented by OGC, the standardization work of GIS industry, including "
+"WebGIS, has made great progress."
+msgstr "多年来，地理信息系统应用的标准化和互操作性一直受到包括政府、企业、机构和团体在内的所有组织和个人的关注和积极参与。在以OGC为代表的全社会共同关注下，包括WebGIS在内的地理信息系统行业标准化工作取得了长足的进步。"
+
+#: ../../webgis-src/chb5_mapserver-wms/chapter.rst:11
+msgid ""
+"The functions of MapServer are all introduced in a more traditional way. "
+"At present, the form of WebGIS may be more in the form of map services, "
+"and MapServer also supports most map services at present. The most basic "
+"of these is WMS, used for map publishing."
+msgstr "MapServer的功能都是以更传统的方式介绍的。目前，WebGIS的形式可能更多是地图服务的形式，MapServer目前也支持大部分地图服务。其中最基本的是WMS，用于地图发布。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:4
+msgid "OWSlib Introduction and Installation"
+msgstr "OWSlib简介和安装"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:7
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:7
+msgid "Introduction"
+msgstr "引言"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:9
+msgid ""
+"OWSLib is a Python package for client programming with an Open Geospatial"
+" Alliance (OGC) Web Service (OWS) interface standard and its associated "
+"content model."
+msgstr "OWSLib是一个Python包，用于使用开放地理空间联盟(OGC)Web服务(OWS)接口标准及其关联的内容模型进行客户端编程。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:13
+msgid ""
+"OWSLib was originally included in PCL, but was presented as a separate "
+"project in r481."
+msgstr "OWSLib最初包含在PCL中，但在r481中作为一个单独的项目出现。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:16
+msgid ""
+"OGC Web Services Tool Library, Python package uses OGC maps, features, "
+"and overlay services. OWSLib provides generic API access GetCapabilities,"
+" service metadata and packaging to get maps, and GETFEATURE requests."
+msgstr ""
+"OGC "
+"Web服务工具库，Python包使用OGC地图、要素和覆盖服务。OWSLib提供通用API访问GetCapability、服务元数据和打包以获取地图，以及GETFEATURE请求。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:22
+msgid "Installation"
+msgstr "安装"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:4
+msgid "WMS service with ``GetCapabilities`` access"
+msgstr "WMS服务，带  ``GetCapabilities`` 访问"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:6
+msgid ""
+"Web Map Service (Web Map Service,WMS) generates “maps” about geospatial "
+"data, which belongs to the specification published by OGC. A map is a "
+"visual description of geographic data, not geographic data itself. Web "
+"map service provides unified access to the interface supported by the map"
+" server through the Web client on the Internet."
+msgstr ""
+"Web地图服务(Web Map "
+"Service，WMS)生成有关地理空间数据的“地图”，属于OGC发布的规范。地图是地理数据的可视化描述，而不是地理数据本身。Web地图服务通过互联网上的Web客户端提供对地图服务器支持的界面的统一访问。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:13
+msgid "Instruction"
+msgstr "说明"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:15
+msgid ""
+"The basic web map service provides 4 interfaces ``GetCapabilities``, "
+"``GetMap``, ``GetFeaturelnfo`` and ``DescribeLayer`` to support the "
+"creation and display of registered and layered, map-like view information"
+" , these views come from multiple service sources, both remote and "
+"heterogeneous."
+msgstr ""
+"基本Web地图服务提供4个界面  ``GetCapabilities`` ，  ``GetMap`` ，  ``GetFeaturelnfo`` "
+"和  ``DescribeLayer`` "
+"为了支持创建和显示已注册的、分层的、类似地图的视图信息，这些视图来自多个服务来源，既有远程的，也有异类的。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:21
+msgid ""
+"When requesting a map, the client can specify the information displayed "
+"on the map, layer styles, bounds, projection or spatial reference system,"
+" as well as output format, image size, background transparency and color,"
+" etc. When generating maps with the same BBox (bounding rectangle), SRS "
+"(spatial reference system) and dimensions, these maps can be overlaid to "
+"further generate a composite map. WMS supports the creation of a network "
+"of distributed map services so that clients can generate custom maps."
+msgstr "在请求地图时，客户端可以指定地图上显示的信息、层样式、边界、投影或空间参考系，以及输出格式、图像大小、背景透明度和颜色等。当生成具有相同BBox(边界矩形)、SRS(空间参考系)和尺寸的地图时，可以将这些地图叠加以进一步生成复合地图。WMS支持创建分布式地图服务网络，以便客户端可以生成定制地图。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:30
+msgid "The basic Web mapping service mainly provides the following functions:"
+msgstr "基本的Web地图服务主要提供以下功能："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:32
+msgid ""
+"Other programs can provide information about map services: what it can do"
+" and what can be further queried."
+msgstr "其他程序可以提供有关地图服务的信息：它可以做什么，可以进一步查询什么。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:34
+msgid ""
+"A map can be dynamically constructed in the form of pictures, graphic "
+"element sets or geographic element data sets."
+msgstr "地图可以以图片、图形元素集或地理元素数据集的形式动态构建。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:36
+msgid "Answer basic queries about map content."
+msgstr "回答有关地图内容的基本问题。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:37
+msgid ""
+"The advanced web map server supports the combination with cascading map "
+"servers and style layer descriptors."
+msgstr "先进的Web地图服务器支持与级联地图服务器和样式层描述符的组合。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:40
+msgid ""
+"The stacked map server aggregates the contents of multiple independent "
+"map servers into one server, and provides other servers with functions "
+"such as output format conversion, coordinate conversion and so on."
+msgstr "堆叠式地图服务器将多个独立地图服务器的内容聚合到一个服务器中，并为其他服务器提供输出格式转换、坐标转换等功能。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:44
+msgid ""
+"The style layer descriptor (Styled-Layer Descriptor,SLD) allows you to "
+"define symbols for feature data, rather than the established named layers"
+" and their styles. SLD is an extension of WMS. WMS services that support "
+"SLD get elements from WFS. The map is then drawn using the style "
+"information provided by the user. The style layer descriptor adds "
+"operations that are not supported by basic WMS: ``DescribeLayer`` 、 "
+"``GetLegendGraphic`` 、 ``GetStyles`` And ``PutStyles`` ."
+msgstr ""
+"使用样式图层描述符(Styleed-Layer "
+"Descriptor，SLD)可以定义要素数据的符号，而不是已建立的命名图层及其样式。SLD是WMS的扩展。支持SLD的WMS服务从WFS获取元素。然后使用用户提供的样式信息绘制地图。样式层描述符添加了基本WMS不支持的操作："
+"  ``DescribeLayer`` 、  ``GetLegendGraphic`` 、  ``GetStyles`` 和  "
+"``PutStyles`` 。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:52
+msgid ""
+"It is explained here that the WMS service is published using MapServer. "
+"As explained in the previous section, a Mapfile corresponds to a map. "
+"Through WMS access, you can access layer information in Mapfile more "
+"flexibly. The map design function of Mapfile is enhanced to a service "
+"function."
+msgstr ""
+"这里解释了WMS服务是使用MapServer发布的。正如上一节所解释的，映射文件对应于映射。通过WMS Access，可以更灵活地访问 "
+"Mapfile 中的图层信息。将Mapfile的地图设计功能增强为服务功能。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:59
+msgid "Access the WMS service"
+msgstr "访问WMS服务"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:61
+msgid ""
+"Since each WMS is independent, a description of the respective functions "
+"must be provided. This “service metadata” enables each client to "
+"formulate legitimate requests and to construct a queryable directory to "
+"guide clients to specific WMSes. ``GetCapabilities`` allows a client (or "
+"client agent) to request a WMS to reveal its mapping content and "
+"processing capabilities. The returned result is an XML document that "
+"describes the content of the service information and the parameters that "
+"can be requested; in the case of a specific WMS, general information "
+"about the service itself and specific information about the available "
+"maps are returned."
+msgstr ""
+"由于每个WMS都是独立的，因此必须提供相应功能的说明。此“服务元数据”使每个客户端能够制定合法的请求并构建可查询的目录，以将客户端引导到特定的WMS。"
+"  ``GetCapabilities`` "
+"允许客户端(或客户端代理)请求WMS显示其映射内容和处理能力。返回的结果是一个描述服务信息内容和可以请求的参数的XML文档；对于特定的WMS，返回关于服务本身的一般信息和关于可用地图的特定信息。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:72
+msgid ""
+"This Mapfile is configured with the WMS service. The contents of Mapfile "
+"``mfb1.map`` is:"
+msgstr "此映射文件使用WMS服务进行配置。映射文件的内容  ``mfb1.map`` 是："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:80
+msgid "With the front ``mfa1.map`` Compared to:"
+msgstr "带着正面  ``mfa1.map`` 与以下内容相比："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:83
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:57
+msgid "`diff_mfb1_mfa1.html <diff_mfb1_mfa1.html>`_"
+msgstr "`diff_mfb1_mfa1.html <diff_mfb1_mfa1.html>`_"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:86
+msgid ""
+"Note the version ``1.3.0`` here. OGC’s WMS has two major versions, "
+"``1.1.1`` and ``1.3.0``. If you use ``1.1.1``, you may be prompted to "
+"save the file after accessing, and you will find that it is an XML format"
+" file after saving. With ``1.3.0`` , it will be opened directly in the "
+"browser."
+msgstr ""
+"请注意版本  ``1.3.0`` 这里。OGC的WMS有两个主要版本，  ``1.1.1`` 和  ``1.3.0`` 。如果您使用  "
+"``1.1.1`` ，访问后可能会提示您保存该文件，保存后会发现它是一个XML格式的文件。使用  ``1.3.0`` ，它将直接在浏览器中打开。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:93
+msgid "``GetCapabilities`` access"
+msgstr "``GetCapabilities`` 访问"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:95
+msgid "Open a link"
+msgstr "打开链接"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:97
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:100
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:67
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:74
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:81
+msgid "View the map"
+msgstr "查看地图"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:102
+msgid ""
+"MapServer supports returning maps from the beginning, and you can use the"
+" ``mode=map`` Parameters."
+msgstr "MapServer支持从头开始返回地图，您可以使用  ``mode=map`` 参数。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:4
+msgid "Use WMS Services GetMap in MapServer"
+msgstr "在MapServer中使用WMS服务GetMap"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:6
+msgid ""
+"The ``GetMap`` operation is used to generate a map, which can be a "
+"picture or a set of graphic elements. ``GetMap`` allows clients to "
+"request multiple servers to make overlapping map layers, processing pixel"
+" geometry with the same frame of reference, size, and scale. These layers"
+" can be displayed in a certain order on the client side, and transparent "
+"pixel technology can be used to display map information from different "
+"sources according to human visualization requirements."
+msgstr ""
+"这个  ``GetMap`` 操作用于生成地图，地图可以是一张图片，也可以是一组图形元素。  ``GetMap`` "
+"允许客户端请求多个服务器创建重叠的地图图层，从而处理具有相同参考框架、大小和比例的像素几何图形。这些层可以在客户端以一定的顺序显示，并且可以根据人类的可视化需求使用透明像素技术来显示来自不同来源的地图信息。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:14
+msgid ""
+"The ``GetMap`` request usually uses HTTP/GET to call a basic WMS via URL "
+"encoding, and can also use HTTP/POST encoding to communicate with an SLD-"
+"capable WMS. The ``GetMap`` request must specify the requested layers "
+"(Layers), the styles used by each layer (Styles), the spatial reference "
+"system (SRS), the bounding rectangle (BBox), the image format ( "
+"``format`` ) and size ( ``width`` , ``height`` ) and other parameters."
+msgstr ""
+"这个  ``GetMap`` "
+"请求通常使用HTTP/GET通过URL编码调用基本的WMS，也可以使用HTTP/POST编码与支持SLD的WMS通信。这个  ``GetMap``"
+" 请求必须指定所请求的层(层)、每个层使用的样式(Styles)、空间参考系(SRS)、边界矩形(BBox)、图像格式(  ``format`` "
+")和大小(  ``width`` ，  ``height`` )和其他参数。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:21
+msgid ""
+"Web map services support the display of map views in picture or graphic "
+"format. Image formats include public image formats such as GIF, PNG, "
+"JPEG, etc. These formats are supported by most Web browsers, and the "
+"display of other graphic formats may also require some helper programs to"
+" support. Graphics formats include SVG and WebCGM formats, which are not "
+"commonly used in WMS."
+msgstr "Web地图服务支持以图片或图形格式显示地图视图。图像格式包括公共图像格式，如GIF、PNG、JPEG等。大多数Web浏览器都支持这些格式，其他图形格式的显示也可能需要一些帮助程序来支持。图形格式包括在WMS中不常用的SVG和WebCGM格式。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:28
+msgid ""
+"In addition, the optional ``transparent`` parameter is used to specify "
+"whether the background of the map is transparent. The default value is "
+"``False`` . A function that allows the returned result to be drawn "
+"transparently, so that maps for different requests can be overlaid. Each "
+"WMS preferably provides an image format that supports transparent display"
+" for overlaying with other map images."
+msgstr ""
+"此外，可选的  ``transparent`` 参数用于指定贴图的背景是否透明。缺省值为  ``False`` "
+"。允许透明绘制返回结果的函数，以便可以覆盖不同请求的地图。每个WMS优选地提供支持与其他地图图像重叠的透明显示的图像格式。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:35
+msgid ""
+"A valid ``GetMap`` request will return a map consisting of georeferenced "
+"layers with the specified style, spatial reference system, bounding "
+"rectangle, size, format, and transparency. An invalid ``GetMap`` request "
+"returns a formatted error message. In the HTTP context, the content type "
+"of the return value is a MIME type."
+msgstr ""
+"有效的  ``GetMap`` 请求将返回由具有指定样式、空间参考系、边界矩形、大小、格式和透明度的地理参考图层组成的地图。一个残废  "
+"``GetMap`` 请求返回格式化的错误消息。在HTTP上下文中，返回值的内容类型是MIME类型。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:42
+msgid "Request with GetMap"
+msgstr "使用GetMap进行请求"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:44
+msgid "GetMap access to the published MapServer WMS service is described here."
+msgstr "此处介绍了对已发布的MapServer WMS服务的GetMap访问。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:46
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:60
+msgid "The first is Mapfile:"
+msgstr "第一个是Mapfile："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:53
+msgid "Compared to the previous ``mfa1.map``:"
+msgstr "与前一年相比  ``mfa1.map`` ："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:60
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:72
+msgid "This Mapfile is configured with the WMS service. View function:"
+msgstr "此映射文件使用WMS服务进行配置。查看功能："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:62
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:74
+#, fuzzy
+msgid ""
+"`Open a link <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_"
+msgstr ""
+"`Open a link <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:69
+msgid "Here, use the ``map`` mode of MapServer to view."
+msgstr "在这里，使用  ``map`` 要查看的MapServer的模式。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:79
+msgid "Configure with GetMap"
+msgstr "使用GetMap进行配置"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:82
+msgid "Without ``GetMap`` enabled"
+msgstr "如果没有  ``GetMap`` 启用"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:84
+msgid ""
+"To use ``GetMap`` request, you need to enable the ``GetMap`` option for "
+"WMS in Mapfile :"
+msgstr "使用  ``GetMap`` 请求时，您需要启用  ``GetMap`` 映射文件中的WMS选项："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:86
+msgid ""
+"If not enabled, it will show the following result as the  result of the "
+"request to the URL :"
+msgstr "如果未启用，它将显示以下结果作为对URL的请求结果："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:97
+msgid "Projection for WMS"
+msgstr "针对WMS的预测"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:99
+msgid ""
+"Note that to use ``GetMap`` request , the projection must be set. If it "
+"is not set, the access will appear:"
+msgstr "请注意，要使用  ``GetMap`` 请求，则必须设置投影。如果未设置，将显示访问权限："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:110
+#, fuzzy
+msgid ""
+"`Yo can click the link to view the actual Error result page.  "
+"<https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`__"
+msgstr ""
+"`Yo can click the link to view the actual Error result page.  "
+"<http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`__"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:114
+msgid "Request the WMS"
+msgstr "请求WMS"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:116
+msgid ""
+"Here is the correct way to access it. Note that the ``length`` and "
+"``width`` parameters passed to the server graph in URL."
+msgstr "以下是访问它的正确方法。请注意，  ``length`` 和  ``width`` 以URL形式传递给服务器图形的参数。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:119
+msgid ""
+"It looks like that the  ``GETMAP`` request result is similar to "
+"MapServer’s ``mode=map``."
+msgstr "看起来像是  ``GETMAP`` 请求结果与MapServer的类似  ``mode=map`` 。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:125
+#, fuzzy
+msgid ""
+"`Use GetMap <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_"
+msgstr ""
+"`Use GetMap <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:129
+msgid ""
+"Version of WMS 1.1.1 and WMS 1.3.0 have different request parameter for "
+"coordinate system :"
+msgstr "WMS 1.1.1和WMS 1.3.0版本对坐标系的请求参数不同："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:131
+msgid "``SRS=EPSG:4326`` for 1.1.1"
+msgstr "``SRS=EPSG:4326`` 对于1.1.1"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:132
+msgid "``CRS=CRS:84`` for 1.3.0"
+msgstr "``CRS=CRS:84`` 对于1.3.0"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:135
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:32
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:71
+msgid "Get a partial map with GetMap"
+msgstr "使用GetMap获取部分地图"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:137
+msgid ""
+"The range used above is consistent with the range of the entire data, and"
+" the results look no different. Let’s zoom out to get a section of the "
+"map."
+msgstr "上面使用的范围与整个数据的范围一致，结果看起来没有什么不同。让我们缩小以获得地图的一部分。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:146
+#, fuzzy
+msgid ""
+"`Get a partial map with GetMap <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_"
+msgstr ""
+"`Get a partial map with GetMap <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:150
+msgid ""
+"According to the description, the parameter ``CRS = EPSG: 4326`` can also"
+" be used. But I didn’t succeed. You may need to configure mapfile."
+msgstr "根据描述，该参数  ``CRS = EPSG: 4326`` 也可以使用。但我没有成功。您可能需要配置映射文件。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:153
+msgid ""
+"The above effect can also be achieved in MapServer CGI control, by "
+"setting the ``zoom`` level of browsing, the ``x`` and ``y`` coordinates "
+"of the map but ``GetMap`` is obviously more flexible. In addition to "
+"these, WMS has more advantages as a standard."
+msgstr ""
+"在MapServer CGI控件中也可以实现上述效果，方法是设置  ``zoom`` 浏览级别、  ``x`` 和  ``y`` 地图的坐标，但是"
+"  ``GetMap`` 显然更加灵活。除此之外，WMS作为一种标准还有更多的优势。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:4
+msgid "WMS GetFeatureInfo access"
+msgstr "WMS获取要素信息访问权限"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:6
+msgid ""
+"The ``GetFeatureInfo`` operation (optional) returns information about "
+"features near the specified point on the map. Allows users to click on a "
+"pixel to query a feature’s schema and metadata."
+msgstr "这个  ``GetFeatureInfo`` 操作(可选)返回有关地图上指定点附近要素的信息。允许用户单击像素以查询要素的方案和元数据。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:10
+msgid ""
+"``GetFeatureInfo`` is an optional operation. This operation is only "
+"supported for layers with the attribute ``queryable=\"1\"`` (true). If a "
+"WMS client makes a request to a layer that does not support this "
+"operation, a formatted service exception will be returned."
+msgstr ""
+"``GetFeatureInfo`` 是一个可选操作。仅具有属性的图层支持此操作  ``queryable=\"1\"`` "
+"(True)。如果WMS客户端向不支持此操作的层发出请求，将返回格式化的服务异常。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:15
+msgid ""
+"TA WMS may provide the optional ``GetFeatureInfo`` operation, and a WMS "
+"that provides this operation calls its map “queryable”. The client can "
+"add a position parameter (such as (X, Y) value, that is, the offset from "
+"the upper left corner of the picture) or the number of elements that need"
+" to query information near the point, to the URL of the requested map, "
+"information about the corresponding feature on the map can now be "
+"requested."
+msgstr ""
+"TA WMS可以提供可选的  ``GetFeatureInfo`` "
+"操作，提供此操作的WMS将其地图称为“可查询的”。客户端可以将位置参数(如(X，Y)值，即距图片左上角的偏移量)或需要查询点附近信息的元素的数量添加到所请求的地图的URL中，现在可以请求有关地图上相应要素的信息。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:23
+msgid ""
+"Since WMS is stateless, the ``GetFeatureInfo`` request should also "
+"include all the parameters in the original ``GetMap`` request (except "
+"Version and Request). Based on the spatial context information (BBOX, "
+"SRS, Width and Height) in the ``GetMap`` request and the ``(X, Y)`` "
+"location selected by the user, the WMS returns more information about "
+"that location."
+msgstr ""
+"由于WMS是无状态的，因此  ``GetFeatureInfo`` 请求还应包括原始中的所有参数  ``GetMap`` "
+"请求(版本和请求除外)。中的空间上下文信息(BBox、SRS、宽度和高度)  ``GetMap`` 请求和  ``(X, Y)`` "
+"用户选择的位置，则WMS返回有关该位置的更多信息。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:30
+msgid ""
+"Also included in the ``GetFeatureInfo`` request parameter is the "
+"``Query_Layers`` parameter, which specifies the layers from which feature"
+" information is obtained. The layers in this parameter list must be those"
+" contained in the WMS ``Capabilities`` XML document."
+msgstr ""
+"也包括在  ``GetFeatureInfo`` 请求参数是  ``Query_Layers`` "
+"参数，该参数指定从中获取要素信息的层。此参数列表中的图层必须是WMS中包含的那些  ``Capabilities`` XML文档。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:35
+msgid ""
+"The optional ``Info_Format`` parameter in the ``GetFeatureInfo`` request "
+"specifies the format in which the feature’s information is returned. The "
+"format is defined as a MIME type in the WMS ``Capabilities`` XML "
+"document. Such as ``Info_Format=application/vnd.ogc.gml`` table does not "
+"return results described in GML."
+msgstr ""
+"可选的  ``Info_Format`` 参数中的  ``GetFeatureInfo`` "
+"请求指定返回功能信息的格式。该格式在WMS中定义为MIME类型  ``Capabilities`` XML文档。比如  "
+"``Info_Format=application/vnd.ogc.gml`` 表不返回以GML描述的结果。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:41
+msgid ""
+"The optional ``Feature_Count`` parameter in the ``GetFeatureInfo`` "
+"request indicates the maximum number of features to return feature "
+"information. The default value is ``1`` . The ``X,Y`` parameters "
+"represent the pixel coordinates of the point of interest on the map. The "
+"``X,Y`` values are within the ``Width`` and ``Height`` parameter values, "
+"respectively. The origin of the coordinates is in the upper left corner "
+"of the picture."
+msgstr ""
+"可选的  ``Feature_Count`` 参数中的  ``GetFeatureInfo`` 请求指示返回功能信息的功能的最大数量。缺省值为  "
+"``1`` 。这个  ``X,Y`` 参数表示地图上兴趣点的像素坐标。这个  ``X,Y`` 值在  ``Width`` 和  "
+"``Height`` 参数值。坐标的原点在图片的左上角。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:49
+msgid ""
+"If ``GetFeatureInfo`` request is valid, WMS will respond according to "
+"``Info_Format``. The nature of the response will be at the discretion of "
+"the WMS server, but generally corresponds to the closest element to the "
+"point ``(X,Y)``."
+msgstr ""
+"如果  ``GetFeatureInfo`` 请求有效，WMS将根据  ``Info_Format`` "
+"。响应的性质将由WMS服务器决定，但通常对应于与点最接近的元素  ``(X,Y)`` 。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:55
+msgid "``GetFeatureInfo`` request using WMS service in MapServer"
+msgstr "``GetFeatureInfo`` 使用MapServer中的WMS服务进行请求"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:57
+msgid ""
+"This describes the ``GetFeatureInfo`` access to the published MapServer "
+"WMS service."
+msgstr "这描述了  ``GetFeatureInfo`` 访问已发布的MapServer WMS服务。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:67
+msgid "Compared to the previous ``mfb1.map``:"
+msgstr "与前一年相比  ``mfb1.map`` ："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:70
+msgid "`diff_mfb2_mfb1.html <diff_mfb2_mfb1.html>`_"
+msgstr "`diff_mfb2_mfb1.html <diff_mfb2_mfb1.html>`_"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:91
+msgid "Access using GetFeatureInfo"
+msgstr "使用GetFeatureInfo进行访问"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:93
+msgid "Use GetFeatureInfo"
+msgstr "使用GetFeatureInfo"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:96
+#, fuzzy
+msgid ""
+"`Use GetFeatureInfo <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&QUERY_LAYERS=states&LAYERS=states&BBOX=-96,45,-95,46&CRS=CRS:84&INFO_FORMAT=text/html&j=43&i=-95&WIDTH=256&HEIGHT=256&styles=&format=image/png>`_"
+msgstr ""
+"`Use GetFeatureInfo <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&QUERY_LAYERS=states&LAYERS=states&BBOX=-96,45,-95,46&CRS=CRS:84&INFO_FORMAT=text/html&j=43&i=-95&WIDTH=256&HEIGHT=256&styles=&format=image/png>`_"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:99
+msgid "The above results are output using a template."
+msgstr "以上结果是使用模板输出的。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:102
+msgid "Note"
+msgstr "注意事项"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:104
+msgid "WMS, Web Mapping Server, is a specification published by OGC."
+msgstr "WMS，即Web地图服务器，是由OGC发布的规范。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:106
+msgid "``GetFeatureInfo`` is an access method supported by WMS."
+msgstr "``GetFeatureInfo`` 是WMS支持的一种访问方法。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:4
+msgid "Use MapServer as a WMS client"
+msgstr "将MapServer用作WMS客户端"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:7
+msgid "View examples"
+msgstr "查看示例"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:12
+msgid ""
+"Another exciting feature of MapServer is its ability to use layers "
+"provided by other map servers as its data source. In this case, the "
+"MapServer application becomes a WMS (WFS) client. MapServer can also "
+"share (or serve) layers in MapFile to other map servers. This makes the "
+"application a WMS (WFS) server. What is WMS or WFS? These are the Web-"
+"based Interoperability Services specification, released by the Open "
+"Geospatial Alliance (OGC). WMS stands for Web map service, and WFS stands"
+" for Web feature service."
+msgstr "MapServer的另一个令人兴奋的功能是它能够使用其他地图服务器提供的层作为其数据源。在这种情况下，MapServer应用程序将成为WMS(WFS)客户端。MapServer还可以将MapFile中的图层共享(或提供)给其他地图服务器。这使应用程序成为WMS(WFS)服务器。什么是WMS或WFS？这些是开放地理空间联盟(OGC)发布的基于Web的互操作性服务规范。WMS代表Web地图服务，WFS代表Web要素服务。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:21
+msgid ""
+"The difference between the two specifications, in simple terms, is that "
+"WMS uses web raster formats (PNG, GIF, JPEG) to share layers, while WFS "
+"uses the Geographic Markup Language GML. The third commonly used OGC "
+"interoperability specification is the Web Coverage Service Specification "
+"(WCS), which MapServer provides server-side support only. If you need "
+"more information about WMS, WFS and WCS, you can find OGC Implementation "
+"Specifications or OGC Abstract Specifications on the OGC official "
+"website. MapServer’s website also has some pages related to these "
+"specifications."
+msgstr ""
+"简单地说，这两个规范之间的区别在于，WMS使用Web栅格格式(PNG、GIF、JPEG)来共享层，而WFS使用地理标记语言GML。第三个常用的OGC互操作性规范是Web"
+" Coverage "
+"Service规范(WCS)，MapServer仅提供服务器端支持。如果您需要更多关于WMS、WFS和WCS的信息，可以在OGC官方网站上找到OGC实现规范或OGC摘要规范。MapServer的网站上也有一些与这些规范相关的页面。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:31
+msgid "This example shows you how to add a WMS layer to your MapFile."
+msgstr "本例显示了如何将WMS图层添加到 Mapfile 。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:33
+msgid "The following is the Mapfile used in this example ``mfb4.map`` ):"
+msgstr "以下是本例中使用的 Mapfile   ``mfb4.map`` )："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:40
+msgid "In the above resource, WMS needs to start with ``http://``, not ``//`` ."
+msgstr "在上述资源中，WMS需要从  ``http://`` ，不是  ``//`` 。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:42
+msgid ""
+"In addition, as a client, there is no need to configure WEB in the "
+"Mapfile; it is required on the server."
+msgstr "此外，作为客户端，不需要在映射文件中配置Web；服务器上需要配置Web。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:45
+msgid "Add WMS layer to Mapfile"
+msgstr "将WMS图层添加到 Mapfile "
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:47
+msgid "The file changes are as follows:"
+msgstr "文件更改如下："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:50
+msgid "Definition of MapServer"
+msgstr "地图服务器的定义"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:52
+msgid "Let’s look at the WMS layer:"
+msgstr "让我们来看看WMS层："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:54
+msgid "``LAYER``, marking the beginning of the WMS layer object."
+msgstr "``LAYER`` ，标记WMS Layer对象的开始。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:55
+msgid "``NAME modis_jpl``, the layer identifier."
+msgstr "``NAME modis_jpl`` ，层标识符。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:56
+msgid ""
+"``TYPE RASTER``, since this WMS layer is an image, use the raster layer "
+"type."
+msgstr "``TYPE RASTER`` ，由于此WMS层是图像，因此请使用栅格层类型。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:57
+msgid "``OFFSITE 0 0 0`` , ignore black background color"
+msgstr "``OFFSITE 0 0 0`` ，忽略黑色背景色"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:58
+msgid "``STATUS OFF``, this layer is turned off by default."
+msgstr "``STATUS OFF`` 默认情况下，该层处于关闭状态。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:59
+msgid "``CONNECTIONTYPE WMS`` Input layer connection use. Defaults to local ."
+msgstr "``CONNECTIONTYPE WMS`` 输入层连接使用。默认为本地。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:61
+msgid ""
+"If we had to be explicit, we would add all other vector and raster layers"
+" locally in our MapFile CONNECTIONTYPE. Instead, we only define "
+"connection types that are external. WMS is an external data layer from "
+"other map servers."
+msgstr "如果必须明确，我们将在本地的MapFileCONNECTIONTYPE中添加所有其他矢量和栅格层。相反，我们只定义外部的连接类型。WMS是来自其他地图服务器的外部数据层。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:66
+#, fuzzy
+msgid ""
+"``CONNECTION \"https://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map\"``, "
+"the connection string that allows us to “get” data from another server. "
+"In the case of a WMS connection, this is a URL. If we were using a "
+"PostGIS database, this would be an SQL statement. Note that the string in"
+" your MapFile is on a single line."
+msgstr ""
+"``CONNECTION \"http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map\"`` "
+"，即允许我们从另一台服务器“获取”数据的连接字符串。在WMS连接的情况下，这是一个URL。如果我们使用的是PostGIS数据库，则这将是一条SQL语句。请注意，您的MapFile中的字符串位于一行。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:72
+msgid ""
+"``METADATA``, marks the metadata object of our WMS layer. MapServer uses "
+"the parameters defined by this object, along with the above connection "
+"parameters, to form valid WMS requests to the WMS server."
+msgstr ""
+"``METADATA`` "
+"标记我们的WMS层的元数据对象。MapServer使用此对象定义的参数以及上面的连接参数来形成对WMS服务器的有效WMS请求。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:76
+msgid ""
+"``\"wms_srs\" \"epsg:4326\"`` , WMS projection. Sometimes WMS servers "
+"support multiple projections. If that’s the case, you’ll probably want to"
+" ask for your output projection (``EPSG:2163``) map. Unfortunately, "
+"external WMS servers do not support this kind of projection."
+msgstr ""
+"``\"wms_srs\" \"epsg:4326\"`` 、WMS投影。有时，WMS服务器支持多个投影。如果是这种情况，您可能会想要您的输出预测"
+" (``EPSG:2163`` )地图。不幸的是，外部WMS服务器不支持这种投影。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:81
+msgid ""
+"``\"wms_name\" \"modis\"`` , the name of the WMS layer to add. It’s like "
+"adding the parameter ``\"layers=modis\"`` ,"
+msgstr "``\"wms_name\" \"modis\"`` ，要添加的WMS层的名称。这就像添加参数  ``\"layers=modis\"`` ，"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:84
+msgid ""
+"``\"wms_server_version\" \"1.1.1\"`` , the version of the server for the "
+"WMS version. More supported versions can be viewed."
+msgstr "``\"wms_server_version\" \"1.1.1\"`` ，WMS版本的服务器版本。可以查看更多受支持的版本。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:87
+msgid ""
+"``\"wms_format\" \"image/jpeg\"`` , the image format we expect to receive"
+" from the WMS server. You can try ``image/png`` or other allowed values."
+msgstr ""
+"``\"wms_format\" \"image/jpeg\"`` ，这是我们期望从WMS服务器接收的图像格式。你可以试试  "
+"``image/png`` 或其他允许值。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:91
+msgid "Additional information"
+msgstr "更多信息"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:93
+msgid ""
+"To learn more about adding WMS layers to your application, visit the WMS "
+"client how to record."
+msgstr "要了解有关将WMS层添加到应用程序的更多信息，请访问WMS客户端如何录制。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:96
+msgid ""
+"In addition to adding WMS layer objects, there is also the next new "
+"object for the map. This is the Web object. There are two parameters in "
+"the Web object:"
+msgstr "除了添加WMS Layer对象外，还有地图的下一个新对象。这是Web对象。Web对象中有两个参数："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:100
+msgid ""
+"``IMAGEPATH '/data/tmp/'`` , the local absolute path to the temporary "
+"directory for web access. The user running the web server process should "
+"be able to write to this directory. Make sure the path contains the last "
+"slash ( ``/`` ). (Your IMAGEPATH might look like this: \\`\\ "
+"``/home/apache/htdocs/tmp/`` or ``C:/Inetpub/wwwroot/tmp/``.)"
+msgstr ""
+"``IMAGEPATH '/data/tmp/'`` , the local absolute path to the temporary "
+"directory for web access. The user running the web server process should "
+"be able to write to this directory. Make sure the path contains the last "
+"slash ( ``/`` ). (Your IMAGEPATH might look like this: \\`\\ `` "
+"/home/apache/htdocs/tmp/``或  ``C:/Inetpub/wwwroot/tmp/`` 。)"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:106
+msgid ""
+"``IMAGEURL '/tmp/'`` , which is how IMAGEPATH appears relative to the web"
+" server’s root directory. If we had to enter the full URL, it would be "
+"“http://terrasip.gis.umn.edu/tmp/” . Make sure the path contains the last"
+" slash ( ``/`` )."
+msgstr ""
+"``IMAGEURL '/tmp/'`` "
+"，这就是IMAGEPATH相对于Web服务器根目录的显示方式。如果我们必须输入完整的url，它将是“http://terrasip.gis.umn.edu/tmp/”。确保路径包含最后一个斜杠("
+"  ``/`` )。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:111
+msgid ""
+"Finally, a new parameter has been added to the ``MAP`` object: ``NAME`` ."
+" This is the identifier of the map object. MapServer creates and dumps a "
+"``tmp`` directory for all images using this prefix. It’s not really "
+"needed in this example, but it won’t have any bad effects either."
+msgstr ""
+"最后，将一个新参数添加到  ``MAP`` 对象：  ``NAME`` 。这是地图对象的标识符。MapServer创建并转储  ``tmp`` "
+"使用此前缀的所有图像的目录。在本例中并不真正需要它，但它也不会有任何不良影响。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:116
+msgid ""
+"If you want to share your data layer to other map servers, you need to "
+"add ``METADATA`` object to your ``MAP`` object, and add ``METADATA`` "
+"object to each layer object you want to share with everyone. All WMS "
+"layers added from another server are automatically cascaded and made "
+"available to others (contagious). For details on how to make your "
+"MapServer application a WMS server, please read the WMS server "
+"documentation carefully. In addition, in addition to the WMS service, "
+"MapServer also supports the WFS service, you can check the documentation "
+"to learn how to configure MapServer to implement a WFS server, or a WFS "
+"client."
+msgstr ""
+"如果要将数据图层共享到其他地图服务器，则需要添加  ``METADATA`` 对象添加到您的  ``MAP`` 对象，并添加  "
+"``METADATA`` "
+"对象添加到要与所有人共享的每个Layer对象。从另一台服务器添加的所有WMS层都会自动级联，并可供其他人使用(传染)。有关如何使您的MapServer应用程序成为WMS服务器的详细信息，请仔细阅读WMS服务器文档。此外，除了WMS服务外，MapServer还支持WFS服务，您可以查看文档以了解如何配置MapServer以实现WFS服务器或WFS客户端。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:4
+msgid "Draw maps with style layer"
+msgstr "使用样式层绘制地图"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:6
+msgid ""
+"More advanced WMSs use “style layers” to describe a map. A style layer "
+"can be thought of as a transparent layer composed of symbolic elements. A"
+" map is composed of these style layers in a certain order, which is "
+"usually called Z-value order. Users can define complex or simple maps by "
+"adding or removing style layers. A style layer is actually a combination "
+"of a layer and a style. Conceptually, the layer defines a stream of "
+"features, and the style defines how those features are symbolized. In a "
+"WMS process, the drawing style of a map is specified according to the "
+"LAYERS and STYLES request parameters."
+msgstr "更高级的WMS使用“样式层”来描述地图。可以将样式层视为由符号元素组成的透明层。地图由这些样式层按特定顺序组成，通常称为Z值顺序。用户可以通过添加或删除样式层来定义复杂或简单的地图。样式层实际上是层和样式的组合。从概念上讲，图层定义了要素流，样式定义了这些要素的符号化方式。在WMS流程中，地图的绘制样式是根据图层和样式请求参数指定的。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:17
+msgid "Support for named styles"
+msgstr "支持命名样式"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:19
+msgid ""
+"Named styles support are introduced in MapServer 5.2. The support is base"
+" on MS RFC 39: Support of WMS/SLD Named Styles."
+msgstr "MapServer5.2中引入了命名样式支持。支持基于MS RFC 39：WMS/SLD命名样式的支持。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:22
+msgid ""
+"MapServer 5.2 introduces the possibility to assign a group to a series of"
+" classes defined on a layer object using two new non-mandatory keywords "
+"CLASSGROUP (at the layer level) and GROUP at the class level:"
+msgstr ""
+"MapServer "
+"5.2引入了使用两个新的非强制关键字CLASSGROUP(在层级别)和GROUP在类级别将组分配给在Layer对象上定义的一系列类的可能性："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:49
+msgid ""
+"At rendering time, if the CLASSGROUP is defined, only classes that have "
+"the same group name would be used. Based on this concept, WMS/SLD support"
+" uses the class groups as named styles. Each group of classes is "
+"considered equivalent to a named style:"
+msgstr "在渲染时，如果定义了CLASSGROUP，则只使用具有相同组名的类。基于此概念，WMS/SLD支持使用类组作为命名样式。每组类都被视为等同于一个命名样式："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:61
+msgid "Example"
+msgstr "示例"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:63
+msgid "Here is an example:"
+msgstr "下面是一个例子："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:65
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:67
+msgid "Mapfile is as follows:"
+msgstr "映射文件如下："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:74
+msgid "Use ``GetCapabilities`` to return:"
+msgstr "使用  ``GetCapabilities`` 要返回，请执行以下操作："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:87
+msgid "Consider the following sample WMS request snippet:"
+msgstr "请考虑以下示例WMS请求片段："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:89
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group3,group2"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group3,group2"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:91
+msgid "There are three style layers:"
+msgstr "有三个样式层："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:93
+msgid "States: group1"
+msgstr "州：组1"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:94
+msgid "States: group2"
+msgstr "州：组2"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:95
+msgid "States: group3"
+msgstr "州：组3"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:97
+msgid ""
+"They are stacked in a certain order. A layer can be drawn multiple times "
+"with different styles to achieve the desired effect. The following "
+"example draws the road layer using the ``casing`` and ``centerline`` "
+"styles:"
+msgstr ""
+"它们是按一定的顺序堆放的。可以使用不同的样式多次绘制一个层，以达到所需的效果。下面的示例使用  ``casing`` 和  "
+"``centerline`` 样式："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:102
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1,group2"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1,group2"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:104
+msgid ""
+"A WMS itself may not know how to make a meaningful combination of style "
+"layers, it’s all up to the client. WMS uses names to identify styles and "
+"layers, and other documents refer to such named layers and styles. This "
+"is currently the only way for WMS to define style layers."
+msgstr "WMS本身可能不知道如何创建有意义的样式层组合，这完全取决于客户端。WMS使用名称来标识样式和层，而其他文档则引用此类命名的层和样式。这是目前WMS定义样式层的唯一方式。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:4
+msgid "WMS layers use SLD"
+msgstr "WMS图层使用SLD"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:6
+msgid "By using SLD, the style of the map can be modified dynamically."
+msgstr "通过使用SLD，可以动态修改地图的样式。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:8
+msgid ""
+"This page describes the process of leveraging Styled Layer Descriptor "
+"(SLD) support in WMS ``Getmap`` requests using Mapserver. SLD supports "
+"both server-side (ability to read SLD and apply it with ``getmap`` "
+"requests) and client-side (including sending SLD requests to the server "
+"and dynamically generating SLD files from the map server’s Mapfile). SLD "
+"support was added to MapServer in version 4.2."
+msgstr ""
+"本页面介绍了利用WMS中的样式化图层描述符(SLD)支持的过程  ``Getmap`` "
+"使用MapServer的请求。SLD支持服务器端(能够读取SLD并将其应用于  ``getmap`` "
+"请求)和客户端(包括向服务器发送SLD请求和从地图服务器的映射文件动态生成SLD文件)。版本4.2中的MapServer增加了对SLD的支持。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:16
+msgid "Definition and effect of SLD"
+msgstr "系统性红斑狼疮的定义和作用"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:18
+msgid "SDL is defined using the XML format. Let’s take a look at the example:"
+msgstr "SDL使用XML格式定义。让我们来看一下这个例子："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:25
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:64
+msgid "Effect:"
+msgstr "效果："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:30
+msgid "Use GetMap operation with SLD"
+msgstr "对SLD使用GetMap操作"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:34
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:73
+msgid "The URL is parsed as follows:"
+msgstr "URL的解析方式如下："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:54
+msgid "Definition and effect of SLD 1.1.0"
+msgstr "SLD 1.1.0的定义和作用"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:56
+msgid ""
+"The definition of SLD version 1.1.0 is not quite the same as the latest "
+"version."
+msgstr "SLD版本1.1.0的定义与最新版本并不完全相同。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:69
+msgid "The effect of SLD 1.0.0"
+msgstr "SLD 1.0.0的效果"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:4
+msgid "WMS layer metadata"
+msgstr "WMS图层元数据"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:9
+msgid ""
+"OGC Web services (OWS) can combine with a given resource (WMS layer, WFS "
+"FeatureType, WCS Coverage, SOS ObservationOffering) associated content "
+"metadata is published to the feature document as a reference to a given "
+"URL (i.e. an ISO metadata XML document)."
+msgstr ""
+"OGC Web服务(OWS)可以与给定资源(WMS层、WFS FeatureType、WCS Coverage、SOS "
+"ObservationOffering)相结合，将相关联的内容元数据作为对给定URL(即，ISO元数据XML文档)的引用发布到特征文档。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:14
+msgid ""
+"MapServer supports both inline (e.g. ``wms_title`` , ``wms_abstract`` ) "
+"and URL-based (e.g. ``wms_metadataurl_href`` ) metadata publishing for "
+"OWS functions."
+msgstr ""
+"MapServer支持内联(例如  ``wms_title`` ，  ``wms_abstract`` )和基于URL的(例如  "
+"``wms_metadataurl_href`` )OWS功能的元数据发布。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:18
+msgid ""
+"MapServer OGC Service Capabilities Formal XML metadata in XML provides "
+"value to directory services, which collect metadata to support discovery."
+msgstr "MapServer OGC服务功能XML中的正式XML元数据为目录服务提供了价值，目录服务收集元数据以支持发现。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:22
+msgid ""
+"MapServer 7.2 adds support for dynamic publishing of XML metadata to all "
+"OGC web services to advertise formal layer metadata."
+msgstr "MapServer7.2增加了对动态发布XML元数据到所有OGC Web服务的支持，以通告正式层元数据。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:26
+msgid "WMS layer metadata technical details"
+msgstr "WMS图层元数据技术详细信息"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:28
+msgid ""
+"If a layer does not pass ``ows_metadataurl_*`` metadata, MapServer "
+"provides the metadata URL link (ie WMS MetadataURL ) in the OGC function "
+"XML. The URL itself points to MapServer’s GetMetadata API. example:"
+msgstr ""
+"如果层未通过  ``ows_metadataurl_*`` 元数据，MapServer在OGC函数XML中提供元数据URL链接(即WMS "
+"MetadataURL)。URL本身指向MapServer的GetMetadata API。示例："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:40
+msgid "Supported metadata formats"
+msgstr "支持的元数据格式"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:42
+msgid "MapServer’s layer API supports the ISO 19115 ISO 2003 geospatial standard."
+msgstr "地图服务器的Layer API支持ISO 19115 ISO 2003地理空间标准。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:46
+msgid "Graph metadata API"
+msgstr "图形元数据API"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:48
+msgid ""
+"The Layer Metadata API provides formal metadata for any layer object in a"
+" Mapfile, with metadata values (title, abstract, keywords, spatial "
+"attributes) derived from the Mapfile layer object definition. The "
+"metadata response contains useful information (title, abstract, "
+"keywords), and access links to related services (WMS, WFS, etc.)."
+msgstr "层元数据API为映射文件中的任何层对象提供正式的元数据，其中的元数据值(标题、摘要、关键字、空间属性)派生自映射文件的层对象定义。元数据响应包含有用的信息(标题、摘要、关键字)和相关服务(WMS、WFS等)的访问链接。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:54
+msgid "API supports two parameters:"
+msgstr "接口支持两个参数："
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:61
+msgid "Missing parameters will result in OGC ogc:ExceptionReport XML."
+msgstr "缺少参数将导致OGC OGC：ExceptionReport XML。"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:63
+msgid "Request instance"
+msgstr "请求实例"
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:69
+msgid "Support for layer metadata through CGI"
+msgstr "通过CGI支持层元数据"
+

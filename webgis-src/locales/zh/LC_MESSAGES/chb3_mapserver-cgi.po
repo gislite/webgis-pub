@@ -1,0 +1,940 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2025-09-11 11:28+0800\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:2
+msgid "CGI interaction of MapServer"
+msgstr "MapServer的CGI交互"
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:4
+msgid ""
+"So far, you can only view maps before creating maps. The general meaning "
+"of creating a Web mapping application is to create a map that can be "
+"changed by the user (the application). In other words, a user can change "
+"the content (or information) of the map. To do this, you need to use the "
+"MapServer HTML template."
+msgstr ""
+"到目前为止，您只能在创建地图之前查看地图。创建Web地图应用程序的一般含义是创建可由用户(应用程序)更改的地图。换句话说，用户可以改变地图的内容(或信息)。要做到这一点，您需要使用MapServer"
+" HTML模板。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:10
+msgid ""
+"The application will be interactive and allow users to zoom and roam the "
+"map image. You will see how to generate scale bars and legends, and how "
+"to embed valid information in the output HTML (similar to the size of the"
+" map and the coordinates of the mouse click). In other words, you will "
+"generate a “real” map application for the first time."
+msgstr "该应用程序将是交互式的，允许用户缩放和漫游地图图像。您将看到如何生成比例尺和图例，以及如何在输出的HTML中嵌入有效信息(类似于地图的大小和鼠标单击的坐标)。换句话说，您将第一次生成一个“真正的”地图应用程序。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:16
+msgid ""
+"Also, in addition to being dynamic, scaleable maps also exhibit more ways"
+" of presenting detail in different ways."
+msgstr "此外，除了是动态的，可缩放的地图还展示了以不同方式呈现细节的更多方式。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/chapter.rst:19
+msgid ""
+"This section explains more about the interoperation of CGI. Query "
+"function is also an important function of MapServer. But the design of "
+"MapServer is old, and the query function is clumsy to use. Only a simple "
+"description, more query functions, described in the later section of the "
+"map service."
+msgstr "本节详细介绍了CGI的互操作。查询功能也是MapServer的一个重要功能。但MapServer的设计比较陈旧，查询功能使用起来比较笨拙。只有简单的描述，更多的查询功能，在地图服务的后面部分描述。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:4
+msgid "MapSever interaction using CGI"
+msgstr "使用CGI的MapSever交互"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:6
+msgid ""
+"To map through the Mapfile configuration file, you have understood the "
+"basic ideas of maps, layers and classes, and know how the various parts "
+"of a Mapfile are combined. Now move on to an app that will offer full pan"
+" and zoom functionality, as well as the ability to toggle layers on and "
+"off."
+msgstr "要通过映射文件配置文件进行映射，您已经了解了映射、层和类的基本概念，并知道映射文件的各个部分是如何组合的。现在转到一款应用程序，它将提供完整的平移和缩放功能，以及打开和关闭图层的能力。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:12
+msgid ""
+"So far, the map can only be viewed when the map is created. Creating a "
+"web mapping application usually means creating maps that can be changed "
+"by the user (of the application). That is, a user can change the content "
+"(or information) of the map. To do this interactively, we use the "
+"MapServer HTML template."
+msgstr ""
+"到目前为止，只有在创建地图时才能查看地图。创建Web地图应用程序通常意味着创建可由(应用程序的)用户更改的地图。也就是说，用户可以改变地图的内容(或信息)。要以交互方式完成此操作，我们使用MapServer"
+" HTML模板。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:18
+msgid ""
+"MapServer CGI is template based. When first executed in response to a web"
+" request, it reads a configuration file (Mapfile) that describes the "
+"map’s layers and other components. Then it draws and saves the map. Next,"
+" it reads one or more HTML template files identified in the Mapfile. Each"
+" template consists of traditional HTML markup tags and special MapServer "
+"replacement strings. For example, these strings are used to specify paths"
+" to map images created by MapServer, identify layers to render, and "
+"specify zoom levels and orientations. MapServer replaces the current "
+"values of these strings and sends the data stream to the web server, "
+"which then forwards it to the browser. When the requester changes any "
+"form element on the page (for example, by changing the zoom direction or "
+"zoom value) and clicks the submit button, MapServer will receive requests"
+" with these new values from the web server. Then the cycle starts again."
+msgstr ""
+"MapServer CGI是基于模板的。当第一次执行以响应Web请求时，它读取描述地图的层和其他组件的配置文件( Mapfile "
+")。然后它绘制并保存地图。接下来，它读取映射文件中标识的一个或多个HTML模板文件。每个模板都由传统的HTML标记标记和特殊的MapServer替换字符串组成。例如，这些字符串用于指定映射由MapServer创建的图像的路径、标识要渲染的层以及指定缩放级别和方向。MapServer替换这些字符串的当前值，并将数据流发送到Web服务器，然后Web服务器将其转发到浏览器。当请求者更改页面上的任何表单元素(例如，通过更改缩放方向或缩放值)并单击提交按钮时，MapServer将从Web服务器接收具有这些新值的请求。然后这个循环又开始了。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:34
+msgid "Technical note on network access of MapServer"
+msgstr "关于MapServer网络访问的技术说明"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:36
+msgid ""
+"Your original purpose is to generate maps in a CGI environment where "
+"users connect to the Apache web server through a web browser. In this "
+"environment, Apache calls MapServer, which can pass various forms of "
+"variables from the browser."
+msgstr "您最初的目的是在CGI环境中生成地图，在该环境中，用户通过Web浏览器连接到ApacheWeb服务器。在这个环境中，Apache会调用MapServer，它可以从浏览器传递各种形式的变量。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:41
+msgid ""
+"Using this information, MapServer generates maps and web pages, which "
+"Apache returns to the browser. Of course, it is not enough for MapServer "
+"to generate a map only from the browser’s information."
+msgstr "利用这些信息，MapServer会生成地图和网页，然后将这些地图和网页返回给浏览器。当然，MapServer仅根据浏览器的信息生成地图是不够的。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:45
+msgid ""
+"In fact, CGI MapServer network applications have four components: Map "
+"files, HTML initialization forms, one or more template files, and spatial"
+" data (libraries)."
+msgstr "事实上，CGI MapServer网络应用程序有四个组件： Mapfile 、HTML初始化表单、一个或多个模板文件和空间数据(库)。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:49
+msgid ""
+"Note: Web applications can provide fixed content for static pages, as "
+"well as dynamic content through scripts in response to web forms, as well"
+" as database queries and other functions."
+msgstr "注：Web应用程序可以为静态页面提供固定内容，也可以通过脚本响应Web表单提供动态内容，以及数据库查询等功能。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:53
+msgid ""
+"The standard that determines the interaction between these scripts and "
+"the Web server is called the universal gateway interface, which is "
+"usually abbreviated to CGI."
+msgstr "确定这些脚本和Web服务器之间交互的标准称为通用网关接口，通常缩写为CGI。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:57
+msgid ""
+"These four components are discussed in this chapter. The premise is that "
+"the user’s web browser has already displayed the initialized file."
+msgstr "这四个组成部分将在本章中讨论。前提是用户的Web浏览器已经显示了初始化的文件。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:60
+msgid ""
+"MapServer, like all web applications, is based on a stateless protocol - "
+"that is, on each call, it only knows what information the browser "
+"communicates to it. Stateless protocols preclude using programs to answer"
+" anything other than the last question. However, some clever code can "
+"provide a stateful environment that enables web applications to do more "
+"complex work. For example, state can be maintained between calls by "
+"storing state information in a variable in a hidden form, such as in a "
+"URL or a cookie. But some methods need to bootstrap the program, so it "
+"contains the information needed for the first call."
+msgstr "与所有Web应用程序一样，MapServer基于无状态协议，即每次调用时，它只知道浏览器与其通信的信息。无状态协议禁止使用程序回答除最后一个问题之外的任何问题。然而，一些聪明的代码可以提供一个有状态的环境，使Web应用程序能够完成更复杂的工作。例如，通过以隐藏形式将状态信息存储在变量中(如URL或Cookie)，可以在调用之间维护状态。但有些方法需要引导程序，因此它包含第一次调用所需的信息。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:70
+msgid ""
+"In MapServer, this is done by initializing the file. In CGI MapServer "
+"applications, initialization files are traditional HTML forms that have "
+"initialization information that converts hard-coding into form variables."
+" Almost all values used by MapServer can be set in the initialization "
+"file."
+msgstr ""
+"在MapServer中，这是通过初始化文件来完成的。在CGI "
+"MapServer应用程序中，初始化文件是传统的HTML表单，其中包含将硬编码转换为表单变量的初始化信息。MapServer使用的几乎所有值都可以在初始化文件中设置。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:76
+msgid ""
+"When Apache first calls MapServer using HTML’s initialization form, the "
+"form variable is used to specify the name of the map file (the extension "
+"is usually ``.map`` )."
+msgstr ""
+"当Apache第一次使用HTML的初始化表单调用MapServer时，将使用Form变量指定 Mapfile 的名称(扩展名通常是  "
+"``.map`` )。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:80
+msgid ""
+"It then finds the fonts, symbols, templates, and spatial data of the "
+"file. The map file also specifies the size and geographical range of the "
+"final map, and whether the map is in GIF,JPEG or PNG format. After "
+"reading the map file, MapServer renders one or more images: the map "
+"itself, legends and scale bars, and possibly a reference map. It stores "
+"these images in a specified location in the map file."
+msgstr ""
+"然后，它会查找该文件的字体、符号、模板和空间数据。 Mapfile "
+"还指定最终地图的大小和地理范围，以及地图是GIF、JPEG还是PNG格式。在读取 Mapfile "
+"后，MapServer渲染一个或多个图像：地图本身、图例和比例尺，可能还有参考地图。它将这些图像存储在 Mapfile 中的指定位置。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:87
+msgid ""
+"In order to show the results, MapServer needs to design the map format "
+"and organize the relevant elements to make it a web page. The program "
+"itself does not generate HTML; instead, it scans the HTML template to "
+"replace the string. String substitution can refer to files, details of "
+"map geometry, layer specifications, or scaling factors. They can also be "
+"constants of CGI variables, such as image size, name of the map file, map"
+" range, and so on."
+msgstr "为了显示结果，MapServer需要设计地图格式并组织相关元素，使其成为网页。程序本身不会生成HTML；相反，它会扫描HTML模板以替换字符串。字符串替换可以引用文件、地图几何图形的详细信息、层规范或比例因子。它们也可以是CGI变量的常量，例如图像大小、贴图文件的名称、贴图范围等。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:95
+msgid ""
+"MapServer replaces the string with the appropriate value and returns the "
+"modified HTML to the browser that requested the information."
+msgstr "MapServer用适当的值替换该字符串，并将修改后的HTML返回给请求信息的浏览器。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:98
+msgid ""
+"In this chapter, you will build a map application to illustrate the "
+"simplicity of using MpaServer and how the components work together."
+msgstr "在本章中，您将构建一个地图应用程序，以说明使用MpaServer的简单性以及组件如何协同工作。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:101
+msgid ""
+"The following chapters will introduce the features of MapServer "
+"(projection, tile retrieval, notation, query, etc.), which will make the "
+"capabilities of MapServer more obvious."
+msgstr "接下来的章节将介绍MapServer的功能(投影、瓦片检索、标注、查询等)，这些功能将使MapServer的功能更加明显。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:106
+msgid "MapServer application development through CGI"
+msgstr "通过CGI开发MapServer应用程序"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:108
+msgid ""
+"MapServer provides two development interfaces: CGI and MapScript. CGI is "
+"the most basic method for MapServer application development. In CGI mode,"
+" MapServer uses the GD library to convert spatial data into geographic "
+"graphics and transmit them back to the user’s browser. Users do not need "
+"to install any specific browsing program to operate on it through the "
+"browser."
+msgstr "MapServer提供了两个开发接口：CGI和MapScrip。CGI是MapServer应用程序开发最基本的方法。在CGI模式下，MapServer使用GD库将空间数据转换为地理图形，并将其传输回用户的浏览器。用户不需要安装任何特定的浏览程序就可以通过浏览器对其进行操作。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:115
+msgid ""
+"The user can send a request directly to the MapServer server through a "
+"URL similar to the following, and MapServer creates the appropriate map "
+"image according to the requested parameters, and returns the result to "
+"the user’s browser:"
+msgstr "用户可以通过类似如下的URL直接向MapServer服务器发送请求，MapServer根据请求的参数创建相应的地图图像，并将结果返回给用户的浏览器："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:124
+msgid ""
+"where ``/cgi-bin/mapserv`` is the MapServer CGI program. ``?`` is "
+"followed by a query string consisting of MapServer CGI parameters such as"
+" ``map`` , ``layer`` , and ``mode`` . The ``map`` parameter specifies the"
+" map file to be processed by MapServer, the ``layer`` parameter tells "
+"``mapserv`` to display the layer, and the ``mode`` parameter tells "
+"``mapserv`` to generate a static map image."
+msgstr ""
+"哪里  ``/cgi-bin/mapserv`` 是MapServer CGI程序。  ``?`` 后跟一个由MapServer "
+"CGI参数组成的查询字符串，如  ``map`` ，  ``layer`` ，以及  ``mode`` 。这个  ``map`` "
+"参数指定要由MapServer处理的 Mapfile ，  ``layer`` 参数告诉我们  ``mapserv`` 要显示该层，请使用  "
+"``mode`` 参数告诉我们  ``mapserv`` 以生成静态地图图像。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:131
+msgid ""
+"Alternatively, dynamic, interactive maps can be generated by specifying "
+"the value of the ``mode`` parameter to the browser. At this time, when "
+"the user clicks on the map, MapServer will generate a zoom-in, zoom-out "
+"or repositioning map centered on the user’s clicked location."
+msgstr ""
+"或者，也可以通过指定  ``mode`` "
+"参数添加到浏览器。此时，当用户点击地图时，MapServer将以用户点击的位置为中心生成放大、缩小或重新定位的地图。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:136
+msgid ""
+"Generating a dynamic map requires an HTML template with a form to "
+"interact with the user."
+msgstr "生成动态地图需要一个带有表单的HTML模板来与用户交互。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:139
+msgid "A simple form is as follows:"
+msgstr "一个简单的表格如下："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:164
+msgid ""
+"A MapServer HTML template is an HTML-formatted file with MapServer tags. "
+"MapServer tags are MapServer CGI variables enclosed in square brackets "
+"(``[]``), such as ``[map]``, ``[img]``, and ``[mapext]``, etc., which "
+"represent Map file, map image URL, and extent of the map. Through HTML "
+"templates, MapServer CGI programming can be greatly simplified."
+msgstr ""
+"MapServer HTML模板是带有MapServer标记的HTML格式的文件。MapServer标签是括在方括号中的MapServer "
+"CGI变量 (``[]`` )，例如  ``[map]`` ，  ``[img]`` ，以及  ``[mapext]`` 等，表示 Mapfile"
+" 、地图图像URL和地图范围。通过使用Html模板，可以大大简化MapServer CGI编程。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:170
+msgid ""
+"When the MapServer CGI program receives the request from the MapServer "
+"HTML template, The parameters are first parsed, the request is processed "
+"and the necessary output is generated, then some of these outputs are "
+"replaced with the corresponding MapServer tags (variables) in the HTML "
+"template, and finally the HTML (template) file with the output results is"
+" returned to the client browser. Since the map in the template is "
+"returned as a form element, the user can interact with it."
+msgstr ""
+"当MapServer CGI程序接收到来自MapServer "
+"HTML模板的请求时，首先解析参数，处理请求并生成必要的输出，然后将这些输出中的一部分替换为HTML模板中相应的MapServer标记(变量)，最后将具有输出结果的HTML(模板)文件返回给客户端浏览器。由于模板中的地图作为表单元素返回，因此用户可以与其交互。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:178
+msgid ""
+"MapServer provides many CGI variables for Web mapping. Almost all "
+"keywords in MapServer’s map files can be defined as a variable, but there"
+" are not many CGI variables in the core of mapping. In addition, users "
+"can also customize variables, such as users can define a variable named "
+"``root``, which is used to represent the root directory of the "
+"application."
+msgstr ""
+"MapServer为Web映射提供了许多CGI变量。MapServer Mapfile "
+"中的几乎所有关键字都可以定义为变量，但在映射的核心中并没有太多的CGI变量。此外，用户还可以自定义变量，例如用户可以定义名为  ``root`` "
+"，用于表示应用程序的根目录。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:185
+msgid ""
+"MMap browsing can only rely on MapServer to provide the basic functions "
+"of Web mapping services. In addition, MapServer also provides powerful "
+"spatial and attribute query functions. In CGI mode, HTML templates are "
+"used extensively to construct queries and organize the information "
+"returned by queries, which often involves complex interactions with map "
+"files, templates, and MapServer CGI programs."
+msgstr ""
+"MMap浏览只能依靠MapServer提供Web地图服务的基本功能。此外，MapServer还提供强大的空间和属性查询功能。在CGI模式中，广泛使用HTML模板来构造查询和组织查询返回的信息，这通常涉及与"
+" Mapfile 、模板和MapServer CGI程序的复杂交互。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:192
+msgid ""
+"MapServer has many modes ( ``mode``, and browse ( ``browse`` ) mode is "
+"the default mode of MapServer. There are 18 modes related to queries. By "
+"using these query modes, MapServer can implement points such as: querying"
+" points based on mouse position, querying points based on input "
+"coordinate values, querying attributes by inputting an expression, and "
+"querying based on the serial number of elements."
+msgstr ""
+"MapServer有多种模式(  ``mode`` ，并浏览(  ``browse`` "
+")模式是MapServer的默认模式。与查询相关的模式有18种。通过使用这些查询模式，MapServer可以实现根据鼠标位置查询点、根据输入坐标值查询点、通过输入表达式查询属性、根据元素序列号查询。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:199
+msgid ""
+"MapServer creates legends and scales (configurable in mapfile) and "
+"generates reference maps. The reference map displays the context of the "
+"currently displayed map. Zooming and panning are controlled by the user."
+msgstr "MapServer创建图例和比例(可在 Mapfile 中配置)并生成参考地图。参考地图显示当前显示的地图的上下文。缩放和平移由用户控制。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:204
+msgid "MapServer HTML template"
+msgstr "MapServer HTML模板"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:206
+msgid ""
+"With the MapServer HTML template, you need to add the MapServers template"
+" declaration to each HTML template file. Otherwise, when using "
+"GetFeatureInfo (with an info_format collection) as the text/html request,"
+" you will get the following error message:"
+msgstr ""
+"对于MapServer "
+"HTML模板，您需要将MapServer模板声明添加到每个HTML模板文件中。否则，当使用GetFeatureInfo(具有INFO_FORMAT集合)作为文本/html请求时，您将收到以下错误消息："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:216
+msgid "You need to add at the beginning of each template:"
+msgstr "您需要在每个模板的开头添加："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:222
+msgid "Example the exemplar template query footer.html is:"
+msgstr "示例模板查询footer.html为："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:228
+msgid ""
+"A MapServer HTML template is actually a MapServer-specific HTML file – "
+"these table tags are MapServer CGI variables enclosed in ``[]``. When a "
+"MapServer CGI program processes an application, it first parses the "
+"``query_string`` and map file, and produces the necessary output. These "
+"outputs need to be written in an HTML template file, which must be "
+"defined in the Mapfile by using the web template keyword (or in a "
+"separate HTML initialization file). The CGI program will replace all "
+"variables in the HTML template with appropriate values before sending it "
+"to the web browser. If you view the contents of the HTML template "
+"directly on a web browser, there will be no maps available, but empty "
+"images and other characters of unknown meaning."
+msgstr ""
+"MapServer HTML模板实际上是特定于MapServer的HTML文件-这些表标记是包含在中的MapServer CGI变量  "
+"``[]`` 。当MapServer CGI程序处理应用程序时，它首先解析  ``query_string`` "
+"和映射文件，并产生必要的输出。这些输出需要写入一个HTML模板文件中，该文件必须使用Web模板关键字在映射文件中定义(或在单独的HTML初始化文件中)。CGI程序在将其发送到Web浏览器之前，将用适当的值替换HTML模板中的所有变量。如果您直接在Web浏览器上查看HTML模板的内容，将没有可用的地图，只有空图像和其他未知含义的字符。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:240
+msgid ""
+"MapServer’s network mapping provides some variables – ``img`` variables, "
+"which have been examples before, where several commonly used CGI "
+"variables are designed as part of the initialization of the map "
+"interface, but actually all MapFile parameters can be defined as "
+"variables."
+msgstr ""
+"MapServer的网络地图提供了一些变量-  ``img`` "
+"变量，其中几个常用的CGI变量被设计为map接口初始化的一部分，但实际上所有的MapFile参数都可以定义为变量。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:246
+msgid ""
+"An explicit reference to CGI variables is at: "
+"http://www.mapserver.org/cgi/index.html"
+msgstr "有关cgi变量的明确引用，请访问：http://www.mapserver.org/cgi/index.html"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec01_mapserver-cgi-intro/section.rst:249
+msgid ""
+"The CGI variables used by MapServer can also be defined by the developer "
+"and MapServer will pass it to the application. For example, we could "
+"create a variable called ``root`` to represent our root directory for "
+"this tutorial – the value of ``root`` will be read by ``/tutorial`` . "
+"When the MapServer CGI value processes our HTML template, it will replace"
+" every instance of the ``[root]`` tag and ``/tutorial``. You’ll see this "
+"in action in each of the following examples."
+msgstr ""
+"MapServer使用的CGI变量也可以由开发人员定义，MapServer将把它传递给应用程序。例如，我们可以创建一个名为  ``root`` "
+"来表示本教程的根目录--  ``root`` 将由以下人员阅读  ``/tutorial`` 。当MapServer "
+"CGI值处理我们的HTML模板时，它将替换  ``[root]`` 标记和  ``/tutorial`` 。您将在下面的每个示例中看到这一点。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:4
+msgid "Interactive Map and Browse Model"
+msgstr "交互式地图与浏览模型"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:7
+msgid "View examples"
+msgstr "查看示例"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:14
+msgid ""
+"The map above is in ``map`` Generated in mode. It is a static map "
+"(nothing changes when you click)."
+msgstr "上面的地图在  ``map`` 在模式下生成。它是静态地图(当您单击时不会发生任何变化)。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:17
+msgid "But open the map below and you can use mouse clicks to interoperate."
+msgstr "但打开下面的地图，你可以使用鼠标点击来进行互操作。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:19
+#, fuzzy
+msgid ""
+"https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=browse"
+msgstr ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdc1.map&layer=states_line&layer=topo&mode=browse"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:22
+msgid "Submit CGI variables using Post form"
+msgstr "使用POST表单提交CGI变量"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:24
+msgid ""
+"Previously, you put all the parameters needed by MapServer in URL, which "
+"is the way to use parameters explicitly, but it can cause the URL to "
+"become very long."
+msgstr "以前，您将MapServer需要的所有参数放在URL中，这是显式使用参数的方式，但这可能会导致URL变得非常长。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:29
+msgid "Instruction"
+msgstr "说明"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:31
+msgid "Another way is to use a form to submit parameters. Here is a form:"
+msgstr "另一种方法是使用表单提交参数。这是一张表格："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:54
+msgid "POST form"
+msgstr "邮寄表格"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:56
+msgid "This part of the code is as follows"
+msgstr "这部分代码如下所示"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:68
+msgid "With POST submission, the parameters need to be placed in the form."
+msgstr "对于POST提交，需要将参数放置在表单中。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:85
+msgid "Mapfile and template file description"
+msgstr "映射文件和模板文件描述"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:88
+msgid "Mapfile description"
+msgstr "映射文件描述"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:90
+msgid "Now, take a look at Mapfile:"
+msgstr "现在，我们来看一下 Mapfile ："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:97
+msgid ""
+"Compared to static maps, only the following line is actually added to "
+"Mapfile:"
+msgstr "与静态映射相比，只有以下行实际添加到Mapfile中："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:104
+msgid ""
+"This tells MapServer to use the page ``example1-9.html`` as the template "
+"file. MapServer will process this file and replace the tags it encounters"
+" before sending it to the web browser. This is the mechanism by which "
+"MapServer implements dynamic pages."
+msgstr ""
+"这会告知MapServer使用该页面  ``example1-9.html`` "
+"作为模板文件。在将该文件发送到Web浏览器之前，MapServer将处理该文件并替换其遇到的标记。这是MapServer实现动态页面的机制。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:109
+msgid ""
+"The above code snippet defines the parameters of the Web object, starting"
+" with the keyword ``WEB`` and ending with the keyword ``END``. The "
+"``WEB`` object tells the map server the name of the HTML template file "
+"(in this case, only one, named ``example1-9.html`` ), the paths to the "
+"images to create, and the URLs to point to those images. As before, "
+"IMAGEPATH specifies the path to images created by MapServer. In this case"
+" you use absolute paths, but you can also use relative paths from the "
+"location of the mapfile. Note that you cannot remove the leading or final"
+" slash ``/`` from the IMAGEURL. The string defined by IMAGEURL is "
+"appended to the base URL (ie, http://localhost ) to generate the URL for "
+"the image rendered on the page."
+msgstr ""
+"上面的代码片段定义了Web对象的参数，从关键字开始  ``WEB`` 并以关键字结束  ``END`` 。这个  ``WEB`` "
+"对象向地图服务器告知该HTML模板文件的名称(在本例中，只有一个名为  ``example1-9.html`` "
+")、要创建的图像的路径以及指向这些图像的URL。与前面一样，IMAGEPATH指定由MapServer创建的图像的路径。在这种情况下，您使用绝对路径，但也可以使用来自映射文件位置的相对路径。请注意，不能删除前导斜杠或末尾斜杠"
+"  ``/`` "
+"来自IMAGEURL。由IMAGEURL定义的字符串被附加到基本URL(即，http://localhost)，以生成页面上呈现的图像的URL。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:121
+msgid ""
+"Note that if you’re not sure about the importance of ``/``, or what "
+"Apache’s ``DocumentRoot`` is, you can look it up at "
+"http://httpd.apache.org/docs/mod/core.html#documentroot."
+msgstr ""
+"请注意，如果您不确定  ``/`` ，或者阿帕奇的什么  ``DocumentRoot`` "
+"是，你可以在http://httpd.apache.org/docs/mod/core.html#documentroot.上查到"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:126
+msgid "HTML file"
+msgstr "超文本标记语言文件"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:128
+msgid ""
+"In the template file, in addition to the HTML text content, the key is "
+"the form code block within this page (right-click on your browser page "
+"and select “View Source” or something similar):"
+msgstr "在模板文件中，除了HTML文本内容之外，关键是该页面中的表单代码块(在浏览器页面上单击鼠标右键并选择“查看源代码”或类似的内容)："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:132
+msgid "Now, let’s build an interactive interface for our application."
+msgstr "现在，让我们为我们的应用程序构建一个交互界面。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:134
+msgid ""
+"The following shows the use of a form for submission, with various "
+"parameters passed through the input control."
+msgstr "下面显示了如何使用表单提交，并通过输入控件传递各种参数。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:143
+msgid ""
+"Each time the user clicks the map, this block executes the MapServer CGI "
+"program ( ``/cgi-bin/mapserv`` ). The program here can be defined using "
+"the following:"
+msgstr "用户每次单击地图时，此块都会执行MapServer CGI程序(  ``/cgi-bin/mapserv`` )。可以使用以下内容定义此处的程序："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:151
+msgid ""
+"The following two variables are user-defined variables. If it finds the "
+"correct tag within square brackets ``[]``, MapServer will pass its value "
+"to the HTML template."
+msgstr "以下两个变量是用户定义的变量。如果它在方括号中找到正确的标记  ``[]`` ，MapServer将把它的值传递给HTML模板。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:155
+msgid ""
+"``map`` And ``layer`` Variables are MapServer internal variables. They "
+"are required for MapServer mapping applications."
+msgstr "``map`` 和  ``layer`` 变量是MapServer内部变量。它们是MapServer地图应用程序所必需的。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:180
+msgid ""
+"The ``map_web_template`` variable will replace the TEMPLATE parameter in "
+"the WEB object in the Mapfile."
+msgstr "这个  ``map_web_template`` 变量将替换映射文件中Web对象中的模板参数。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:183
+msgid ""
+"The map is actually in another form. ``input`` Using the following code "
+"to represent:"
+msgstr "这张地图实际上是另一种形式。  ``input`` 使用以下代码表示："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:190
+msgid ""
+"The items in square brackets (``[map]`` , ``[mapext]`` , and ``[img]`` ) "
+"are so-called MapServer tags - these are MapServer CGI variables, which "
+"are MapServer CGI program for assignment. The label ``[map]`` is a "
+"placeholder for the Mapfile path, so when MapServer runs, it will be "
+"replaced with ``\"/owg/mfc1.map\"`` . The label ``[mapext]`` will be "
+"replaced with the current map extent, which will change as you click on "
+"the map; The ``[img]`` tag will be replaced with the path to the image "
+"created by the MapServer CGI program, and the name will be passed to the "
+"client after MapServer renders the image on the server side. On the "
+"server, the path ``IMAGEPATH`` ( ``/owg/ms_tmp/`` ) must exist and have "
+"appropriate permissions. You can check to see if the image exists (on the"
+" server) under the ``IMAGEPATH`` ( ``/owg/ms_tmp/`` ) path in MapServer."
+msgstr ""
+"方括号中的项目 (``[map]`` ，  ``[mapext]`` ，以及  ``[img]`` "
+")是所谓的MapServer标记-这些是MapServer CGI变量，它们是用于赋值的MapServer CGI程序。标签  ``[map]``"
+" 是 Mapfile 路径的占位符，因此当MapServer运行时，它将被替换为  ``\"/owg/mfc1.map\"`` 。标签  "
+"``[mapext]`` 将替换为当前地图范围，该范围将随着您在地图上的单击而更改；  ``[img]`` 标记将被替换为MapServer "
+"CGI程序创建的图像的路径，在MapServer在服务器端呈现图像后，该名称将传递给客户端。在服务器上，路径  ``IMAGEPATH`` (  "
+"``/owg/ms_tmp/`` )必须存在并且具有适当的权限。您可以检查映像是否存在(在服务器上)的  ``IMAGEPATH`` (  "
+"``/owg/ms_tmp/`` )路径。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:204
+msgid ""
+"Note that the above call also has a hidden variable ``\"mode\"`` with the"
+" value ``\"browse\"\"``, which tells MapServer to create and store images"
+" in the ``tmp`` directory. Then, this Images are referenced as ``[img]``,"
+" which is what you see in the browser."
+msgstr ""
+"请注意，上面的调用也有一个隐藏变量  ``\"mode\"`` 具有价值的  ``\"browse\"\"`` ，它告诉MapServer在  "
+"``tmp`` 目录。然后，该图像被引用为  ``[img]`` ，这就是您在浏览器中看到的内容。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:210
+msgid "Requirements for MapServer template files"
+msgstr "对MapServer模板文件的要求"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:212
+msgid ""
+"The MapServer template file must contain the specific string ``mapserver "
+"template`` on the first line, usually given in the form of HTML, "
+"JavasSript or XML comments. This line is not passed to the client. This "
+"particular string is not case sensitive."
+msgstr ""
+"地图服务器模板文件必须包含特定字符串  ``mapserver template`` "
+"在第一行，通常以HTML、JavasSript或XML注释的形式给出。这一行不会传递给客户端。此特定字符串不区分大小写。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:217
+msgid ""
+"MapServer’s template file name suffix is limited. The available suffixes "
+"are: ``.gml`` , ``.html`` , ``.htm`` , ``.js`` , ``.kml`` , ``.svg`` , "
+"``.tmpl`` , ``.wml`` , ``.xml`` ."
+msgstr ""
+"MapServer的模板文件名后缀有限。可用的后缀包括：  ``.gml`` ，  ``.html`` ，  ``.htm`` ，  "
+"``.js`` ，  ``.kml`` ，  ``.svg`` ，  ``.tmpl`` ，  ``.wml`` ，  ``.xml`` 。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:222
+msgid "CGI variable"
+msgstr "CGI变量"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:224
+msgid ""
+"All CGI parameters can replace references, MapServer specific parameters,"
+" and user-defined parameters in the template. In principle, parameters "
+"are passed directly by MapServer without any processing. This feature is "
+"critical to implementing MapServer applications."
+msgstr "所有CGI参数都可以替换模板中的引用、MapServer特定参数和用户定义的参数。原则上，参数由MapServer直接传递，无需任何处理。此功能对于实现MapServer应用程序至关重要。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:229
+msgid ""
+"The following reference lists only the template placeholder-specific "
+"strings needed to obtain information about MapServer modifications, such "
+"as new scale bars, query results, and so on."
+msgstr "以下参考仅列出了获取有关MapServer修改的信息(如新比例尺、查询结果等)所需的模板占位符特定字符串。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:233
+msgid "The placeholder string for the template is case-sensitive."
+msgstr "模板的占位符字符串区分大小写。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:235
+msgid ""
+"The property item substitution must be the same as the item name in the "
+"dbase file."
+msgstr "属性项替换必须与dBASE文件中的项名称相同。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:238
+msgid ""
+"ArcView and ArcInfo usually generate dbase files with project names all "
+"in uppercase. When the template is URL, apply the appropriate URL "
+"encoding (that is, ``' '`` To ``'+'`` )."
+msgstr ""
+"ArcView和ArcInfo通常生成项目名称全部为大写的dBASE文件。当模板为URL时，应用适当的URL编码(即，  ``' '`` 至  "
+"``'+'`` )。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:242
+msgid ""
+"Some placeholder strings can also be provided in escaped form, such as "
+"URL encoding."
+msgstr "某些占位符字符串也可以转义形式提供，例如URL编码。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:246
+msgid "Special character"
+msgstr "特殊字符"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:248
+msgid ""
+"A template is simply an HTML file or URL string that contains special "
+"characters replaced by mapserv each time the template is processed. "
+"Simple substitution allows information such as the active layer or space "
+"range to be passed from the user to mapserv and back again. In most "
+"cases, the new value is dumped into the form variable that will be passed"
+" again. Here is a list of special characters and form variables. HTML "
+"templates can contain anything, including JavaScript and Java calls."
+msgstr "模板只是一个包含在每次处理模板时被mapserv替换的特殊字符的HTML文件或URL字符串。简单的替换允许将活动层或空间范围等信息从用户传递到映射服务器，然后再传递回来。在大多数情况下，新值被转储到将再次传递的表单变量中。以下是特殊字符和表单变量的列表。HTML模板可以包含任何内容，包括JavaScript和Java调用。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec02_mode/section.rst:257
+msgid ""
+"In HTML files, attribute values can be enclosed in quotation marks "
+"(``\"\"``). Writing property values within quotes allows you to set "
+"special characters that the value does not normally use (such as: ``]``, "
+"``=``, ``\"``, and spaces. To write single quotes within the property "
+"value, only Use two quotation marks (``\"\"``)."
+msgstr ""
+"在HTML文件中，属性值可以用引号引起来 (``\"\"`` )。通过在引号中写入属性值，您可以设置值通常不使用的特殊字符(例如：  ``]`` "
+"，  ``=`` ，  ``\"`` 和空格。要在属性值中使用单引号，请仅使用两个引号 (``\"\"`` )。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:4
+msgid "MapServer interaction: browse and zoom control"
+msgstr "MapServer交互：浏览和缩放控件"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:6
+msgid ""
+"This section introduces how to realize the control of map browsing and "
+"zooming through CGI in MapServer."
+msgstr "介绍了如何在MapServer中通过CGI实现对地图浏览和缩放的控制。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:10
+msgid "How to browse and zoom"
+msgstr "如何浏览和缩放"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:12
+msgid ""
+"As in the previous map, we pass our mapfile path and other parameters ( "
+"``map=/ms4w/apps/tutorial/htdocs/example2-1.map&amp;mode=browse`` ) "
+"Initialize our application MapServ ( ``/cgi-bin/mapserv`` ). Here is a "
+"link:"
+msgstr ""
+"与前面的映射一样，我们传递映射文件路径和其他参数(  "
+"``map=/ms4w/apps/tutorial/htdocs/example2-1.map&amp;mode=browse`` "
+")初始化我们的应用程序MapServ(  ``/cgi-bin/mapserv`` )。这里有一个链接："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:17
+#, fuzzy
+msgid ""
+"`Open sample map 1 <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=topo&zoom=0&map_web=template+example2-1.html>`__"
+msgstr ""
+"`Open sample map 1 <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=topo&zoom=0&map_web=template+example2-1.html>`__"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:20
+msgid ""
+"In Mapfile, you need to add: ``TEMPLATEPATTERN '.'`` ，otherwise, it may "
+"appear:"
+msgstr "在Mapfile中，您需要添加：  ``TEMPLATEPATTERN '.'`` 否则，可能会出现以下情况："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:27
+msgid "For clarity, use the Python code to list the parameters as follows:"
+msgstr "为清楚起见，请使用Python代码列出参数，如下所示："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:44
+#, fuzzy
+msgid ""
+"`Open sample Map 2 <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=topo&layer=states_line&zoom=0&map_web=template+example2-1.html>`__"
+msgstr ""
+"`Open sample Map 2 <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=topo&layer=states_line&zoom=0&map_web=template+example2-1.html>`__"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:47
+msgid ""
+"If you want to use multiple layers, use the ``layer`` parameter multiple "
+"times. But the same template file can be used."
+msgstr "如果要使用多个层，请使用  ``layer`` 参数多次调用。但是可以使用相同的模板文件。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:66
+msgid "This example seems to have no new knowledge points."
+msgstr "这个例子似乎没有新的知识点。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:68
+#, fuzzy
+msgid ""
+"`Open the sample map <https://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfc2.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=states&zoom=0&map_web=template+example2-1.html>`__"
+msgstr ""
+"`Open the sample map <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfc2.map&mode=browse&root=/owg&program=/cgi-"
+"bin/mapserv&layer=states&zoom=0&map_web=template+example2-1.html>`__"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:71
+msgid ""
+"This time we use ``browse`` mode instead of ``map`` mode. The ``browse`` "
+"mode tells MapServer to create a map (image) on the ``/tmp/`` directory. "
+"The path and name of the image are referenced by MapServer under the name"
+" ``img`` . When MapServer parses the HTML template, it replaces the "
+"``[img]`` tag with the correct path to the image: ``img``."
+msgstr ""
+"这一次我们使用  ``browse`` 模式而非  ``map`` 模式。这个  ``browse`` "
+"模式告诉MapServer在上创建地图(图像  ``/tmp/`` 目录。图像的路径和名称由MapServer在名称下引用  ``img`` "
+"。当MapServer分析该HTML模板时，它会替换  ``[img]`` 带有指向图像的正确路径的标签：  ``img`` 。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:77
+msgid ""
+"There are a few things you can do with this map. First, click on any part"
+" of the image and the map will refresh and center the clicked point. This"
+" is panning. If you click the ``Map Control`` drop-down box, you can "
+"choose a ``zoom in`` or ``zoom out`` value. If you set it to ``Zoom In "
+"2x`` and then click on any part of the map, the map will be refreshed, "
+"zoomed in, and the clicked point will be centered. If you zoom out, the "
+"opposite happens. When you select a “Zoom In” or “Zoom Out” value and "
+"click the “Refresh” button, the map zooms in or out from the center of "
+"the previous map. You can refresh the map at any time using the refresh "
+"button."
+msgstr ""
+"使用这张地图可以做几件事。首先，点击图像的任何部分，地图将刷新并将点击的点居中。这就是淘金。如果您单击  ``Map Control`` "
+"下拉框中，您可以选择一个  ``zoom in`` 或  ``zoom out`` 价值。如果将其设置为  ``Zoom In 2x`` "
+"然后点击地图的任何部分，地图就会被刷新、放大，被点击的点会居中。如果缩小，则会发生相反的情况。当您选择“放大”或“缩小”值并单击“刷新”按钮时，地图将从上一张地图的中心放大或缩小。您可以随时使用刷新按钮刷新地图。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:88
+msgid ""
+"The zoom/pan controls use internal MapServer CGI variables. This example "
+"shows how to use the “scale” variable. The value of zoom determines how "
+"far to zoom in or out. If the value is ‘0’, MapServer will reposition the"
+" image based on the user’s mouse click. If the value is greater than “0”,"
+" the CGI program zooms in (the current scale of the map multiplied by the"
+" zoom value). If it is negative, the CGI program zooms out (divides the "
+"current scale by the zoom value). Other variables that can be used to "
+"control zoom and pan are “zoomdir” and “zoomsize”. These two variables "
+"are almost the same as “zoom” - “zoomdir” controls the zoom direction, "
+"and “zoomsize” controls how far to zoom in or out. Check out the OSGeo "
+"Gallery or other examples in the MapServer wiki for other zoom/pan "
+"control options."
+msgstr ""
+"缩放/平移控件使用内部MapServer "
+"CGI变量。这个例子展示了如何使用“Scale”变量。ZOOM的值确定放大或缩小的距离。如果该值为‘0’，MapServer将根据用户的鼠标单击重新定位图像。如果该值大于“0”，CGI程序将放大(地图的当前比例乘以缩放值)。如果为负值，CGI程序将缩小(将当前比例除以缩放值)。其他可用于控制缩放和平移的变量是“zoomdir”和“zoomsize”。这两个变量几乎与“zoom”相同--“zoomdir”控制缩放方向，而“zoomSize”控制放大或缩小的程度。查看OSGeo图库或MapServer维基中的其他示例，以了解其他缩放/平移控制选项。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:101
+msgid ""
+"Try changing the “map mode” from ``browse`` to ``map``. What happens "
+"after hitting refresh? Remember, when we use ``mode=map``, MapServer "
+"returns a static map…it ignores the HTML template and just streams the "
+"map image directly to the browser."
+msgstr ""
+"尝试将“地图模式”从  ``browse`` 至  ``map`` 。点击刷新后会发生什么？记住，当我们使用  ``mode=map`` "
+"，MapServer返回静态地图…它忽略了HTML模板，只将地图图像直接流到浏览器。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:106
+msgid ""
+"Although more data layers have been added, it is still similar to Mapfile"
+" in part 1."
+msgstr "虽然添加了更多的数据层，但它仍然类似于第1部分中的Mapfile。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:109
+msgid ""
+"Now, look at the HTML template file. You’ll notice that it’s essentially "
+"an HTML form that calls a MapServer CGI program. Because it’s a form, you"
+" can implement your interface with radio buttons and checkboxes and "
+"dropdown boxes. Don’t be limited by this example - creativity is fine. ;)"
+" For more information, check out the HTML Template Reference page."
+msgstr ""
+"现在，我们来看一下这个HTML模板文件。您将注意到，它本质上是一个调用MapServer "
+"CGI程序的HTML表单。因为它是一个表单，所以您可以使用单选按钮、复选框和下拉框实现您的界面。不要被这个例子所限制--"
+"创造力是很好的。；)有关更多信息，请查看HTML模板参考页面。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:116
+msgid "Pan and zoom map in WebGIS map: POST form submission"
+msgstr "WebGIS地图中的平移和缩放地图：提交表单后"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:118
+msgid ""
+"The following shows the use of a form for submission, with various "
+"parameters through the ``input`` To pass on. The effect is the same as "
+"above:"
+msgstr "下面显示了用于提交的表单的用法，并通过  ``input`` 传承下去。效果同上："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:151
+msgid "View Mapfile"
+msgstr "查看映射文件"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec03_zoom/section.rst:153
+msgid "Take a look at Mapfile here:"
+msgstr "请查看此处的 Mapfile ："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:3
+msgid "MapServer interaction: layer control"
+msgstr "地图服务器交互：层控制"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:6
+msgid "Author: bukun"
+msgstr "作者：布昆"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:7
+msgid "Update: 2022-10-7"
+msgstr "更新时间：2022-10/7"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:10
+msgid "How to control layers"
+msgstr "如何控制层"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:12
+msgid ""
+"Being able to turn map layers on and off is a standard feature of web "
+"mapping applications. There are many ways to accomplish this using form "
+"objects as control. You can use the drop box/menu, check boxes, and/or "
+"radio buttons. In this example you'll see how to implement layer "
+"selection using check boxes and drop boxes."
+msgstr "能够打开和关闭地图层是Web地图应用程序的标准功能。有许多方法可以使用Form对象作为控件来实现这一点。您可以使用下拉框/菜单、复选框和/或单选按钮。在本例中，您将看到如何使用复选框和拖放框实现层选择。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:17
+msgid "Here is the corresponding Mapfile:"
+msgstr "下面是对应的映射文件："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:23
+msgid ""
+"Notice how the layer ``STATUS`` has been changed to ``OFF`` except for "
+"the \"States\" polygon background. The states background was left as "
+"default so our map will always have something when drawn without any "
+"layers turned on. The users of our application should have control of "
+"which layers to turn on or leave off."
+msgstr ""
+"请注意该层是如何  ``STATUS`` 已更改为  ``OFF`` "
+"除了“州”的多边形背景。州背景是默认的，所以我们的地图在没有打开任何层的情况下绘制时，总是会有一些东西。我们的应用程序的用户应该能够控制打开或关闭哪些层。"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:29
+msgid ""
+"You'll understand how the layers are turned on/off by MapServ if you look"
+" at the:"
+msgstr "如果您查看以下内容，您将了解MapServ如何打开/关闭这些层："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:64
+msgid "Open and close map layers"
+msgstr "打开和关闭地图图层"
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:66
+msgid "The demo could be opened directly via the following link:"
+msgstr "可以通过以下链接直接打开演示："
+
+#: ../../webgis-src/chb3_mapserver-cgi/sec04_control/section.rst:74
+msgid ""
+"The following shows a form submission, and various parameters are passed "
+"through the hidden `input` control. The effect is the same as above："
+msgstr "下面显示了一个表单提交，各种参数通过隐藏的  `input` 控制力。效果同上："
+

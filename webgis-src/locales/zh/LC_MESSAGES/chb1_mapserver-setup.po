@@ -1,0 +1,2188 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: bukun@osgeo.cn\n"
+"POT-Creation-Date: 2025-09-11 11:28+0800\n"
+"PO-Revision-Date: 2007-10-18 14:00+0100\n"
+"Last-Translator: you <you@example.com>\n"
+"Language-Team: English <yourteam@example.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:2
+msgid "Installation and configuration of MapServer"
+msgstr "MapServer的安装和配置"
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:4
+msgid ""
+"One of the ways to realize WebGIS is to use Common Gateway Interface "
+"(CGI) technology. On the server side, through the CGI application program"
+" to connect WebServer and GIS spatial database, the client only needs to "
+"use the browser to query and analyze the spatial data. The famous open "
+"source GIS server-side tool MapServer uses CGI technology."
+msgstr "使用公共网关接口(CGI)技术是实现WebGIS的一种方式。在服务器端，通过CGI应用程序连接WebServer和地理信息系统空间数据库，客户端只需使用浏览器即可对空间数据进行查询和分析。著名的开源GIS服务器端工具MapServer使用CGI技术。"
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:10
+msgid ""
+"Compared with the many WebGIS solutions provided by commercial "
+"enterprises, MapServer is an open source project. This means that you can"
+" use MapServer for free and have the right to modify, copy, and "
+"redistribute it on your own. It should be pointed out that MapServer, as "
+"an open source project, is in continuous development, but in recent "
+"years, the function has been relatively perfect and the update is "
+"relatively small."
+msgstr "与商业企业提供的众多WebGIS解决方案相比，MapServer是一个开源项目。这意味着您可以免费使用MapServer，并有权自行修改、复制和重新分发它。需要指出的是，MapServer作为一个开源项目，正在不断发展中，但近年来，功能已经比较完善，更新比较少。"
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:18
+msgid ""
+"At present, the mainstream Linux operating systems, such as Debian, "
+"Ubuntu, Centos and so on, have MapServer versions above 7.0. The content "
+"of this book is based on MapServer version 7. 0 and later."
+msgstr "目前主流的Linux操作系统，如Debian、Ubuntu、CentOS等，MapServer版本都在7.0以上。本书的内容基于MapServer7.0版和更高版本。"
+
+#: ../../webgis-src/chb1_mapserver-setup/chapter.rst:22
+msgid ""
+"This chapter explains the installation and configuration of MapServer to "
+"understand basic usage and related tools, how to generate map images, and"
+" how to access them through Web. After you set up the MapServer, you need"
+" to tell it the location of all resources and make sure that all "
+"permissions are set correctly. Because more useful MapServer applications"
+" have more lines of code and contain many HTML templates, keep the "
+"application simple to make it easier to debug when errors occur."
+msgstr "本章介绍了MapServer的安装和配置，以了解地图服务器的基本用法和相关工具，如何生成地图图像，以及如何通过Web访问地图图像。在设置MapServer之后，您需要告诉它所有资源的位置，并确保正确设置了所有权限。因为更有用的MapServer应用程序有更多的代码行并包含许多HTML模板，所以应使应用程序保持简单，以便在发生错误时更容易进行调试。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:4
+msgid "Introduction to MapServer"
+msgstr "MapServer简介"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:6
+msgid ""
+"MapServer is a real-time map publishing system based on the fat "
+"server/thin client mode. When the client sends a data request, the server"
+" processes the spatial data in real time and sends the generated data to "
+"the client. The core part of MapServer is the map operation module "
+"written in C language, and the implementation of many functions of "
+"MapServer itself depends on some open source or free libraries."
+msgstr "MapServer是一个基于胖服务器/瘦客户端模式的实时地图发布系统。当客户端发送数据请求时，服务器实时处理空间数据，并将生成的数据发送给客户端。MapServer的核心部分是用C语言编写的地图操作模块，MapServer本身的许多功能的实现都依赖于一些开源或自由库。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:13
+msgid ""
+"The core part of MapServer is the map manipulation module written in C "
+"language, and many of its functions rely on some open source or free "
+"libraries. Using the support of GEOS and OGR/GDAL for a variety of vector"
+" and raster data, the projection transformation is carried out in real "
+"time through the Proj.4 shared library. MapServer follows OGC series "
+"specifications and can integrate PostGIS and open source database "
+"PostgreSQL, and store and SQL query the geospatial data. Based on a "
+"series of client-side JavaScript APIs such as ka-map, MapLab, Cartoweb "
+"and Chameleon to support the transmission and expression of geospatial "
+"data, and comply with a series of WMS, WFS, WCS, WMC, SLD, GML and Filter"
+" Encoding formulated by OGC specification."
+msgstr ""
+"MapServer的核心部分是用C语言编写的地图操纵模块，它的许多功能都依赖于一些开放源码或自由库。利用GEOS和OGR/GDAL对各种矢量和栅格数据的支持，通过Proj.4共享库实时进行投影变换。MapServer遵循OGC系列规范，可以集成PostGIS和开源数据库PostgreSQL，并对地理空间数据进行存储和SQL查询"
+"。基于ka-map、MapLab、Caroweb、Chameleon等一系列客户端JAVASCRIPT "
+"API，支持地理空间数据的传输和表达，并遵循OGC规范制定的一系列WMS、WFS、WCS、WMC、SLD、GML和Filter编码。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:26
+msgid "Development history of MapServer"
+msgstr "MapServer的发展历史"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:28
+msgid ""
+"MapServer is an open source geospatial data rendering engine written in C"
+" language. It originated from the University of Minnesota (UMN), NASA and"
+" the Minnesota Department of Natural Resources (MNDNR) in the mid-1990s. "
+"A collaborative project - ForNet, and later the TerrSIP project. "
+"Government support played a big role in the early development of "
+"MapServer."
+msgstr ""
+"MapServer是一个用C语言编写的开源地理空间数据渲染引擎。它起源于20世纪90年代中期的明尼苏达大学(UMN)、美国国家航空航天局(NASA)和明尼苏达州自然资源部(MNDNR)。一个协作项目"
+"--Fornet，以及后来的TerrSIP项目。政府的支持在MapServer的早期开发中发挥了重要作用。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:35
+msgid ""
+"This is an open source software released under the MIT-style License for "
+"publishing spatial data and interactive map applications on the Web, "
+"supporting all major operating systems, including Windows, Linux, Mac OS "
+"X, etc. Its positioning is not to implement a full-featured GIS, but to "
+"provide most of the core GIS functions for Web applications."
+msgstr ""
+"这是一款在麻省理工学院风格的许可下发布的开源软件，用于在Web上发布空间数据和交互地图应用程序，支持所有主要操作系统，包括Windows、Linux、Mac"
+" OS X等。它的定位不是实现一个功能齐全的GIS，而是为Web应用程序提供大部分核心的GIS功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:41
+msgid ""
+"In 1994, Steve Lime, the father of MapServer, and his MapServer were "
+"familiar to more people. MapServer is not isolated in its development and"
+" growth, but has been supported by many open source communities and open "
+"source enthusiasts. In November 2005, the MapServer Foundation was "
+"established with the aim of “promoting a professional open source network"
+" mapping development environment and community. Even though it initially "
+"focused on network mapping projects, it hopes to provide funding to other"
+" open source geographic information projects”, not only promotes the "
+"professional development of MapServer, but also promotes the development "
+"of the entire open source network mapping technology."
+msgstr ""
+"1994年，MapServer的父亲Steve "
+"Lime和他的MapServer为更多的人所熟悉。MapServer在其发展和增长中并不是孤立的，而是得到了许多开源社区和开源爱好者的支持。2005年11月，MapServer基金会成立，其宗旨是“促进一个专业的开源网络地图开发环境和社区。即使它最初只专注于网络地图项目，但它希望能为其他开源地理信息项目提供资金“，不仅促进MapServer的专业发展，也促进整个开源网络地图技术的发展。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:52
+msgid ""
+"With the further development of open source geographic information system"
+" software and the further optimization of open source network mapping "
+"environment, in February 2006, the MapServer Foundation was officially "
+"renamed the Open Source Geospatial Foundation (OSGeo), and Autodesk added"
+" MapGuide as an open source code to the foundation. It will further "
+"promote the development of MapServer."
+msgstr "随着开源地理信息系统软件的进一步开发和开源网络地图环境的进一步优化，2006年2月，MapServer基金会正式更名为开源地理空间基金会(OSGeo)，Autodesk将MapGuide作为开源代码加入基金会。这将进一步推动MapServer的发展。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:60
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:272
+msgid "Characteristics of MapServer"
+msgstr "MapServer的特点"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:62
+msgid ""
+"MapServer is a popular open source project for displaying dynamic spatial"
+" maps on the Internet. It has the following characteristics:"
+msgstr "MapServer是一个流行的开源项目，用于在Internet上显示动态空间地图。它具有以下特点："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:65
+msgid ""
+"Support for displaying and querying hundreds of grid, vector and database"
+" formats. Supported vector formats: ESRI shapefiles, PostGIS, ArcSDE of "
+"ESRI, etc. (implemented by OGR library). Supported grid formats: "
+"TIFF/GeoTIFF, EPPL7, etc. (implemented through the GDAL library). For "
+"shapefile files, you can build a quad tree spatial index."
+msgstr ""
+"支持显示和查询数百种网格、矢量和数据库格式。支持的矢量格式：Esri "
+"shapefile、PostGIS、ESRI的ArcSDE等(由OGR库实现)。支持的网格格式：TIFF/GeoTIFF、EPPL7等(通过GDAL库实现)。对于shapefile文件，可以构建四叉树空间索引。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:71
+msgid "Ability to run on many different systems (Windows, Linux, Mac OS X, etc.)"
+msgstr "能够在多种不同的系统(Windows、Linux、Mac OS X等)上运行"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:73
+msgid ""
+"Available in two ways: CGI (for CGI, Ajax, Flex developers) and MapScript"
+" (For Php, Java, C # developers), native CGI is the most efficient"
+msgstr "有两种方式可用：CGI(适用于CGI、AJAX、Flex开发人员)和MapScript(适用于PHP、Java、C#开发人员)，原生CGI是最高效的"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:76
+msgid ""
+"Support for popular scripting languages and development environments "
+"(PHP, Python, Perl, Ruby, Java, .NET)"
+msgstr "支持流行的脚本语言和开发环境(PHP、Python、Perl、Ruby、Java、.NET)"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:78
+msgid "On-the-fly projection"
+msgstr "即时投影"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:79
+msgid "High quality rendering model"
+msgstr "高质量渲染模型"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:80
+msgid "The output of custom template is fully supported."
+msgstr "完全支持自定义模板输出。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:81
+msgid "Many off-the-shelf open source application environments"
+msgstr "许多现成的开源应用程序环境"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:82
+msgid ""
+"MapFile is the core of MapServer. It organizes various map elements into "
+"a hierarchical object system, and define the data source, the data format"
+" used, user interaction and support for the OGC protocol."
+msgstr " Mapfile 是地图服务器的核心。它将各种地图元素组织成一个分层的对象系统，并定义了数据源、使用的数据格式、用户交互以及对OGC协议的支持。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:85
+msgid ""
+"Support the font standard TrueType jointly developed by Microsoft and "
+"Apple."
+msgstr "支持微软和苹果联合开发的字体标准TrueType。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:87
+msgid "Block (tiled) vector and raster data are supported."
+msgstr "支持块(平铺)矢量和栅格数据。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:88
+msgid ""
+"Automatic control of map elements (such as scale, legend, reference, "
+"etc.)."
+msgstr "自动控制地图元素(如比例、图例、参考等)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:90
+msgid "The image scale is adjusted automatically."
+msgstr "图像比例是自动调整的。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:91
+msgid "Generate thematic maps using logical or regular expressions."
+msgstr "使用逻辑或正则表达式生成专题地图。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:92
+msgid "Feature annotations (including dimension conflict resolution)."
+msgstr "特征标注(包括尺寸冲突解决)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:93
+msgid "MapServer can be configured dynamically through URLs."
+msgstr "可以通过URL动态配置MapServer。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:94
+msgid "Dynamic projection transformation is supported."
+msgstr "支持动态投影变换。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:95
+msgid ""
+"Support for several Open Geospatial Consortium network specifications: "
+"WMS (client/server), non-transactional WFS (client/server), WCS (server "
+"only), WMC, SLD,GML and Filter Encoding."
+msgstr "支持多种开放地理空间联盟网络规范：WMS(客户端/服务器)、非事务性WFS(客户端/服务器)、WCS(仅服务器)、WMC、SLD、GML和过滤器编码。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:99
+msgid ""
+"In its most basic form, MapServer is an inactive CGI program on a Web "
+"server. When a request is sent to MapServer, it uses the information and "
+"Mapfile passed in the requested URL. Creates an image of the requested "
+"map, the request can return the legend, ruler, reference map and variable"
+" values passed by CGI."
+msgstr "在其最基本的形式中，MapServer是Web服务器上的非活动CGI程序。当请求被发送到MapServer时，它使用在请求的URL中传递的信息和Mapfile。创建所请求地图的图像，请求可以返回由CGI传递的图例、标尺、参考地图和变量值。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:105
+msgid ""
+"Compared with the many WebGIS solutions provided by commercial "
+"enterprises, MapServer is an open source project. This means that you can"
+" use MapServer for free and have the right to modify, copy and "
+"redistribute it yourself, MapServer has many advantages as well:"
+msgstr "与商业企业提供的众多WebGIS解决方案相比，MapServer是一个开源项目。这意味着您可以免费使用MapServer，并有权自行修改、复制和重新分发，MapServer也有许多优势："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:110
+msgid ""
+"MapServer is an open source real-time map publishing system based on fat "
+"server / thin client mode. When the client sends data requests, the "
+"server processes the spatial data in real time and sends the generated "
+"data to the client. The core part of MapServer is the map operation "
+"module written in C language, and many of its functions depend on some "
+"open source or free libraries."
+msgstr "MapServer是一个开源的基于胖服务器/瘦客户端模式的实时地图发布系统。当客户端发送数据请求时，服务器实时处理空间数据，并将生成的数据发送给客户端。MapServer的核心部分是用C语言编写的地图操作模块，它的许多功能都依赖于一些开源或自由库。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:117
+msgid ""
+"Using GEOS, OGR/GDAL to support a variety of vector and raster data, "
+"real-time projection transformation through the Proj.4 shared library. At"
+" the same time, it also integrates PostGIS and the open source database "
+"PostgreSQL to store and query geospatial data, and supports the "
+"transmission and expression of geospatial data based on a series of "
+"client-side JavaScript APIs such as ka-map, MapLab, Cartoweb, and "
+"Chameleon. A series of specifications such as WMS, WFS, WCS, WMC, SLD, "
+"GML and Filter Encoding formulated by OGC."
+msgstr ""
+"使用GEOS、OGR/GDAL来支持各种矢量和栅格数据，通过Proj.4共享库进行实时投影变换。同时，它还集成了PostGIS和开源数据库PostgreSQL来存储和查询地理空间数据"
+"，并基于ka-map、MapLab、Caroweb、Chameleon等一系列客户端Java "
+"API支持地理空间数据的传输和表达。OGC制定的WMS、WFS、WCS、WMC、SLD、GML和Filter Ending等一系列规范。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:126
+msgid ""
+"MapServer creates a map image based on spatial information stored in a "
+"digital format. It can handle vector and raster data. MapServer can "
+"render more than 20 different vector data formats, including "
+"shapefile,PostGIS and ArcSDE geometric features OPeNDAP,Arc/Info coverage"
+" and Census TIGER files."
+msgstr ""
+"MapServer基于以数字格式存储的空间信息创建地图图像。它可以处理矢量和栅格数据。MapServer可以渲染20多种不同的矢量数据格式，包括Shapefile、PostGIS和ArcSDE几何要素OPeNDAP、Arc/Info"
+" Coverage和人口普查TIGER文件。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:132
+msgid ""
+"Not all information displayed on the map must be in vector format. For "
+"example, aerial or satellite photos of an area can be displayed behind "
+"the rendered vector data to understand more clearly how these vector "
+"elements relate to the characteristics of the real world. MapServer reads"
+" two grid formats natively: GeoTIFF and EPPL7. However, you can read more"
+" than 20 formats (including Windows bitmaps, GIF, and JPEG) through the "
+"GDAL package, although MapServer understands and can render these grid "
+"types, it cannot mark images with spatial information."
+msgstr "并不是地图上显示的所有信息都必须是矢量格式。例如，一个地区的航空或卫星照片可以显示在渲染的矢量数据后面，以更清楚地了解这些矢量元素如何与现实世界的特征相关。MapServer本机读取两种网格格式：GeoTIFF和EPPL7。然而，您可以通过GDAL包读取20多种格式(包括Windows位图、GIF和JPEG)，尽管MapServer理解并可以渲染这些网格类型，但它不能使用空间信息标记图像。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:144
+msgid "Components of MapServer"
+msgstr "MapServer的组件"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:146
+msgid ""
+"One of the realization methods of WebGIS is to use Common Gateway "
+"Interface (CGI) technology. On the server side, the WebServer and the GIS"
+" spatial database are connected through the CGI application program, and "
+"the client side can query and analyze the spatial data only by using the "
+"browser [2]. The University of Minnesota in the United States provides a "
+"WebGIS solution: MapServer, which uses CGI technology."
+msgstr ""
+"WebGIS的实现方法之一是使用公共网关接口(CGI)技术。在服务器端，WebServer与地理信息系统空间数据库通过CGI应用程序连接，客户端只需使用浏览器即可对空间数据进行查询和分析"
+" [2] 。美国明尼苏达大学提供了一种WebGIS解决方案：MapServer，它使用CGI技术。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:153
+msgid ""
+"MapServer is an open source WebGIS project developed in C language. It is"
+" a real-time map publishing system based on fat server / thin client "
+"mode. When the client sends data requests, the server processes the "
+"spatial data in real time and sends the generated data to the client."
+msgstr "MapServer是一个用C语言开发的开源WebGIS项目。它是一个基于胖服务器/瘦客户端模式的实时地图发布系统。当客户端发送数据请求时，服务器实时处理空间数据，并将生成的数据发送给客户端。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:158
+msgid "MapServer supports a three-tier architecture:"
+msgstr "MapServer支持三层架构："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:160
+msgid "Application layer: client browser"
+msgstr "应用层：客户端浏览器"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:161
+msgid ""
+"Middle tier: MapServer CGI module / scripting language + MapScript, Web "
+"server"
+msgstr "中间层：MapServer CGI模块/脚本语言+MapScrip、Web服务器"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:163
+msgid "Storage tier: GIS spatial database"
+msgstr "存储层：地理信息系统空间数据库"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:165
+msgid ""
+"A simple MapServer consists of the following parts, as shown in the "
+"figure:"
+msgstr "一个简单的MapServer由如下几部分组成，如图所示："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:171
+msgid "Schematic of MapServer principle"
+msgstr "MapServer原理示意图"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:173
+msgid "MapFile"
+msgstr "MapFile"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:175
+msgid ""
+"Structured text configuration files for MapServer applications. It "
+"defines the field of the map and is used to tell MapServer where the data"
+" is and where to output the image. It also defines the map layer. "
+"Including their data source, projection and notation. It must have a .map"
+" extension, otherwise MapServer will not recognize it. MapFile files "
+"organize various map elements into a system of objects with hierarchical "
+"relationships. Data sources, data formats used, user interaction and "
+"support for the OGC protocol are also defined in MapFile. Objects "
+"included in MapFile and their hierarchical relationships:"
+msgstr ""
+"MapServer应用程序的结构化文本配置文件。它定义地图的字段，并用于告诉MapServer数据在哪里以及输出图像的位置。它还定义了地图层。包括它们的数据来源、投影和记法。它必须具有.map扩展名，否则MapServer将无法识别它。"
+" Mapfile 将各种地图元素组织成具有层次关系的对象系统。数据来源、使用的数据格式、用户交互以及对OGC协议的支持也在MapFile中定义。 "
+"Mapfile 中包含的对象及其层次关系："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:186
+msgid "Geographic Data"
+msgstr "地理数据"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:188
+msgid ""
+"MapServer can take advantage of many types of geographic information data"
+" sources. The default is the ESRI data format, and other formats of data "
+"are also supported."
+msgstr "MapServer可以利用多种类型的地理信息数据源。默认为ESRI数据格式，也支持其他数据格式。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:192
+msgid "HTMLPages"
+msgstr "HTMLPages"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:194
+msgid ""
+"It is the interface between the user and MapServer, usually located at "
+"the web root. In its simplest form, MapServer can be called to place a "
+"static map image on an HTML page. To make the map interactive, the image "
+"is placed on an HTML form on the page."
+msgstr "它是用户和MapServer之间的接口，通常位于Web根目录。在其最简单的形式中，可以调用MapServer将静态地图图像放置在一个HTML页面上。要使地图具有互动性，需要将图像放置在页面上的一个HTML表单上。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:199
+msgid "MapServer CGI"
+msgstr "地图服务器CGI"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:201
+msgid ""
+"Binary executables. It can receive requests to return images, data, etc.,"
+" located in the cgi-bin or scripts directory of the web server. The user "
+"of the WEB server must have execute permissions on these directories. For"
+" security reasons, they cannot be in the root directory of the web. By "
+"default, this program is called mapserv."
+msgstr ""
+"二进制可执行文件。它可以接收返回位于Web服务器的cgi-"
+"bin或脚本目录中的图像、数据等的请求。Web服务器的用户必须对这些目录具有执行权限。出于安全原因，它们不能位于Web的根目录中。默认情况下，此程序名为mapserv。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:207
+msgid "WEB/HTTP Server"
+msgstr "Web/HTTP服务器"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:209
+msgid ""
+"The HTML page is provided when the user’s browser is hit. You need a "
+"working Web (HTTP) server. For example, Apache or Microsoft’s IIS, they "
+"are on the same machine where you installed MapServer."
+msgstr "当用户的浏览器被点击时，就会提供该HTML页面。您需要一个工作正常的Web(HTTP)服务器。例如，阿帕奇或微软的IIS，它们位于安装MapServer的同一台计算机上。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:214
+msgid "Two modes of MapServer"
+msgstr "MapServer的两种模式"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:216
+msgid ""
+"MapServer can be regarded as the general name of two independent modules:"
+" MapServer CGI module and MapScript module. On the server side, any "
+"module can be used to write WebGIS programs. However, they use the same "
+"configuration file MapFile."
+msgstr ""
+"MapServer可以看作是两个独立模块的总称：MapServer "
+"CGI模块和MapScrip模块。在服务器端，任何模块都可以用来编写WebGIS程序。但是，它们使用相同的配置文件MapFile。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:221
+msgid ""
+"MapServer can run in two different modes: CGI and MapScript. In CGI mode,"
+" MapServer runs as a CGI script in the Web server environment. This is "
+"easy to set up and produce fast, direct applications. In MapScript mode, "
+"you can access MapServer API from Perl,Python or PHP. The MapScript "
+"interface allows flexible, feature-rich applications that can still take "
+"advantage of MapServer’s template tools."
+msgstr ""
+"MapServer可以在两种不同的模式下运行：CGI和MapScrip。在CGI模式下，MapServer在Web服务器环境中作为CGI脚本运行。这很容易设置和生成快速、直接的应用程序。在MapScrip模式下，您可以从Perl、Python或PHP访问MapServer"
+" API。MapScript接口允许灵活、功能丰富的应用程序仍然可以利用MapServer的模板工具。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:229
+msgid "Comparison between MapServer and GeoServer"
+msgstr "MapServer与Geoserver的比较"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:231
+msgid ""
+"MapServer and GeoServer are both widely used open source WebGIS tools. "
+"Both publish maps through the Internet and are often compared. MAPSERVER "
+"is also OGC-compliant WMS and non-transactional WFS, based on CGI and "
+"written in C++; GEOSERVER is written in Java (you need to install Java "
+"SDK (not JRE) to run it), based on servlet and using the struts "
+"framework."
+msgstr ""
+"MapServer和Geoserver都是广泛使用的开源WebGIS工具。两者都通过互联网发布地图，并经常被比较。MAPSERVER也是符合OGC的WMS和非事务性WFS，基于CGI并用C++编写；Geoserver是用Java编写的(您需要安装Java"
+" SDK(而不是JRE)才能运行它)，基于Servlet并使用Struts框架。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:238
+msgid ""
+"Functionally: MapServer is weaker than GeoServer, QGIS and stronger than "
+"UDIG."
+msgstr "功能上：MapServer弱于Geoserver、QGIS，强于UDIG。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:240
+msgid ""
+"Efficiency: Mapserver’s support for WMS (Web Map service) is more "
+"efficient, while Geoserver is better at attribute queries combined with "
+"WFS (Web Feature service) specifications."
+msgstr ""
+"效率：MapServer对WMS(Web地图服务)的支持更高效，而Geoserver更擅长结合WFS(Web Feature "
+"Service)规范进行属性查询。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:244
+msgid ""
+"In addition to functional comparison, special attention should be paid to"
+" the technical selection during development. MapServer focuses on map "
+"service functions and can be used as project components (or even core "
+"components), but other functions need to be implemented by developers "
+"most of the time; GeoServer is a relatively complete suite, which can "
+"basically be used as a product after deployment and installation."
+msgstr "除了功能比较外，在开发过程中还应特别注意技术选择。MapServer专注于地图服务功能，可以作为项目组件(甚至核心组件)，但其他功能大部分时间需要开发者来实现；Geoserver是一个相对完整的套装，部署安装后基本可以作为产品使用。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:251
+msgid ""
+"MapServer is not a full-featured GIS, it does not provide integrated DBMS"
+" (Database Management System) tools, it has limited analytical "
+"capabilities, and there are no georeferencing tools."
+msgstr "MapServer不是一个功能齐全的地理信息系统，它没有提供集成的DBMS(数据库管理系统)工具，它的分析能力有限，并且没有地理配准工具。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:255
+msgid ""
+"Which is better? It’s hard to tell, depending on how you want to publish "
+"your data and what language you’re better at using. Both are excellent "
+"and have excellent documentation and user base. GEOSERVER enables you to "
+"edit spatial data online and generate thematic maps. Maps are published "
+"in XML files. MAPSERVER is good at generating thematic maps and is more "
+"mature than ever. Maps are published through text configuration files."
+msgstr "哪种更好些呢？很难说，这取决于你想要如何发布你的数据，以及你更擅长使用什么语言。这两个网站都很出色，都有出色的文档和用户基础。Geoserver使您能够在线编辑空间数据和生成专题地图。地图以XML文件形式发布。MAPSERVER擅长生成专题地图，比以往任何时候都更加成熟。地图通过文本配置文件发布。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:262
+msgid ""
+"Which one is more appropriate? I advocate using MapServer if you just "
+"publish the map and don’t allow modification, it’s easier to maintain. "
+"GeoServer was chosen because of wanting better features such as online "
+"editing and database support like PostgreSQL or Oracle spatial database, "
+"another advantage of GeoServer is that there is a free client software "
+"UDIG."
+msgstr "哪一个更合适？我主张使用MapServer，如果你只发布地图，不允许修改，它更容易维护。选择Geoserver是因为想要更好的功能，如在线编辑和数据库支持，如PostgreSQL或Oracle空间数据库，Geoserver的另一个优势是有一个免费的客户端软件UDIG。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:274
+msgid ""
+"Provides two ways of working, the CGI way (for CGI, AJAX, FLEX "
+"developers) and the MapScript way (for Php, Java, C#, Python developers)."
+" The native CGI method is the most efficient, and with TileCache, large-"
+"scale map tile data can be quickly generated. Compared with commercial or"
+" open source platforms based on .Net and J2EE, MapServer is more suitable"
+" for high-load large-scale Internet map applications. MapServer is a map "
+"service software written based on C, which is faster than GeoServer "
+"written in JAVA. Moreover, the history of MapServer is longer than that "
+"of GeoServer, and even the performance of MapServer is comparable to that"
+" of commercial ArcIMS."
+msgstr "提供了两种工作方式，CGI方式(适用于CGI、AJAX、Flex开发人员)和MapScrip方式(适用于PHP、Java、C#、Python开发人员)。原生CGI方法是最高效的，使用TileCache可以快速生成大比例的地图切片数据。与基于.Net和J2EE的商业或开源平台相比，MapServer更适合于高负载的大规模互联网地图应用。MapServer是一个基于C语言编写的地图服务软件，速度比用Java编写的Geoserver要快。此外，MapServer的历史比Geoserver要长，甚至在性能上也可以与商业ArcIMS相媲美。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:286
+msgid "Characteristics of GeoServer"
+msgstr "地球服务器的特点"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:288
+msgid ""
+"GeoServer（http://geoserver.org/ ）is a J2EE compliant and implements the "
+"WCS, WMS and WFS specifications , supports TransactionWFS (WFS-T), and "
+"its technical core is the integration of the well-known Java-developed "
+"GIS tools GeoTools."
+msgstr ""
+"Geoserver(http://geoserver.org/)是一个符合J2EE规范的，实现了WCS、WMS和WFS规范，支持Transaction"
+" WFS(WFS-T)，其技术核心是集成了著名的JAVA开发的地理信息系统工具GeoTools。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:293
+msgid ""
+"For spatial information storage, it supports ESRI Shapefile and spatial "
+"databases such as PostGIS, Oracle, and ArcSDE, and the output GML files "
+"meet the requirements of GML2.1."
+msgstr ""
+"对于空间信息存储，它支持ESRI "
+"shapefile和空间数据库，如PostGIS、Oracle和ArcSDE，输出的GML文件符合GML2.1的要求。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:297
+msgid ""
+"Because it is pure Java, it is more suitable for complex environmental "
+"requirements, and because of its open source, development organizations "
+"can flexibly implement specific target requirements based on GeoServer, "
+"which are lacking in commercial GIS components."
+msgstr "由于它是纯Java，更适合于复杂的环境需求，而且由于它的开源，开发组织可以基于Geoserver灵活地实现特定的目标需求，这是商业GIS组件所缺乏的。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:302
+msgid ""
+"As a pure Java implementation, GeoServer is deployed in application "
+"servers, such as Tomcat; its WMS and WFS components respond to requests "
+"from browsers or uDig to access configured spatial databases, such as "
+"PostGIS, OracleSpatial, etc., and generate Maps and GML documents are "
+"transferred to the client."
+msgstr "作为一种纯Java实现，Geoserver部署在Tomcat等应用服务器上；其WMS和WFS组件响应浏览器或uDig的请求来访问已配置的空间数据库，如PostGIS、OracleSpace等，并生成地图和GML文档传输到客户端。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:308
+msgid "GeoServer has the following advantages:"
+msgstr "Geoserver具有以下优势："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:310
+msgid ""
+"Written in Java language, standard J2EE framework, based on servlet and "
+"STRUTS framework, supporting efficient Spring framework development;"
+msgstr "用Java语言编写，标准的J2EE框架，基于Servlet和Struts框架，支持高效的Spring框架开发；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:313
+msgid "Compatible with WMS and WFS features, support WFS-T specification;"
+msgstr "兼容WMS和WFS功能，支持WFS-T规范；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:314
+msgid "Efficient database supports PostGIS, ShapeFile, ArcSDE,Oracle, MySQL, etc."
+msgstr "高效的数据库支持PostGIS、Shapefile、ArcSDE、Oracle、MySQL等。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:316
+msgid "Support hundreds of projections;"
+msgstr "支持数百个投影；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec01_mapserver/section.rst:317
+msgid "Ability to output network maps to formats such as jpeg, gif, png;"
+msgstr "能够将网络地图输出为jpeg、gif、png等格式；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:5
+msgid "Install and configure MapServer"
+msgstr "安装和配置MapServer"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:7
+msgid ""
+"Setting up the initial runtime environment when starting a job can be "
+"tedious, especially when following the step-by-step steps, but the basic "
+"“Hello World” still doesn’t appear, and it can be maddening. Building a "
+"running environment requires comprehensive technology, some experience, "
+"and a bit of luck. Don’t underestimate the ability to configure the "
+"runtime environment. Many programmers cannot build a development "
+"environment by themselves, let alone a real production environment."
+msgstr ""
+"在启动作业时设置初始运行时环境可能会很乏味，特别是在遵循循序渐进的步骤时，但基本的“Hello "
+"World”仍然没有出现，而且可能会令人抓狂。营造跑步环境需要全面的技术、一定的经验和一点运气。不要低估配置运行时环境的能力。许多程序员不能自己构建开发环境，更不用说真正的生产环境了。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:16
+msgid "Basic requirements for installing and configuring MapServer"
+msgstr "安装和配置MapServer的基本要求"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:19
+msgid ""
+"MapServer is an open source software written in C language, which itself "
+"relies on some open source or free libraries, such as Shapelib, FreeType,"
+" Proj.4, GDAL/OGR, GD Library, Regex. MapServer is written in C, and the "
+"sub-projects it depends on have corresponding C language implementation "
+"versions. When running MapServer, the relevant class libraries must be "
+"installed, and sometimes they also depend on specific versions of certain"
+" class libraries. When compiling and installing MapServer, you need to "
+"have a certain understanding of these libraries."
+msgstr "MapServer是一个用C语言编写的开源软件，它本身依赖于一些开源或免费的库，如Shapelib、FreeType、Proj.4、GDAL/OGR、GD库、Regex。MapServer是用C语言编写的，它所依赖的子项目都有相应的C语言实现版本。在运行MapServer时，必须安装相关的类库，有时它们还依赖于某些类库的特定版本。在编译和安装MapServer时，需要对这些库有一定的了解。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:28
+msgid ""
+"Shapelib provides the ability to read, write and update data in the “ESRI"
+" Shapefile” format, and to modify the corresponding property file (.dbf);"
+msgstr "Shapelib提供了读、写和更新“ESRI shapefile”格式的数据，以及修改相应的属性文件(.dbf)的能力；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:31
+msgid ""
+"FreeType is a font rendering library, capable of rendering most vector "
+"and bitmap font formats, designed to be small, efficient, highly "
+"customizable, and as lightweight as possible without sacrificing "
+"performance and functionality;"
+msgstr "FreeType是一个字体渲染库，能够渲染大多数矢量和位图字体格式，设计成小、高效、高度可定制和尽可能轻便，而不牺牲性能和功能；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:35
+msgid ""
+"Proj.4 is a geographic projection library that provides a variety of "
+"projection definitions and interfaces;"
+msgstr "Proj.4是一个地理投影库，提供各种投影定义和界面；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:37
+msgid ""
+"GDAL/OGR, GDAL (Geospatial Data Abstraction Library) is an open source "
+"raster spatial data conversion library under the X/MIT license. It "
+"utilizes an abstract data model to express the various file formats it "
+"supports. It also has a range of command line tools for data "
+"transformation and processing. OGR is a branch of the GDAL project, "
+"similar in function to GDAL, except that it provides support for vector "
+"data. There are many well-known GIS products that use the GDAL/OGR "
+"library, including ESRI’s ArcGIS 9.3, Google Earth and the cross-platform"
+" GRASS GIS system."
+msgstr ""
+"GDAL/OGR，GDAL(地理空间数据抽象库)是X/MIT许可下的开放源码栅格空间数据转换库。它利用抽象数据模型来表示其支持的各种文件格式。它还具有一系列用于数据转换和处理的命令行工具。OGR是GDAL项目的一个分支，在功能上类似于GDAL，只是它提供了对矢量数据的支持。有许多使用GDAL/OGR库的知名GIS产品，包括ESRI的ArcGIS"
+" 9.3、Google Earth和跨平台的GRASS地理信息系统。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:46
+msgid ""
+"GD Library, generate images dynamically, supports most formats: JPEG, "
+"GIF, WEBP, XPM, BMP. Usually used to dynamically generate charts, "
+"pictures, thumbnails, etc., often used in the web environment;"
+msgstr "GD库，动态生成图像，支持大多数格式：JPEG，GIF，WebP，XPM，BMP。通常用来动态生成图表、图片、缩略图等，经常在网络环境中使用；"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:49
+msgid "Regex, provides regular expression support for MapServer."
+msgstr "Regex为MapServer提供正则表达式支持。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:51
+msgid ""
+"By understanding these libraries, you can simplify the installation "
+"process by reducing the number of features to install. Even though you "
+"only install a basic version of MapServer, it still has the ability to "
+"create a powerful application. After you become familiar with MapServer, "
+"you can add other features you want."
+msgstr "通过了解这些库，您可以通过减少要安装的功能数量来简化安装过程。即使您只安装了基本版本的MapServer，它仍然能够创建功能强大的应用程序。熟悉MapServer后，您可以添加所需的其他功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:57
+msgid ""
+"MapServer is a program that generates maps, but provides a CGI interface "
+"(the operation of MapServer CGI depends on PHP), and related functions "
+"can be called through Web access. So many times in order to run "
+"MapServer, you need to install a web server (such as Apache 2), and a "
+"tool (such as FastCGI) to let the application (MapServer) communicate "
+"with the web server (Apache). Apache 2 does not have CGI enabled by "
+"default."
+msgstr ""
+"MapServer是一个生成地图的程序，但提供了CGI接口(MapServer CGI的操作依赖于PHP)，相关函数可以通过Web "
+"Access调用。为了多次运行MapServer，您需要安装Web服务器(如Apache2)和一个工具(如FastCGI)以使应用程序(MapServer)与Web服务器(Apache.)通信。默认情况下，Apache2没有启用CGI。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:68
+msgid "Libraries that MapServer depends on"
+msgstr "MapServer所依赖的库"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:73
+msgid "Detailed introduction of MapServer related class libraries"
+msgstr "详细介绍了MapServer相关类库"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:81
+msgid "FreeType"
+msgstr "FreeType"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:78
+msgid ""
+"FreeType is a font rendering engine. It is not referenced directly by "
+"Mapserver, but is used by GD to render fonts. Since TrueType is more "
+"attractive than the bitmap fonts provided by Mapserver, it is worth "
+"including this class library."
+msgstr "FreeType是一个字体渲染引擎。它不被MapServer直接引用，但被GD用来呈现字体。由于TrueType比Mapserver提供的位图字体更吸引人，因此值得包含这个类库。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:88
+msgid "LibPNG"
+msgstr "LibPNG"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:84
+msgid ""
+"LibPNG enables Mapserver to render JPEG images. A new version has been "
+"released since 2001. Generally speaking, this library should already be "
+"installed on the machine. If not, you can install it yourself. Libpng "
+"uses MapServer to render PNG images. It is not directly used by "
+"MapServer, but by GD. Libpng requires the library zlib."
+msgstr "LibPNG使MapServer能够渲染JPEG图像。自2001年以来，一个新的版本已经发布。一般来说，这个库应该已经安装在机器上了。如果没有，您可以自己安装。Libpng使用MapServer来渲染PNG图像。它不是由MapServer直接使用，而是由GD使用。Libpng需要库zlib。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:91
+msgid "Zlib"
+msgstr "兹利卜"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:91
+msgid "Zlib is a data compression library used by GD."
+msgstr "Zlib是GD使用的数据压缩库。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:97
+msgid "GDAL"
+msgstr "GDAL"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:94
+msgid ""
+"GDAL is a conversion class library for raster data. It provides import "
+"and projection of raster images with geographic projections. You won’t "
+"use those features in this book, but this library is necessary to install"
+" basic Mapserver."
+msgstr ""
+"GDAL是用于栅格数据的转换类库。它提供具有地理投影的栅格图像的导入和投影。您将不会在本书中使用这些功能，但这个库是安装Basic "
+"MapServer所必需的。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:101
+msgid "OGR"
+msgstr "OGR"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:100
+msgid ""
+"The OGR library provides the ability to read and write some vector "
+"formats. In this book you will use some of the features provided by OGR."
+msgstr "OGR库提供了读写一些矢量格式的能力。在本书中，您将使用OGR提供的一些功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:105
+msgid "Proj.4"
+msgstr "Proj.4"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:104
+msgid ""
+"Proj.4 is a program for cartographic projection. It can be called by "
+"Mapserver, or it can be projected on the entire database alone."
+msgstr "Proj.4是一个用于地图投影的程序。它可以由MapServer调用，也可以单独投影到整个数据库上。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:113
+msgid "Shapelib"
+msgstr "Shapelib"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:108
+msgid ""
+"Shapelib is a C program to generate and process Shape files. You can use "
+"the useful tools provided by this class library without having to write "
+"any C code yourself. It has the contents of generating shape files "
+"(including DBF files) and destroying shape files and DBF files, and "
+"change the projection of the shape file. Some of these features are based"
+" on Proj.4."
+msgstr "Shapelib是一个C程序，用于生成和处理形状文件。您可以使用这个类库提供的有用工具，而不必自己编写任何C代码。它具有生成Shape文件(包括DBF文件)、销毁Shape文件和DBF文件以及更改Shape文件的投影的内容。其中一些功能基于Proj.4。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:120
+msgid "Libcurl"
+msgstr "Libcurl"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:116
+msgid ""
+"libcurl is a client library that supports FTP, FTPS, HTTP, HTTPS, GOPHER,"
+" TELNET, DICT, FILE and LDAP URL conversion. This library is required if "
+"you want to provide WMS support. The WMS protocol is used to transmit map"
+" images and file data over the network. To keep the Mapserver environment"
+" simple, you don’t have to install it."
+msgstr "Libcurl是一个客户端库，支持FTP、FTPS、HTTP、HTTPS、Gopher、Telnet、Dict、文件和LDAPURL转换。如果要提供WMS支持，则需要此库。WMS协议用于在网络上传输地图图像和文件数据。为了保持地图服务器环境的简单，您不必安装它。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:124
+msgid "SDE client library"
+msgstr "SDE客户端库"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:123
+msgid ""
+"The SDE client library is part of ESRI’s spatial data warehouse. If you "
+"want Mapserver to access it, you need to compile the library."
+msgstr "SDE客户端库是ESRI空间数据仓库的一部分。如果您希望MapServer访问它，则需要编译该库。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:132
+msgid "GD"
+msgstr "GD"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:127
+#, fuzzy
+msgid ""
+"GD support has been removed in MapServer 7. 0. GD is an image library. GD"
+" has its own dependent class library, including zlib, libpng, FreeType2.x"
+" and libJPEG. These types enable GD to perform image compression (for "
+"supported data), to render PNG images, to use TrueType fonts, and to "
+"render JPEG images. Since the license on GIF has expired, it is now "
+"available as well."
+msgstr "GD是一个图像库。由于MapServer使用GD进行图像渲染，因此必须安装它。GD有自己的依赖类库，包括zlib、libpng、FreeType2.x和libJPEG。这些类型使GD能够执行图像压缩(对于支持的数据)、渲染PNG图像、使用TrueType字体以及渲染JPEG图像。由于GIF上的许可证已经过期，现在也可以使用了。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:135
+msgid "PostgreSQL client library"
+msgstr "PostgreSQL客户端库"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:137
+msgid ""
+"The PostgreSQL client library provides the ability to access PostGIS data"
+" using Mapserver. They provide similar functionality to ESRI products, "
+"but they are not open source."
+msgstr "PostgreSQL客户端库提供了使用MapServer访问PostGIS数据的能力。它们提供与ESRI产品类似的功能，但它们不是开源的。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:142
+msgid "Oracle Spatial client library"
+msgstr "Oracle Spatial客户端库"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:144
+msgid ""
+"The Oracle Spatial client library enables users to access the Oracle "
+"Spatial Data Warehouse using MapServer. They provide similar "
+"functionality to ESRI products."
+msgstr "Oracle Spatial客户端库使用户能够使用MapServer访问Oracle Spatial数据仓库。它们提供与ESRI产品类似的功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:149
+msgid "Ming"
+msgstr "明朝"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:151
+msgid ""
+"Ming enables MapServer to create SWF videos. It can provide some "
+"interesting functions."
+msgstr "Ming使MapServer能够创建SWF视频。它可以提供一些有趣的功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:155
+msgid "PDFLib"
+msgstr "PDFLib"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:157
+msgid ""
+"It is also useful for PDFLib to be able to output in PDF format using "
+"MapServer."
+msgstr "对于PDFLib来说，能够使用MapServer以PDF格式输出也很有用。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:161
+msgid "Installation under Debian / Ubuntu system"
+msgstr "在Debian/Ubuntu系统下安装"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:163
+msgid ""
+"Debian / Ubuntu is my most commonly used Linux release, and its well-"
+"designed package management tool is really enjoyable. To install "
+"MapServer, simply run the following installation command (administrator "
+"privileges are required):"
+msgstr "Debian/Ubuntu是我最常用的Linux版本，它设计良好的包管理工具真的很有趣。要安装MapServer，只需运行以下安装命令(需要管理员权限)："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:168
+msgid "In Debian 12:"
+msgstr "在Debian 12中："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:180
+msgid "In Debian 9:"
+msgstr "在Debian 9中："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:190
+msgid "In Ubuntu 22.04:"
+msgstr "在Ubuntu 22.04中："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:200
+msgid "In Ubuntu 18.04:"
+msgstr "在Ubuntu 18.04中："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:210
+msgid ""
+"Almost no difference except the different versions of PHP Debian/Ubuntu. "
+"When installing these packages, if the corresponding dependencies are "
+"missing, they will be installed automatically."
+msgstr "除了不同版本的PHP Debian/Ubuntu，几乎没有区别。安装这些程序包时，如果缺少相应的依赖项，则会自动安装它们。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:214
+msgid ""
+"After the installation is complete, you can enter the following command "
+"on the terminal to view the results:"
+msgstr "安装完成后，您可以在终端上输入以下命令查看结果："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:228
+msgid ""
+"And some configureations are needed for the service of MapServer. The "
+"config files could be founds under the `etc` directory of the soruce "
+"codes. May be you just need Apache. Howerver, //webgis.pub uses Nginx for"
+" reverse proxy  to Apache."
+msgstr ""
+"而MapServer的服务需要进行一些配置。配置文件可能位于  `etc` "
+"资源代码目录。也许你只是需要阿帕奇。然而，//webgis.pub使用Nginx作为到Apache的反向代理。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:233
+msgid "Notes about FastCGI."
+msgstr "关于FastCGI的说明。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:235
+msgid ""
+"CGI (Common Gateway Interface) defines the method of interaction between "
+"web server and external content generation program, which usually refers "
+"to CGI program or CGI script. It is the simplest and commonly used method"
+" to realize dynamic pages on the website, making the interaction between "
+"external program and web server possible. But early CGI programs ran in "
+"separate processes and created a process for each web request. This "
+"method is very easy to implement, but inefficient and difficult to scale."
+" In the face of a large number of requests, a large number of processes "
+"are created and killed, which greatly reduces the performance of the "
+"operating system. In addition, because the address space cannot be "
+"shared, resource reuse is also limited."
+msgstr "CGI(公共网关接口)定义了Web服务器与外部内容生成程序交互的方式，通常指的是CGI程序或CGI脚本。它是在网站上实现动态页面的最简单、最常用的方法，使外部程序与Web服务器的交互成为可能。但早期的CGI程序在单独的进程中运行，并为每个Web请求创建一个进程。这种方法很容易实现，但效率低，难以扩展。面对大量的请求，大量的进程被创建和终止，这大大降低了操作系统的性能。此外，由于地址空间不能共享，资源重用也受到限制。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:247
+msgid ""
+"FastCGI uses persistent (daemon) processes to handle a chain of requests,"
+" these processes are managed by the FastCGI server, not the web server. "
+"When a request comes in, the web server passes the environment variables "
+"and the page request to the FastCGI process through a socket, such as the"
+" FastCGI process and the web server (both locally), or a TCP connection "
+"(FastCGI process on the remote server farm) is passed to the FastCGI "
+"process."
+msgstr "FastCGI使用持久(守护程序)进程来处理请求链，这些进程由FastCGI服务器管理，而不是Web服务器。当请求进入时，Web服务器通过套接字将环境变量和页面请求传递给FastCGI进程，例如FastCGI进程和Web服务器(两者都在本地)，或者将TCP连接(远程服务器场上的FastCGI进程)传递给FastCGI进程。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:256
+msgid "Configure"
+msgstr "配置"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:258
+msgid ""
+"Then, edit the file of Apache2 configure. Sush as ``more /etc/apache2"
+"/sites-enabled/webgis_pub_apache.conf`` ."
+msgstr ""
+"然后，编辑Apache2配置文件。苏珊作为  ``more /etc/apache2/sites-"
+"enabled/webgis_pub_apache.conf`` 。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:271
+msgid "Installation under Windows system"
+msgstr "Windows系统下的安装"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec02_setup/section.rst:273
+msgid ""
+"To install MapServer under Windows, you also need to install Apache2, "
+"CGI, and MapServer programs, which also have binary packages under "
+"Windows, but such a step-by-step installation is more troublesome and "
+"prone to problems. It is recommended to use ``MS4W`` (MapServer 4 "
+"Windows), the link is: https://www.ms4w.com/ ."
+msgstr ""
+"要在Windows下安装MapServer，还需要安装Apache2、CGI和MapServer程序，这些程序在Windows下也有二进制包，但这种循序渐进的安装比较麻烦，容易出现问题。建议使用"
+"  ``MS4W`` (MapServer4 Windows)，链接为：https://www.ms4w.com/。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:4
+msgid "Start using Mapfile"
+msgstr "开始使用 Mapfile "
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:6
+msgid ""
+"The core program of MapServer is used to generate maps based on "
+"geospatial data. Configure the function of using CGI and give it the "
+"function of WebGIS. MapServer uses a configuration file to declare the "
+"size and format of the generated map, all paths, names, formats of the "
+"data used, and various more complex control options. This configuration "
+"file is called Mapfile. Mapfile is multi-layered, and each map file "
+"defines a large number of other objects. These objects include scale "
+"bars, legends, map colors, map names, map layers, and so on. There are "
+"more objects that need to be defined and will be discussed in more detail"
+" in the following sections. In addition, there is a comprehensive "
+"reference for special MapServer keywords."
+msgstr ""
+"MapServer的核心程序用于根据地理空间数据生成地图。配置使用CGI的功能，赋予其WebGIS的功能。MapServer使用配置文件来声明生成的地图的大小和格式、所有路径、名称、使用的数据格式以及各种更复杂的控制选项。此配置文件称为映射文件。"
+" Mapfile 是多层的，每个 Mapfile "
+"定义了大量的其他对象。这些对象包括比例尺、图例、地图颜色、地图名称、地图层等。还有更多的对象需要定义，并将在以下各节中更详细地讨论。此外，还有专门的MapServer关键字的全面参考。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:18
+msgid ""
+"The first application uses a simple Mapfile and does not actually "
+"generate a map， it generates a rectangular picture showing the word "
+"“Hello World”. This application is very simple, so configuration problems"
+" or errors can be easily found."
+msgstr ""
+"第一个应用程序使用一个简单的 Mapfile ，并不实际生成地图，它生成一个显示单词“Hello "
+"World”的矩形图片。这个应用程序非常简单，所以很容易发现配置问题或错误。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:23
+msgid ""
+"Each object is explained when it is used. The program does not use any "
+"resources, such as spatial data, symbols, fonts and so on. However, it "
+"needs space to store images. You will see how to specify the directory of"
+" images in MapServer and make sure that Apache can find this directory."
+msgstr "每一件物品在使用时都有说明。该程序不使用任何资源，如空间数据、符号、字体等。然而，它需要空间来存储图像。您将看到如何在MapServer中指定图像的目录，并确保Apache可以找到该目录。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:30
+msgid "Grammar"
+msgstr "文法"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:32
+msgid "MapFile files ignore letter case"
+msgstr " Mapfile 忽略字母大小写"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:33
+msgid ""
+"Non-alphabetic strings or strings containing MapServer keywords must be "
+"enclosed in quotation marks. It is recommended that all strings be "
+"enclosed in double quotation marks."
+msgstr "非字母字符串或包含MapServer关键字的字符串必须用引号引起来。建议将所有字符串括在双引号中。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:36
+msgid ""
+"File paths in MapFile can use absolute paths or relative paths, where "
+"relative paths are relative to ``SHAPEPATH``."
+msgstr "MapFile中的文件路径可以使用绝对路径或相对路径，其中相对路径是相对于  ``SHAPEPATH`` 。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:38
+msgid ""
+"MapFile has a specific hierarchy, Map Object is the “root” of MapFile, "
+"and other objects are under it."
+msgstr " Mapfile 有一个特定的层次结构，地图对象是 Mapfile 的“根”，其他对象在它下面。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:40
+msgid ""
+"The comment in the MapFile file starts with ``#``, and the part from "
+"``#`` to the end of the line is the commented part, and the content of "
+"this part will be ignored when the program is executed. Writing notes is "
+"a good habit and recommended."
+msgstr ""
+"MapFile文件中的注释以  ``#`` ，和来自的部分  ``#`` "
+"该行的末尾是注释部分，在执行程序时将忽略该部分的内容。写便条是一种很好的习惯，值得推荐。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:45
+msgid ""
+"Add appropriate comments to your MapFile to make it easier for others to "
+"understand your file. Such as:"
+msgstr "向您的 Mapfile 添加适当的注释，以便其他人更容易理解您的文件。例如："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:58
+msgid ""
+"The syntax used for attribute names is ``[ATTRIBUTENAME]`` . Note: "
+"Property names are enclosed in square brackets and are case-sensitive. "
+"All attribute names in ESRI ShapeFiles (.dbf) are in uppercase, while in "
+"PostGIS all attribute names are in lowercase."
+msgstr ""
+"用于属性名称的语法为  ``[ATTRIBUTENAME]`` 。注意：属性名括在方括号中，区分大小写。ESRI "
+"shapefile(.dbf)中的所有属性名称均为大写，而在PostGIS中，所有属性名称均为小写。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:63
+msgid ""
+"The use of regular expressions in MapServer depends on the C language "
+"library used by the operating system you are using. For more details, "
+"please refer to the reference documentation provided by the C library. "
+"Under Linux this library is GlibC, under this system you can use ``man 7 "
+"regex`` . These regular expressions are POSIX compliant, so under Windows"
+" users can search the Internet for “man 7 regex”."
+msgstr ""
+"在MapServer中使用正则表达式取决于您使用的操作系统使用的C语言库。有关更多详细信息，请参考C库提供的参考文档。在Linux下，这个库是GlibC，在这个系统下，你可以使用"
+"  ``man 7 regex`` 。这些正则表达式是POSIX兼容的，因此在Windows下，用户可以在互联网上搜索“man 7 regex”。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:71
+msgid "INCLUDE"
+msgstr "INCLUDE"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:73
+msgid ""
+"As of MapServer 5.0, multiple MapFiles can be created using the "
+"``INCLUDE`` command, the files form a logically single file."
+msgstr "从MapServer5.0开始，可以使用  ``INCLUDE`` 命令时，这些文件在逻辑上形成单个文件。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:76
+msgid "Example: Include mylayer.map mymap.map in the mymap.map file as follows"
+msgstr "示例：在mymap.map文件中包含mylayer.map mymap.map，如下所示"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:89
+msgid "The content of mylayer.map is as follows"
+msgstr "Mylayer.map的内容如下"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:103
+msgid "In this case, mymap.map is logically equivalent to:"
+msgstr "在本例中，mymap.map在逻辑上等同于："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:121
+msgid "CGI variable"
+msgstr "CGI变量"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:123
+msgid ""
+"Variables are parameters that can be substituted in a MapFile file (same "
+"as variable types in programming languages, assignable values in a "
+"program, etc.). In this case, cookies and CGI parameter values are "
+"supported, which allows MapServer MapFiles to obtain user cookies (which "
+"enable secure authentication), or non-MapServer request parameters."
+msgstr ""
+"变量是可以在MapFile文件中替换的参数(与编程语言中的变量类型、程序中的可赋值等相同)。在这种情况下，支持Cookie和CGI参数值，这允许MapServer"
+" MapFiles获取用户Cookie(启用安全身份验证)或非MapServer请求参数。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:129
+msgid "Syntax: ``%`` + ``variable name`` + ``%``"
+msgstr "语法：  ``%`` +  ``variable name`` +  ``%``"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:131
+msgid "Example 1: secure connection to spatial database"
+msgstr "示例1：到空间数据库的安全连接"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:133
+msgid ""
+"You need access to a PostGIS database. The username and password were "
+"saved in cookies, ``uid`` and ``passwd`` in previous operations. Then in "
+"MapFile you can write:"
+msgstr ""
+"您需要访问PostGIS数据库。用户名和密码保存在Cookie中，  ``uid`` 和  ``passwd`` "
+"在之前的行动中。然后，您可以在MapFile中编写："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:141
+msgid "Example 2: dealing with temporary files"
+msgstr "示例2：处理临时文件"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:143
+msgid ""
+"A program needs to generate the corresponding shapefile and store the "
+"produced data in the directory corresponding to the server user. "
+"``username`` can be obtained from a cookie, and ``filename`` can be "
+"obtained from the request parameter number."
+msgstr ""
+"程序需要生成相应的shapefile，并将生成的数据存储在服务器用户对应的目录中。  ``username`` 可以从Cookie中获得，并且  "
+"``filename`` 可以从请求参数编号中获取。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:152
+msgid ""
+"Such parameters can only be used in the CGI version of MapServer, if you "
+"use MapScript, you need to come up with the corresponding logic to "
+"achieve this function."
+msgstr "此类参数只能在CGI版本的MapServer中使用，如果使用MapScrip，则需要拿出相应的逻辑来实现这一功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:157
+msgid "“Maps” that do not use data"
+msgstr "不使用数据的“地图”"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:159
+msgid ""
+"Let’s take a look at the basic usage of MapServer without using any GIS "
+"data. The following figure shows the effect:"
+msgstr "让我们来看看在不使用任何GIS数据的情况下MapServer的基本用法。下图显示了效果："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:166
+msgid "The codes for the picture shown above is :"
+msgstr "上图所示代码为："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:172
+msgid ""
+"The above code is the basic usage of declaring images in HTML, but the "
+"parameters of ``src`` are not common image formats such as Jpeg, PNG, "
+"GIF, but the MapServer CGI program and some parameters. All you need to "
+"know here is that the MapServer CGI program will return an image based on"
+" these parameters, so the HTML image declaration above is actually "
+"nothing special; the mechanism will be explained later."
+msgstr ""
+"上面的代码是在HTML中声明图像的基本用法，但是  ``src`` "
+"不是常见的图像格式，如Jpeg、PNG、GIF，而是MapServer的CGI程序和一些参数。这里您需要知道的是，MapServer "
+"CGI程序将根据这些参数返回一个图像，因此上面的HTML图像声明实际上并没有什么特别之处；其机制将在后面解释。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:180
+msgid "The basic usage of Mapfile"
+msgstr "Mapfile的基本用法"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:182
+msgid ""
+"A Mapfile defines a collection of cartographic objects, which together "
+"determine the appearance and behavior of the map displayed on the page. "
+"It functions similarly to Apache’s ``httpd.conf`` configuration file. "
+"Based on the same geographic data, mapping applications can use different"
+" Mapfiles to present maps with different characteristics, corresponding "
+"to different user behaviors."
+msgstr ""
+" Mapfile 定义了一组地图对象，这些对象共同决定了页面上显示的地图的外观和行为。它的功能类似于阿帕奇的  ``httpd.conf`` "
+"配置文件。基于相同的地理数据，地图应用程序可以使用不同的 Mapfile 来呈现具有不同特征的地图，对应于不同的用户行为。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:189
+msgid ""
+"It may seem like a static configuration file would have limited "
+"functionality, but MapServer is designed so that using Mapfiles can "
+"produce very powerful applications."
+msgstr "看起来静态配置文件的功能有限，但MapServer的设计使得使用MapFiles可以生成非常强大的应用程序。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:193
+msgid ""
+"The definition of a map file consists of key-value pairs. Some of the "
+"listed values are separated by spaces and must be enclosed in "
+"parentheses. Both single and double parentheses are fine."
+msgstr "映射文件的定义由键-值对组成。列出的一些值由空格分隔，必须用括号括起来。单括号和双括号都可以。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:197
+msgid ""
+"Keyword values with embedded spaces must be enclosed, which is good "
+"practice for all strings."
+msgstr "必须将包含空格的关键字值括起来，这对所有字符串都是很好的做法。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:200
+msgid ""
+"At the same time, it should be noted that MapServer keywords are not "
+"case-sensitive, but some database retrieval methods are case-sensitive."
+msgstr "同时需要注意的是，MapServer关键字不区分大小写，但某些数据库检索方法区分大小写。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:203
+msgid "In MapServer, to generate the above picture, the Mapfile code is:"
+msgstr "在MapServer中，要生成上面的图片，映射文件代码为："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:210
+msgid "First Mapfile"
+msgstr "第一个映射文件"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:212
+msgid ""
+"The code is as follows, lines ``01`` to ``06`` establish the basic map "
+"image parameters. The keyword ``NAME`` defines the base name of any "
+"images created. Each time MapServer is called, it creates a unique "
+"identifier by concatenating the system time (i.e. the number of seconds "
+"since 1/1/1970 00:00:00) and the process ID. This unique identifier is "
+"appended to the basename to form the filename. Two or three character "
+"expansion (depending on file type), then append. In some cases, another "
+"string is inserted after the base name of the map server to distinguish "
+"the reference map image or legend image from the map image itself."
+msgstr ""
+"代码如下，行  ``01`` 至  ``06`` 建立基本的地图影像参数。关键字  ``NAME`` "
+"定义创建的任何映像的基本名称。每次调用MapServer时，它通过连接系统时间(即，自1/1/1970 "
+"00：00：00以来的秒数)和进程ID来创建唯一的标识符。该唯一的标识符会附加到基名以形成文件名。两个或三个字符扩展(取决于文件类型)，然后追加。在某些情况下，在地图服务器的基本名称之后插入另一个字符串，以将参考地图图像或图例图像与地图图像本身区分开来。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:222
+msgid ""
+"Keyword ``SIZE`` specifies the pixel size (width × height) of the map "
+"image."
+msgstr "关键字  ``SIZE`` 指定地图图像的像素大小(宽度×高度)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:225
+msgid ""
+"``IMAGECOLOR`` sets the background color of the image to white (recall "
+"that the color is chosen on the map server by specifying three integer "
+"RGB component values between 0 and 255, and white is 255, 255, 255)."
+msgstr ""
+"``IMAGECOLOR`` "
+"将图像的背景颜色设置为白色(回想一下，在地图服务器上通过指定介于0和255之间的三个整数RGB分量值来选择颜色，白色是255、255、255)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:229
+msgid ""
+"Image type is set to ``PNG`` . It can also be used in Mapfile ``JPEG`` , "
+"or ``GIF`` Image."
+msgstr "图像类型设置为  ``PNG`` 。它也可以在 Mapfile 中使用  ``JPEG`` ，或  ``GIF`` 形象。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:232
+msgid ""
+"Layer objects are defined under the map object. Before displaying a map, "
+"you need to define at least one layer in your map file. You can define as"
+" many layers as you want in MapServer. In older versions of MapServer, "
+"the upper limit of the number of layers is defined in the source code. "
+"``map.h`` Medium, limited to 100; You can remove this restriction by "
+"modifying the source code. However, this restriction is no longer "
+"available in commonly used Linux distributions."
+msgstr ""
+"Layer对象在地图对象下定义。在显示地图之前，需要在 Mapfile "
+"中至少定义一个图层。您可以在MapServer中定义任意多个层。在旧版本的MapServer中，层的数量上限是在源代码中定义的。  "
+"``map.h`` 中，限制为100；您可以通过修改源代码来取消这一限制。但是，该限制在常用的Linux发行版中不再可用。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:241
+msgid "Draw content"
+msgstr "绘制内容"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:243
+msgid ""
+"MapServer now knows what kind of map to produce, including the size and "
+"background color, and how to display the map on a web page. But it’s not "
+"clear what to draw and how to draw-the work is done by the LAYER object."
+msgstr ""
+"MapServer现在知道要生成哪种地图，包括大小和背景颜色，以及如何在网页上显示地图。但不清楚要绘制什么以及如何绘制--"
+"工作是由Layer对象完成的。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:247
+msgid ""
+"The layer applies a single dataset and contains a series of elements, use"
+" specific projections (which will be included later in this book) to "
+"depict them on a specific scale. Layer with keyword ``LAYER`` Generate, "
+"with keyword ``END`` End."
+msgstr ""
+"该层应用单个数据集并包含一系列元素，使用特定的投影(将在本书后面部分包括在内)以特定的比例描述它们。带关键字的层  ``LAYER`` "
+"生成，带关键字  ``END`` 结束。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:252
+msgid ""
+"Keyword ``STATUS`` Determines whether the layer is rendered. Default "
+"value ``Default`` It means it’s always rendered."
+msgstr "关键字  ``STATUS`` 确定是否渲染层。缺省值  ``Default`` 这意味着它总是被渲染。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:255
+msgid ""
+"Each layer has a geometric type. In this example, the feature is a point "
+"feature (a pair of coordinate values), and the point feature is selected "
+"to simplify the example."
+msgstr "每一层都有一个几何类型。在本例中，该要素是点要素(一对坐标值)，并且选择该点要素以简化该示例。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:259
+msgid ""
+"The value of the keyword TYPE is selected as ``POINT`` Layer types are "
+"described in more detail in the next chapter."
+msgstr "关键字类型的值选择为  ``POINT`` 层类型将在下一章中更详细地描述。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:262
+msgid ""
+"In order to generate maps, MapServer must have spatial data. Instead of "
+"using complex real-world data to describe a messy “Hello World” map, it "
+"is built with artificial coordinate points (0. 0,0. 0)."
+msgstr ""
+"要生成地图，MapServer必须具有空间数据。它不是使用复杂的真实世界数据来描述混乱的“Hello "
+"World”地图，而是使用人工坐标点(0。0，0。0)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:266
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:285
+msgid "Add the following to hello.map."
+msgstr "将以下内容添加到hello.map。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:268
+msgid ""
+"The keyword ``FEATURE`` specifies the associated geographic feature. "
+"Rather than reading records from a spatial database, FEATURE allows for "
+"the rapid creation of “features”."
+msgstr "关键字  ``FEATURE`` 指定关联的地理要素。FEATURE不是从空间数据库中读取记录，而是允许快速创建“要素”。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:271
+msgid ""
+"The keyword ``FEATURE`` can only be used inside a LAYER object and must "
+"end with the keyword ``END``. Then specify the feature by the coordinate "
+"point."
+msgstr "关键字  ``FEATURE`` 只能在Layer对象内使用，并且必须以关键字结尾  ``END`` 。然后通过坐标点指定特征。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:274
+msgid ""
+"The keyword ``POINTS`` describes the listed coordinate point pairs. "
+"Values are separated by spaces. Obviously, the number of values must be "
+"even. The listed values represent a single point (if there is only one "
+"coordinate pair), and can represent a line (if there are more than one "
+"pair)."
+msgstr ""
+"关键字  ``POINTS`` "
+"介绍列出的坐标点对。值之间用空格分隔。显然，值的数量必须是偶数。列出的值表示单个点(如果只有一个坐标对)，可以表示一条线(如果有多个坐标对)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:279
+msgid ""
+"If the first pair of coordinates is the same as the last pair, then the "
+"value listed is the polygon (equal to the first and last point closing "
+"the figure). The keyword ``END`` ends."
+msgstr "如果第一对坐标与最后一对坐标相同，则列出的值是多边形(等于闭合地物的第一个和最后一个点)。关键字  ``END`` 结束。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:282
+msgid ""
+"The keyword ``TEXT`` specifies the text string used to label the feature."
+" Again, if there are spaces, they must be enclosed in quotes."
+msgstr "关键字  ``TEXT`` 指定用于标记要素的文本字符串。同样，如果有空格，则必须用引号引起来。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:287
+msgid ""
+"In each layer, one or more classes ( ``CLASS`` ) need to be defined. The "
+"default category without a specific selection will delineate all elements"
+" in the dataset. If selection criteria are specified, only content that "
+"meets the selection criteria will be depicted."
+msgstr ""
+"在每一层中，一个或多个类(  ``CLASS`` "
+")需要定义。没有特定选择的默认类别将描述数据集中的所有元素。如果指定了选择条件，则只会描述符合选择条件的内容。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:291
+msgid ""
+"Labels, line shapes, annotation types, and colors for depicting features "
+"are all defined at the class level."
+msgstr "用于描述要素的标签、线条形状、注释类型和颜色都是在类级别定义的。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:293
+msgid ""
+"``STYLE`` objects define the properties of symbols used in classes to "
+"draw features. For simplicity, the value defines the color in this case. "
+"``STYLE`` objects are terminated by the keyword ``END``."
+msgstr ""
+"``STYLE`` 对象定义类中用于绘制要素的符号的特性。为简单起见，该值定义了本例中的颜色。  ``STYLE`` 对象由关键字终止  "
+"``END`` 。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:296
+msgid ""
+"The keyword ``COLOR`` determines the color of the feature, by setting the"
+" ``RGB`` component to determine the color. The value is between "
+"``0-255``. Here, features are set as red dots with a default size of 1 "
+"pixel."
+msgstr ""
+"关键字  ``COLOR`` 属性来确定要素的颜色。  ``RGB`` 组件来确定颜色。该值介于  ``0-255`` "
+"。在这里，要素被设置为默认大小为1像素的红点。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:300
+msgid ""
+"``CLASS`` also includes ``LABEL`` objects. The LABEL object is described "
+"within the class and specifies the font type, size and color of the "
+"label. Tags are far more complex than this, and are discussed in greater "
+"detail later in this book. Labels start with the keyword ``LABEL`` and "
+"end with ``END``."
+msgstr ""
+"``CLASS`` 还包括  ``LABEL`` "
+"物体。标签对象在类中描述，并指定标签的字体类型、大小和颜色。标记要比这复杂得多，本书后面将更详细地讨论。标注以关键字开头  ``LABEL`` "
+"并以  ``END`` 。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:305
+msgid ""
+"The keyword ``TYPE`` determines the type of label font. There are two "
+"types: the ``bitmapped`` standard and the ``TrueType`` standard. "
+"Bitmapped fonts are generated internally without external references. "
+"TrueType must be installed and must also be determined by an alias in the"
+" file defined by the keyword FONTSET. For simplicity, the examples use "
+"bitmapped fonts."
+msgstr ""
+"关键字  ``TYPE`` 确定标签字体的类型。有两种类型：  ``bitmapped`` 标准和  ``TrueType`` "
+"标准。位图字体是在内部生成的，没有外部引用。必须安装TrueType，并且还必须由关键字FONTSET定义的文件中的别名确定。为简单起见，这些示例使用位图字体。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:312
+msgid ""
+"Note that the default color for labels is black - of course it could be a"
+" different color, but for now the default is used to simplify the "
+"example."
+msgstr "注意，标签的默认颜色是黑色-当然，它可以是不同的颜色，但目前使用默认颜色来简化该示例。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:316
+msgid ""
+"The structure of the map file just shown is very simple, and the map it "
+"generates cannot be called a map at all. But it should paint a tagged "
+"image and display it on the web page."
+msgstr "刚刚显示的 Mapfile 的结构非常简单，它生成的地图根本不能称为地图。但它应该绘制一个标记的图像并将其显示在网页上。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:321
+msgid "View the result"
+msgstr "查看结果"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:323
+msgid "With MapFile, you can render it as a picture using the following command."
+msgstr "在MapFile中，您可以使用以下命令将其呈现为图片。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec03_hello-mapserver/section.rst:326
+msgid ""
+"note: The ``map2img`` command is introduced in MapServer 8.0. It used to "
+"be ``shp2img`` ."
+msgstr "注：  ``map2img`` 命令是在MapServer 8.0中引入的。它曾经是  ``shp2img`` 。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:4
+msgid "Release remote sensing images"
+msgstr "发布遥感图像"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:6
+msgid "Let’s take a look at how to publish a three-band remote sensing image."
+msgstr "我们来看看如何发布一张三波段的遥感图像。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:9
+msgid "Conceptual differences between image, icon and picture"
+msgstr "图像、图标和图片之间的概念差异"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:11
+msgid ""
+"Visualizations acquired by satellites or other sensor equipment are "
+"generally referred to as “image” rather than “icon.” The concept of "
+"“icon” has a broader connotation, and “image” is a kind of “icon”. Image "
+"and fihure together constitute the icon world. “Image” mainly refers to "
+"the replica image world formed by photography, television, film, digital "
+"imaging, computer painting, and network image, and of course, it also "
+"includes remote sensing means."
+msgstr "卫星或其他传感器设备获取的可视化图像通常被称为“图像”，而不是“图标”。“图标”的概念有更广泛的内涵，而“形象”是一种“图标”。图像和画面共同构成了图标世界。图像主要是指由摄影、电视、电影、数字成像、计算机绘画、网络图像形成的复制品图像世界，当然也包括遥感手段。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:19
+msgid ""
+"“Picture” refers to the flat media composed of graphics, images, etc. "
+"Note the definition here that “icon” is not a kind of “picture”. First of"
+" all, the picture is a medium (or medium) that actually exists (can be "
+"electronic); in addition, it is flat. “picture” is a form of expression "
+"of “icon”."
+msgstr "“图片”指的是由图形、图像等组成的平面媒体。请注意这里的定义：“图标”不是一种“图片”。首先，图片是一种媒体(或媒体)，它实际存在(可以是电子的)；此外，它是平面的。“图”是“图标”的一种表现形式。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:26
+msgid "Add remote sensing image"
+msgstr "添加遥感图像"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:28
+msgid ""
+"Similar to the Mapfile structure used earlier, but you need to define a "
+"remote sensing image data source:"
+msgstr "类似于前面使用的Mapfile结构，但您需要定义一个遥感图像数据源："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:36
+msgid ""
+"``../geodata`` specified as MapServer will look for the base directory of"
+" the spatial dataset. The initial map range is determined by the "
+"coordinates of the specified southwest and northeast corners."
+msgstr "``../geodata`` 指定为MapServer将查找空间数据集的基本目录。初始地图范围由指定的西南角和东北角的坐标确定。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec04_one-raster/section.rst:40
+msgid "Here is the result:"
+msgstr "结果如下："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:4
+msgid "Labeling on remote sensing images"
+msgstr "遥感图像的标注"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:7
+msgid "Mapfile code"
+msgstr "映射文件代码"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:9
+msgid "As follows:"
+msgstr "具体情况如下："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:17
+msgid "Effect"
+msgstr "效果"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec05_label-on-raster/section.rst:19
+msgid "Here is the effect:"
+msgstr "效果是这样的："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:4
+msgid "Use DEM data in MapServer"
+msgstr "在MapServer中使用DEM数据"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:7
+msgid "Effect after direct addition"
+msgstr "直接相加后的效果"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:9
+msgid "|image0|"
+msgstr "|image0|"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:21
+msgid "image0"
+msgstr "图像0"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:12
+msgid "Use ``Processing``"
+msgstr "使用  ``Processing``"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:14
+msgid "|image1|"
+msgstr "|image1|"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:22
+msgid "image1"
+msgstr "图像1"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:17
+msgid "Use ``CLASS``"
+msgstr "使用  ``CLASS``"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:19
+msgid "|image2|"
+msgstr "|image2|"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec06_render-dem/section.rst:23
+msgid "image2"
+msgstr "图像2"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:4
+msgid "Usage process of MapServer"
+msgstr "MapServer的使用过程"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:6
+msgid ""
+"MapServer as a WebGIS solution. It is object-oriented, and the API "
+"organization of the basic profile MapFile and MapScript modules is "
+"object-based. MapServer supports distribution and interoperability by "
+"supporting several standards of the OGC Association. No matter using "
+"MapServer CGI module or server scripting language + MapScript, the "
+"dynamic interaction between server and client browser can be realized. "
+"The syntax for configuring MapFile files is simple and easy to learn, "
+"especially if you have experience of using desktop GIS software such as "
+"ArcMap to make thematic maps. Compared with commercial software, "
+"MapServer is open source, you can use it for free, and you can modify the"
+" source code as needed. It should be pointed out that MapServer, as an "
+"open source project, which is in continuous development; but in recent "
+"years, the function has been relatively perfect and the update is "
+"relatively small. The content of this website is based on Mapserver "
+"version 7. 0 and later."
+msgstr ""
+"MapServer作为WebGIS解决方案。它是面向对象的，基本概要MapFile和MapScrip模块的API组织是基于对象的。MapServer通过支持OGC协会的几个标准来支持分发和互操作性。无论是使用MapServer"
+" "
+"CGI组件，还是服务器脚本语言+MapScrip，都可以实现服务器端和客户端浏览器之间的动态交互。配置MapFile文件的语法简单易学，特别是如果您有使用桌面地理信息系统软件(如ArcMap)制作专题地图的经验。与商业软件相比，MapServer是开源的，可以免费使用，并可以根据需要修改源代码。需要指出的是，MapServer作为一个开源项目，正在不断开发中；但近年来，功能已经比较完善，更新量也比较小。本网站的内容基于Mapserver7.0版及更高版本。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:22
+msgid ""
+"Once the MapFile file is configured, you can use the MapServer CGI module"
+" or the MapScript module to develop WebGIS programs. The difference "
+"between them:"
+msgstr "一旦配置了MapFile文件，就可以使用MapServer CGI模块或MapScript模块来开发WebGIS程序。它们之间的区别是："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:26
+msgid ""
+"The work that needs to be done to use the MapServer CGI module: prepare "
+"the resources required by MapFile, configure MapFile, and design the user"
+" interface (ie html file, you can use scripting languages such as "
+"JavaScript to enhance interactivity). Server-side design is not possible "
+"because MapServer CGI itself is a customized server-side program. Of "
+"course, it is possible to make Map Server CGI have the desired features "
+"by modifying the source code."
+msgstr ""
+"使用MapServer "
+"CGI模块需要做的工作是：准备MapFile所需的资源，配置MapFile，并设计用户界面(即html文件，您可以使用脚本语言如JavaScript来增强交互性)。服务器端设计是不可能的，因为MapServer"
+" CGI本身就是一个定制的服务器端程序。当然，可以通过修改源代码使Map Server CGI具有所需的功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:34
+msgid ""
+"Using the MapScript module requires other server-side solutions "
+"(referring to scripting languages), such as PHP (installed on the Web "
+"Server as a CGI module). The MapScript module, as a PHP extension module,"
+" is placed in the extensions directory of the PHP installation path. The "
+"MapScript module preserves the hierarchical object structure of the "
+"MapFile file and provides PHP with an API for the object structure. Then,"
+" the programmer can use PHP on the server side to flexibly choose to "
+"modify the MapFile file by calling the MapScript API; instead of being "
+"rigid like the MapServer CGI module. At the same time, combined with "
+"PHP’s support for many databases - non-spatial databases, such as Oracle,"
+" Sybase, MySQL, etc., it becomes easy to integrate spatial data and non-"
+"spatial data in WebGIS."
+msgstr ""
+"使用MapScript模块需要其他服务器端解决方案(指脚本语言)，如PHP(作为CGI模块安装在Web服务器上)。MapScript模块作为一个PHP扩展模块放置在PHP安装路径的扩展目录中。MapScript模块保留了MapFile文件的分层对象结构，并为PHP提供了对象结构的API。然后，程序员可以在服务器端使用PHP灵活地选择通过调用MapScrip"
+" API来修改MapFile文件；而不是像MapServer "
+"CGI模块那样僵化。同时，结合PHP对Oracle、Sybase、MySQL等多种非空间数据库的支持，使得空间数据和非空间数据在WebGIS中的集成变得容易。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:48
+msgid ""
+"Languages supported by MapScript include PHP, Perl, Python, Java, Tcl, "
+"C#, etc."
+msgstr "MapScript支持的语言包括PHP、Perl、Python、Java、TCL、C#等。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:52
+msgid "Basic requirements of Mapfile"
+msgstr " Mapfile 的基本要求"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:54
+msgid ""
+"As you can see, the syntax of Mapfile is relatively simple. In general, "
+"the keywords and values of MapServer are not case-sensitive. In this "
+"book, however, the keywords are always uppercase and values are "
+"lowercase. This is for the sake of clarity and is not necessary. It is a "
+"good idea to assume that they are case-sensitive. However, you should be "
+"aware that in this case, it may be important that when you interact with "
+"a spatial dataset, the attribute values are still case-sensitive. For "
+"example, attribute names in the underlying database may be case-"
+"sensitive, so references to attributes that the expression contains will "
+"also be case-sensitive."
+msgstr "如您所见，Mapfile的语法相对简单。通常，MapServer的关键字和值不区分大小写。然而，在这本书中，关键字始终是大写的，值是小写的。这是为了清楚起见，没有必要。假设它们区分大小写是个好主意。但是，您应该知道，在这种情况下，当您与空间数据集交互时，属性值仍然区分大小写，这一点可能很重要。例如，基础数据库中的属性名称可能区分大小写，因此对表达式包含的属性的引用也将区分大小写。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:71
+msgid ""
+"Strings that contain embedded spaces must be in quotation marks. Single "
+"or double quotation marks are acceptable, but they must be used in pairs."
+" You can’t let a string use two different quotation mark characters."
+msgstr "包含嵌入空格的字符串必须用引号引起来。可以使用单引号或双引号，但必须成对使用。不能让一个字符串使用两个不同的引号字符。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:77
+msgid "Analysis of MapServer Map File format"
+msgstr "MapServer Mapfile 格式分析"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:79
+msgid ""
+"MapServer configures the map to publish through a map file (mapfile). "
+"Mapfile is the core of MapServer, which organizes all kinds of map "
+"elements into a hierarchical object system. The mapfile defines the "
+"elements that make up the map and the relationships between them, and "
+"tells MapServer where to load the data and how to represent the data. In "
+"a Mapfile, a layer is a combination of data and styles; the data in it is"
+" a combination of spatial data and attribute data; styles are implemented"
+" through Class and Style objects."
+msgstr ""
+"MapServer将地图配置为通过 Mapfile (Mapfile)发布。 Mapfile "
+"是MapServer的核心，它将各种地图元素组织成一个层次化的对象系统。映射文件定义了组成映射的元素以及它们之间的关系，并告诉MapServer在哪里加载数据以及如何表示数据。在"
+" Mapfile 中，层是数据和样式的组合；其中的数据是空间数据和属性数据的组合；样式是通过类和样式对象实现的。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:88
+msgid ""
+"Map files use ``#`` as line comment characters. The map files all use the"
+" keyword MAP as the beginning of the map object, and the keyword END as "
+"the end mark of the map object definition. The entire map file represents"
+" a map object. Between the MAP and END keys are key/value pairs "
+"describing the properties of the map object."
+msgstr ""
+" Mapfile 使用  ``#`` 作为行注释字符。 Mapfile "
+"都使用关键字map作为地图对象的开始，关键字end作为地图对象定义的结束标志。整个 Mapfile "
+"代表一个地图对象。在映射和结束键之间是描述映射对象属性的键/值对。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:94
+msgid ""
+"Map objects have many properties, such as map image format (IMAGETYPE), "
+"map size (SIZE), path to map data (SHAPEPATH), The extent of the map "
+"(EXTENT) and the symbol set (SYMBOLSET) and font set (FONTSET) used by "
+"the map."
+msgstr "地图对象具有许多特性，例如地图图像格式(ImageType)、地图大小(SIZE)、地图数据路径(SHAPEPATH)、地图范围(范围)以及地图使用的符号集(SYMBOLSET)和字体集(FONTSET)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:99
+msgid ""
+"Every map file must have at least one layer object. Users can define as "
+"many layers as they want, but MapServer has a default maximum layer limit"
+" of 100 layers. This parameter can be modified by modifying the ``map.h``"
+" file, However, after the modification is completed, MapServer needs to "
+"be recompiled before it can be used."
+msgstr ""
+"每个 Mapfile 必须至少有一个Layer对象。用户可以定义任意多个层，但MapServer的默认最大层数限制为100个层。此参数可以通过修改"
+"  ``map.h`` 文件，但是在完成修改后，需要重新编译MapServer才能使用它。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:105
+msgid ""
+"MapServer supports not only vector layers, but also raster image layers, "
+"such as GeoTIFF, JPEG, PNG and GIF. What is more noteworthy is that "
+"MapServer also supports WMS layers, that is, a layer that obtains map "
+"images from other WMS servers to form map objects."
+msgstr "MapServer不仅支持矢量层，还支持栅格图像层，如GeoTIFF、JPEG、PNG和GIF。更值得注意的是，MapServer还支持WMS层，即从其他WMS服务器获取地图图像以形成地图对象的层。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:110
+msgid ""
+"Each layer also has some commonly used attributes such as layer name "
+"(NAME), dataset (DATA), type (TYPE) and whether to display (STATUS) and "
+"so on."
+msgstr "每个层还具有一些常用属性，如层名称(名称)、数据集(数据)、类型(类型)和是否显示(状态)等。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:114
+msgid ""
+"Each layer has one or more Class objects, which are used to classify the "
+"features in the layer. Usually, there is a keyword CLASSITEM in the layer"
+" object, which is used to specify a property field, so that layers can be"
+" divided into categories (Class) or themes (Theme) based on the value of "
+"this field. If the keyword CLASSITEM is specified in the layer object, a "
+"keyword EXPRESSION is required in each Class object to indicate the "
+"attribute value represented by the category. Class objects usually have a"
+" Name property."
+msgstr "每个层都有一个或多个类对象，用于对层中的要素进行分类。通常，Layer对象中有一个关键字CLASSITEM，用于指定属性字段，以便根据该字段的值将层分为类别(Class)或主题(Theme)。如果在Layer对象中指定了关键字CLASSITEM，则每个Class对象中都需要一个关键字表达式来指示类别表示的属性值。类对象通常有一个名称属性。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:123
+msgid ""
+"Each Class object uses one or more Style objects to define the display "
+"style of this type of feature, such as the type of symbol (SYMBOL), the "
+"color of the fill (COLOR or OUTLINECOLOR), the size of the symbol (SIZE),"
+" and so on."
+msgstr "每个类对象使用一个或多个样式对象来定义此类要素的显示样式，例如符号的类型(符号)、填充的颜色(COLOR或OUTLINECOLOR)、符号的大小(SIZE)等。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:129
+msgid "Structure of Mapfile"
+msgstr "映射文件的结构"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:131
+msgid ""
+"Mapfile consists of objects in a hierarchical structure. At the top of "
+"the hierarchy is the map object (that is, the Mapfile itself). Map "
+"objects contain both simple and structured projects. A simple project "
+"consists of key value pairs, and a structured project contains other "
+"projects, each of which can be simple or structural. You have seen "
+"examples of the structure of these two types of mapfile For example, "
+"first.map, discussed in Chapter 2, contains the following lines:"
+msgstr "映射文件由层次结构中的对象组成。层次结构的顶部是映射对象(即映射文件本身)。地图对象既包含简单项目，也包含结构化项目。简单项目由键值对组成，结构化项目包含其他项目，每个项目可以是简单的，也可以是结构化的。您已经看到了这两种类型的映射文件的结构示例，例如，第2章中讨论的First.map包含以下行："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:144
+msgid ""
+"Each of these lines contains some simple mapfile objects. You will also "
+"notice that these keywords specify a value that makes the map as a whole "
+"meaningful. For example, the keyword name first sets the name of the map."
+" This keyword is used at the map level to specify a string that "
+"identifies all the maps produced in the mapfile’s process of generating "
+"the output file MapServer. Note, however, that a keyword can use the same"
+" name at other levels, and its function depends on where it’s used. "
+"Likewise, the scope of the keyword sets the scope of the entire map, so "
+"it must also be defined at the map hierarchy level. Like NAME, it can "
+"also be used at lower levels."
+msgstr "这些行中的每一行都包含一些简单的映射文件对象。您还会注意到，这些关键字指定的值使映射作为一个整体具有意义。例如，关键字名称首先设置映射的名称。此关键字在映射级用于指定一个字符串，该字符串标识在映射文件的生成输出文件MapServer的过程中生成的所有映射。但是，请注意，一个关键字可以在其他级别使用相同的名称，其功能取决于使用它的位置。同样，关键字的作用域设置了整个映射的作用域，因此还必须在映射层次结构级别定义它。和名字一样，它也可以在更低的级别上使用。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:155
+msgid ""
+"Note that if you are new to MapServer and user, using the same keywords "
+"(like name, template or color) at different levels in the mapfile can be "
+"confusing. When you’re familiar with the concept of mapfiles, this "
+"shouldn’t be a problem, in fact, you’ll appreciate that developers choose"
+" to define the same keywords at different levels with relatively similar "
+"concepts."
+msgstr "请注意，如果您是MapServer和User的新手，在映射文件的不同级别使用相同的关键字(如名称、模板或颜色)可能会造成混淆。当您熟悉映射文件的概念时，这应该不是问题，事实上，您会意识到开发人员选择用相对相似的概念在不同的级别定义相同的关键字。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:162
+msgid "first.map including the following lines:"
+msgstr "First.map包括以下几行："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:172
+msgid ""
+"This is an example of a structured object. The Web object determines "
+"which HTML template MapServer will use, and where the template is "
+"located. The Web object is typically used to determine how MapServer "
+"responds to Web requests and can contain more keywords than those shown "
+"here. Due to the Web object definition is used to display the entire map,"
+" it makes sense to specify the map. However, the same keyword template "
+"can be used at a lower level, and its function is very different. A lot "
+"of MapServer objects can define maps, but now I’m going to introduce you "
+"to a layer object."
+msgstr "这是一个结构化对象的示例。Web对象确定MapServer将使用的HTML模板以及模板所在的位置。Web对象通常用于确定MapServer如何响应Web请求，并且可以包含比此处显示的关键字更多的关键字。由于Web对象定义用于显示整个地图，因此指定地图是有意义的。但是，相同的关键字模板可以在更低的级别使用，其功能也有很大不同。很多MapServer对象都可以定义地图，但现在我将向您介绍一个Layer对象。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:183
+msgid "Using MapServer CGI module to develop WebGIS"
+msgstr "利用MapServer CGI组件开发WebGIS"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:185
+msgid ""
+"CGI is a set of rules that define the communication between a Web server "
+"and other software on the same machine. Other software that follows CGI "
+"communication rules is called CGI programs or CGI scripts. Web server can"
+" use CGI program to realize dynamic interaction function (Server-side). "
+"Usually, the CGI program runs on the server-side Mini Program and is "
+"called by the Web server. Process the data obtained from the web server "
+"(such as form data processing, query the database, etc.), and return the "
+"processing results to the web server:"
+msgstr "CGI是一组规则，用于定义Web服务器与同一台计算机上的其他软件之间的通信。遵循CGI通信规则的其他软件称为CGI程序或CGI脚本。Web服务器可以使用CGI程序实现动态交互功能(服务器端)。通常，cgi程序运行在服务器端的小程序上，由WEB服务器调用。对从Web服务器获取的数据进行处理(如表单数据处理、数据库查询等)，并将处理结果返回给Web服务器："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:194
+msgid "Web servers-CGI programs-other software (such as databases)."
+msgstr "Web服务器-CGI程序-其他软件(如数据库)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:196
+msgid ""
+"CGI programs can be written in any language, as long as they follow the "
+"CGI communication rules. Such as compilation languages: C, C++, etc.; "
+"scripting languages: Perl, Python, Bourne shell,Java, etc."
+msgstr ""
+"CGI程序可以用任何语言编写，只要它们遵循CGI通信规则。诸如编译语言：C、C++等；脚本语言：Perl、Python、Bourne "
+"Shell、Java等。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:200
+msgid ""
+"MapServer CGI module is a CGI program written in C language, which is "
+"very small. The core mapserv.exe of the MapServer CGI module is only "
+"36KB."
+msgstr "MapServer CGI模块是一个用C语言编写的CGI程序，非常小。MapServer CGI模块的核心mapserv.exe只有36KB。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:204
+msgid ""
+"When the browser informs the Web Server to call the MapServer CGI module "
+"through the URL, the Web Server creates a process for the CGI module; the"
+" CGI module runs and loads the MapFile file specified by the URL, and "
+"reads the TEMPLATE file (HTML file) in the MapFile file. Replace the "
+"template substitutions of the CGI variables in the TEMPLATE file with "
+"specific values; after processing the TEMPLATE file, the CGI module "
+"returns the TEMPLATE file processing result (HTML file) to the Web "
+"Server, and the Web Server outputs the HTML file to on the user’s "
+"browser. At this time, the TEMPLATE file (HTML file) is used as the "
+"user’s interactive interface."
+msgstr ""
+"当浏览器通过URL通知Web服务器调用MapServer "
+"CGI模块时，Web服务器为CGI模块创建一个进程；CGI模块运行并加载URL指定的MapFile文件，并读取MapFile文件中的模板文件(Html文件)。将模板文件中CGI变量的模板替换为特定值，CGI模块对模板文件进行处理后，将模板文件处理结果(Html文件)返回给Web服务器，WEB服务器将该Html文件输出到用户浏览器。此时，模板文件(HTML文件)被用作用户的交互界面。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:215
+msgid "Basic steps to design WebGIS using MapServer CGI program:"
+msgstr "使用MapServer CGI程序设计WebGIS的基本步骤："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:217
+msgid ""
+"Configure MapFile: Generally, the user interface used is specified in the"
+" TEMPLATE property of the Web Object. The user can also specify the user "
+"interface to use via the URL."
+msgstr "配置映射文件：通常，使用的用户界面是在Web对象的模板属性中指定的。用户还可以通过URL指定要使用的用户界面。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:221
+msgid ""
+"Design the initialization interface: Considering that the URL for "
+"accessing the CGI program (mapserv.exe) is very long, moreover, ordinary "
+"users do not know the URL format for accessing the CGI program "
+"(mapserv.exe); therefore, a link (URL) to the CGI program (mapserv.exe) "
+"is embedded in the initial interactive interface."
+msgstr "设计初始化界面：考虑到访问CGI程序(mapserv.exe)的URL很长，而且普通用户不知道访问CGI程序(mapserv.exe)的URL格式，所以在初始交互界面中嵌入了一个指向CGI程序(mapserv.exe)的链接(URL)。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:227
+msgid ""
+"Design user interaction and interactive interface: Here we need to "
+"introduce the key concepts of MapServer CGI module: CGI variables and "
+"templates. MapServer CGI variable can be regarded as CGI module mapserv "
+"Exe interface. Calling CGI variables in URL or HTML forms can complete "
+"most dynamic interactions, such as layer selection, zooming in and out, "
+"etc."
+msgstr ""
+"设计用户交互和交互界面：这里我们需要介绍MapServer CGI模块的关键概念：CGI变量和模板。MapServer "
+"CGI变量可以看作是CGI模块的mapserv EXE接口。在URL或HTML表单中调用CGI变量可以完成大多数动态交互，如层选择、放大和缩小等。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:234
+msgid ""
+"Templates are HTML files or URLs. Templates contain CGI variables and its"
+" substitution variables, where the substitution variables (template "
+"substitutions) correspond to CGI variables one-to-one. Design user "
+"interactions and interactive interfaces, that is, use CGI variables and "
+"substitution variables in URLs or HTML files. So, since template "
+"substitutions correspond one-to-one with CGI variables, why introduce the"
+" concept of template substitutions? It’s a bit conceptually overkill "
+"indeed. However, the use of substitution variables can be used to "
+"indicate that a CGI variable has an empty value."
+msgstr "模板是HTML文件或URL。模板包含CGI变量及其替代变量，其中替代变量(模板替代)与CGI变量一一对应。设计用户交互和交互界面，即在URL或HTML文件中使用CGI变量和替代变量。那么，既然模板替换与CGI变量一一对应，为什么要引入模板替换的概念呢？这在概念上确实有点矫枉过正。但是，可以使用替代变量来指示CGI变量的值为空。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:244
+msgid ""
+"Examples of developing WebGIS using the MapServer CGI module will be "
+"provided in Appendix 2."
+msgstr "使用MapServer CGI模块开发WebGIS的示例将在附录2中提供。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:248
+msgid "Developing WebGIS with MapScript Module"
+msgstr "用MapScrip组件开发WebGIS"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:250
+msgid ""
+"CGI module programming is to use CGI variables and its substitution "
+"variables, and CGI modules are compiled programs (mapserv.exe); it is "
+"difficult to use CGI modules to achieve more complex dynamic "
+"interactions. Using other server-side scripting languages and MapScript "
+"can more easily implement complex WebGIS functions."
+msgstr "CGI模块编程是使用CGI变量及其替代变量，CGI模块是编译程序(mapserv.exe)；使用CGI模块很难实现更复杂的动态交互。使用其他服务器端脚本语言和MapScrip可以更轻松地实现复杂的WebGIS功能。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:256
+msgid ""
+"Here we will take the popular server-side scripting language PHP as an "
+"example to introduce the usage of MapScript modules. PHP is installed in "
+"the Web Server as a CGI program, the MapScript module is placed under the"
+" extensions in the PHP installation path, and the ``php.int`` file is "
+"configured to support the use of the MapScript module, and the "
+"PHP/Mapscript installation is completed. MapScript modules can be loaded "
+"using the function ``dl`` (“MapScript Module Name”) in a ``*.php`` file "
+"or ``*.phtml`` file. The API provided by the MapScript module is object-"
+"based, which organizes objects in MapFile into object interfaces. Object "
+"properties and methods can be called in ``*.php`` files or ``*.phtml`` "
+"files."
+msgstr ""
+"这里我们将以流行的服务器端脚本语言PHP为例，介绍MapScrip模块的用法。PHP作为CGI程序安装在Web服务器中，MapScript模块放置在PHP安装路径中的扩展下，而"
+"  ``php.int`` "
+"文件配置为支持使用MapScrip模块，并且完成了PHP/MapScript安装。可以使用函数加载MapScript模块  ``dl`` "
+"(“MapScript模块名称”)在  ``*.php`` 文件或  ``*.phtml`` "
+"文件。MapScript模块提供的API是基于对象的，它将MapFile中的对象组织到对象接口中。对象属性和方法可以在  ``*.php`` "
+"文件或  ``*.phtml`` 档案。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:268
+msgid ""
+"The source code of the program written by the author using PHP/MapScript "
+"will be provided in Appendix 3."
+msgstr "由作者使用PHP/MapScrip编写的程序的源代码将在附录3中提供。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:272
+msgid "MapServer data processing flow"
+msgstr "MapServer数据处理流程"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:274
+msgid ""
+"The client sends the parameters and the required cgi program to "
+"MapServer. After MapServer receives the parameters sent by the client, it"
+" reads the mapfile file according to the mapfile path specified in the "
+"parameters. Read the relevant data according to the data path specified "
+"in the mapfile. Convert the read data to text data. This work is done by "
+"calling FreeType Font Engine with GD Graphics Library. After the graph is"
+" created, save it to the directory specified in the client parameters. "
+"According to the information defined in the mapfile, MapServer reads the "
+"specified template (template file), configures the html and screen "
+"display and related data, and creates and embeds graphics (such as scale "
+"size, sample image, reference text), Dynamically generated spatial "
+"infographics are embedded in templates to generate files that can be used"
+" by clients. Return to the client when done."
+msgstr ""
+"客户端将参数和所需的CGI程序发送到MapServer。MapServer收到客户端发送的参数后，根据参数中指定的映射文件路径读取映射文件。根据映射文件中指定的数据路径读取相关数据。将读取的数据转换为文本数据。这项工作是通过调用带有GD图形库的FreeType字体引擎来完成的。创建图形后，将其保存到客户端参数中指定的目录。根据"
+" Mapfile "
+"中定义的信息，MapServer读取指定的模板(模板文件)，配置html和屏幕显示及相关数据，创建并嵌入图形(如比例尺大小、样本图像、参考文本)，动态生成的空间信息图嵌入到模板中，生成可供客户使用的文件。完成后返回给客户端。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:289
+msgid "MapFile file"
+msgstr " Mapfile "
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:291
+msgid ""
+"Some tools for Mapfile, including VIM highlight tool, Sublime highlight "
+"tool."
+msgstr " Mapfile 的一些工具，包括Vim高光工具，崇高高光工具。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:294
+msgid ""
+"MapFile files organize various map elements into object systems with "
+"hierarchical relationships. Data sources, data formats used, user "
+"interaction and support for the OGC protocol are also defined in MapFile."
+msgstr " Mapfile 将各种地图元素组织到具有层次关系的对象系统中。数据来源、使用的数据格式、用户交互以及对OGC协议的支持也在MapFile中定义。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:299
+msgid "MapObject"
+msgstr "MapObject"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:300
+msgid "Querymap"
+msgstr "查询映射"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:301
+msgid "Symbol"
+msgstr "符号"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:302
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:312
+msgid "Projection"
+msgstr "投影"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:303
+msgid "WebObject"
+msgstr "WebObject"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:304
+msgid "Reference Map"
+msgstr "参考地图"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:305
+msgid "Outputformat"
+msgstr "输出格式"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:306
+msgid "Scalebar"
+msgstr "比例尺"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:307
+msgid "Lengend"
+msgstr "伦格德"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:308
+msgid "Layer Object"
+msgstr "层对象"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:309
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:310
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:315
+msgid "Label Object"
+msgstr "标签对象"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:311
+msgid "Feature"
+msgstr "功能"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:313
+msgid "Class Object"
+msgstr "类对象"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:314
+msgid "Join Object"
+msgstr "联接对象"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:316
+msgid "Style Object"
+msgstr "Style对象"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:317
+msgid "Grid Object"
+msgstr "栅格对象"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:322
+msgid ""
+"Objects and their hierarchical relationships in MapFile; note that some "
+"objects are omitted Object for drawing convenience"
+msgstr "MapFile中的对象及其层次关系；请注意，为了绘图方便，某些对象被省略为对象"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:325
+msgid ""
+"The syntax of MapFile is simple. The keywords for MapFile include the "
+"object name (all the objects in figure 2), the object keyword, and the "
+"object closing tag “END”. Object names and object closing tag “END” are "
+"case-insensitive; attribute names are case-sensitive Shapfile files that "
+"configure ESRI should be uppercase, while PostGIS files are always "
+"lowercase. In MapFile files, the symbol ``#`` is used for single-line "
+"comments. MapFile files have a ``.map`` extension and can be written "
+"using various text editors."
+msgstr ""
+"MapFile的语法很简单。MapFile的关键字包括对象名称(图2中的所有对象)、对象关键字和对象结束标记“end”。对象名称和对象结束标记“end”不区分大小写；属性名称是区分大小写的Shapfile文件，其配置ESRI应为大写，而PostGIS文件始终为小写。在MapFile文件中，符号"
+"  ``#`` 用于单行注释。 Mapfile 有一个  ``.map`` 扩展名，可以使用各种文本编辑器编写。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:334
+msgid "Here is an example of MapFile:"
+msgstr "以下是MapFile的一个示例："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:336
+msgid ""
+"Configuring a complete MapFile file requires: GIS data source, font file,"
+" symbol file. GIS data sources can be distributed on different computers:"
+" The font file is used to define the type of font used in the output map."
+" The point, line and face symbols used in the map can be defined in the "
+"Symbol object in the MapFile file; However, in order to achieve symbol "
+"reuse - without having to define the same symbols in different MapFile "
+"files, a separate symbol file is usually defined outside the MapFile."
+msgstr "配置一个完整的MapFile文件需要：地理信息系统数据源、字体文件、符号文件。GIS数据源可以分布在不同的计算机上：字体文件用于定义输出地图中使用的字体类型。地图中使用的点、线和面符号可以在MapFile文件的符号对象中定义；但是，为了实现符号重用-而不必在不同的MapFile文件中定义相同的符号，通常在MapFile外部定义单独的符号文件。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:345
+msgid ""
+"Most of the objects in MapFile files either correspond to map elements, "
+"or are commonly used in GIS. Such as Lengend,Scalebar,Layer, etc. The "
+"function of these objects is obvious and easy to understand. The meaning "
+"of the objects and attributes in the MapFile file will be explained in "
+"detail in Appendix 1. Explain the meaning of four special objects here: "
+"Web Object,Outputformat Object,Query Object,Reference Map Object."
+msgstr ""
+"MapFile文件中的大多数对象要么对应于地图元素，要么在GIS中常用。如Lengend、Scalebar、Layer等。这些对象的功能明显且易于理解。MapFile文件中对象和属性的含义将在附录1中详细说明，这里解释四个特殊对象的含义：Web对象、OutputFormat对象、Query对象、Reference"
+" Map对象。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:352
+msgid ""
+"Web Object defines how to handle the web interface. Such as: the "
+"attribute IMAGEPATH defines the path to store temporary files and images,"
+" and TEMPLATE defines the interactive interface file used."
+msgstr "Web对象定义如何处理Web界面。例如：属性IMAGEPATH定义了存储临时文件和图像的路径，模板定义了使用的交互界面文件。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:355
+msgid ""
+"Outputformate Object defines the format of the output image. MapServer "
+"converts GIS data format files (such as shapefiles) into image formats "
+"supported by the MIME (Multipurpose Internet Mail Extensions) protocol, "
+"such as gif, png, jpeg, etc."
+msgstr "OutputFormate对象定义输出图像的格式。MapServer将GIS数据格式文件(如shapefile)转换为MIME(多用途互联网邮件扩展)协议支持的图像格式，如gif、png、jpeg等。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:359
+msgid ""
+"QueryMap Object defines the generation mechanism of query results. For "
+"example: the attribute STYLE (not an object) sets how the selected "
+"feature is displayed."
+msgstr "QueryMap对象定义了查询结果的生成机制。例如：属性样式(不是对象)设置选定要素的显示方式。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:362
+msgid ""
+"Reference Map Object defines how the reference map is created. MapServer "
+"supports three reference map types. The most common use of a reference "
+"map is as a map viewing window."
+msgstr "参考贴图对象定义如何创建参考贴图。MapServer支持三种参考地图类型。参考地图最常见的用途是作为地图查看窗口。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:366
+msgid ""
+"The query results can be observed using the reference map. When a point "
+"query occurs, a dot symbol is generated in the output Reference Map to "
+"indicate the location being queried. The area query generates a box in "
+"the Reference Map to indicate the query area. Feature queries display the"
+" features of the query in the Reference Map. In short, the Reference Map "
+"can be regarded as the observation window of the query [5]."
+msgstr ""
+"可以使用参考地图来观察查询结果。当发生点查询时，会在输出参考地图中生成一个点符号，以指示要查询的位置。区域查询在参考地图中生成一个框以指示查询区域。要素查询在参考地图中显示查询的要素。简而言之，可以将参考地图视为查询的观察窗口"
+" [5] 。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:373
+msgid "After planning the WebGIS website, configure the MapFile file steps:"
+msgstr "规划WebGIS网站后，配置MapFile文件步骤："
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:375
+msgid ""
+"Prepare the resources required by the MapFile file, including GIS data, "
+"font files, and symbol files."
+msgstr "准备MapFile文件所需的资源，包括GIS数据、字体文件和符号文件。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:377
+msgid ""
+"According to the requirements of the WebGIS website, following the syntax"
+" of MapFile, use text editing software or special MapFile writing "
+"software such as MapLab to write MapFile."
+msgstr "根据WebGIS网站的要求，遵循MapFile的语法，使用文本编辑软件或MapLab等专门的MapFile编写软件来编写MapFile。"
+
+#: ../../webgis-src/chb1_mapserver-setup/sec07_mapfile-basic/section.rst:380
+msgid ""
+"Use debugging software (such as MapLab) to test to see if the MapFile "
+"configuration is correct and appropriate."
+msgstr "使用调试软件(如MapLab)进行测试，以查看MapFile配置是否正确和适当。"
+
+#~ msgid "GD support has been removed in MapServer 7. 0."
+#~ msgstr "在MapServer7.0中已删除了对GD的支持。"
+

@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chd2_openlayers/chapter.rst:2
+msgid "OpenLayers class library"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/chapter.rst:4
+msgid ""
+"OpenLayers implements more comprehensive and complex front-end WebGIS "
+"applications. This part introduces it."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec02_intro/section.rst:2
+msgid "Intruduction for OpenLayers"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec02_intro/section.rst:4
+msgid "Intruduction for OpenLayers."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec02_intro/section.rst:6
+msgid ""
+"Technical overview OpenLayers is a JavaScript package for developing "
+"WebGIS clients. Sources supported by OpenLayers include Google Maps, "
+"Yahoo, Map, Microsoft Virtual Earth, etc. Users can also use a simple "
+"image map as a background image to overlay other layers in OpenLayers. In"
+" this regard, OpenLayers provides a lot of s Choice."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec02_intro/section.rst:10
+msgid ""
+"The code implements the function of loading a tile map (ie OpenStreetMap "
+"map) and can pan and zoom the map. When initializing a map, you need at "
+"least one view, one or more layers, and a target HTML tag for the map to "
+"load."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec02_intro/section.rst:15
+msgid "The Second."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec02_intro/section.rst:22
+msgid "`View the example <xx-ol-openstreet.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec03_dragrotate/section.rst:3
+msgid "Map drag and zoom"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec03_dragrotate/section.rst:7
+msgid ""
+"The left mouse button can be used to drag the map, and the scroll wheel "
+"can zoom the map. Shift + left mouse button to rotate the map."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec03_dragrotate/section.rst:14
+msgid "`View the example <xx-ol-dragrotate.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec05_zoomtoextent/section.rst:3
+msgid "ZoomToExtent Control"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec05_zoomtoextent/section.rst:5
+msgid ""
+"This example demonstrates how to use the ``ol.control.ZoomToExtent`` "
+"control. Click to go directly to the set  coordinate position."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec05_zoomtoextent/section.rst:14
+msgid "`View the example <xx-ol-zoomtoextent.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec06_arcgis/section.rst:3
+msgid "ArcGIS REST MapService"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec06_arcgis/section.rst:6
+msgid ""
+"This example shows how to use ArcGIS REST MapService as a slice. This "
+"source type supports maps and image services. For cached ArcGIS services,"
+" use ol.source.XYZ for better performance."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec06_arcgis/section.rst:16
+msgid "`View the example <xx-ol-arcgis.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec07_draw/section.rst:3
+msgid "Map drawing"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec07_draw/section.rst:5
+msgid ""
+"An example of using ``ol.interaction.Draw`` interaction and "
+"``ol.interaction.Modify`` interaction. You can paint on the   map. For "
+"example, points, lines, polygons, etc."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec07_draw/section.rst:14
+msgid "`View the example <xx-ol-draw.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec08_precompose/section.rst:3
+msgid "Layer clipping"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec08_precompose/section.rst:5
+msgid "Layer clip example. Display the map directly as a cut shape."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec08_precompose/section.rst:13
+msgid "`View the example <xx-ol-precompose.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec09_cartadb/section.rst:3
+msgid "Cartodb Map"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec09_cartadb/section.rst:5
+msgid "A simple case of Cartodb map."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec09_cartadb/section.rst:13
+msgid "`View the example <xx-ol-cartadb.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec10_animation/section.rst:3
+msgid "Map move animation"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec10_animation/section.rst:5
+msgid ""
+"This example shows how to run one or more animations using the "
+"``view.animate()`` method."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec10_animation/section.rst:13
+msgid "`View the example <xx-ol-animation.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec12-wms/section.rst:3
+msgid "WMS"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec12-wms/section.rst:5
+msgid ""
+"A smooth reload of the presentation layer as the time dimension is "
+"continuously changed. The data shows that the IEM generated a NUS NEXRAD "
+"WSR-88D grade III alkali reflectance CONUS complex."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec12-wms/section.rst:15
+msgid "`View the example <xx-ol-wms-webgispub.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec13_modify-features/section.rst:3
+msgid "Map modification feature"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec13_modify-features/section.rst:5
+msgid "This example shows how to use extent extens to draw a modifiable range."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec13_modify-features/section.rst:13
+msgid "`View the example <xx-ol-modify-features.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec14_color/section.rst:3
+msgid "Control Color"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec14_color/section.rst:5
+msgid ""
+"The raster source allows arbitrary manipulation of pixel values. In this "
+"example, the RGB values on the input tile source are adjusted in pixel "
+"mode before being rendered using the second raster source. The raster "
+"operation converts the pixels in the RGB space into HCL color spaces, "
+"adjusts the values according to the above controls, and then converts "
+"them back into RGB space for rendering."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec14_color/section.rst:18
+msgid "`View the example <xx-ol-color.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec15_canvaspattern/section.rst:3
+msgid "CanvasPattern"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec15_canvaspattern/section.rst:5
+msgid ""
+"First, this example creates a reusable CanvasPattern and a "
+"CanvasGradient. These countries are loaded from the GeoJSON file. The "
+"style function determines whether each country is populated with a pre-"
+"generated CanvasGradient or CanvasPattern."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec15_canvaspattern/section.rst:16
+msgid "`View the example <xx-ol-canvaspattern.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec16_export/section.rst:3
+msgid "Export"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec16_export/section.rst:5
+msgid ""
+"Export a map as an example of a PNG image. This example requires a "
+"browser that supports canvas.toBlob()."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec16_export/section.rst:13
+msgid "`View the example <xx-ol-export.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec17_XYZ/section.rst:3
+msgid "XYZ Esri"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec17_XYZ/section.rst:5
+msgid "``ol.source.XYZ`` supports ArcGIS REST tiles services."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec17_XYZ/section.rst:13
+msgid "`View the example <xx-ol-XYZ.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec18_mouse/section.rst:3
+msgid "Mouse position"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec18_mouse/section.rst:5
+msgid ""
+"An example of mouse position control outside the map. Display the "
+"coordinates of the mouse in real time."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec18_mouse/section.rst:14
+msgid "`View the example <xx-ol-mouse.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec19_constrained/section.rst:3
+msgid "Constrained scaling"
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec19_constrained/section.rst:5
+msgid ""
+"The view of this map is limited to zoom levels 9 and 13. This can be done"
+" using the minZoom and maxZoom view options."
+msgstr ""
+
+#: ../../webgis-src/chd2_openlayers/sec19_constrained/section.rst:14
+msgid "`View the example <xx-ol-constrained.html>`_"
+msgstr ""
+

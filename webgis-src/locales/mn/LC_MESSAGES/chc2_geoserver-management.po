@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chc2_geoserver-management/chapter.rst:2
+msgid "Explore the management interface"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/chapter.rst:4
+msgid ""
+"In this hands-on chapter, we will explore that the interface has been "
+"significantly improved in GeoSever 2.15.2.x admin interface series."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/chapter.rst:7
+msgid ""
+"An enhanced interface to the integrated GeoWebCache is available in 2.15."
+" You can now perform almost any cache configuration from the GeoServer "
+"interface."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/chapter.rst:11
+msgid ""
+"In addition, the security interface has been updated to track significant"
+" improvements in the GeoServer security module. The good news is that we "
+"will use the mouse more here than in any other chapter, so the keyboard "
+"will not be used for the time being. Let’s get started. Log in."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:4
+msgid "Understand the interface of GeoServer"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:6
+msgid "After logging in to GeoServer, now focus on the layout."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:8
+msgid ""
+"As you can see in the screenshot below, the GeoServer Web interface has "
+"three main areas."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:14
+msgid "GeoServer home page interface"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:16
+msgid ""
+"The central area is where the information is displayed; the elements in "
+"it vary depending on what you do. After logging in, it will show you "
+"brief information about the configuration data, as well as warnings or "
+"errors that should be corrected. The version number is displayed at the "
+"end, and there is a link to the administrator’s mailbox."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:22
+msgid ""
+"On the right, a list shows the capabilities of GeoServer. The acronyms "
+"listed refer to the standard OGC protocol; We will discuss some of these "
+"protocols in detail, each of which supports at least one version. These "
+"numbers are links to XML documents that describe exactly what data and "
+"operations are supported by each protocol. They are an invaluable "
+"resource for customers willing to use your services."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:29
+msgid ""
+"On the left, a directory lists the configuration areas. Each area "
+"contains links to administrative actions. When you click one of the "
+"options, contextual options are displayed in the central area. We will "
+"explore each area in the next paragraph."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:35
+msgid "About and status"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:37
+msgid ""
+"This area provides information about run-time variables and how to "
+"describe GeoServer to clients connected to GeoServer."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:43
+msgid "image42"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:46
+msgid "Server status"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:48
+msgid ""
+"The server status gives you a good understanding of the main "
+"configuration parameters and information about the current state of "
+"GeoServer. This information is organized in a tabular view. In addition "
+"to providing information, this view allows you to perform some "
+"maintenance operations. We will describe the main items listed in the "
+"following screenshot:"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:58
+msgid "Server status of GeoServer"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:60
+msgid "1.Lock"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:62
+msgid ""
+"Using the transactional Web feature Service (WFS-T), the client can edit "
+"the configured feature type. To avoid data corruption, GeoServer locks "
+"the data that needs to be traded until the transaction is completed. If "
+"the number displayed is greater than 1, your data is doing some "
+"transactions. Free Locks button allows you to reset a suspended editing "
+"session and delete all orphaned processes to release locks that may have "
+"been abandoned."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:70
+msgid "2.Connect"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:72
+msgid ""
+"This displays the number of vector data storage connections. Vector data "
+"repositories are repositories configured for feature persistence."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:75
+msgid "3.Memory usage"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:77
+msgid ""
+"This shows how much memory GeoServer is using. You can run the garbage "
+"collector manually by clicking the available memory button. This destroys"
+" Java objects marked for deletion."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:81
+msgid "4.JVM version and font"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:83
+msgid ""
+"This is the version of the Java virtual machine (JVM) used by GeoServer. "
+"You configured it in Chapter 2, getting started with GeoServer, during "
+"installation. You will also see a list of fonts seen by JVM and "
+"GeoServer. Fonts are useful for rendering space feature labels. We will "
+"discuss this in Chapter 6, layer styling."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:89
+msgid "5.JAI usage and configuration"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:91
+msgid ""
+"The Java Advanced Imaging (JAI) library is used for image rendering and "
+"for better performance when GeoServer processes raster data, as does Web "
+"CoverageService (WCS) and Web Map Service (WMS) requests. We will install"
+" native JAI support in Chapter 11, “Tuning GeoServer in Production”."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:97
+msgid "6.Update sequence"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:99
+msgid ""
+"This will show how many times the server configuration has been updated. "
+"At the time of this writing, the amount of information is not that large."
+" Developers seem to plan to use it to let you know that your "
+"configuration file has been updated from outside the application. It "
+"could be a rest call."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:105
+msgid "7.Resource caching"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:107
+msgid ""
+"GeoServer also caches connections to storage, feature type definitions, "
+"external drawings, font definitions, and CRS definitions. You can press "
+"the clear button to force these geoservers to reopen storage and re-read "
+"image and font information."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:112
+msgid "8.Configuration and directory"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:114
+msgid ""
+"This option is useful for updating the configuration without having to "
+"restart the service. GeoServer keeps the configuration data in memory. If"
+" an external process updates a file that contains configuration "
+"parameters, you can force GeoServer to reload data from disk."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:120
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:129
+msgid "GeoServer log"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:122
+msgid ""
+"From here you can preview the current log file or download the full "
+"content from the link at the bottom. It can be useful when you cannot "
+"access the file system where the actual log files are stored."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:131
+msgid ""
+"The record of each execution is also saved in the log, and the "
+"configuration location of the saved location is in the global."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:137
+msgid "log"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:140
+msgid "Contact information"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:142
+msgid ""
+"In this panel, information about the organization and people managing the"
+" service should be inserted. The default configuration pays homage to the"
+" ancient cartographer Claudius Ptolemy "
+"(http://en.wikipedia.org/wiki/Ptolemy). This information is included in "
+"the WMS functionality and is a reference for users."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:149
+msgid "About"
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:151
+msgid ""
+"As it says, this is just build information and where to find the entirety"
+" of the GeoServer documentation, bug tracker and wiki."
+msgstr ""
+
+#: ../../webgis-src/chc2_geoserver-management/sec01_getoknow/section.rst:157
+msgid "GeoServer about the interface"
+msgstr ""
+

@@ -1,0 +1,3012 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 07:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/cha2_ogc-opengis/chapter.rst:2
+msgid "WebGIS related standards and specifications"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/chapter.rst:4
+msgid "WebGIS service standards are the basis of modern WebGIS technology."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/chapter.rst:6
+msgid ""
+"In order to realize the interoperability of spatial data and promote the "
+"sharing of spatial data among heterogeneous platforms, OGC (Open "
+"Geospatial Consortium, Open Geospatial Consortium) has been committed to "
+"providing standardization of software, data and services in the "
+"geographic information industry, and has formulated a series of spatial "
+"The service specification of the data, such as WMS, WMTS, WFS, etc. Based"
+" on the OGC standard specification, the global sharing and "
+"interoperability of geographic information has become an inevitable trend"
+" in the development of GIS technology. Therefore, at present, most of the"
+" open map service resources are released based on the OGC service "
+"specification, providing standard OGC map services to the public."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:4
+msgid "WebGIS related standards of OGC"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:7
+msgid ""
+"OGC stands for Open Geospatial Consortium-OGC, which Committed to the "
+"standardization of software, data and services in the geographic "
+"information industry."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:11
+msgid ""
+"OGC was named Open GIS Consortium from 1994 to 2004, and later changed "
+"its name due to business needs."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:14
+msgid ""
+"OGC is a non-profit voluntary international standardization organization "
+"that leads the development of spatial geographic information standards "
+"and basic positioning services. In the field of spatial data "
+"interoperability, the interoperability method based on the public "
+"interface access mode is a basic operation method. Through the "
+"International Organization for Standardization (ISO/TC211) or technical "
+"consortium (such as OGC) to develop interface specifications for spatial "
+"data interoperability, GIS software vendors develop spatial data read and"
+" write functions that follow this interface specification, which can "
+"realize the interoperability of heterogeneous spatial databases."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:23
+msgid ""
+"The standards formulated and promoted by OGC include WMS, WMTS, WFS, WCS,"
+" CSW, WPS and other Web service specifications, as well as related GML, "
+"KML and GeoRSS specifications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:28
+msgid "Introduction of relevant standardization organizations"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:31
+msgid "**OGC (Open Geospatial Consortium):**"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:33
+msgid ""
+"It is an international organization specializing in the standardization "
+"of international standards for geospatial information technology. It was "
+"established in 1994 and currently has more than 400 members, including "
+"companies, research institutes, high schools and government agencies from"
+" different countries and regions. One of the important work of OGC is the"
+" OWS (OGC Web Services) research program, the purpose of which is to "
+"establish a standard framework, enable geographic information to be "
+"seamlessly used in a variety of Web, wireless, location-based services "
+"and mainstream information technology applications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:42
+msgid ""
+"**ISO/TC 211 (International Organization for Standardization Geographic "
+"Information Technology Committee 211):**"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:44
+msgid ""
+"ISO/TC 211 is a technical committee established by an international "
+"organization in 1994 to develop standards for geospatial information. The"
+" number of standards developed by TC 211 starts from 19101. In general, "
+"ISO's standards are more abstract, while OGC's standards are relatively "
+"more specific. In recent years, ISO/TC 211 has worked closely with the "
+"OGC. For example, OGC's WMS standard is also an ISO standard."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:50
+msgid "**W3C (World Wide Web Consortium):**"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:52
+msgid ""
+"W3C is an organization engaged in the standardization of information "
+"technology for the World Wide Web. It was founded in 1994 at the MIT "
+"Computer Science Laboratory by TimBemers-Lee, the father of the World "
+"Wide Web. The World Wide Web Consortium has developed a series of "
+"specifications, among which HTML, CSS, XML Schema, RDF, and SVG have been"
+" published with a wide range of influences. The Basic GeoRSS "
+"specification developed by the W3C is still in use, albeit slightly "
+"outdated."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:60
+msgid "Use of Open Specifications"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:62
+msgid "Here are two types of open specifications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:65
+msgid "(1) Open data format"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:67
+msgid ""
+"If a data format has a complete description document, it can be read and "
+"written by various GIS software, and the inventor of the format does not "
+"claim any royalty rights, then the data format is open."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:70
+msgid ""
+"Open data formats in text format include KML (Keyhole Markup Language, "
+"Keyhole Markup Language), GeoJSON and TopoJSON, etc. JPEG and PNG are "
+"open data formats in raster."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:73
+msgid ""
+"ESRI Shapefile, referred to as Shapefile, is an open format for spatial "
+"data developed by the Environmental Systems Research Institute (ESRI)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:76
+msgid ""
+"Currently, the file format has become an open standard in the geographic "
+"information software community, demonstrating the importance of ESRI in "
+"the global geographic information system market."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:79
+msgid ""
+"Shapefiles are also an important interchange format that enables data "
+"interoperability between ESRI and other companies' products."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:82
+msgid ""
+"In contrast to this is ESRI's File Geodatabase, which is a closed format,"
+" it cannot be opened and created with any software other than ESRI's "
+"tools."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:86
+msgid "(2)Open specification"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:88
+msgid ""
+"The most important open specifications in the GIS industry are a series "
+"of specifications formulated by OGC. International Organization for "
+"Standardization (ISO) Technical Committee 211 (TC211) is also one of the "
+"most important spatial information standards organizations. At present, "
+"ISO/TC 211 has completed or is developing more than 40 international "
+"standards for geographic information, including \"Geographic Information "
+"Reference Model\", \"Geographic Information Concept Model Language\" and "
+"\"Geographic Information Terminology\"."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:95
+msgid ""
+"In addition, ESRI, developed in collaboration with several other "
+"organizations, which is driving the use of the open GeoServices REST "
+"specification. This specification provides a standard method for Web "
+"clients to communicate with GIS servers using REST technology. Web "
+"services published through ArcGIS for Server adhere to this "
+"specification. This means that non-ESRI developers are free to create "
+"applications to publish and access Web services that conform to the "
+"standard. Although GeoServices REST was not adopted by the OGC, it is a "
+"prime example of a voluntary disclosure specification for commercial "
+"software."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:105
+msgid "OGC map service standard introduction"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:107
+msgid ""
+"OGC1999 began WMT1 (Web Map Tested) and WMT2 interoperability project. "
+"Among them, the famous GML comes from the results of WMT1."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:110
+msgid ""
+"In WMT2, OGC defines three geographic reference information models: Web "
+"Map Server (WMS), Web Feature Server (WFS), Web Coverage Server (WCS)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:113
+msgid "WMT1: http://www.opengeospatial.org/projects/initiatives/wmt1"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:114
+msgid "WMT2: http://www.opengeospatial.org/projects/initiatives/wmt2"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:116
+msgid ""
+"Cyberspace data service is the most important functional service provided"
+" by the data layer to the outside world. In order to realize spatial data"
+" sharing and interoperability, the data layer will provide an "
+"international standard access interface that conforms to the OGC "
+"specification, adopt OWS service model to realize W*S service. Each "
+"service type will conform to the latest protocols and specifications, "
+"enabling visual access to map data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:122
+msgid ""
+"OGC map service protocols, including WMS, WFS, WCS, WMTS, WPS. One of the"
+" more important standards that are now used more are GML, WMS and WFS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:126
+msgid "Web Map Service (WMS)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:128
+msgid ""
+"Web Map Service (WMS) can return corresponding maps (including raster "
+"forms such as PNG, GIF, JPEG, or vector forms such as SVG and WEB CGM) "
+"according to the user's request."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:132
+msgid ""
+"WMS supports the network protocol HTTP, and the supported operations are "
+"defined by URLs."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:138
+msgid "WMS provides the following main operations:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:140
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:293
+msgid ""
+"``GetCapabitities`` : Returns service-level metadata, which is a "
+"description of service information content and required parameters."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:142
+msgid ""
+"``GetMap`` : Returns a map image whose geospatial reference and size "
+"parameters are well-defined."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:143
+msgid ""
+"``GetFeatureInfo`` : Returns information about some special features "
+"displayed on the map."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:144
+msgid "``GetLegendGraphic`` : Returns the legend information of the map."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:147
+msgid "Other operations like ``DescribeLayer`` , ``GetStyles`` , ``SetSytles`` ."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:149
+msgid ""
+"In fact, to explain with the traditional point of view, what ``GetMap`` "
+"obtains is the result drawn on the control in the desktop program, which "
+"is the performance of the data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:153
+msgid ""
+"``GetFeatureInfo`` is easier to understand. It has the same function as "
+"the Info button used in almost all desktop programs, it is used to obtain"
+" information about the coordinates of the screen somewhere."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:157
+msgid ""
+"The parameters in ``GetFeatureInfo`` are screen coordinates, current view"
+" range, etc., which also facilitates the writing of the client to a "
+"certain extent."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:159
+msgid ""
+"``GetFeatureInfo`` can return feature information in multiple layers at "
+"the same time, which is the same as ArcGIS Desktop."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:165
+msgid ""
+"``GetFeatureInfo`` can return feature information in multiple layers at "
+"the same time, which is the same as the operation in GIS desktop "
+"applications. WMS also includes some ``GetLegend`` and other requests to "
+"return legend information, which are also completely defined according to"
+" the existing standards of the desktop."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:170
+msgid ""
+"The full name of WMS is \"Web Map Service\". The standard mainly defines "
+"three operations for creating and displaying map images: "
+"``GetCapabilities`` (getting service capabilities), ``GetMap`` (getting "
+"maps), and ``GetFeatureInfo`` (getting object information).  ``GetMap`` "
+"is a common operation, which results in an image of a map."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:176
+msgid ""
+"WFS is an online service standard for geographic elements based on Web "
+"service technology. It has two functions."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:178
+msgid ""
+"One is to realize the Web service of geographic data. The data service "
+"department has established a geospatial database system to provide online"
+" services, and users can obtain the geospatial data they need through "
+"this standard."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:182
+msgid ""
+"The second is the specification for interoperability of heterogeneous "
+"systems. Two different geographic information systems can realize the "
+"interoperability of heterogeneous data, including data query, browsing, "
+"extraction, modification, update and other operations. It can realize "
+"remote interoperability based on Web technology."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:187
+msgid ""
+"Web Mapping Services (WMS) make maps from data with geospatial location "
+"information. A map is defined as a visual representation of geographic "
+"data. it can return the corresponding map (including PNG, GIF, JPEG and "
+"other raster forms or SVG and WEB CGM and other vector forms) according "
+"to the user's request. WMS supports the network protocol HTTP, and the "
+"supported operations are defined by URLs."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:196
+msgid "Web Feature Service (WFS)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:198
+msgid ""
+"Web Feature Services (WFS) supports insert, update, delete, retrieve, and"
+" discover services for geographic features. The service returns GML data "
+"based on HTTP client requests."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:202
+msgid ""
+"Its basic connection is: GetCapabilities, DescribeFeatureType, GetFeature"
+" GetCapabilities as above. DescribeFeatureType returns the feature "
+"structure for client queries and other operations. GetFeature can return "
+"a GML-compliant data document according to the query requirements. "
+"GetFeature is the most important interface. Other interfaces such as "
+"Transaction can not only provide element reading, but also support "
+"element online editing and transaction processing."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:210
+msgid ""
+"WFS corresponds to the conditional query function in common desktop "
+"programs. WFS constructs query conditions through OGC Filter, supports "
+"query based on spatial geometric relationship, query based on attribute "
+"domain, and of course, includes common query based on spatial "
+"relationship and attribute domain. On the Web, WFS requests are not "
+"implemented in SQL, but through Filter XML, which is more scalable. What "
+"WFS returns is the result set of the query, to a certain extent, it is "
+"different from the \"data representation\" of WMS, The result set of WFS "
+"is a result set defined and constrained by a complete Schema, with GML as"
+" the carrier. This result set is similar to the data table of the query "
+"results of the desktop program."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:221
+msgid "WFS provides the following operations:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:223
+msgid ""
+"``GetCapabitities`` : Returns service-level metadata, which is a "
+"description of service information content and required parameters  "
+"(described in XML)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:225
+msgid ""
+"``DescribeFeatureType`` : Generate a Schema to describe the feature types"
+" that the WFS implementation can provide. The Schema description defines "
+"how the WFS implementation encodes a feature instance on input and "
+"generates a feature instance on output."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:228
+msgid ""
+"``GetFeature`` : A data document that conforms to the GML specification "
+"can be returned according to the query requirements. GetFeature is the "
+"most important interface."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:230
+msgid ""
+"``LockFeature`` : When the user requests through Transaction, in order to"
+" ensure the consistency of the feature information. That is, when a "
+"transaction accesses a data item, other transactions cannot modify the "
+"data item and add element locks to the element data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:234
+msgid ""
+"``Transaction`` : Interaction with feature instances. This operation can "
+"not only provide feature reading, but also support feature online editing"
+" and transaction processing. The Transaction operation is optional, and "
+"the server chooses whether to support this operation according to the "
+"nature of the data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:241
+msgid ""
+"The first three operations are required operations, which can obtain "
+"geographic elements; the latter two are optional operations, which are "
+"mainly used for adding, deleting, and modifying geographic elements."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:245
+msgid ""
+"Web Feature Service (WFS) supports users to insert, update, delete, "
+"retrieve and discover geographic features through HTTP in a distributed "
+"environment. The service returns feature-level GML (Geography Markup "
+"Language, Geographic Markup Language) data according to HTTP client "
+"requests, and provides transaction operations such as adding, modifying, "
+"and deleting features, which is a further development of Web map "
+"services. WFS constructs query conditions through OGC Filter, supports "
+"query based on spatial geometric relationship, query based on attribute "
+"domain, and of course also includes common query based on spatial "
+"relationship and attribute domain."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:257
+msgid ""
+"Other interfaces such as Transaction can not only provide element "
+"reading, but also support element online editing and transaction "
+"processing. WFS corresponds to the conditional query function in common "
+"desktop programs. WFS constructs query conditions through OGC Filter, "
+"supports query based on spatial geometric relationship, query based on "
+"attribute domain, and of course, includes common query based on spatial "
+"relationship and attribute domain."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:265
+msgid ""
+"On the Web, WFS requests are not implemented in SQL, but through Filter "
+"XML, which is more scalable."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:269
+msgid ""
+"What WFS returns is the result set of the query, to a certain extent, it "
+"is different from the \"data representation\" of WMS, The result set of "
+"WFS is a result set defined and constrained by a complete Schema, with "
+"GML as the carrier. This result set is similar to the data table of the "
+"query results of the desktop program."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:277
+msgid "Network Coverage Service (WCS)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:279
+msgid ""
+"Web Geographic Coverage Service (WCS): Provides a spatial raster layer "
+"containing geographic information or attributes, instead of static map "
+"access. Send corresponding data according to HTTP client request, "
+"including imagery, multispectral imagery and other scientific data. Two "
+"important operations GetCapabilities, GetCoverage GetCapabilities returns"
+" a description of the service and an XML document from which to obtain a "
+"collection of covered data. GetCoverage is executed after GetCapabilities"
+" determines the query scheme and the data to be acquired, and returns the"
+" coverage data. There is also the optional operation "
+"DescribeCoverageType."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:288
+msgid ""
+"WCS corresponds to the functions based on raster data, and corresponds to"
+" the characteristics of WMS based on vector data. The network coverage "
+"service is oriented to spatial image data. It exchanges geospatial data "
+"containing geographic location as \"COverage\" on the Internet, such as "
+"raster data such as satellite imagery and digital elevation data. WCS "
+"provides the following operations:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:295
+msgid ""
+"``DescribeCoverage`` : Allows users to obtain detailed description "
+"documents of one or more coverages from a specific WCS server."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:297
+msgid ""
+"``GetCoverage`` : Returns a response document containing or referencing "
+"the requested coverage data according to the query request."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:300
+msgid ""
+"Web Geographic Coverage Service (WCS): Provides access to spatial raster "
+"layers containing geographic information or attributes rather than static"
+" maps. Send corresponding data according to HTTP client request, "
+"including imagery, multispectral imagery and other scientific data. Two "
+"important operations are ``GetCapabilities``, ``GetCoverage``."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:305
+msgid ""
+"``GetCapabilities`` returns a description of the service and an XML "
+"document from which to get a collection of covered data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:307
+msgid ""
+"``GetCoverage`` is executed after GetCapabilities determines the query "
+"scheme and the data to be acquired, and returns the coverage data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:310
+msgid ""
+"Also an optional action is ``DescribeCoverageType``. WCS corresponds to "
+"the functions based on raster data, and corresponds to the "
+"characteristics of WMS based on vector data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:314
+msgid ""
+"The Web Overlay Service (WCS) is oriented towards spatial imagery data, "
+"which exchanges geospatial data containing geographic location values "
+"with each other on the Internet as \"Coverage\". The network coverage "
+"service consists of three operations: GetCapabilities, GetCoverage and "
+"DescribeCoverageType. The GetCapabilities operation returns an XML "
+"document describing the service and dataset. The GetCoverage operation in"
+" the network coverage service is performed after GetCapabilities "
+"determines what kind of query can be executed and what kind of data can "
+"be obtained. It returns the value or attribute of the geographic location"
+" using a common overlay format. The DescribeCoverageType operation allows"
+" clients to request a full description of any coverage provided by a "
+"specific WCS server."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:324
+msgid ""
+"The above three specifications can not only be used as the spatial data "
+"service specification of Web services, but also can be used as the "
+"interoperability of spatial data to realize the Far East. As long as a "
+"certain GIS software supports this interface and is deployed on the local"
+" server, other GIS software can obtain the required data through this "
+"interface. From the perspective of technical implementation, a Web "
+"service can be understood as an application program that exposes an "
+"interface that can be invoked through the Web to the outside world, "
+"allowing it to be invoked by programs written in any platform, any "
+"system, and in any language. This application can be implemented in a "
+"variety of existing programming languages."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:334
+msgid ""
+"The biggest feature of web services is that they can achieve cross-"
+"platform, cross-language, and cross-hardware interoperability. It is "
+"SOAP, WSDL and UDDI in web services that ensure the cross-platform "
+"interoperability of web services. Therefore, how to use SOAP, WSDL "
+"Deploying, describing, transporting and registering a Web service with "
+"UDDI is the key to implementing Web services. Since SOAP, WSDL and UDDI "
+"are a set of standards, different manufacturers can have different "
+"products that implement these standards, such as the Web service toolkit "
+"based on the JAVA platform launched by companies such as SUN, APACHE, "
+"IBM, and Borland, and the .NET proposed by Microsoft. Platform, etc. "
+"These tools provide convenient tools for the development, deployment and "
+"description of Web services, which greatly reduces the complexity of "
+"developing Web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:347
+msgid "Tile Map Service (TMS)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:349
+msgid ""
+"The Tile Map Service (TMS) defines operations that allow users to access "
+"tile maps. WMTS may be OGC's first service standard to support RESTful "
+"access."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:353
+msgid "WPS"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:355
+msgid ""
+"These specifications are basically supported in major mainstream GIS "
+"platforms and open source GIS software. Intergraph has long released the "
+"WFS server and interop development kit. ESRI has developed related "
+"components in ArcIms to support WMS, WFS and other specifications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:359
+msgid ""
+"Another: Web Processing Server (WPS) is a newly introduced standard, and "
+"its functions are actually familiar to us. Processing is GeoProcessing in"
+" ArcView, such as Union, Intersect and other methods. What WPS needs to "
+"do is to expose the URL-based interface to implement the client's "
+"invocation of such methods through WebService and return data. These "
+"specifications are basically supported in major mainstream GIS platforms "
+"and open source GIS software."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:367
+msgid "Software support"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:369
+msgid ""
+"MapInfo8.5 has also added the ability to access WMS and WFS services, as "
+"well as the interface function of reading GML data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:372
+msgid ""
+"GeoServer, MapServer map server plays the role of providing map services "
+"to clients in the network. This type of map server can receive unified "
+"standard WMS and WFS requests (requests) and return data in multiple "
+"formats. This process is strictly regulated by the WMS/WFS specification,"
+" so it doesn't really matter to the client what the implementation of its"
+" map server is. Such a specification creates the possibility for a "
+"public, federated map service."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:378
+msgid ""
+"Client software such as OpenLayers/MapBuilder, uDig, and QGIS are divided"
+" into browser and desktop client programs. The B/S system client "
+"represented by OpenLayers is now very powerful. It can encapsulate the "
+"WMS request and implement the map tile loading function on the browser."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec01_ogc-standard/section.rst:382
+msgid ""
+"In addition, the functions of dragging and zooming are also very perfect,"
+" which can realize cross-browser operation. Recent OpenLayers versions "
+"also support vector editing, which can be submitted via WFS-t. The "
+"traditional desktop client program is more powerful, supporting a variety"
+" of data sources including WMS and WFS, in addition, the editing function"
+" and operability are also stronger than those in the browser."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:6
+msgid "OpenGIS map service specification"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:9
+msgid "OGC and OpenGIS"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:11
+msgid ""
+"The OGC is made up of members from a variety of sectors including "
+"business sectors, government agencies, users, and data providers for the "
+"largest interoperability in the geographic information processing market."
+" The purpose of OGC is to integrate geospatial data resources into "
+"mainstream computing technologies through an information infrastructure, "
+"and to promote the widespread application of interoperable commercial "
+"geographic information processing software. The OpenGIS specification "
+"provides geographic information and processing standards, and each system"
+" developed according to the specification can freely exchange geographic "
+"information and processing functions."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:19
+msgid ""
+"OGC members mainly include GIS-related computer hardware and software "
+"manufacturers (including ESRI, Intergraph, Maplnfo and other well-known "
+"GIS software developers), data producers, as well as some colleges and "
+"universities, government departments, etc., their technical committees "
+"are responsible for the formulation of specific standards."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:24
+msgid ""
+"Open Geospatial Consortium - Open Geospatial Consortium, a non-profit "
+"voluntary international standardization organization, leading the "
+"development of spatial geographic information standards and basic "
+"positioning services. Currently in the field of spatial data "
+"interoperability, the interoperability method based on the public "
+"interface access mode is a basic method of operation. Through the "
+"International Organization for Standardization (ISO/TC211) or technical "
+"alliance (such as OGC), the interface specification for spatial data "
+"interoperability is formulated, and GIS software vendors develop spatial "
+"data read and write functions that follow this interface specification, "
+"which can realize the interoperability of heterogeneous spatial "
+"databases. Spatial data interoperability based on http (Web) XML is a "
+"very popular research direction, mainly involving related technologies of"
+" Web Service. OGC and ISO/TC211 jointly launched the Web Service "
+"(XML)-based spatial data interoperability implementation specification "
+"Web Map Service, Web Feature Service, Web Coverage Service and geographic"
+" information markup language GML for spatial data transmission and "
+"transformation."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:41
+msgid ""
+"OpenGIS (Open Geodata Interoperation Specification) was proposed by the "
+"American OGC (OpenGeospatial Consortium, OpenGIS Association) DOGC is a "
+"non-profit organization, the purpose is to promote the use of new "
+"technologies and business methods to improve the interoperability of "
+"geographic information processing(Interoperability), which seeks to "
+"eliminate the gap between geographic information applications (such as "
+"geographic information systems, remote sensing, land information systems,"
+" automatic mapping/facility management (AM/FM) systems) and between "
+"geographic applications and other information technology applications. "
+"build a \"borderless\", distributed, component-based geographic data "
+"interoperability environment."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:51
+msgid ""
+"OpenGIS refers to a geographic information system established according "
+"to industry standards and interfaces in the computer and communication "
+"environment. It enables data not only to flow within application systems,"
+" but also between systems. OpenGIS is to enable good interoperability "
+"between different geographic information system software, as well as a "
+"way to realize information sharing in heterogeneous distributed "
+"databases. The OpenGIS specification is a series of open standards and "
+"interfaces developed by the Open Geographic Information Systems "
+"Consortium (OGC)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:59
+msgid ""
+"The goal of OpenGIS is to develop a specification that enables "
+"application developers to use any geographic data and geoprocessing "
+"distributed over the Internet in a single environment and a single "
+"workflow. It is committed to establishing a \"borderless\", distributed, "
+"and component-based geographic data interoperability environment. "
+"Compared with traditional geographic information processing technology, "
+"GIS software based on this specification will have good scalability and "
+"upgradeability, portability, openness, interoperability and ease of use."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:68
+msgid "OpenGIS has the following characteristics:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:70
+msgid ""
+"Interoperability: The connection and information exchange between "
+"different GIS software are barrier-free."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:71
+msgid ""
+"Scalability: The hardware can run on computers of different software and "
+"grades; the software adds new geospatial data and geoscience data "
+"processing functions."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:73
+msgid ""
+"Openness: Technology openness is mainly open to users, and the disclosure"
+" of source code and specification is an important way."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:75
+msgid ""
+"Portability: Independent of software, hardware and network environment, "
+"it can run on different computers without modification."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:78
+msgid "In addition, features such as compatibility, achievability, and synergy."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:80
+msgid ""
+"OGC facilitates the interoperability of GIS. It changes the way "
+"geographic data and its services are processed by specification, and "
+"integrates them through an interoperable open system, so that information"
+" can be directly obtained from heterogeneous information through a "
+"distributed platform in the Intnmet/Internet environment. OGC facilitates"
+" the alliance between geographic data providers, vendors and service "
+"providers. Promotes the standardization process on a global scale and "
+"broadens the geographic data service market. OpenGIS technology will keep"
+" GIS in an organized and open state, truly become an industry serving the"
+" whole society and realize the global sharing and interoperability of "
+"geographic information, which is the inevitable trend of GIS technology "
+"development in the future network environment."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:92
+msgid "OpenGIS related definitions"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:94
+msgid ""
+"OpenGIS defines a set of data-based services, and the basis of the data "
+"is the feature (Feature). The so-called feature is simply an independent "
+"object, which may be represented as a polygonal building in the map, and "
+"is an independent entry in the database. Features have two necessary "
+"components - geometric information and attribute information."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:99
+msgid ""
+"OpenGIS defines a set of data-based services, and the basis of the data "
+"is the feature (Feature). The so-called feature is simply an independent "
+"object, which may be represented as a polygonal building in the map, and "
+"is an independent entry in the database. Features have two necessary "
+"components - geometric information and attribute information. OpenGIS "
+"divides geometric information into four types: point, edge, polygon and "
+"geometric collection: the familiar line (LineString) here belongs to a "
+"subclass of edge, and polygon (Polygon) is a subclass of surface. That "
+"is, the geometry types defined by OpenGIS are not only our common three "
+"types of points, lines and polygons. It provides more complex and "
+"detailed definitions and enhances future scalability. In addition, the "
+"composite mode (Composite) is used in the design of the geometric type, "
+"the geometry collection (GeometryCollection) is also defined as a "
+"geometry type. Similarly, a feature set (FeatureCoUection) is also a "
+"feature. The property information is not too restrictive, and can be set "
+"in combination with the specific implementation in the actual "
+"application. The combination of the same geometry type and attribute type"
+" becomes a feature type, and features of the same type can be stored in a"
+" single data source. A data source can only have one feature type. "
+"Therefore, a feature type can be used to describe a group of features "
+"with similar properties."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:118
+msgid ""
+"In the object-oriented model, the feature type can be understood as a "
+"class, and the feature is an instance of the class. The data can be "
+"retrieved from the data source through the GIS middleware for use by the "
+"WMS server and the WFS server. The WMS server receives the request, and "
+"can return final data in different formats according to the content of "
+"the request. For example, WMS can return map fragments in common image "
+"formats for reading by end users (similar to GoogleMaps), where the map "
+"is generated from a style file (SLD), which describes the map's line "
+"width, color, etc.; WMS can also return GeoRSS and KML for interworking "
+"with other map services. The WFS server can also receive requests, but "
+"WFS will return geographic information data in GML format. GML is an XML-"
+"based data format, which can reproduce data completely, and is also an "
+"important form of OpenGIS data source. That is, the GML returned by WFS "
+"can continue as a data source. In the WFS request, OpenGIS defines a "
+"Filter standard to filter data and make WFS more flexible. On the other "
+"hand, WFS also supports committing client-side modifications to data via "
+"WFS-t. Popular to say, WMS is read-only, while WFS can be read and "
+"written."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:136
+msgid "OpenGIS open mode"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:138
+msgid ""
+"Open GIS is the transparent access to different kinds of geographic data "
+"and geographic processing methods in the network environment."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:141
+msgid ""
+"The purpose of Open GIS is to provide a set of general components with "
+"open interface specifications, and developers develop interactive "
+"components according to these specifications, these components can "
+"realize transparent access between different kinds of geographic data and"
+" geographic processing methods."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:146
+msgid ""
+"The OGIS Engineering and Technology Committee of the Open GIS Consortium,"
+" from small industry to global spatial data infrastructure, has completed"
+" the first part of a series of documents, including OGIS. The first is "
+"called the “Guide to Open GIS Interactivity”, which provides a "
+"comprehensive and in-depth description of OGIS; the second OGIS document "
+"includes a high-level technical language, which is a language of "
+"execution in the full sense and does not require interpretation, Its "
+"manual is published by GIS World Ltd."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:155
+msgid ""
+"But OGIS is not the final object of OGC, and the publication of \"Guide "
+"to Open GIS Interoperability\" is not the first important milestone of "
+"OGC. The real function of OGC is to formulate a specification in the "
+"field of geographic information to unify the industry, and to integrate "
+"the specification into a wider technical field and a larger market, "
+"making it an inseparable part of the global information infrastructure. "
+"The global information infrastructure is mainly an organization that "
+"organizes world-wide activities and solves important environmental and "
+"infrastructure problems. Similar work has been successful in other "
+"industries."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:164
+msgid ""
+"International competition is not the problem that OGC wants to solve. "
+"What OGC wants to solve is to separate the industry from the big industry"
+" of information technology. For a long time, GIS was little more than a "
+"“domestic handicraft”, similar in many respects to the constraints of the"
+" mechanical industry before the Industrial Revolution, but this has "
+"changed."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:170
+msgid ""
+"The OGIS Engineering and Technology Committee of the Open GIS Consortium,"
+" from small industry to global spatial data infrastructure, has completed"
+" the first part of a series of documents, including OGIS. The first is "
+"called the “Guide to Open GIS Interoperability”."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:175
+msgid ""
+"A new concept \"Information communication\" in \"Guide to Open GIS "
+"Interactivity\" plays an important role in the popularization of GIS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec02_opengis/section.rst:178
+msgid ""
+"The first version of GIS will standardize the spatial attributes and "
+"support that almost all the information industries need. OGIS then "
+"provides a standard method by which the information industry (the "
+"\"Technical licensor\" of the entire industry) can codify notations, "
+"develop methods and usage rights for spatial data used in their "
+"discipline or industry, that is, because \"Basic OGIS\" will be augmented"
+" by the notation definitions provided by the Academic Review Committee "
+"and the Association of Professional Organizations, whose job it is to "
+"establish notation and compilation rules for their users, the notation "
+"and compilation rules will determine the information industry interface "
+"for \"Basic OGIS\" and other disciplines' spatial notation."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:6
+msgid "Geographic Web service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:9
+msgid ""
+"Web service is a major progress in the development of WebGIS, and it is "
+"the core technology and important symbol of modern WebGIS. It combines "
+"the advantages of GIS, program components and the Internet, and "
+"profoundly changes the way GIS is developed and applied. It bypasses the "
+"complex links of local data conversion and local software installation, "
+"enables different computer systems and different departments to integrate"
+" at the Web service level, provides a new basic module for software "
+"application development, and a new way for cross-departmental "
+"coordination and cooperation, provide a technical framework for the "
+"National Spatial Data Infrastructure (NSDI)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:19
+msgid ""
+"More and more organizations are publishing and sharing their own data and"
+" functions as Web services for their own organization and often other "
+"organizations. These services can then be combined into other WebGIS "
+"applications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:23
+msgid ""
+"Focus on the basics of web services, including the concept, impact, role "
+"and advantages of web services, SOAP and REST-style web services, web "
+"services related standards such as WMS, WFS, WCS, CSW, GML, KML and "
+"GeoRSS, and Optimization of Web Services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:28
+msgid "From Web site to Web service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:32
+msgid "Emergence and advantages of Web Service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:34
+msgid ""
+"WebGIS developed rapidly after its emergence in the early 1990s, but the "
+"early Web application systems and software, including WebGIS, were mostly"
+" websites that could only be used independently. This system gradually "
+"shows its limitations in both internal structure and external opening, "
+"and it is difficult to give full play to the potential of WebGIS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:40
+msgid ""
+"> Limitation 1 > > Lacks of good interoperability between systems,each "
+"WebGIS is an isolated and closed system, different systems cannot call "
+"each other's functions and share information, and cannot interoperate. > "
+"Suppose that a certain function of system A is exactly what system B "
+"needs, but because system A is closed and does not provide a Web-based "
+"programming interface, neither the client or the server of system B can "
+"call the functions of system A. And vice versa, system A cannot call "
+"system B either."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:46
+msgid "> Limitation 2"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:48
+msgid ""
+"> The internal coupling of the system is strong, and the application mode"
+" is not flexible enough. Each system is opened as an “independent "
+"solution”, the interface between the various modules in the system is "
+"tight and local. > When the system needs to be improved, this highly "
+"coupled structure is expensive in source program changes and system "
+"maintenance, and is not flexible enough."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:51
+msgid ""
+"With the development of the information society, more and more practical "
+"applications need to call, combine, or nest the functions and information"
+" provided by other WebGIS systems. Therefore, how to make WebGIS open so "
+"that different systems can communicate with each other call becomes very "
+"important."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:53
+msgid ""
+"In the late 1990s, this was not only the problem and demand faced by the "
+"WebGIS field, but also the demand of the entire information technology "
+"industry. At that time, Microsoft, Oracle, IBM, World Wide Web Consortium"
+" (W3C) and other institutions all launched explorations in this area, "
+"research and release Web service technology."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:55
+msgid ""
+"In recent years, the technology of web services has continued to improve,"
+" and its definition has also changed. The definitions of early Web "
+"services mostly involve SOAP, XML and WSDL technologies. Now SOAP is no "
+"longer the only way to implement Web services. REST-style Web services "
+"extend the concept of Web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:57
+msgid ""
+"A web service is a program running on a web server that has a programming"
+" interface that can be invoked by other programs via Internet protocols "
+"(mainly HTTP). Web services technology represents an important advance in"
+" distributed computing, which replaces functions on a local computer with"
+" functions on a remote server."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:59
+msgid ""
+"Web services can be understood this way: desktop software consists of a "
+"series of co-running local programs, which are assumed to be distributed "
+"and run on different Web servers, but still able to communicate with each"
+" other and work as a whole - this is the original intention of Web "
+"services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:61
+msgid ""
+"A comparison of web pages and web services helps to understand web "
+"services. Web services are different from normal web pages:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:63
+msgid ""
+"A web page is for human understanding and reading, mainly in HTML format,"
+" it contains content and style (font size and color, page layout...), "
+"etc."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:66
+msgid ""
+"A Web service is a Web-based programming component that is invoked by "
+"client computer programs."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:66
+msgid ""
+"Its results are mainly in a format that can be automatically parsed by "
+"computer programs such as XML or JSON, rather than directly readable by "
+"humans."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:68
+msgid ""
+"The complete Web service system has three parts: provider, user and "
+"portal. The service provider and the user do not have to be aware of each"
+" other's existence. Providers can register their Web service information "
+"in the portal, and users can query the portal, find the services they "
+"need, and then use these services (below)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:74
+msgid ""
+"Web services inherit the characteristics of both Web programs and "
+"development interfaces. Compared with traditional computing methods, Web "
+"services have the following advantages:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:76
+msgid "Openness"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:78
+msgid ""
+"Web services can interact with other computer software on the Web for "
+"other systems to call, exchange and share functions and information, "
+"breaking the limitations of isolated and closed early Web applications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:80
+msgid "Independent of programming language and operating system"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:82
+msgid ""
+"The Web service is based on the Web platform and is called remotely using"
+" the HTTP protocol. It is not compiled with the client program that "
+"invokes it."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:84
+msgid ""
+"A web service no matter what programming language is used (such as Java, "
+".NET or C++, etc.), what operating system is deployed on (such as "
+"Windows, Linux or MacOS, etc.), and what kind of web application server ("
+" such as IIS or Apache/Tomcat, etc.), can be called by the client in the "
+"same way. The client is not bound to any programming language when "
+"calling a Web service, and developers can freely choose a development "
+"language such as .NET, Java, Python, JavaScript, Flex or Silverlight."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:87
+msgid "Loosely coupled integratability"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:89
+msgid ""
+"The client software and the Web service it calls do not have to run on "
+"one machine, and the two do not necessarily depend on each other to "
+"exist."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:91
+msgid ""
+"When a client is dissatisfied with a Web service or the Web service "
+"cannot be used, the client can replace it with other Web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:93
+msgid ""
+"As long as the interfaces of the two Web services are the same, the "
+"client only needs to point to the URL of the new Web service, and no "
+"other changes are required."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:95
+msgid ""
+"From the perspective of the Web service provider, which can change or "
+"update the Web service, such as migrating from J2EE to .NET or vice "
+"versa. As long as the interface of the Web service remains unchanged, "
+"these changes are transparent to the caller. It does not need to make any"
+" changes (Chai Xiaolu, 2002). The loosely coupled feature facilitates "
+"flexible combination and nesting to meet user business needs."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:97
+msgid "Uniformity of releases and updates"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:99
+msgid ""
+"When a web service is updated or a new version is released, it only needs"
+" to be updated on the server side, and each client program calls the "
+"latest web service, so it is not necessary to install and update the "
+"software package separately on each client. This is an important aspect "
+"of Web services over desktop component technology."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:102
+msgid "Impact of Geospatial Web Services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:105
+msgid ""
+"At present, Web service has become the core of GIS, and its appearance "
+"has had a great impact on the geospatial industry, providing an excellent"
+" solution for the realization of geospatial information sharing, "
+"interoperability and cross-department collaboration."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:107
+msgid ""
+"It is an accelerator for WebGIS product differentiation and new market "
+"formation"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:109
+msgid ""
+"With web services as the center, the geographic information community has"
+" released new products or new functions to realize a series of workflow "
+"such as the production of Geographic Resources (author), the publication "
+"of services (publish), the discovery and use of services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:113
+msgid ""
+"Web service is the core of WebGIS. WebGIS products are divided into a "
+"variety of products that support the creation, distribution, "
+"registration, query and use of geospatial Web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:116
+msgid ""
+"On the server side: if you have a lot of data, you can be a provider of "
+"data and map services. If you have unique analytical models, you can "
+"publish them as professional geoprocessing services. These services can "
+"be free or pay-per-use."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:120
+msgid ""
+"On the client side: If you are good at development, you can choose to "
+"develop a desktop client or a mobile client for Web services, showing "
+"your advantages in terms of supported service types or availability."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:122
+msgid ""
+"In the aspect of portal website: you can collect certain areas, certain "
+"topics or Web services that meet certain standards, catalogue and publish"
+" these information, and allow people who need these services to query."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:124
+msgid ""
+"It is the basic component of GIS integration into mainstream information "
+"systems"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:126
+msgid ""
+"Before geographic Web services, the integration of GIS and other "
+"information systems was often implemented “locally”, that is, the "
+"geographic data was copied to the local, the GIS software was installed "
+"locally, and the invocation of GIS functions was very complicated and "
+"limited. These reasons have limited GIS to a small circle for many years,"
+" hindering the seamless integration of GIS with mainstream information "
+"systems."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:132
+msgid ""
+"Geographic Web services hide the above-mentioned complexities, and other "
+"information systems, such as enterprise resource planning (ERP) and "
+"customer relationship management (CRM) systems, can flexibly and easily "
+"invoke and integrate remote geographic Web services to obtain maps, data "
+"and geographic Analysis function. The openness and flexibility of Web "
+"services will greatly expand the market of GIS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:135
+msgid "It is a new way to achieve interoperability"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:137
+msgid ""
+"One of the challenges of GIS application is how to realize "
+"interoperability, that is, to make the products of different GIS software"
+" manufacturers work together. Before web service technology, "
+"interoperability was mainly completed at the data format level, that is, "
+"the exchange format formulated by the standard organization was adopted."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:140
+msgid ""
+"Software from different manufacturers needs to be able to input and "
+"output these formats or directly read and write these data formats."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:142
+msgid ""
+"This method often involves data replication and local software "
+"installation, which is disjointed and inflexible."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:144
+msgid ""
+"Web services enable the GIS community to elevate interoperability to a "
+"Web services-based level, go beyond data transformation and installation "
+"of transformation tools at these levels (Bacharach, 2005). Geographic "
+"information standards bodies, such as the Open Geospatial Consortium "
+"(OGC) and the International Organization for Standardization (ISO), have "
+"kept pace with the times and have developed a series of Web service "
+"standards."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:146
+msgid ""
+"Strictly following these standards, servers and clients of different "
+"manufacturers can be used interchangeably, without having to consider "
+"which company's products released these services, or which company's "
+"clients are using these services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:148
+msgid "It is an important framework for realizing spatial data infrastructure"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:150
+msgid ""
+"Spatial Data Infrastructure (SDI) refers to the general term for the "
+"technologies, policies, standards and human resources necessary for the "
+"collection, processing, storage, distribution, utilization and protection"
+" of geographic information. The keys to building regional, national, and "
+"global space infrastructure are standards, sharing, collaboration, and "
+"coordination."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:153
+msgid ""
+"The Web service system establishes a dynamic communication and "
+"integration method between service providers and information users, which"
+" is the key to building space infrastructure."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:155
+msgid ""
+"Geographic data and other information can keep the data in the original "
+"unit, and they can maintain the data and share it through Web services. "
+"When the data is updated, the Web services are also updated, which "
+"ensures the current status of Web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:157
+msgid ""
+"For example, a local government can continuously maintain and update its "
+"land records, while sharing this information with other units through Web"
+" services. A public utility department can directly use this map service "
+"as a basemap without having to copy and install the original data of its "
+"map locally."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:160
+msgid ""
+"On the other hand, this public facilities department can also share its "
+"infrastructure information with other government departments in the form "
+"of Web services, so that the municipal government can use the information"
+" for business needs such as land use planning and approval. This "
+"collaborative approach provides a new, flexible technical framework for "
+"geographic information sharing and collaboration among different "
+"institutions (Dangermond, 2008)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:163
+msgid "Features of Geographic Web Services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:165
+msgid ""
+"Geographic Web services can be divided into several categories such as "
+"map services, data services, analysis services and metadata services "
+"according to their functions. This section describes the capabilities of "
+"these service types."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:168
+msgid "Map and Feature Services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:170
+msgid ""
+"Map services are the most common form of geographic Web service. It "
+"allows the client to request a map within a certain geographic range, and"
+" it returns the map to the client in an image format such as JPEG, PNG or"
+" GIF."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:172
+msgid ""
+"Maps for a map service can be dynamically made or pre-made tiles. Tile "
+"map service can greatly improve the operating efficiency of WebGIS "
+"applications and shorten the response time. It is mainly used for basic "
+"basemaps or maps with relatively static content or low update frequency."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:174
+msgid ""
+"After receiving the request from the client, the dynamic map service "
+"reads data from the database in real time to make a map, so it is "
+"especially suitable for maps with high data update frequency."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:176
+msgid ""
+"Map services can be two-dimensional or three-dimensional. The 3D map "
+"service, also known as the Globe service, can use the ground elevation as"
+" the third dimension to show the natural terrain; it can also use the "
+"height of the building as the third dimension, add the texture model of "
+"the building surface, to express the outline of the city or the realistic"
+" street scene; 3D map Services can present topographical and urban "
+"architectural landscapes."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:178
+msgid ""
+"You can also use the value of an attribute field as a third dimension to "
+"highlight the topic. A 3D map service can also use the value of an "
+"attribute as a third dimension, highlighting the subject expressed by "
+"that attribute."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:180
+msgid ""
+"The 3D map service needs to be displayed in the 3D client, and the user "
+"can perform operations such as zooming and rotating."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:182
+msgid ""
+"In addition to cartography, map services can often support functions such"
+" as attribute query, spatial query, and dynamic projection "
+"transformation."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:184
+msgid ""
+"Feature service allows the web client to read and write vector geographic"
+" data in the server-side geographic database, and can add, edit and "
+"delete geographic features and their coordinates in the database."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:186
+msgid ""
+"As shown in the figure, citizens can mark on the map website to indicate "
+"when and where they have found endangered birds and provide relevant "
+"information. This information is stored in the server-side geographic "
+"database to facilitate government departments to delimit ecological "
+"reserves."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:188
+msgid ""
+"Feature services allow designers to quickly sketch designs on digital "
+"maps and share their plans at the same time, allowing other colleagues to"
+" revise them, effectively supporting collaborative geographic design. "
+"Feature services also make it easier for the public to mark on web maps "
+"and share what they see and hear,"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:190
+msgid ""
+"Promote public participation in the development of geographic information"
+" systems (PPGIS) and spontaneous geographic information."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:192
+msgid ""
+"The search service can index the content of GIS resources (for example, a"
+" data layer or the entire enterprise geodatabase), and allow Web users to"
+" search for the GIS resources they need by querying keywords and other "
+"methods."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:194
+msgid ""
+"The search service is different from the metadata catalog service that "
+"will be introduced later in this section. Although both can support the "
+"search and discovery of GIS resources, the former indexes the geographic "
+"data itself, especially the attribute table, while the metadata catalog "
+"service relies on the Metadata for geographic data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:196
+msgid ""
+"Image services mainly provide raster data (such as remote sensing imagery"
+" and digital elevation) through Web services. It supports extraction, "
+"download and map making of raster data."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:198
+msgid ""
+"For example, MapServer allows remote sensing departments to publish a "
+"large number of acquired images as image services without preprocessing, "
+"and can perform rapid real-time processing, including splicing, enhancing"
+" and deriving a variety of image products for Web clients to browse and "
+"download."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:201
+msgid "Analysis service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:203
+msgid ""
+"Geocoding Services: Geocoding is the process of converting street "
+"addresses into geographic coordinates."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:205
+msgid ""
+"Reverse geocoding is a process of converting geographic coordinates into "
+"corresponding addresses. A geocoding service is to publish a geocoding or"
+" reverse geocoding function in the form of a web."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:207
+msgid ""
+"Currently, there are many free geocoding services available online, such "
+"as those provided by ArcGIS Online, Google, Microsoft, and others. In "
+"some cases, such as where address data in free systems such as Google is "
+"outdated or you want to be able to match by address aliases known to "
+"locals, you can create your own geocoding service using products such as "
+"ArcGIS Sever."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:209
+msgid ""
+"Network analysis service: Geographical network here refers to the "
+"transportation network such as streets and highways, the pipeline network"
+" organized by underground pipelines, pipeline joints, valve switches, "
+"etc."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:211
+msgid "The web analytics service can provide the following functions:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:213
+msgid ""
+"Calculate the best path: Given a starting point and ending point, "
+"calculate the shortest or fastest path from the starting point to the "
+"ending point, or given multiple stops, calculate the shortest or fastest "
+"path that can travel through them. Routing services should take into "
+"account speed limits and turning rules, as well as factors such as "
+"traffic congestion, wait times at traffic lights, and road closures (due "
+"to construction or accidents)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:215
+msgid ""
+"Calculate the service area: Calculate the blocks that can be reached from"
+" a certain point or points within a certain driving time. Service area "
+"analysis can help users assess the coverage or accessibility of a "
+"location, for example, it can help city planners choose the best fire "
+"station location so that it can cover a specified area in minutes, or "
+"help retailers choose the best location. the best store address so that "
+"it can serve more potential customers."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:217
+msgid ""
+"Find the nearest facility: Find the facility that is closest to a point "
+"or with the least driving time. This is commonly used in location-based "
+"services (LBS), such as finding the nearest restaurant or post office to "
+"a cell phone user."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:219
+msgid ""
+"Geometric service: It can perform geometric transformation, buffer "
+"calculation, cartographic synthesis (element simplification), merging and"
+" cutting of geographic elements, calculation of area and length, and "
+"coordinate projection transformation."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:221
+msgid ""
+"Geoprocessing services: Geoprocessing services can publish a variety of "
+"user-created functions and analytical models as Web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:223
+msgid ""
+"Geoprocessing services can perform functions ranging from simple buffer "
+"analysis and polygon overlay analysis to complex regression analysis and "
+"image classification, from local community planning to global climate "
+"change analysis, from modeling the past to predicting the future."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:226
+msgid "Metadata Directory Service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:228
+msgid "Metadata is data about data that can describe GIS data and services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:230
+msgid ""
+"Metadata catalog services can be used to publish and search metadata, "
+"facilitating the sharing of geographic information and services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:232
+msgid ""
+"For example, a provider can publish metadata about their data and "
+"services, and a user can query this metadata service to find data and "
+"services that meet their needs."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:235
+msgid "Interface types for web services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:237
+msgid ""
+"This section describes the two main interface types for web services, "
+"SOAP-style web services and REST-style web services, which are also known"
+" as SOAP API and REST API."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:239
+msgid ""
+"It should be emphasized that Web services are not limited to these two "
+"types. Those Web programs that transmit formatted data through HTTP "
+"should be considered as Web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:242
+msgid "SOAP-style web services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:244
+msgid ""
+"The original name of SOAP is Simple Object Access Protocol, which uses an"
+" encapsulated XML for information exchange. In 2003, it was adopted by "
+"the World Wide Web Consortium as a Recommended Standard. The full name "
+"\"Simple Object Access Protocol\" was thought to be misleading, so the "
+"World Wide Web Consortium gave up the full name in 2007, and now people "
+"just use the acronym SOAP."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:247
+msgid ""
+"SOAP-style Web services use HTTP Post and SOAP-encapsulated XML to send "
+"requests and deliver results between client and server."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:252
+msgid ""
+"SOAP-based Web services rely on HTTP Post and SOAP encapsulated XML to "
+"send requests and pass results between the client and the server"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:255
+msgid ""
+"SOAP-based Web services encapsulate the XML message body in another XML "
+"document. This \"XML-in-XML\" format is inconvenient for people to "
+"manually create SOAP requests and parse SOAP results, so it is difficult "
+"to invoke SOAP services. Of course, there are tools to simplify the "
+"invocation of SOAP services. SOAP-based Web services generally have WSDL "
+"(Web Service Description Language), that is, Web Service Description "
+"Language."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:257
+msgid ""
+"It describes the specific programming interface provided by a Web service"
+" in XML format, which is convenient for developers to understand and use "
+"this Web service."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:260
+msgid "REST-style Web Services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:262
+msgid ""
+"REST (representational state transfer) is an architectural style proposed"
+" by Roy Fielding in his doctoral dissertation in 2000. Roy Fielding has "
+"participated in the formulation of the HTTP specification. He believes "
+"that SOAP does not make full use of the advantages of HTTP. The REST-"
+"style architecture he proposed can give full play to the advantages of "
+"HTTP, reduce the complexity of development, and improve the scalability "
+"of the system (Richardson and Ruby, 2007)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:264
+msgid ""
+"When REST was first proposed, it did not get much attention. Its concepts"
+" and principles are relatively abstract, and different people have "
+"different interpretations. It has not been fully followed or implemented "
+"in practical applications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:266
+msgid ""
+"REST-style web services send data over HTTP, and the information sent is "
+"not encapsulated in SOAP. The most common implementation is to put the "
+"request parameters in the URL and send the request parameters through the"
+" URL. RESTful web services often return results to clients in JSON and "
+"XML without SOAP."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:268
+msgid ""
+"The following figure shows the same function in the above figure in the "
+"form of REST. It can be seen that the REST interface is more concise than"
+" the SOAP interface."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:273
+msgid "Services of the REST interface"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:277
+msgid ""
+"It can be seen that the URL hierarchy of this directory structure is "
+"intuitive, predictable, and easy to understand, without requiring "
+"excessive documentation, and developers can easily construct these URLs "
+"to point to the web resources they need."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:281
+msgid ""
+"Web resources in REST services support specific operations. For example, "
+"a map service can perform mapping and query operations, and a single data"
+" layer in a map service can perform query operations."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:285
+msgid ""
+"The results of these operations can be returned to the client in formats "
+"such as JSON. For example, to request a map service to make a map of the "
+"United States through the REST interface, and to return a JPEG image of "
+"``800x500`` pixels, the URL request is roughly"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:300
+msgid ""
+"Using REST to query the median household income of each county in "
+"California in a map service, the request returns JSON format, and the URL"
+" request is roughly:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:302
+msgid "http://server.mycoinpany.com/ArcGIS/rest/services/USMap/MapServer/0/query?where=STATE_NAME='California'&OutFields=MEDHINC_CY&f=pjson"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:304
+msgid ""
+"It can be seen that basically all requests in REST are a URL, which is "
+"easier to understand."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:306
+msgid ""
+"You can use many programming languages such as .NET, Java JavaScript, and"
+" Flex to generate the URL string and send the URL request."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:308
+msgid ""
+"You can even put this URL directly into your web browser without "
+"programming, and you can see the results you want, such as the map. "
+"Therefore, REST is considered to be “The command line of the web”."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:311
+msgid "Comparison between SOAP and REST"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:314
+msgid ""
+"The following compares SOAP and REST types of web services. SOAP-type Web"
+" services are produced early, and the related technologies are relatively"
+" mature and widely used. The interface definitions are clear and "
+"rigorous, and the development environment supports them highly."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:316
+msgid ""
+"But it is too complicated, and the programming workload and difficulty "
+"are large; it does not make full use of the advantages of HTTP, and the "
+"transmission efficiency is low;"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:318
+msgid ""
+"The encapsulation of SOAP makes the transmitted XML complex and huge, "
+"which often reduces the efficiency of information transmission and "
+"parsing and even the performance of the entire system."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:320
+msgid ""
+"Given these realizations, people have gradually turned to REST-style web "
+"services, which are simple and efficient (Cappelaere et al., 2007). In "
+"many cases, the simplicity and efficiency of REST outweighs the rigor "
+"that comes with adopting SOAP (Fu et al., 2008)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:322
+msgid "Comparing SOAP type web services and REST type web services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:324
+msgid "SOAP type web service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:326
+msgid "Transmission mode, HTTP POST"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:327
+msgid "Request parameters, placed in XML and encapsulated in SOAP"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:328
+msgid "The response result is put in XML and encapsulated in SOAP"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:329
+msgid "Advantages, early, mature, rigorous interface, powerful function"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:330
+msgid ""
+"Disadvantages, heavy, complex, high threshold; SOAP encapsulated XML "
+"information transmission efficiency and analysis efficiency is low; can "
+"not make full use of the advantages of HTTP, not rigorous enough, "
+"slightly casual."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:332
+msgid "Web services of type REST"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:334
+msgid ""
+"The main reason is that although HTTP GET; defines the semantics and "
+"usage of PUT, P0ST and DELETE, it is rarely used"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:335
+msgid "Parameters (key-value pairs) are generally placed in URL"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:336
+msgid ""
+"There are a variety of JSON, XML (not SOAP encapsulated) and binary file "
+"streams, etc."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:337
+msgid ""
+"Light, simple, high efficiency, can make full use of Web cache and other "
+"advantages, and gradually widely used"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:338
+msgid ""
+"For service providers, it can reduce the cost of creating services and "
+"the cost of service hosting"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:339
+msgid ""
+"For developers who do application development based on Web services, it "
+"can reduce the difficulty, shorten the learning time, speed up the "
+"development speed and reduce the development cost."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec03_introduction/section.rst:340
+msgid ""
+"For managers, REST provides a better system architecture, which can "
+"obtain higher system response speed, higher reliability and scalability."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:6
+msgid "Interoperability and geospatial Web service standards"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:9
+msgid ""
+"Interoperability is often involved in large projects or national "
+"information platforms. Interoperability is to allow software and data "
+"from different manufacturers to work together, and the main way to "
+"achieve interoperability is to formulate standards. In essence, the "
+"standard of Web service is to specify the specific format of request and "
+"response, for example, which parameters are included in the request, what"
+" type of each parameter is, and what result is included in the returned "
+"information of the response. Web map service standards defined by OGC, "
+"including WMS, WMTS, WFS, WCS, WPS, CSW and Web service-related "
+"standards, as well as KML and GeoRSS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:11
+msgid ""
+"The meanings of the three most commonly used geo-reference information "
+"models are as follows:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:13
+msgid "Web Map Server (WMS)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:14
+msgid "Web Feature Server (WFS)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:15
+msgid "Web Coverage Server (WCS)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:19
+msgid "Interoperability based on Web Services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:22
+msgid ""
+"Interoperability is to allow software and data from different "
+"manufacturers to work together. In layman's terms, I can call your data "
+"and functions, and you can call my data and functions. The realization "
+"technology of GIS interoperability has gone through many stages, and the "
+"technology of implementing GIS interoperability has mainly gone through "
+"the stages of file format conversion, direct reading plug-ins and Web "
+"service standards."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:31
+msgid ""
+"Early interoperability often involves data conversion, for example, "
+"converting the data of one software product into the data format of "
+"another software product, or defining a standard file format. Different "
+"software products need to be able to input and output this format. The "
+"plug-in can be used to directly read and write data in one of the "
+"software plug-ins, that is, it can be used to directly read and write "
+"data in another software plug-in. In recent years, the interoperability "
+"technology has gradually shifted to the level of Web service standards. "
+"This method not only avoids the export and import of data formats, but "
+"also avoids the trouble of installing plug-in tools locally. Different "
+"manufacturers can independently develop their own products according to "
+"the industry's Web service standards. As long as the Web service "
+"interface of their products conforms to certain industry standards, the "
+"data and functions of their software can be called with each other "
+"through Web services to achieve interoperability ."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:37
+msgid ""
+"There are mainly the following standardization organizations about "
+"geospatial web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:40
+msgid ""
+"Taking OGC's WMS standard as an example, a WMS online map service "
+"published by MapServer or GeoServer can be used not only by Esri "
+"products, but also by clients that support WMS standards such as Google "
+"Earth, NASA WorldWind, OpenLayers, and Gaia. Each client knows what "
+"parameters should be sent in the request, and can expect the server to "
+"respond in what format."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:46
+msgid "Standards for Web services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:49
+msgid ""
+"This section mainly introduces the WMS, WMTS, WFS, WCS, CSW, WPS and "
+"OpenLS standards of OGC. Readers can visit the official website of OGC "
+"(http://www.opengeospatial.org) to check the detailed documents of these "
+"specifications, and check which WebGIS software has been certified by OGC"
+" and which standards are supported."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:53
+msgid "(1) Web Mapping Service (WMS-Web Map Service)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:55
+msgid ""
+"WMS is a Web service specification developed by OGC for making maps on "
+"the Internet. The maps produced by WMS are generally presented in image "
+"formats, such as PNG, GIF or JPEG. Any web service that claims to conform"
+" to the WMS specification must support the following two necessary "
+"requests:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:57
+msgid ""
+"GetCapabitities: Return the description information of the Web service to"
+" the client. The format of the returned result is XML, which describes "
+"the service's name, introduction, keywords, coverage, which data layers "
+"are included, what coordinate system each layer is, what attributes it "
+"has, and whether it can be queried. This metadata also includes the map "
+"image file format that the service can generate, the URL of each "
+"operation that can be supported, and so on."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:59
+msgid ""
+"GetMap: Make a map according to the client's GetMap request parameters. "
+"The parameters required in the GetMap request include which layers to "
+"display, the length and width of the map, and the spatial coordinate "
+"system. Some WMS also support styled layer definition (styled layer "
+"descriptor, SLD), allowing users to dynamically specify the display "
+"symbols of each data layer in the URL request. The returned results are "
+"generally images in raster formats such as PNG, GIF, and JPEG."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:64
+msgid "The WMS specification also provides several optional requests, such as"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:66
+msgid ""
+"GetFeaturelnfb: query the information of a location on a map, its typical"
+" application is that the user clicks a point on the map, and the server "
+"returns the coordinate information and attribute information of the "
+"geographical elements located at that point."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:70
+msgid ""
+"GetLegendGraphic: the legend of the layer can be made and returned "
+"according to the layer specified by the client. The return format is "
+"generally PNG, GIF and JPEG images."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:72
+msgid ""
+"The WMS specification is widely used and adopted by many organizations. "
+"For example, the United States Geological Survey (USGS) provides a series"
+" of WMS services, including the National Big Map WMS service, the "
+"National Atlas Transportation WMS service, the National Hydrographic "
+"Dataset WMS service, and the US real-time fire (mainly refers to "
+"wildfires) WMS service ."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:74
+msgid ""
+"NASA Earth Observation System (NEO, "
+"http://neo.sci.gsfc.nasa.gov/Search.html) WMS ( "
+"http://neowms.sci.gsfc.nasa.gov/wms /wms ) and other methods to "
+"dynamically provide multi-time-series images of global climate and "
+"environmental changes, including sea surface temperature, land surface "
+"temperature, vegetation index, precipitation, carbon monoxide "
+"concentration, surface cover types, and the solar radiation received by "
+"the surface amount, etc."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:78
+msgid "(2) Web Map tile Service (WMTS-Web Map Tile Service)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:80
+msgid ""
+"WMTS is a Web service specification for publishing tile maps formulated "
+"by OGC. WMTS is different from WMS, and the two complement each other."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:82
+msgid ""
+"WMS is mainly a dynamic map service, that is, the map is generated "
+"immediately by the server every time it receives a client request, which "
+"is especially suitable for map services whose data is constantly being "
+"updated. The map of WMTS is a tile pre-made by the server. This method "
+"can improve the performance and scalability of Web services, and is "
+"especially suitable for data whose data is relatively static and no "
+"longer updated or updated frequently."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:85
+msgid ""
+"The WMTS specification defines two necessary actions and one optional "
+"action."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:87
+msgid "GetCapabilities: gets the metadata of the service."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:88
+msgid "GetTile: get the tiles."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:89
+msgid "GetFeaturelnfo: optional, get the feature information that you click on."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:92
+msgid "(3) Web essential Services (WFS-Web Feature Service)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:94
+msgid ""
+"WFS is developed by OGC to manipulate vector geographic elements and data"
+" on the Internet. It includes Web service specifications such as "
+"retrieval, insertion, update and deletion (OGC, 2005). WFS defines the "
+"following main operations."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:98
+msgid "GetCapabilities: gets the data of the service."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:99
+msgid ""
+"DescribeFeatureType: gets the structure of the feature types supported by"
+" WFS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:100
+msgid ""
+"GetFeature: gets the geographic features and their attributes that match "
+"a query condition."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:101
+msgid ""
+"LockFeature: requests the server to lock one or more geographic features "
+"during a transaction."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:102
+msgid ""
+"Transaction: request the server to create, update, or delete geographic "
+"features."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:104
+msgid ""
+"The above operations are required and optional. According to the "
+"supported operations, WFS can be divided into the following two main "
+"categories."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:106
+msgid ""
+"Basic WFS (Basic WFS): only GetCapabilities, DescribeFeatureType and "
+"GetFeature operations are supported It can only query and read elements, "
+"so it is also called read-only WFS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:108
+msgid ""
+"Transactional WTFS (TransactionWFS or WFS-T): supports transaction "
+"operations in addition to those supported by basic WFS. It can not only "
+"support the reading of geographical elements, but also support the online"
+" editing and processing of geographical features, also known as read-"
+"write WFS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:111
+msgid ""
+"In the WFS request and response, the information transmission of "
+"geographical elements is mainly in GML format. In 2006, OGC adopted the "
+"GML simple element specific Standard (GML Simple Features Profile) to "
+"accelerate the speed of WFS request and response and simplify the "
+"difficulty of WFS implementation. WFS can be used not only for mapping "
+"and query, but also for geographic data cutting, projection conversion "
+"and online download. For example, the National Weather Service "
+"Meteorological Research Laboratory provides a National Digital Weather "
+"Forecast Database (NDFD) WFS service. The service allows the public, "
+"government agencies and enterprises to obtain data such as temperature, "
+"dew point, wind, precipitation probability and precipitation."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:118
+msgid "(4) Web coverage Service (WCS_Web Coverage Service)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:120
+msgid ""
+"WCS is a Web service specification for publishing raster geographic data "
+"developed by OGC. The raster data it returns is raw data, such as the "
+"ground elevation value in digital elevation and the spectral value in "
+"satellite images. WMS is different because WMS returns a visualized image"
+" that has lost its original value."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:122
+msgid ""
+"The difference between WCS and WFS is that WFS is for vector data, while "
+"WCS is for raster data. The WCS specification specifies the following "
+"operations (OGC, 2006b):"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:124
+msgid "GetCapabilities: returns the metadata for the service."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:125
+msgid ""
+"DescribeCoverage: returns the detailed description of the grid data layer"
+" in the service Such as time information, coverage, coordinate system and"
+" supported output format and so on."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:127
+msgid ""
+"GetCoverage: the server operates according to the data layer, space-time "
+"range, coordinate system, output format, interpolation method and data "
+"cutting and conversion specified by the client."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:130
+msgid ""
+"The National Snow and Ice Data Center (NSIDC) provides WCS services for "
+"the polar cryosphere. Users can obtain data on icing areas, including "
+"monthly ocean ice and concentration areas, snow coverage, and snow depth "
+"contours. Support research on polar ice cap melting and climate change "
+"(Maurer, 2007)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:133
+msgid "(5) Web processing Service (WPS-Web Processing Service)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:135
+msgid ""
+"WPS is a Web service specification (OGC,2007c) provided by OGC for "
+"geographic analysis on the Internet. It defines the input and output "
+"(that is, request and response) formats of geographic analysis services, "
+"as well as how the client requests the execution of geographic analysis. "
+"The geographic data needed by WPS can be transmitted through the "
+"Internet, or it can be the data already available on the server. The main"
+" operations defined by WPS are GetCapabilities, DescribeProcess, and "
+"Execute."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:141
+msgid "(6) other Web service standards"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:151
+msgid "Catalog Service for Web (CSW):"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:144
+msgid ""
+"Catalog Service is an important technology for sharing geospatial "
+"information. CSW supports searching and publishing of geospatial "
+"metadata, which allows users to query metadata to discover the geographic"
+" data and services they need, and allows providers to publish and update "
+"metadata. There are two types of CSW: read-only CSW and transactional "
+"CSW. Read-only CSW supports operations such as GetCapabilities, "
+"DescribeRecord, GetRecords, GetRecordByld, and GetDomain, and only "
+"supports metadata query and reading. Transactional CSW supports metadata "
+"reading and writing, allowing users to publish, edit, and delete metadata"
+" through ``transaction`` and ``harvest`` operations (OGC, 2007b). "
+"Products such as ArcGIS Geoportal Server provide a CSW interface."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:155
+msgid "Open location Services (OpenLS-Open Location Service):"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:154
+msgid ""
+"this is a series of Web service specifications provided by OGC for "
+"location-based services (LBS; see Chapter 5). Including yellow pages "
+"search, tracking mobile phone users' location and navigation services "
+"(OGC, 2004)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:159
+msgid "Sensor Network Integration Framework (SWE—Sensor Web Enablement):"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:158
+msgid ""
+"The SWE framework includes a series of Web service standards: Sensor "
+"Observation Service (SOS), Sensor Planning Service (SPS), and Sensor "
+"Alarm Service (SAS). These standards enable users to discover and obtain "
+"sensor data from sensor networks."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:162
+msgid "Related standards of Web services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:164
+msgid ""
+"This section mainly introduces KML specification and GeoRSS "
+"specification. KML is a mixed format of geographic data and map "
+"description. GeoRSS can be thought of as a geographic data format. "
+"Although they are not Web service specifications themselves, in practical"
+" applications, they are often used as a format for some Web services to "
+"return results."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:170
+msgid "(1) KML (Keyhole Markup Language; keyhole markup language)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:172
+msgid ""
+"KML is a XML-based file format for describing geographic elements and "
+"their visualization by Google and OGC. KML was originally created by "
+"Keyhole and is the file format adopted by its EarthViewer 3D. Keyhole was"
+" acquired by Google in 2004 and its EarthViewer 3D was renamed Google "
+"Earth. KML officially became an official standard of OGC in 2008."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:177
+msgid ""
+"A KML file can describe some geographical features, such as points, "
+"lines, polygons, images, 3D models, etc.，you can define their display "
+"symbols, camera positions (that is, the location and height of the "
+"observer, the direction of the line of sight, and the angle of "
+"overlooking or looking up). KMZ files are compressed KML files, which on "
+"the one hand can reduce the size of the file. On the other hand, you can "
+"include pictures needed for symbols and links in other types of files "
+"such as KML. Here is a simple example of KML. It first defines a style "
+"with a specific icon Then a place name annotation is defined and "
+"displayed with this icon."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:183
+msgid ""
+"KML is often used to publish public information. For example, the United "
+"States Geological Survey uses KML to release near real-time seismic "
+"information. National Oceanic and Atmospheric Administration uses KML to "
+"issue weather forecast, including severe weather warnings, radar images "
+"and sensor observations."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:188
+msgid "(2) GeoRSS"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:190
+msgid ""
+"RSS is short for Really Simple Syndication, also known as rich site "
+"summary (Rich Site Summary) or RDF site summary (Resource Description "
+"Framework Site Summary). It is a main format for publishing information "
+"on the Internet, especially effective information (such as news and fire "
+"bulletins, etc.). The RSS family includes RSS and ATOM formats, the "
+"former in 1999 and the latter in 2003. They are all simple XML format, "
+"with only a few tags to describe the name, summary, full-text link and "
+"release time of each message, etc., which are very easy to understand and"
+" use, and have been widely used. Subscribers can \"aggregate\" multiple "
+"RSS they are interested in into RSS reader software to provide themselves"
+" with a convenient \"one-stop\" service without having to go to each "
+"website to see if they have been updated over and over again."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:202
+msgid ""
+"RSS is used by many news media, social networking sites and official "
+"government websites as a way to release new news. For example, CNN, the "
+"New York Times, Reuters, Science magazine, Twitter (a Weibo site in the "
+"United States) and Y0uTube (a famous video site) all use this technology "
+"to publish information in a timely manner. The World Health Organization "
+"(WHO) publishes the latest epidemics and infectious diseases in RSS "
+"format (http://twitter.com/statuses/user Murtimeline 14499829.RSS): The "
+"U.S. government posted thousands of RSS; using RSS on its e-government "
+"portal (http://USA.gov), and the Federal Emergency Management Agency "
+"released news and pictures related to emergencies. The U. S. Census "
+"Bureau releases news such as current demographics; the Centers for "
+"Disease Control and Prevention releases the latest reports on disease "
+"morbidity and mortality."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:209
+msgid ""
+"With the popularity of RSS, people want to see not only what happened, "
+"but also where it happened. GeoRSS is a standard (OGC,2006c) for adding "
+"location information to RSS and other XML. GeoRSS has three formats: W3C "
+"Geo, OGC GeoRSS-Simple, and GeoRSS-GMLO"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:215
+msgid "W3C Geo:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:214
+msgid ""
+"only point features can be described, using WGS 84 latitude and longitude"
+" coordinates. Although this standard is still in use, it is already an "
+"outdated standard and is not recommended."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:219
+msgid "OGC GeoRSS-Simple:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:218
+msgid ""
+"ability to describe basic geometry (including points, lines, rectangles, "
+"and polygons) and their attributes (including feature types, feature "
+"names, relational labels, elevations, and radii). Worthy of the name, the"
+" design of GeoRSS-Simple is simple and clear, and its coordinate "
+"reference system is usually WGS 84 longitude and latitude."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:223
+msgid "OGC GeoRSS-GML:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:222
+msgid ""
+"supports more geographic features than GeoRSS-Simple. If the coordinate "
+"reference system is not specified, its coordinates default to WGS84 "
+"latitude and longitude, but this specification allows other coordinate "
+"systems to be defined and adopted."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:225
+msgid ""
+"Through the extension of RSS, GeoRSS has become a concise format for "
+"requesting, sharing and integrating geographic information on Web. GeoRSS"
+" is also widely used in Mashup applications. Here are some examples of "
+"GeoRSS applications."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:228
+msgid ""
+"Twitter provides near-real-time \"who said what and where\" GeoRSS "
+"information, allowing users to display these Weibo content on a map."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:229
+msgid ""
+"Flickr online albums provide a REST interface that returns photo "
+"information for a given area in GeoRSS format. For example, http://api. "
+"Flickr. Com/services/feeds/geo/United + States/Califomia/Hollywoocl this "
+"URL can return the photo information of Holima area in the United States."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:230
+msgid ""
+"The Global disaster Alert and Coordination system (http://www.gdacs.org) "
+"provides a near-real-time GeoRSS source for timely reporting of ongoing "
+"natural disasters around the world, such as earthquakes, tropical "
+"hurricanes and floods."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:231
+msgid ""
+"USGS broadcasts earthquake information in GeoRSS format, among them, "
+"seismic data are updated every few minutes in California and every half "
+"an hour in other parts of the world."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:232
+msgid ""
+"GloballncidentMap.com provides a range of real-time GeoRSS content "
+"including child abduction alerts, hazmat status, terrorism and other "
+"threats."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:235
+msgid ""
+"GloballncidentMap.com provides a series of events related to public "
+"safety and terrorist threats in GeoRSS format, and this example uses "
+"ArcGISViewer for Flex to show these events and their location. (note: "
+"because there are too many sources of information, it is inconvenient to "
+"obtain permission. This picture is an imitation; thanks: "
+"TmnsitSecurityReport.com and the National Park Service)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:241
+msgid "Challenges faced by standardization bodies"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:244
+msgid ""
+"GIS product and application developers want standards to be simple and "
+"easy to use, but standardization bodies often need to consider a variety "
+"of situations, so that the standards developed are more inclusive, but "
+"often lead to standards that are too complex to be adopted. OGC's Sam "
+"Bacharach (2006) used the following metaphor to explain the need to "
+"simplify the GML (Geographic markup language) standard: \"have you ever "
+"noticed how children use 64-color crayons? Some children can paint by "
+"checking out red, blue, green, yellow, black and other colors. These "
+"colors are simple and easy to use, although not many, but they have "
+"provided a solution to the problem to depict a picture of a puppy playing"
+" in a backyard swimming pool. \""
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:249
+msgid ""
+"This metaphor explains not only the importance of simplifying GML, but "
+"also the challenge faced by standardizing bodies, namely, how to strike a"
+" balance between simplicity, ease of use, and completeness and "
+"comprehensiveness."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:253
+msgid ""
+"In addition, the industry hopes that standardization bodies can formulate"
+" standards as soon as possible for adoption by the industry. The "
+"standardization body has its own careful work flow, from setting "
+"direction, inviting proposals, project team or members to submitting "
+"drafts to members' review, revision and voting, it takes a certain amount"
+" of time to develop a standard. This often leads to the lag of standards."
+" By the time the standard is released, different manufacturers have "
+"developed their own solutions, which are not compatible with the "
+"standard, and these manufacturers need to invest extra people. Make some "
+"changes to the product or write some transfer programs to achieve support"
+" for standards."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:258
+msgid ""
+"The importance of standards is unquestionable, especially in government "
+"project bidding projects, the bidding products are often required to "
+"support international standards to achieve openness and scalability of "
+"the system. The OGC website lists certified product manufacturers, "
+"software names, names and versions of supported OGC standards (see "
+"``http://www.opengeospatial.org/resource/products/compliant``)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:261
+msgid "Optimization of Web Services"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:264
+msgid ""
+"This section describes how to improve the quality of service (quality of "
+"service,QoS) of Web. The quality of service mainly includes the following"
+" important indicators."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:266
+msgid ""
+"Performance: describes the response efficiency of the system, usually "
+"measured by response time"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:267
+msgid ""
+"Scalability: describes whether the system can maintain high performance "
+"with an increase in the number of users, usually measured by the number "
+"of users it can support at the same time"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:268
+msgid ""
+"Availability: describes how accessible and operable a system is, usually "
+"as a percentage of the system's elapsed time.  The availability of a "
+"system is ``99.99%`` Then the system can only have a maximum of 9 seconds"
+" of downtime per day (including accidental downtime caused by failure and"
+" artificial downtime required for system maintenance)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:269
+msgid ""
+"Security: describes the confidentiality and defense capabilities of the "
+"system."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:272
+msgid "Preprocessing (caching)"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:274
+msgid ""
+"Preprocessing, also known as caching, means that the system generates "
+"maps in advance or performs other tasks, and stores the results for later"
+" use, instead of generating maps or performing tasks in real time when "
+"the system is running and receiving user requests."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:276
+msgid ""
+"As shown in the figure, if there is a cache, the Web server can quickly "
+"retrieve the results from the cache, without the need to read data from "
+"the database, and complete the mapping and other processing in real time."
+" Cache reduces the burden of GIS server and database server, and is an "
+"effective way to improve the quality of WebGIS services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:278
+msgid ""
+"The Web server can quickly find the results from the cache and respond to"
+" user requests quickly, thus reducing the pressure on the GIS server and "
+"database, and improving the quality of service caching technology is "
+"mainly used to generate maps."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:283
+msgid "Web access map slices"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:286
+msgid ""
+"Map cache, also known as map tiles or slices, is scheduled to generate a "
+"series of map slices (or tiles) according to a series of scales for quick"
+" display."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:291
+msgid "Map slicing"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:294
+msgid "The main reasons for making map caching are:"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:296
+msgid ""
+"Improve the performance, scalability and availability of the system: "
+"caching reduces the burden on the server, and users can get a quick "
+"response, thus saving users time."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:297
+msgid ""
+"Improve the quality of mapping: advanced symbols and complex layers can "
+"be used to produce high-quality maps."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:298
+msgid ""
+"Industry convention: caching is widely used in the current Web map "
+"application, which has become a common practice in the industry. It also "
+"changes users' expectations of WebGIS, and they expect all WebGIS to "
+"provide a better user experience such as caching."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:301
+msgid ""
+"Before creating a cache, some planning needs to be done, for example, "
+"which coordinate system to use and which tiling scheme to adopt. The tile"
+" scheme includes scale level, scale of each level, tile size (eg 256px x "
+"256px), tile start coordinates, tile area and image format (eg JPEG, PNG "
+"8, PNG 24 or PNG 32) ."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:304
+msgid ""
+"If your map will be used with ArcGIS Online, Google Maps or Microsoft "
+"Bing Maps, then your map should be in the same coordinate system as them,"
+" i.e. WGS 84 Web Mercator, and your tile scheme should match them match."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:307
+msgid ""
+"The creation of the cache may take a long time to complete, depending on "
+"the complexity of the map and the tile scheme, especially the scale "
+"series and the size of the scale. The layers with the largest scale "
+"generally occupy most of the time for creating the cache."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:310
+msgid ""
+"Caching is best for maps that change infrequently, such as street maps, "
+"imagery maps, topographic maps, and other underlying basemaps. If your "
+"data changes frequently, you can regularly update the cache to ensure the"
+" tile's current status, or you can use the dynamic map method without "
+"tiles."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:315
+msgid "Optimization of algorithm and system"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:318
+msgid ""
+"WebGIS should carefully consider software algorithms and the optimization"
+" of software and hardware systems to achieve the best performance. Each "
+"GIS task has many different implementation methods. Discovering and "
+"adopting the optimal algorithm can greatly improve the performance of the"
+" system. For example, when map caching is not feasible or not the optimal"
+" solution, it is necessary to draw a map dynamically, but it is generally"
+" slow to generate a map dynamically. GIS database debugging is also an "
+"important part of WebGIS."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:323
+msgid ""
+"Some basic techniques include unifying geographic data into desired "
+"projections (eg Web Mercator); creating indexes, including spatial and "
+"attribute indexes; Maintain efficient tablespaces; clean up fragmentation"
+" of tablespaces and server drives; preload indexes and even data into "
+"memory; Update database statistics in a timely manner (so that the "
+"database can choose the best execution path when executing queries). The "
+"configuration plan of the system needs to consider how many users there "
+"are, how many people may be using the system at the same time, what they "
+"are doing with the system, how big the data volume of the system is, how "
+"the data volume will grow in the future, the response speed and "
+"availability required by the project How much is enough software and "
+"hardware to configure based on these factors."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:329
+msgid "Failover and load balancing"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:332
+msgid ""
+"Failover and load balancing are two deployment methods to improve system "
+"reliability and availability through redundant configuration. Failover "
+"means that when a server fails or needs maintenance, the system can "
+"automatically or manually redirect the Web user's request to another "
+"server. Load balancing is assigning user requests to two or more servers,"
+" allowing multiple servers to share the work of the system. Large WebGIS "
+"systems should consider failover and load balancing. The site uses a Web "
+"gateway to accept incoming requests and distribute these requests to "
+"multiple GIS servers to achieve load balancing. If a GIS server computer "
+"becomes unavailable, the Web gateway can assign requests to the remaining"
+" GIS servers, creating a \"high availability\" architecture."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:340
+msgid "Reduce the pressure on Internet bandwidth"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:343
+msgid ""
+"The Web service receives the client's request and returns the result to "
+"the client. The data transmission between the two, especially the "
+"transmission of geographic data, often requires considerable Internet "
+"bandwidth; otherwise, the quality of the Web service will be affected. "
+"The following methods can reduce the pressure on Internet bandwidth, "
+"which can improve the quality of web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:345
+msgid ""
+"Take advantage of the browser-side cache: the browser-side cache is "
+"different from the server-side cache. The server-side cache is mainly "
+"used to generate map tiles or other results in advance.  The browser-side"
+" cache mainly refers to those content that has been downloaded to the "
+"browser, do not download again.  The cache content on the browser side is"
+" often identified by URL, so the REST-style Web service makes it easy for"
+" the system to make full use of the cache on the browser side to improve "
+"the performance of the system."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:346
+msgid ""
+"Use HTTP compression: enable the compression option of the web server, "
+"compress the request and result of the web service, and then transmit it,"
+" which can reduce the amount of data transmission by 50% and improve the "
+"transmission efficiency of the system."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:347
+msgid ""
+"Choose the appropriate data format: for example, in many cases, JS0N and "
+"AMF are lighter than XML and easier to transmit than XML."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:350
+msgid "Security Protection of Web Service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:353
+msgid ""
+"Many geographic Web services are public and free, but the Web services "
+"released by some enterprises and government agencies may contain content "
+"that involves the company's secrets, customer privacy or charges, and "
+"these Web services need to be protected. Here are some basic techniques "
+"for securing web services."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:355
+msgid ""
+"Use of private network and virtual private network: In this solution, the"
+" Web service and its users are co-located in the internal network of a "
+"certain unit, and are isolated from the external network through "
+"firewalls and other methods, so that external network users cannot "
+"access. A Virtual Private Network (VPN) creates a secure tunnel on the "
+"Internet. Through the VPN, even if the client is not in the office of the"
+" unit, still can log in to the intranet and use the web services on the "
+"intranet."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:356
+msgid ""
+"Authentication: Secure web services with user roles and permissions. User"
+" identities can be managed using Lightweight Directory Access Protocol "
+"(LDAP), Windows Active Directory, etc."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:357
+msgid ""
+"Security token (token):-A token is an encrypted string that contains "
+"encrypted authorization information. Tokens are obtained through "
+"application or when the user logs in."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:358
+msgid ""
+"Secure Hypertext transfer Protocol (HTTPS): HTTPS encrypts data "
+"transferred between Web services and customers to prevent information "
+"from being intercepted and tampered with."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:359
+msgid ""
+"Reverse proxy: use a proxy server to accept connection requests on the "
+"Internet, then forward the request to the server on the internal network,"
+" and return the result obtained from the server to the client. In this "
+"way, the proxy server can hide the GIS server in the intranet, providing "
+"a barrier between the GIS server and possible malicious attacks, "
+"providing a layer of protection."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:364
+msgid "Geospatial Web service protection"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec04_serviece-standard/section.rst:366
+msgid ""
+"Web service technology is an important progress in distributed computing "
+"and GIS, and it is the core of modern WebGIS. Geospatial Web Services are"
+" the driving force behind the transformation of GIS applications from "
+"closed systems to open, loosely coupled architectures. It is an important"
+" form of building components of geo-converged applications and providing "
+"services for cloud GIS. It is the foundation of the next generation "
+"spatial data infrastructure and provides a collaborative way based on "
+"geographic information. Governments and enterprises can provide their "
+"data and functions as Web services and build an ecosystem of Web "
+"services. On this basis, a large number of applications with new value "
+"can be conceived. This form of mutual cooperation can maximize the social"
+" benefits of investment in the field of geospatial."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:6
+msgid "Preliminary understanding and Reading of WMTS Service"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:8
+msgid ""
+"Currently, most of the network map services use caching technology to "
+"replace real-time visualization of data to improve map response "
+"capabilities. Introduces the WMTS service of the caching technology "
+"standard proposed by OGC."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:13
+msgid "Introduction to WMTS"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:15
+msgid ""
+"WMTS, OpenGIS Web Map Tile Service, provides a standardized solution for "
+"publishing digital map services using predefined tile methods. The WMTS "
+"standard defines operations that allow users to access tiled maps. The "
+"WMTS service is an open standard service docking format proposed by OGC, "
+"and it is also an improved version of the WMS service. Therefore, more "
+"and more GIS projects use the WMTS service as the basemap service. The "
+"map as a basemap service is the WMTS service that connects to the sky "
+"map."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:24
+msgid "Difference between WMTS and WMS"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:26
+msgid ""
+"The WMTS service and the WMS service have different responses to the "
+"client's request for service. For example, when the client requests the "
+"WMTS service, a fixed-size tile is returned to the client. The client "
+"obtains each tile according to the index number, and then splices it. It "
+"is displayed as a map, as shown in Figure 1; since the rules of tiles are"
+" fixed, the server can cache the corresponding tiles in advance, and the "
+"client can return it directly when needed, so WMTS can be cached."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:38
+msgid ""
+"When the client requests the WMS service, a complete picture is returned "
+"to the client, and the client can get it and display it directly, as "
+"shown in Figure 2; the client can request any area, because of this "
+"arbitrariness and the server can only Returning a picture of a specified "
+"range, the probability of reuse is low and low. When the concurrency "
+"increases, the performance of the server will be greatly reduced, so WMS "
+"only focuses on flexibility. The Internet era focuses on efficiency. "
+"Compared with flexibility, people prefer to use cacheable WMTS services "
+"with better performance."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:44
+msgid "Principle of WMTS slicing"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:46
+msgid ""
+"WMTS stipulates that the tile matrix set (Tile Matrix Set) is used to "
+"represent the cut map, as shown in figure 1, different tile matrices have"
+" different scales (resolution). Each tile matrix is identified by the "
+"tile matrix identifier (usually the serial number of the tile matrix, and"
+" the lowest resolution layer is the 0 layer, which is arranged up in "
+"turn)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:51
+msgid ""
+"Each tile in the tile matrix is identified by the row and column number "
+"of the tile. The row and column numbers are counted from the tile where "
+"the upper left corner of the tile matrix is located, and the starting row"
+" and column values are (0, 0), in order downward. Increase to the right, "
+"as shown in Figure 2, that is, take the index number of the tile."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:56
+msgid ""
+"WMTS service providers can publish WMTS services as long as they follow "
+"the WMTS specification of the OGC standard, but in order to improve "
+"service compatibility WMTS also proposed the concept of well-known scale "
+"set (Well-known scale set). It is a well-known combination of a "
+"coordinate reference system and several scale sets. Common well-known "
+"scale sets are GlobalCRS84Scale, GlobalCRS84Pixel, GoogleCRS84Quad and "
+"GoogleMapsCompatible."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:64
+msgid ""
+"SuperMap iServer provides the ability to publish WMTS services And "
+"conforms to the WMTS implementation specification developed by OGC (Open "
+"Geospatial Consortium, Open Geographic Information Alliance)."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:69
+msgid "Reading of WMTS"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:71
+msgid ""
+"The WMTS 1.0.0 specification supports publishing WMTS services in HTTP "
+"KVP (Key-Value Pair), SOAP, and REST. Taking HTTTP KVP as an example, "
+"this paper introduces the three operations contained in WMTS service, "
+"which can be used to read WMTS service."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:77
+msgid "GetCapabilities operation to get the meta-information of the service;"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:78
+msgid "GetTile operation, getting slices;"
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:79
+msgid "GetFeatureInfo operation to get the selected feature information."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:81
+msgid ""
+"In the three operations, you can first obtain a Capabilities document "
+"through the GetCapabilities operation. The capability document is in the "
+"form of xml structure."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:85
+msgid ""
+"The document describes the resources available in the service and the "
+"necessary conditions for connecting the service. The following node "
+"information is from the capability document. The key parameters that need"
+" to be obtained in the connection to the WMTS service."
+msgstr ""
+
+#: ../../webgis-src/cha2_ogc-opengis/sec05_wmts/section.rst:92
+msgid ""
+"In the document, the contents node describes the information of the WMTs "
+"service published by the server. Understanding the structure of layer "
+"(metadata of a top-level dataset on the server) and tilematrixset "
+"(description of map segmentation geometric rules) in the contents subset "
+"can help users obtain the corresponding data accurately."
+msgstr ""
+

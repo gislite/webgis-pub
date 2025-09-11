@@ -1,0 +1,1257 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chd1_leaflet/chapter.rst:2
+msgid "Leaflet lightweight WebGIS front-end class library"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/chapter.rst:4
+msgid ""
+"Leaflet is a modern, open source JavaScript library developed to build a "
+"mobile device-friendly interactive map. It was developed by a team of "
+"professional contributors led by Vladimir Agafonkin. It has a small "
+"amount of code, but has most of the functions that developers can do to "
+"develop online maps. Leaflet design adheres to the idea of simplicity, "
+"high performance and good availability, works efficiently on all major "
+"desktop and mobile platforms, takes advantage of HTML5 and CSS3 in modern"
+" browsers, and also supports access to older browsers. Support for plug-"
+"in extensions, with a friendly, easy-to-use API documentation and a "
+"simple, readable source code."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:4
+msgid "Introduction to Leaflet"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:6
+msgid ""
+"Leaflet is an open source JavaScript library for mobile rendering of "
+"interactive maps. Its design philosophy is efficient, lightweight and "
+"practical. It is only about 38KB in size, but it has the map manipulation"
+" capabilities that most developers need and can work on common desktop "
+"and mobile platforms. Has an extensible plug-in system, clear and "
+"readable code, and elegance documentation and easy-to-operate API."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:15
+msgid "Brief introduction"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:17
+msgid ""
+"Leaflet is a modern, open source JavaScript library developed to build "
+"interactive maps for mobile devices. The code is only 33 KB, but it has "
+"most of the functions of developing online maps. Leaflet design adheres "
+"to the philosophy of simplicity, high performance and good usability. It "
+"works efficiently on all major desktop and mobile platforms, taking "
+"advantage of HTML5 and CSS3 in modern browsers, while also supporting "
+"access to older browsers. Support for plug-in extensions, with a "
+"friendly, easy-to-use API documentation and a simple, readable source "
+"code. Leaflet’s powerful open source library plug-in involves all aspects"
+" of map applications, including map services. There are more than 140 "
+"plug-ins for data provision, data format, geocoding, route and route "
+"search, map controls and interactions. These controls enrich the "
+"functions of leaflet, at the same time, it is very convenient to "
+"implement custom controls with good expansibility."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:33
+msgid "Leaflet getting started Guid"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:35
+msgid ""
+"This step-by-step guide gives you a quick understanding of the basics of "
+"leaflet, including building leaflet maps, using tags, multilines and pop-"
+"up windows, and handling events."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:59
+msgid "Prepare the page"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:61
+msgid "Before you write the map code, you need to do the following on the page:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:63
+msgid ""
+"On the page ``<head>`` Label vs. ``</head>`` Add the following code "
+"between the tags:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:76
+msgid "Create a map where you want to create a map with a ``id`` Of ``div`` ."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:82
+msgid "Make sure the map has a clear height, such as defined in CSS:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:88
+msgid ""
+"Now that the map has been initialized, you are ready to do something with"
+" it."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:92
+msgid "Create a map"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:106
+msgid ""
+"1.Initialize the map and set its view to the geographic coordinates and "
+"zoom level we selected："
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:113
+msgid ""
+"By default (because we didn’t set any parameters when we created the map "
+"instance), all mouse events and touch interactions on the map are turned "
+"on, and it has zoom and property controls."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:117
+msgid "Show the map:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:128
+msgid ""
+"Make sure that all the code is used to display the map ``div`` And "
+"``leaflet.js`` Called after containing."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:132
+msgid "Dot mark, circle mark, and polygon mark"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:145
+msgid ""
+"In addition to tiles, you can easily add other things to your map, "
+"including markers, broken lines, polygons, circles and pop-ups. Let’s add"
+" a tag:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:153
+msgid "Add a circle tag:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:164
+msgid "Adding polygon tags is equally simple:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:175
+msgid "Use pop-up window"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:195
+msgid ""
+"Pop-up windows are usually used to attach some information to specific "
+"objects on a map. Leaflet has a very simple way to do this:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:204
+msgid ""
+"Try to click on our object. The bindPopup method appends a pop-up window "
+"with the specified HTML content to the tag, so when you click an object, "
+"the pop-up window appears, and the openPopup method (for markup only) "
+"immediately opens the attached pop-up window."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:209
+msgid ""
+"You can also set the pop-up window as a layer (when you need more instead"
+" of attaching a pop-up window to an object):"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:219
+msgid ""
+"Here we use ``openOn`` Instead of ``addTo`` Because it handles the "
+"automatic closure of previously opened pop-up windows when it opens a new"
+" pop-up window, which enhances usability."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:224
+msgid "Deal with events"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:226
+msgid ""
+"Every time something happens in Leaflet, such as when a user clicks a "
+"marker or a map zoom change, the corresponding object sends an event that"
+" you can handle through a function that allows you to react to user "
+"interaction:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:238
+msgid ""
+"Each object has its own set of events, and the first parameter of the "
+"listener function is the event object, which contains useful information "
+"about the events that occur. For example, the MAP click event object (e "
+"in the example above) has the latlng property, and the latlng property is"
+" where the click occurs."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:244
+msgid "Let’s improve our example by using pop-ups instead of alert:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec01_quickstart/section.rst:257
+msgid ""
+"Try clicking on the map and you will see the coordinates in the pop-up "
+"window. Check out the complete example:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:4
+msgid "Custom callout icon"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:6
+msgid "In this tutorial, you’ll learn how to easily tag a map with a custom icon."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:27
+msgid "Preparing images"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:29
+msgid ""
+"In order to make a custom icon, we usually need two images - the actual "
+"icon image and its shadow image. For this tutorial, we used the Leaflet "
+"logo and created 4 images - 3 different color blade images and a common "
+"shadow image for them:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:34
+msgid "Note that the white areas in the image are actually transparent."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:37
+msgid "Create icon"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:39
+msgid ""
+"The marker icon in the Leaflet is defined by the ``L.Icon`` object and is"
+" used as a parameter option when creating the marker. Let’s create a "
+"green leaf icon:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:56
+msgid "Now it’s easy to put an icon on the map:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:76
+msgid "Define icon class"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:78
+msgid ""
+"What if we need to create some icons that have a lot in common? Let’s "
+"define our own icon class, which includes sharing options. It’s really "
+"easy to inherit Leaflet from the L icon (　``L.Icon``　):"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:95
+msgid "Now we can create these three leaf icons in this class and use them:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:103
+msgid ""
+"As you may have noticed, we created a leaf icon instance using the "
+"keyword ``new``. So why aren’t all Leaflet classes created with it? The "
+"answer is simple: the real Leaflet classes are named with uppercase "
+"letters (such as L.Icon), and they also need to use ``new`` is created, "
+"but it is also named with a lowercase letter name (L.icon), which is "
+"created for convenience, such as:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:116
+msgid ""
+"You can also do the same thing in class. OK, let’s put the markers for "
+"these icons on the map:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec02_markers/section.rst:125
+msgid "Now open the full example ."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:4
+msgid "Use GeoJSON and Leaflet"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:6
+msgid ""
+"GeoJSON is very simple, lightweight, and straightforward. It is becoming "
+"a very popular data format for many GIS technologies and services. "
+"Leaflet is very good at dealing with GeoJSON. In this case, you’ll learn "
+"how to create and interact with a map vector in a GeoJSON object."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:30
+msgid "Introduction of GeoJSON"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:32
+msgid ""
+"According to the GeJJSON specification (RFC 7946): GeoJSON is a format "
+"for encoding various geographic data structures. GeoJSON objects can "
+"represent geometry, features, or feature sets. GeoJSON supports the "
+"following geometry types: point, line, polygon, multipoint, multiline, "
+"polygon, and geometry. Features in GeoJSON contain a geometric object and"
+" other properties, and a feature set represents a series of features."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:39
+msgid ""
+"Leaflet supports all of the above GeoJSON types, but features and feature"
+" sets perform best because they allow you to describe features with a set"
+" of attributes. We can even use these properties to design our Leaflet "
+"vector. Here’s an example of a simple GeoJSON feature:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:60
+msgid "GeoJSON Layer"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:62
+msgid ""
+"GeoJSON objects are added to the map via the GeoJSON layer. To create it "
+"and add it to the map, we can use the following code:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:69
+msgid "GeoJSON objects can also be passed as arrays of valid GeoJSON objects."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:81
+msgid ""
+"Alternatively, we can create an empty GeoJSON layer and assign it to a "
+"variable so that we can add more features later."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:90
+msgid "``style`` options"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:92
+msgid ""
+"The ``style`` option can be used to style in two different ways. First, "
+"we can set the style of all paths (polylines and polygons) in the same "
+"way through a simple object:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:116
+msgid ""
+"Or, we can use functions to set the style of their various properties. In"
+" the following example, we check the “party” attribute and set our "
+"polygon style accordingly:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:160
+msgid "Point Layer（ ``pointToLayer`` ）"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:162
+msgid ""
+"Points are treated differently than polylines and polygons. By default, "
+"simple tags are drawn for GeoJSON points. When creating a GeoJSON "
+"coating, we can change this by passing a function in the GeoJSON option "
+"object with ``pointToLayer``. This function passes a ``LatLng`` and "
+"returns an instance of ``ILayer``, which in this case might be ``Marker``"
+" or ``CircleMarker``."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:169
+msgid "We can also create a circular tag using the ``pointToLayer`` option:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:188
+msgid ""
+"We can also set the ``style`` of the property in this example - If you "
+"create a circle-like vector layer inside the pointToLayer function, the "
+"Leaflet is smart enough to apply the style to the GeoJSON point ( "
+"``pointToLayer`` )."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:194
+msgid "onEachFeature"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:196
+msgid ""
+"The ``onEachFeature`` option is a feature that is called before each "
+"feature is added to the GeoJSON layer. This option is usually used to "
+"attach pop-ups when clicking on a feature."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:227
+msgid "Filter（ ``filter`` ）"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:229
+msgid ""
+"This filter option can be used to control the visibility of GeoJSON "
+"functionality. To do this, we set the filter option through a function. "
+"This function is called by each element in the GeoJSON layer and passes "
+"the feature and layer. You can then use the value in this property to "
+"control the visibility false by returning true or."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec03_geoJSON/section.rst:235
+msgid "In the example below, “Busch Field” will not be displayed on the map."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:4
+msgid "Interactive Choropleth Map"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:6
+msgid ""
+"This is a case study that, with the help of GeoJSON and some custom "
+"controls, creates a color interactive US state population density map."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:21
+msgid "Data source"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:23
+msgid ""
+"We visualize data on US population density. Since the amount of data is "
+"not very large, the easiest way to store and display data is GeoJSON."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:26
+msgid "Each feature of our GeoJSON data will look like this:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:41
+msgid "Basic states diagram"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:43
+msgid "Let’s display our states data on the map in a custom Mapbox style."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:68
+msgid "Adding colors"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:70
+msgid ""
+"Now we need to color the states based on population density. Choosing "
+"good colors for your map may require a bit of skill, but there is a great"
+" tool to help us – ColorBrewer. We create a function that returns the "
+"population based density based on the values obtained from ColorBrewer:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:89
+msgid ""
+"Next, we define the style function of the GeoJSON layer so that its "
+"``fill color`` depends on ``feature.properties.density`` . At the same "
+"time, we also adjusted the appearance and added beautiful strokes."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:107
+msgid "It looks much better now!"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:126
+msgid "Adding Interaction"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:128
+msgid ""
+"Now let’s make the color block highlight when we pass the mouse over the "
+"color patches on the map that represent the states of the United States. "
+"First, we’ll define an event listener for the layer’s mouse events:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:148
+msgid ""
+"Here we pass ``e.target`` Get the mouseover layer and set a wide gray "
+"border on this layer as our highlight, while placing the layer on the top"
+" layer, This way the border will not conflict with the nearby state "
+"(instead of IE, Opera or Edge)."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:153
+msgid "Next, we’ll define what happens to ``mouseout``:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:161
+msgid ""
+"The convenient geojson.resetStyle method will reset the layer’s style to "
+"the default state (defined by our ``style`` function). To do this, make "
+"sure our GeoJSON layer can be defined by the previous listener "
+"``geojson`` variable access, then assign this GeoJSON layer to "
+"``geojson`` variable:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:173
+msgid "Let’s define a click listener to zoom in on the state:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:181
+msgid ""
+"Now we will use the ``onEachFeature`` option to add listeners to the "
+"layers in which the states are located:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:198
+msgid ""
+"This makes the state on the map stand out when the mouse passes, and "
+"gives us the ability to add other interactive features to the listener."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:202
+msgid "Custom information control"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:204
+msgid ""
+"Usually we use pop-ups to display information, but we now use a different"
+" method - displaying information in a custom control when hovering over "
+"it."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:208
+msgid "Here is our control code:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:227
+msgid ""
+"When the user mouses over a certain state, we need to update the "
+"controls, so we modify the listener as follows:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:242
+msgid "The control needs some CSS style to make it look good:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:260
+msgid "Custom legend control"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:262
+msgid ""
+"It’s easier to create a control with a legend because it’s static and "
+"won’t change when the state is hovered. JavaScript code:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:283
+msgid ""
+"The CSS style of the control (we also reuse the previously defined "
+"``info`` class):"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec04_interactive-maps/section.rst:300
+msgid ""
+"Enjoy <a href=\"./choropleth.html\">results</a> at the top of this page, "
+"or on a separate page."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:4
+msgid "Layer group and layer control"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:6
+msgid ""
+"This tutorial shows you how to combine multiple layers into a set of "
+"layers and how to use layer controls to allow users to easily switch "
+"between different layers on the map."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:24
+msgid "Layer group"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:26
+msgid ""
+"Suppose you have a bunch of layers, and you want to combine them in your "
+"code to handle them:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:36
+msgid ""
+"Instead of adding them directly to the map, you can use the LayerGroup "
+"class to do the following:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:43
+msgid ""
+"Easy enough! Now you have a ``cities`` layer that merges your city logos "
+"into one layer so you can add or remove them from the map right away."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:47
+msgid "Layer control"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:49
+msgid ""
+"Leaflet is a nice little control that allows users to control the layers "
+"they see on the map. In addition to showing you how to use it, we’ll show"
+" you another convenient use of layer groups."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:53
+msgid "There are two types of layers:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:55
+msgid ""
+"mutually exclusive base layers (only one can be seen at a time on the "
+"map), for example, tile layers, and"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:58
+msgid "overlay layers, which are all placed on the base layer."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:60
+msgid ""
+"Other content. In this example, we want to have two base layers "
+"(grayscale and color base maps) to switch, and an overlay layer (the city"
+" markers we created earlier) to switch and close."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:64
+msgid "Now let’s create the base layer and add the default layer to the map:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:76
+msgid ""
+"Next, we create two objects. One contains our base layer and one contains"
+" our overlay layer. These are just simple objects with key/value pairs. "
+"The key sets the text of the layer in the control (for example "
+"“Streets”), and the corresponding value is the opposite layer (for "
+"example, ``streets`` )."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:93
+msgid ""
+"Now, just create a layer control and add it to the map. The first "
+"parameter passed when the layer control is created is the base layer "
+"object, and the second parameter is the overlay object. Both of these "
+"parameters are optional: when the second argument is omitted, you can "
+"only pass the base layer object, or pass null as the first argument if "
+"you only want to pass the overlay object. In either case, the omitted "
+"layer type will not appear for the user to select."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:105
+msgid ""
+"Notice that we added the ``grayscale`` layer and ``cities`` layer, but no"
+" ``streets``. Layer control is smart enough to detect which layers we "
+"have added and set the corresponding radio buttons and checkboxes."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:109
+msgid ""
+"Also note that when using multiple base layers, you only need to add one "
+"of them to the map when instantiating, but all of these base layer "
+"objects should exist when you create a layer control."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:113
+msgid ""
+"Finally, when you define an object for a layer, you can define a style "
+"for the object’s keys. For example, this code will make the grayscale "
+"map’s labels gray:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec05_layer/section.rst:124
+msgid ""
+"Now let’s take a separate page View results:  "
+"./leaflet_layer_control/example.html"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:4
+msgid "Zoom Level"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:6
+msgid "Leaflet uses latitude, longitude, and “zoom level.”"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:8
+msgid ""
+"A lower zoom level means that the map shows the entire continent, while a"
+" higher zoom level means that the map can display the details of the "
+"city."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:12
+msgid ""
+"In order to understand how the zoom level works, we first need to make a "
+"basic introduction to geodesy."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:16
+msgid "Shape of the earth"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:18
+msgid "Let’s look at a simple map that is locked at level 0:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:44
+msgid ""
+"Please note that the “whole earth” is just a 256-pixel wide, 256-pixel "
+"image:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:54
+msgid ""
+"Be clear: the earth is not a square. More precisely, the shape of the "
+"earth is like a strange potato, which can be approximated as something "
+"similar to a sphere."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:67
+msgid ""
+"So we assume that the earth is round. To make it flat, we put an "
+"imaginary cylinder around it, unfold it, and then cut it to make it look "
+"square:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:81
+msgid ""
+"There are hundreds of ways to display the Earth’s surface in a plane, "
+"each with its advantages and disadvantages, which is just one of them."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:84
+msgid "Now let’s **assume** the world is a square:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:92
+msgid ""
+"When the zoom level is 0, it represents the world, and its width and "
+"height are both 256 pixels. When we move to the next zoom level, its "
+"width and height are doubled and can be represented by four 256-pixel by "
+"256-pixel images:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:108
+msgid ""
+"At each zoom level, each tile is divided into four, the size (the length "
+"of the edge given by the ``tileSize`` option) doubles, and the area is "
+"increased by a factor of three."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:154
+msgid "Notes on proportions"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:156
+msgid ""
+"One of the disadvantages of using a cylindrical projection is that the "
+"scale is not constant and the measurement distance or size is not "
+"reliable, especially at low zoom levels."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:160
+msgid ""
+"Translate the equator to 60° north latitude by adding a "
+"``L.Control.Scale`` to the map. We can see how the scale factor is "
+"doubled. The following example uses a JavaScript timeout to automate:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:186
+msgid ""
+"``L.Control.Scale`` displays the scales that apply to the center point of"
+" the map. At relatively high zoom levels, the scale changes are not "
+"obvious."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:191
+msgid "Control zoom"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:193
+msgid ""
+"A leaflet map has several ways to control the zoom level it displays, but"
+" the most notable is ``setZoom()``. For example, map.setZoom(0) sets the "
+"zoom level of ``map`` to ``0``."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:197
+msgid ""
+"This example again uses the timeout to automatically alternate between "
+"zoom levels 0 and 1:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:219
+msgid "Other ways to set the zoom:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:221
+msgid "``setView(center, zoom)`` , It also sets the center of the map"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:222
+msgid ""
+"``flyTo(center, zoom)`` , Similar to ``setView``, but it has smooth "
+"animations"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:224
+msgid ""
+"``zoomIn()`` / ``zoomIn(delta)`` , Zoom in to the ``delta`` zoom level "
+"with a default zoom level of ``1``"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:226
+msgid ""
+"``zoomOut()`` / ``zoomOut(delta)`` , Reduce the ``delta`` zoom level with"
+" a default zoom level of ``1``"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:228
+msgid ""
+"``setZoomAround(fixedPoint, zoom)`` , Set the ``delta`` level while "
+"maintaining a fixed point (scroll mouse wheel zoom)"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:230
+msgid ""
+"``fitBounds(bounds)`` ,Automatically calculate scaling to match "
+"rectangular areas on the map"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:234
+msgid "Fractional scaling"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:236
+msgid ""
+"Fractional scaling is a new concept proposed in Leaflet 1.0.0. Prior to "
+"this, the map’s zoom level can only be an integer (0, 1, 2, etc.), but "
+"scores like 1.5 or 1.25 can now be used."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:240
+msgid ""
+"Fractional scaling is disabled by default. To enable it, use the MAP’s "
+"``zoomSnap`` option. The default value for the ``zoomSnap`` option is 1 "
+"(which means the zoom level of the map can be 0, 1, 2, etc.)."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:244
+msgid ""
+"If you set the value of ``zoomSnap`` to ``0.5``, the effective zoom level"
+" for the map will be ``1``, ``1.5``, ``2``, etc."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:247
+msgid ""
+"If the setting is ``0.1``, the effective zoom level for the map will be "
+"``0``, ``0.1``, ``0.2``, ``0.3``, ``0.4``, etc."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:250
+msgid "The following example uses the ``zoomSnap`` value as ``0.25``:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:269
+msgid ""
+"As you can see, Leaflet only loads tiles with a zoom level of ``0`` or "
+"``1`` and Need to scale them."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:272
+msgid ""
+"The Leaflet will zoom to the most recent one. For example, if you have "
+"``zoomSnap: 0.25``, you try to do ``map.setZoom(0.8)`` and the zoom will "
+"return To 0.75."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:276
+msgid ""
+"There is another important map option related to ``zoomSnap``: "
+"``zoomDelta`` option. It controls the zoom level of the image when using "
+"the zoom button (from the default ``L.Control.Zoom``) or the +/- keys on "
+"the keyboard."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:281
+msgid ""
+"For scrolling mouse wheel zoom, the ``wheelPxPerZoomLevel`` option "
+"controls the zoom speed of the mouse wheel."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:284
+msgid "Here’s an example where ``zoomSnap`` is set to zero:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:293
+msgid "Try the following to see how the zoom level changes:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:295
+msgid "If you have a touch screen, please pinch the zoom"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:296
+msgid "Zoom with the mouse wheel"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:297
+msgid ""
+"Make a box zoom (hold the ``shift`` key on the keyboard while dragging "
+"the mouse)"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:299
+msgid "Use the zoom button"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec06_zoom-levels/section.rst:311
+msgid "This tutorial is over. Now show your zoom level on the map!"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:4
+msgid "Use WMS with TMS services"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:6
+msgid ""
+"WMS is an abbreviation for **web map service** , a popular way for "
+"professional GIS software to publish maps (rarely used by non-GIS "
+"personnel)."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:10
+msgid "TMS stands for **tiled map service** ( **tile map service** )."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:13
+msgid "WMS in Leaflet"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:15
+msgid ""
+"When someone publishes a WMS service, the most likely link is to the "
+"``GetCapabilities`` document. In this tutorial, we will use the demo map "
+"service from GeoServer at https://demo.boundlessgeo.com/geoserver/web/. "
+"We will use GeoServer’s demo map service at "
+"https://demo.boundlessgeo.com/geoserver/web/. As you can see on this "
+"page, “WMS” links to the following URL:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:26
+msgid ""
+"Leaflet cannot parse WMS’s ``GetCapabilities`` document. So you have to "
+"create a ``L.TileLayer.WMS`` layer, which is used to provide a basic WMS "
+"link and specify any WMS options you need."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:30
+msgid ""
+"The basic WMS link is just a ``GetCapabilities`` link with no parameters,"
+" for example:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:38
+msgid "The way to use this in Leaflet’s map is simple:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:47
+msgid ""
+"An instance of ``L.TileLayer.WMS`` requires at least one option: "
+"``layers``. Note that the “layer” concept in Leaflet is not the same as "
+"the “layer” concept in WMS!"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:51
+msgid ""
+"The WMS server will define **a set of layers** in the ``GetCapabilities``"
+" XML document, but the document is mostly lengthy and difficult to "
+"understand, so it is usually used like QGIS. Software to view information"
+" about available layers in the WMS server:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:56
+msgid ""
+"We can see that OpenGeo demonstrates WMS with a WMS layer named ``ne:ne``"
+" with a base map. Let’s see what it looks like:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:67
+msgid ""
+"Note that the Mapfile used above needs to define the output projection as"
+" ``EPSG:3857``."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:70
+msgid ""
+"It is also important to note that if the Mapfile is not properly "
+"configured, it is possible that the MapServer map (the full map by "
+"default) will be used as a slice to form an overlay."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:87
+msgid "Or we can try the WMS layer of ``nasa:bluemarble``:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:107
+msgid ""
+"The ``layers`` option is a comma-separated list of layers. If the WMS "
+"service defines multiple layers, the map can introduce multiple layers to"
+" create images at the same time."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:111
+msgid ""
+"For example, on the WMS server we are using, there is a "
+"``ne:ne_10m_admin_0_countries`` layer displays the country’s terrestrial "
+"and country names. There is also a "
+"``ne:ne_10m_admin_0_boundary_lines_land`` layer shows country borders. If"
+" we request two layers at the same time, the WMS server will combine the "
+"two layers into one image and separate them with a comma:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:124
+msgid ""
+"Note that this will request an image from the WMS server that is "
+"different from the ``L.TileLayer.WMS`` created for the country and "
+"country boundaries, which will both Add to the map. In the first case, an"
+" image request is made and then the WMS server decides how to combine the"
+" images. In the second case, two image requests are made, and then the "
+"Leaflet code running in the web browser determines how the images are "
+"combined."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:132
+msgid ""
+"If we combine these with layer controls, we can create a simple map to "
+"see the differences:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:158
+msgid ""
+"Change to \"Countries, then The boundaries option, so you can see the "
+"borders of the land, and the WMS server is smart enough to display the "
+"building tags on the map. When multiple layers are requested, how to "
+"combine the layers depends on the WMS server."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:175
+msgid "Information for GIS users of WMS services"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:177
+msgid ""
+"From a GIS perspective, Leaflet’s WMS processing is very basic. It does "
+"not support ``GetCapabilities``, does not support legend, and does not "
+"support ``GetFeatureInfo``."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:181
+msgid ""
+"We can do this in the Leaflet’s API Found in the documentation "
+"documentation Additional options for ``L.TileLayer.WMS``. Any option can "
+"be passed to the WMS server via a link to ``getImage``."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:185
+msgid ""
+"Also note that Leaflet supports very few coordinate systems: "
+"``CRS:3857``, ``CRS:3395`` And ``CRS:4326`` (see the ``L.CRS`` "
+"documentation). If your WMS service is unable to provide images in these "
+"coordinate systems, you may need to create additional coordinate systems "
+"in Leaflet using Proj4Leaflet . In addition, to use the correct CRS when "
+"initializing your map, add it to any WMS layer:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:213
+msgid "TMS in Leaflet"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:215
+msgid ""
+"Although Leaflet does not explicitly support the TMS service, the naming "
+"rules for tiles are very similar to the naming rules for ``L.TileLayer``,"
+" so the TMS service will not be described here."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:219
+msgid "Using the same OpenGeo WMS/TMS server demo, we can see a TMS endpoint:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:225
+msgid ""
+"Check MapCache help about TMS And TMS specification , You can see the "
+"links to the map tiles in TMS as follows:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:232
+msgid ""
+"Using OpenGeo’s TMS service as ``L.TileLayer``, we can check the function"
+" documentation to see which ``tileset`` is available and builds our basic"
+" link:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:241
+msgid "Use the ``tms:true`` option when instantiating a layer as follows:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:264
+msgid ""
+"A new feature of **Leaflet 1.0** is the ability to use ``{-y}`` instead "
+"of ``tms: true`` options, for example:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:271
+msgid ""
+"``tms: true`` option (Leaflet 0.7) or ``{-y}`` (Leaflet 1.0) is necessary"
+" because the origin of the coordinates of ``L.TileLayer`` is usually in "
+"the upper left corner, so the Y coordinate is lowered. In TMS, the "
+"coordinate origin is in the lower left corner, so the Y coordinate "
+"**rises**."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec07_using-WMS-and-TMS/section.rst:277
+msgid ""
+"In addition to the differences in ``y`` coordinates and the discovery of "
+"tiles, the TMS service also provides accurate services in the form of "
+"``L.TileLayer``."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:4
+msgid "Use the map panes"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:6
+msgid ""
+"In Leaflet, map panes can automatically group layers, but developers are "
+"not aware that this allows browsers to process multiple layers more "
+"efficiently, rather than processing one layer at a time."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:10
+msgid ""
+"Map panes uses z-index CSS property Properties to control some layers to "
+"appear on top of other layers. The default order is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:13
+msgid "``TileLayer`` s and ``GridLayer`` s"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:14
+msgid "``Path`` s, like lines, polylines, circles, or ``GeoJSON`` layers."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:15
+msgid "``Marker`` shadows"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:16
+msgid "``Marker`` icons"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:17
+msgid "``Popup`` s"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:19
+msgid ""
+"That’s why in the Leaflet map, popups are displayed on top of other "
+"layers, markers are always displayed on the slice layer, and so on."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:22
+msgid ""
+"Leaflet 1.0.0 has added a new feature (0.7.X not available) to customize "
+"the map panes to adjust the default order."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:26
+msgid "Default value is not always appropriate"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:28
+msgid ""
+"In some special cases, the default layer sorting is not always "
+"appropriate. We use the following basemap and an example of a label layer"
+" to explain:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:60
+msgid ""
+"If we add the above basemap and annotation layer to the Leaflet map, any "
+"polygons or markers will appear above the two layers, but it might be "
+"better to have the annotation layer appear on top. How should we achieve "
+"this?"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:77
+msgid "Custom panes"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:79
+msgid ""
+"For basemaps and overlay layers like GeoJSON, we can use their default "
+"settings, but for annotation layers we need to customize a pane so that "
+"it appears on top of the GeoJSON layer."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:83
+msgid ""
+"Custom map panes are created on top of the original map, so we should "
+"first create a map instance of ``L.Map`` and the panes it needs:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:91
+msgid ""
+"The next step is to set the value of the pane’s z-index. To view the "
+"default values for the pane, set the new pane’s z-index value to 650 to "
+"have the label layer appear below the popups layer above the markers "
+"layer. Use the ``getPane()`` method to get the Html element of the pane "
+"and then modify its z-index value."
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:101
+msgid ""
+"One of the problems with having the image layer on top of other layers is"
+" that the slice captures events such as clicks or touches. If the user "
+"clicks on an area of the map, the browser will think that the user is "
+"clicking on the image layer instead of the GeoJSON layer or the markup "
+"layer. We can use CSS’s pointer-events property to solve this problem:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:111
+msgid ""
+"The new pane has been created, we can add the layer, pay attention to the"
+" ``pane`` option on the label layer:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:127
+msgid "Finally, add some interactive features to the GeoJSON layer:"
+msgstr ""
+
+#: ../../webgis-src/chd1_leaflet/sec08_Working-with-map-panes/section.rst:136
+msgid "This way the example map is complete!"
+msgstr ""
+

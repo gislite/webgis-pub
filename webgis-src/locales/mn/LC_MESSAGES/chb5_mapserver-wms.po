@@ -1,0 +1,995 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chb5_mapserver-wms/chapter.rst:2
+msgid "Use of WMS in MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/chapter.rst:4
+msgid ""
+"For many years, the standardization and interoperability of GIS "
+"applications have been concerned and actively engaged in by all "
+"organizations and individuals, including governments, enterprises, "
+"institutions and groups. Under the common concern of the whole society "
+"represented by OGC, the standardization work of GIS industry, including "
+"WebGIS, has made great progress."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/chapter.rst:11
+msgid ""
+"The functions of MapServer are all introduced in a more traditional way. "
+"At present, the form of WebGIS may be more in the form of map services, "
+"and MapServer also supports most map services at present. The most basic "
+"of these is WMS, used for map publishing."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:4
+msgid "OWSlib Introduction and Installation"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:7
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:9
+msgid ""
+"OWSLib is a Python package for client programming with an Open Geospatial"
+" Alliance (OGC) Web Service (OWS) interface standard and its associated "
+"content model."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:13
+msgid ""
+"OWSLib was originally included in PCL, but was presented as a separate "
+"project in r481."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:16
+msgid ""
+"OGC Web Services Tool Library, Python package uses OGC maps, features, "
+"and overlay services. OWSLib provides generic API access GetCapabilities,"
+" service metadata and packaging to get maps, and GETFEATURE requests."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec01_owslib/section.rst:22
+msgid "Installation"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:4
+msgid "WMS service with ``GetCapabilities`` access"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:6
+msgid ""
+"Web Map Service (Web Map Service,WMS) generates “maps” about geospatial "
+"data, which belongs to the specification published by OGC. A map is a "
+"visual description of geographic data, not geographic data itself. Web "
+"map service provides unified access to the interface supported by the map"
+" server through the Web client on the Internet."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:13
+msgid "Instruction"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:15
+msgid ""
+"The basic web map service provides 4 interfaces ``GetCapabilities``, "
+"``GetMap``, ``GetFeaturelnfo`` and ``DescribeLayer`` to support the "
+"creation and display of registered and layered, map-like view information"
+" , these views come from multiple service sources, both remote and "
+"heterogeneous."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:21
+msgid ""
+"When requesting a map, the client can specify the information displayed "
+"on the map, layer styles, bounds, projection or spatial reference system,"
+" as well as output format, image size, background transparency and color,"
+" etc. When generating maps with the same BBox (bounding rectangle), SRS "
+"(spatial reference system) and dimensions, these maps can be overlaid to "
+"further generate a composite map. WMS supports the creation of a network "
+"of distributed map services so that clients can generate custom maps."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:30
+msgid "The basic Web mapping service mainly provides the following functions:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:32
+msgid ""
+"Other programs can provide information about map services: what it can do"
+" and what can be further queried."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:34
+msgid ""
+"A map can be dynamically constructed in the form of pictures, graphic "
+"element sets or geographic element data sets."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:36
+msgid "Answer basic queries about map content."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:37
+msgid ""
+"The advanced web map server supports the combination with cascading map "
+"servers and style layer descriptors."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:40
+msgid ""
+"The stacked map server aggregates the contents of multiple independent "
+"map servers into one server, and provides other servers with functions "
+"such as output format conversion, coordinate conversion and so on."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:44
+msgid ""
+"The style layer descriptor (Styled-Layer Descriptor,SLD) allows you to "
+"define symbols for feature data, rather than the established named layers"
+" and their styles. SLD is an extension of WMS. WMS services that support "
+"SLD get elements from WFS. The map is then drawn using the style "
+"information provided by the user. The style layer descriptor adds "
+"operations that are not supported by basic WMS: ``DescribeLayer`` 、 "
+"``GetLegendGraphic`` 、 ``GetStyles`` And ``PutStyles`` ."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:52
+msgid ""
+"It is explained here that the WMS service is published using MapServer. "
+"As explained in the previous section, a Mapfile corresponds to a map. "
+"Through WMS access, you can access layer information in Mapfile more "
+"flexibly. The map design function of Mapfile is enhanced to a service "
+"function."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:59
+msgid "Access the WMS service"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:61
+msgid ""
+"Since each WMS is independent, a description of the respective functions "
+"must be provided. This “service metadata” enables each client to "
+"formulate legitimate requests and to construct a queryable directory to "
+"guide clients to specific WMSes. ``GetCapabilities`` allows a client (or "
+"client agent) to request a WMS to reveal its mapping content and "
+"processing capabilities. The returned result is an XML document that "
+"describes the content of the service information and the parameters that "
+"can be requested; in the case of a specific WMS, general information "
+"about the service itself and specific information about the available "
+"maps are returned."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:72
+msgid ""
+"This Mapfile is configured with the WMS service. The contents of Mapfile "
+"``mfb1.map`` is:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:80
+msgid "With the front ``mfa1.map`` Compared to:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:83
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:57
+msgid "`diff_mfb1_mfa1.html <diff_mfb1_mfa1.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:86
+msgid ""
+"Note the version ``1.3.0`` here. OGC’s WMS has two major versions, "
+"``1.1.1`` and ``1.3.0``. If you use ``1.1.1``, you may be prompted to "
+"save the file after accessing, and you will find that it is an XML format"
+" file after saving. With ``1.3.0`` , it will be opened directly in the "
+"browser."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:93
+msgid "``GetCapabilities`` access"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:95
+msgid "Open a link"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:97
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:100
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:67
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:74
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:81
+msgid "View the map"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec02_getcapabilityes/section.rst:102
+msgid ""
+"MapServer supports returning maps from the beginning, and you can use the"
+" ``mode=map`` Parameters."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:4
+msgid "Use WMS Services GetMap in MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:6
+msgid ""
+"The ``GetMap`` operation is used to generate a map, which can be a "
+"picture or a set of graphic elements. ``GetMap`` allows clients to "
+"request multiple servers to make overlapping map layers, processing pixel"
+" geometry with the same frame of reference, size, and scale. These layers"
+" can be displayed in a certain order on the client side, and transparent "
+"pixel technology can be used to display map information from different "
+"sources according to human visualization requirements."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:14
+msgid ""
+"The ``GetMap`` request usually uses HTTP/GET to call a basic WMS via URL "
+"encoding, and can also use HTTP/POST encoding to communicate with an SLD-"
+"capable WMS. The ``GetMap`` request must specify the requested layers "
+"(Layers), the styles used by each layer (Styles), the spatial reference "
+"system (SRS), the bounding rectangle (BBox), the image format ( "
+"``format`` ) and size ( ``width`` , ``height`` ) and other parameters."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:21
+msgid ""
+"Web map services support the display of map views in picture or graphic "
+"format. Image formats include public image formats such as GIF, PNG, "
+"JPEG, etc. These formats are supported by most Web browsers, and the "
+"display of other graphic formats may also require some helper programs to"
+" support. Graphics formats include SVG and WebCGM formats, which are not "
+"commonly used in WMS."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:28
+msgid ""
+"In addition, the optional ``transparent`` parameter is used to specify "
+"whether the background of the map is transparent. The default value is "
+"``False`` . A function that allows the returned result to be drawn "
+"transparently, so that maps for different requests can be overlaid. Each "
+"WMS preferably provides an image format that supports transparent display"
+" for overlaying with other map images."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:35
+msgid ""
+"A valid ``GetMap`` request will return a map consisting of georeferenced "
+"layers with the specified style, spatial reference system, bounding "
+"rectangle, size, format, and transparency. An invalid ``GetMap`` request "
+"returns a formatted error message. In the HTTP context, the content type "
+"of the return value is a MIME type."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:42
+msgid "Request with GetMap"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:44
+msgid "GetMap access to the published MapServer WMS service is described here."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:46
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:60
+msgid "The first is Mapfile:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:53
+msgid "Compared to the previous ``mfa1.map``:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:60
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:72
+msgid "This Mapfile is configured with the WMS service. View function:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:62
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:74
+msgid ""
+"`Open a link <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities>`_"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:69
+msgid "Here, use the ``map`` mode of MapServer to view."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:79
+msgid "Configure with GetMap"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:82
+msgid "Without ``GetMap`` enabled"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:84
+msgid ""
+"To use ``GetMap`` request, you need to enable the ``GetMap`` option for "
+"WMS in Mapfile :"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:86
+msgid ""
+"If not enabled, it will show the following result as the  result of the "
+"request to the URL :"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:97
+msgid "Projection for WMS"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:99
+msgid ""
+"Note that to use ``GetMap`` request , the projection must be set. If it "
+"is not set, the access will appear:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:110
+msgid ""
+"`Yo can click the link to view the actual Error result page.  "
+"<http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfa1.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-97.5,41.619778,-82.122902,49.38562&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`__"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:114
+msgid "Request the WMS"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:116
+msgid ""
+"Here is the correct way to access it. Note that the ``length`` and "
+"``width`` parameters passed to the server graph in URL."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:119
+msgid ""
+"It looks like that the  ``GETMAP`` request result is similar to "
+"MapServer’s ``mode=map``."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:125
+msgid ""
+"`Use GetMap <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=-180,-90,180,90&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:129
+msgid ""
+"Version of WMS 1.1.1 and WMS 1.3.0 have different request parameter for "
+"coordinate system :"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:131
+msgid "``SRS=EPSG:4326`` for 1.1.1"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:132
+msgid "``CRS=CRS:84`` for 1.3.0"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:135
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:32
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:71
+msgid "Get a partial map with GetMap"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:137
+msgid ""
+"The range used above is consistent with the range of the entire data, and"
+" the results look no different. Let’s zoom out to get a section of the "
+"map."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:146
+msgid ""
+"`Get a partial map with GetMap <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=>`_"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:150
+msgid ""
+"According to the description, the parameter ``CRS = EPSG: 4326`` can also"
+" be used. But I didn’t succeed. You may need to configure mapfile."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec03_getmap/section.rst:153
+msgid ""
+"The above effect can also be achieved in MapServer CGI control, by "
+"setting the ``zoom`` level of browsing, the ``x`` and ``y`` coordinates "
+"of the map but ``GetMap`` is obviously more flexible. In addition to "
+"these, WMS has more advantages as a standard."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:4
+msgid "WMS GetFeatureInfo access"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:6
+msgid ""
+"The ``GetFeatureInfo`` operation (optional) returns information about "
+"features near the specified point on the map. Allows users to click on a "
+"pixel to query a feature’s schema and metadata."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:10
+msgid ""
+"``GetFeatureInfo`` is an optional operation. This operation is only "
+"supported for layers with the attribute ``queryable=\"1\"`` (true). If a "
+"WMS client makes a request to a layer that does not support this "
+"operation, a formatted service exception will be returned."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:15
+msgid ""
+"TA WMS may provide the optional ``GetFeatureInfo`` operation, and a WMS "
+"that provides this operation calls its map “queryable”. The client can "
+"add a position parameter (such as (X, Y) value, that is, the offset from "
+"the upper left corner of the picture) or the number of elements that need"
+" to query information near the point, to the URL of the requested map, "
+"information about the corresponding feature on the map can now be "
+"requested."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:23
+msgid ""
+"Since WMS is stateless, the ``GetFeatureInfo`` request should also "
+"include all the parameters in the original ``GetMap`` request (except "
+"Version and Request). Based on the spatial context information (BBOX, "
+"SRS, Width and Height) in the ``GetMap`` request and the ``(X, Y)`` "
+"location selected by the user, the WMS returns more information about "
+"that location."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:30
+msgid ""
+"Also included in the ``GetFeatureInfo`` request parameter is the "
+"``Query_Layers`` parameter, which specifies the layers from which feature"
+" information is obtained. The layers in this parameter list must be those"
+" contained in the WMS ``Capabilities`` XML document."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:35
+msgid ""
+"The optional ``Info_Format`` parameter in the ``GetFeatureInfo`` request "
+"specifies the format in which the feature’s information is returned. The "
+"format is defined as a MIME type in the WMS ``Capabilities`` XML "
+"document. Such as ``Info_Format=application/vnd.ogc.gml`` table does not "
+"return results described in GML."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:41
+msgid ""
+"The optional ``Feature_Count`` parameter in the ``GetFeatureInfo`` "
+"request indicates the maximum number of features to return feature "
+"information. The default value is ``1`` . The ``X,Y`` parameters "
+"represent the pixel coordinates of the point of interest on the map. The "
+"``X,Y`` values are within the ``Width`` and ``Height`` parameter values, "
+"respectively. The origin of the coordinates is in the upper left corner "
+"of the picture."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:49
+msgid ""
+"If ``GetFeatureInfo`` request is valid, WMS will respond according to "
+"``Info_Format``. The nature of the response will be at the discretion of "
+"the WMS server, but generally corresponds to the closest element to the "
+"point ``(X,Y)``."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:55
+msgid "``GetFeatureInfo`` request using WMS service in MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:57
+msgid ""
+"This describes the ``GetFeatureInfo`` access to the published MapServer "
+"WMS service."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:67
+msgid "Compared to the previous ``mfb1.map``:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:70
+msgid "`diff_mfb2_mfb1.html <diff_mfb2_mfb1.html>`_"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:91
+msgid "Access using GetFeatureInfo"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:93
+msgid "Use GetFeatureInfo"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:96
+msgid ""
+"`Use GetFeatureInfo <http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb2.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&QUERY_LAYERS=states&LAYERS=states&BBOX=-96,45,-95,46&CRS=CRS:84&INFO_FORMAT=text/html&j=43&i=-95&WIDTH=256&HEIGHT=256&styles=&format=image/png>`_"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:99
+msgid "The above results are output using a template."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:102
+msgid "Note"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:104
+msgid "WMS, Web Mapping Server, is a specification published by OGC."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec04_getfeatureinfo/section.rst:106
+msgid "``GetFeatureInfo`` is an access method supported by WMS."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:4
+msgid "Use MapServer as a WMS client"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:7
+msgid "View examples"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:12
+msgid ""
+"Another exciting feature of MapServer is its ability to use layers "
+"provided by other map servers as its data source. In this case, the "
+"MapServer application becomes a WMS (WFS) client. MapServer can also "
+"share (or serve) layers in MapFile to other map servers. This makes the "
+"application a WMS (WFS) server. What is WMS or WFS? These are the Web-"
+"based Interoperability Services specification, released by the Open "
+"Geospatial Alliance (OGC). WMS stands for Web map service, and WFS stands"
+" for Web feature service."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:21
+msgid ""
+"The difference between the two specifications, in simple terms, is that "
+"WMS uses web raster formats (PNG, GIF, JPEG) to share layers, while WFS "
+"uses the Geographic Markup Language GML. The third commonly used OGC "
+"interoperability specification is the Web Coverage Service Specification "
+"(WCS), which MapServer provides server-side support only. If you need "
+"more information about WMS, WFS and WCS, you can find OGC Implementation "
+"Specifications or OGC Abstract Specifications on the OGC official "
+"website. MapServer’s website also has some pages related to these "
+"specifications."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:31
+msgid "This example shows you how to add a WMS layer to your MapFile."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:33
+msgid "The following is the Mapfile used in this example ``mfb4.map`` ):"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:40
+msgid "In the above resource, WMS needs to start with ``http://``, not ``//`` ."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:42
+msgid ""
+"In addition, as a client, there is no need to configure WEB in the "
+"Mapfile; it is required on the server."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:45
+msgid "Add WMS layer to Mapfile"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:47
+msgid "The file changes are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:50
+msgid "Definition of MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:52
+msgid "Let’s look at the WMS layer:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:54
+msgid "``LAYER``, marking the beginning of the WMS layer object."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:55
+msgid "``NAME modis_jpl``, the layer identifier."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:56
+msgid ""
+"``TYPE RASTER``, since this WMS layer is an image, use the raster layer "
+"type."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:57
+msgid "``OFFSITE 0 0 0`` , ignore black background color"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:58
+msgid "``STATUS OFF``, this layer is turned off by default."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:59
+msgid "``CONNECTIONTYPE WMS`` Input layer connection use. Defaults to local ."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:61
+msgid ""
+"If we had to be explicit, we would add all other vector and raster layers"
+" locally in our MapFile CONNECTIONTYPE. Instead, we only define "
+"connection types that are external. WMS is an external data layer from "
+"other map servers."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:66
+msgid ""
+"``CONNECTION \"http://webgis.pub/cgi-bin/mapserv?map=/owg/mfb2.map\"``, "
+"the connection string that allows us to “get” data from another server. "
+"In the case of a WMS connection, this is a URL. If we were using a "
+"PostGIS database, this would be an SQL statement. Note that the string in"
+" your MapFile is on a single line."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:72
+msgid ""
+"``METADATA``, marks the metadata object of our WMS layer. MapServer uses "
+"the parameters defined by this object, along with the above connection "
+"parameters, to form valid WMS requests to the WMS server."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:76
+msgid ""
+"``\"wms_srs\" \"epsg:4326\"`` , WMS projection. Sometimes WMS servers "
+"support multiple projections. If that’s the case, you’ll probably want to"
+" ask for your output projection (``EPSG:2163``) map. Unfortunately, "
+"external WMS servers do not support this kind of projection."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:81
+msgid ""
+"``\"wms_name\" \"modis\"`` , the name of the WMS layer to add. It’s like "
+"adding the parameter ``\"layers=modis\"`` ,"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:84
+msgid ""
+"``\"wms_server_version\" \"1.1.1\"`` , the version of the server for the "
+"WMS version. More supported versions can be viewed."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:87
+msgid ""
+"``\"wms_format\" \"image/jpeg\"`` , the image format we expect to receive"
+" from the WMS server. You can try ``image/png`` or other allowed values."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:91
+msgid "Additional information"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:93
+msgid ""
+"To learn more about adding WMS layers to your application, visit the WMS "
+"client how to record."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:96
+msgid ""
+"In addition to adding WMS layer objects, there is also the next new "
+"object for the map. This is the Web object. There are two parameters in "
+"the Web object:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:100
+msgid ""
+"``IMAGEPATH '/data/tmp/'`` , the local absolute path to the temporary "
+"directory for web access. The user running the web server process should "
+"be able to write to this directory. Make sure the path contains the last "
+"slash ( ``/`` ). (Your IMAGEPATH might look like this: \\`\\ "
+"``/home/apache/htdocs/tmp/`` or ``C:/Inetpub/wwwroot/tmp/``.)"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:106
+msgid ""
+"``IMAGEURL '/tmp/'`` , which is how IMAGEPATH appears relative to the web"
+" server’s root directory. If we had to enter the full URL, it would be "
+"“http://terrasip.gis.umn.edu/tmp/” . Make sure the path contains the last"
+" slash ( ``/`` )."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:111
+msgid ""
+"Finally, a new parameter has been added to the ``MAP`` object: ``NAME`` ."
+" This is the identifier of the map object. MapServer creates and dumps a "
+"``tmp`` directory for all images using this prefix. It’s not really "
+"needed in this example, but it won’t have any bad effects either."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec05_wms-client/section.rst:116
+msgid ""
+"If you want to share your data layer to other map servers, you need to "
+"add ``METADATA`` object to your ``MAP`` object, and add ``METADATA`` "
+"object to each layer object you want to share with everyone. All WMS "
+"layers added from another server are automatically cascaded and made "
+"available to others (contagious). For details on how to make your "
+"MapServer application a WMS server, please read the WMS server "
+"documentation carefully. In addition, in addition to the WMS service, "
+"MapServer also supports the WFS service, you can check the documentation "
+"to learn how to configure MapServer to implement a WFS server, or a WFS "
+"client."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:4
+msgid "Draw maps with style layer"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:6
+msgid ""
+"More advanced WMSs use “style layers” to describe a map. A style layer "
+"can be thought of as a transparent layer composed of symbolic elements. A"
+" map is composed of these style layers in a certain order, which is "
+"usually called Z-value order. Users can define complex or simple maps by "
+"adding or removing style layers. A style layer is actually a combination "
+"of a layer and a style. Conceptually, the layer defines a stream of "
+"features, and the style defines how those features are symbolized. In a "
+"WMS process, the drawing style of a map is specified according to the "
+"LAYERS and STYLES request parameters."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:17
+msgid "Support for named styles"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:19
+msgid ""
+"Named styles support are introduced in MapServer 5.2. The support is base"
+" on MS RFC 39: Support of WMS/SLD Named Styles."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:22
+msgid ""
+"MapServer 5.2 introduces the possibility to assign a group to a series of"
+" classes defined on a layer object using two new non-mandatory keywords "
+"CLASSGROUP (at the layer level) and GROUP at the class level:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:49
+msgid ""
+"At rendering time, if the CLASSGROUP is defined, only classes that have "
+"the same group name would be used. Based on this concept, WMS/SLD support"
+" uses the class groups as named styles. Each group of classes is "
+"considered equivalent to a named style:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:61
+msgid "Example"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:63
+msgid "Here is an example:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:65
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:67
+msgid "Mapfile is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:74
+msgid "Use ``GetCapabilities`` to return:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:87
+msgid "Consider the following sample WMS request snippet:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:89
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group3,group2"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:91
+msgid "There are three style layers:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:93
+msgid "States: group1"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:94
+msgid "States: group2"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:95
+msgid "States: group3"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:97
+msgid ""
+"They are stacked in a certain order. A layer can be drawn multiple times "
+"with different styles to achieve the desired effect. The following "
+"example draws the road layer using the ``casing`` and ``centerline`` "
+"styles:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:102
+msgid ""
+"http://webgis.pub/cgi-"
+"bin/mapserv?map=/owg/mfb5.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMAP&LAYERS=states,states&BBOX=73,3,136,54&CRS=CRS:84&INFO_FORMAT=text/html&format=image/png&width=200&height=150&styles=group1,group2"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec06_group/section.rst:104
+msgid ""
+"A WMS itself may not know how to make a meaningful combination of style "
+"layers, it’s all up to the client. WMS uses names to identify styles and "
+"layers, and other documents refer to such named layers and styles. This "
+"is currently the only way for WMS to define style layers."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:4
+msgid "WMS layers use SLD"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:6
+msgid "By using SLD, the style of the map can be modified dynamically."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:8
+msgid ""
+"This page describes the process of leveraging Styled Layer Descriptor "
+"(SLD) support in WMS ``Getmap`` requests using Mapserver. SLD supports "
+"both server-side (ability to read SLD and apply it with ``getmap`` "
+"requests) and client-side (including sending SLD requests to the server "
+"and dynamically generating SLD files from the map server’s Mapfile). SLD "
+"support was added to MapServer in version 4.2."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:16
+msgid "Definition and effect of SLD"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:18
+msgid "SDL is defined using the XML format. Let’s take a look at the example:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:25
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:64
+msgid "Effect:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:30
+msgid "Use GetMap operation with SLD"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:34
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:73
+msgid "The URL is parsed as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:54
+msgid "Definition and effect of SLD 1.1.0"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:56
+msgid ""
+"The definition of SLD version 1.1.0 is not quite the same as the latest "
+"version."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec07_wms-sld/section.rst:69
+msgid "The effect of SLD 1.0.0"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:4
+msgid "WMS layer metadata"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:9
+msgid ""
+"OGC Web services (OWS) can combine with a given resource (WMS layer, WFS "
+"FeatureType, WCS Coverage, SOS ObservationOffering) associated content "
+"metadata is published to the feature document as a reference to a given "
+"URL (i.e. an ISO metadata XML document)."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:14
+msgid ""
+"MapServer supports both inline (e.g. ``wms_title`` , ``wms_abstract`` ) "
+"and URL-based (e.g. ``wms_metadataurl_href`` ) metadata publishing for "
+"OWS functions."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:18
+msgid ""
+"MapServer OGC Service Capabilities Formal XML metadata in XML provides "
+"value to directory services, which collect metadata to support discovery."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:22
+msgid ""
+"MapServer 7.2 adds support for dynamic publishing of XML metadata to all "
+"OGC web services to advertise formal layer metadata."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:26
+msgid "WMS layer metadata technical details"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:28
+msgid ""
+"If a layer does not pass ``ows_metadataurl_*`` metadata, MapServer "
+"provides the metadata URL link (ie WMS MetadataURL ) in the OGC function "
+"XML. The URL itself points to MapServer’s GetMetadata API. example:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:40
+msgid "Supported metadata formats"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:42
+msgid "MapServer’s layer API supports the ISO 19115 ISO 2003 geospatial standard."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:46
+msgid "Graph metadata API"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:48
+msgid ""
+"The Layer Metadata API provides formal metadata for any layer object in a"
+" Mapfile, with metadata values (title, abstract, keywords, spatial "
+"attributes) derived from the Mapfile layer object definition. The "
+"metadata response contains useful information (title, abstract, "
+"keywords), and access links to related services (WMS, WFS, etc.)."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:54
+msgid "API supports two parameters:"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:61
+msgid "Missing parameters will result in OGC ogc:ExceptionReport XML."
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:63
+msgid "Request instance"
+msgstr ""
+
+#: ../../webgis-src/chb5_mapserver-wms/sec08_wms-metadata/section.rst:69
+msgid "Support for layer metadata through CGI"
+msgstr ""
+

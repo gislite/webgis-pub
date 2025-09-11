@@ -1,0 +1,3449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Since 2020
+# This file is distributed under the same license as the Open Source WebGIS
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Source WebGIS \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-30 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../webgis-src/chb8_ref-addon/chapter.rst:2
+msgid "Other MapServer references"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/chapter.rst:4
+msgid "Other MapServer references."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:4
+msgid "About Beginning MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:6
+msgid "An example of this section is from “Beginning MapServer”."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:9
+msgid "Instruction of Beginning MapServer"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:11
+msgid ""
+"Beginning MapServer: Open source GIS development is the first book of its"
+" kind. It provides a comprehensive introduction to MapServer, a "
+"development platform that integrates map mapping technology into Internet"
+" applications. You will learn how to build and extend dynamic "
+"applications using popular languages such as PHP, Perl, and Python. After"
+" you have detailed the installation and configuration, you will discover "
+"the basic Mapserver themes and examples. You will also learn about "
+"advanced MapServer features. How to query dynamic data and incorporate it"
+" into your application. This book ends with the creation of an actual map"
+" application."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:22
+msgid "The book’s URL: https://www.apress.com/cn/book/9781590594902 ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:24
+msgid "Introduction on Douban Reading: https://book.douban.com/subject/1756263/ ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:28
+msgid ""
+"The code for this book is hosted on Github at https://github.com/Apress"
+"/beg-mapserver< /a> . The data and code used in the book can be found in "
+"the code base."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:33
+msgid "Online operating environment"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:35
+msgid ""
+"In order to facilitate learning and use, an online running environment is"
+" established in this section, and the more complex case configurations in"
+" the book are run. The original book was published in 2005. Up to now, "
+"MapServer has undergone major changes, and some modifications are "
+"inevitable in order to run. In addition, for the convenience of use, some"
+" text descriptions will also be added."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec01_bookintro/section.rst:42
+msgid ""
+"The first example in the book is relatively simple, modified during the "
+"development of the website as an example of the website, and is not "
+"repeated here."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:4
+msgid "MAP Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:6
+msgid ""
+"MAP corresponds to “root” in MapFile, which contains all other objects, "
+"and is an application-level MAP-level parameter."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:9
+msgid ""
+"Some general parameters are listed in the first part, and the detailed "
+"parameters are explained in a later section."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:13
+msgid "General parameter description"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:16
+msgid "Common map settings"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:18
+msgid ""
+"NAME: The prefix for generating Map, Scale bar and GIF legend file names,"
+" which should be as short as possible. Value: ``[name]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:20
+msgid ""
+"UNITS: The unit of map coordinates. Value: "
+"``[feet|inches|kilometers|meters|miles|dd]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:22
+msgid ""
+"EXTENT: The spatial extent of the map to be created. MapServer can get "
+"the corresponding value at runtime, it is recommended to specify the "
+"corresponding value. Value: ``[minx] [miny] [maxx] [maxy]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:25
+msgid ""
+"STATUS: Whether the ~map is the mark of ~active. When its value is OFF, "
+"the corresponding map is used as the base map or scale bar. Value: "
+"[on|off]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:28
+msgid ""
+"FONTSET: The name of the font file (including the path). Either absolute "
+"or relative paths can be used. Tip: Values start with a slash ( ``/`` ). "
+"Value: ``[path/filename.ext`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:31
+msgid ""
+"SYMBOLSET: The name of the symbol file (including the path). Either "
+"absolute or relative paths can be used. Tip: Values start with a slash ( "
+"``/`` ). Value: ``[path/filename.ext]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:34
+msgid ""
+"SHAPEPATH: The path of the shapefile or tile. Can be an absolute path or "
+"a relative path relative to the current MapFile file."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:37
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:72
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:122
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:291
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:471
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:505
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:549
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:774
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:804
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:78
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:110
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:184
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:223
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:262
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:397
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:458
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1017
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1076
+msgid "Example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:58
+msgid "General output (OUTPUT) settings"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:60
+msgid ""
+"IMAGETYPE: ~ output format. Its value must match the NAME value in the "
+"user-defined ~OUTPUTORMAT section or correspond to an internally "
+"supported format. Value: [gif|png|jpeg|wbmp|gtiff|swf|userdefined]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:63
+msgid "SIZE: :sub:`Output`\\ The size of the Map, in pixels. Value: [x] [y]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:64
+msgid ""
+"RESOLUTION: The number of pixels per inch, its value only affects the "
+"scale calculation, the default value is 72. ~value: ~[integer]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:66
+msgid ""
+"WEB: The start tag of the WEB object, the WEB object defines how the WEB "
+"interface operates."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:68
+msgid ""
+"QUERYMAP: The start tag of the QUERYMAP object, the QUERYMAP object "
+"defines the display effect of the processing (MAP) query results, etc."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:95
+msgid ""
+"Components: Datum, legend, and scale bar (Reference Map, Legend, Scale "
+"Bar)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:97
+msgid "The following components can be defined in the MapFile file:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:102
+msgid "image0"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:104
+msgid "Fig. 1 Eagle eye diagram example"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:106
+msgid ""
+"REFERENCE: The start tag of the Reference Map object ~. ~Reference Map is"
+" an eagle eye map that shows the location of the map in the main window."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:109
+msgid ""
+"LEGEND: The start tag of the Legend object. ~ It defines how the legend "
+"is generated. A corresponding legend component is automatically generated"
+" for each layer in the ~CLASS pair."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:112
+msgid ""
+"SCALEBAR: The start tag of the Scalebar object. It defines how the map "
+"scale toolbar is generated."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:118
+msgid "image1"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:120
+msgid "Scale Bar Toolbar"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:151
+msgid "Map definition"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:153
+msgid ""
+"This section includes instructions for projection in the process of "
+"generating a map from a layer."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:156
+msgid ""
+"LAYER: The start identifier of the LAYER object. There should be at least"
+" one layer in the MapFile file, the layer is used to generate the map. "
+"The order in which the layers are displayed on the map is reversed (first"
+" layer on bottom, last layer on top); see the LAYER section for details."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:161
+msgid ""
+"PROJECTION: The start identifier of the PROJECTION object. You should "
+"define two types of PROJECTION objects. One is the projection of the "
+"output image (defined in the Map object) and the other is defined without"
+" the Layer. If the projections of your data are all the same, then you "
+"don’t need to define any projections unless you want to do a projection "
+"transformation."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:169
+msgid "Rarely used parameters"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:171
+msgid ""
+"CONFIG: ~ Used to configure the location of EPSG files in the ~PROJ.4 "
+"library. Using this configuration allows PROJ.4 to use the files you "
+"specify. One of the advantages is that you can avoid setting the "
+"corresponding environment variables. For example: ``CONFIG PROJ_LIB "
+"/tmp/proj/`` . Setting other values will be passed to "
+"``CPLSetConfigOption()`` so that you can control the behavior of the GDAL"
+" and OGR drivers. Please refer to the GDAL documentation for details. "
+"Value: ``[key] [value]``."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:180
+msgid ""
+"DATAPATTERN:This defines a regular expression to be applied To requests "
+"to change DATA parameters via URL requests (i.e. ``map_layername  "
+"_data=...`` )。 If a pattern doesn’t exist then web users Can’t monkey "
+"with support files via URLs. This allows you to isolate one Application "
+"from another if you desire, with the default operation being Very "
+"conservative. See also TEMPLATEPATTERN below. Value: [regular expression"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:188
+msgid ""
+"DEBUG: Enable debugging on the MAP object. The detailed information of "
+"the system operation will be output to the LOG file specified by the WEB "
+"object. See the DEBUG section for details."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:192
+msgid ""
+"IMAGECOLOR: Initialize the color of the map, such as the background "
+"color. When transparency is enabled (TRANSPARENT ON), the specified color"
+" is applied to transparent areas. Values: ``[r] [g] [b]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:196
+msgid ""
+"SACLE: Computed scale of the map. Usually used in programs rather than in"
+" MapFile."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:199
+msgid ""
+"TEMPLATEPATTERN:This defines a regular expression to be applied to "
+"Requests to change TEMPLATE parameters via URL requests (即 "
+"``map_layername_template=...`` )。 If a pattern doesn’t exist then web "
+"users Can’t monkey with support files via URLs. This allows you to "
+"isolate one Application from another if you desire, with the default "
+"operation being Very conservative. See also DATAPATTERN above. Value: "
+"``[regular expression]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:208
+msgid "Output format object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:210
+msgid ""
+"Generally consider that when customizing the output format, you need to "
+"use the IMAGETYPE keyword, OUTPUTFORMAT object. Set it only if you need "
+"to change the default output format, and you should refer to it before "
+"setting it:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:215
+msgid ""
+"The size of the image has a great influence on the performance of the "
+"image (the time required to generate the image and transmit the image). "
+"The image generated using the 256color mode is smaller than using the RGB"
+" mode."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:219
+msgid ""
+"Depending on the data, you should consider using different color depths. "
+"For example, if you are using satellite imagery or aerial imagery, you "
+"should use RGB mode to generate images. In this case the image produced "
+"using JPEG is much smaller than the image produced using PNG24."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:224
+msgid ""
+"When using JPEG output, you can use the QUALITY option to reduce the "
+"image size."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:226
+msgid "Use the GD or AGG image library."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:229
+msgid "GD and AGG image library"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:231
+msgid ""
+"GD is an open source library for dynamically creating images. GD can "
+"create images in PNG, JPEG, GIF and other formats. GD raw support for the"
+" generation of GIF images. However, since its acquisition by Unisys, it "
+"has informally supported “Graphics Draw”."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:236
+msgid ""
+"Anti-Grain Geometry (AGG) is a high-quality 2D image rendering library "
+"developed using C++. It has anti-aliasing and sub-pixel resolution. This "
+"allows you to create high-quality images. The MapServer5.0 version and "
+"its higher versions support AGG. For the same MapFile, you can use either"
+" AGG for rendering or GD."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:245
+msgid "image2"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:247
+msgid "Fig. 2 Image processed by AGG"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:250
+msgid "Output"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:252
+msgid ""
+"A MapFile can define one or more OUTPUTFORMAT objects, and the supported "
+"output formats include PNG, GIF, JPEG, GeoTiff, Flash, etc."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:256
+msgid ""
+"Support for various formats depends on the libraries used when compiling "
+"the program. GeoTiff needs the support of GDAL library"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:258
+msgid "Flash (swf) requires support from the MING library."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:260
+msgid ""
+"NAME: The name of the output format used in IMAGETYPE in MapFile. Value: "
+"``[name]``."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:263
+msgid ""
+"DRIVER: Generate the driver name of the output in the corresponding "
+"format. If the driver supports multiple formats, the definition of the "
+"format is fixed. For example, the driver name for GD may be ``GD/Gif`` , "
+"``GD/PNG`` , ``GD/WBMP`` and ``GD/JPEG``; the driver name for Flasf is "
+"SWF. GDAL’s driver name is GDAL/GTiff. PNG, JPEG, GIF can be generated "
+"using GDAL or GD (GD is more efficient). Value: ``[name]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:271
+msgid ""
+"IMAGEMODE: The image mode for generating the output image. Not all non-"
+"raster images are the same as Flash. Not all supported formats have all "
+"combinations. E.g. GD/GIF only supports PC256."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:275
+msgid ""
+"PC256: ~ Generates a false-color image using ~256 colors (MapServer’s "
+"legacy mode)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:277
+msgid ""
+"RGB: Renders the image in 24-bit Reb/Green/Blue mode. All colors are "
+"supported but transparency is not supported."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:279
+msgid ""
+"RGBA: Renders the image in 24-bit Reb/Green/Blue/Alpha mode. All colors "
+"are supported and transparency is supported."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:281
+msgid ""
+"INT16: Render single-band data with 16 as an Integer (integer) bit depth."
+" Currently only valid for raster imagery and WMS layers using GDAL."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:284
+msgid ""
+"FLOAT32: ~Renders single-band data with a Float (float) bit depth of ~32."
+"  Currently only valid for raster images and WMS layers using GDAL. "
+"Value: [PC256/RGB/RGBA/INT16/FLOAT32]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:288
+msgid ""
+"MIMETYPE: the MIME type used by the data returned to the client through "
+"the network. Value: ``[type]`` 。"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:300
+msgid ""
+"EXTENSION: generates suffixes for files of the corresponding file type, "
+"such as .png, .gif, etc. Value: ``[type]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:303
+msgid ""
+"TRANSPARENT: use this parameter to indicate whether transparency is "
+"enabled for images in this format. Note: Transparency is not available "
+"when IMAGEMODE is RGB, not all formats support transparency. When using "
+"transparency, an 8-bit false color image is generated in the transparent "
+"areas, so filling other parts of the map with this color will also be "
+"transparent, so a suitable color should be used as the background color."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:311
+msgid ""
+"FORMATOPTION: optional parameter for driver or format. Zero or more "
+"FORMATOPTION can appear in the definition of an OUTPUTFORMAT."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:314
+msgid ""
+"-GD/JPEG: the “QUALITY=n” option can be used to set the generation "
+"quality of JPEG images. Values range from 0 to 100. -GD/PNG: “INTERLACE= "
+"[ON/OFF]”, which sets whether to render the image interlaced. -GDAL/GIF: "
+"“INTERLACE= [ON/OFF]”, which sets whether to render the image interlaced."
+" -the parameters supported by GDAL/GTiff:~ are as follows ~ -TILED=YES "
+"-BLOCKXSIZE=n -BLOCKYSIZE=n -INTERLEAVE= [PIXEL/BAND] -COMPRESS= "
+"[NONE,PACKBITS,JPEG,LZS,DEFAULT]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:323
+msgid ""
+"GDAL: all FORMATOPTION are processed using GDAL. Refer to the GDAL "
+"documentation for details. Value: ``[option]`` . If the defined "
+"OUTPUTFORMAT is not defined in the MapFile, the program will use it "
+"implicitly."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:328
+msgid "The following definitions:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:330
+msgid "Related to the AGG library:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:350
+msgid "Related to the GD Graphics library:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:412
+msgid "WEB Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:414
+msgid ""
+"Defines a parameter for the WEB interface runtime. To ``WEB`` Start with "
+"``END`` End."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:417
+msgid ""
+"IMAGEPATH: The temporary directory where temporary images are stored. It "
+"must be available when the WEB server is running. It must start with a "
+"slash ``/``. Value: ``[path``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:421
+msgid ""
+"IMAGEURL: Virtual path to access temporary images stored under IMAGEPATH."
+" Value: ``[url|virtual directory]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:424
+msgid ""
+"EMPTY: The URL to redirect to when the query fails. If no value is "
+"defined, it will redirect to the URL defined by ~ERROR. Value: ``[url]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:428
+msgid ""
+"ERROR: The URL to which the error occurred. If not defined, MapServer’s "
+"error message will be output. Value: ``[url]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:431
+msgid ""
+"LOG: The file that stores the system log, which must be available when "
+"the WEB server is running. Value: ``[filename]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:434
+msgid ""
+"MINSASLE: Minimum scaling. An image of this scale will be returned when "
+"the value requested by the user is less than this value. Value: "
+"``[double]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:438
+msgid ""
+"MINTEMPLATE: The template used above the minimum scale, which is useful "
+"for nested applications. (Template to be used if above the minimum scale "
+"for the app, useful for nesting apps) Value: ``[file|url]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:443
+msgid ""
+"MAXSCALE: The maximum zoom ratio. An image at this scale will be returned"
+" when the user requests a value greater than this value. Value: "
+"``[double]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:447
+msgid ""
+"MAXTEMPLATE: The template used when the maximum scale is above, which is "
+"useful for nested applications. (Template to be used if above the maximum"
+" scale for the app, useful for nesting apps.) Value: ``[file|url``] ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:452
+msgid ""
+"TEMPLATE: The template file or URL used to represent the results in "
+"interactive mode. Value: ``[file|url]`` ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:455
+msgid ""
+"HEADER: The template file first sent to the client. Only used in multi-"
+"result query mode. (Template to use before everything else has been sent."
+" Multiresult query modes only). Value: ``[filename]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:459
+msgid ""
+"FOOTER: The template file that is finally sent to the client. Only used "
+"in multi-result query mode. (Template to use before everything else has "
+"been sent. Multiresult query modes only). Value: ``[filename]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:464
+msgid ""
+"METADATA: Use this identifier to store arbitrary key-value pairs. Often "
+"used when configuring OGC WMS. It is also very flexible when creating "
+"templates, and any content entered here can be obtained through template "
+"transitions. example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:469
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:33
+msgid "METADATA title “Map of China” autor “YanMing” END"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:484
+msgid "QUERYMAP Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:486
+msgid "Define how query results are rendered"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:488
+msgid ""
+"COLOR: The color of feature highlighting, the default is yellow. Value: "
+"``[r] [g] [b]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:491
+msgid ""
+"SIZE: The size of the map, in pixels. The default is the size defined in "
+"the MAP object. Value: ``[x][y]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:494
+msgid "STATUS: Whether to display the map obtained from the query."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:496
+msgid ""
+"STYLE: Set the realistic way of querying the obtained map. Maps or map "
+"parts that are not selected are not processed."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:499
+msgid "Normal: Render the layer in the style of the original layer."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:500
+msgid "Hilite: Renders the selected layer using the value of COLOR."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:501
+msgid "Selected: Show only selected layers"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:503
+msgid "Value: ``[normal|hilite|selected]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:515
+msgid "REFERENCE Object reference map"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:517
+msgid "It is a preview showing the location of the map in the main window."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:519
+msgid ""
+"Begins with a REFERENCE and ends with an END. Three types of reference "
+"maps are supported. The most common is to show the extent of the map "
+"being interacted with in the preview. It is also possible to include a "
+"reference map as part of a query. Point query will generate an icon (an "
+"image with a marker) on the query point; face query will highlight the "
+"queried area; query given to feature will display the selected part."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:526
+msgid ""
+"IMAGE: The name of the reference map image (including the path), which "
+"can be an absolute or relative path. Value: [path/filename.ext]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:529
+msgid "SIZE: The pixel size of the reference map image"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:530
+msgid ""
+"EXTENT: ~The spatial extent of the image. Value: ~[minx] [miny] [maxx] "
+"[maxy]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:532
+msgid ""
+"STATUS: ~Whether to create a ~reference map, the default is OFF. Value: "
+"[on \\| off]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:534
+msgid ""
+"COLOR: The fill color of the corresponding BOX range, the default is red."
+" A value of -1 is transparent. Value: [r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:536
+msgid ""
+"OUTLINECOLOR: ~ corresponds to the color of the border of ~BOX, the "
+"default is black, when the value is -1, there is no border. ~value: ~[r] "
+"[g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:539
+msgid ""
+"MARKER: The mark displayed when the corresponding range becomes very "
+"small (obtained from the symbol file), the default is the cross mark. "
+"~value: ~[integer \\| string]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:542
+msgid ""
+"MARKERSIZE: ~ defines the size of the symbol that replaces ~BOX. Value: "
+"[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:544
+msgid ""
+"MINBOXSIZE: ~ When ~BOX is smaller than MINBOXSIZE, use MARKER and "
+"MARKERSIZE to display. ~value: ~[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:546
+msgid ""
+"MAXBOXSIZE: When the BOX is larger than MINBOXSIZE, nothing is rendered. "
+"Value: [integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:566
+msgid "LEGEND Object In MapServer, there are three ways to create legends."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:568
+msgid ""
+"Simple Image Legends: generate legends just like using a desktop graphics"
+" system. This approach is very simple, but it has great limitations."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:571
+msgid ""
+"Legends using HTML templates:~ is a complex way to automatically create "
+"legends using ~ MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:573
+msgid ""
+"Plain HTML legends:~ manually compiles the legend ~ HTML file. This "
+"method is very free, but it needs the corresponding HTML file, and it is "
+"troublesome to update it."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:578
+msgid "Simple Image Legends*\\*"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:580
+msgid ""
+"Define the mode of production of the legend file, and the CLASS object "
+"creates the corresponding legend component for each individual highlight."
+" Start with LEGEND and end with END. The size of the legend image is not "
+"unknown before it is created, so do not use the ``<img>`` The width and "
+"height of the hard-coded image in the tag."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:586
+msgid ""
+"IMAGECOLOR: ~ The initial color of the legend (eg background color). "
+"Value: ~[r] [g] [b]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:588
+msgid "LABEL: The start identifier of the LABEL object."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:589
+msgid "OUTLINECOLOR: The color of the symbol border. Value: [r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:590
+msgid ""
+"POSITION: ~ The location of the legend on the map. Defaults to ~lr. "
+"Value: [ul|uc|ur|ll|lc|lr]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:592
+msgid "KEYSIZE: The legend box in pixels, the default is 20 X 10. Value: [x] [y]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:594
+msgid ""
+"KEYSPACING: The space between the ~ symbols, the default is ~5 X 5. "
+"Value: [x] [y]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:596
+msgid ""
+"POSTLABELCACHE: ~tells ~MapServer to render the legend after all labels "
+"are rendered. Useful when adding homogeneous elements. Defaults to false."
+" Value: [true|false]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:599
+msgid "STATUS: Whether to create this legend. Value: on|off|embed]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:601
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:852
+msgid "Example 1:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:613
+msgid ""
+"This legend is automatically created for all layers, the legend contains "
+"the layer name."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:616
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:878
+msgid "Example 2:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:633
+msgid ""
+"This legend will create a legend with the “restaurants” symbol and "
+"restaurants text."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:636
+msgid "As shown below:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:641
+msgid "image3"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:644
+msgid "Legends using Templates"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:646
+msgid ""
+"MapServer version 3.5 and above can use template files to generate "
+"legends. In MapFile The TEMPLATE parameter is used in the file to enable "
+"template-based legend generation. Set up TEMPLATE file, the file will "
+"replace main HTML The content referred to by the [legend] tag in the "
+"file. Template files must have an. Html extension."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:653
+msgid "HTML Legend template File"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:655
+msgid ""
+"The HTML legend template file contains 0 or one of the following tags, "
+"and the program will use the corresponding tags"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:658
+msgid "Generate the legend:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:666
+msgid "Anything in the legend file except the label pair above will be ignored"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:668
+msgid "GROUP block tag: [leg_group_html]…[leg_group_html]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:670
+msgid ""
+"The HTML block that uses this tag in a group of layers is that the layers"
+" will appear in the legend. When using the ``[leg_group_html]`` tag, "
+"styles for layers that do not belong to any group (LAYER GROUP not set in"
+" the MapFile) are also not displayed in the legend. The list of groups is"
+" determined by ``order_metadata``, which is explained later…."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:676
+msgid "Tags that can appear in [leg_group_html] blocks:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:678
+msgid "``[leg_group_name]`` Name of the group"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:679
+msgid "``[layer_status]`` The state of the first layer in the group"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:680
+msgid ""
+"``[leg\\_icon width=&lt;optional\\_width&gt; "
+"height=&lt;optional\\_height&gt;\\]`` The icon of the legend, [leg_icon] "
+"is the URL of the icon."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:682
+msgid ""
+"``metadata name=&lt;metadata_field_to_display&gt;]`` Returns the "
+"specified metadata"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:685
+msgid "Example: show layer group"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:687
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:691
+msgid "[leg_group_html]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:689
+msgid "<tr><td colspan=2><b>[leg_group_name]</b></td></tr>"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:693
+msgid ""
+"LAYER block tag: [leg_layer_html <OPTIONAL PARAMS>] … "
+"[/leg_layer_html]When this ~ tag is not set, no ~layer header will be "
+"displayed."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:697
+msgid "The optional parameters are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:699
+msgid ""
+"l order_metadata = <field_to_order_by> You can use the value of "
+"<field_to_order_by> to control the display order and visibility of layers"
+" in the legend."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:703
+msgid ""
+"When the value of <field_to_order_by> is greater than zero, sort by this "
+"value."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:706
+msgid ""
+"If the value of <field_to_order_by> of two layers is the same, then the "
+"order of MAP LAYER is used."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:709
+msgid ""
+"<field_to_order_by> will not be displayed in the legend if the value is "
+"less than zero."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:712
+msgid ""
+"l opt_flag = <bit_mask> Controls the display process of the layer. The "
+"values are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:722
+msgid "The tags that can appear in the [leg_layer_html] block are as follows:~"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:724
+msgid "[leg_layer_name] returns the value of the layer name"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:726
+msgid ""
+"[leg_icon width=<option_width> height=<option_height>] returns the URL of"
+" the legend icon"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:729
+msgid ""
+"[metadata name=<metadata_field_to_display>] Returns the specified "
+"metadata value and WEB metadata Example: Display layer title with href "
+"link"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:733
+msgid "[leg_layer_html order_metadata=WMS_ORDER visibility_flag=15]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:735
+msgid ""
+"<a href=“[leg_layer_name]”>[metadata name=WMS_TITLE]</a><BR> "
+"[/leg_layer_html]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:738
+msgid ""
+"CLASS block tag:[leg \\_ class \\_ html & lt;OPTIONAL PARAMS>] .[/ leg "
+"\\_ class \\_ html]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:741
+msgid "If not set, no style will be displayed."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:743
+msgid "CLASS whose NAME is NULL will not be displayed"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:745
+msgid "Optional parameters:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:747
+msgid ""
+"l opt_flag = <bit_mask> controls the display of layers. The values are as"
+" follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:757
+msgid ""
+"Example: ``opt_flag=12`` means to show all layer types, including QUERY "
+"and ANNOTATION. (4x8)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:760
+msgid "Tags that can be used under [leg_class_html]:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:762
+msgid "[leg_class_name] Value of CLASS NAME"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:764
+msgid "[leg_class_title] Value of CLASS TITLE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:766
+msgid ""
+"[leg_icon width=<option_width> height=<option_height>] Returns the URL of"
+" the legend icon"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:769
+msgid ""
+"[metadata name=<metadata_field_to_display>] Returns the specified "
+"metadata value"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:772
+msgid "and WEB metadata :sub:`data`"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:780
+msgid "<img src=[leg_icon]> [leg_class_name]<br>"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:782
+msgid "[/leg_class_html]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:784
+msgid "CONDITIONAL text"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:786
+msgid "Label:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:788
+msgid "[if name=<field_to_check> oper=<eq|neq|isset|isnull>"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:790
+msgid "value=<to_compare_with_field>]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:792
+msgid "…"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:794
+msgid ""
+"[/if] The [if] tag can be inside the [leg_*_html] tag, and nesting is "
+"recommended. The value of the parameter oper can be eq (equal), neq (not "
+"equal), isset, isnull. Defaults to equal."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:799
+msgid "2.6.3 Plain HTML legends"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:801
+msgid ""
+"This is another way to create a legend. Pre-processed, use HTML, PHTML, "
+"PHP, etc."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:809
+msgid "image4"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:812
+msgid "SCALEBAR Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:814
+msgid ""
+"SCALEBAR defines the mode of production of map scales. Start with "
+"SCALEBAR and end with END. The size of the legend image is not unknown "
+"before creation, so do not hard-code the width and height of the image in"
+" the & lt;img> tag of the template file."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:819
+msgid "Note: fonts of TrueType type are currently not available."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:821
+msgid ""
+"How many parts of the INTERVALS:~ legend bar are divided? the default is "
+"~ 4. Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:823
+msgid ""
+"UNITS: the unit of output scale bar. The default is meters. The real map "
+"can be obtained by using the map unit as its unit. Value: ~[feet \\| "
+"inches \\| kilometers \\| meters \\| miles]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:826
+msgid ""
+"COLOR: renders the layer using the color specified by COLOR when not "
+"using the property sheet. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:828
+msgid "IMAGECOLOR: initializes the color of the scale bar. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:830
+msgid "BACKGROUNDCOLOR: background color. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:831
+msgid ""
+"OUTLINECOLOR: the color of the border (border). The default value of-1 "
+"indicates an unbounded color. ~ value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:833
+msgid ""
+"LABEL: note the size of the SIZE. Note: TrueType-type postures cannot be "
+"used. ~ use ~[tiny \\| small \\| medium \\| large \\| giant] to define "
+"the value of SIZE. ~ usually you should use ~ tiny or small."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:837
+msgid ""
+"POSITION：~The position where the scale bar is placed, the default is "
+"~lr.：[ul|uc|ur|ll|lc|lr]。"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:839
+msgid ""
+"SIZE: the size of the scale bar. Value:[tiny \\| small \\| medium \\| "
+"large \\| giant]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:841
+msgid "STYLE: the type of scale bar. Value:[0 \\| 1]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:842
+msgid ""
+"POSTLABELCACHE:~ tells ~ MapServer to render the legend after all the "
+"labels have been rendered. It is useful when adding elements of the same "
+"kind. The default is false. Value:[true \\| false]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:845
+msgid ""
+"STATUS: whether to create a scale bar image and whether to embed the "
+"image. Note: you need to define a MARKERSET to embed the scale bar. In "
+"effect, the legend bar then becomes a :sub:`custom`\\ mark identical to "
+"the other annotations. ~Value: ~[on \\| off \\| embed]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:849
+msgid ""
+"TRANSPARENT: whether the background of the legend bar is transparent, the"
+" default is OFF. Value:[on \\| off]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:871
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:896
+msgid "The illustration bar is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:876
+msgid "image5"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec02_mapobj/section.rst:901
+msgid "image6"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:4
+msgid "LAYER Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:6
+msgid ""
+"``LAYER`` begins with identification as a layer and ends with END. This "
+"section describes how to publish a layer to a map. There should be at "
+"least one layer in the MapFile file, which is used to produce maps. "
+"MapFilezhong layers are displayed in reverse order on the map (the first "
+"layer is at the bottom and the last layer is at the top)."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:13
+msgid "General introduction to LAYER object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:16
+msgid "3.1.1 General Layer Setting"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:18
+msgid ""
+"NAME: the short name of the layer, which should be less than 20 "
+"characters. This name is the channel between the Mapfile and Web "
+"interfaces. The layer name should be unique, otherwise one layer will be "
+"replaced by another. You can use the GROUP option to associate a set of "
+"layers. ~ value: ~[name]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:24
+msgid ""
+"GROUP: the group name to which the layer belongs. The group name can be "
+"referenced by a template file. You can control the ON and OFF of a set of"
+" layers by the group name. Value:[name]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:28
+msgid ""
+"METADATA:13) METADATA: use this identity to store arbitrary key-value "
+"pairs. It is often used when configuring OGCWMS. When creating a "
+"template, it is also very flexible, as entered here Any content can be "
+"obtained through template changes. Example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:35
+msgid ""
+"STATUS: sets the state of the layer. It is generally controlled by "
+"MapServer itself and defaults to ON. Value: ``[on|off|default]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:38
+msgid ""
+"TYPE: sets the performance type of the data. The data does not have to be"
+" of type shapefile. For example, shapefile of polygon type can be "
+"rendered using point However, a shapefile file of type point cannot be "
+"rendered with polygon. Generally speaking, ANNOTATION means adding a "
+"realistic LABEL to the layer The layer itself is not displayed (although "
+"you can do so). The LABEL of the point is displayed at the location of "
+"the point. The LABEL of the face is displayed in the centroid position of"
+" the face. if the centroid is not in the face, the LABEL will be "
+"displayed in the area closest to the centroid. The LABEL reality of the "
+"line is visible in the middle of the line. QUERY means that the layer can"
+" be queried but not displayed. When distinguishing between the opposite "
+"side and the line, be sure to mainly fill the color setting, when "
+"rendering the opposite side. If the filling color is the same as the "
+"background color, then all you see is the boundary of a face. When using "
+"CIRCLE, you must define the extents of its minimum Bounding rectangle."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:55
+msgid ""
+"Value:[point \\| line \\| polygon \\| circle \\| annotation \\| raster "
+"\\| query]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:58
+msgid "MINSCALE: the minimum scale of the layer. Value: [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:60
+msgid "MAXSCALE: the maximum scale of the layer. Value: [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:62
+msgid ""
+"SYMBOLSCALE:The scale at which symbols and/or text appear full size. "
+"Value: [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:65
+msgid ""
+"TRANSPARENTCY: sets the transparency of the layer. 0 is transparent and "
+"100 is opaque. Value: [integer \\| alpha]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:68
+msgid ""
+"OFFSITE: the color index (Sets the color index to treat as transparent "
+"for raster layersb) of the grid layer. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:71
+msgid ""
+"POSTLABELCACHE: tell MapServer to render the legend after all the labels "
+"have been rendered. It is useful when adding elements of the same kind. "
+"The default is false. Value: [true \\| false]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:75
+msgid ""
+"CLASSITEM:Item name in attribute table to use for CLASS lookups. "
+"Specifies the name of the property to query. Value: [attribute]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:99
+msgid "3.1.2 Data Settings"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:102
+msgid "3.1.2.1 Shapefiles"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:104
+msgid "Data in Shapefile format is the most widely used data in MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:106
+msgid ""
+"^ 1) ^ DATA shapefile The name and path of the file without an extension."
+" The path can be absolute or relative to ~ SHAPEPATH The path of. Value: "
+"[path/filename]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:112
+msgid "DATA “data/hangzhou”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:115
+msgid "3.1.2.2 Connect to OGR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:117
+msgid "CONNECTIONTYPE:OGR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:119
+msgid ""
+"CONNECTION:OGR Supported data source name ~. For file-based data sources,"
+" it is necessary to define the name, path and extension of the file, "
+"which can be absolute or relative path, relative path is the path "
+"relative to SHAPEPATH, if SHAPEPATH is not set, the path relative to the "
+"directory where the .map file is located; for directory-based data "
+"sources, the value is"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:126
+msgid "The path to the corresponding directory. ~ value ~:[datasource\\_ name]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:128
+msgid ""
+"the value of DATA:[layer\\_ definition] ~ is the name or number used by "
+"the data source or ~ SQL String, etc. ~ take ~ value:[layer\\_ "
+"definition]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:132
+msgid ""
+"STYLEITEM AUTO: it specifies that the original dataset will be used "
+"STYLES . But if the original number"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:135
+msgid ""
+"According to the STYLE type that MAPSERVER does not support, ~ may be "
+"ignored or error. ~"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:138
+msgid ""
+"Example 1:-MapInfo File; displays a MapInfo TAB file in its source colors"
+" Using STYLEITEM AUTO:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:155
+msgid ""
+"Example 2\\ :sub:`:`\\ DGN File; displays layer “0” (DGN terminology = "
+"Level) from a DGN-File in a light blue:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:173
+msgid "3.1.2.3 Connect to Databases"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:175
+msgid "3.1.2.3.1 SDE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:181
+msgid ""
+"The connection string “DATA” of the CONNECTION “sde database” contains "
+"Geometry Layer name of the field \""
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:192
+msgid "3.1.2.3.2 POSTGIS"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:198
+msgid "CONNECTION “connection string for postgis database”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:200
+msgid ""
+"The format of the DATA value is & lt; column name & gt; from & lt; table "
+"name & gt;, column name contains geometry And the table name is the table"
+" name of the corresponding data Example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:210
+msgid "3.1.2.3.3 ORACLE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:216
+msgid ""
+"The connection string for the CONNECTION \"oracle database, such as "
+"``user/pass[@db]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:219
+msgid ""
+"The format of the DATA value is & lt; column name & gt; from & lt; table "
+"name & gt;, column name contains geometry, and the table name is the "
+"table name of the corresponding data."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:232
+msgid "3.1.2.4 Web Map Service (WMS)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:234
+msgid "Use WMS as the data source."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:236
+msgid "CONNECTIONTYPE WMS"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:238
+msgid ""
+"OnlineResource URL of the CONNECTION WMS server. URL without any "
+"parameters. Value: [url]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:241
+msgid ""
+"METADATA (required): metadata information must be obtained: wms\\_ srs "
+"Space-delimited EPSG coordinate code wms\\_ name comma-separated WMS "
+"layer name"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:245
+msgid "Wms\\_ server\\_ version WMS service version number wms\\_ format"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:247
+msgid ""
+"The image format METADATA (optional) used in the GetMap request can be "
+"found in the configuration document corresponding to WMS."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:254
+msgid "Wms \\_ & lt;stylename> \\_ sld"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:282
+msgid "**3.1.3 Symbol specific Settings**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:284
+msgid ""
+"TOLERANCE: the sensitivity of queries based on points or lines. ~ if ~ "
+"TOLERANCEUNITS Is the default, then the default value for TOLERANCE is "
+"3px. If you want to restrict queries of type polygon, you need"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:288
+msgid "To set the value of TOLERANCE to 0. Value:[double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:290
+msgid "TOLERANCEUNITS: unit of TOLERANCE, which defaults to pixels. Value:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:293
+msgid "**3.1.4 Tiles**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:295
+msgid ""
+"fully qualified name of the location or index of the tile of the "
+"TILEINDEX:~ layer (~ Full filename for The index or tile definition for "
+"this layer). And ArcInfo The index of the library is similar to this "
+"shapefile"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:300
+msgid ""
+"The file contains the polygon characteristics of each tile. TILEITEM "
+"gives the location message of the tile data."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:303
+msgid ""
+"Interest. If the DATA parameter is not empty, its value is added to the "
+"end of the position. If DATA Is empty, this location contains the fully "
+"qualified name of the file. Note: DBF of SHAPEFILE The file contains a "
+"tile index, but its name must be the same as that used in Mapserver, so "
+"that Mapserver can correctly index the corresponding tile data."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:309
+msgid "TILEINDEX files can be created automatically using the GDALTINDEX tool."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:311
+msgid ""
+"TILEITEM:~ contains the field name of the tile path. The default is “~ "
+"LOCATION”. Value:[attribute] Example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:314
+msgid ""
+"#—————————————- # Raster Tiles # White set to transparent [OFFSITE] "
+"#—————————————- LAYER NAME “Raster Maps” TYPE RASTER MINSCALE 0 MAXSCALE "
+"50000 STATUS ON TILEINDEX ‘raster_tiles’ OFFSITE 255 255 255 END"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:320
+msgid "**3.1.5 Filter Option**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:322
+msgid ""
+"FILTER: filter the attributes of the data and select the data under the "
+"specified condition. Value:[string] Example: FILTER “type=‘road’ and size"
+" & lt;2”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:326
+msgid ""
+"Fields used in FILTERITEM:FILTER expressions, for OGR and SHAPEFILE only "
+"It works. Value:[attribute]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:329
+msgid "Example: ~ use ~ FILTER and CLASSITEM to control fonts and colors"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:376
+msgid "**3.1.6 Label Option**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:378
+msgid "You can refer to the relevant contents of LABEL OBJECT."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:380
+msgid "LABEL ITEM: the field name in the property sheet. Value: [attribute]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:381
+msgid "The minimum scale displayed by LABELMINSCALE:LABEL. ~ value: ~ [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:383
+msgid "LABELMAXSCALE: the maximum scale displayed by LABEL. ~ value: ~ [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:385
+msgid ""
+"LABELCACHE: specifies whether it is cached and displayed after the layer "
+"is rendered. The default is on. Value: [on \\| off]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:387
+msgid ""
+"LABELREQUIRES::~ displays the context (condition) of ~ LABEL display. "
+"Such as LABELREQUIRES ( [Orthoquads] != 1) Under this condition, if the "
+"orthoquads graph"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:392
+msgid ""
+"LABEL is not displayed when the status of the layer is ON. The expression"
+" must be a STATUS-based"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:394
+msgid ""
+"BOOLEAN expression, use logic to manipulate AND or OR. Value: "
+"``[express]``"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:424
+msgid "3.1.7 Other options"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:426
+msgid ""
+"DEBUG: ~ debugging is allowed. The detailed results of debugging are put "
+"in ~ STDERR (the standard) Error output), if the LOG parameter is used in"
+" Web Object, put it in MapServer In logfile file."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:430
+msgid "DUMP: ~ confirm whether ~ MS can return data in GML format. When using WMS"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:433
+msgid "The GetFeatureInfo option is useful, and the default is false."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:435
+msgid ""
+"the template file used by HEADER:~ is only used for ~ Multiresult query "
+"modes."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:438
+msgid ""
+"the ~ Footer template file used by FOOTER:~ is only valid in Multiresult "
+"query mode."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:441
+msgid ""
+"MAXFEATURES: specifies the maximum number of features to draw this layer "
+"in the current window."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:444
+msgid ""
+"PROCESSING: sends processing instructions to the layer. Different types "
+"of layers and programs that process instructions support different "
+"instructions. Current raster image support (handled by GDAL): "
+"SCALE,BANDS,"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:449
+msgid "COLOR \\_ MATCH \\_ THRESHOLD and DITHER. For example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:460
+msgid ""
+"**Resampling**: Producing map output from raster images not Using its "
+"original resolution results in blurred results. To avoid that You should "
+"use resampling. Be aware to use 24bit output in this case (best is JPEG)."
+" Options are AVERAGE, BILINEAR and CUBIC. See as well "
+"http://mapserver.gis.umn.edu/development/rfc/ms-"
+"rfc-4)[.](http://mapserver.gis.umn.edu/development/rfc/ms-rfc-4"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:466
+msgid "PROCESSING “RESAMPLE=AVERAGE”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:471
+msgid "image7"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:473
+msgid ""
+"**Dither** turns on error diffusion mode, used to convert 24bit Images to"
+" 8bit with error diffusion to **get better color results** when "
+"Outputting to 256 color images (8 bit, such as PNG and GIF):"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:477
+msgid "PROCESSING “DITHER=YES”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:482
+msgid "image8"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:484
+msgid ""
+"An **image would often use up all 256 color entries**. The Following "
+"processing is a way to avoid “stealing” your whole colormap For a raster "
+"layer. Normally values in the range 2-6 will give good Results:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:488
+msgid "PROCESSING “COLOR \\_ MATCH \\_ THRESHOLD=n”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:490
+msgid "REQUIRES:~ sets whether the layer tag is displayed. Such as: ~"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:492
+msgid ""
+"ABELREQUIRES () [Orthoquads] != 1) It means that if there is a place "
+"called “orthoquads”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:495
+msgid ""
+"In the active state, the layer cannot be marked. The expression "
+"(Expression) is a boolen Expression,[layer name] = 1 if the Status of a "
+"layer is on, otherwise"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:499
+msgid "[layer name] ＝0。"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:501
+msgid ""
+"SIZEUNITS:~ sets the unit of the Class object to pixels by default. Yes, "
+"simulating. Buffering is valid. ~ value: ~[pixels \\| feet \\| inches \\|"
+" kilometers \\| meters \\| miles]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:505
+msgid ""
+"TEMPLATE:~ serves as a global replacement for ~ CLASS TEMPLATE. ~ value: "
+"~[file \\| Url]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:508
+msgid ""
+"TRANSFORM: Determines whether a layer needs to be transformed from a "
+"geographic coordinate system to an image coordinate system. Defaults to "
+"true. This parameter allows creating shapefiles as image coordinate "
+"systems. So some features are always shown in the same position in the "
+"same image. It should be noted that the coordinate origin of the image "
+"coordinate system is in the upper left corner, the positive x-axis is to "
+"the right, and the positive y-axis is downward. Value: [true|false]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:518
+msgid "3.2 CLASS Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:520
+msgid "Use CLASS to specify the corresponding theme for the layer"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:522
+msgid "the name of NAME:CLASS ~. Value: ~[name]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:524
+msgid ""
+"EXPRESSION: compare string with ClassItem to determine Class. There are "
+"three expressions:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:527
+msgid ""
+"Strings, regular expressions, logical expressions. If no string is given,"
+" then all the features"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:530
+msgid ""
+"The collection all belong to this Class. Strings are case-sensitive and "
+"easy to process quickly. There are no escape characters. Regular "
+"expressions need to be defined with / regex/. There is no need to quote. "
+"Logical expressions allow you to build fairly complex tests based on one "
+"or more attributes, so only for the shapefile file is valid. Logical "
+"expressions are defined in the form “(expression)”. Use the attribute to "
+"be added with[], that is, “[ATTRIBUTE]”. Note that attribute values are "
+"case-sensitive and should be associated with In the shapefile file"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:539
+msgid "The fields are consistent."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:541
+msgid "For example: EXPRESSION ([POPULATION] & gt; 50000 AND’[LANGUAGE]’eq"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:543
+msgid "‘FRENCH’)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:545
+msgid ""
+"Logical expression ~ allow operator: ~ =, & "
+"gt;,<,<=,>=,=,or,lt,gt,ge,le,eq Its processing speed is slower. Both "
+"strings and regular expressions are classified according to classitem in "
+"layer. Same layer You can have a class that uses all three expressions at"
+" the same time."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:551
+msgid "Value:[string]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:553
+msgid "COLOR: the color of the drawing feature. ~ value: ~[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:555
+msgid ""
+"OUTLINECOLOR: the color of the outline of the polygon symbol, ~ polyline "
+"is not supported. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:558
+msgid "BACKGROUNDCOLOR: the color of the opaque area. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:560
+msgid ""
+"SYMBOL: sets the symbol used. Symbol used when the property sheet is not "
+"set When the name or numeric value of the The numeric value is the index "
+"of a symbol in the symbol file, starting with 1. You can also use NAME to"
+" make the symbol file with the corresponding symbol . ~ default is ~ 0, "
+"which means: a single pixel,single width line, or solid Polygon fill, "
+"depending on the layer type. Value:[integer \\| string]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:568
+msgid ""
+"SIZE: the height of the symbol, in pixel. Only scale symbols are used. "
+"The default is one."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:571
+msgid ""
+"MINSIZE: the minimum size of the drawn symbol, in pixel. The default is 0"
+" . Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:574
+msgid ""
+"MAXSIZE: the maximum size of the drawing symbol in ~ pixels. The default "
+"is ~ 50. Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:577
+msgid ""
+"SYMBOLSCALE: the scale at which text or symbols are displayed. Allow "
+"layers to follow map The proportion of changes in dynamic size. If it is "
+"not set, the size of the layer will never change. Vs. MINSIZE is related "
+"to MAXSIZE. Value: ~[double]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:582
+msgid ""
+"TEXT: label displays the static text of ~. It can be compared to ~ "
+"LABELITEM. A better result. Make"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:585
+msgid ""
+"Use () as the delimiter. It allows you to integrate multiple attributes "
+"into a single label. For example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:588
+msgid "([FIRSTNAME],[LASTNAME]) . Value:[string]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:590
+msgid ""
+"TEMPLATE: a template file used to represent query results. It is usually "
+"an htm file. Value:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:593
+msgid "[filename]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:595
+msgid ""
+"DEBUG: debugging is allowed. The detailed results of debugging are placed"
+" in STDERR (the standard error) Output), if the LOG parameter is used in "
+"Web Object, put it in MapServer logfile In the document. Example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:600
+msgid ""
+"# —————————————————————- # Layer Parcel Corner Points # The symbol and "
+"the size are assigned depending on the # database column “TYPE” # "
+"—————————————————————-"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:604
+msgid ""
+"NAME “Parcel Limit Points” TYPE POINT MINSCALE 0 MAXSCALE 2000 "
+"SYMBOLSCALE 1000 STATUS ON CONNECTIONTYPE OGR CONNECTION "
+"“..\\data\\parcel_limit_points.TAB” CLASSITEM “TYPE” CLASS NAME “Stone” "
+"EXPRESSION “Stone” COLOR 255 255 255 SYMBOL ‘circle’ SIZE 3 END CLASS "
+"NAME “Iron” EXPRESSION “Iron” COLOR 255 255 255 SYMBOL ‘circle’ SIZE 2 "
+"END CLASS NAME “Cross” EXPRESSION “Cross” COLOR 255 255 255 SYMBOL "
+"‘cross’ SIZE 2 END END"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:612
+msgid "Results:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:617
+msgid "image9"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:619
+msgid "Overlaying Symbols"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:621
+msgid ""
+"One symbol can be superimposed on another as a description of the symbol,"
+" and so on. The following parameters can"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:624
+msgid "Define overlay symbols, which are used the same as non-overlay symbols:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:626
+msgid "OVERLAYBACKGROUNDCOLOR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:628
+msgid "OVERLAYCOLOR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:630
+msgid "OVERLAYOUTLINECOLOR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:632
+msgid "OVERLAYSIZE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:634
+msgid "OVERLAYMINSIZE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:636
+msgid "OVERLAYMAXSIZE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:638
+msgid "OVERLAYSYMBOL"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:641
+msgid "**2.1.1 LABEL Object**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:643
+msgid ""
+"Use LABEL correspondence to define a label, which is used to describe a "
+"feature of the layer. It can be set using TrueType fonts when LABEL is "
+"defined. Use LABELITEM to add labels to features."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:647
+msgid ""
+"This object is used to define a label, which is in turn usually used to "
+"annotate a feature with a piece of text. Labels can however also be used "
+"as symbols through the use of various TrueType fonts. Features are "
+"labeled using the "
+"Http://umn.mapserver.ch/MapServer/en/layer.htm#LABELITEM)[.](http://umn.mapserver.ch/MapServer/en/layer.htm#LABELITEM"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:654
+msgid "2.1.1.1 Basic Settings"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:656
+msgid ""
+"the font type used by TYPE:~, ~ bitmap is more efficient than truetype, "
+"but truetype Type font update is more convenient. Value:[bitmap \\| "
+"truetype]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:660
+msgid "the name of the FONT:~ font (reference ~ FONTSET). Value:[name]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:662
+msgid "the color of COLOR:~ text. Value: ~[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:664
+msgid ""
+"SIZE: text size. The size corresponding to the substitute defined in "
+"SIZEUNITS. Correspondence The value of TrueType[integer \\| layer column]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:668
+msgid ""
+"The corresponding value of bitmap[tiny \\| small \\| medium \\| large \\|"
+" giant]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:671
+msgid ""
+"ENCODING: displays the encoding of characters, such as Japaneses . If the"
+" value provided is not supported, the corresponding LABEL Will not be "
+"displayed. ~ value: ~[string]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:675
+msgid "PRIORITY:~ sets the priority of ~ LABEL. Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:677
+msgid ""
+"the minimum display size of MINSIZE:~ fonts. The default is ~ 4. "
+"Value:[integer]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:680
+msgid ""
+"maximum display size of MAXSIZE:~ fonts. The default is ~ 256. "
+"Value:[double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:683
+msgid ""
+"the minimum size of the marked feature of MINFEATURESIZE:~, in ~ pixels "
+"units, only for Cached labels is valid. The alignment data is the length."
+" Is the smallest area for polygons. If you select “Auto”, MapServer "
+"displays only tags with features that are much larger than their tags. "
+"Value:[integer|auto]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:690
+msgid "2.1.1.2 Text Effects"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:692
+msgid ""
+"Whether ANTIALTAS:~ uses anti-aliasing (smoothing). Value: ~ [true \\| "
+"false]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:695
+msgid ""
+"OUTLINECOLOR: the color of the text boundary, which defaults to no "
+"boundary. Value: [r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:698
+msgid "SHADOWCOLOR:~ text shadow color. Value: ~ [r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:700
+msgid "SHADOWSIZE:~ text shadow size. Value: ~ [x] [y]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:702
+msgid ""
+"BACKGROUNDCOLOR:~ background color. Default is ~ OFF. ~ value: ~ [r] [g] "
+"[b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:705
+msgid ""
+"BACKGROUNDSHADOWCOLOR:~ background shadow color. Default is ~ OFF. Value:"
+" [r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:708
+msgid ""
+"BACKGROUNDSHADOWSIZE:~ background shadow size, default is ~ 1. Value: [X]"
+" [y]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:712
+msgid "2.1.1.3 Position Option"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:714
+msgid ""
+"the location of POSITION:Label. The first letter is the “Y” position and "
+"the second is the “X” position. “Auto”tells MapServer to calculate the "
+"location of the label that will not conflict with other label. Value: [ul"
+" \\| uc \\| ur \\| cl \\| cc \\| cr \\| ll \\| lc \\| lr \\| auto]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:720
+msgid ""
+"ANGEL: the value is expressed in the angle system. Indicates the angle of"
+" the label. You can use AUTO for line layers Value, you can specify the "
+"corresponding exact angle, such as: ANGLE [Rotation]. Value: [double \\| "
+"auto \\| follow \\| attribute]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:725
+msgid ""
+"the offset of OFFSET:LABEL, in ~ pixels, relative to the position of the "
+"upper left corner."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:728
+msgid ""
+"MINDISTANCE:~ copies the label generated by a ~ label and the copied "
+"label The minimum distance between. Unit pixels. ~ value: ~ [integer]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:732
+msgid ""
+"BUFFER: in LABEL Fill the surrounding with the appropriate color, can "
+"improve the readability of the text, the default is 0. Value: [integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:736
+msgid ""
+"FORCE:~ forces the use of the corresponding CLASS for ~ LABEL, regardless"
+" of whether it is associated with another LABEL or not Conflict, valid "
+"only for cached label. The default is false. Value: [true \\| false]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:741
+msgid ""
+"whether PARTIALS:~ displays incomplete ~ LABEL, no partial coordinates "
+"are displayed by default. Value: [true \\| false]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:744
+msgid ""
+"WRAP:~ represents the character at the end of the line. Value ~: "
+"[character]. Example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:747
+msgid ""
+"# —————————————————————- # Layer Object Names # The names are rotated "
+"along the lines # —————————————————————-"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:750
+msgid ""
+"LAYER NAME “Object Names” STATUS ON TYPE LINE MINSCALE 0 MAXSCALE 1000 "
+"SYMBOLSCALE 500 DATA “landcover/object_names” LABELITEM “NAME” CLASS "
+"LABEL TYPE TRUETYPE FONT Arial SIZE [sizeitem] COLOR 0 0 0 OUTLINECOLOR "
+"255 255 255 ANTIALIAS TRUE ANGLE [angleitem] FORCE false END END END"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:757
+msgid "**2.1.2 STYLE Object**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:759
+msgid ""
+"Symbolization can be achieved using STYLE. You can use multiple STYLE for"
+" a layer."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:762
+msgid "COLOR: the color of the drawing feature. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:764
+msgid ""
+"OUTLINECOLOR: the color of the outline of a polygon symbol. Linear "
+"symbols are not supported. Value:[r] [g] [b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:767
+msgid "the color of BACKGROUNDCOLOR:~ opaque symbols. Value: ~[r][g][b]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:769
+msgid ""
+"SYMBOL: sets the symbol used. Symbol used when the property sheet is not "
+"set When the name or numeric value of the The numeric value is the index "
+"of a symbol in the symbol file, starting with"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:773
+msgid ""
+"You can also use NAME to make the symbol file with the corresponding "
+"symbol. The default is 0, which means: a single pixel,single width line, "
+"or solid polygon Fill, depending on the layer type. Value:[integer \\| "
+"string]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:778
+msgid ""
+"ANTIALIAS: whether or not to TrueType Fonts use a smooth (anti-aliasing) "
+"effect. Value:[true \\| false]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:781
+msgid ""
+"SIZE:~ uses the symbol size value in units of ~ SIZEUNITS. The default "
+"value is 1, only for Scalable symbols is valid. Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:785
+msgid ""
+"The field name of the SIZEITEM:~ storage size in ~ SIZEUNITS. "
+"Value:[String]。 8) The minimum value of the symbol drawn by MINSIZE:~ in "
+"~ SIZEUNITS. Value:[double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:789
+msgid ""
+"the maximum value of symbols drawn by MAXSIZE:~, in ~ SIZEUNITS. "
+"Value:[double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:792
+msgid "OFFSET:~ voids and shadows ~"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:794
+msgid ""
+"the angle of the ANGLE:~ line, for ~ HATCH Type, shadow line ~, in "
+"degrees. Value: ~[double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:797
+msgid ""
+"ANGLEITEM: the name of the field in which the angle value is stored, with"
+" a value of 0 Indicates that there is no rotation. Value:[double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:801
+msgid "the width of the WIDTH:~ line, default is ~ 1. Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:803
+msgid ""
+"MINWIDTH:~ uses ~ HATCH The minimum width of the ~ line of the symbol of "
+"type. Value: ~[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:806
+msgid ""
+"the maximum width of lines that MAXWIDTH:~ uses symbols of type ~ HATCH. "
+"Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:809
+msgid ""
+"Example 1:Streets signature using overlaying lines in two thicknesses and"
+" Coloers LAYER"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:812
+msgid "NAME “Motorwway”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:814
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:924
+msgid "TYPE LINE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:816
+msgid "MINSCALE 23500"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:818
+msgid "MAXSCALE 140000"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:820
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:920
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:536
+msgid "STATUS ON"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:822
+msgid "LABELITEM “NAME”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:824
+msgid "DATA teleatlas/streets/streets\\_ main\\_ roads\\_ polyline"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:826
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:944
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:384
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:546
+msgid "CLASS"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:838
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:850
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:852
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:864
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:888
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:890
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:942
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:954
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:956
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:380
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:402
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:428
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:430
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:448
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:560
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:562
+msgid "END"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:840
+msgid "STYLE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:854
+msgid "END Example 2:Hatching"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:856
+msgid "Symbol definition in Symbol File:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:858
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:344
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:414
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:440
+msgid "SYMBOL"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:860
+msgid "NAME ‘hatch-test’"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:862
+msgid "TYPE HATCH"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:866
+msgid "Layer definition in Mapfile:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:868
+msgid "LAYER…"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:870
+msgid "CLASS…"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:893
+msgid "3.3 JOIN Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:895
+msgid "Defines how to handle JOIN,JOIN defined under the QUERY pair."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:897
+msgid "A unique name for the NAME:JOIN. Value:[string]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:899
+msgid ""
+"XBase for TABLE:~ to perform ~ JOIN operation File name (DBF, containing "
+"the name of the path). Value:[filename]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:902
+msgid "FROM:Join item in the shapefile. Value:[item]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:904
+msgid "TO:Join item in the table to be joined. Value:[item]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:906
+msgid "types of TYPE:JOIN. The default is singel. Value:[single \\| multiple]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:908
+msgid ""
+"TEMPLATE:~ in ~ one-to-many The name of the template file in the case. "
+"The template file is called every time a record is processed and can only"
+" be replaced by JOIN Items in TABLE. Value:[filename]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:912
+msgid ""
+"Example: In the following example we join the layer parcels to a table "
+"Owners using columns NUMBER in Parcel and PARCEL\\_ NR in Owners as key "
+"Fields:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:916
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:530
+msgid "LAYER"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:918
+msgid "NAME “Parcels”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:922
+msgid "DATA “data/parcels”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:926
+msgid "HEADER “NUMBER AREA NAME ZIP LOCALITY”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:928
+msgid "JOIN"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:930
+msgid "NAME “Owners”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:932
+msgid "TABLE “data/owners.dbf”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:934
+msgid "FROM NUMBER"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:936
+msgid "TO PARCEL \\_ NR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:938
+msgid "TYPE multiple"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:940
+msgid "TEMPLATE owners.htm"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:946
+msgid "COLOR 0 0 0"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:948
+msgid "SYMBOL “continue”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:950
+msgid "SIZE 2"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:952
+msgid "TEMPLATE parcels.htm"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:959
+msgid "3.4 PROJECTION Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:961
+msgid ""
+"Tip: if the projection of your data is consistent, you generally do not "
+"need to set the projection."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:964
+msgid ""
+"If you want to set the projection, generally we have to set two kinds of "
+"projection, the output projection and the input projection. Output input"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:967
+msgid ""
+"The shadow is the projection corresponding to MAP, which is set under "
+"MAP; the input projection value refers to the projection of each LAYER."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:970
+msgid ""
+"The PROJECTION object consists of a series of PROJ.4 keywords. Here is an"
+" example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:983
+msgid "Geographical coordinates are defined as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:991
+msgid "The coordinate parameters for using EPSG are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1000
+msgid "3.5 GRID Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1002
+msgid ""
+"The GRID object defines the grid of the map ~ (~ The GRID object defines "
+"a map graticule as) A LAYER)."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1005
+msgid "MINARCS: the minimum number of arc segments to draw. Value: [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1006
+msgid "MAXSRCS: the maximum number of arc segments drawn. Value: [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1007
+msgid "MININTERVAL: minimum number of intervals. Value: [double]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1008
+msgid ""
+"MAXINTERVAL: minimum number of intervals. Value: [double] 5) "
+"MINSUBDIVIDE: the minimum number of segments allowed to draw an arc "
+"segment. Value: [double]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1011
+msgid ""
+"MAXSUBDIVIDE: the maximum number of segments allowed to draw an arc "
+"segment. Value: [double]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1013
+msgid ""
+"LABELFORMAT: label format. “DDMM” is the degree and minute format, and "
+"“DDMMSS” is the degree, minute and second format. Default is decimal "
+"format. DDMMSS: degree, minute, second"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1054
+msgid "3.6 FEATURE Object"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1056
+msgid ""
+"Define the built-in characteristics of layer. When creating a new layer "
+"is impossible or too complex"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1059
+msgid ""
+"You can use built-in features to solve the problem. Built-in features can"
+" also be created through url or forms."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1062
+msgid "1) POINTS:~ a set of ~ x, y coordinate pairs. It ends with END. Such as ~:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1071
+msgid ""
+"Note: note that the start point and end point of the polygon layer should"
+" be the same."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec03_lyrobj/section.rst:1074
+msgid "TEXT: text that marks features."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:4
+msgid "Symbols"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:7
+msgid "Notes & Syntax"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:10
+msgid "**4.1.1 Notes**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:12
+msgid "This section explains how to define symbols in MapServer."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:14
+msgid "Note:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:16
+msgid ""
+"The definition of l Symbol can be in MapFile or in a separate file. ~ in "
+"~ MAP Object to specify the corresponding Symbol file using the SYMBOLSET"
+" keyword, which can be reused symbol file."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:20
+msgid ""
+"l There are three types of Symbol in MapServer that can be used to render"
+" points, lines, and faces."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:23
+msgid "N Vector: VECTOR, ELLIPSE and its subtype Hatch"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:25
+msgid "N Bitmap:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:27
+msgid "N TrueType:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:29
+msgid ""
+"l Symbol number 0. Point 0 represents a single pixel; for ~ shadowing 0, "
+"it represents a The solid fill; alignment line 0 represents a line that "
+"is one pixel wide."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:33
+msgid ""
+"l Symbol does not define color-related content, and color settings are "
+"defined in CLASS (except for bitmap Symbol of type)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:36
+msgid ""
+"l A maximum of ~64 symbols are defined in each symbol file. This "
+"parameter can be adjusted by modifying the value of MS_MAXSYMBOLS in the "
+"mapsymbol.h file."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:41
+msgid "**4.1.2 Syntax**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:43
+msgid "NAME:~ alias. The name used in ~ CLASS. ~ value: ~[string]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:45
+msgid "symbol types supported by TYPE:MapServer:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:47
+msgid ""
+"l Vector: a simple user-defined symbol (A simple drawing is used to "
+"define the Shape of the symbol)."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:50
+msgid "The radius value of the direction of l Ellipse:XY."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:52
+msgid "l Pixmap: (Bitmap Symbols): symbols that support GIF and PNG images."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:54
+msgid "l TrueType: can be defined in FONTSET"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:56
+msgid ""
+"Value:[vector \\| ellipse \\| hatch \\| cartoline \\| pixmap \\| truetype"
+" \\| simple]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:60
+msgid "**4.1.2.1 Vector / Ellipse specific parameters**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:62
+msgid ""
+"POINT: Define the starting point of the vector symbol or the radius of "
+"the ellipse in the XY direction. End the definition with END. The unit of"
+" coordinate is pixel, please define its default value before using it. "
+"You can insert some non-negative coordinates in place to create a non-"
+"adjacent path. For oval symbols you should provide the XY radius, if X "
+"and Y are equal then it is a circle."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:69
+msgid "Value:[x y][x y]. END"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:71
+msgid "STYLE:Defines a dash style or pattern. Value:[num on][num Off][num on]…"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:74
+msgid "END ."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:76
+msgid ""
+"FILLED:~ sets the filling color. For symbols of type ~ MARKER, if "
+"OUTLINECOLOR Has been set, then the symbol has the same boundary line. "
+"Value:[true \\| false]."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:81
+msgid "**4.1.2.2 Pixmap specific parameters**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:83
+msgid ""
+"IMAGE: PNG or GIF representing symbols The path to the file. "
+"Value:[path/filename]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:86
+msgid ""
+"TRANSPARENT: input GIF or PNG The fill color when the picture is set to "
+"be transparent, or define"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:89
+msgid ""
+"Whether all shadow symbols should have transparent fill colors. By "
+"default, the background color matches the color of its parent picture. "
+"Value:[color Index]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:94
+msgid "**4.1.2.3 TrueType specific parameters**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:96
+msgid "1）Name of the font ~. Value: ~[char]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:98
+msgid ""
+"CHARACTER:~ can refer to a special ~ TrueType The character of the type "
+"font. ~ value: ~[char]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:101
+msgid "whether the ANTIALIAS:~ font is smooth. Value: ~[true \\| false]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:103
+msgid ""
+"GAP:~ is in pixels. Define ~ TrueType The distance between lines. "
+"Value:[integer]"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:107
+msgid "4.2 Vector Symbols"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:109
+msgid ""
+"There are four vector types of symbols: VECTOR, ELLIPSE, HATCH and "
+"CARTOLINE. You can define the representation of points, the "
+"representation of lines, and the representation of surfaces."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:114
+msgid "**4.2.1 Defining Point Representations**"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:116
+msgid ""
+"You can use a coordinate sequence to define a vector symbol or you can "
+"define a specified XY The ellipse of the radius to define the vector "
+"symbol."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:123
+msgid "image10"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:125
+msgid ""
+"The mapfile corresponding to the above figure is as follows (note that "
+"the starting coordinates are the same as the ending coordinates):"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:143
+msgid ""
+"In theory, the best way to construct the above symbols is to use a square"
+" style, which does not need to be so complex."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:149
+msgid "image11"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:151
+msgid ""
+"The above symbols can be written using the corresponding mapfile code, "
+"which can be found in chameleon. Reference the etc/symbols.sym file. Tip:"
+" the “- 99-99” coordinate looks like a fence, but it is only used on "
+"unfilled symbols."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:156
+msgid "Examples of combined use of vector symbols:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:190
+msgid "The result of the above code is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:195
+msgid "image12"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:198
+msgid "4.2.2 Defining Line Representations"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:200
+msgid "The basic vector symbol consists of a series of points."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:205
+msgid "image13"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:207
+msgid ""
+"The contents of the mapfile file corresponding to the above figure are as"
+" follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:223
+msgid "image14"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:225
+msgid ""
+"Refer to the corresponding Symbol file to learn the configuration of the "
+"above figure."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:228
+msgid ""
+"`vectors.sy <http://umn.mapserver.ch/MapServer/en/symbols/vectors.sym>`__"
+" [^ m ^](http://umn.mapserver.ch/MapServer/en/symbols/vectors.sym) "
+"Example of < http://umn.mapserver.ch/MapServer/en/symbols/vectors.sym> "
+"combination line:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:263
+msgid "The display results are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:268
+msgid "image15"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:270
+msgid "Cartoline Line type:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:275
+msgid "image16"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:290
+msgid ""
+"Where LINEJOINMAXSIZE defines the maximum length for miter type of joins "
+"As a factor of M to avoid spikes when d (3 means i.e. M = 3 times d) "
+"Lines are almost parallel:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:297
+msgid "image17"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:299
+msgid "M = 3D"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:301
+msgid "An example of defining faces with shadows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:303
+msgid "The SYMBOL file is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:312
+msgid ""
+"The definition of LAYER in Mapfile is as follows (nds up with a 45 "
+"°hatching, with 3 pixels Thick lines, 10 pixels apart:)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:330
+msgid "**4.2.3 Defining Line and Area Representations using Symbols**\\ \\*"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:332
+msgid ""
+"The following example is a combination of the above two, we can make a "
+"linear pentagram sequence."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:338
+msgid "image18"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:340
+msgid "The process of making this symbol is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:342
+msgid "Define symbol"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:346
+msgid "NAME “star-dots”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:348
+msgid "TYPE VECTOR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:350
+msgid "FILLED TRUE"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:382
+msgid "The chunk of the MapFile definition using as well the OVERLAY option:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:386
+msgid "NAME “Hall of Fame”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:388
+msgid "EXPRESSION “star-dots”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:390
+msgid "COLOR 255 0 0"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:392
+msgid "SYMBOL ‘star-dots’"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:394
+msgid "SIZE 14"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:396
+msgid "OVERLAYCOLOR 255 255 0"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:398
+msgid "OVERLAYSYMBOL ‘star-dots’"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:400
+msgid "OVERLAYSIZE 6"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:404
+msgid ""
+"You can use techniques similar to the above to make the following "
+"symbols. \""
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:410
+msgid "image19"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:412
+msgid "Example of diagonal fill:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:416
+msgid "NAME “diag45fill \\_ thin”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:418
+msgid "TYPE vector"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:420
+msgid "TRANSPARENT 0"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:422
+msgid "POINTS"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:433
+msgid "4.3 Bitmap Symbols"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:436
+msgid ""
+"Defining symbols of bitmap type requires pictures in either gif format or"
+" png format. Define a picture in this format"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:438
+msgid "The methods are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:442
+msgid "NAME ‘Image’"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:444
+msgid "TYPE PIXMAP"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:446
+msgid "IMAGE ‘bitmaps/image.gif’"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:450
+msgid ""
+"The path to the above picture must be absolute or relative to the symbol "
+"file."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:453
+msgid ""
+"Optionally, you can use TRANSPARENT [color index] to set a transparent "
+"color. If you set up"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:456
+msgid ""
+"The output image format IMAGETYPE does not support transparency, so you "
+"must set it in the corresponding layer."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:459
+msgid "TRANSPARENCY ALPLA."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:462
+msgid "**4.3.1**\\ Create **Bitmap** symbol**\\*"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:465
+msgid "**4.3.1.1 Introduction to Bitmap**\\ symbols*\\*"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:467
+msgid "Advantages of Bitmap symbols:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:469
+msgid "Full color"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:471
+msgid "fancy imaging effects such as buttonize, shadows, light and so on"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:473
+msgid "Transparency"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:475
+msgid "Easy to create"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:477
+msgid "**4.3.2** Filling areas with **Bitmap** symbols"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:479
+msgid ""
+"Using Bitmap symbols can create a good filling effect. It should be noted"
+" that when you use Bitmap symbols to fill areas, you cannot change the "
+"size of the symbols, so In some cases you need to create different scale "
+"symbols for different scale maps. Example:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:484
+msgid "Symbols used"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:486
+msgid "Filling effect of face area"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:491
+msgid "image20"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:496
+msgid "image21"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:501
+msgid "image22"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:506
+msgid "image23"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:511
+msgid "image24"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:516
+msgid "image25"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:521
+msgid "image26"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:526
+msgid "image27"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:528
+msgid "Some of the Mapfile are as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:532
+msgid "NAME “Test Symbols Poly”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:534
+msgid "TYPE POLYGON"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:538
+msgid "CONNECTIONTYPE OGR"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:540
+msgid "CONNECTION “test\\_ symbols/test\\_ sym\\_ layer.TAB”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:542
+msgid "HEADER “test”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:544
+msgid "CLASSITEM “test”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:565
+msgid ""
+"4.3.3 Links below the symbol collection can download some free symbol "
+"files:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:567
+msgid ""
+"`Area fills "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/bitmap/fills.zip>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:570
+msgid ""
+"`preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/bitmap/fills.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:572
+msgid ""
+"`Hatching "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/bitmap/hatch.zip>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:574
+msgid ""
+"`preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/bitmap/hatch.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:577
+msgid "4.4 TrueType Symbols"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:579
+msgid ""
+"TrueType is required to define TrueType type symbols Font file. In "
+"Mapserver, you can use FONTSET to specify the corresponding font file. "
+"The definition in the font file is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:589
+msgid ""
+"The file contains two columns, the first column is used in the MapFile "
+"file, and the second column is used to specify the font file that "
+"contains the path."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:593
+msgid ""
+"You can define symbols of type TrueType in the mapfile file, or you can "
+"write the corresponding information to the"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:596
+msgid ""
+"In a separate file, and then use SYMBOLSET in mapfile To reference this "
+"file. The latter is recommended so that reuse can be achieved."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:599
+msgid "Example of the definition of TrueType type symbols:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:609
+msgid ""
+"The FONT name used here needs to correspond to the value in the file "
+"specified by FONTSET, CHARACTER"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:612
+msgid "The following values can be used for:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:614
+msgid "l a,b,c,d„„ similar ASCII text"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:616
+msgid ""
+"l Or use the following syntax for character numbers, such as “&#114”, you"
+" can use the “Character Map” tool (Start-Programs-Accessories-System "
+"Tools-Character Map) to check the corresponding character map. In the "
+"lower left corner of the Character Map tool window you can see the "
+"UNICODE character and ASCII text description of the currently selected "
+"character. As shown below:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:626
+msgid "image28"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:628
+msgid "In the image above:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:630
+msgid "l ASCII character is: Question Mark = “?”"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:632
+msgid ""
+"l Unicode number 003F (hexadecimal number) is the character # 63 in "
+"Symbol We can define it in the file as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:644
+msgid "The following results are the same as the above:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:656
+msgid "4.4.1 Create symbols of type TrueTyp with many existing TrueType"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:658
+msgid ""
+"Type of posture can be used, such as in the Corel Draw package with The "
+"font. You can use them to create your own fonts:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:661
+msgid ""
+"l Under the windows platform, you can use [Font Creator] Program.] "
+"(http://www.high-logic.com/products.html)\\ http://www.high-"
+"logic.com/products.html"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:664
+msgid ""
+"l Used under linux `FontForge <http://fontforge.sourceforge.net/>`__ < "
+"http://fontforge.sourceforge.net/>"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:668
+msgid "4.4.2 Tips for using TrueType type symbols"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:670
+msgid ""
+"The symbol must be of type “Unicode”. For example: MapInfo symbols are "
+"not supported here, if you want to use, you need to modify the type of "
+"these symbols. Use [Font Creator Program] (http://www.high-"
+"logic.com/products.html) `With <http://www.high-"
+"logic.com/products.html>`__ The body operation is as follows:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:677
+msgid ""
+"Copy the corresponding Shapefile to the MapServer font folder (preferably"
+" using a command line copy)"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:679
+msgid "Click File-Open Font File"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:680
+msgid ""
+"Using the Format / Platform Manager function, select “Microsoft Symbol” "
+"and click “Change”; the entry should switch to “Microsoft Unicode”."
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:683
+msgid "Save Fil"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:686
+msgid "4.4.3 Symbol Collection Here are some free symbol download addresses:"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:688
+msgid ""
+"`Animals "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/animals.ttf>`__"
+" < http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/animals.ttf>"
+" `( "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/animals.pdf>`__"
+" `Preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/animals.pdf>`__"
+" `) "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/animals.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:694
+msgid ""
+"`Cartographic "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/cartographic.ttf>`__"
+" < "
+"http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/cartographic.ttf>"
+" `( "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/cartographic.pdf>`__"
+" `Preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/cartographic.pdf>`__"
+" `) "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/cartographic.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:700
+msgid ""
+"`Natural Resources "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/natural_resources.ttf>`__"
+" < "
+"http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/natural_resources.ttf>"
+" `( "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/natural_resources.pdf>`__"
+" `Preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/natural_resources.pdf>`__"
+" `) "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/natural_resources.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:707
+msgid ""
+"`Park "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/park.ttf>`__ <"
+" http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/park.ttf> `( "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/park.pdf>`__ "
+"`Preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/park.pdf>`__ "
+"`) "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/park.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:712
+msgid ""
+"`Recreational "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/recreate.ttf>`__"
+" < "
+"http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/recreate.ttf> "
+"`( "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/recreate.pdf>`__"
+" `Preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/recreate.pdf>`__"
+" `) "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/recreate.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:718
+msgid ""
+"`Signs "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/signs.ttf>`__ "
+"< http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/signs.ttf> `("
+" <http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/signs.pdf>`__"
+" `Preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/signs.pdf>`__ "
+"`) "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/signs.pdf>`__"
+msgstr ""
+
+#: ../../webgis-src/chb8_ref-addon/sec04_symbol/section.rst:724
+msgid ""
+"`Sports "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/sports.ttf>`__"
+" < http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/sports.ttf> "
+"`( "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/sports.pdf>`__"
+" `Preview "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/sports.pdf>`__"
+" `) "
+"<http://umn.mapserver.ch/MapServer/en/images/symbols/fonts/sports.pdf>`__"
+msgstr ""
+
