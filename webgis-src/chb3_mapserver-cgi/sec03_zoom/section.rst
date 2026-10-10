@@ -11,8 +11,9 @@ How to browse and zoom
 
 As in the previous map, we pass our mapfile path and other parameters (
 ``map=/ms4w/apps/tutorial/htdocs/example2-1.map&amp;mode=browse`` )
-Initialize our application MapServ ( ``/cgi-bin/mapserv`` ). Here is a
-link:
+Initialize our application MapServ ( ``/cgi-bin/mapserv`` ). 
+
+Here is a link:
 
 `Open sample map
 1 <https://webgis.pub/cgi-bin/mapserv?map=/owg/mdca.map&mode=browse&root=/owg&program=/cgi-bin/mapserv&layer=topo&zoom=0&map_web=template+example2-1.html>`__
