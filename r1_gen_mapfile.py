@@ -21,12 +21,12 @@ def run_it(src_ws):
         if wfile.name == "script_mapfile_pub.sh":
             print(wfile)
             # os.chdir(wfile.parent)
-            subprocess.run("sh script_mapfile_pub.sh", shell=True, cwd=wfile.parent)
+            subprocess.run(["sh", "script_mapfile_pub.sh"], shell=False, cwd=wfile.parent)
     for wfile in src_ws.rglob("*"):
         if wfile.name == "script_gen_diff.py":
             print(wfile)
             # os.chdir(wfile.parent)
-            subprocess.run("python3 script_gen_diff.py", shell=True, cwd=wfile.parent)
+            subprocess.run(["python3", "script_gen_diff.py"], shell=False, cwd=wfile.parent)
 
 
 if __name__ == "__main__":
