@@ -92,7 +92,7 @@ Here is an explanation of why this is done. If we continue to add layers
 on top of the state layer, the contours are most likely to be masked by
 these layers. To be able to see the borders and add other layers, we
 have to separate the borders layer from the state polygon layer and
-place it on top of the other other layers. There is an order in how to
+place it on top of the other layers. There is an order in how to
 define/add layers, which will be explained later. Here you just need to
 remember according to “Later on top” (layers defined later will be
 displayed on the top).
